@@ -1,9 +1,12 @@
 # secry
-
 A new social media network
 
-## Getting Started
+# Must read
+App icon for Android was added via the Android "Image asset" 
+and set to 70% of its size (1024 by 1024)
 
+
+## Getting Started
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
