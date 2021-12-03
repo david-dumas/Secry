@@ -20,7 +20,7 @@ Future<void> main() async {
         supportedLocales: [Locale('nl'), Locale('en')],
         path: 'assets/translations',
         fallbackLocale: Locale('en'),
-        child: MyApp()),
+        child: AppWidget()),
   );
 }
 
