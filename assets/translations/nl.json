@@ -41,5 +41,9 @@
   "account_forgot_your_password" : "Wachtwoord vergeten?",
   "account_terms_of_use" : "Gebruiksvoorwaarden",
   "account_privacy_policy" : "Privacybeleid",
-  "account_terms_agree_text" : "Door op registreren te drukken, gaat u akkoord met onze"
+  "account_terms_agree_text" : "Door op registreren te drukken, gaat u akkoord met onze",
+  "page_title_home" : "Home",
+  "page_title_search" : "Zoeken",
+  "page_title_saved_groups_and_surveys" : "Opgeslagen groepen en enquêtes",
+  "page_title_account" : "Account"
 }
