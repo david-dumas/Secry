@@ -41,7 +41,7 @@ class _AppWidgetState extends State<AppWidget> {
             return ThemeConsumer(
               child: Builder(builder: (themeContext) {
                 return MaterialApp.router(
-                  title: 'Prikklok app',
+                  title: 'Secry',
                   localizationsDelegates: context.localizationDelegates,
                   supportedLocales: context.supportedLocales,
                   locale: context.locale,
