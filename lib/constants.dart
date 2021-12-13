@@ -19,6 +19,9 @@ const kMediumGray = Color(0xFFB3B9BC);
 const kLightGray = Color(0xFFF4F4F4);
 const globalWhite = Color(0xFFFFFFFF);
 
+// Button radius
+const kButtonRadiusMedium = BorderRadius.all(Radius.circular(20));
+
 // Text styles
 const kWalkthroughTitleTextStyle = TextStyle(
   color: kPrimaryColor,
@@ -27,4 +30,8 @@ const kWalkthroughTitleTextStyle = TextStyle(
 const kWalkthroughDescriptionTextStyle = TextStyle(
   color: kDarkGrayTextColor,
   fontSize: 16.0,
+);
+const mainContentTextStyleMedium = TextStyle(
+  fontSize: 14,
+  color: globalBlack,
 );

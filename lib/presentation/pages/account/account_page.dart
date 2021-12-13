@@ -14,6 +14,8 @@ class AccountPage extends StatelessWidget {
       backgroundColor: globalWhite,
       body: Center(
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(bottom: 32),
@@ -28,13 +30,23 @@ class AccountPage extends StatelessWidget {
               child: Text(
                 tr('account_logged_out_overview_description'),
                 textAlign: TextAlign.center,
+                style: mainContentTextStyleMedium,
               ),
             ),
             Container(
               padding: pagePadding,
+              width: MediaQuery.of(context).size.width * 0.6,
               child: ElevatedButton(
                 onPressed: () {},
                 child: Text(tr('action_create_account')),
+              ),
+            ),
+            Container(
+              padding: pagePadding,
+              width: MediaQuery.of(context).size.width * 0.6,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(tr('action_login')),
               ),
             )
           ],
