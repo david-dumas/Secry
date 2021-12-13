@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
@@ -7,6 +8,8 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const pagePadding = EdgeInsets.only(left: 32, right: 32, bottom: 32);
+
     return Scaffold(
       backgroundColor: globalWhite,
       body: Center(
@@ -15,17 +18,23 @@ class AccountPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(bottom: 32),
               child: Text(
-                'Join the community!',
+                tr('account_logged_out_overview_title'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
               ),
             ),
             Container(
-              padding: const EdgeInsets.only(left: 32, right: 32),
-              //margin: EdgeInsets.only(bottom: 32),
+              padding: pagePadding,
               child: Text(
-                'How well do you really know those around you? Secry is about the real world! Create a group with people you know and ask them anything. Talk about issues, insecurities, sex, work, anthing you want to talk about. Become aware, help each other, connect and discover secrets!',
+                tr('account_logged_out_overview_description'),
                 textAlign: TextAlign.center,
+              ),
+            ),
+            Container(
+              padding: pagePadding,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: Text(tr('action_create_account')),
               ),
             )
           ],
