@@ -27,13 +27,16 @@ class _LoginPageState extends State<LoginPage> {
               child: Text(
                 tr('account_login_title'),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 26,
+                    color: kPrimaryColor),
               ),
             ),
             Container(
               padding: pagePadding,
               child: Text(
-                tr('account_logged_out_overview_description'),
+                tr('account_forgot_your_password'),
                 textAlign: TextAlign.center,
                 style: mainContentTextStyleMedium,
               ),
