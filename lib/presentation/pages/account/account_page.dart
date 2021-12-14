@@ -41,14 +41,14 @@ class AccountPage extends StatelessWidget {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(18.0),
+                        borderRadius: BorderRadius.circular(20.0),
                       ),
                     ),
                   ),
                   onPressed: () {},
                   child: Text(
                     tr('action_create_account'),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                    style: buttonTextStyleMedium,
                   ),
                 ),
               ),
@@ -57,6 +57,10 @@ class AccountPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: 44,
                 child: TextButton(
+                  style: TextButton.styleFrom(
+                    textStyle: const TextStyle(
+                        fontSize: 16, fontWeight: FontWeight.bold),
+                  ),
                   onPressed: () {
                     AutoRouter.of(context).push(const LoginPageRoute());
                   },
