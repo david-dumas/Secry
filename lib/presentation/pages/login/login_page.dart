@@ -59,6 +59,13 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            Container(
+              padding: pagePadding,
+              child: TextButton(
+                onPressed: () {},
+                child: Text(tr('general_go_back')),
+              ),
+            )
           ],
         ),
       ),
