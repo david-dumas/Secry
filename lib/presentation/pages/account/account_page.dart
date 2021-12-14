@@ -38,6 +38,7 @@ class AccountPage extends StatelessWidget {
               SizedBox(height: 16),
               Container(
                 width: MediaQuery.of(context).size.width,
+                height: 44,
                 child: ElevatedButton(
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
@@ -55,7 +56,8 @@ class AccountPage extends StatelessWidget {
               ),
               SizedBox(height: 4),
               Container(
-                width: MediaQuery.of(context).size.width * 0.6,
+                width: MediaQuery.of(context).size.width,
+                height: 44,
                 child: TextButton(
                   onPressed: () {
                     AutoRouter.of(context).push(const LoginPageRoute());
