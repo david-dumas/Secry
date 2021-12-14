@@ -25,7 +25,7 @@ class AccountPage extends StatelessWidget {
               Text(
                 tr('account_logged_out_overview_title'),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
               ),
               SizedBox(height: 16),
               Text(
