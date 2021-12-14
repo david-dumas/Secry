@@ -22,17 +22,15 @@ class _LoginPageState extends State<LoginPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(bottom: 32),
-                child: Text(
-                  tr('account_login_title'),
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 26,
-                      color: kPrimaryColor),
-                ),
+              Text(
+                tr('account_login_title'),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 26,
+                    color: kPrimaryColor),
               ),
+              SizedBox(height: 26),
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
