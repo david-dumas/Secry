@@ -22,7 +22,7 @@ class AccountPage extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(bottom: 10),
               child: Image(
-                width: MediaQuery.of(context).size.width * 0.4,
+                width: MediaQuery.of(context).size.width * 0.3,
                 image: AssetImage('assets/launcher/foreground.png'),
               ),
             ),
@@ -46,8 +46,18 @@ class AccountPage extends StatelessWidget {
               padding: pagePadding,
               width: MediaQuery.of(context).size.width * 0.6,
               child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                    ),
+                  ),
+                ),
                 onPressed: () {},
-                child: Text(tr('action_create_account')),
+                child: Text(
+                  tr('action_create_account'),
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                ),
               ),
             ),
             Container(
