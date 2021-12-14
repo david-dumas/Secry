@@ -13,7 +13,7 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    const pagePadding = EdgeInsets.only(left: 75, right: 75, bottom: 32);
+    const pagePadding = EdgeInsets.only(left: 20, right: 20, bottom: 32);
 
     return Scaffold(
       backgroundColor: globalWhite,
@@ -51,13 +51,28 @@ class _LoginPageState extends State<LoginPage> {
                     labelText: tr('account_password'),
                   ),
                 )),
-            Container(
-              padding: pagePadding,
-              child: Text(
-                tr('account_forgot_your_password'),
-                textAlign: TextAlign.center,
-                style: mainContentTextStyleMedium,
-              ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  tr('account_forgot_your_password'),
+                  textAlign: TextAlign.center,
+                  style: mainContentTextStyleMedium,
+                ),
+                SizedBox(
+                  width: 4,
+                ),
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    tr('action_click_here'),
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      decoration: TextDecoration.underline,
+                    ),
+                  ),
+                ),
+              ],
             ),
             Container(
               padding: pagePadding,
