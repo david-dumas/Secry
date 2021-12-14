@@ -12,9 +12,8 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     const pagePadding = EdgeInsets.only(left: 75, right: 75, bottom: 32);
 
-    return Scaffold(
-      backgroundColor: globalWhite,
-      body: Center(
+    return SingleChildScrollView(
+      child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
