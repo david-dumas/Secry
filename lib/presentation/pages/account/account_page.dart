@@ -10,66 +10,58 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const pagePadding = EdgeInsets.only(left: 75, right: 75, bottom: 32);
+    const pagePadding = EdgeInsets.only(left: 20, right: 20, bottom: 32);
 
     return SingleChildScrollView(
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(bottom: 10),
-              child: Image(
+        child: Padding(
+          padding: pagePadding,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              Image(
                 width: MediaQuery.of(context).size.width * 0.3,
                 image: AssetImage('assets/launcher/foreground.png'),
               ),
-            ),
-            Container(
-              margin: EdgeInsets.only(bottom: 32),
-              child: Text(
+              Text(
                 tr('account_logged_out_overview_title'),
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
               ),
-            ),
-            Container(
-              padding: pagePadding,
-              child: Text(
+              Text(
                 tr('account_logged_out_overview_description'),
                 textAlign: TextAlign.center,
                 style: mainContentTextStyleMedium,
               ),
-            ),
-            Container(
-              padding: pagePadding,
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
+              Container(
+                width: MediaQuery.of(context).size.width,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                      ),
                     ),
                   ),
-                ),
-                onPressed: () {},
-                child: Text(
-                  tr('action_create_account'),
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  onPressed: () {},
+                  child: Text(
+                    tr('action_create_account'),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  ),
                 ),
               ),
-            ),
-            Container(
-              padding: pagePadding,
-              width: MediaQuery.of(context).size.width * 0.6,
-              child: TextButton(
-                onPressed: () {
-                  AutoRouter.of(context).push(const LoginPageRoute());
-                },
-                child: Text(tr('action_login')),
-              ),
-            )
-          ],
+              Container(
+                width: MediaQuery.of(context).size.width * 0.6,
+                child: TextButton(
+                  onPressed: () {
+                    AutoRouter.of(context).push(const LoginPageRoute());
+                  },
+                  child: Text(tr('action_login')),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );
