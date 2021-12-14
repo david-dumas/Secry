@@ -29,11 +29,13 @@ class AccountPage extends StatelessWidget {
                 textAlign: TextAlign.center,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
               ),
+              SizedBox(height: 16),
               Text(
                 tr('account_logged_out_overview_description'),
                 textAlign: TextAlign.center,
                 style: mainContentTextStyleMedium,
               ),
+              SizedBox(height: 16),
               Container(
                 width: MediaQuery.of(context).size.width,
                 child: ElevatedButton(
@@ -51,6 +53,7 @@ class AccountPage extends StatelessWidget {
                   ),
                 ),
               ),
+              SizedBox(height: 4),
               Container(
                 width: MediaQuery.of(context).size.width * 0.6,
                 child: TextButton(
