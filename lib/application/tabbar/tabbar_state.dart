@@ -13,7 +13,7 @@ abstract class TabbarState with _$TabbarState {
         tr('page_title_home'),
         tr('page_title_search'),
         tr('page_title_saved_groups_and_surveys'),
-        tr('page_title_account'),
+        '',
       ],
       currentTitleForSelectedIndex: tr('page_title_home'));
 }
