@@ -34,6 +34,24 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
+                padding: pagePadding,
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: tr('account_email'),
+                  ),
+                )),
+            Container(
+                padding: pagePadding,
+                child: TextField(
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: tr('account_password'),
+                  ),
+                )),
+            Container(
               padding: pagePadding,
               child: Text(
                 tr('account_forgot_your_password'),

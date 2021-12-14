@@ -38,7 +38,6 @@
   "account_first_name" : "First name",
   "account_last_name" : "Lastname",
   "account_phone" : "Phone",
-  "account_email" : "Email",
   "account_forgot_your_password" : "Forgot your password?",
   "account_terms_of_use" : "Terms of use",
   "account_privacy_policy" : "Privacy policy",
