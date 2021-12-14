@@ -10,8 +10,6 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const pagePadding = EdgeInsets.only(left: 20, right: 20, bottom: 32);
-
     return SingleChildScrollView(
       child: Center(
         child: Padding(

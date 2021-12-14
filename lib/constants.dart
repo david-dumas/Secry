@@ -19,6 +19,9 @@ const kMediumGray = Color(0xFFB3B9BC);
 const kLightGray = Color(0xFFF4F4F4);
 const globalWhite = Color(0xFFFFFFFF);
 
+// Padding
+const pagePadding = EdgeInsets.only(left: 20, right: 20, bottom: 32);
+
 // Button radius
 const kButtonRadiusMedium = BorderRadius.all(Radius.circular(20));
 
