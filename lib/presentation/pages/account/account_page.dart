@@ -10,15 +10,22 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const pagePadding = EdgeInsets.only(left: 32, right: 32, bottom: 32);
+    const pagePadding = EdgeInsets.only(left: 75, right: 75, bottom: 32);
 
     return Scaffold(
       backgroundColor: globalWhite,
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
+            Container(
+              margin: EdgeInsets.only(bottom: 10),
+              child: Image(
+                width: MediaQuery.of(context).size.width * 0.4,
+                image: AssetImage('assets/launcher/foreground.png'),
+              ),
+            ),
             Container(
               margin: EdgeInsets.only(bottom: 32),
               child: Text(

@@ -32,6 +32,6 @@ const kWalkthroughDescriptionTextStyle = TextStyle(
   fontSize: 16.0,
 );
 const mainContentTextStyleMedium = TextStyle(
-  fontSize: 14,
+  fontSize: 16,
   color: globalBlack,
 );
