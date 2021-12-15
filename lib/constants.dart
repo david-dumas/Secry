@@ -38,3 +38,8 @@ const mainContentTextStyleMedium = TextStyle(
   fontSize: 16,
   color: globalBlack,
 );
+
+const buttonTextStyleMedium = TextStyle(
+  fontSize: 16,
+  fontWeight: FontWeight.bold,
+);
