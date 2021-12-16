@@ -21,8 +21,6 @@ class _SignupPageState extends State<SignupPage> {
         child: Padding(
           padding: pagePadding,
           child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               Text(
                 tr('action_create_account'),
@@ -40,6 +38,54 @@ class _SignupPageState extends State<SignupPage> {
                       TextFormField(
                         decoration: const InputDecoration(
                           hintText: 'Firstname',
+                        ),
+                        validator: (String? value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please insert some text';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          hintText: 'Lastname',
+                        ),
+                        validator: (String? value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please insert some text';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          hintText: 'Lastname',
+                        ),
+                        validator: (String? value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please insert some text';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          hintText: 'Lastname',
+                        ),
+                        validator: (String? value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please insert some text';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          hintText: 'Lastname',
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
