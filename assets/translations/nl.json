@@ -38,7 +38,6 @@
   "account_first_name" : "Voornaam",
   "account_last_name" : "Achternaam",
   "account_phone" : "Telefoon",
-  "account_email" : "Email",
   "account_forgot_your_password" : "Wachtwoord vergeten?",
   "account_terms_of_use" : "Gebruiksvoorwaarden",
   "account_privacy_policy" : "Privacybeleid",
@@ -46,5 +45,6 @@
   "page_title_home" : "Home",
   "page_title_search" : "Zoeken",
   "page_title_saved_groups_and_surveys" : "Opgeslagen groepen en enquêtes",
-  "page_title_account" : "Account"
+  "page_title_account" : "Account",
+  "page_register_password_condition" : "Moet minimaal 6 tekens bevatten, inclusief hoofdletters, kleine letters en/of een symbool (bijv. f3gGfe# )"
 }
