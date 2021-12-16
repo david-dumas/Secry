@@ -42,7 +42,7 @@ class _SignupPageState extends State<SignupPage> {
                       decoration: const InputDecoration(
                         hintText: 'Firstname',
                       ),
-                      validator: (String? value) {
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please insert some text';
                         }
@@ -54,7 +54,7 @@ class _SignupPageState extends State<SignupPage> {
                       decoration: const InputDecoration(
                         hintText: 'Lastname',
                       ),
-                      validator: (String? value) {
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
                           return 'Please insert some text';
                         }
@@ -78,14 +78,23 @@ class _SignupPageState extends State<SignupPage> {
                       decoration: const InputDecoration(
                         hintText: 'Email',
                       ),
-                      validator: (String? value) {
+                      validator: (value) {
+                        final pattern =
+                            r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)';
+                        final regExp = RegExp(pattern);
+
                         if (value == null || value.isEmpty) {
-                          return 'Please insert some text';
+                          return 'Please enter an email';
+                        } else if (!regExp.hasMatch(value)) {
+                          return 'Enter a valid email';
+                        } else {
+                          return null;
                         }
-                        return null;
                       },
+                      keyboardType: TextInputType.emailAddress,
+                      onSaved: (value) => {print(value)},
                     ),
-                    SizedBox(height: 10),
+                    verticalSpaceSmall,
                     TextFormField(
                       decoration: const InputDecoration(
                         hintText: 'Password',
@@ -97,7 +106,7 @@ class _SignupPageState extends State<SignupPage> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 10),
+                    verticalSpaceSmall,
                     TextFormField(
                       decoration: const InputDecoration(
                         hintText: 'Repeat password',
@@ -109,7 +118,7 @@ class _SignupPageState extends State<SignupPage> {
                         return null;
                       },
                     ),
-                    SizedBox(height: 16),
+                    verticalSpaceMedium,
                     Text(
                       tr('page_register_password_condition'),
                       textAlign: TextAlign.center,
