@@ -40,40 +40,40 @@ class _SignupPageState extends State<SignupPage> {
                   children: [
                     TextFormField(
                       decoration: const InputDecoration(
-                        hintText: 'Firstname',
+                        hintText: 'First name',
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please insert some text';
+                          return 'Please insert your first name';
                         }
                         return null;
                       },
                     ),
-                    SizedBox(height: 10),
+                    verticalSpaceSmall,
                     TextFormField(
                       decoration: const InputDecoration(
-                        hintText: 'Lastname',
+                        hintText: 'Last name',
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please insert some text';
+                          return 'Please insert your last name';
                         }
                         return null;
                       },
                     ),
-                    SizedBox(height: 10),
+                    verticalSpaceSmall,
                     TextFormField(
                       decoration: const InputDecoration(
                         hintText: 'Phone',
                       ),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please insert some text';
+                          return 'Please insert your phone number';
                         }
                         return null;
                       },
                     ),
-                    SizedBox(height: 10),
+                    verticalSpaceSmall,
                     TextFormField(
                       decoration: const InputDecoration(
                         hintText: 'Email',
