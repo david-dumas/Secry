@@ -16,10 +16,11 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: globalWhite,
-      body: Center(
-        child: Padding(
-          padding: pagePadding,
+        appBar: AppBar(
+          title: Text('Go back'),
+        ),
+        body: SingleChildScrollView(
+          // <-- wrap this around
           child: Column(
             children: <Widget>[
               Text(
@@ -182,8 +183,6 @@ class _SignupPageState extends State<SignupPage> {
               ),
             ],
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
