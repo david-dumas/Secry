@@ -99,12 +99,15 @@ class _SignupPageState extends State<SignupPage> {
                       decoration: const InputDecoration(
                         hintText: 'Password',
                       ),
-                      validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please insert some text';
+                      validator: (value) {
+                        if (value!.length < 7) {
+                          return 'Password must be at least 7 characters long';
+                        } else {
+                          return null;
                         }
-                        return null;
                       },
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -112,11 +115,14 @@ class _SignupPageState extends State<SignupPage> {
                         hintText: 'Repeat password',
                       ),
                       validator: (String? value) {
-                        if (value == null || value.isEmpty) {
-                          return 'Please insert some text';
+                        if (value!.length < 7) {
+                          return 'Password must be at least 7 characters long';
+                        } else {
+                          return null;
                         }
-                        return null;
                       },
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: true,
                     ),
                     verticalSpaceMedium,
                     Text(
