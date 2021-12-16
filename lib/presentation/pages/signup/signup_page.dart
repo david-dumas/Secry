@@ -13,22 +13,22 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Center(
+    return Scaffold(
+      backgroundColor: globalWhite,
+      body: Center(
         child: Padding(
           padding: pagePadding,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Image(
-                width: MediaQuery.of(context).size.width * 0.3,
-                image: AssetImage('assets/launcher/foreground.png'),
-              ),
               Text(
-                tr('account_logged_out_overview_title'),
+                tr('action_create_account'),
                 textAlign: TextAlign.center,
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 26,
+                    color: kPrimaryColor),
               ),
               SizedBox(height: 16),
               Text(
@@ -50,7 +50,7 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                   onPressed: () {},
                   child: Text(
-                    tr('action_create_account'),
+                    tr('action_register'),
                     style: buttonTextStyleMedium,
                   ),
                 ),

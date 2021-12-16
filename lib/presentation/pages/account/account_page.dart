@@ -45,7 +45,9 @@ class AccountPage extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    AutoRouter.of(context).push(SignupPageRoute());
+                  },
                   child: Text(
                     tr('action_create_account'),
                     style: buttonTextStyleMedium,
@@ -62,7 +64,7 @@ class AccountPage extends StatelessWidget {
                         fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    AutoRouter.of(context).push(const LoginPageRoute());
+                    AutoRouter.of(context).push(LoginPageRoute());
                   },
                   child: Text(tr('action_login')),
                 ),
