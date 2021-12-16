@@ -60,6 +60,7 @@ class _TabbarPageState extends State<TabbarPage>
             ],
           ),
           bottomNavigationBar: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
             items: const <BottomNavigationBarItem>[
               BottomNavigationBarItem(
                   icon: Icon(Icons.home_outlined), label: ""),
