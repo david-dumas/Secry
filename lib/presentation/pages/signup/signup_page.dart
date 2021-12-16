@@ -11,6 +11,8 @@ class SignupPage extends StatefulWidget {
 }
 
 class _SignupPageState extends State<SignupPage> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,6 +58,45 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               SizedBox(height: 16),
+              Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          hintText: 'Enter your email',
+                        ),
+                        validator: (String? value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter some text';
+                          }
+                          return null;
+                        },
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 16.0),
+                        child: Container(
+                          width: MediaQuery.of(context).size.width,
+                          height: 44,
+                          child: ElevatedButton(
+                            style: ButtonStyle(
+                              shape: MaterialStateProperty.all<
+                                  RoundedRectangleBorder>(
+                                RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(20.0),
+                                ),
+                              ),
+                            ),
+                            onPressed: () {},
+                            child: Text(
+                              tr('action_register'),
+                              style: buttonTextStyleMedium,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
