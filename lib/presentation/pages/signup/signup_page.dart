@@ -56,40 +56,6 @@ class _SignupPageState extends State<SignupPage> {
                 ),
               ),
               SizedBox(height: 16),
-              Wrap(
-                direction: Axis.horizontal,
-                alignment: WrapAlignment.center,
-                children: [
-                  Text(
-                    tr('By tapping register, you agree to our'),
-                    textAlign: TextAlign.center,
-                    style: mainContentTextStyleMedium,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      tr('account_terms_of_use'),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    tr('and'),
-                    style: mainContentTextStyleMedium,
-                  ),
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      tr('account_privacy_policy'),
-                      style: TextStyle(
-                        decoration: TextDecoration.underline,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
               Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
