@@ -32,9 +32,9 @@ class _SignupPageState extends State<SignupPage> {
               ),
               SizedBox(height: 16),
               Text(
-                tr('account_logged_out_overview_description'),
+                tr('page_register_password_condition'),
                 textAlign: TextAlign.center,
-                style: mainContentTextStyleMedium,
+                style: buttonTextStyleMedium,
               ),
               SizedBox(height: 16),
               Container(
@@ -55,7 +55,49 @@ class _SignupPageState extends State<SignupPage> {
                   ),
                 ),
               ),
-              SizedBox(height: 4),
+              SizedBox(height: 16),
+              Container(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      tr('By tapping register, you agree to our'),
+                      textAlign: TextAlign.center,
+                      style: mainContentTextStyleMedium,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        tr('account_terms_of_use'),
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      tr('and'),
+                      style: mainContentTextStyleMedium,
+                    ),
+                    TextButton(
+                      onPressed: () {},
+                      child: Text(
+                        tr('account_privacy_policy'),
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
