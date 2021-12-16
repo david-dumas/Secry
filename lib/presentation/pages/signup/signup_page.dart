@@ -33,45 +33,38 @@ class _SignupPageState extends State<SignupPage> {
                     color: kPrimaryColor),
               ),
               SizedBox(height: 16),
-              Text(
-                tr('page_register_password_condition'),
-                textAlign: TextAlign.center,
-                style: buttonTextStyleMedium,
-              ),
-              SizedBox(height: 16),
-              Container(
-                width: MediaQuery.of(context).size.width,
-                height: 44,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20.0),
-                      ),
-                    ),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    tr('action_register'),
-                    style: buttonTextStyleMedium,
-                  ),
-                ),
-              ),
-              SizedBox(height: 16),
               Form(
                   key: _formKey,
                   child: Column(
                     children: [
                       TextFormField(
                         decoration: const InputDecoration(
-                          hintText: 'Enter your email',
+                          hintText: 'Firstname',
                         ),
                         validator: (String? value) {
                           if (value == null || value.isEmpty) {
-                            return 'Please enter some text';
+                            return 'Please insert some text';
                           }
                           return null;
                         },
+                      ),
+                      SizedBox(height: 10),
+                      TextFormField(
+                        decoration: const InputDecoration(
+                          hintText: 'Lastname',
+                        ),
+                        validator: (String? value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Please insert some text';
+                          }
+                          return null;
+                        },
+                      ),
+                      SizedBox(height: 16),
+                      Text(
+                        tr('page_register_password_condition'),
+                        textAlign: TextAlign.center,
+                        style: buttonTextStyleMedium,
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0),
@@ -87,7 +80,13 @@ class _SignupPageState extends State<SignupPage> {
                                 ),
                               ),
                             ),
-                            onPressed: () {},
+                            onPressed: () {
+                              // Validate will return true if the form is valid, or false if
+                              // the form is invalid.
+                              if (_formKey.currentState!.validate()) {
+                                // Process data.
+                              }
+                            },
                             child: Text(
                               tr('action_register'),
                               style: buttonTextStyleMedium,
