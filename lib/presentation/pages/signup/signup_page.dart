@@ -18,6 +18,7 @@ class _SignupPageState extends State<SignupPage> {
   String _phone = '';
   String _email = '';
   String _password = '';
+  final TextEditingController _pass = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -109,6 +110,7 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     verticalSpaceSmall,
                     TextFormField(
+                      controller: _pass,
                       decoration: const InputDecoration(
                         hintText: 'Password',
                       ),
@@ -129,8 +131,8 @@ class _SignupPageState extends State<SignupPage> {
                         hintText: 'Repeat password',
                       ),
                       validator: (value) {
-                        print('counter value : $_password');
-                        if (value != _password) {
+                        print('counter value :' + _password);
+                        if (value != _pass.text) {
                           return 'Password does Not match';
                         }
                         return null;
