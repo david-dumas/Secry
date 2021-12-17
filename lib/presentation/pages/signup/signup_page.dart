@@ -12,6 +12,11 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  String firstname = '';
+  String lastname = '';
+  String phone = '';
+  String email = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +49,11 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please insert your first name';
+                          return 'Please enter your first name';
                         }
                         return null;
                       },
+                      onSaved: (value) => setState(() => firstname = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -56,10 +62,11 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please insert your last name';
+                          return 'Please enter your last name';
                         }
                         return null;
                       },
+                      onSaved: (value) => setState(() => lastname = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -68,10 +75,11 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please insert your phone number';
+                          return 'Please enter your phone number';
                         }
                         return null;
                       },
+                      onSaved: (value) => setState(() => phone = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -92,7 +100,7 @@ class _SignupPageState extends State<SignupPage> {
                         }
                       },
                       keyboardType: TextInputType.emailAddress,
-                      onSaved: (value) => {print(value)},
+                      onSaved: (value) => setState(() => email = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -100,23 +108,24 @@ class _SignupPageState extends State<SignupPage> {
                         hintText: 'Password',
                       ),
                       validator: (value) {
-                        if (value!.length < 7) {
-                          return 'Password must be at least 7 characters long';
+                        if (value!.length < 6) {
+                          return 'Password must be at least 6 characters long';
                         } else {
                           return null;
                         }
                       },
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
+                      onSaved: (value) => setState(() => password = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
                       decoration: const InputDecoration(
                         hintText: 'Repeat password',
                       ),
-                      validator: (String? value) {
-                        if (value!.length < 7) {
-                          return 'Password must be at least 7 characters long';
+                      validator: (value) {
+                        if (value == password) {
+                          return null;
                         } else {
                           return null;
                         }
@@ -146,9 +155,23 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                           onPressed: () {
                             // Validate will return true if the form is valid, or false if
-                            // the form is invalid.
-                            if (_formKey.currentState!.validate()) {
-                              // Process data.
+                            final isValid = _formKey.currentState?.validate();
+                            // FocusScope.of(context).unfocus();
+
+                            if (isValid!) {
+                              _formKey.currentState?.save();
+
+                              final message =
+                                  'Firstname: $firstname\Lastname: $lastname\Phone: $phone\nPassword: $password\nEmail: $email';
+                              final snackBar = SnackBar(
+                                content: Text(
+                                  message,
+                                  style: TextStyle(fontSize: 20),
+                                ),
+                                backgroundColor: Colors.green,
+                              );
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(snackBar);
                             }
                           },
                           child: Text(
