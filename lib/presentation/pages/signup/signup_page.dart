@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:secry/constants.dart';
 
@@ -80,6 +81,9 @@ class _SignupPageState extends State<SignupPage> {
                         return null;
                       },
                       keyboardType: TextInputType.number,
+                      inputFormatters: [
+                        FilteringTextInputFormatter.digitsOnly,
+                      ],
                       onSaved: (value) => setState(() => phone = value!),
                     ),
                     verticalSpaceSmall,
