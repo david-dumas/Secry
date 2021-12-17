@@ -31,18 +31,20 @@ class _LoginPageState extends State<LoginPage> {
                     color: kPrimaryColor),
               ),
               SizedBox(height: 26),
-              TextField(
+              TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.email_outlined),
                   labelText: tr('account_email'),
                 ),
               ),
               SizedBox(height: 12),
-              TextField(
+              TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(
                   border: OutlineInputBorder(),
+                  prefixIcon: Icon(Icons.lock_outline),
                   labelText: tr('account_password'),
                 ),
               ),
