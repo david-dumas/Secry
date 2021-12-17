@@ -79,6 +79,7 @@ class _SignupPageState extends State<SignupPage> {
                         }
                         return null;
                       },
+                      keyboardType: TextInputType.number,
                       onSaved: (value) => setState(() => phone = value!),
                     ),
                     verticalSpaceSmall,
