@@ -13,11 +13,11 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  String firstname = '';
-  String lastname = '';
-  String phone = '';
-  String email = '';
-  String password = '';
+  String _firstname = '';
+  String _lastname = '';
+  String _phone = '';
+  String _email = '';
+  String _password = '';
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +54,7 @@ class _SignupPageState extends State<SignupPage> {
                         }
                         return null;
                       },
-                      onSaved: (value) => setState(() => firstname = value!),
+                      onSaved: (value) => setState(() => _firstname = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -67,7 +67,7 @@ class _SignupPageState extends State<SignupPage> {
                         }
                         return null;
                       },
-                      onSaved: (value) => setState(() => lastname = value!),
+                      onSaved: (value) => setState(() => _lastname = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -84,7 +84,7 @@ class _SignupPageState extends State<SignupPage> {
                       inputFormatters: [
                         FilteringTextInputFormatter.digitsOnly,
                       ],
-                      onSaved: (value) => setState(() => phone = value!),
+                      onSaved: (value) => setState(() => _phone = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -105,7 +105,7 @@ class _SignupPageState extends State<SignupPage> {
                         }
                       },
                       keyboardType: TextInputType.emailAddress,
-                      onSaved: (value) => setState(() => email = value!),
+                      onSaved: (value) => setState(() => _email = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -121,7 +121,7 @@ class _SignupPageState extends State<SignupPage> {
                       },
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
-                      onSaved: (value) => setState(() => password = value!),
+                      onSaved: (value) => setState(() => _password = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
@@ -129,11 +129,11 @@ class _SignupPageState extends State<SignupPage> {
                         hintText: 'Repeat password',
                       ),
                       validator: (value) {
-                        if (value == password) {
-                          return null;
-                        } else {
-                          return null;
+                        print('counter value : $_password');
+                        if (value != _password) {
+                          return 'Password does Not match';
                         }
+                        return null;
                       },
                       keyboardType: TextInputType.visiblePassword,
                       obscureText: true,
@@ -167,7 +167,7 @@ class _SignupPageState extends State<SignupPage> {
                               _formKey.currentState?.save();
 
                               final message =
-                                  'Firstname: $firstname\nLastname: $lastname\nPhone: $phone\nPassword: $password\nEmail: $email';
+                                  'Firstname: $_firstname\nLastname: $_lastname\nPhone: $_phone\nPassword: $_password\nEmail: $_email';
                               final snackBar = SnackBar(
                                 content: Text(
                                   message,
