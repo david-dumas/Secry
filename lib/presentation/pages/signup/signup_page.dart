@@ -162,11 +162,11 @@ class _SignupPageState extends State<SignupPage> {
                               _formKey.currentState?.save();
 
                               final message =
-                                  'Firstname: $firstname\Lastname: $lastname\Phone: $phone\nPassword: $password\nEmail: $email';
+                                  'Firstname: $firstname\nLastname: $lastname\nPhone: $phone\nPassword: $password\nEmail: $email';
                               final snackBar = SnackBar(
                                 content: Text(
                                   message,
-                                  style: TextStyle(fontSize: 20),
+                                  style: TextStyle(fontSize: 18),
                                 ),
                                 backgroundColor: Colors.green,
                               );
