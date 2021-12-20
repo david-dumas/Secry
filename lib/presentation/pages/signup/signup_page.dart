@@ -46,7 +46,6 @@ class _SignupPageState extends State<SignupPage> {
                 child: Column(
                   children: [
                     TextFormField(
-                      obscureText: true,
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         //prefixIcon: Icon(Icons.email_outlined),
@@ -62,8 +61,9 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Last name',
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_last_name'),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -75,8 +75,9 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Phone',
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_phone'),
                       ),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
@@ -92,8 +93,9 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Email',
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_email'),
                       ),
                       validator: (value) {
                         final pattern =
@@ -114,8 +116,10 @@ class _SignupPageState extends State<SignupPage> {
                     verticalSpaceSmall,
                     TextFormField(
                       controller: _pass,
-                      decoration: const InputDecoration(
-                        hintText: 'Password',
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_password'),
                       ),
                       validator: (value) {
                         if (value!.length < 6) {
@@ -125,13 +129,14 @@ class _SignupPageState extends State<SignupPage> {
                         }
                       },
                       keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
                       onSaved: (value) => setState(() => _password = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Repeat password',
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_repeat_password'),
                       ),
                       validator: (value) {
                         print('counter value :' + _password);
@@ -141,7 +146,6 @@ class _SignupPageState extends State<SignupPage> {
                         return null;
                       },
                       keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
                     ),
                     verticalSpaceMedium,
                     Text(
