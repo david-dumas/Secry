@@ -159,7 +159,7 @@ class _SignupPageState extends State<SignupPage> {
                               labelText: tr('account_repeat_password'),
                             ),
                             validator: (value) {
-                              if (value != _pass.text) {
+                              if (value != state.passwordInput) {
                                 return tr(
                                     'account_warning_password_does_not_match');
                               }
