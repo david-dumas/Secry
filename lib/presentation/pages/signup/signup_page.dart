@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:secry/constants.dart';
+import 'package:country_icons/country_icons.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -23,9 +24,6 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text('Go back'),
-        // ),
         body: SingleChildScrollView(
       child: Padding(
         padding: pagePadding,
@@ -46,8 +44,10 @@ class _SignupPageState extends State<SignupPage> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'First name',
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        //prefixIcon: Icon(Icons.email_outlined),
+                        labelText: tr('account_first_name'),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -59,8 +59,9 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Last name',
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_last_name'),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
@@ -72,8 +73,15 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Phone',
+                      decoration: InputDecoration(
+                        prefixIcon: Container(
+                          padding: EdgeInsets.all(10.0),
+                          child: Image.asset('icons/flags/png/nl.png',
+                              package: 'country_icons'),
+                          width: 30,
+                        ),
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_phone'),
                       ),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
@@ -89,8 +97,9 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Email',
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_email'),
                       ),
                       validator: (value) {
                         final pattern =
@@ -111,8 +120,10 @@ class _SignupPageState extends State<SignupPage> {
                     verticalSpaceSmall,
                     TextFormField(
                       controller: _pass,
-                      decoration: const InputDecoration(
-                        hintText: 'Password',
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_password'),
                       ),
                       validator: (value) {
                         if (value!.length < 6) {
@@ -122,13 +133,14 @@ class _SignupPageState extends State<SignupPage> {
                         }
                       },
                       keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
                       onSaved: (value) => setState(() => _password = value!),
                     ),
                     verticalSpaceSmall,
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'Repeat password',
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        labelText: tr('account_repeat_password'),
                       ),
                       validator: (value) {
                         print('counter value :' + _password);
@@ -138,7 +150,6 @@ class _SignupPageState extends State<SignupPage> {
                         return null;
                       },
                       keyboardType: TextInputType.visiblePassword,
-                      obscureText: true,
                     ),
                     verticalSpaceMedium,
                     Text(
