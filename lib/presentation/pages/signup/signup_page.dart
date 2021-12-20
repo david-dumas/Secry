@@ -46,8 +46,11 @@ class _SignupPageState extends State<SignupPage> {
                 child: Column(
                   children: [
                     TextFormField(
-                      decoration: const InputDecoration(
-                        hintText: 'First name',
+                      obscureText: true,
+                      decoration: InputDecoration(
+                        border: OutlineInputBorder(),
+                        //prefixIcon: Icon(Icons.email_outlined),
+                        labelText: tr('account_first_name'),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
