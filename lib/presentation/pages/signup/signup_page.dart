@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -254,44 +255,67 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                         ],
                       )),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        tr('account_terms_agree_text'),
-                        textAlign: TextAlign.center,
-                        style: mainContentTextStyleMedium,
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          tr('account_terms_of_use'),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
-                    ],
+                  RichText(
+                    text: TextSpan(
+                      style: TextStyle(color: Colors.grey, fontSize: 20.0),
+                      children: <TextSpan>[
+                        TextSpan(
+                            text: 'By clicking Sign Up, you agree to our '),
+                        TextSpan(
+                            text: 'Terms of Service',
+                            style: TextStyle(color: Colors.blue),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                print('Terms of Service"');
+                              }),
+                        TextSpan(text: ' and that you have read our '),
+                        TextSpan(
+                            text: 'Privacy Policy',
+                            style: TextStyle(color: Colors.blue),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                print('Privacy Policy"');
+                              }),
+                      ],
+                    ),
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        tr('general_and'),
-                        style: mainContentTextStyleMedium,
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          tr('account_privacy_policy'),
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  // Text(
+                  //   tr('account_terms_agree_text'),
+                  //   textAlign: TextAlign.center,
+                  //   style: mainContentTextStyleMedium,
+                  // ),
+                  // TextButton(
+                  //   onPressed: () {},
+                  //   child: Text(
+                  //     tr('account_terms_of_use'),
+                  //     textAlign: TextAlign.center,
+                  //     style: TextStyle(
+                  //       decoration: TextDecoration.underline,
+                  //     ),
+                  //   ),
+                  // ),
+                  // Text(
+                  //   tr('general_and'),
+                  //   style: mainContentTextStyleMedium,
+                  // ),
+                  // Row(
+                  //   mainAxisSize: MainAxisSize.min,
+                  //   children: [
+                  //     Text(
+                  //       tr('general_and'),
+                  //       style: mainContentTextStyleMedium,
+                  //     ),
+                  //     TextButton(
+                  //       onPressed: () {},
+                  //       child: Text(
+                  //         tr('account_privacy_policy'),
+                  //         style: TextStyle(
+                  //           decoration: TextDecoration.underline,
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
                 ],
               ),
             ),
