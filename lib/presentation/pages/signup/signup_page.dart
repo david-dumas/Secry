@@ -8,6 +8,7 @@ import 'package:secry/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:country_picker/country_picker.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -84,41 +85,18 @@ class _SignupPageState extends State<SignupPage> {
                             decoration: InputDecoration(
                               prefixIcon: Container(
                                 padding: EdgeInsets.all(10.0),
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    showCountryPicker(
-                                      context: context,
-                                      //Optional.  Can be used to exclude(remove) one ore more country from the countries list (optional).
-                                      exclude: <String>['KN', 'MF'],
-                                      //Optional. Shows phone code before the country name.
-                                      showPhoneCode: true,
-                                      onSelect: (Country country) {
-                                        print(
-                                            'Select country: ${country.displayName}');
-                                      },
-                                      // Optional. Sets the theme for the country list picker.
-                                      countryListTheme: CountryListThemeData(
-                                        // Optional. Sets the border radius for the bottomsheet.
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(20.0),
-                                          topRight: Radius.circular(20.0),
-                                        ),
-                                        // Optional. Styles the search field.
-                                        inputDecoration: InputDecoration(
-                                          labelText: 'Search',
-                                          hintText: 'Start typing to search',
-                                          prefixIcon: const Icon(Icons.search),
-                                          border: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: const Color(0xFF8C98A8)
-                                                  .withOpacity(0.2),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  child: const Text('Show countries'),
+                                child: CountryCodePicker(
+                                  onChanged: print,
+                                  // Initial selection and favorite can be one of code ('IT') OR dial_code('+39')
+                                  initialSelection: 'NL',
+                                  //favorite: ['+39', 'FR'],
+                                  //countryFilter: ['IT', 'FR'],
+                                  showFlagDialog: true,
+                                  comparator: (a, b) =>
+                                      b.name!.compareTo(a.name!),
+                                  //Get the country information relevant to the initial selection
+                                  onInit: (code) => print(
+                                      "on init ${code!.name} ${code.dialCode} ${code.name}"),
                                 ),
                               ),
                               border: OutlineInputBorder(),
