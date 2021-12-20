@@ -1,7 +1,9 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:secry/domain/auth/i_auth_facade.dart';
 
 part 'sign_in_form_event.dart';
 part 'sign_in_form_state.dart';
@@ -9,7 +11,9 @@ part 'sign_in_form_bloc.freezed.dart';
 
 @injectable
 class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
-  SignInFormBloc() : super(SignInFormState.initial()) {
+  final IAuthFacade _authFacade;
+
+  SignInFormBloc(this._authFacade) : super(SignInFormState.initial()) {
     on<SignInFormEvent>(_onEvent);
   }
 
@@ -17,6 +21,46 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       SignInFormEvent event, Emitter<SignInFormState> emit) async {
     await event.map(
       initialized: (e) async {},
+      signInPressed: (e) async {
+        final failureOrUnit = await _authFacade.signIn(
+            email: state.inputEmail, password: state.inputPassword);
+        await failureOrUnit.fold(
+          (failure) {
+            emit(state.copyWith(isShowingErrorMessages: true));
+
+            failure.maybeMap(
+              emailAlreadyExists: (_) {
+                emit(state.copyWith(
+                    currentErrorMessageTag:
+                        'account_error_email_already_exists'));
+              },
+              invalidEmail: (_) {
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_invalid_email'));
+              },
+              invalidPassword: (_) {
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_password_invalid'));
+              },
+              userNotFound: (_) {
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_user_not_found'));
+              },
+              generalError: (_) {
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_general'));
+              },
+              orElse: () {
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_general'));
+              },
+            );
+          },
+          (userSignedInSuccessfully) {
+            emit(state.copyWith(isShowingErrorMessages: false));
+          },
+        );
+      },
     );
   }
 }

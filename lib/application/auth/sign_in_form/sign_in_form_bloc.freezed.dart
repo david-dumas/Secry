@@ -20,6 +20,10 @@ class _$SignInFormEventTearOff {
   _SignInForm initialized() {
     return const _SignInForm();
   }
+
+  SignInPressed signInPressed() {
+    return const SignInPressed();
+  }
 }
 
 /// @nodoc
@@ -30,32 +34,38 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signInPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signInPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signInPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(SignInPressed value) signInPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(SignInPressed value)? signInPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(SignInPressed value)? signInPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -120,6 +130,7 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signInPressed,
   }) {
     return initialized();
   }
@@ -128,6 +139,7 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signInPressed,
   }) {
     return initialized?.call();
   }
@@ -136,6 +148,7 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signInPressed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -148,6 +161,7 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(SignInPressed value) signInPressed,
   }) {
     return initialized(this);
   }
@@ -156,6 +170,7 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(SignInPressed value)? signInPressed,
   }) {
     return initialized?.call(this);
   }
@@ -164,6 +179,7 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(SignInPressed value)? signInPressed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -178,17 +194,124 @@ abstract class _SignInForm implements SignInFormEvent {
 }
 
 /// @nodoc
+abstract class $SignInPressedCopyWith<$Res> {
+  factory $SignInPressedCopyWith(
+          SignInPressed value, $Res Function(SignInPressed) then) =
+      _$SignInPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SignInPressedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements $SignInPressedCopyWith<$Res> {
+  _$SignInPressedCopyWithImpl(
+      SignInPressed _value, $Res Function(SignInPressed) _then)
+      : super(_value, (v) => _then(v as SignInPressed));
+
+  @override
+  SignInPressed get _value => super._value as SignInPressed;
+}
+
+/// @nodoc
+
+class _$SignInPressed implements SignInPressed {
+  const _$SignInPressed();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.signInPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignInPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function() signInPressed,
+  }) {
+    return signInPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signInPressed,
+  }) {
+    return signInPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signInPressed,
+    required TResult orElse(),
+  }) {
+    if (signInPressed != null) {
+      return signInPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInForm value) initialized,
+    required TResult Function(SignInPressed value) signInPressed,
+  }) {
+    return signInPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(SignInPressed value)? signInPressed,
+  }) {
+    return signInPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(SignInPressed value)? signInPressed,
+    required TResult orElse(),
+  }) {
+    if (signInPressed != null) {
+      return signInPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignInPressed implements SignInFormEvent {
+  const factory SignInPressed() = _$SignInPressed;
+}
+
+/// @nodoc
 class _$SignInFormStateTearOff {
   const _$SignInFormStateTearOff();
 
   _SignInFormState call(
       {required String inputEmail,
       required String inputPassword,
-      required bool isShowingErrorMessages}) {
+      required bool isShowingErrorMessages,
+      required String currentErrorMessageTag}) {
     return _SignInFormState(
       inputEmail: inputEmail,
       inputPassword: inputPassword,
       isShowingErrorMessages: isShowingErrorMessages,
+      currentErrorMessageTag: currentErrorMessageTag,
     );
   }
 }
@@ -201,6 +324,7 @@ mixin _$SignInFormState {
   String get inputEmail => throw _privateConstructorUsedError;
   String get inputPassword => throw _privateConstructorUsedError;
   bool get isShowingErrorMessages => throw _privateConstructorUsedError;
+  String get currentErrorMessageTag => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -213,7 +337,10 @@ abstract class $SignInFormStateCopyWith<$Res> {
           SignInFormState value, $Res Function(SignInFormState) then) =
       _$SignInFormStateCopyWithImpl<$Res>;
   $Res call(
-      {String inputEmail, String inputPassword, bool isShowingErrorMessages});
+      {String inputEmail,
+      String inputPassword,
+      bool isShowingErrorMessages,
+      String currentErrorMessageTag});
 }
 
 /// @nodoc
@@ -230,6 +357,7 @@ class _$SignInFormStateCopyWithImpl<$Res>
     Object? inputEmail = freezed,
     Object? inputPassword = freezed,
     Object? isShowingErrorMessages = freezed,
+    Object? currentErrorMessageTag = freezed,
   }) {
     return _then(_value.copyWith(
       inputEmail: inputEmail == freezed
@@ -244,6 +372,10 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.isShowingErrorMessages
           : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentErrorMessageTag: currentErrorMessageTag == freezed
+          ? _value.currentErrorMessageTag
+          : currentErrorMessageTag // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -256,7 +388,10 @@ abstract class _$SignInFormStateCopyWith<$Res>
       __$SignInFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String inputEmail, String inputPassword, bool isShowingErrorMessages});
+      {String inputEmail,
+      String inputPassword,
+      bool isShowingErrorMessages,
+      String currentErrorMessageTag});
 }
 
 /// @nodoc
@@ -275,6 +410,7 @@ class __$SignInFormStateCopyWithImpl<$Res>
     Object? inputEmail = freezed,
     Object? inputPassword = freezed,
     Object? isShowingErrorMessages = freezed,
+    Object? currentErrorMessageTag = freezed,
   }) {
     return _then(_SignInFormState(
       inputEmail: inputEmail == freezed
@@ -289,6 +425,10 @@ class __$SignInFormStateCopyWithImpl<$Res>
           ? _value.isShowingErrorMessages
           : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentErrorMessageTag: currentErrorMessageTag == freezed
+          ? _value.currentErrorMessageTag
+          : currentErrorMessageTag // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -299,7 +439,8 @@ class _$_SignInFormState implements _SignInFormState {
   const _$_SignInFormState(
       {required this.inputEmail,
       required this.inputPassword,
-      required this.isShowingErrorMessages});
+      required this.isShowingErrorMessages,
+      required this.currentErrorMessageTag});
 
   @override
   final String inputEmail;
@@ -307,10 +448,12 @@ class _$_SignInFormState implements _SignInFormState {
   final String inputPassword;
   @override
   final bool isShowingErrorMessages;
+  @override
+  final String currentErrorMessageTag;
 
   @override
   String toString() {
-    return 'SignInFormState(inputEmail: $inputEmail, inputPassword: $inputPassword, isShowingErrorMessages: $isShowingErrorMessages)';
+    return 'SignInFormState(inputEmail: $inputEmail, inputPassword: $inputPassword, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag)';
   }
 
   @override
@@ -323,12 +466,14 @@ class _$_SignInFormState implements _SignInFormState {
             (identical(other.inputPassword, inputPassword) ||
                 other.inputPassword == inputPassword) &&
             (identical(other.isShowingErrorMessages, isShowingErrorMessages) ||
-                other.isShowingErrorMessages == isShowingErrorMessages));
+                other.isShowingErrorMessages == isShowingErrorMessages) &&
+            (identical(other.currentErrorMessageTag, currentErrorMessageTag) ||
+                other.currentErrorMessageTag == currentErrorMessageTag));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, inputEmail, inputPassword, isShowingErrorMessages);
+  int get hashCode => Object.hash(runtimeType, inputEmail, inputPassword,
+      isShowingErrorMessages, currentErrorMessageTag);
 
   @JsonKey(ignore: true)
   @override
@@ -340,7 +485,8 @@ abstract class _SignInFormState implements SignInFormState {
   const factory _SignInFormState(
       {required String inputEmail,
       required String inputPassword,
-      required bool isShowingErrorMessages}) = _$_SignInFormState;
+      required bool isShowingErrorMessages,
+      required String currentErrorMessageTag}) = _$_SignInFormState;
 
   @override
   String get inputEmail;
@@ -348,6 +494,8 @@ abstract class _SignInFormState implements SignInFormState {
   String get inputPassword;
   @override
   bool get isShowingErrorMessages;
+  @override
+  String get currentErrorMessageTag;
   @override
   @JsonKey(ignore: true)
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
