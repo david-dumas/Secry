@@ -76,6 +76,7 @@ class _SignupPageState extends State<SignupPage> {
                     verticalSpaceSmall,
                     TextFormField(
                       decoration: InputDecoration(
+                        prefixIcon: Icon(Icons.phone_android_sharp),
                         border: OutlineInputBorder(),
                         labelText: tr('account_phone'),
                       ),
