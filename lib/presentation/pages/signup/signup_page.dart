@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:secry/constants.dart';
+import 'package:country_icons/country_icons.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -76,7 +77,12 @@ class _SignupPageState extends State<SignupPage> {
                     verticalSpaceSmall,
                     TextFormField(
                       decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.phone_android_sharp),
+                        prefixIcon: Container(
+                          padding: EdgeInsets.all(10.0),
+                          child: Image.asset('icons/flags/png/nl.png',
+                              package: 'country_icons'),
+                          width: 30,
+                        ),
                         border: OutlineInputBorder(),
                         labelText: tr('account_phone'),
                       ),
