@@ -88,16 +88,19 @@ class _SignupPageState extends State<SignupPage> {
                                 child: CountryCodePicker(
                                   enabled: true,
                                   onChanged: (value) =>
-                                      print("on init ${value}"),
+                                      print("Selected: ${value.dialCode}"),
                                   // Initial selection
                                   initialSelection: 'NL',
                                   favorite: ['+31', 'NL'],
+                                  countryFilter: [
+                                    'NL',
+                                    'BE',
+                                    'ES',
+                                    'IT',
+                                    'FR',
+                                    'DE'
+                                  ],
                                   showFlagDialog: true,
-                                  // comparator: (a, b) =>
-                                  //     b.name!.compareTo(a.name!),
-                                  //Get the country information relevant to the initial selection
-                                  // onInit: (code) => print(
-                                  //     "on init ${code!.name} ${code.dialCode} ${code.name}"),
                                 ),
                               ),
                               border: OutlineInputBorder(),
