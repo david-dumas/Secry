@@ -46,12 +46,11 @@ class _SignupPageState extends State<SignupPage> {
                     TextFormField(
                       decoration: InputDecoration(
                         border: OutlineInputBorder(),
-                        //prefixIcon: Icon(Icons.email_outlined),
                         labelText: tr('account_first_name'),
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your first name';
+                          return tr('account_warning_please_enter_first_name');
                         }
                         return null;
                       },
@@ -65,7 +64,7 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your last name';
+                          return tr('account_warning_please_enter_last_name');
                         }
                         return null;
                       },
@@ -85,7 +84,8 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       validator: (String? value) {
                         if (value == null || value.isEmpty) {
-                          return 'Please enter your phone number';
+                          return tr(
+                              'account_warning_please_enter_phone_number');
                         }
                         return null;
                       },
@@ -107,9 +107,9 @@ class _SignupPageState extends State<SignupPage> {
                         final regExp = RegExp(pattern);
 
                         if (value == null || value.isEmpty) {
-                          return 'Please enter an email';
+                          return tr('account_warning_please_enter_email');
                         } else if (!regExp.hasMatch(value)) {
-                          return 'Enter a valid email';
+                          return tr('account_warning_please_enter_valid_email');
                         } else {
                           return null;
                         }
@@ -127,7 +127,8 @@ class _SignupPageState extends State<SignupPage> {
                       ),
                       validator: (value) {
                         if (value!.length < 6) {
-                          return 'Password must be at least 6 characters long';
+                          return tr(
+                              'account_warning_password_at_least_x_characters');
                         } else {
                           return null;
                         }
@@ -143,9 +144,8 @@ class _SignupPageState extends State<SignupPage> {
                         labelText: tr('account_repeat_password'),
                       ),
                       validator: (value) {
-                        print('counter value :' + _password);
                         if (value != _pass.text) {
-                          return 'Password does Not match';
+                          return tr('account_warning_password_does_not_match');
                         }
                         return null;
                       },
@@ -172,9 +172,7 @@ class _SignupPageState extends State<SignupPage> {
                             ),
                           ),
                           onPressed: () {
-                            // Validate will return true if the form is valid, or false if
                             final isValid = _formKey.currentState?.validate();
-                            // FocusScope.of(context).unfocus();
 
                             if (isValid!) {
                               _formKey.currentState?.save();
@@ -205,7 +203,7 @@ class _SignupPageState extends State<SignupPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  tr('By tapping register, you agree to our'),
+                  tr('account_terms_agree_text'),
                   textAlign: TextAlign.center,
                   style: mainContentTextStyleMedium,
                 ),
@@ -225,7 +223,7 @@ class _SignupPageState extends State<SignupPage> {
               mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
-                  tr('and'),
+                  tr('general_and'),
                   style: mainContentTextStyleMedium,
                 ),
                 TextButton(
