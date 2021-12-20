@@ -24,9 +24,6 @@ class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        // appBar: AppBar(
-        //   title: Text('Go back'),
-        // ),
         body: SingleChildScrollView(
       child: Padding(
         padding: pagePadding,
