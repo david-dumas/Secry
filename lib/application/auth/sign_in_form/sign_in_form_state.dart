@@ -2,7 +2,11 @@ part of 'sign_in_form_bloc.dart';
 
 @freezed
 abstract class SignInFormState with _$SignInFormState {
-  const factory SignInFormState({required int initialState}) = _SignInFormState;
+  const factory SignInFormState(
+      {required String inputEmail,
+      required String inputPassword,
+      required bool isShowingErrorMessages}) = _SignInFormState;
 
-  factory SignInFormState.initial() => SignInFormState(initialState: 0);
+  factory SignInFormState.initial() => SignInFormState(
+      inputEmail: '', inputPassword: '', isShowingErrorMessages: false);
 }

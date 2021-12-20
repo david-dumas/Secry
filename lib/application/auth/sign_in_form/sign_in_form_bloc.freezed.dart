@@ -181,9 +181,14 @@ abstract class _SignInForm implements SignInFormEvent {
 class _$SignInFormStateTearOff {
   const _$SignInFormStateTearOff();
 
-  _SignInFormState call({required int initialState}) {
+  _SignInFormState call(
+      {required String inputEmail,
+      required String inputPassword,
+      required bool isShowingErrorMessages}) {
     return _SignInFormState(
-      initialState: initialState,
+      inputEmail: inputEmail,
+      inputPassword: inputPassword,
+      isShowingErrorMessages: isShowingErrorMessages,
     );
   }
 }
@@ -193,7 +198,9 @@ const $SignInFormState = _$SignInFormStateTearOff();
 
 /// @nodoc
 mixin _$SignInFormState {
-  int get initialState => throw _privateConstructorUsedError;
+  String get inputEmail => throw _privateConstructorUsedError;
+  String get inputPassword => throw _privateConstructorUsedError;
+  bool get isShowingErrorMessages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -205,7 +212,8 @@ abstract class $SignInFormStateCopyWith<$Res> {
   factory $SignInFormStateCopyWith(
           SignInFormState value, $Res Function(SignInFormState) then) =
       _$SignInFormStateCopyWithImpl<$Res>;
-  $Res call({int initialState});
+  $Res call(
+      {String inputEmail, String inputPassword, bool isShowingErrorMessages});
 }
 
 /// @nodoc
@@ -219,13 +227,23 @@ class _$SignInFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? initialState = freezed,
+    Object? inputEmail = freezed,
+    Object? inputPassword = freezed,
+    Object? isShowingErrorMessages = freezed,
   }) {
     return _then(_value.copyWith(
-      initialState: initialState == freezed
-          ? _value.initialState
-          : initialState // ignore: cast_nullable_to_non_nullable
-              as int,
+      inputEmail: inputEmail == freezed
+          ? _value.inputEmail
+          : inputEmail // ignore: cast_nullable_to_non_nullable
+              as String,
+      inputPassword: inputPassword == freezed
+          ? _value.inputPassword
+          : inputPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      isShowingErrorMessages: isShowingErrorMessages == freezed
+          ? _value.isShowingErrorMessages
+          : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -237,7 +255,8 @@ abstract class _$SignInFormStateCopyWith<$Res>
           _SignInFormState value, $Res Function(_SignInFormState) then) =
       __$SignInFormStateCopyWithImpl<$Res>;
   @override
-  $Res call({int initialState});
+  $Res call(
+      {String inputEmail, String inputPassword, bool isShowingErrorMessages});
 }
 
 /// @nodoc
@@ -253,13 +272,23 @@ class __$SignInFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? initialState = freezed,
+    Object? inputEmail = freezed,
+    Object? inputPassword = freezed,
+    Object? isShowingErrorMessages = freezed,
   }) {
     return _then(_SignInFormState(
-      initialState: initialState == freezed
-          ? _value.initialState
-          : initialState // ignore: cast_nullable_to_non_nullable
-              as int,
+      inputEmail: inputEmail == freezed
+          ? _value.inputEmail
+          : inputEmail // ignore: cast_nullable_to_non_nullable
+              as String,
+      inputPassword: inputPassword == freezed
+          ? _value.inputPassword
+          : inputPassword // ignore: cast_nullable_to_non_nullable
+              as String,
+      isShowingErrorMessages: isShowingErrorMessages == freezed
+          ? _value.isShowingErrorMessages
+          : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -267,14 +296,21 @@ class __$SignInFormStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_SignInFormState implements _SignInFormState {
-  const _$_SignInFormState({required this.initialState});
+  const _$_SignInFormState(
+      {required this.inputEmail,
+      required this.inputPassword,
+      required this.isShowingErrorMessages});
 
   @override
-  final int initialState;
+  final String inputEmail;
+  @override
+  final String inputPassword;
+  @override
+  final bool isShowingErrorMessages;
 
   @override
   String toString() {
-    return 'SignInFormState(initialState: $initialState)';
+    return 'SignInFormState(inputEmail: $inputEmail, inputPassword: $inputPassword, isShowingErrorMessages: $isShowingErrorMessages)';
   }
 
   @override
@@ -282,12 +318,17 @@ class _$_SignInFormState implements _SignInFormState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignInFormState &&
-            (identical(other.initialState, initialState) ||
-                other.initialState == initialState));
+            (identical(other.inputEmail, inputEmail) ||
+                other.inputEmail == inputEmail) &&
+            (identical(other.inputPassword, inputPassword) ||
+                other.inputPassword == inputPassword) &&
+            (identical(other.isShowingErrorMessages, isShowingErrorMessages) ||
+                other.isShowingErrorMessages == isShowingErrorMessages));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, initialState);
+  int get hashCode => Object.hash(
+      runtimeType, inputEmail, inputPassword, isShowingErrorMessages);
 
   @JsonKey(ignore: true)
   @override
@@ -296,11 +337,17 @@ class _$_SignInFormState implements _SignInFormState {
 }
 
 abstract class _SignInFormState implements SignInFormState {
-  const factory _SignInFormState({required int initialState}) =
-      _$_SignInFormState;
+  const factory _SignInFormState(
+      {required String inputEmail,
+      required String inputPassword,
+      required bool isShowingErrorMessages}) = _$_SignInFormState;
 
   @override
-  int get initialState;
+  String get inputEmail;
+  @override
+  String get inputPassword;
+  @override
+  bool get isShowingErrorMessages;
   @override
   @JsonKey(ignore: true)
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
