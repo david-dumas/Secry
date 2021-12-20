@@ -117,7 +117,7 @@ class _SignupPageState extends State<SignupPage> {
                                       ),
                                     );
                                   },
-                                  child: const Text('Show country picker'),
+                                  child: const Text('Show countries'),
                                 ),
                               ),
                               border: OutlineInputBorder(),
