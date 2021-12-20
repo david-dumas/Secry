@@ -87,8 +87,12 @@ class _SignupPageState extends State<SignupPage> {
                                 padding: EdgeInsets.all(10.0),
                                 child: CountryCodePicker(
                                   enabled: true,
-                                  onChanged: (value) =>
-                                      print("Selected: ${value.dialCode}"),
+                                  onChanged: (value) => context
+                                      .read<SignUpFormBloc>()
+                                      .add(SignUpFormEvent.phoneDialCodeChanged(
+                                              value.dialCode.toString())
+                                          //print("Selected: ${value.dialCode}"
+                                          ),
                                   // Initial selection
                                   initialSelection: 'NL',
                                   favorite: ['+31', 'NL'],
@@ -209,6 +213,8 @@ class _SignupPageState extends State<SignupPage> {
                                   ),
                                 ),
                                 onPressed: () {
+                                  print("Current DialCode:" +
+                                      state.firstNameInput);
                                   final isValid =
                                       _formKey.currentState?.validate();
 
@@ -216,7 +222,8 @@ class _SignupPageState extends State<SignupPage> {
                                     _formKey.currentState?.save();
 
                                     final message =
-                                        'Firstname: ${state.firstNameInput}\nLastname: ${state.lastNameInput}\nPhone: ${state.phoneInput}\nPassword: ${state.passwordInput}\nEmail: ${state.emailInput}';
+                                        //'Firstname: ${state.firstNameInput}\nLastname: ${state.lastNameInput}\nPhone: ${state.phoneInput}\nPassword: ${state.passwordInput}\nEmail: ${state.emailInput}';
+                                        'DialCode: ${state}';
                                     final snackBar = SnackBar(
                                       content: Text(
                                         message,

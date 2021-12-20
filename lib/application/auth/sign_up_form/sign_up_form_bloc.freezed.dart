@@ -33,6 +33,12 @@ class _$SignUpFormEventTearOff {
     );
   }
 
+  _PhoneDialCodeChanged phoneDialCodeChanged(String newPhoneDialCode) {
+    return _PhoneDialCodeChanged(
+      newPhoneDialCode,
+    );
+  }
+
   _PhoneChanged phoneChanged(String newPhone) {
     return _PhoneChanged(
       newPhone,
@@ -68,6 +74,7 @@ mixin _$SignUpFormEvent {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -79,6 +86,7 @@ mixin _$SignUpFormEvent {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -90,6 +98,7 @@ mixin _$SignUpFormEvent {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -102,6 +111,7 @@ mixin _$SignUpFormEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -114,6 +124,7 @@ mixin _$SignUpFormEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -125,6 +136,7 @@ mixin _$SignUpFormEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -195,6 +207,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -209,6 +222,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -223,6 +237,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -241,6 +256,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -256,6 +272,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -270,6 +287,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -355,6 +373,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -369,6 +388,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -383,6 +403,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -401,6 +422,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -416,6 +438,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -430,6 +453,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -520,6 +544,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -534,6 +559,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -548,6 +574,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -566,6 +593,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -581,6 +609,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -595,6 +624,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -614,6 +644,179 @@ abstract class _LastNameChanged implements SignUpFormEvent {
   String get newLastName;
   @JsonKey(ignore: true)
   _$LastNameChangedCopyWith<_LastNameChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PhoneDialCodeChangedCopyWith<$Res> {
+  factory _$PhoneDialCodeChangedCopyWith(_PhoneDialCodeChanged value,
+          $Res Function(_PhoneDialCodeChanged) then) =
+      __$PhoneDialCodeChangedCopyWithImpl<$Res>;
+  $Res call({String newPhoneDialCode});
+}
+
+/// @nodoc
+class __$PhoneDialCodeChangedCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
+    implements _$PhoneDialCodeChangedCopyWith<$Res> {
+  __$PhoneDialCodeChangedCopyWithImpl(
+      _PhoneDialCodeChanged _value, $Res Function(_PhoneDialCodeChanged) _then)
+      : super(_value, (v) => _then(v as _PhoneDialCodeChanged));
+
+  @override
+  _PhoneDialCodeChanged get _value => super._value as _PhoneDialCodeChanged;
+
+  @override
+  $Res call({
+    Object? newPhoneDialCode = freezed,
+  }) {
+    return _then(_PhoneDialCodeChanged(
+      newPhoneDialCode == freezed
+          ? _value.newPhoneDialCode
+          : newPhoneDialCode // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
+  const _$_PhoneDialCodeChanged(this.newPhoneDialCode);
+
+  @override
+  final String newPhoneDialCode;
+
+  @override
+  String toString() {
+    return 'SignUpFormEvent.phoneDialCodeChanged(newPhoneDialCode: $newPhoneDialCode)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PhoneDialCodeChanged &&
+            (identical(other.newPhoneDialCode, newPhoneDialCode) ||
+                other.newPhoneDialCode == newPhoneDialCode));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, newPhoneDialCode);
+
+  @JsonKey(ignore: true)
+  @override
+  _$PhoneDialCodeChangedCopyWith<_PhoneDialCodeChanged> get copyWith =>
+      __$PhoneDialCodeChangedCopyWithImpl<_PhoneDialCodeChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String newFirstName) firstNameChanged,
+    required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
+    required TResult Function(String newPhone) phoneChanged,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newFirstPassword) firstPasswordChanged,
+    required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+  }) {
+    return phoneDialCodeChanged(newPhoneDialCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+  }) {
+    return phoneDialCodeChanged?.call(newPhoneDialCode);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    required TResult orElse(),
+  }) {
+    if (phoneDialCodeChanged != null) {
+      return phoneDialCodeChanged(newPhoneDialCode);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_FirstNameChanged value) firstNameChanged,
+    required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
+        repeatPasswordChanged,
+  }) {
+    return phoneDialCodeChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+  }) {
+    return phoneDialCodeChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    required TResult orElse(),
+  }) {
+    if (phoneDialCodeChanged != null) {
+      return phoneDialCodeChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PhoneDialCodeChanged implements SignUpFormEvent {
+  const factory _PhoneDialCodeChanged(String newPhoneDialCode) =
+      _$_PhoneDialCodeChanged;
+
+  String get newPhoneDialCode;
+  @JsonKey(ignore: true)
+  _$PhoneDialCodeChangedCopyWith<_PhoneDialCodeChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -685,6 +888,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -699,6 +903,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -713,6 +918,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -731,6 +937,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -746,6 +953,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -760,6 +968,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -850,6 +1059,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -864,6 +1074,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -878,6 +1089,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -896,6 +1108,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -911,6 +1124,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -925,6 +1139,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -1016,6 +1231,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -1030,6 +1246,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -1044,6 +1261,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -1062,6 +1280,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -1077,6 +1296,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -1091,6 +1311,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -1183,6 +1404,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     required TResult Function() initialized,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
     required TResult Function(String newPhone) phoneChanged,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
@@ -1197,6 +1419,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -1211,6 +1434,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function()? initialized,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
     TResult Function(String newPhone)? phoneChanged,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
@@ -1229,6 +1453,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
     required TResult Function(_PhoneChanged value) phoneChanged,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
@@ -1244,6 +1469,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -1258,6 +1484,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
     TResult Function(_PhoneChanged value)? phoneChanged,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
@@ -1290,6 +1517,7 @@ class _$SignUpFormStateTearOff {
       required String lastNameInput,
       required String emailInput,
       required String phoneInput,
+      required String phoneDialCodeInput,
       required String passwordInput,
       required String repeatPasswordInput}) {
     return _SignUpFormState(
@@ -1297,6 +1525,7 @@ class _$SignUpFormStateTearOff {
       lastNameInput: lastNameInput,
       emailInput: emailInput,
       phoneInput: phoneInput,
+      phoneDialCodeInput: phoneDialCodeInput,
       passwordInput: passwordInput,
       repeatPasswordInput: repeatPasswordInput,
     );
@@ -1312,6 +1541,7 @@ mixin _$SignUpFormState {
   String get lastNameInput => throw _privateConstructorUsedError;
   String get emailInput => throw _privateConstructorUsedError;
   String get phoneInput => throw _privateConstructorUsedError;
+  String get phoneDialCodeInput => throw _privateConstructorUsedError;
   String get passwordInput => throw _privateConstructorUsedError;
   String get repeatPasswordInput => throw _privateConstructorUsedError;
 
@@ -1330,6 +1560,7 @@ abstract class $SignUpFormStateCopyWith<$Res> {
       String lastNameInput,
       String emailInput,
       String phoneInput,
+      String phoneDialCodeInput,
       String passwordInput,
       String repeatPasswordInput});
 }
@@ -1349,6 +1580,7 @@ class _$SignUpFormStateCopyWithImpl<$Res>
     Object? lastNameInput = freezed,
     Object? emailInput = freezed,
     Object? phoneInput = freezed,
+    Object? phoneDialCodeInput = freezed,
     Object? passwordInput = freezed,
     Object? repeatPasswordInput = freezed,
   }) {
@@ -1368,6 +1600,10 @@ class _$SignUpFormStateCopyWithImpl<$Res>
       phoneInput: phoneInput == freezed
           ? _value.phoneInput
           : phoneInput // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneDialCodeInput: phoneDialCodeInput == freezed
+          ? _value.phoneDialCodeInput
+          : phoneDialCodeInput // ignore: cast_nullable_to_non_nullable
               as String,
       passwordInput: passwordInput == freezed
           ? _value.passwordInput
@@ -1393,6 +1629,7 @@ abstract class _$SignUpFormStateCopyWith<$Res>
       String lastNameInput,
       String emailInput,
       String phoneInput,
+      String phoneDialCodeInput,
       String passwordInput,
       String repeatPasswordInput});
 }
@@ -1414,6 +1651,7 @@ class __$SignUpFormStateCopyWithImpl<$Res>
     Object? lastNameInput = freezed,
     Object? emailInput = freezed,
     Object? phoneInput = freezed,
+    Object? phoneDialCodeInput = freezed,
     Object? passwordInput = freezed,
     Object? repeatPasswordInput = freezed,
   }) {
@@ -1433,6 +1671,10 @@ class __$SignUpFormStateCopyWithImpl<$Res>
       phoneInput: phoneInput == freezed
           ? _value.phoneInput
           : phoneInput // ignore: cast_nullable_to_non_nullable
+              as String,
+      phoneDialCodeInput: phoneDialCodeInput == freezed
+          ? _value.phoneDialCodeInput
+          : phoneDialCodeInput // ignore: cast_nullable_to_non_nullable
               as String,
       passwordInput: passwordInput == freezed
           ? _value.passwordInput
@@ -1454,6 +1696,7 @@ class _$_SignUpFormState implements _SignUpFormState {
       required this.lastNameInput,
       required this.emailInput,
       required this.phoneInput,
+      required this.phoneDialCodeInput,
       required this.passwordInput,
       required this.repeatPasswordInput});
 
@@ -1466,13 +1709,15 @@ class _$_SignUpFormState implements _SignUpFormState {
   @override
   final String phoneInput;
   @override
+  final String phoneDialCodeInput;
+  @override
   final String passwordInput;
   @override
   final String repeatPasswordInput;
 
   @override
   String toString() {
-    return 'SignUpFormState(firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput)';
+    return 'SignUpFormState(firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, phoneDialCodeInput: $phoneDialCodeInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput)';
   }
 
   @override
@@ -1488,6 +1733,8 @@ class _$_SignUpFormState implements _SignUpFormState {
                 other.emailInput == emailInput) &&
             (identical(other.phoneInput, phoneInput) ||
                 other.phoneInput == phoneInput) &&
+            (identical(other.phoneDialCodeInput, phoneDialCodeInput) ||
+                other.phoneDialCodeInput == phoneDialCodeInput) &&
             (identical(other.passwordInput, passwordInput) ||
                 other.passwordInput == passwordInput) &&
             (identical(other.repeatPasswordInput, repeatPasswordInput) ||
@@ -1495,8 +1742,15 @@ class _$_SignUpFormState implements _SignUpFormState {
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, firstNameInput, lastNameInput,
-      emailInput, phoneInput, passwordInput, repeatPasswordInput);
+  int get hashCode => Object.hash(
+      runtimeType,
+      firstNameInput,
+      lastNameInput,
+      emailInput,
+      phoneInput,
+      phoneDialCodeInput,
+      passwordInput,
+      repeatPasswordInput);
 
   @JsonKey(ignore: true)
   @override
@@ -1510,6 +1764,7 @@ abstract class _SignUpFormState implements SignUpFormState {
       required String lastNameInput,
       required String emailInput,
       required String phoneInput,
+      required String phoneDialCodeInput,
       required String passwordInput,
       required String repeatPasswordInput}) = _$_SignUpFormState;
 
@@ -1521,6 +1776,8 @@ abstract class _SignUpFormState implements SignUpFormState {
   String get emailInput;
   @override
   String get phoneInput;
+  @override
+  String get phoneDialCodeInput;
   @override
   String get passwordInput;
   @override

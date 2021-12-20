@@ -7,6 +7,7 @@ abstract class SignUpFormState with _$SignUpFormState {
     required String lastNameInput,
     required String emailInput,
     required String phoneInput,
+    required String phoneDialCodeInput,
     required String passwordInput,
     required String repeatPasswordInput,
   }) = _SignUpFormState;
@@ -16,6 +17,7 @@ abstract class SignUpFormState with _$SignUpFormState {
       lastNameInput: '',
       emailInput: '',
       phoneInput: '',
+      phoneDialCodeInput: '',
       passwordInput: '',
       repeatPasswordInput: '');
 }
