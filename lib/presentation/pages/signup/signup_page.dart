@@ -80,12 +80,12 @@ class _SignupPageState extends State<SignupPage> {
                           verticalSpaceSmall,
                           TextFormField(
                             decoration: InputDecoration(
-                              prefixIcon: Container(
-                                padding: EdgeInsets.all(10.0),
-                                child: Image.asset('icons/flags/png/nl.png',
-                                    package: 'country_icons'),
-                                width: 30,
-                              ),
+                              // prefixIcon: Container(
+                              //   padding: EdgeInsets.all(10.0),
+                              //   child: Image.asset('icons/flags/png/nl.png',
+                              //       package: 'country_icons'),
+                              //   width: 30,
+                              // ),
                               border: OutlineInputBorder(),
                               labelText: tr('account_phone'),
                             ),
