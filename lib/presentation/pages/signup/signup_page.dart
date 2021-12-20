@@ -257,21 +257,29 @@ class _SignupPageState extends State<SignupPage> {
                       )),
                   RichText(
                     text: TextSpan(
-                      style: TextStyle(color: Colors.grey, fontSize: 20.0),
+                      style: mainContentTextStyleMedium,
                       children: <TextSpan>[
+                        TextSpan(text: tr("account_terms_agree_text")),
+                        TextSpan(text: " "),
                         TextSpan(
-                            text: 'By clicking Sign Up, you agree to our '),
-                        TextSpan(
-                            text: 'Terms of Service',
-                            style: TextStyle(color: Colors.blue),
+                            text: tr("account_terms_of_use"),
+                            style: TextStyle(
+                                color: kPrimaryColor,
+                                decoration: TextDecoration.underline,
+                                fontWeight: FontWeight.bold),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 print('Terms of Service"');
                               }),
-                        TextSpan(text: ' and that you have read our '),
+                        TextSpan(text: " "),
+                        TextSpan(text: tr("general_and")),
+                        TextSpan(text: " "),
                         TextSpan(
-                            text: 'Privacy Policy',
-                            style: TextStyle(color: Colors.blue),
+                            text: tr("account_privacy_policy"),
+                            style: TextStyle(
+                                color: kPrimaryColor,
+                                decoration: TextDecoration.underline,
+                                fontWeight: FontWeight.bold),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 print('Privacy Policy"');
