@@ -5,6 +5,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:secry/constants.dart';
 
+import 'package:secry/injection.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => SignInFormBloc(),
+      create: (context) => getIt<SignInFormBloc>(),
       child: BlocBuilder<SignInFormBloc, SignInFormState>(
         builder: (context, state) {
           return Scaffold(
