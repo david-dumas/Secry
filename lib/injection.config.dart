@@ -28,7 +28,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.singleton<_i4.IAuthFacade>(
       _i5.FirebaseAuthFacade(get<_i3.FirebaseAuth>()));
   gh.factory<_i6.MainBloc>(() => _i6.MainBloc());
-  gh.factory<_i7.SignInFormBloc>(() => _i7.SignInFormBloc());
+  gh.factory<_i7.SignInFormBloc>(
+      () => _i7.SignInFormBloc(get<_i4.IAuthFacade>()));
   gh.factory<_i8.SignUpFormBloc>(() => _i8.SignUpFormBloc());
   gh.factory<_i9.SplashBloc>(() => _i9.SplashBloc());
   gh.factory<_i10.TabbarBloc>(() => _i10.TabbarBloc());
