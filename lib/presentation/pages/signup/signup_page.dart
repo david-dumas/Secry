@@ -100,8 +100,8 @@ class _SignupPageState extends State<SignupPage> {
                                       countryListTheme: CountryListThemeData(
                                         // Optional. Sets the border radius for the bottomsheet.
                                         borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(40.0),
-                                          topRight: Radius.circular(40.0),
+                                          topLeft: Radius.circular(20.0),
+                                          topRight: Radius.circular(20.0),
                                         ),
                                         // Optional. Styles the search field.
                                         inputDecoration: InputDecoration(
@@ -259,24 +259,26 @@ class _SignupPageState extends State<SignupPage> {
                     text: TextSpan(
                       style: mainContentTextStyleMedium,
                       children: <TextSpan>[
-                        TextSpan(text: tr("account_terms_agree_text")),
+                        TextSpan(text: tr("account_terms_agree_text") + " "),
                         TextSpan(
-                            text: " " + tr("account_terms_of_use") + " ",
+                            text: tr("account_terms_of_use"),
                             style: TextStyle(
-                                color: kPrimaryColor,
-                                decoration: TextDecoration.underline,
-                                fontWeight: FontWeight.bold),
+                              color: kPrimaryColor,
+                              decoration: TextDecoration.underline,
+                              //fontWeight: FontWeight.bold
+                            ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 print('Terms of Service"');
                               }),
-                        TextSpan(text: tr("general_and")),
+                        TextSpan(text: " " + tr("general_and") + " "),
                         TextSpan(
-                            text: " " + tr("account_privacy_policy"),
+                            text: tr("account_privacy_policy"),
                             style: TextStyle(
-                                color: kPrimaryColor,
-                                decoration: TextDecoration.underline,
-                                fontWeight: FontWeight.bold),
+                              color: kPrimaryColor,
+                              decoration: TextDecoration.underline,
+                              //fontWeight: FontWeight.bold
+                            ),
                             recognizer: TapGestureRecognizer()
                               ..onTap = () {
                                 print('Privacy Policy"');
