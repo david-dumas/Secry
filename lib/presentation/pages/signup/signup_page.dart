@@ -260,9 +260,8 @@ class _SignupPageState extends State<SignupPage> {
                       style: mainContentTextStyleMedium,
                       children: <TextSpan>[
                         TextSpan(text: tr("account_terms_agree_text")),
-                        TextSpan(text: " "),
                         TextSpan(
-                            text: tr("account_terms_of_use"),
+                            text: " " + tr("account_terms_of_use") + " ",
                             style: TextStyle(
                                 color: kPrimaryColor,
                                 decoration: TextDecoration.underline,
@@ -271,11 +270,9 @@ class _SignupPageState extends State<SignupPage> {
                               ..onTap = () {
                                 print('Terms of Service"');
                               }),
-                        TextSpan(text: " "),
                         TextSpan(text: tr("general_and")),
-                        TextSpan(text: " "),
                         TextSpan(
-                            text: tr("account_privacy_policy"),
+                            text: " " + tr("account_privacy_policy"),
                             style: TextStyle(
                                 color: kPrimaryColor,
                                 decoration: TextDecoration.underline,
@@ -287,43 +284,6 @@ class _SignupPageState extends State<SignupPage> {
                       ],
                     ),
                   ),
-                  // Text(
-                  //   tr('account_terms_agree_text'),
-                  //   textAlign: TextAlign.center,
-                  //   style: mainContentTextStyleMedium,
-                  // ),
-                  // TextButton(
-                  //   onPressed: () {},
-                  //   child: Text(
-                  //     tr('account_terms_of_use'),
-                  //     textAlign: TextAlign.center,
-                  //     style: TextStyle(
-                  //       decoration: TextDecoration.underline,
-                  //     ),
-                  //   ),
-                  // ),
-                  // Text(
-                  //   tr('general_and'),
-                  //   style: mainContentTextStyleMedium,
-                  // ),
-                  // Row(
-                  //   mainAxisSize: MainAxisSize.min,
-                  //   children: [
-                  //     Text(
-                  //       tr('general_and'),
-                  //       style: mainContentTextStyleMedium,
-                  //     ),
-                  //     TextButton(
-                  //       onPressed: () {},
-                  //       child: Text(
-                  //         tr('account_privacy_policy'),
-                  //         style: TextStyle(
-                  //           decoration: TextDecoration.underline,
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
                 ],
               ),
             ),
