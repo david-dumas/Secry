@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:easy_localization/easy_localization.dart';
@@ -7,6 +8,7 @@ import 'package:secry/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:country_picker/country_picker.dart';
+import 'package:country_code_picker/country_code_picker.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -83,41 +85,26 @@ class _SignupPageState extends State<SignupPage> {
                             decoration: InputDecoration(
                               prefixIcon: Container(
                                 padding: EdgeInsets.all(10.0),
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    showCountryPicker(
-                                      context: context,
-                                      //Optional.  Can be used to exclude(remove) one ore more country from the countries list (optional).
-                                      exclude: <String>['KN', 'MF'],
-                                      //Optional. Shows phone code before the country name.
-                                      showPhoneCode: true,
-                                      onSelect: (Country country) {
-                                        print(
-                                            'Select country: ${country.displayName}');
-                                      },
-                                      // Optional. Sets the theme for the country list picker.
-                                      countryListTheme: CountryListThemeData(
-                                        // Optional. Sets the border radius for the bottomsheet.
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(40.0),
-                                          topRight: Radius.circular(40.0),
-                                        ),
-                                        // Optional. Styles the search field.
-                                        inputDecoration: InputDecoration(
-                                          labelText: 'Search',
-                                          hintText: 'Start typing to search',
-                                          prefixIcon: const Icon(Icons.search),
-                                          border: OutlineInputBorder(
-                                            borderSide: BorderSide(
-                                              color: const Color(0xFF8C98A8)
-                                                  .withOpacity(0.2),
-                                            ),
+                                child: CountryCodePicker(
+                                  enabled: true,
+                                  onChanged: (value) => context
+                                      .read<SignUpFormBloc>()
+                                      .add(SignUpFormEvent.phoneDialCodeChanged(
+                                              value.dialCode.toString())
+                                          //print("Selected: ${value.dialCode}"
                                           ),
-                                        ),
-                                      ),
-                                    );
-                                  },
-                                  child: const Text('Show country picker'),
+                                  // Initial selection
+                                  initialSelection: 'NL',
+                                  favorite: ['+31', 'NL'],
+                                  countryFilter: [
+                                    'NL',
+                                    'BE',
+                                    'ES',
+                                    'IT',
+                                    'FR',
+                                    'DE'
+                                  ],
+                                  showFlagDialog: true,
                                 ),
                               ),
                               border: OutlineInputBorder(),
@@ -226,6 +213,8 @@ class _SignupPageState extends State<SignupPage> {
                                   ),
                                 ),
                                 onPressed: () {
+                                  print("Current DialCode:" +
+                                      state.firstNameInput);
                                   final isValid =
                                       _formKey.currentState?.validate();
 
@@ -233,7 +222,8 @@ class _SignupPageState extends State<SignupPage> {
                                     _formKey.currentState?.save();
 
                                     final message =
-                                        'Firstname: ${state.firstNameInput}\nLastname: ${state.lastNameInput}\nPhone: ${state.phoneInput}\nPassword: ${state.passwordInput}\nEmail: ${state.emailInput}';
+                                        //'Firstname: ${state.firstNameInput}\nLastname: ${state.lastNameInput}\nPhone: ${state.phoneInput}\nPassword: ${state.passwordInput}\nEmail: ${state.emailInput}';
+                                        'DialCode: ${state}';
                                     final snackBar = SnackBar(
                                       content: Text(
                                         message,
@@ -254,43 +244,36 @@ class _SignupPageState extends State<SignupPage> {
                           ),
                         ],
                       )),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        tr('account_terms_agree_text'),
-                        textAlign: TextAlign.center,
-                        style: mainContentTextStyleMedium,
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          tr('account_terms_of_use'),
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text(
-                        tr('general_and'),
-                        style: mainContentTextStyleMedium,
-                      ),
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          tr('account_privacy_policy'),
-                          style: TextStyle(
-                            decoration: TextDecoration.underline,
-                          ),
-                        ),
-                      ),
-                    ],
+                  RichText(
+                    text: TextSpan(
+                      style: mainContentTextStyleMedium,
+                      children: <TextSpan>[
+                        TextSpan(text: tr("account_terms_agree_text") + " "),
+                        TextSpan(
+                            text: tr("account_terms_of_use"),
+                            style: TextStyle(
+                              color: kPrimaryColor,
+                              decoration: TextDecoration.underline,
+                              //fontWeight: FontWeight.bold
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                print('Terms of Service"');
+                              }),
+                        TextSpan(text: " " + tr("general_and") + " "),
+                        TextSpan(
+                            text: tr("account_privacy_policy"),
+                            style: TextStyle(
+                              color: kPrimaryColor,
+                              decoration: TextDecoration.underline,
+                              //fontWeight: FontWeight.bold
+                            ),
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () {
+                                print('Privacy Policy"');
+                              }),
+                      ],
+                    ),
                   ),
                 ],
               ),

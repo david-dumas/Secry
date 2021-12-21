@@ -7,6 +7,8 @@ abstract class SignUpFormEvent with _$SignUpFormEvent {
       _FirstNameChanged;
   const factory SignUpFormEvent.lastNameChanged(String newLastName) =
       _LastNameChanged;
+  const factory SignUpFormEvent.phoneDialCodeChanged(String newPhoneDialCode) =
+      _PhoneDialCodeChanged;
   const factory SignUpFormEvent.phoneChanged(String newPhone) = _PhoneChanged;
   const factory SignUpFormEvent.emailChanged(String newEmail) = _EmailChanged;
   const factory SignUpFormEvent.firstPasswordChanged(String newFirstPassword) =
