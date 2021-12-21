@@ -6,11 +6,14 @@ abstract class SignInFormState with _$SignInFormState {
       {required String inputEmail,
       required String inputPassword,
       required bool isShowingErrorMessages,
-      required String currentErrorMessageTag}) = _SignInFormState;
+      required String currentErrorMessageTag,
+      required Option<Either<AuthFailure, Unit>>
+          signInFailureOrUnitOption}) = _SignInFormState;
 
   factory SignInFormState.initial() => SignInFormState(
       inputEmail: '',
       inputPassword: '',
       isShowingErrorMessages: false,
-      currentErrorMessageTag: '');
+      currentErrorMessageTag: '',
+      signInFailureOrUnitOption: none());
 }

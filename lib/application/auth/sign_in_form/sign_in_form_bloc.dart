@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
-import 'package:easy_localization/easy_localization.dart';
+import 'package:dartz/dartz.dart';
+import 'package:secry/domain/auth/auth_failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/auth/i_auth_facade.dart';
@@ -21,6 +22,12 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       SignInFormEvent event, Emitter<SignInFormState> emit) async {
     await event.map(
       initialized: (e) async {},
+      emailChanged: (e) async {
+        emit(state.copyWith(inputEmail: e.newEmail));
+      },
+      passwordChanged: (e) async {
+        emit(state.copyWith(inputPassword: e.newPassword));
+      },
       signInPressed: (e) async {
         final failureOrUnit = await _authFacade.signIn(
             email: state.inputEmail, password: state.inputPassword);

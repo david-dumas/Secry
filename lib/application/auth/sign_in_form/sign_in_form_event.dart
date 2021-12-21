@@ -4,4 +4,7 @@ part of 'sign_in_form_bloc.dart';
 abstract class SignInFormEvent with _$SignInFormEvent {
   const factory SignInFormEvent.initialized() = _SignInForm;
   const factory SignInFormEvent.signInPressed() = SignInPressed;
+  const factory SignInFormEvent.emailChanged(String newEmail) = _EmailChanged;
+  const factory SignInFormEvent.passwordChanged(String newPassword) =
+      _PasswordChanged;
 }

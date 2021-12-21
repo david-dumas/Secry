@@ -46,6 +46,9 @@ class _LoginPageState extends State<LoginPage> {
                         prefixIcon: Icon(Icons.email_outlined),
                         labelText: tr('account_email'),
                       ),
+                      onChanged: (value) => context
+                          .read<SignInFormBloc>()
+                          .add(SignInFormEvent.emailChanged(value)),
                     ),
                     SizedBox(height: 12),
                     TextFormField(
@@ -55,6 +58,9 @@ class _LoginPageState extends State<LoginPage> {
                         prefixIcon: Icon(Icons.lock_outline),
                         labelText: tr('account_password'),
                       ),
+                      onChanged: (value) => context
+                          .read<SignInFormBloc>()
+                          .add(SignInFormEvent.passwordChanged(value)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.min,
