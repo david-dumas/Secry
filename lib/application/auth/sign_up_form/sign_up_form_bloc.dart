@@ -23,22 +23,22 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
         emit(state.copyWith(firstNameInput: e.newFirstName));
       },
       lastNameChanged: (e) async {
-        emit(state.copyWith(firstNameInput: e.newLastName));
+        emit(state.copyWith(lastNameInput: e.newLastName));
       },
       phoneDialCodeChanged: (e) async {
-        emit(state.copyWith(firstNameInput: e.newPhoneDialCode));
+        emit(state.copyWith(phoneDialCodeInput: e.newPhoneDialCode));
       },
       phoneChanged: (e) async {
-        emit(state.copyWith(firstNameInput: e.newPhone));
+        emit(state.copyWith(phoneInput: e.newPhone));
       },
       emailChanged: (e) async {
-        emit(state.copyWith(firstNameInput: e.newEmail));
+        emit(state.copyWith(emailInput: e.newEmail));
       },
       firstPasswordChanged: (e) async {
-        emit(state.copyWith(firstNameInput: e.newFirstPassword));
+        emit(state.copyWith(passwordInput: e.newFirstPassword));
       },
       repeatPasswordChanged: (e) async {
-        emit(state.copyWith(firstNameInput: e.newRepeatPassword));
+        emit(state.copyWith(repeatPasswordInput: e.newRepeatPassword));
       },
     );
   }

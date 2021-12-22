@@ -212,27 +212,26 @@ class _SignupPageState extends State<SignupPage> {
                                   ),
                                 ),
                                 onPressed: () {
-                                  print("Current DialCode:" +
-                                      state.firstNameInput);
-                                  final isValid =
-                                      _formKey.currentState?.validate();
+                                  print("Logged:" + state.firstNameInput);
+                                  // final isValid =
+                                  //     _formKey.currentState?.validate();
 
-                                  if (isValid!) {
-                                    _formKey.currentState?.save();
+                                  // if (isValid!) {
+                                  //   _formKey.currentState?.save();
 
-                                    final message =
-                                        //'Firstname: ${state.firstNameInput}\nLastname: ${state.lastNameInput}\nPhone: ${state.phoneInput}\nPassword: ${state.passwordInput}\nEmail: ${state.emailInput}';
-                                        'DialCode: ${state}';
-                                    final snackBar = SnackBar(
-                                      content: Text(
-                                        message,
-                                        style: TextStyle(fontSize: 18),
-                                      ),
-                                      backgroundColor: Colors.green,
-                                    );
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(snackBar);
-                                  }
+                                  //   final message =
+                                  //       //'Firstname: ${state.firstNameInput}\nLastname: ${state.lastNameInput}\nPhone: ${state.phoneInput}\nPassword: ${state.passwordInput}\nEmail: ${state.emailInput}';
+                                  //       'DialCode: ${state}';
+                                  //   final snackBar = SnackBar(
+                                  //     content: Text(
+                                  //       message,
+                                  //       style: TextStyle(fontSize: 18),
+                                  //     ),
+                                  //     backgroundColor: Colors.green,
+                                  //   );
+                                  //   ScaffoldMessenger.of(context)
+                                  //       .showSnackBar(snackBar);
+                                  // }
                                 },
                                 child: Text(
                                   tr('action_register'),
