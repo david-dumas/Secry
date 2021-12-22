@@ -7,7 +7,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
-import 'package:country_picker/country_picker.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 
 class SignupPage extends StatefulWidget {
