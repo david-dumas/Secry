@@ -4,21 +4,26 @@ part 'user.freezed.dart';
 
 @freezed
 class User with _$User {
-  const factory User({
-    required String uid,
-    required String firstName,
-    String? middleName,
-    String? surname,
-    required String email,
-  }) = _User;
+  const factory User(
+      {String? uid,
+      required String firstName,
+      required String lastName,
+      required String email,
+      String? phone}) = _User;
 
   factory User.fromJsonMap(String uid, Map<String, dynamic> json) {
     return User(
-      uid: uid,
-      firstName: json['firstName'],
-      middleName: json['middleName'],
-      surname: json['surname'],
-      email: json['email'],
-    );
+        uid: uid,
+        firstName: json['firstName'],
+        lastName: json['lastName'],
+        email: json['email'],
+        phone: json['phone']);
   }
+
+  Map<String, dynamic> toJson() => {
+        'email': email,
+        'phoneNumber': phone,
+        'firstName': firstName,
+        'lastName': lastName
+      };
 }

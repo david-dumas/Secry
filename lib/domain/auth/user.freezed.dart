@@ -18,17 +18,17 @@ class _$UserTearOff {
   const _$UserTearOff();
 
   _User call(
-      {required String uid,
+      {String? uid,
       required String firstName,
-      String? middleName,
-      String? surname,
-      required String email}) {
+      required String lastName,
+      required String email,
+      String? phone}) {
     return _User(
       uid: uid,
       firstName: firstName,
-      middleName: middleName,
-      surname: surname,
+      lastName: lastName,
       email: email,
+      phone: phone,
     );
   }
 }
@@ -38,11 +38,11 @@ const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  String get uid => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
   String get firstName => throw _privateConstructorUsedError;
-  String? get middleName => throw _privateConstructorUsedError;
-  String? get surname => throw _privateConstructorUsedError;
+  String get lastName => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
+  String? get phone => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
@@ -53,11 +53,11 @@ abstract class $UserCopyWith<$Res> {
   factory $UserCopyWith(User value, $Res Function(User) then) =
       _$UserCopyWithImpl<$Res>;
   $Res call(
-      {String uid,
+      {String? uid,
       String firstName,
-      String? middleName,
-      String? surname,
-      String email});
+      String lastName,
+      String email,
+      String? phone});
 }
 
 /// @nodoc
@@ -72,31 +72,31 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
   $Res call({
     Object? uid = freezed,
     Object? firstName = freezed,
-    Object? middleName = freezed,
-    Object? surname = freezed,
+    Object? lastName = freezed,
     Object? email = freezed,
+    Object? phone = freezed,
   }) {
     return _then(_value.copyWith(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      middleName: middleName == freezed
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surname: surname == freezed
-          ? _value.surname
-          : surname // ignore: cast_nullable_to_non_nullable
-              as String?,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -107,11 +107,11 @@ abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
       __$UserCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String uid,
+      {String? uid,
       String firstName,
-      String? middleName,
-      String? surname,
-      String email});
+      String lastName,
+      String email,
+      String? phone});
 }
 
 /// @nodoc
@@ -127,31 +127,31 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
   $Res call({
     Object? uid = freezed,
     Object? firstName = freezed,
-    Object? middleName = freezed,
-    Object? surname = freezed,
+    Object? lastName = freezed,
     Object? email = freezed,
+    Object? phone = freezed,
   }) {
     return _then(_User(
       uid: uid == freezed
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       firstName: firstName == freezed
           ? _value.firstName
           : firstName // ignore: cast_nullable_to_non_nullable
               as String,
-      middleName: middleName == freezed
-          ? _value.middleName
-          : middleName // ignore: cast_nullable_to_non_nullable
-              as String?,
-      surname: surname == freezed
-          ? _value.surname
-          : surname // ignore: cast_nullable_to_non_nullable
-              as String?,
+      lastName: lastName == freezed
+          ? _value.lastName
+          : lastName // ignore: cast_nullable_to_non_nullable
+              as String,
       email: email == freezed
           ? _value.email
           : email // ignore: cast_nullable_to_non_nullable
               as String,
+      phone: phone == freezed
+          ? _value.phone
+          : phone // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -160,26 +160,26 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
 class _$_User implements _User {
   const _$_User(
-      {required this.uid,
+      {this.uid,
       required this.firstName,
-      this.middleName,
-      this.surname,
-      required this.email});
+      required this.lastName,
+      required this.email,
+      this.phone});
 
   @override
-  final String uid;
+  final String? uid;
   @override
   final String firstName;
   @override
-  final String? middleName;
-  @override
-  final String? surname;
+  final String lastName;
   @override
   final String email;
+  @override
+  final String? phone;
 
   @override
   String toString() {
-    return 'User(uid: $uid, firstName: $firstName, middleName: $middleName, surname: $surname, email: $email)';
+    return 'User(uid: $uid, firstName: $firstName, lastName: $lastName, email: $email, phone: $phone)';
   }
 
   @override
@@ -190,15 +190,15 @@ class _$_User implements _User {
             (identical(other.uid, uid) || other.uid == uid) &&
             (identical(other.firstName, firstName) ||
                 other.firstName == firstName) &&
-            (identical(other.middleName, middleName) ||
-                other.middleName == middleName) &&
-            (identical(other.surname, surname) || other.surname == surname) &&
-            (identical(other.email, email) || other.email == email));
+            (identical(other.lastName, lastName) ||
+                other.lastName == lastName) &&
+            (identical(other.email, email) || other.email == email) &&
+            (identical(other.phone, phone) || other.phone == phone));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, uid, firstName, middleName, surname, email);
+      Object.hash(runtimeType, uid, firstName, lastName, email, phone);
 
   @JsonKey(ignore: true)
   @override
@@ -208,22 +208,22 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   const factory _User(
-      {required String uid,
+      {String? uid,
       required String firstName,
-      String? middleName,
-      String? surname,
-      required String email}) = _$_User;
+      required String lastName,
+      required String email,
+      String? phone}) = _$_User;
 
   @override
-  String get uid;
+  String? get uid;
   @override
   String get firstName;
   @override
-  String? get middleName;
-  @override
-  String? get surname;
+  String get lastName;
   @override
   String get email;
+  @override
+  String? get phone;
   @override
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;

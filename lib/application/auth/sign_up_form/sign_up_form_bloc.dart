@@ -5,6 +5,9 @@ import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+import 'package:secry/domain/auth/i_authentication_interface.dart';
+import 'package:secry/domain/auth/user.dart';
+import 'package:secry/infrastructure/auth/authentication_repository.dart';
 
 part 'sign_up_form_event.dart';
 part 'sign_up_form_state.dart';
@@ -12,7 +15,10 @@ part 'sign_up_form_bloc.freezed.dart';
 
 @injectable
 class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
-  SignUpFormBloc() : super(SignUpFormState.initial()) {
+  final IAuthenticationInterface _authenticationRepository;
+
+  SignUpFormBloc(this._authenticationRepository)
+      : super(SignUpFormState.initial()) {
     on<SignUpFormEvent>(_onEvent);
   }
 
@@ -21,27 +27,13 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
     await event.map(
       initialized: (e) async {},
       signUpPressed: (e) async {
-        var dio = Dio();
+        final newUser = User(
+            firstName: state.firstNameInput,
+            lastName: state.lastNameInput,
+            email: state.emailInput,
+            phone: state.phoneDialCodeInput + state.phoneInput);
 
-        var formData = {
-          'firstname': state.firstNameInput,
-          'lastname': state.lastNameInput,
-          'phoneNumber': state.phoneDialCodeInput + state.phoneInput,
-          'password': state.passwordInput,
-        };
-        print(formData);
-        try {
-          var response = await dio.post(
-            'https://sjno.nl/secry/v1/auth/user',
-            data: formData,
-            onSendProgress: (a, b) => print('Send : ${a / b}'),
-            onReceiveProgress: (a, b) => print('Received : ${a / b}'),
-          );
-          var jsonData = json.decode(response.data);
-          print(jsonData);
-        } catch (e) {
-          print(e);
-        }
+        _authenticationRepository.createNewUser(newUser, state.passwordInput);
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));
