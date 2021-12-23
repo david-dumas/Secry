@@ -85,15 +85,17 @@ class _SignupPageState extends State<SignupPage> {
                               prefixIcon: Container(
                                 padding: EdgeInsets.all(10.0),
                                 child: CountryCodePicker(
+                                  initialSelection: 'NL',
+                                  onInit: (value) => context
+                                      .read<SignUpFormBloc>()
+                                      .add(SignUpFormEvent.phoneDialCodeChanged(
+                                          value!.dialCode.toString())),
                                   enabled: true,
                                   onChanged: (value) => context
                                       .read<SignUpFormBloc>()
                                       .add(SignUpFormEvent.phoneDialCodeChanged(
-                                              value.dialCode.toString())
-                                          //print("Selected: ${value.dialCode}"
-                                          ),
+                                          value.dialCode.toString())),
                                   // Initial selection
-                                  initialSelection: 'NL',
                                   favorite: ['+31', 'NL'],
                                   countryFilter: [
                                     'NL',
@@ -217,9 +219,7 @@ class _SignupPageState extends State<SignupPage> {
 
                                   if (isValid!) {
                                     _formKey.currentState?.save();
-                                    print("Logged:" + state.passwordInput);
-                                    print(
-                                        "Repeat:" + state.repeatPasswordInput);
+                                    print("Logged:" + state.phoneDialCodeInput);
                                   }
                                 },
                                 child: Text(
