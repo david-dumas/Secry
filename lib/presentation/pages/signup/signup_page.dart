@@ -8,6 +8,7 @@ import 'package:secry/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:dio/dio.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -219,7 +220,16 @@ class _SignupPageState extends State<SignupPage> {
 
                                   if (isValid!) {
                                     _formKey.currentState?.save();
-                                    print("Logged:" + state.phoneDialCodeInput);
+
+                                    var formData = FormData.fromMap({
+                                      'firstname': state.firstNameInput,
+                                      'lastname': state.lastNameInput,
+                                      'phoneNumber': state.phoneDialCodeInput +
+                                          state.phoneInput,
+                                      'password': state.passwordInput,
+                                    });
+
+                                    print(formData.fields);
                                   }
                                 },
                                 child: Text(
