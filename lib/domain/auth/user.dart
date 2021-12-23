@@ -19,11 +19,15 @@ class User with _$User {
         email: json['email'],
         phone: json['phone']);
   }
+}
 
-  Map<String, dynamic> toJson() => {
-        'email': email,
-        'phoneNumber': phone,
-        'firstName': firstName,
-        'lastName': lastName
-      };
+extension UserX on User {
+  Map<String, dynamic> toJson() {
+    return <String, dynamic>{
+      'email': email,
+      'phoneNumber': phone,
+      'firstName': firstName,
+      'lastName': lastName
+    };
+  }
 }
