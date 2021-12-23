@@ -1719,7 +1719,8 @@ class _$SignUpFormStateTearOff {
   const _$SignUpFormStateTearOff();
 
   _SignUpFormState call(
-      {required String firstNameInput,
+      {required String statusMessage,
+      required String firstNameInput,
       required String lastNameInput,
       required String emailInput,
       required String phoneInput,
@@ -1727,6 +1728,7 @@ class _$SignUpFormStateTearOff {
       required String passwordInput,
       required String repeatPasswordInput}) {
     return _SignUpFormState(
+      statusMessage: statusMessage,
       firstNameInput: firstNameInput,
       lastNameInput: lastNameInput,
       emailInput: emailInput,
@@ -1743,6 +1745,7 @@ const $SignUpFormState = _$SignUpFormStateTearOff();
 
 /// @nodoc
 mixin _$SignUpFormState {
+  String get statusMessage => throw _privateConstructorUsedError;
   String get firstNameInput => throw _privateConstructorUsedError;
   String get lastNameInput => throw _privateConstructorUsedError;
   String get emailInput => throw _privateConstructorUsedError;
@@ -1762,7 +1765,8 @@ abstract class $SignUpFormStateCopyWith<$Res> {
           SignUpFormState value, $Res Function(SignUpFormState) then) =
       _$SignUpFormStateCopyWithImpl<$Res>;
   $Res call(
-      {String firstNameInput,
+      {String statusMessage,
+      String firstNameInput,
       String lastNameInput,
       String emailInput,
       String phoneInput,
@@ -1782,6 +1786,7 @@ class _$SignUpFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? statusMessage = freezed,
     Object? firstNameInput = freezed,
     Object? lastNameInput = freezed,
     Object? emailInput = freezed,
@@ -1791,6 +1796,10 @@ class _$SignUpFormStateCopyWithImpl<$Res>
     Object? repeatPasswordInput = freezed,
   }) {
     return _then(_value.copyWith(
+      statusMessage: statusMessage == freezed
+          ? _value.statusMessage
+          : statusMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       firstNameInput: firstNameInput == freezed
           ? _value.firstNameInput
           : firstNameInput // ignore: cast_nullable_to_non_nullable
@@ -1831,7 +1840,8 @@ abstract class _$SignUpFormStateCopyWith<$Res>
       __$SignUpFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String firstNameInput,
+      {String statusMessage,
+      String firstNameInput,
       String lastNameInput,
       String emailInput,
       String phoneInput,
@@ -1853,6 +1863,7 @@ class __$SignUpFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? statusMessage = freezed,
     Object? firstNameInput = freezed,
     Object? lastNameInput = freezed,
     Object? emailInput = freezed,
@@ -1862,6 +1873,10 @@ class __$SignUpFormStateCopyWithImpl<$Res>
     Object? repeatPasswordInput = freezed,
   }) {
     return _then(_SignUpFormState(
+      statusMessage: statusMessage == freezed
+          ? _value.statusMessage
+          : statusMessage // ignore: cast_nullable_to_non_nullable
+              as String,
       firstNameInput: firstNameInput == freezed
           ? _value.firstNameInput
           : firstNameInput // ignore: cast_nullable_to_non_nullable
@@ -1898,7 +1913,8 @@ class __$SignUpFormStateCopyWithImpl<$Res>
 
 class _$_SignUpFormState implements _SignUpFormState {
   const _$_SignUpFormState(
-      {required this.firstNameInput,
+      {required this.statusMessage,
+      required this.firstNameInput,
       required this.lastNameInput,
       required this.emailInput,
       required this.phoneInput,
@@ -1906,6 +1922,8 @@ class _$_SignUpFormState implements _SignUpFormState {
       required this.passwordInput,
       required this.repeatPasswordInput});
 
+  @override
+  final String statusMessage;
   @override
   final String firstNameInput;
   @override
@@ -1923,7 +1941,7 @@ class _$_SignUpFormState implements _SignUpFormState {
 
   @override
   String toString() {
-    return 'SignUpFormState(firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, phoneDialCodeInput: $phoneDialCodeInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput)';
+    return 'SignUpFormState(statusMessage: $statusMessage, firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, phoneDialCodeInput: $phoneDialCodeInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput)';
   }
 
   @override
@@ -1931,6 +1949,8 @@ class _$_SignUpFormState implements _SignUpFormState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignUpFormState &&
+            (identical(other.statusMessage, statusMessage) ||
+                other.statusMessage == statusMessage) &&
             (identical(other.firstNameInput, firstNameInput) ||
                 other.firstNameInput == firstNameInput) &&
             (identical(other.lastNameInput, lastNameInput) ||
@@ -1950,6 +1970,7 @@ class _$_SignUpFormState implements _SignUpFormState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      statusMessage,
       firstNameInput,
       lastNameInput,
       emailInput,
@@ -1966,7 +1987,8 @@ class _$_SignUpFormState implements _SignUpFormState {
 
 abstract class _SignUpFormState implements SignUpFormState {
   const factory _SignUpFormState(
-      {required String firstNameInput,
+      {required String statusMessage,
+      required String firstNameInput,
       required String lastNameInput,
       required String emailInput,
       required String phoneInput,
@@ -1974,6 +1996,8 @@ abstract class _SignUpFormState implements SignUpFormState {
       required String passwordInput,
       required String repeatPasswordInput}) = _$_SignUpFormState;
 
+  @override
+  String get statusMessage;
   @override
   String get firstNameInput;
   @override

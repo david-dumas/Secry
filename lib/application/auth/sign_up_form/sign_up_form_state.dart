@@ -3,6 +3,7 @@ part of 'sign_up_form_bloc.dart';
 @freezed
 abstract class SignUpFormState with _$SignUpFormState {
   const factory SignUpFormState({
+    required String statusMessage,
     required String firstNameInput,
     required String lastNameInput,
     required String emailInput,
@@ -13,11 +14,13 @@ abstract class SignUpFormState with _$SignUpFormState {
   }) = _SignUpFormState;
 
   factory SignUpFormState.initial() => SignUpFormState(
-      firstNameInput: '',
-      lastNameInput: '',
-      emailInput: '',
-      phoneInput: '',
-      phoneDialCodeInput: '',
-      passwordInput: '',
-      repeatPasswordInput: '');
+        firstNameInput: '',
+        lastNameInput: '',
+        emailInput: '',
+        phoneInput: '',
+        phoneDialCodeInput: '',
+        passwordInput: '',
+        repeatPasswordInput: '',
+        statusMessage: '',
+      );
 }

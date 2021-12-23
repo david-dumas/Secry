@@ -33,7 +33,8 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
 
         var apiResponse = await _authenticationRepository.createNewUser(
             newUser, state.passwordInput);
-        print(apiResponse.toString());
+        //print(apiResponse.toString());
+        emit(state.copyWith(statusMessage: apiResponse));
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));

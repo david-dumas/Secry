@@ -9,7 +9,6 @@
 // **************************************************************************
 
 import 'package:auto_route/auto_route.dart' as _i10;
-import 'package:flutter/cupertino.dart' as _i12;
 import 'package:flutter/material.dart' as _i11;
 
 import '../pages/account/account_loggedout_page.dart' as _i7;
@@ -146,7 +145,7 @@ class LoginPageRoute extends _i10.PageRouteInfo<void> {
 
 /// generated route for [_i9.SignupPage]
 class SignupPageRoute extends _i10.PageRouteInfo<SignupPageRouteArgs> {
-  SignupPageRoute({_i12.Key? key})
+  SignupPageRoute({_i11.Key? key})
       : super(name, path: '/signup-page', args: SignupPageRouteArgs(key: key));
 
   static const String name = 'SignupPageRoute';
@@ -155,7 +154,7 @@ class SignupPageRoute extends _i10.PageRouteInfo<SignupPageRouteArgs> {
 class SignupPageRouteArgs {
   const SignupPageRouteArgs({this.key});
 
-  final _i12.Key? key;
+  final _i11.Key? key;
 
   @override
   String toString() {
