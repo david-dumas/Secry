@@ -1,6 +1,6 @@
 import 'dart:async';
-
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
@@ -20,7 +20,13 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
     await event.map(
       initialized: (e) async {},
       signUpPressed: (e) async {
-        print("pressed");
+        var formData = FormData.fromMap({
+          'firstname': state.firstNameInput,
+          'lastname': state.lastNameInput,
+          'phoneNumber': state.phoneDialCodeInput + state.phoneInput,
+          'password': state.passwordInput,
+        });
+        print(formData.fields);
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));

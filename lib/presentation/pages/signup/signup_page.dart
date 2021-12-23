@@ -224,13 +224,6 @@ class _SignupPageState extends State<SignupPage> {
                                     context
                                         .read<SignUpFormBloc>()
                                         .add(SignUpFormEvent.signUpPressed());
-                                    // var formData = FormData.fromMap({
-                                    //   'firstname': state.firstNameInput,
-                                    //   'lastname': state.lastNameInput,
-                                    //   'phoneNumber': state.phoneDialCodeInput +
-                                    //       state.phoneInput,
-                                    //   'password': state.passwordInput,
-                                    // });
                                   }
                                 },
                                 child: Text(
