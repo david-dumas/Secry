@@ -16,21 +16,7 @@ class AuthenticationRepository extends IAuthenticationInterface {
     final jsonUser = user.toJson();
     jsonUser['password'] = password;
 
-    // try {
-    //   var response = await dio.post(
-    //     'https://sjno.nl/secry/v1/auth/user',
-    //     data: jsonUser,
-    //     onSendProgress: (a, b) => print('Send : ${a / b}'),
-    //     onReceiveProgress: (a, b) => print('Received : ${a / b}'),
-    //   );
-    //   print("Submitted");
-    //   print(json.decode(response.data));
-    // } catch (e) {
-    //   print(e);
-    // }
-
     try {
-      //404
       var response = await dio.post(
         'https://sjno.nl/secry/v1/auth/user',
         data: jsonUser,
@@ -42,7 +28,6 @@ class AuthenticationRepository extends IAuthenticationInterface {
       print(json.decode(response.data));
     } on DioError catch (e) {
       // The request was made and the server responded with a status code
-      // that falls out of the range of 2xx and is also not 304.
       if (e.response != null) {
         print(e.response!.data);
       } else {
