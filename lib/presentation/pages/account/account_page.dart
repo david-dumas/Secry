@@ -2,7 +2,10 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/presentation/pages/login/login_page.dart';
+import 'package:secry/presentation/pages/signup/signup_page.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 
 class AccountPage extends StatelessWidget {
@@ -46,7 +49,13 @@ class AccountPage extends StatelessWidget {
                     ),
                   ),
                   onPressed: () {
-                    AutoRouter.of(context).push(SignupPageRoute());
+                    pushNewScreen(
+                      context,
+                      screen: SignupPage(),
+                      withNavBar: true,
+                      pageTransitionAnimation:
+                          PageTransitionAnimation.cupertino,
+                    );
                   },
                   child: Text(
                     tr('action_create_account'),
@@ -64,11 +73,18 @@ class AccountPage extends StatelessWidget {
                         fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                   onPressed: () {
-                    AutoRouter.of(context).push(LoginPageRoute());
+                    pushNewScreen(
+                      context,
+                      screen: LoginPage(),
+                      withNavBar: true,
+                      pageTransitionAnimation:
+                          PageTransitionAnimation.cupertino,
+                    );
                   },
                   child: Text(tr('action_login')),
                 ),
-              )
+              ),
+              verticalSafetyScrollOffset
             ],
           ),
         ),

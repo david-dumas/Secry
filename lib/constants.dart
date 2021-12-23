@@ -19,6 +19,9 @@ const kMediumGray = Color(0xFFB3B9BC);
 const kLightGray = Color(0xFFF4F4F4);
 const globalWhite = Color(0xFFFFFFFF);
 
+// General spacing
+const Widget verticalSafetyScrollOffset = SizedBox(height: 50.0);
+
 // Horizontal Spacing
 const Widget horizontalSpaceTiny = SizedBox(width: 5.0);
 const Widget horizontalSpaceSmall = SizedBox(width: 10.0);
