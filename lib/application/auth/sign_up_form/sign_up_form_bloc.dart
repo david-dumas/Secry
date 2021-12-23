@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'package:bloc/bloc.dart';
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -20,13 +21,27 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
     await event.map(
       initialized: (e) async {},
       signUpPressed: (e) async {
-        var formData = FormData.fromMap({
+        var dio = Dio();
+
+        var formData = {
           'firstname': state.firstNameInput,
           'lastname': state.lastNameInput,
           'phoneNumber': state.phoneDialCodeInput + state.phoneInput,
           'password': state.passwordInput,
-        });
-        print(formData.fields);
+        };
+        print(formData);
+        try {
+          var response = await dio.post(
+            'https://sjno.nl/secry/v1/auth/user',
+            data: formData,
+            onSendProgress: (a, b) => print('Send : ${a / b}'),
+            onReceiveProgress: (a, b) => print('Received : ${a / b}'),
+          );
+          var jsonData = json.decode(response.data);
+          print(jsonData);
+        } catch (e) {
+          print(e);
+        }
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));
