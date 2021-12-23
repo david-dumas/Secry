@@ -212,26 +212,15 @@ class _SignupPageState extends State<SignupPage> {
                                   ),
                                 ),
                                 onPressed: () {
-                                  print("Logged:" + state.firstNameInput);
-                                  // final isValid =
-                                  //     _formKey.currentState?.validate();
+                                  final isValid =
+                                      _formKey.currentState?.validate();
 
-                                  // if (isValid!) {
-                                  //   _formKey.currentState?.save();
-
-                                  //   final message =
-                                  //       //'Firstname: ${state.firstNameInput}\nLastname: ${state.lastNameInput}\nPhone: ${state.phoneInput}\nPassword: ${state.passwordInput}\nEmail: ${state.emailInput}';
-                                  //       'DialCode: ${state}';
-                                  //   final snackBar = SnackBar(
-                                  //     content: Text(
-                                  //       message,
-                                  //       style: TextStyle(fontSize: 18),
-                                  //     ),
-                                  //     backgroundColor: Colors.green,
-                                  //   );
-                                  //   ScaffoldMessenger.of(context)
-                                  //       .showSnackBar(snackBar);
-                                  // }
+                                  if (isValid!) {
+                                    _formKey.currentState?.save();
+                                    print("Logged:" + state.passwordInput);
+                                    print(
+                                        "Repeat:" + state.repeatPasswordInput);
+                                  }
                                 },
                                 child: Text(
                                   tr('action_register'),
