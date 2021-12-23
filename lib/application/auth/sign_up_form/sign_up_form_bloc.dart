@@ -1,7 +1,5 @@
 import 'dart:async';
-import 'dart:convert';
 import 'package:bloc/bloc.dart';
-import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
@@ -33,7 +31,9 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
             email: state.emailInput,
             phone: state.phoneDialCodeInput + state.phoneInput);
 
-        _authenticationRepository.createNewUser(newUser, state.passwordInput);
+        var apiResponse = await _authenticationRepository.createNewUser(
+            newUser, state.passwordInput);
+        print(apiResponse.toString());
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));

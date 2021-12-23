@@ -10,7 +10,7 @@ import 'package:secry/domain/auth/user.dart';
 @Singleton(as: IAuthenticationInterface)
 class AuthenticationRepository extends IAuthenticationInterface {
   @override
-  Future<void> createNewUser(User user, String password) async {
+  Future createNewUser(User user, String password) async {
     var dio = Dio();
 
     final jsonUser = user.toJson();
@@ -29,7 +29,8 @@ class AuthenticationRepository extends IAuthenticationInterface {
     } on DioError catch (e) {
       // The request was made and the server responded with a status code
       if (e.response != null) {
-        print(e.response!.data);
+        //print(e.response!.data);
+        return e.response;
       } else {
         // Something happened in setting up or sending the request that triggered an Error
         print(e.requestOptions);
