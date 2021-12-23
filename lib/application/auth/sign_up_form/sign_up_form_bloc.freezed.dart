@@ -21,6 +21,10 @@ class _$SignUpFormEventTearOff {
     return const _Initialized();
   }
 
+  _signUpPressed signUpPressed() {
+    return const _signUpPressed();
+  }
+
   _FirstNameChanged firstNameChanged(String newFirstName) {
     return _FirstNameChanged(
       newFirstName,
@@ -72,6 +76,7 @@ mixin _$SignUpFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -84,6 +89,7 @@ mixin _$SignUpFormEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -96,6 +102,7 @@ mixin _$SignUpFormEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -109,6 +116,7 @@ mixin _$SignUpFormEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -122,6 +130,7 @@ mixin _$SignUpFormEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -134,6 +143,7 @@ mixin _$SignUpFormEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -205,6 +215,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -220,6 +231,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -235,6 +247,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -254,6 +267,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -270,6 +284,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -285,6 +300,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -303,6 +319,154 @@ class _$_Initialized implements _Initialized {
 
 abstract class _Initialized implements SignUpFormEvent {
   const factory _Initialized() = _$_Initialized;
+}
+
+/// @nodoc
+abstract class _$signUpPressedCopyWith<$Res> {
+  factory _$signUpPressedCopyWith(
+          _signUpPressed value, $Res Function(_signUpPressed) then) =
+      __$signUpPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$signUpPressedCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
+    implements _$signUpPressedCopyWith<$Res> {
+  __$signUpPressedCopyWithImpl(
+      _signUpPressed _value, $Res Function(_signUpPressed) _then)
+      : super(_value, (v) => _then(v as _signUpPressed));
+
+  @override
+  _signUpPressed get _value => super._value as _signUpPressed;
+}
+
+/// @nodoc
+
+class _$_signUpPressed implements _signUpPressed {
+  const _$_signUpPressed();
+
+  @override
+  String toString() {
+    return 'SignUpFormEvent.signUpPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _signUpPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function() signUpPressed,
+    required TResult Function(String newFirstName) firstNameChanged,
+    required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
+    required TResult Function(String newPhone) phoneChanged,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newFirstPassword) firstPasswordChanged,
+    required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+  }) {
+    return signUpPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+  }) {
+    return signUpPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    required TResult orElse(),
+  }) {
+    if (signUpPressed != null) {
+      return signUpPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
+    required TResult Function(_FirstNameChanged value) firstNameChanged,
+    required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
+        repeatPasswordChanged,
+  }) {
+    return signUpPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+  }) {
+    return signUpPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    required TResult orElse(),
+  }) {
+    if (signUpPressed != null) {
+      return signUpPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _signUpPressed implements SignUpFormEvent {
+  const factory _signUpPressed() = _$_signUpPressed;
 }
 
 /// @nodoc
@@ -371,6 +535,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -386,6 +551,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -401,6 +567,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -420,6 +587,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -436,6 +604,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -451,6 +620,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -542,6 +712,7 @@ class _$_LastNameChanged implements _LastNameChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -557,6 +728,7 @@ class _$_LastNameChanged implements _LastNameChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -572,6 +744,7 @@ class _$_LastNameChanged implements _LastNameChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -591,6 +764,7 @@ class _$_LastNameChanged implements _LastNameChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -607,6 +781,7 @@ class _$_LastNameChanged implements _LastNameChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -622,6 +797,7 @@ class _$_LastNameChanged implements _LastNameChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -714,6 +890,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -729,6 +906,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -744,6 +922,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -763,6 +942,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -779,6 +959,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -794,6 +975,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -886,6 +1068,7 @@ class _$_PhoneChanged implements _PhoneChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -901,6 +1084,7 @@ class _$_PhoneChanged implements _PhoneChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -916,6 +1100,7 @@ class _$_PhoneChanged implements _PhoneChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -935,6 +1120,7 @@ class _$_PhoneChanged implements _PhoneChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -951,6 +1137,7 @@ class _$_PhoneChanged implements _PhoneChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -966,6 +1153,7 @@ class _$_PhoneChanged implements _PhoneChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -1057,6 +1245,7 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -1072,6 +1261,7 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -1087,6 +1277,7 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -1106,6 +1297,7 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -1122,6 +1314,7 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -1137,6 +1330,7 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -1229,6 +1423,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -1244,6 +1439,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -1259,6 +1455,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -1278,6 +1475,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -1294,6 +1492,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -1309,6 +1508,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -1402,6 +1602,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function() signUpPressed,
     required TResult Function(String newFirstName) firstNameChanged,
     required TResult Function(String newLastName) lastNameChanged,
     required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
@@ -1417,6 +1618,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -1432,6 +1634,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function()? signUpPressed,
     TResult Function(String newFirstName)? firstNameChanged,
     TResult Function(String newLastName)? lastNameChanged,
     TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
@@ -1451,6 +1654,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
     required TResult Function(_FirstNameChanged value) firstNameChanged,
     required TResult Function(_LastNameChanged value) lastNameChanged,
     required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
@@ -1467,6 +1671,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
@@ -1482,6 +1687,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
     TResult Function(_FirstNameChanged value)? firstNameChanged,
     TResult Function(_LastNameChanged value)? lastNameChanged,
     TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,

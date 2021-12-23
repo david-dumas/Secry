@@ -19,6 +19,9 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       SignUpFormEvent event, Emitter<SignUpFormState> emit) async {
     await event.map(
       initialized: (e) async {},
+      signUpPressed: (e) async {
+        print("pressed");
+      },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));
       },

@@ -221,15 +221,16 @@ class _SignupPageState extends State<SignupPage> {
                                   if (isValid!) {
                                     _formKey.currentState?.save();
 
-                                    var formData = FormData.fromMap({
-                                      'firstname': state.firstNameInput,
-                                      'lastname': state.lastNameInput,
-                                      'phoneNumber': state.phoneDialCodeInput +
-                                          state.phoneInput,
-                                      'password': state.passwordInput,
-                                    });
-
-                                    print(formData.fields);
+                                    context
+                                        .read<SignUpFormBloc>()
+                                        .add(SignUpFormEvent.signUpPressed());
+                                    // var formData = FormData.fromMap({
+                                    //   'firstname': state.firstNameInput,
+                                    //   'lastname': state.lastNameInput,
+                                    //   'phoneNumber': state.phoneDialCodeInput +
+                                    //       state.phoneInput,
+                                    //   'password': state.passwordInput,
+                                    // });
                                   }
                                 },
                                 child: Text(
