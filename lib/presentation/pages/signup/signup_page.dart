@@ -143,10 +143,18 @@ class _SignupPageState extends State<SignupPage> {
                               verticalSpaceSmall,
                               TextFormField(
                                 controller: _pass,
-                                obscureText: true,
+                                obscureText: !state.isShowingPassword,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
                                   labelText: tr('account_password'),
+                                  suffixIcon: IconButton(
+                                    icon: state.isShowingPassword ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+                                    onPressed: () {
+                                      context
+                                          .read<SignUpFormBloc>()
+                                          .add(SignUpFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
+                                    },
+                                  ),
                                 ),
                                 validator: (value) {
                                   if (value!.length < 6) {
@@ -161,10 +169,19 @@ class _SignupPageState extends State<SignupPage> {
                               ),
                               verticalSpaceSmall,
                               TextFormField(
-                                obscureText: true,
+                                obscureText: !state.isShowingRepeatPassword,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
                                   labelText: tr('account_repeat_password'),
+                                  suffixIcon: IconButton(
+                                    icon: state.isShowingRepeatPassword
+                                        ? Icon(Icons.visibility_off)
+                                        : Icon(Icons.visibility),
+                                    onPressed: () {
+                                      context.read<SignUpFormBloc>().add(SignUpFormEvent.isShowingRepeatPasswordToggled(
+                                          !state.isShowingRepeatPassword));
+                                    },
+                                  ),
                                 ),
                                 validator: (value) {
                                   if (value != state.passwordInput) {

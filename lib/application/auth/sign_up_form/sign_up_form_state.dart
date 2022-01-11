@@ -11,6 +11,8 @@ abstract class SignUpFormState with _$SignUpFormState {
     required String phoneDialCodeInput,
     required String passwordInput,
     required String repeatPasswordInput,
+    required bool isShowingPassword,
+    required bool isShowingRepeatPassword,
   }) = _SignUpFormState;
 
   factory SignUpFormState.initial() => SignUpFormState(
@@ -22,5 +24,7 @@ abstract class SignUpFormState with _$SignUpFormState {
         passwordInput: '',
         repeatPasswordInput: '',
         statusMessage: '',
+        isShowingPassword: false,
+        isShowingRepeatPassword: false,
       );
 }

@@ -15,13 +15,11 @@ part 'sign_up_form_bloc.freezed.dart';
 class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   final IAuthenticationInterface _authenticationRepository;
 
-  SignUpFormBloc(this._authenticationRepository)
-      : super(SignUpFormState.initial()) {
+  SignUpFormBloc(this._authenticationRepository) : super(SignUpFormState.initial()) {
     on<SignUpFormEvent>(_onEvent);
   }
 
-  Future<void> _onEvent(
-      SignUpFormEvent event, Emitter<SignUpFormState> emit) async {
+  Future<void> _onEvent(SignUpFormEvent event, Emitter<SignUpFormState> emit) async {
     await event.map(
       initialized: (e) async {},
       signUpPressed: (e) async {
@@ -31,8 +29,7 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
             email: state.emailInput,
             phone: state.phoneDialCodeInput + state.phoneInput);
 
-        var apiResponse = await _authenticationRepository.createNewUser(
-            newUser, state.passwordInput);
+        var apiResponse = await _authenticationRepository.createNewUser(newUser, state.passwordInput);
         //print(apiResponse.toString());
         emit(state.copyWith(statusMessage: apiResponse));
       },
@@ -56,6 +53,12 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       },
       repeatPasswordChanged: (e) async {
         emit(state.copyWith(repeatPasswordInput: e.newRepeatPassword));
+      },
+      isShowingPasswordToggled: (e) async {
+        emit(state.copyWith(isShowingPassword: e.isShowing));
+      },
+      isShowingRepeatPasswordToggled: (e) async {
+        emit(state.copyWith(isShowingRepeatPassword: e.isShowing));
       },
     );
   }
