@@ -57,11 +57,19 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       SizedBox(height: 12),
                       TextFormField(
-                        obscureText: true,
+                          obscureText: state.isShowingPassword,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(),
                           prefixIcon: Icon(Icons.lock_outline),
                           labelText: tr('account_password'),
+                            suffixIcon: IconButton(
+                              icon: state.isShowingPassword ? Icon(Icons.visibility) : Icon(Icons.visibility_off),
+                              onPressed: () {
+                                context
+                                    .read<SignInFormBloc>()
+                                    .add(SignInFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
+                              },
+                            ),
                         ),
                         onChanged: (value) =>
                             context.read<SignInFormBloc>().add(SignInFormEvent.passwordChanged(value)),

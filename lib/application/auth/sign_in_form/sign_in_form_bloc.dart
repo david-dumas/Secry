@@ -18,48 +18,42 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     on<SignInFormEvent>(_onEvent);
   }
 
-  Future<void> _onEvent(
-      SignInFormEvent event, Emitter<SignInFormState> emit) async {
+  Future<void> _onEvent(SignInFormEvent event, Emitter<SignInFormState> emit) async {
     await event.map(
       initialized: (e) async {},
       emailChanged: (e) async {
         emit(state.copyWith(inputEmail: e.newEmail));
       },
+      isShowingPasswordToggled: (e) async {
+        emit(state.copyWith(isShowingPassword: e.isShowing));
+      },
       passwordChanged: (e) async {
         emit(state.copyWith(inputPassword: e.newPassword));
       },
       signInPressed: (e) async {
-        final failureOrUnit = await _authFacade.signIn(
-            email: state.inputEmail, password: state.inputPassword);
+        final failureOrUnit = await _authFacade.signIn(email: state.inputEmail, password: state.inputPassword);
         await failureOrUnit.fold(
           (failure) {
             emit(state.copyWith(isShowingErrorMessages: true));
 
             failure.maybeMap(
               emailAlreadyExists: (_) {
-                emit(state.copyWith(
-                    currentErrorMessageTag:
-                        'account_error_email_already_exists'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_email_already_exists'));
               },
               invalidEmail: (_) {
-                emit(state.copyWith(
-                    currentErrorMessageTag: 'account_error_invalid_email'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_invalid_email'));
               },
               invalidPassword: (_) {
-                emit(state.copyWith(
-                    currentErrorMessageTag: 'account_error_password_invalid'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_password_invalid'));
               },
               userNotFound: (_) {
-                emit(state.copyWith(
-                    currentErrorMessageTag: 'account_error_user_not_found'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_user_not_found'));
               },
               generalError: (_) {
-                emit(state.copyWith(
-                    currentErrorMessageTag: 'account_error_general'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
               },
               orElse: () {
-                emit(state.copyWith(
-                    currentErrorMessageTag: 'account_error_general'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
               },
             );
           },
