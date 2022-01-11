@@ -34,7 +34,12 @@ class _SignupPageState extends State<SignupPage> {
               ),
               body: SingleChildScrollView(
                 child: Padding(
-                  padding: pagePadding,
+                  padding: EdgeInsets.only(
+                    top: 20,
+                    right: 20,
+                    bottom: 32,
+                    left: 20,
+                  ),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
