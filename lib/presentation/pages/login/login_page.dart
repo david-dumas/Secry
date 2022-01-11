@@ -68,19 +68,12 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Row(
                         mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.end,
                         children: [
-                          Text(
-                            tr('account_forgot_your_password'),
-                            textAlign: TextAlign.center,
-                            style: mainContentTextStyleMedium,
-                          ),
-                          SizedBox(
-                            width: 4,
-                          ),
                           TextButton(
                             onPressed: () {},
                             child: Text(
-                              tr('action_click_here'),
+                              tr('account_forgot_your_password'),
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 decoration: TextDecoration.underline,
