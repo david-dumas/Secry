@@ -21,9 +21,7 @@ class TabbarBloc extends Bloc<TabbarEvent, TabbarState> {
       initialized: (e) async {},
       selectedIndexChanged: (e) async {
         emit(state.copyWith(selectedIndex: e.index));
-        emit(state.copyWith(
-            currentTitleForSelectedIndex:
-                state.titlesForSelectedIndex[state.selectedIndex]));
+        emit(state.copyWith(currentTitleTagForSelectedIndex: state.titleTagsForSelectedIndex[state.selectedIndex]));
       },
     );
   }

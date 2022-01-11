@@ -6,6 +6,7 @@ import 'package:secry/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:secry/constants.dart';
 
 import 'package:secry/injection.dart';
+import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -23,6 +24,9 @@ class _LoginPageState extends State<LoginPage> {
         builder: (context, state) {
           return Scaffold(
             backgroundColor: globalWhite,
+            appBar: GeneralAppbar(
+              isSubpage: true,
+            ),
             body: Center(
               child: Padding(
                 padding: pagePadding,
@@ -30,13 +34,13 @@ class _LoginPageState extends State<LoginPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    Text(
-                      tr('account_login_title'),
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 26,
-                          color: kPrimaryColor),
+                    Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        tr('account_login_title'),
+                        textAlign: TextAlign.left,
+                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26, color: kPrimaryColor),
+                      ),
                     ),
                     SizedBox(height: 26),
                     TextFormField(
@@ -46,9 +50,7 @@ class _LoginPageState extends State<LoginPage> {
                         prefixIcon: Icon(Icons.email_outlined),
                         labelText: tr('account_email'),
                       ),
-                      onChanged: (value) => context
-                          .read<SignInFormBloc>()
-                          .add(SignInFormEvent.emailChanged(value)),
+                      onChanged: (value) => context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(value)),
                     ),
                     SizedBox(height: 12),
                     TextFormField(
@@ -58,9 +60,7 @@ class _LoginPageState extends State<LoginPage> {
                         prefixIcon: Icon(Icons.lock_outline),
                         labelText: tr('account_password'),
                       ),
-                      onChanged: (value) => context
-                          .read<SignInFormBloc>()
-                          .add(SignInFormEvent.passwordChanged(value)),
+                      onChanged: (value) => context.read<SignInFormBloc>().add(SignInFormEvent.passwordChanged(value)),
                     ),
                     Row(
                       mainAxisSize: MainAxisSize.min,
@@ -90,22 +90,18 @@ class _LoginPageState extends State<LoginPage> {
                       width: MediaQuery.of(context).size.width * 0.6,
                       child: ElevatedButton(
                         style: ButtonStyle(
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                             RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
                             ),
                           ),
                         ),
                         onPressed: () {
-                          context
-                              .read<SignInFormBloc>()
-                              .add(SignInFormEvent.signInPressed());
+                          context.read<SignInFormBloc>().add(SignInFormEvent.signInPressed());
                         },
                         child: Text(
                           tr('action_login'),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                       ),
                     ),

@@ -43,6 +43,7 @@
   "account_privacy_policy" : "Privacy policy",
   "account_terms_agree_text" : "By tapping register, you agree to our",
   "account_login_title" : "Sign in with your account",
+  "account_title_sign_in" : "Sign in",
   "account_warning_please_enter_first_name" : "Please enter your first name",
   "account_warning_please_enter_last_name" : "Please enter your last name",
   "account_warning_please_enter_phone_number" : "Please enter your phone number",

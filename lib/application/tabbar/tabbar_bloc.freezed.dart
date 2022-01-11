@@ -333,12 +333,12 @@ class _$TabbarStateTearOff {
 
   _TabbarState call(
       {required int selectedIndex,
-      required List<String> titlesForSelectedIndex,
-      required String currentTitleForSelectedIndex}) {
+      required List<String> titleTagsForSelectedIndex,
+      required String currentTitleTagForSelectedIndex}) {
     return _TabbarState(
       selectedIndex: selectedIndex,
-      titlesForSelectedIndex: titlesForSelectedIndex,
-      currentTitleForSelectedIndex: currentTitleForSelectedIndex,
+      titleTagsForSelectedIndex: titleTagsForSelectedIndex,
+      currentTitleTagForSelectedIndex: currentTitleTagForSelectedIndex,
     );
   }
 }
@@ -349,8 +349,10 @@ const $TabbarState = _$TabbarStateTearOff();
 /// @nodoc
 mixin _$TabbarState {
   int get selectedIndex => throw _privateConstructorUsedError;
-  List<String> get titlesForSelectedIndex => throw _privateConstructorUsedError;
-  String get currentTitleForSelectedIndex => throw _privateConstructorUsedError;
+  List<String> get titleTagsForSelectedIndex =>
+      throw _privateConstructorUsedError;
+  String get currentTitleTagForSelectedIndex =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TabbarStateCopyWith<TabbarState> get copyWith =>
@@ -364,8 +366,8 @@ abstract class $TabbarStateCopyWith<$Res> {
       _$TabbarStateCopyWithImpl<$Res>;
   $Res call(
       {int selectedIndex,
-      List<String> titlesForSelectedIndex,
-      String currentTitleForSelectedIndex});
+      List<String> titleTagsForSelectedIndex,
+      String currentTitleTagForSelectedIndex});
 }
 
 /// @nodoc
@@ -379,21 +381,22 @@ class _$TabbarStateCopyWithImpl<$Res> implements $TabbarStateCopyWith<$Res> {
   @override
   $Res call({
     Object? selectedIndex = freezed,
-    Object? titlesForSelectedIndex = freezed,
-    Object? currentTitleForSelectedIndex = freezed,
+    Object? titleTagsForSelectedIndex = freezed,
+    Object? currentTitleTagForSelectedIndex = freezed,
   }) {
     return _then(_value.copyWith(
       selectedIndex: selectedIndex == freezed
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      titlesForSelectedIndex: titlesForSelectedIndex == freezed
-          ? _value.titlesForSelectedIndex
-          : titlesForSelectedIndex // ignore: cast_nullable_to_non_nullable
+      titleTagsForSelectedIndex: titleTagsForSelectedIndex == freezed
+          ? _value.titleTagsForSelectedIndex
+          : titleTagsForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      currentTitleForSelectedIndex: currentTitleForSelectedIndex == freezed
-          ? _value.currentTitleForSelectedIndex
-          : currentTitleForSelectedIndex // ignore: cast_nullable_to_non_nullable
+      currentTitleTagForSelectedIndex: currentTitleTagForSelectedIndex ==
+              freezed
+          ? _value.currentTitleTagForSelectedIndex
+          : currentTitleTagForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -408,8 +411,8 @@ abstract class _$TabbarStateCopyWith<$Res>
   @override
   $Res call(
       {int selectedIndex,
-      List<String> titlesForSelectedIndex,
-      String currentTitleForSelectedIndex});
+      List<String> titleTagsForSelectedIndex,
+      String currentTitleTagForSelectedIndex});
 }
 
 /// @nodoc
@@ -425,21 +428,22 @@ class __$TabbarStateCopyWithImpl<$Res> extends _$TabbarStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? selectedIndex = freezed,
-    Object? titlesForSelectedIndex = freezed,
-    Object? currentTitleForSelectedIndex = freezed,
+    Object? titleTagsForSelectedIndex = freezed,
+    Object? currentTitleTagForSelectedIndex = freezed,
   }) {
     return _then(_TabbarState(
       selectedIndex: selectedIndex == freezed
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      titlesForSelectedIndex: titlesForSelectedIndex == freezed
-          ? _value.titlesForSelectedIndex
-          : titlesForSelectedIndex // ignore: cast_nullable_to_non_nullable
+      titleTagsForSelectedIndex: titleTagsForSelectedIndex == freezed
+          ? _value.titleTagsForSelectedIndex
+          : titleTagsForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      currentTitleForSelectedIndex: currentTitleForSelectedIndex == freezed
-          ? _value.currentTitleForSelectedIndex
-          : currentTitleForSelectedIndex // ignore: cast_nullable_to_non_nullable
+      currentTitleTagForSelectedIndex: currentTitleTagForSelectedIndex ==
+              freezed
+          ? _value.currentTitleTagForSelectedIndex
+          : currentTitleTagForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -450,19 +454,19 @@ class __$TabbarStateCopyWithImpl<$Res> extends _$TabbarStateCopyWithImpl<$Res>
 class _$_TabbarState implements _TabbarState {
   const _$_TabbarState(
       {required this.selectedIndex,
-      required this.titlesForSelectedIndex,
-      required this.currentTitleForSelectedIndex});
+      required this.titleTagsForSelectedIndex,
+      required this.currentTitleTagForSelectedIndex});
 
   @override
   final int selectedIndex;
   @override
-  final List<String> titlesForSelectedIndex;
+  final List<String> titleTagsForSelectedIndex;
   @override
-  final String currentTitleForSelectedIndex;
+  final String currentTitleTagForSelectedIndex;
 
   @override
   String toString() {
-    return 'TabbarState(selectedIndex: $selectedIndex, titlesForSelectedIndex: $titlesForSelectedIndex, currentTitleForSelectedIndex: $currentTitleForSelectedIndex)';
+    return 'TabbarState(selectedIndex: $selectedIndex, titleTagsForSelectedIndex: $titleTagsForSelectedIndex, currentTitleTagForSelectedIndex: $currentTitleTagForSelectedIndex)';
   }
 
   @override
@@ -472,20 +476,20 @@ class _$_TabbarState implements _TabbarState {
             other is _TabbarState &&
             (identical(other.selectedIndex, selectedIndex) ||
                 other.selectedIndex == selectedIndex) &&
-            const DeepCollectionEquality()
-                .equals(other.titlesForSelectedIndex, titlesForSelectedIndex) &&
-            (identical(other.currentTitleForSelectedIndex,
-                    currentTitleForSelectedIndex) ||
-                other.currentTitleForSelectedIndex ==
-                    currentTitleForSelectedIndex));
+            const DeepCollectionEquality().equals(
+                other.titleTagsForSelectedIndex, titleTagsForSelectedIndex) &&
+            (identical(other.currentTitleTagForSelectedIndex,
+                    currentTitleTagForSelectedIndex) ||
+                other.currentTitleTagForSelectedIndex ==
+                    currentTitleTagForSelectedIndex));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       selectedIndex,
-      const DeepCollectionEquality().hash(titlesForSelectedIndex),
-      currentTitleForSelectedIndex);
+      const DeepCollectionEquality().hash(titleTagsForSelectedIndex),
+      currentTitleTagForSelectedIndex);
 
   @JsonKey(ignore: true)
   @override
@@ -496,15 +500,15 @@ class _$_TabbarState implements _TabbarState {
 abstract class _TabbarState implements TabbarState {
   const factory _TabbarState(
       {required int selectedIndex,
-      required List<String> titlesForSelectedIndex,
-      required String currentTitleForSelectedIndex}) = _$_TabbarState;
+      required List<String> titleTagsForSelectedIndex,
+      required String currentTitleTagForSelectedIndex}) = _$_TabbarState;
 
   @override
   int get selectedIndex;
   @override
-  List<String> get titlesForSelectedIndex;
+  List<String> get titleTagsForSelectedIndex;
   @override
-  String get currentTitleForSelectedIndex;
+  String get currentTitleTagForSelectedIndex;
   @override
   @JsonKey(ignore: true)
   _$TabbarStateCopyWith<_TabbarState> get copyWith =>

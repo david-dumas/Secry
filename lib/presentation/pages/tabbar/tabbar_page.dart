@@ -23,55 +23,35 @@ class TabbarPage extends StatefulWidget {
   _TabbarPageState createState() => _TabbarPageState();
 }
 
-class _TabbarPageState extends State<TabbarPage>
-    with SingleTickerProviderStateMixin {
+class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          getIt<TabbarBloc>()..add(const TabbarEvent.initialized()),
+      create: (context) => getIt<TabbarBloc>()..add(const TabbarEvent.initialized()),
       child: BlocConsumer<TabbarBloc, TabbarState>(
           listener: (context, state) {},
           builder: (context, state) {
             return Scaffold(
               backgroundColor: globalWhite,
-              appBar: AppBar(
-                  title: Text(
-                    state.currentTitleForSelectedIndex,
-                    style: TextStyle(color: kDarkGrayTextColor),
-                  ),
-                  backgroundColor: globalWhite,
-                  elevation: 0.0,
-                  automaticallyImplyLeading: true),
               body: PersistentTabView(
                 context,
                 controller: PersistentTabController(initialIndex: 0),
-                screens: [
-                  HomePage(),
-                  GlobalSearchPage(),
-                  SavedChatsAndSurveysPage(),
-                  AccountPage()
-                ],
+                screens: [HomePage(), GlobalSearchPage(), SavedChatsAndSurveysPage(), AccountPage()],
                 items: [
                   getBottomNavbarItem(icon: Icon(Icons.home_outlined)),
                   getBottomNavbarItem(icon: Icon(Icons.search)),
                   getBottomNavbarItem(icon: Icon(Icons.bookmark_outline)),
-                  getBottomNavbarItem(
-                      icon: Icon(Icons.account_circle_outlined)),
+                  getBottomNavbarItem(icon: Icon(Icons.account_circle_outlined)),
                 ],
                 confineInSafeArea: true,
                 backgroundColor: Colors.white,
                 handleAndroidBackButtonPress: true,
                 onItemSelected: (newIndex) {
-                  context
-                      .read<TabbarBloc>()
-                      .add(TabbarEvent.selectedIndexChanged(newIndex));
+                  context.read<TabbarBloc>().add(TabbarEvent.selectedIndexChanged(newIndex));
                 },
                 resizeToAvoidBottomInset: true,
                 stateManagement: true,
-                navBarHeight: MediaQuery.of(context).viewInsets.bottom > 0
-                    ? 0.0
-                    : kBottomNavigationBarHeight,
+                navBarHeight: MediaQuery.of(context).viewInsets.bottom > 0 ? 0.0 : kBottomNavigationBarHeight,
                 hideNavigationBarWhenKeyboardShows: true,
                 margin: EdgeInsets.all(0.0),
                 popActionScreens: PopActionScreensType.all,
