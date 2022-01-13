@@ -22,11 +22,9 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, Unit>> signIn(
-      {required String email, required String password}) async {
+  Future<Either<AuthFailure, Unit>> signIn({required String email, required String password}) async {
     try {
-      final credential = await _auth.signInWithEmailAndPassword(
-          email: email, password: password);
+      final credential = await _auth.signInWithEmailAndPassword(email: email, password: password);
       final user = credential.user;
 
       if (user == null) {
@@ -52,6 +50,11 @@ class FirebaseAuthFacade implements IAuthFacade {
       }
       return left(AuthFailure.generalError());
     }
+  }
+
+  @override
+  Future resetPassword({required String email}) async {
+    // TODO implement password reset via API
   }
 
   @override

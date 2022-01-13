@@ -2,10 +2,12 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:secry/constants.dart';
 
 import 'package:secry/injection.dart';
+import 'package:secry/presentation/pages/account/reset_password_page.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 class LoginPage extends StatefulWidget {
@@ -80,7 +82,14 @@ class _LoginPageState extends State<LoginPage> {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                pushNewScreen(
+                                  context,
+                                  screen: ResetPasswordPage(),
+                                  withNavBar: true,
+                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                );
+                              },
                               child: Text(
                                 tr('account_forgot_your_password'),
                                 textAlign: TextAlign.center,
