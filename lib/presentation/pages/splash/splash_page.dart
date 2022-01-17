@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/splash/splash_bloc.dart';
@@ -22,8 +21,7 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   navigateToTabbarAfterDelay() {
-    Future.delayed(Duration(milliseconds: 1500))
-        .then((value) => AutoRouter.of(context).replace(TabbarPageRoute()));
+    Future.delayed(Duration(milliseconds: 1500)).then((value) => AutoRouter.of(context).replace(TabbarPageRoute()));
   }
 
   @override
