@@ -59,7 +59,7 @@ flutter_icons:
   adaptive_icon_background: "assets/launcher/background.png"
   adaptive_icon_foreground: "assets/launcher/foreground.png"
 
-  flutter_lints: ^1.0.0
+  flutter_lints: ^1.0.4
 
 flutter:
   uses-material-design: true
