@@ -8,7 +8,6 @@ import 'package:secry/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:country_code_picker/country_code_picker.dart';
-import 'package:dio/dio.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 class SignupPage extends StatefulWidget {

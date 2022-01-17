@@ -1,7 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/auth/auth_failure.dart';
 import 'package:secry/domain/auth/i_auth_facade.dart';

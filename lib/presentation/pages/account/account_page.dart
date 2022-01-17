@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/presentation/pages/login/login_page.dart';
 import 'package:secry/presentation/pages/signup/signup_page.dart';
-import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 class AccountPage extends StatelessWidget {

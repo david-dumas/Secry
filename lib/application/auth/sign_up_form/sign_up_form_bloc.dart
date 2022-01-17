@@ -1,15 +1,15 @@
 import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:secry/domain/auth/i_authentication_interface.dart';
 import 'package:secry/domain/auth/user.dart';
-import 'package:secry/infrastructure/auth/authentication_repository.dart';
 
+part 'sign_up_form_bloc.freezed.dart';
 part 'sign_up_form_event.dart';
 part 'sign_up_form_state.dart';
-part 'sign_up_form_bloc.freezed.dart';
 
 @injectable
 class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {

@@ -2,19 +2,15 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:secry/application/main/main_bloc.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 
 import 'package:secry/presentation/pages/account/account_page.dart';
 import 'package:secry/presentation/pages/home/homepage.dart';
-import 'package:secry/presentation/pages/login/login_page.dart';
 import 'package:secry/presentation/pages/saved_chats_and_surveys/saved_chats_and_surveys_page.dart';
 import 'package:secry/presentation/pages/search/global_search_page.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/constants.dart';
-import 'package:secry/presentation/pages/signup/signup_page.dart';
-import 'package:secry/presentation/routes/router.gr.dart';
 
 class TabbarPage extends StatefulWidget {
   const TabbarPage({Key? key}) : super(key: key);

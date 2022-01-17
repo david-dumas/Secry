@@ -31,9 +31,7 @@ class _AppWidgetState extends State<AppWidget> {
       loadThemeOnInit: true,
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(
-              create: (_) =>
-                  getIt<MainBloc>()..add(const MainEvent.initialized())),
+          BlocProvider(create: (_) => getIt<MainBloc>()..add(const MainEvent.initialized())),
         ],
         child: BlocConsumer<MainBloc, MainState>(
           listener: (context, state) {},
@@ -63,7 +61,6 @@ class _AppWidgetState extends State<AppWidget> {
       id: 'dark',
       data: AppTheme.dark().data.copyWith(
             primaryColor: HexColor.fromHex('#0081b3'),
-            accentColor: HexColor.fromHex('#b85900'),
             inputDecorationTheme: InputDecorationTheme(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
@@ -93,7 +90,6 @@ class _AppWidgetState extends State<AppWidget> {
       id: 'light',
       data: AppTheme.light().data.copyWith(
             primaryColor: HexColor.fromHex('#20b0e5'),
-            accentColor: HexColor.fromHex('#f18700'),
             inputDecorationTheme: InputDecorationTheme(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
