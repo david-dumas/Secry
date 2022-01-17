@@ -8,7 +8,7 @@ abstract class IAuthApiService {
   factory IAuthApiService(Dio dio, {String baseUrl}) = _IAuthApiService;
 
   @POST('/v1/auth/user/reset-password')
-  Future<dynamic> resetPassword(
-    @Query('email') String email,
+  Future<HttpResponse<dynamic>> resetPassword(
+    @Body() String body,
   );
 }

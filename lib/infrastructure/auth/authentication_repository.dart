@@ -42,8 +42,23 @@ class AuthenticationRepository extends IAuthenticationInterface {
   }
 
   @override
-  Future resetPassword({required String email}) async {
-    final response = await _authenticationApiService.auth.resetPassword(email);
-    print("response: ${response.toString()}");
+  Future<bool> resetPassword({required String email}) async {
+    try {
+      var body = jsonEncode({
+        'email': '$email',
+      });
+
+      final response = await _authenticationApiService.auth.resetPassword(body);
+      final responseStatusCode = response.response.statusCode;
+
+      if (responseStatusCode == 200) {
+        return Future<bool>.value(true);
+      } else {
+        return Future<bool>.value(false);
+      }
+    } catch (error) {
+      print(error);
+      return Future<bool>.value(false);
+    }
   }
 }

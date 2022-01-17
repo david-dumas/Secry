@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/auth/reset_password/reset_password_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
@@ -17,7 +18,15 @@ class ResetPasswordPage extends StatelessWidget {
 
     return BlocProvider(
       create: (context) => getIt<ResetPasswordBloc>(),
-      child: BlocBuilder<ResetPasswordBloc, ResetPasswordState>(
+      child: BlocConsumer<ResetPasswordBloc, ResetPasswordState>(
+        listener: (context, state) {
+          if (state.isPasswordResetMailSuccessfullySent) {
+            // TODO show success pop-up with button "back to login"
+            Navigator.of(context).pop();
+          } else {
+            // TODO show error pop-up with button "try again"
+          }
+        },
         builder: (context, state) {
           return Scaffold(
             appBar: GeneralAppbar(
