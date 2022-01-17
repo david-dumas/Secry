@@ -1,10 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/auth/reset_password/reset_password_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
+import 'package:secry/presentation/pages/login/login_page.dart';
+import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 class ResetPasswordPage extends StatelessWidget {
@@ -21,10 +23,84 @@ class ResetPasswordPage extends StatelessWidget {
       child: BlocConsumer<ResetPasswordBloc, ResetPasswordState>(
         listener: (context, state) {
           if (state.isPasswordResetMailSuccessfullySent) {
-            // TODO show success pop-up with button "back to login"
-            Navigator.of(context).pop();
+            showDialog(
+              context: context,
+              barrierDismissible: true,
+              builder: (context) => SimpleDialog(
+                contentPadding: EdgeInsets.all(16),
+                children: [
+                  Text(
+                    tr('success_message_success_title'),
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Text(tr('success_message_password_reset_mail_successfully_sent_description')),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Icon(
+                        Icons.privacy_tip_outlined,
+                        color: kPrimaryColor,
+                      ),
+                      SizedBox(
+                        width: 8,
+                      ),
+                      Flexible(
+                        child: Text(
+                          tr('success_message_password_reset_mail_tip'),
+                          style: TextStyle(color: kPrimaryColor),
+                          maxLines: 3,
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16),
+                  ElevatedButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(18.0),
+                        ),
+                      ),
+                    ),
+                    onPressed: () => Navigator.of(context).pop(null),
+                    child: Text(
+                      tr('action_go_to_login'),
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  )
+                ],
+              ),
+            );
           } else {
-            // TODO show error pop-up with button "try again"
+            if (state.didTryToResetPassword) {
+              showDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  builder: (context) {
+                    // TODO Show title / description based on error code
+
+                    return AlertDialog(
+                      title: Text(tr('account_error_title')),
+                      content: SingleChildScrollView(
+                        child:
+                            Padding(padding: const EdgeInsets.only(top: 8.0), child: Text(tr('account_error_general'))),
+                      ),
+                      actions: [
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(null),
+                          child: Text(tr('action_ok')),
+                        ),
+                      ],
+                    );
+                  });
+            }
           }
         },
         builder: (context, state) {

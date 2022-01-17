@@ -6,8 +6,12 @@ class ResetPasswordState with _$ResetPasswordState {
     required String inputEmail,
     required bool isShowingClearEmailButton,
     required bool isPasswordResetMailSuccessfullySent,
+    required bool didTryToResetPassword,
   }) = _ResetPasswordState;
 
-  factory ResetPasswordState.initial() =>
-      ResetPasswordState(inputEmail: '', isShowingClearEmailButton: false, isPasswordResetMailSuccessfullySent: false);
+  factory ResetPasswordState.initial() => ResetPasswordState(
+      inputEmail: '',
+      isShowingClearEmailButton: false,
+      isPasswordResetMailSuccessfullySent: false,
+      didTryToResetPassword: false);
 }

@@ -520,11 +520,13 @@ class _$ResetPasswordStateTearOff {
   _ResetPasswordState call(
       {required String inputEmail,
       required bool isShowingClearEmailButton,
-      required bool isPasswordResetMailSuccessfullySent}) {
+      required bool isPasswordResetMailSuccessfullySent,
+      required bool didTryToResetPassword}) {
     return _ResetPasswordState(
       inputEmail: inputEmail,
       isShowingClearEmailButton: isShowingClearEmailButton,
       isPasswordResetMailSuccessfullySent: isPasswordResetMailSuccessfullySent,
+      didTryToResetPassword: didTryToResetPassword,
     );
   }
 }
@@ -538,6 +540,7 @@ mixin _$ResetPasswordState {
   bool get isShowingClearEmailButton => throw _privateConstructorUsedError;
   bool get isPasswordResetMailSuccessfullySent =>
       throw _privateConstructorUsedError;
+  bool get didTryToResetPassword => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ResetPasswordStateCopyWith<ResetPasswordState> get copyWith =>
@@ -552,7 +555,8 @@ abstract class $ResetPasswordStateCopyWith<$Res> {
   $Res call(
       {String inputEmail,
       bool isShowingClearEmailButton,
-      bool isPasswordResetMailSuccessfullySent});
+      bool isPasswordResetMailSuccessfullySent,
+      bool didTryToResetPassword});
 }
 
 /// @nodoc
@@ -569,6 +573,7 @@ class _$ResetPasswordStateCopyWithImpl<$Res>
     Object? inputEmail = freezed,
     Object? isShowingClearEmailButton = freezed,
     Object? isPasswordResetMailSuccessfullySent = freezed,
+    Object? didTryToResetPassword = freezed,
   }) {
     return _then(_value.copyWith(
       inputEmail: inputEmail == freezed
@@ -584,6 +589,10 @@ class _$ResetPasswordStateCopyWithImpl<$Res>
           ? _value.isPasswordResetMailSuccessfullySent
           : isPasswordResetMailSuccessfullySent // ignore: cast_nullable_to_non_nullable
               as bool,
+      didTryToResetPassword: didTryToResetPassword == freezed
+          ? _value.didTryToResetPassword
+          : didTryToResetPassword // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -598,7 +607,8 @@ abstract class _$ResetPasswordStateCopyWith<$Res>
   $Res call(
       {String inputEmail,
       bool isShowingClearEmailButton,
-      bool isPasswordResetMailSuccessfullySent});
+      bool isPasswordResetMailSuccessfullySent,
+      bool didTryToResetPassword});
 }
 
 /// @nodoc
@@ -617,6 +627,7 @@ class __$ResetPasswordStateCopyWithImpl<$Res>
     Object? inputEmail = freezed,
     Object? isShowingClearEmailButton = freezed,
     Object? isPasswordResetMailSuccessfullySent = freezed,
+    Object? didTryToResetPassword = freezed,
   }) {
     return _then(_ResetPasswordState(
       inputEmail: inputEmail == freezed
@@ -632,6 +643,10 @@ class __$ResetPasswordStateCopyWithImpl<$Res>
           ? _value.isPasswordResetMailSuccessfullySent
           : isPasswordResetMailSuccessfullySent // ignore: cast_nullable_to_non_nullable
               as bool,
+      didTryToResetPassword: didTryToResetPassword == freezed
+          ? _value.didTryToResetPassword
+          : didTryToResetPassword // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -642,7 +657,8 @@ class _$_ResetPasswordState implements _ResetPasswordState {
   const _$_ResetPasswordState(
       {required this.inputEmail,
       required this.isShowingClearEmailButton,
-      required this.isPasswordResetMailSuccessfullySent});
+      required this.isPasswordResetMailSuccessfullySent,
+      required this.didTryToResetPassword});
 
   @override
   final String inputEmail;
@@ -650,10 +666,12 @@ class _$_ResetPasswordState implements _ResetPasswordState {
   final bool isShowingClearEmailButton;
   @override
   final bool isPasswordResetMailSuccessfullySent;
+  @override
+  final bool didTryToResetPassword;
 
   @override
   String toString() {
-    return 'ResetPasswordState(inputEmail: $inputEmail, isShowingClearEmailButton: $isShowingClearEmailButton, isPasswordResetMailSuccessfullySent: $isPasswordResetMailSuccessfullySent)';
+    return 'ResetPasswordState(inputEmail: $inputEmail, isShowingClearEmailButton: $isShowingClearEmailButton, isPasswordResetMailSuccessfullySent: $isPasswordResetMailSuccessfullySent, didTryToResetPassword: $didTryToResetPassword)';
   }
 
   @override
@@ -667,7 +685,9 @@ class _$_ResetPasswordState implements _ResetPasswordState {
                 other.isShowingClearEmailButton, isShowingClearEmailButton) &&
             const DeepCollectionEquality().equals(
                 other.isPasswordResetMailSuccessfullySent,
-                isPasswordResetMailSuccessfullySent));
+                isPasswordResetMailSuccessfullySent) &&
+            const DeepCollectionEquality()
+                .equals(other.didTryToResetPassword, didTryToResetPassword));
   }
 
   @override
@@ -675,7 +695,8 @@ class _$_ResetPasswordState implements _ResetPasswordState {
       runtimeType,
       const DeepCollectionEquality().hash(inputEmail),
       const DeepCollectionEquality().hash(isShowingClearEmailButton),
-      const DeepCollectionEquality().hash(isPasswordResetMailSuccessfullySent));
+      const DeepCollectionEquality().hash(isPasswordResetMailSuccessfullySent),
+      const DeepCollectionEquality().hash(didTryToResetPassword));
 
   @JsonKey(ignore: true)
   @override
@@ -685,10 +706,10 @@ class _$_ResetPasswordState implements _ResetPasswordState {
 
 abstract class _ResetPasswordState implements ResetPasswordState {
   const factory _ResetPasswordState(
-          {required String inputEmail,
-          required bool isShowingClearEmailButton,
-          required bool isPasswordResetMailSuccessfullySent}) =
-      _$_ResetPasswordState;
+      {required String inputEmail,
+      required bool isShowingClearEmailButton,
+      required bool isPasswordResetMailSuccessfullySent,
+      required bool didTryToResetPassword}) = _$_ResetPasswordState;
 
   @override
   String get inputEmail;
@@ -696,6 +717,8 @@ abstract class _ResetPasswordState implements ResetPasswordState {
   bool get isShowingClearEmailButton;
   @override
   bool get isPasswordResetMailSuccessfullySent;
+  @override
+  bool get didTryToResetPassword;
   @override
   @JsonKey(ignore: true)
   _$ResetPasswordStateCopyWith<_ResetPasswordState> get copyWith =>

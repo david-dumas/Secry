@@ -33,6 +33,7 @@ class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
       },
       isShowingClearEmailInputToggled: (e) async {
         emit(state.copyWith(isShowingClearEmailButton: e.isShowing));
+        emit(state.copyWith(didTryToResetPassword: true));
       },
     );
   }
