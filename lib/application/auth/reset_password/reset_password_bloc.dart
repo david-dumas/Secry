@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:secry/domain/auth/i_auth_facade.dart';
+import 'package:secry/domain/auth/i_authentication_interface.dart';
 
 part 'reset_password_event.dart';
 part 'reset_password_state.dart';
@@ -10,9 +10,9 @@ part 'reset_password_bloc.freezed.dart';
 
 @injectable
 class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
-  final IAuthFacade _authFacade;
+  final IAuthenticationInterface _authApiRepository;
 
-  ResetPasswordBloc(this._authFacade) : super(ResetPasswordState.initial()) {
+  ResetPasswordBloc(this._authApiRepository) : super(ResetPasswordState.initial()) {
     on<ResetPasswordEvent>(_onEvent);
   }
 
@@ -28,7 +28,7 @@ class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
         }
       },
       resetPasswordPressed: (e) async {
-        await _authFacade.resetPassword(email: state.inputEmail);
+        await _authApiRepository.resetPassword(email: state.inputEmail);
       },
       isShowingClearEmailInputToggled: (e) async {
         emit(state.copyWith(isShowingClearEmailButton: e.isShowing));

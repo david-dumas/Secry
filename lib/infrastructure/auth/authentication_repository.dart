@@ -3,9 +3,14 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/auth/i_authentication_interface.dart';
 import 'package:secry/domain/auth/user.dart';
+import 'authentication_api_service.dart';
 
 @Singleton(as: IAuthenticationInterface)
 class AuthenticationRepository extends IAuthenticationInterface {
+  final AuthenticationApiService _authenticationApiService;
+
+  AuthenticationRepository(this._authenticationApiService) : super();
+
   @override
   Future createNewUser(User user, String password) async {
     var dio = Dio();
@@ -34,5 +39,11 @@ class AuthenticationRepository extends IAuthenticationInterface {
         print(e.message);
       }
     }
+  }
+
+  @override
+  Future resetPassword({required String email}) async {
+    final response = await _authenticationApiService.auth.resetPassword(email);
+    print("response: ${response.toString()}");
   }
 }

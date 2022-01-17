@@ -51,11 +51,6 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future resetPassword({required String email}) async {
-    // TODO implement password reset via API
-  }
-
-  @override
   Future<void> signOut() async {
     await _auth.signOut();
   }
