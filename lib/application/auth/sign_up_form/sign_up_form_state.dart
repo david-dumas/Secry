@@ -1,7 +1,7 @@
 part of 'sign_up_form_bloc.dart';
 
 @freezed
-abstract class SignUpFormState with _$SignUpFormState {
+class SignUpFormState with _$SignUpFormState {
   const factory SignUpFormState({
     required String statusMessage,
     required String firstNameInput,

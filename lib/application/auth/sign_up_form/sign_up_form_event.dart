@@ -1,7 +1,7 @@
 part of 'sign_up_form_bloc.dart';
 
 @freezed
-abstract class SignUpFormEvent with _$SignUpFormEvent {
+class SignUpFormEvent with _$SignUpFormEvent {
   const factory SignUpFormEvent.initialized() = _Initialized;
   const factory SignUpFormEvent.signUpPressed() = _signUpPressed;
   const factory SignUpFormEvent.firstNameChanged(String newFirstName) = _FirstNameChanged;

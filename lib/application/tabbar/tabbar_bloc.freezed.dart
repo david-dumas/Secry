@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'tabbar_bloc.dart';
@@ -243,11 +244,12 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SelectedIndexChanged &&
-            (identical(other.index, index) || other.index == index));
+            const DeepCollectionEquality().equals(other.index, index));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, index);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
 
   @JsonKey(ignore: true)
   @override
@@ -474,22 +476,21 @@ class _$_TabbarState implements _TabbarState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TabbarState &&
-            (identical(other.selectedIndex, selectedIndex) ||
-                other.selectedIndex == selectedIndex) &&
+            const DeepCollectionEquality()
+                .equals(other.selectedIndex, selectedIndex) &&
             const DeepCollectionEquality().equals(
                 other.titleTagsForSelectedIndex, titleTagsForSelectedIndex) &&
-            (identical(other.currentTitleTagForSelectedIndex,
-                    currentTitleTagForSelectedIndex) ||
-                other.currentTitleTagForSelectedIndex ==
-                    currentTitleTagForSelectedIndex));
+            const DeepCollectionEquality().equals(
+                other.currentTitleTagForSelectedIndex,
+                currentTitleTagForSelectedIndex));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      selectedIndex,
+      const DeepCollectionEquality().hash(selectedIndex),
       const DeepCollectionEquality().hash(titleTagsForSelectedIndex),
-      currentTitleTagForSelectedIndex);
+      const DeepCollectionEquality().hash(currentTitleTagForSelectedIndex));
 
   @JsonKey(ignore: true)
   @override

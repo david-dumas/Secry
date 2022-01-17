@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user.dart';
@@ -187,18 +188,21 @@ class _$_User implements _User {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _User &&
-            (identical(other.uid, uid) || other.uid == uid) &&
-            (identical(other.firstName, firstName) ||
-                other.firstName == firstName) &&
-            (identical(other.lastName, lastName) ||
-                other.lastName == lastName) &&
-            (identical(other.email, email) || other.email == email) &&
-            (identical(other.phone, phone) || other.phone == phone));
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.firstName, firstName) &&
+            const DeepCollectionEquality().equals(other.lastName, lastName) &&
+            const DeepCollectionEquality().equals(other.email, email) &&
+            const DeepCollectionEquality().equals(other.phone, phone));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, uid, firstName, lastName, email, phone);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(firstName),
+      const DeepCollectionEquality().hash(lastName),
+      const DeepCollectionEquality().hash(email),
+      const DeepCollectionEquality().hash(phone));
 
   @JsonKey(ignore: true)
   @override

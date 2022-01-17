@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'reset_password_bloc.dart';
@@ -156,12 +157,12 @@ class _$_EmailChanged implements _EmailChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _EmailChanged &&
-            (identical(other.newEmail, newEmail) ||
-                other.newEmail == newEmail));
+            const DeepCollectionEquality().equals(other.newEmail, newEmail));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, newEmail);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(newEmail));
 
   @JsonKey(ignore: true)
   @override
@@ -417,12 +418,12 @@ class _$_IsShowingClearEmailInputToggled
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _IsShowingClearEmailInputToggled &&
-            (identical(other.isShowing, isShowing) ||
-                other.isShowing == isShowing));
+            const DeepCollectionEquality().equals(other.isShowing, isShowing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isShowing);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
 
   @JsonKey(ignore: true)
   @override
@@ -633,16 +634,17 @@ class _$_ResetPasswordState implements _ResetPasswordState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ResetPasswordState &&
-            (identical(other.inputEmail, inputEmail) ||
-                other.inputEmail == inputEmail) &&
-            (identical(other.isShowingClearEmailButton,
-                    isShowingClearEmailButton) ||
-                other.isShowingClearEmailButton == isShowingClearEmailButton));
+            const DeepCollectionEquality()
+                .equals(other.inputEmail, inputEmail) &&
+            const DeepCollectionEquality().equals(
+                other.isShowingClearEmailButton, isShowingClearEmailButton));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, inputEmail, isShowingClearEmailButton);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(inputEmail),
+      const DeepCollectionEquality().hash(isShowingClearEmailButton));
 
   @JsonKey(ignore: true)
   @override

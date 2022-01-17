@@ -7,6 +7,8 @@
 // **************************************************************************
 // AutoRouteGenerator
 // **************************************************************************
+//
+// ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i11;
 import 'package:flutter/cupertino.dart' as _i13;
@@ -95,68 +97,81 @@ class AppRouter extends _i11.RootStackRouter {
       ];
 }
 
-/// generated route for [_i1.SplashPage]
+/// generated route for
+/// [_i1.SplashPage]
 class SplashPageRoute extends _i11.PageRouteInfo<void> {
-  const SplashPageRoute() : super(name, path: '/');
+  const SplashPageRoute() : super(SplashPageRoute.name, path: '/');
 
   static const String name = 'SplashPageRoute';
 }
 
-/// generated route for [_i2.TabbarPage]
+/// generated route for
+/// [_i2.TabbarPage]
 class TabbarPageRoute extends _i11.PageRouteInfo<void> {
-  const TabbarPageRoute() : super(name, path: '/tabbar-page');
+  const TabbarPageRoute() : super(TabbarPageRoute.name, path: '/tabbar-page');
 
   static const String name = 'TabbarPageRoute';
 }
 
-/// generated route for [_i3.HomePage]
+/// generated route for
+/// [_i3.HomePage]
 class HomePageRoute extends _i11.PageRouteInfo<void> {
-  const HomePageRoute() : super(name, path: '/home-page');
+  const HomePageRoute() : super(HomePageRoute.name, path: '/home-page');
 
   static const String name = 'HomePageRoute';
 }
 
-/// generated route for [_i4.GlobalSearchPage]
+/// generated route for
+/// [_i4.GlobalSearchPage]
 class GlobalSearchPageRoute extends _i11.PageRouteInfo<void> {
-  const GlobalSearchPageRoute() : super(name, path: '/global-search-page');
+  const GlobalSearchPageRoute()
+      : super(GlobalSearchPageRoute.name, path: '/global-search-page');
 
   static const String name = 'GlobalSearchPageRoute';
 }
 
-/// generated route for [_i5.SavedChatsAndSurveysPage]
+/// generated route for
+/// [_i5.SavedChatsAndSurveysPage]
 class SavedChatsAndSurveysPageRoute extends _i11.PageRouteInfo<void> {
   const SavedChatsAndSurveysPageRoute()
-      : super(name, path: '/saved-chats-and-surveys-page');
+      : super(SavedChatsAndSurveysPageRoute.name,
+            path: '/saved-chats-and-surveys-page');
 
   static const String name = 'SavedChatsAndSurveysPageRoute';
 }
 
-/// generated route for [_i6.AccountPage]
+/// generated route for
+/// [_i6.AccountPage]
 class AccountPageRoute extends _i11.PageRouteInfo<void> {
-  const AccountPageRoute() : super(name, path: '/account-page');
+  const AccountPageRoute()
+      : super(AccountPageRoute.name, path: '/account-page');
 
   static const String name = 'AccountPageRoute';
 }
 
-/// generated route for [_i7.AccountLoggedoutPage]
+/// generated route for
+/// [_i7.AccountLoggedoutPage]
 class AccountLoggedoutPageRoute extends _i11.PageRouteInfo<void> {
   const AccountLoggedoutPageRoute()
-      : super(name, path: '/account-loggedout-page');
+      : super(AccountLoggedoutPageRoute.name, path: '/account-loggedout-page');
 
   static const String name = 'AccountLoggedoutPageRoute';
 }
 
-/// generated route for [_i8.LoginPage]
+/// generated route for
+/// [_i8.LoginPage]
 class LoginPageRoute extends _i11.PageRouteInfo<void> {
-  const LoginPageRoute() : super(name, path: '/login-page');
+  const LoginPageRoute() : super(LoginPageRoute.name, path: '/login-page');
 
   static const String name = 'LoginPageRoute';
 }
 
-/// generated route for [_i9.SignupPage]
+/// generated route for
+/// [_i9.SignupPage]
 class SignupPageRoute extends _i11.PageRouteInfo<SignupPageRouteArgs> {
   SignupPageRoute({_i13.Key? key})
-      : super(name, path: '/signup-page', args: SignupPageRouteArgs(key: key));
+      : super(SignupPageRoute.name,
+            path: '/signup-page', args: SignupPageRouteArgs(key: key));
 
   static const String name = 'SignupPageRoute';
 }
@@ -172,11 +187,12 @@ class SignupPageRouteArgs {
   }
 }
 
-/// generated route for [_i10.ResetPasswordPage]
+/// generated route for
+/// [_i10.ResetPasswordPage]
 class ResetPasswordPageRoute
     extends _i11.PageRouteInfo<ResetPasswordPageRouteArgs> {
   ResetPasswordPageRoute({_i13.Key? key})
-      : super(name,
+      : super(ResetPasswordPageRoute.name,
             path: '/reset-password-page',
             args: ResetPasswordPageRouteArgs(key: key));
 

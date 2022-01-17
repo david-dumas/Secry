@@ -1,5 +1,6 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sign_in_form_bloc.dart';
@@ -300,12 +301,12 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _IsShowingPasswordToggled &&
-            (identical(other.isShowing, isShowing) ||
-                other.isShowing == isShowing));
+            const DeepCollectionEquality().equals(other.isShowing, isShowing));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isShowing);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
 
   @JsonKey(ignore: true)
   @override
@@ -579,12 +580,12 @@ class _$_EmailChanged implements _EmailChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _EmailChanged &&
-            (identical(other.newEmail, newEmail) ||
-                other.newEmail == newEmail));
+            const DeepCollectionEquality().equals(other.newEmail, newEmail));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, newEmail);
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(newEmail));
 
   @JsonKey(ignore: true)
   @override
@@ -732,12 +733,13 @@ class _$_PasswordChanged implements _PasswordChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _PasswordChanged &&
-            (identical(other.newPassword, newPassword) ||
-                other.newPassword == newPassword));
+            const DeepCollectionEquality()
+                .equals(other.newPassword, newPassword));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, newPassword);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(newPassword));
 
   @JsonKey(ignore: true)
   @override
@@ -1035,30 +1037,29 @@ class _$_SignInFormState implements _SignInFormState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignInFormState &&
-            (identical(other.inputEmail, inputEmail) ||
-                other.inputEmail == inputEmail) &&
-            (identical(other.inputPassword, inputPassword) ||
-                other.inputPassword == inputPassword) &&
-            (identical(other.isShowingPassword, isShowingPassword) ||
-                other.isShowingPassword == isShowingPassword) &&
-            (identical(other.isShowingErrorMessages, isShowingErrorMessages) ||
-                other.isShowingErrorMessages == isShowingErrorMessages) &&
-            (identical(other.currentErrorMessageTag, currentErrorMessageTag) ||
-                other.currentErrorMessageTag == currentErrorMessageTag) &&
-            (identical(other.signInFailureOrUnitOption,
-                    signInFailureOrUnitOption) ||
-                other.signInFailureOrUnitOption == signInFailureOrUnitOption));
+            const DeepCollectionEquality()
+                .equals(other.inputEmail, inputEmail) &&
+            const DeepCollectionEquality()
+                .equals(other.inputPassword, inputPassword) &&
+            const DeepCollectionEquality()
+                .equals(other.isShowingPassword, isShowingPassword) &&
+            const DeepCollectionEquality()
+                .equals(other.isShowingErrorMessages, isShowingErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.currentErrorMessageTag, currentErrorMessageTag) &&
+            const DeepCollectionEquality().equals(
+                other.signInFailureOrUnitOption, signInFailureOrUnitOption));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      inputEmail,
-      inputPassword,
-      isShowingPassword,
-      isShowingErrorMessages,
-      currentErrorMessageTag,
-      signInFailureOrUnitOption);
+      const DeepCollectionEquality().hash(inputEmail),
+      const DeepCollectionEquality().hash(inputPassword),
+      const DeepCollectionEquality().hash(isShowingPassword),
+      const DeepCollectionEquality().hash(isShowingErrorMessages),
+      const DeepCollectionEquality().hash(currentErrorMessageTag),
+      const DeepCollectionEquality().hash(signInFailureOrUnitOption));
 
   @JsonKey(ignore: true)
   @override

@@ -1,7 +1,7 @@
 part of 'tabbar_bloc.dart';
 
 @freezed
-abstract class TabbarState with _$TabbarState {
+class TabbarState with _$TabbarState {
   const factory TabbarState(
       {required int selectedIndex,
       required List<String> titleTagsForSelectedIndex,
