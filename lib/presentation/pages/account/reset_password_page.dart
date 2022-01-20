@@ -1,11 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/auth/reset_password/reset_password_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
-import 'package:secry/presentation/pages/login/login_page.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
@@ -27,16 +26,20 @@ class ResetPasswordPage extends StatelessWidget {
               context: context,
               barrierDismissible: true,
               builder: (context) => SimpleDialog(
-                contentPadding: EdgeInsets.all(16),
+                insetPadding: EdgeInsets.all(20),
+                contentPadding: EdgeInsets.all(32),
                 children: [
                   Text(
                     tr('success_message_success_title'),
-                    style: TextStyle(fontWeight: FontWeight.bold),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
                   ),
                   SizedBox(
                     height: 8,
                   ),
-                  Text(tr('success_message_password_reset_mail_successfully_sent_description')),
+                  Text(
+                    tr('success_message_password_reset_mail_successfully_sent_description'),
+                    style: TextStyle(fontSize: 18),
+                  ),
                   SizedBox(
                     height: 8,
                   ),
@@ -54,7 +57,7 @@ class ResetPasswordPage extends StatelessWidget {
                       Flexible(
                         child: Text(
                           tr('success_message_password_reset_mail_tip'),
-                          style: TextStyle(color: kPrimaryColor),
+                          style: TextStyle(color: kPrimaryColor, fontSize: 18),
                           maxLines: 3,
                         ),
                       ),
@@ -76,6 +79,7 @@ class ResetPasswordPage extends StatelessWidget {
                     child: Text(
                       tr('action_go_to_login'),
                       style: TextStyle(fontSize: 16),
+                    ),
                     ),
                   )
                 ],
