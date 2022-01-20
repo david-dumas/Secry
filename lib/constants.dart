@@ -41,7 +41,17 @@ const Widget verticalSpaceMassive = SizedBox(height: 120.0);
 const pagePadding = EdgeInsets.only(left: 20, right: 20, bottom: 32);
 
 // Button radius
+const kButtonRadiusXxs = BorderRadius.all(Radius.circular(8));
+const kButtonRadiusXs = BorderRadius.all(Radius.circular(12));
+const kButtonRadiusSmall = BorderRadius.all(Radius.circular(16));
 const kButtonRadiusMedium = BorderRadius.all(Radius.circular(20));
+const kButtonRadiusLarge = BorderRadius.all(Radius.circular(24));
+const kButtonRadiusXl = BorderRadius.all(Radius.circular(32));
+
+// Button heights
+const kButtonHeightSmall = 44.0;
+const kButtonHeightMedium = 50.0;
+const kButtonHeightLarge = 60.0;
 
 // Text styles
 const kWalkthroughTitleTextStyle = TextStyle(

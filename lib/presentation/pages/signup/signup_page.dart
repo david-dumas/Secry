@@ -201,12 +201,12 @@ class _SignupPageState extends State<SignupPage> {
                                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                                 child: Container(
                                   width: MediaQuery.of(context).size.width,
-                                  height: 44,
+                                  height: kButtonHeightMedium,
                                   child: ElevatedButton(
                                     style: ButtonStyle(
                                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(20.0),
+                                          borderRadius: kButtonRadiusMedium,
                                         ),
                                       ),
                                     ),

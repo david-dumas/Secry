@@ -61,11 +61,14 @@ class ResetPasswordPage extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 16),
-                  ElevatedButton(
+                  SizedBox(
+                    width: double.infinity,
+                    height: kButtonHeightMedium,
+                    child: ElevatedButton(
                     style: ButtonStyle(
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                         RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(18.0),
+                            borderRadius: kButtonRadiusMedium,
                         ),
                       ),
                     ),
@@ -160,12 +163,12 @@ class ResetPasswordPage extends StatelessWidget {
                       verticalSpaceMedium,
                       SizedBox(
                         width: double.infinity,
-                        height: 50.0,
+                        height: kButtonHeightMedium,
                         child: ElevatedButton(
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0),
+                                borderRadius: kButtonRadiusMedium,
                               ),
                             ),
                           ),

@@ -104,12 +104,12 @@ class _LoginPageState extends State<LoginPage> {
                           padding: const EdgeInsets.only(top: 20.0),
                           child: Container(
                             width: MediaQuery.of(context).size.width,
-                            height: 50.0,
+                            height: kButtonHeightMedium,
                             child: ElevatedButton(
                               style: ButtonStyle(
                                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                   RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(18.0),
+                                    borderRadius: kButtonRadiusMedium,
                                   ),
                                 ),
                               ),

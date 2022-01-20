@@ -47,12 +47,12 @@ class AccountPage extends StatelessWidget {
                       SizedBox(height: 16),
                       Container(
                         width: MediaQuery.of(context).size.width,
-                        height: 50,
+                        height: kButtonHeightMedium,
                         child: ElevatedButton(
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20.0),
+                                borderRadius: kButtonRadiusMedium,
                               ),
                             ),
                           ),
