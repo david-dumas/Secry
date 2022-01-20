@@ -23,7 +23,21 @@ class _LoginPageState extends State<LoginPage> {
 
     return BlocProvider(
       create: (context) => getIt<SignInFormBloc>(),
-      child: BlocBuilder<SignInFormBloc, SignInFormState>(
+      child: BlocConsumer<SignInFormBloc, SignInFormState>(
+        listener: (context, state) {
+          state.signInFailureOrUnitOption.fold(
+            () => {},
+            (either) => either.fold(
+              (failure) {
+                // TODO Show login error
+              },
+              (_) {
+                // Successfully logged in
+                // TODO navigate to homepage AND load user related content
+              },
+            ),
+          );
+        },
         builder: (context, state) {
           return Scaffold(
             backgroundColor: globalWhite,
@@ -32,8 +46,8 @@ class _LoginPageState extends State<LoginPage> {
             ),
             body: Center(
               child: SingleChildScrollView(
-              child: Padding(
-                padding: EdgeInsets.only(bottom: screenHeight * 0.1),
+                child: Padding(
+                  padding: EdgeInsets.only(bottom: screenHeight * 0.1),
                   child: Padding(
                     padding: pagePadding,
                     child: Column(
