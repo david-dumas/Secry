@@ -30,10 +30,10 @@ class _LoginPageState extends State<LoginPage> {
             appBar: GeneralAppbar(
               isSubpage: true,
             ),
-            body: SingleChildScrollView(
+            body: Center(
+              child: SingleChildScrollView(
               child: Padding(
                 padding: EdgeInsets.only(bottom: screenHeight * 0.1),
-                child: Center(
                   child: Padding(
                     padding: pagePadding,
                     child: Column(
