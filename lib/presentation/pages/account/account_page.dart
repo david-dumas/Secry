@@ -6,6 +6,7 @@ import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/presentation/pages/login/login_page.dart';
 import 'package:secry/presentation/pages/signup/signup_page.dart';
+import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 class AccountPage extends StatelessWidget {
@@ -79,8 +80,9 @@ class AccountPage extends StatelessWidget {
                             textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                           ),
                           onPressed: () {
-                            pushNewScreen(
+                            pushNewScreenWithRouteSettings(
                               context,
+                              settings: RouteSettings(name: LoginPageRoute.name),
                               screen: LoginPage(),
                               withNavBar: true,
                               pageTransitionAnimation: PageTransitionAnimation.cupertino,

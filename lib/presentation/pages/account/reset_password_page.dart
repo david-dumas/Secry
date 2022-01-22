@@ -1,7 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/auth/reset_password/reset_password_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
@@ -14,7 +13,7 @@ class ResetPasswordPage extends StatelessWidget {
   ResetPasswordPage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext buildContext) {
     var _emailTextEditController = TextEditingController();
 
     return BlocProvider(
@@ -68,18 +67,24 @@ class ResetPasswordPage extends StatelessWidget {
                     width: double.infinity,
                     height: kButtonHeightMedium,
                     child: ElevatedButton(
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
                             borderRadius: kButtonRadiusMedium,
+                          ),
                         ),
                       ),
-                    ),
-                    onPressed: () => Navigator.of(context).pop(null),
-                    child: Text(
-                      tr('action_go_to_login'),
-                      style: TextStyle(fontSize: 16),
-                    ),
+                      onPressed: () {
+                        Navigator.of(context).pop(context);
+
+                        Navigator.of(buildContext).popUntil((route) {
+                          return route.settings.name == LoginPageRoute.name;
+                        });
+                      },
+                      child: Text(
+                        tr('action_go_to_login'),
+                        style: TextStyle(fontSize: 16),
+                      ),
                     ),
                   )
                 ],
@@ -101,7 +106,9 @@ class ResetPasswordPage extends StatelessWidget {
                       ),
                       actions: [
                         TextButton(
-                          onPressed: () => Navigator.of(context).pop(null),
+                          onPressed: () {
+                            Navigator.of(context).pop(context);
+                          },
                           child: Text(tr('action_ok')),
                         ),
                       ],
@@ -182,7 +189,7 @@ class ResetPasswordPage extends StatelessWidget {
                             if (isValid!) {
                               _formKey.currentState?.save();
 
-                              context.read<ResetPasswordBloc>().add(ResetPasswordEvent.resetPasswordPressed());
+                            context.read<ResetPasswordBloc>().add(ResetPasswordEvent.resetPasswordPressed());
                             }
                           },
                           child: Text(
