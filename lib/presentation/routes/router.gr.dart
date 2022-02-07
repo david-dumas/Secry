@@ -11,6 +11,7 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i11;
+import 'package:flutter/cupertino.dart' as _i13;
 import 'package:flutter/material.dart' as _i12;
 
 import '../pages/account/account_loggedout_page.dart' as _i7;
@@ -168,7 +169,7 @@ class LoginPageRoute extends _i11.PageRouteInfo<void> {
 /// generated route for
 /// [_i9.SignupPage]
 class SignupPageRoute extends _i11.PageRouteInfo<SignupPageRouteArgs> {
-  SignupPageRoute({_i12.Key? key})
+  SignupPageRoute({_i13.Key? key})
       : super(SignupPageRoute.name,
             path: '/signup-page', args: SignupPageRouteArgs(key: key));
 
@@ -178,7 +179,7 @@ class SignupPageRoute extends _i11.PageRouteInfo<SignupPageRouteArgs> {
 class SignupPageRouteArgs {
   const SignupPageRouteArgs({this.key});
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 
   @override
   String toString() {
@@ -190,7 +191,7 @@ class SignupPageRouteArgs {
 /// [_i10.ResetPasswordPage]
 class ResetPasswordPageRoute
     extends _i11.PageRouteInfo<ResetPasswordPageRouteArgs> {
-  ResetPasswordPageRoute({_i12.Key? key})
+  ResetPasswordPageRoute({_i13.Key? key})
       : super(ResetPasswordPageRoute.name,
             path: '/reset-password-page',
             args: ResetPasswordPageRouteArgs(key: key));
@@ -201,7 +202,7 @@ class ResetPasswordPageRoute
 class ResetPasswordPageRouteArgs {
   const ResetPasswordPageRouteArgs({this.key});
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 
   @override
   String toString() {
