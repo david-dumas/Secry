@@ -49,7 +49,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Padding(
                   padding: EdgeInsets.only(bottom: screenHeight * 0.1),
                   child: Padding(
-                    padding: pagePadding,
+                    padding: pagePaddingZeroTop,
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       crossAxisAlignment: CrossAxisAlignment.center,
