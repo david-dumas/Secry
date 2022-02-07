@@ -13,6 +13,9 @@ class AuthenticationRepository extends IAuthenticationInterface {
 
   @override
   Future createNewUser(User user, String password) async {
+    // TODO use same format as with "resetPassword" below in this file.
+    // TODO Do NOT call Dio directly
+
     var dio = Dio();
 
     final jsonUser = user.toJson();
