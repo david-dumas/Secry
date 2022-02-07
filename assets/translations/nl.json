@@ -23,6 +23,8 @@
   "action_follow" : "Volgen",
   "action_following" : "Ontvolgen",
   "action_create_account" : "Account aanmaken",
+  "action_create_new_group_title" : "Maak nieuwe groep",
+  "action_create_new_group_description" : "Nodig mensen uit",
   "action_login" : "Inloggen",
   "action_register" : "Registreren",
   "action_click_here" : "Klik hier",

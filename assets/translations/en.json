@@ -23,6 +23,8 @@
   "action_follow" : "Follow",
   "action_following" : "Following",
   "action_create_account" : "Create account",
+  "action_create_new_group_title" : "Create new group",
+  "action_create_new_group_description" : "Invite anyone to this group",
   "action_login" : "Sign in",
   "action_register" : "Register",
   "action_click_here" : "Click here",
