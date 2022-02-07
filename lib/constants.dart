@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 
+// BaseUrl
+const baseUrl = "https://sjno.nl/secry";
+
+// TODO Delete
+const temporaryPostmanBaseUrl = "https://7be081bd-b151-44f1-9637-529fda506363.mock.pstmn.io";
+
 // Most used color(s)
 const kPrimaryColor = Color(0xFF3794FC);
 
@@ -38,7 +44,8 @@ const Widget verticalSpaceLarge = SizedBox(height: 50.0);
 const Widget verticalSpaceMassive = SizedBox(height: 120.0);
 
 // Padding
-const pagePadding = EdgeInsets.only(left: 20, right: 20, bottom: 32);
+const pagePaddingZeroTop = EdgeInsets.only(left: 20, right: 20, bottom: 32);
+const pagePaddingAllSides = EdgeInsets.only(top: 20, right: 20, bottom: 32, left: 20);
 
 // Button radius
 const kButtonRadiusXxs = BorderRadius.all(Radius.circular(8));
@@ -52,6 +59,23 @@ const kButtonRadiusXl = BorderRadius.all(Radius.circular(32));
 const kButtonHeightSmall = 44.0;
 const kButtonHeightMedium = 50.0;
 const kButtonHeightLarge = 60.0;
+
+// Font sizes
+const fontSizeXxs = 9.0;
+const fontSizeXs = 11.0;
+const fontSizeSmall = 12.0;
+const fontSizeMedium = 16.0;
+const fontSizeLarge = 18.0;
+const fontSizeXl = 21.0;
+const fontSizeXxl = 24.0;
+
+// Margins
+const marginXxs = 4.0;
+const marginXs = 8.0;
+const marginSmall = 12.0;
+const marginMedium = 16.0;
+const marginLarge = 24.0;
+const marginXl = 32.0;
 
 // Text styles
 const kWalkthroughTitleTextStyle = TextStyle(
