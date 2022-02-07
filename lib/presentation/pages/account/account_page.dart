@@ -25,7 +25,7 @@ class AccountPage extends StatelessWidget {
             child: Center(
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: pagePadding,
+                  padding: pagePaddingZeroTop,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
