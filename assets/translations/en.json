@@ -74,5 +74,6 @@
   "success_message_success_title" : "Successful",
   "success_message_password_reset_mail_successfully_sent_description" : "password reset mail sent successfully. Check your email and set a new password via the link",
   "success_message_password_reset_mail_tip" : "Can't find the mail? Check your spam folder",
-  "general_add_group" : "Add group"
+  "general_add_group" : "Add group",
+  "general_now" : "now"
 }

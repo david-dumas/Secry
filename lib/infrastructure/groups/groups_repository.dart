@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:developer';
 
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';

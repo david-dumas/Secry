@@ -34,6 +34,19 @@ class _$HomepageEventTearOff {
       isShowing,
     );
   }
+
+  _SearchValueUpdated searchValueUpdated(String newValue) {
+    return _SearchValueUpdated(
+      newValue,
+    );
+  }
+
+  _PrivateGroupAvatarSvgsUpdated privateGroupAvatarSvgsUpdated(
+      List<DrawableRoot?> newAvatarSvgs) {
+    return _PrivateGroupAvatarSvgsUpdated(
+      newAvatarSvgs,
+    );
+  }
 }
 
 /// @nodoc
@@ -47,6 +60,9 @@ mixin _$HomepageEvent {
     required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(List<DrawableRoot?> newAvatarSvgs)
+        privateGroupAvatarSvgsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,6 +71,9 @@ mixin _$HomepageEvent {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +82,9 @@ mixin _$HomepageEvent {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -73,6 +95,9 @@ mixin _$HomepageEvent {
         privateGroupsInfoUpdated,
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PrivateGroupAvatarSvgsUpdated value)
+        privateGroupAvatarSvgsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +106,9 @@ mixin _$HomepageEvent {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -89,6 +117,9 @@ mixin _$HomepageEvent {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -155,6 +186,9 @@ class _$_Initialized implements _Initialized {
     required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(List<DrawableRoot?> newAvatarSvgs)
+        privateGroupAvatarSvgsUpdated,
   }) {
     return initialized();
   }
@@ -166,6 +200,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
   }) {
     return initialized?.call();
   }
@@ -177,6 +214,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -193,6 +233,9 @@ class _$_Initialized implements _Initialized {
         privateGroupsInfoUpdated,
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PrivateGroupAvatarSvgsUpdated value)
+        privateGroupAvatarSvgsUpdated,
   }) {
     return initialized(this);
   }
@@ -204,6 +247,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -215,6 +261,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -300,6 +349,9 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(List<DrawableRoot?> newAvatarSvgs)
+        privateGroupAvatarSvgsUpdated,
   }) {
     return privateGroupsInfoUpdated(privateGroupsRowsInfo);
   }
@@ -311,6 +363,9 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
   }) {
     return privateGroupsInfoUpdated?.call(privateGroupsRowsInfo);
   }
@@ -322,6 +377,9 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -338,6 +396,9 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         privateGroupsInfoUpdated,
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PrivateGroupAvatarSvgsUpdated value)
+        privateGroupAvatarSvgsUpdated,
   }) {
     return privateGroupsInfoUpdated(this);
   }
@@ -349,6 +410,9 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
   }) {
     return privateGroupsInfoUpdated?.call(this);
   }
@@ -360,6 +424,9 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -452,6 +519,9 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(List<DrawableRoot?> newAvatarSvgs)
+        privateGroupAvatarSvgsUpdated,
   }) {
     return updatedIsShowingSearchBar(isShowing);
   }
@@ -463,6 +533,9 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
   }) {
     return updatedIsShowingSearchBar?.call(isShowing);
   }
@@ -474,6 +547,9 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -490,6 +566,9 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         privateGroupsInfoUpdated,
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PrivateGroupAvatarSvgsUpdated value)
+        privateGroupAvatarSvgsUpdated,
   }) {
     return updatedIsShowingSearchBar(this);
   }
@@ -501,6 +580,9 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
   }) {
     return updatedIsShowingSearchBar?.call(this);
   }
@@ -512,6 +594,9 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -532,15 +617,356 @@ abstract class _UpdatedIsShowingSearchBar implements HomepageEvent {
 }
 
 /// @nodoc
+abstract class _$SearchValueUpdatedCopyWith<$Res> {
+  factory _$SearchValueUpdatedCopyWith(
+          _SearchValueUpdated value, $Res Function(_SearchValueUpdated) then) =
+      __$SearchValueUpdatedCopyWithImpl<$Res>;
+  $Res call({String newValue});
+}
+
+/// @nodoc
+class __$SearchValueUpdatedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$SearchValueUpdatedCopyWith<$Res> {
+  __$SearchValueUpdatedCopyWithImpl(
+      _SearchValueUpdated _value, $Res Function(_SearchValueUpdated) _then)
+      : super(_value, (v) => _then(v as _SearchValueUpdated));
+
+  @override
+  _SearchValueUpdated get _value => super._value as _SearchValueUpdated;
+
+  @override
+  $Res call({
+    Object? newValue = freezed,
+  }) {
+    return _then(_SearchValueUpdated(
+      newValue == freezed
+          ? _value.newValue
+          : newValue // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchValueUpdated implements _SearchValueUpdated {
+  const _$_SearchValueUpdated(this.newValue);
+
+  @override
+  final String newValue;
+
+  @override
+  String toString() {
+    return 'HomepageEvent.searchValueUpdated(newValue: $newValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SearchValueUpdated &&
+            const DeepCollectionEquality().equals(other.newValue, newValue));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SearchValueUpdatedCopyWith<_SearchValueUpdated> get copyWith =>
+      __$SearchValueUpdatedCopyWithImpl<_SearchValueUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(List<DrawableRoot?> newAvatarSvgs)
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return searchValueUpdated(newValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return searchValueUpdated?.call(newValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
+    required TResult orElse(),
+  }) {
+    if (searchValueUpdated != null) {
+      return searchValueUpdated(newValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PrivateGroupAvatarSvgsUpdated value)
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return searchValueUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return searchValueUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
+    required TResult orElse(),
+  }) {
+    if (searchValueUpdated != null) {
+      return searchValueUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchValueUpdated implements HomepageEvent {
+  const factory _SearchValueUpdated(String newValue) = _$_SearchValueUpdated;
+
+  String get newValue;
+  @JsonKey(ignore: true)
+  _$SearchValueUpdatedCopyWith<_SearchValueUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$PrivateGroupAvatarSvgsUpdatedCopyWith<$Res> {
+  factory _$PrivateGroupAvatarSvgsUpdatedCopyWith(
+          _PrivateGroupAvatarSvgsUpdated value,
+          $Res Function(_PrivateGroupAvatarSvgsUpdated) then) =
+      __$PrivateGroupAvatarSvgsUpdatedCopyWithImpl<$Res>;
+  $Res call({List<DrawableRoot?> newAvatarSvgs});
+}
+
+/// @nodoc
+class __$PrivateGroupAvatarSvgsUpdatedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$PrivateGroupAvatarSvgsUpdatedCopyWith<$Res> {
+  __$PrivateGroupAvatarSvgsUpdatedCopyWithImpl(
+      _PrivateGroupAvatarSvgsUpdated _value,
+      $Res Function(_PrivateGroupAvatarSvgsUpdated) _then)
+      : super(_value, (v) => _then(v as _PrivateGroupAvatarSvgsUpdated));
+
+  @override
+  _PrivateGroupAvatarSvgsUpdated get _value =>
+      super._value as _PrivateGroupAvatarSvgsUpdated;
+
+  @override
+  $Res call({
+    Object? newAvatarSvgs = freezed,
+  }) {
+    return _then(_PrivateGroupAvatarSvgsUpdated(
+      newAvatarSvgs == freezed
+          ? _value.newAvatarSvgs
+          : newAvatarSvgs // ignore: cast_nullable_to_non_nullable
+              as List<DrawableRoot?>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_PrivateGroupAvatarSvgsUpdated
+    implements _PrivateGroupAvatarSvgsUpdated {
+  const _$_PrivateGroupAvatarSvgsUpdated(this.newAvatarSvgs);
+
+  @override
+  final List<DrawableRoot?> newAvatarSvgs;
+
+  @override
+  String toString() {
+    return 'HomepageEvent.privateGroupAvatarSvgsUpdated(newAvatarSvgs: $newAvatarSvgs)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _PrivateGroupAvatarSvgsUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.newAvatarSvgs, newAvatarSvgs));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(newAvatarSvgs));
+
+  @JsonKey(ignore: true)
+  @override
+  _$PrivateGroupAvatarSvgsUpdatedCopyWith<_PrivateGroupAvatarSvgsUpdated>
+      get copyWith => __$PrivateGroupAvatarSvgsUpdatedCopyWithImpl<
+          _PrivateGroupAvatarSvgsUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(List<DrawableRoot?> newAvatarSvgs)
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return privateGroupAvatarSvgsUpdated(newAvatarSvgs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return privateGroupAvatarSvgsUpdated?.call(newAvatarSvgs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(List<DrawableRoot?> newAvatarSvgs)?
+        privateGroupAvatarSvgsUpdated,
+    required TResult orElse(),
+  }) {
+    if (privateGroupAvatarSvgsUpdated != null) {
+      return privateGroupAvatarSvgsUpdated(newAvatarSvgs);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PrivateGroupAvatarSvgsUpdated value)
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return privateGroupAvatarSvgsUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
+  }) {
+    return privateGroupAvatarSvgsUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PrivateGroupAvatarSvgsUpdated value)?
+        privateGroupAvatarSvgsUpdated,
+    required TResult orElse(),
+  }) {
+    if (privateGroupAvatarSvgsUpdated != null) {
+      return privateGroupAvatarSvgsUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _PrivateGroupAvatarSvgsUpdated implements HomepageEvent {
+  const factory _PrivateGroupAvatarSvgsUpdated(
+      List<DrawableRoot?> newAvatarSvgs) = _$_PrivateGroupAvatarSvgsUpdated;
+
+  List<DrawableRoot?> get newAvatarSvgs;
+  @JsonKey(ignore: true)
+  _$PrivateGroupAvatarSvgsUpdatedCopyWith<_PrivateGroupAvatarSvgsUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$HomepageStateTearOff {
   const _$HomepageStateTearOff();
 
   _HomepageState call(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      required bool isShowingSearchBar}) {
+      required bool isShowingSearchBar,
+      required String searchValue,
+      required List<DrawableRoot?> privateGroupAvatarSvgs}) {
     return _HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo,
       isShowingSearchBar: isShowingSearchBar,
+      searchValue: searchValue,
+      privateGroupAvatarSvgs: privateGroupAvatarSvgs,
     );
   }
 }
@@ -553,6 +979,9 @@ mixin _$HomepageState {
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo =>
       throw _privateConstructorUsedError;
   bool get isShowingSearchBar => throw _privateConstructorUsedError;
+  String get searchValue => throw _privateConstructorUsedError;
+  List<DrawableRoot?> get privateGroupAvatarSvgs =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomepageStateCopyWith<HomepageState> get copyWith =>
@@ -566,7 +995,9 @@ abstract class $HomepageStateCopyWith<$Res> {
       _$HomepageStateCopyWithImpl<$Res>;
   $Res call(
       {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      bool isShowingSearchBar});
+      bool isShowingSearchBar,
+      String searchValue,
+      List<DrawableRoot?> privateGroupAvatarSvgs});
 }
 
 /// @nodoc
@@ -582,6 +1013,8 @@ class _$HomepageStateCopyWithImpl<$Res>
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
     Object? isShowingSearchBar = freezed,
+    Object? searchValue = freezed,
+    Object? privateGroupAvatarSvgs = freezed,
   }) {
     return _then(_value.copyWith(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
@@ -592,6 +1025,14 @@ class _$HomepageStateCopyWithImpl<$Res>
           ? _value.isShowingSearchBar
           : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
               as bool,
+      searchValue: searchValue == freezed
+          ? _value.searchValue
+          : searchValue // ignore: cast_nullable_to_non_nullable
+              as String,
+      privateGroupAvatarSvgs: privateGroupAvatarSvgs == freezed
+          ? _value.privateGroupAvatarSvgs
+          : privateGroupAvatarSvgs // ignore: cast_nullable_to_non_nullable
+              as List<DrawableRoot?>,
     ));
   }
 }
@@ -605,7 +1046,9 @@ abstract class _$HomepageStateCopyWith<$Res>
   @override
   $Res call(
       {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      bool isShowingSearchBar});
+      bool isShowingSearchBar,
+      String searchValue,
+      List<DrawableRoot?> privateGroupAvatarSvgs});
 }
 
 /// @nodoc
@@ -623,6 +1066,8 @@ class __$HomepageStateCopyWithImpl<$Res>
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
     Object? isShowingSearchBar = freezed,
+    Object? searchValue = freezed,
+    Object? privateGroupAvatarSvgs = freezed,
   }) {
     return _then(_HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
@@ -633,6 +1078,14 @@ class __$HomepageStateCopyWithImpl<$Res>
           ? _value.isShowingSearchBar
           : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
               as bool,
+      searchValue: searchValue == freezed
+          ? _value.searchValue
+          : searchValue // ignore: cast_nullable_to_non_nullable
+              as String,
+      privateGroupAvatarSvgs: privateGroupAvatarSvgs == freezed
+          ? _value.privateGroupAvatarSvgs
+          : privateGroupAvatarSvgs // ignore: cast_nullable_to_non_nullable
+              as List<DrawableRoot?>,
     ));
   }
 }
@@ -641,16 +1094,23 @@ class __$HomepageStateCopyWithImpl<$Res>
 
 class _$_HomepageState implements _HomepageState {
   const _$_HomepageState(
-      {required this.privateGroupsRowsInfo, required this.isShowingSearchBar});
+      {required this.privateGroupsRowsInfo,
+      required this.isShowingSearchBar,
+      required this.searchValue,
+      required this.privateGroupAvatarSvgs});
 
   @override
   final List<GroupOverviewRowInfo> privateGroupsRowsInfo;
   @override
   final bool isShowingSearchBar;
+  @override
+  final String searchValue;
+  @override
+  final List<DrawableRoot?> privateGroupAvatarSvgs;
 
   @override
   String toString() {
-    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, isShowingSearchBar: $isShowingSearchBar)';
+    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs)';
   }
 
   @override
@@ -661,14 +1121,20 @@ class _$_HomepageState implements _HomepageState {
             const DeepCollectionEquality()
                 .equals(other.privateGroupsRowsInfo, privateGroupsRowsInfo) &&
             const DeepCollectionEquality()
-                .equals(other.isShowingSearchBar, isShowingSearchBar));
+                .equals(other.isShowingSearchBar, isShowingSearchBar) &&
+            const DeepCollectionEquality()
+                .equals(other.searchValue, searchValue) &&
+            const DeepCollectionEquality()
+                .equals(other.privateGroupAvatarSvgs, privateGroupAvatarSvgs));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(privateGroupsRowsInfo),
-      const DeepCollectionEquality().hash(isShowingSearchBar));
+      const DeepCollectionEquality().hash(isShowingSearchBar),
+      const DeepCollectionEquality().hash(searchValue),
+      const DeepCollectionEquality().hash(privateGroupAvatarSvgs));
 
   @JsonKey(ignore: true)
   @override
@@ -679,12 +1145,18 @@ class _$_HomepageState implements _HomepageState {
 abstract class _HomepageState implements HomepageState {
   const factory _HomepageState(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      required bool isShowingSearchBar}) = _$_HomepageState;
+      required bool isShowingSearchBar,
+      required String searchValue,
+      required List<DrawableRoot?> privateGroupAvatarSvgs}) = _$_HomepageState;
 
   @override
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
   @override
   bool get isShowingSearchBar;
+  @override
+  String get searchValue;
+  @override
+  List<DrawableRoot?> get privateGroupAvatarSvgs;
   @override
   @JsonKey(ignore: true)
   _$HomepageStateCopyWith<_HomepageState> get copyWith =>

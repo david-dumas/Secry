@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
@@ -30,6 +31,12 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       },
       updatedIsShowingSearchBar: (e) async {
         emit(state.copyWith(isShowingSearchBar: e.isShowing));
+      },
+      searchValueUpdated: (e) async {
+        emit(state.copyWith(searchValue: e.newValue));
+      },
+      privateGroupAvatarSvgsUpdated: (e) async {
+        emit(state.copyWith(privateGroupAvatarSvgs: e.newAvatarSvgs));
       },
     );
   }

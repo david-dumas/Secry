@@ -18,6 +18,7 @@ class GroupSection extends StatelessWidget {
   final String emptyStateDescription;
   final Icon emptyStateIcon;
   final Function()? titleRowTrailingAction;
+  final List<DrawableRoot?> avatarSvgs;
 
   const GroupSection(
       {Key? key,
@@ -29,7 +30,7 @@ class GroupSection extends StatelessWidget {
       required this.emptyStateDescription,
       required this.emptyStateIcon,
       required this.titleRowTrailingAction,
-      required})
+      required this.avatarSvgs})
       : super(key: key);
 
   @override
@@ -52,7 +53,10 @@ class GroupSection extends StatelessWidget {
                 description: emptyStateDescription,
                 icon: emptyStateIcon,
               )
-            : GroupRowsContentSection(groupsInfo: this.groupsInfo),
+            : GroupRowsContentSection(
+                groupsInfo: this.groupsInfo,
+                avatarSvgs: avatarSvgs,
+              ),
       ]),
     );
   }
@@ -150,22 +154,15 @@ class GroupSectionEmptyStateRow extends StatelessWidget {
 
 class GroupRowsContentSection extends StatefulWidget {
   final List<GroupOverviewRowInfo> groupsInfo;
+  final List<DrawableRoot?> avatarSvgs;
 
-  const GroupRowsContentSection({Key? key, required this.groupsInfo}) : super(key: key);
+  const GroupRowsContentSection({Key? key, required this.groupsInfo, required this.avatarSvgs}) : super(key: key);
 
   @override
   _GroupRowsContentSectionState createState() => _GroupRowsContentSectionState();
 }
 
 class _GroupRowsContentSectionState extends State<GroupRowsContentSection> {
-  List<DrawableRoot?> svgRoots = [];
-
-  @override
-  void initState() {
-    _generateAvatarSvgs();
-    super.initState();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -190,10 +187,10 @@ class _GroupRowsContentSectionState extends State<GroupRowsContentSection> {
                 child: Container(
                   height: 44.0,
                   width: 44.0,
-                  child: svgRoots.length < (index + 1)
+                  child: widget.avatarSvgs.length < (index + 1)
                       ? SizedBox.shrink()
                       : CustomPaint(
-                          painter: AvatarPainter(svgRoots[index]!, Size(44.0, 44.0)),
+                          painter: AvatarPainter(widget.avatarSvgs[index]!, Size(44.0, 44.0)),
                           child: Container(),
                         ),
                   decoration: BoxDecoration(
@@ -219,7 +216,7 @@ class _GroupRowsContentSectionState extends State<GroupRowsContentSection> {
                   ],
                 ),
               ),
-              Align(alignment: Alignment.centerRight, child: Text("now"))
+              Align(alignment: Alignment.centerRight, child: Text(tr('general_now')))
             ],
           ),
         ),
@@ -227,18 +224,5 @@ class _GroupRowsContentSectionState extends State<GroupRowsContentSection> {
     });
 
     return rows;
-  }
-
-  _generateAvatarSvgs() async {
-    final randomizer = new Random();
-
-    for (int i = 0; i < 10; i++) {
-      String svgCode = multiavatar(
-          DateTime(randomizer.nextInt(2022), randomizer.nextInt(12), randomizer.nextInt(28)).toIso8601String());
-
-      final generatedLogo = await SvgWrapper(svgCode).generateLogo();
-      svgRoots.insert(0, generatedLogo);
-    }
-    setState(() {});
   }
 }

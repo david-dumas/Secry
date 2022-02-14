@@ -74,5 +74,6 @@
   "success_message_success_title" : "Succesvol",
   "success_message_password_reset_mail_successfully_sent_description" : "wachtwoord reset mail succesvol verzonden. Check je email en stel een nieuw wachtwoord in via de link",
   "success_message_password_reset_mail_tip" : "Kun je de mail niet vinden? Check je ongewenste mail (spam).",
-  "general_add_group" : "Groep toevoegen"
+  "general_add_group" : "Groep toevoegen",
+  "general_now" : "nu"
 }

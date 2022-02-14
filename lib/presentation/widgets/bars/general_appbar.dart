@@ -1,14 +1,15 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
-import 'package:secry/presentation/widgets/bars/appbar_trailing_icon_type.dart';
 
 class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
   final String title;
   final Color backgroundColor;
   final bool isSubpage;
   final bool isShowingSearchBar;
+  final String searchValue;
   final GestureDetector? trailingGestureWithIcon;
+  final Function(String)? searchValueChanged;
 
   const GeneralAppbar(
       {Key? key,
@@ -16,7 +17,9 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
       this.backgroundColor = Colors.transparent,
       this.isSubpage = false,
       this.isShowingSearchBar = false,
-      this.trailingGestureWithIcon = null})
+      this.searchValue = '',
+      this.trailingGestureWithIcon = null,
+      this.searchValueChanged = null})
       : super(key: key);
 
   @override
@@ -37,7 +40,11 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,
-      title: widget.isShowingSearchBar ? SearchBarForAppBar() : TitleForAppBar(title: widget.title),
+      title: widget.isShowingSearchBar
+          ? SearchBarForAppBar(
+              searchValue: widget.searchValue,
+              searchValueChanged: widget.searchValueChanged != null ? widget.searchValueChanged! : (_) => '')
+          : TitleForAppBar(title: widget.title),
       backgroundColor: widget.backgroundColor,
       elevation: 0.0,
       automaticallyImplyLeading: widget.isSubpage ? false : true,
@@ -68,12 +75,19 @@ class TitleForAppBar extends StatelessWidget {
   }
 }
 
-class SearchBarForAppBar extends StatelessWidget {
-  final TextEditingController searchBarTextEditingController = TextEditingController();
+class SearchBarForAppBar extends StatefulWidget {
+  final String searchValue;
+  final Function(String) searchValueChanged;
 
-  SearchBarForAppBar({
-    Key? key,
-  }) : super(key: key);
+  SearchBarForAppBar({Key? key, required this.searchValue, required this.searchValueChanged}) : super(key: key);
+
+  @override
+  State<SearchBarForAppBar> createState() => _SearchBarForAppBarState();
+}
+
+class _SearchBarForAppBarState extends State<SearchBarForAppBar> {
+  final TextEditingController searchBarTextEditingController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -82,28 +96,36 @@ class SearchBarForAppBar extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
       child: Center(
-        child: TextField(
-          controller: searchBarTextEditingController,
-          autofocus: true,
-          decoration: InputDecoration(
-            fillColor: searchBarBackgroundColor,
-            filled: true,
-            contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-            suffixIcon: IconButton(
-              icon: Icon(Icons.clear),
-              color: searchBarClearButtonColor,
-              onPressed: () {
-                searchBarTextEditingController.text = '';
-              },
-            ),
-            hintText: '${tr('action_search')}...',
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(
-                width: 0,
-                style: BorderStyle.none,
+        child: Form(
+          key: _formKey,
+          child: TextField(
+            controller: searchBarTextEditingController,
+            autofocus: widget.searchValue == '',
+            autocorrect: false,
+            decoration: InputDecoration(
+              fillColor: searchBarBackgroundColor,
+              filled: true,
+              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+              suffixIcon: IconButton(
+                icon: Icon(Icons.clear),
+                color: searchBarClearButtonColor,
+                onPressed: () {
+                  searchBarTextEditingController.text = '';
+                  this.widget.searchValueChanged('');
+                },
+              ),
+              hintText: '${tr('action_search')}...',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8),
+                borderSide: BorderSide(
+                  width: 0,
+                  style: BorderStyle.none,
+                ),
               ),
             ),
+            onChanged: (newValue) {
+              this.widget.searchValueChanged(newValue);
+            },
           ),
         ),
       ),

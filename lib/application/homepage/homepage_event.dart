@@ -6,4 +6,7 @@ class HomepageEvent with _$HomepageEvent {
   const factory HomepageEvent.privateGroupsInfoUpdated(List<GroupOverviewRowInfo> privateGroupsRowsInfo) =
       _PrivateGroupsInfoUpdated;
   const factory HomepageEvent.updatedIsShowingSearchBar(bool isShowing) = _UpdatedIsShowingSearchBar;
+  const factory HomepageEvent.searchValueUpdated(String newValue) = _SearchValueUpdated;
+  const factory HomepageEvent.privateGroupAvatarSvgsUpdated(List<DrawableRoot?> newAvatarSvgs) =
+      _PrivateGroupAvatarSvgsUpdated;
 }
