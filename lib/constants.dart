@@ -17,6 +17,9 @@ const kLineSeparatorColor = Color(0xFFDEE5EF);
 const kWhiteButtonBorderColor = Color(0xFFDEE5EF);
 const kWhiteInputFieldBorderStyle = Color(0xFFD7D7D7);
 
+const searchBarBackgroundColor = Color(0xFFEEEEEF);
+const searchBarClearButtonColor = Color(0xFF8E8E92);
+
 // Gray tints
 const globalBlack = Color(0xFF000000);
 const kDarkGrayTextColor = Color(0xFF3F3F3F);

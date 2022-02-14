@@ -13,8 +13,23 @@ class GroupSection extends StatelessWidget {
   final String title;
   final int amountOfGroups;
   final List<GroupOverviewRowInfo> groupsInfo;
+  final String titleRowActionButtonText;
+  final String emptyStateTitle;
+  final String emptyStateDescription;
+  final Icon emptyStateIcon;
+  final Function()? titleRowTrailingAction;
 
-  const GroupSection({Key? key, required this.title, required this.amountOfGroups, required this.groupsInfo})
+  const GroupSection(
+      {Key? key,
+      required this.title,
+      required this.amountOfGroups,
+      required this.groupsInfo,
+      required this.titleRowActionButtonText,
+      required this.emptyStateTitle,
+      required this.emptyStateDescription,
+      required this.emptyStateIcon,
+      required this.titleRowTrailingAction,
+      required})
       : super(key: key);
 
   @override
@@ -23,13 +38,19 @@ class GroupSection extends StatelessWidget {
       padding: pagePaddingAllSides,
       child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
         SizedBox(
-          child: GroupSectionTitleRow(title: title, amountOfGroups: amountOfGroups),
+          child: GroupSectionTitleRow(
+              title: title,
+              amountOfGroups: amountOfGroups,
+              titleRowActionButtonText: titleRowActionButtonText,
+              trailingActionButtonAction: () {
+                titleRowTrailingAction;
+              }),
         ),
         amountOfGroups < 1
             ? GroupSectionEmptyStateRow(
-                title: tr('action_create_new_group_title'),
-                description: tr('action_create_new_group_description'),
-                icon: Icon(Icons.group_add),
+                title: emptyStateTitle,
+                description: emptyStateDescription,
+                icon: emptyStateIcon,
               )
             : GroupRowsContentSection(groupsInfo: this.groupsInfo),
       ]),
@@ -38,14 +59,18 @@ class GroupSection extends StatelessWidget {
 }
 
 class GroupSectionTitleRow extends StatelessWidget {
-  const GroupSectionTitleRow({
-    Key? key,
-    required this.title,
-    required this.amountOfGroups,
-  }) : super(key: key);
-
   final String title;
   final int amountOfGroups;
+  final String titleRowActionButtonText;
+  final Function()? trailingActionButtonAction;
+
+  const GroupSectionTitleRow(
+      {Key? key,
+      required this.title,
+      required this.amountOfGroups,
+      required this.titleRowActionButtonText,
+      required this.trailingActionButtonAction})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +92,7 @@ class GroupSectionTitleRow extends StatelessWidget {
           visible: amountOfGroups > 0,
           child: TextButton(
             child: Text(
-              tr('general_see_all'),
+              titleRowActionButtonText,
               textAlign: TextAlign.right,
               style: TextStyle(color: kPrimaryColor),
             ),
@@ -77,7 +102,7 @@ class GroupSectionTitleRow extends StatelessWidget {
               alignment: Alignment.topRight,
             ),
             onPressed: () {
-              // TODO
+              trailingActionButtonAction;
             },
           ),
         )

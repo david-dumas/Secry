@@ -32,6 +32,8 @@
   "action_ok" : "Oke",
   "action_reset_password" : "Wachtwoord resetten",
   "action_go_to_login" : "Naar inloggen",
+  "action_search" : "Zoeken",
+  "action_cancel" : "Annuleren",
   "account_signed_in" : "is ingelogd",
   "account_logged_out_overview_title" : "Ontdek het nu!",
   "account_logged_out_overview_description" : "Hoe goed ken je de mensen om je heen eigenlijk? Secry gaat over de echte wereld! Maak een groep met mensen die je kent en vraag ze alles. Praat over problemen, onzekerheden, seks, werk, alles waar je over wilt praten. Wordt bewust, help elkaar, verbindt en ontdek geheimen!",
@@ -71,5 +73,6 @@
   "page_register_password_condition" : "Moet minimaal 6 tekens bevatten, inclusief hoofdletters, kleine letters en/of een symbool (bijv. f3gGfe# )",
   "success_message_success_title" : "Succesvol",
   "success_message_password_reset_mail_successfully_sent_description" : "wachtwoord reset mail succesvol verzonden. Check je email en stel een nieuw wachtwoord in via de link",
-  "success_message_password_reset_mail_tip" : "Kun je de mail niet vinden? Check je ongewenste mail (spam)."
+  "success_message_password_reset_mail_tip" : "Kun je de mail niet vinden? Check je ongewenste mail (spam).",
+  "general_add_group" : "Groep toevoegen"
 }

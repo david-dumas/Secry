@@ -28,6 +28,12 @@ class _$HomepageEventTearOff {
       privateGroupsRowsInfo,
     );
   }
+
+  _UpdatedIsShowingSearchBar updatedIsShowingSearchBar(bool isShowing) {
+    return _UpdatedIsShowingSearchBar(
+      isShowing,
+    );
+  }
 }
 
 /// @nodoc
@@ -40,6 +46,7 @@ mixin _$HomepageEvent {
     required TResult Function() initialized,
     required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
         privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +54,7 @@ mixin _$HomepageEvent {
     TResult Function()? initialized,
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +62,7 @@ mixin _$HomepageEvent {
     TResult Function()? initialized,
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,18 +71,24 @@ mixin _$HomepageEvent {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_PrivateGroupsInfoUpdated value)
         privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -139,6 +154,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function() initialized,
     required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
         privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
   }) {
     return initialized();
   }
@@ -149,6 +165,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
   }) {
     return initialized?.call();
   }
@@ -159,6 +176,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -173,6 +191,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_PrivateGroupsInfoUpdated value)
         privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
   }) {
     return initialized(this);
   }
@@ -182,6 +202,8 @@ class _$_Initialized implements _Initialized {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
   }) {
     return initialized?.call(this);
   }
@@ -191,6 +213,8 @@ class _$_Initialized implements _Initialized {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -275,6 +299,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function() initialized,
     required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
         privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
   }) {
     return privateGroupsInfoUpdated(privateGroupsRowsInfo);
   }
@@ -285,6 +310,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function()? initialized,
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
   }) {
     return privateGroupsInfoUpdated?.call(privateGroupsRowsInfo);
   }
@@ -295,6 +321,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function()? initialized,
     TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
         privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -309,6 +336,8 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_PrivateGroupsInfoUpdated value)
         privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
   }) {
     return privateGroupsInfoUpdated(this);
   }
@@ -318,6 +347,8 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
   }) {
     return privateGroupsInfoUpdated?.call(this);
   }
@@ -327,6 +358,8 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -348,13 +381,166 @@ abstract class _PrivateGroupsInfoUpdated implements HomepageEvent {
 }
 
 /// @nodoc
+abstract class _$UpdatedIsShowingSearchBarCopyWith<$Res> {
+  factory _$UpdatedIsShowingSearchBarCopyWith(_UpdatedIsShowingSearchBar value,
+          $Res Function(_UpdatedIsShowingSearchBar) then) =
+      __$UpdatedIsShowingSearchBarCopyWithImpl<$Res>;
+  $Res call({bool isShowing});
+}
+
+/// @nodoc
+class __$UpdatedIsShowingSearchBarCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$UpdatedIsShowingSearchBarCopyWith<$Res> {
+  __$UpdatedIsShowingSearchBarCopyWithImpl(_UpdatedIsShowingSearchBar _value,
+      $Res Function(_UpdatedIsShowingSearchBar) _then)
+      : super(_value, (v) => _then(v as _UpdatedIsShowingSearchBar));
+
+  @override
+  _UpdatedIsShowingSearchBar get _value =>
+      super._value as _UpdatedIsShowingSearchBar;
+
+  @override
+  $Res call({
+    Object? isShowing = freezed,
+  }) {
+    return _then(_UpdatedIsShowingSearchBar(
+      isShowing == freezed
+          ? _value.isShowing
+          : isShowing // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
+  const _$_UpdatedIsShowingSearchBar(this.isShowing);
+
+  @override
+  final bool isShowing;
+
+  @override
+  String toString() {
+    return 'HomepageEvent.updatedIsShowingSearchBar(isShowing: $isShowing)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _UpdatedIsShowingSearchBar &&
+            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UpdatedIsShowingSearchBarCopyWith<_UpdatedIsShowingSearchBar>
+      get copyWith =>
+          __$UpdatedIsShowingSearchBarCopyWithImpl<_UpdatedIsShowingSearchBar>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+  }) {
+    return updatedIsShowingSearchBar(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+  }) {
+    return updatedIsShowingSearchBar?.call(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    required TResult orElse(),
+  }) {
+    if (updatedIsShowingSearchBar != null) {
+      return updatedIsShowingSearchBar(isShowing);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+  }) {
+    return updatedIsShowingSearchBar(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+  }) {
+    return updatedIsShowingSearchBar?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    required TResult orElse(),
+  }) {
+    if (updatedIsShowingSearchBar != null) {
+      return updatedIsShowingSearchBar(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UpdatedIsShowingSearchBar implements HomepageEvent {
+  const factory _UpdatedIsShowingSearchBar(bool isShowing) =
+      _$_UpdatedIsShowingSearchBar;
+
+  bool get isShowing;
+  @JsonKey(ignore: true)
+  _$UpdatedIsShowingSearchBarCopyWith<_UpdatedIsShowingSearchBar>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$HomepageStateTearOff {
   const _$HomepageStateTearOff();
 
   _HomepageState call(
-      {required List<GroupOverviewRowInfo> privateGroupsRowsInfo}) {
+      {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      required bool isShowingSearchBar}) {
     return _HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo,
+      isShowingSearchBar: isShowingSearchBar,
     );
   }
 }
@@ -366,6 +552,7 @@ const $HomepageState = _$HomepageStateTearOff();
 mixin _$HomepageState {
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo =>
       throw _privateConstructorUsedError;
+  bool get isShowingSearchBar => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomepageStateCopyWith<HomepageState> get copyWith =>
@@ -377,7 +564,9 @@ abstract class $HomepageStateCopyWith<$Res> {
   factory $HomepageStateCopyWith(
           HomepageState value, $Res Function(HomepageState) then) =
       _$HomepageStateCopyWithImpl<$Res>;
-  $Res call({List<GroupOverviewRowInfo> privateGroupsRowsInfo});
+  $Res call(
+      {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      bool isShowingSearchBar});
 }
 
 /// @nodoc
@@ -392,12 +581,17 @@ class _$HomepageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
+    Object? isShowingSearchBar = freezed,
   }) {
     return _then(_value.copyWith(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
           ? _value.privateGroupsRowsInfo
           : privateGroupsRowsInfo // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
+      isShowingSearchBar: isShowingSearchBar == freezed
+          ? _value.isShowingSearchBar
+          : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -409,7 +603,9 @@ abstract class _$HomepageStateCopyWith<$Res>
           _HomepageState value, $Res Function(_HomepageState) then) =
       __$HomepageStateCopyWithImpl<$Res>;
   @override
-  $Res call({List<GroupOverviewRowInfo> privateGroupsRowsInfo});
+  $Res call(
+      {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      bool isShowingSearchBar});
 }
 
 /// @nodoc
@@ -426,12 +622,17 @@ class __$HomepageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
+    Object? isShowingSearchBar = freezed,
   }) {
     return _then(_HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
           ? _value.privateGroupsRowsInfo
           : privateGroupsRowsInfo // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
+      isShowingSearchBar: isShowingSearchBar == freezed
+          ? _value.isShowingSearchBar
+          : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -439,14 +640,17 @@ class __$HomepageStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_HomepageState implements _HomepageState {
-  const _$_HomepageState({required this.privateGroupsRowsInfo});
+  const _$_HomepageState(
+      {required this.privateGroupsRowsInfo, required this.isShowingSearchBar});
 
   @override
   final List<GroupOverviewRowInfo> privateGroupsRowsInfo;
+  @override
+  final bool isShowingSearchBar;
 
   @override
   String toString() {
-    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo)';
+    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, isShowingSearchBar: $isShowingSearchBar)';
   }
 
   @override
@@ -455,12 +659,16 @@ class _$_HomepageState implements _HomepageState {
         (other.runtimeType == runtimeType &&
             other is _HomepageState &&
             const DeepCollectionEquality()
-                .equals(other.privateGroupsRowsInfo, privateGroupsRowsInfo));
+                .equals(other.privateGroupsRowsInfo, privateGroupsRowsInfo) &&
+            const DeepCollectionEquality()
+                .equals(other.isShowingSearchBar, isShowingSearchBar));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(privateGroupsRowsInfo));
+      runtimeType,
+      const DeepCollectionEquality().hash(privateGroupsRowsInfo),
+      const DeepCollectionEquality().hash(isShowingSearchBar));
 
   @JsonKey(ignore: true)
   @override
@@ -470,11 +678,13 @@ class _$_HomepageState implements _HomepageState {
 
 abstract class _HomepageState implements HomepageState {
   const factory _HomepageState(
-          {required List<GroupOverviewRowInfo> privateGroupsRowsInfo}) =
-      _$_HomepageState;
+      {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      required bool isShowingSearchBar}) = _$_HomepageState;
 
   @override
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
+  @override
+  bool get isShowingSearchBar;
   @override
   @JsonKey(ignore: true)
   _$HomepageStateCopyWith<_HomepageState> get copyWith =>

@@ -28,6 +28,9 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       privateGroupsInfoUpdated: (e) async {
         emit(state.copyWith(privateGroupsRowsInfo: e.privateGroupsRowsInfo));
       },
+      updatedIsShowingSearchBar: (e) async {
+        emit(state.copyWith(isShowingSearchBar: e.isShowing));
+      },
     );
   }
 }

@@ -5,4 +5,5 @@ class HomepageEvent with _$HomepageEvent {
   const factory HomepageEvent.initialized() = _Initialized;
   const factory HomepageEvent.privateGroupsInfoUpdated(List<GroupOverviewRowInfo> privateGroupsRowsInfo) =
       _PrivateGroupsInfoUpdated;
+  const factory HomepageEvent.updatedIsShowingSearchBar(bool isShowing) = _UpdatedIsShowingSearchBar;
 }

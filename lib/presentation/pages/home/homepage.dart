@@ -26,14 +26,40 @@ class HomePage extends StatelessWidget {
                 appBar: GeneralAppbar(
                   title: tr(mainState.currentTitleTagForSelectedIndex),
                   backgroundColor: globalWhite,
-                  trailingIconType: AppbarTrailingIconType.search,
+                  isShowingSearchBar: state.isShowingSearchBar,
+                  trailingGestureWithIcon: GestureDetector(
+                    onTap: () {
+                      context
+                          .read<HomepageBloc>()
+                          .add(HomepageEvent.updatedIsShowingSearchBar(!state.isShowingSearchBar));
+                    },
+                    child: state.isShowingSearchBar
+                        ? TextButton(
+                            onPressed: () {
+                              context.read<HomepageBloc>().add(HomepageEvent.updatedIsShowingSearchBar(false));
+                            },
+                            child: Text(tr('action_cancel')),
+                            style: TextButton.styleFrom(
+                                padding: EdgeInsets.zero, minimumSize: Size(50, 30), alignment: Alignment.center))
+                        : Icon(
+                            Icons.search,
+                            size: 26.0,
+                            color: kDarkGray,
+                          ),
+                  ),
                 ),
                 body: SingleChildScrollView(
                   child: GroupSection(
-                    title: tr('home_my_groups'),
-                    amountOfGroups: state.privateGroupsRowsInfo.length,
-                    groupsInfo: state.privateGroupsRowsInfo,
-                  ),
+                      title: tr('home_my_groups'),
+                      amountOfGroups: state.privateGroupsRowsInfo.length,
+                      groupsInfo: state.privateGroupsRowsInfo,
+                      titleRowActionButtonText: tr('general_add_group'),
+                      emptyStateTitle: tr('action_create_new_group_title'),
+                      emptyStateDescription: tr('action_create_new_group_description'),
+                      emptyStateIcon: Icon(Icons.group_add),
+                      titleRowTrailingAction: () {
+                        // TODO handle 'add group' action
+                      }),
                 ),
               );
             },
