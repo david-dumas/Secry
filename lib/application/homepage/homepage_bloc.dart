@@ -36,6 +36,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       },
       updatedIsShowingSearchBar: (e) async {
         emit(state.copyWith(isShowingSearchBar: e.isShowing));
+        emit(state.copyWith(searchValue: ''));
       },
       searchValueUpdated: (e) async {
         emit(state.copyWith(searchValue: e.newValue));
