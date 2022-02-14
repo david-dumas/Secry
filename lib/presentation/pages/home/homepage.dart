@@ -30,12 +30,7 @@ class _HomePageState extends State<HomePage> {
       builder: (mainContext, mainState) {
         return BlocProvider(
           create: (context) => getIt<HomepageBloc>()..add(const HomepageEvent.initialized()),
-          child: BlocConsumer<HomepageBloc, HomepageState>(
-            listener: (context, state) {
-              if (state.privateGroupAvatarSvgs.length != state.privateGroupsRowsInfo.length) {
-                _generateAvatarSvgs(context, state.privateGroupsRowsInfo.length);
-              }
-            },
+          child: BlocBuilder<HomepageBloc, HomepageState>(
             builder: (context, state) {
               return Scaffold(
                 appBar: GeneralAppbar(
@@ -78,7 +73,6 @@ class _HomePageState extends State<HomePage> {
                     titleRowTrailingAction: () {
                       // TODO handle 'add group' action
                     },
-                    avatarSvgs: state.privateGroupAvatarSvgs,
                   ),
                 ),
               );
@@ -101,20 +95,5 @@ class _HomePageState extends State<HomePage> {
               groupsInfo.timeIndication.toString().toLowerCase().contains(filterText))
           .toList();
     }
-  }
-
-  _generateAvatarSvgs(BuildContext context, int amountOfAvatars) async {
-    final randomizer = new Random();
-    final List<DrawableRoot?> avatarDrawables = [];
-
-    for (int i = 0; i < amountOfAvatars; i++) {
-      String avatarSvg = multiavatar(
-          DateTime(randomizer.nextInt(2022), randomizer.nextInt(12), randomizer.nextInt(28)).toIso8601String());
-
-      final generatedLogo = await SvgWrapper(avatarSvg).generateLogo();
-      avatarDrawables.insert(0, generatedLogo);
-    }
-
-    context.read<HomepageBloc>().add(HomepageEvent.privateGroupAvatarSvgsUpdated(avatarDrawables));
   }
 }

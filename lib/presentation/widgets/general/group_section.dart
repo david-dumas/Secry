@@ -18,7 +18,6 @@ class GroupSection extends StatelessWidget {
   final String emptyStateDescription;
   final Icon emptyStateIcon;
   final Function()? titleRowTrailingAction;
-  final List<DrawableRoot?> avatarSvgs;
 
   const GroupSection(
       {Key? key,
@@ -29,8 +28,7 @@ class GroupSection extends StatelessWidget {
       required this.emptyStateTitle,
       required this.emptyStateDescription,
       required this.emptyStateIcon,
-      required this.titleRowTrailingAction,
-      required this.avatarSvgs})
+      required this.titleRowTrailingAction})
       : super(key: key);
 
   @override
@@ -53,10 +51,7 @@ class GroupSection extends StatelessWidget {
                 description: emptyStateDescription,
                 icon: emptyStateIcon,
               )
-            : GroupRowsContentSection(
-                groupsInfo: this.groupsInfo,
-                avatarSvgs: avatarSvgs,
-              ),
+            : GroupRowsContentSection(groupsInfo: this.groupsInfo),
       ]),
     );
   }
@@ -154,9 +149,8 @@ class GroupSectionEmptyStateRow extends StatelessWidget {
 
 class GroupRowsContentSection extends StatefulWidget {
   final List<GroupOverviewRowInfo> groupsInfo;
-  final List<DrawableRoot?> avatarSvgs;
 
-  const GroupRowsContentSection({Key? key, required this.groupsInfo, required this.avatarSvgs}) : super(key: key);
+  const GroupRowsContentSection({Key? key, required this.groupsInfo}) : super(key: key);
 
   @override
   _GroupRowsContentSectionState createState() => _GroupRowsContentSectionState();
@@ -187,10 +181,10 @@ class _GroupRowsContentSectionState extends State<GroupRowsContentSection> {
                 child: Container(
                   height: 44.0,
                   width: 44.0,
-                  child: widget.avatarSvgs.length < (index + 1)
+                  child: groupInfo.svg == null
                       ? SizedBox.shrink()
                       : CustomPaint(
-                          painter: AvatarPainter(widget.avatarSvgs[index]!, Size(44.0, 44.0)),
+                          painter: AvatarPainter(groupInfo.svg!, Size(44.0, 44.0)),
                           child: Container(),
                         ),
                   decoration: BoxDecoration(
