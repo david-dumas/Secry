@@ -59,6 +59,7 @@ class HomePage extends StatelessWidget {
                       emptyStateIcon: Icon(Icons.group_add),
                       titleRowTrailingAction: () {
                         // TODO handle 'add group' action
+                        // TODO
                       }),
                 ),
               );
