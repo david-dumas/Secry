@@ -51,7 +51,7 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
       actions: <Widget>[
         Visibility(
           visible: widget.trailingGestureWithIcon != null,
-          child: Padding(padding: EdgeInsets.only(right: 20.0), child: widget.trailingGestureWithIcon),
+          child: Padding(padding: EdgeInsets.only(right: 20.0, left: 20.0), child: widget.trailingGestureWithIcon),
         ),
       ],
     );
