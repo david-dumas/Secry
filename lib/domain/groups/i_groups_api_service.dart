@@ -8,7 +8,7 @@ part 'i_groups_api_service.g.dart';
 abstract class IGroupsApiService {
   factory IGroupsApiService(Dio dio, {String baseUrl}) = _IGroupsApiService;
 
-  @GET('/get_private_groups')
+  @GET('/get_private_groups_v2')
   Future<HttpResponse<dynamic>> getPrivateGroups(
       // @Body() String body,
       );

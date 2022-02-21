@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/homepage/homepage_bloc.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
+import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
@@ -59,13 +60,16 @@ class _HomePageState extends State<HomePage> {
                 body: SingleChildScrollView(
                   child: GroupSection(
                     title: tr('home_my_groups'),
-                    groupsInfo: getFilteredPrivateGroupsInfo(state.privateGroupsRowsInfo, state.searchValue),
+                    cellInfoItems: getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
                     titleRowActionButtonText: tr('general_add_group'),
                     emptyStateTitle: tr('action_create_new_group_title'),
                     emptyStateDescription: tr('action_create_new_group_description'),
                     emptyStateIcon: Icon(Icons.group_add),
                     titleRowTrailingAction: () {
                       // TODO handle 'add group' action
+                    },
+                    openPageForPressedCell: (String id, String groupTitle) {
+                      // TODO Open subpage for group
                     },
                   ),
                 ),
@@ -77,16 +81,30 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  List<GroupOverviewRowInfo> getFilteredPrivateGroupsInfo(
+  List<GeneralListCellInfoItem> getFilteredGeneralListCellItems(
       List<GroupOverviewRowInfo> groupsInfoToFilter, String filterText) {
     if (filterText.length < 1 || filterText == '') {
-      return groupsInfoToFilter;
-    } else {
       return groupsInfoToFilter
+          .map((groupInfoItem) => GeneralListCellInfoItem(
+              id: groupInfoItem.id,
+              title: groupInfoItem.title,
+              description: groupInfoItem.lastMessage,
+              timeIndication: groupInfoItem.timeIndication,
+              svg: groupInfoItem.svg))
+          .toList();
+    } else {
+      final filteredGroupItems = groupsInfoToFilter
           .where((groupsInfo) =>
               groupsInfo.title.toLowerCase().contains(filterText) ||
-              groupsInfo.lastMessage.toLowerCase().contains(filterText) ||
-              groupsInfo.timeIndication.toString().toLowerCase().contains(filterText))
+              groupsInfo.lastMessage.toLowerCase().contains(filterText))
+          .toList();
+      return filteredGroupItems
+          .map((groupInfoItem) => GeneralListCellInfoItem(
+              id: groupInfoItem.id,
+              title: groupInfoItem.title,
+              description: groupInfoItem.lastMessage,
+              timeIndication: groupInfoItem.timeIndication,
+              svg: groupInfoItem.svg))
           .toList();
     }
   }

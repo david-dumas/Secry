@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 // ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -56,7 +55,7 @@ class GeneralListCell extends StatelessWidget {
                 ],
               ),
             ),
-            Align(alignment: Alignment.centerRight, child: Text(tr('general_now')))
+            Align(alignment: Alignment.centerRight, child: Text(listCellInfoItem.timeIndication))
           ],
         ),
       ),

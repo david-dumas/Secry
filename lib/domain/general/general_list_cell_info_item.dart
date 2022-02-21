@@ -1,11 +1,16 @@
 import 'package:flutter_svg/flutter_svg.dart';
 
 class GeneralListCellInfoItem {
+  final String id;
   final String title;
   final String description;
-  final int timeIndication;
+  final String timeIndication;
   DrawableRoot? svg;
 
   GeneralListCellInfoItem(
-      {required this.title, required this.description, required this.timeIndication, this.svg = null});
+      {required this.id,
+      required this.title,
+      required this.description,
+      required this.timeIndication,
+      this.svg = null});
 }

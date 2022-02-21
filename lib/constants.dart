@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 const baseUrl = "https://sjno.nl/secry";
 
 // TODO Delete
-const temporaryPostmanBaseUrl = "https://7be081bd-b151-44f1-9637-529fda506363.mock.pstmn.io";
+const temporaryPostmanBaseUrl = "https://10535ad9-1804-4207-b556-54f9e7572e48.mock.pstmn.io";
 
 // Most used color(s)
 const kPrimaryColor = Color(0xFF3794FC);

@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
-import 'package:secry/domain/general/group_overview_row_info.dart';
-import 'package:secry/presentation/pages/general/widgets/GeneralListCell.dart';
+import 'package:secry/presentation/pages/general/widgets/general_list_cell.dart';
 
 class GroupSection extends StatelessWidget {
   final String title;
-  final List<GroupOverviewRowInfo> groupsInfo;
+  final List<GeneralListCellInfoItem> cellInfoItems;
   final String titleRowActionButtonText;
   final String emptyStateTitle;
   final String emptyStateDescription;
   final Icon emptyStateIcon;
   final Function()? titleRowTrailingAction;
+  final Function(String id, String groupTitle)? openPageForPressedCell;
 
   const GroupSection(
       {Key? key,
       required this.title,
-      required this.groupsInfo,
+      required this.cellInfoItems,
       required this.titleRowActionButtonText,
       required this.emptyStateTitle,
       required this.emptyStateDescription,
       required this.emptyStateIcon,
-      required this.titleRowTrailingAction})
+      required this.titleRowTrailingAction,
+      required this.openPageForPressedCell})
       : super(key: key);
 
   @override
@@ -32,13 +33,13 @@ class GroupSection extends StatelessWidget {
         SizedBox(
           child: GroupSectionTitleRow(
               title: title,
-              amountOfGroups: groupsInfo.length,
+              amountOfGroups: cellInfoItems.length,
               titleRowActionButtonText: titleRowActionButtonText,
               trailingActionButtonAction: () {
                 titleRowTrailingAction;
               }),
         ),
-        groupsInfo.length < 1
+        cellInfoItems.length < 1
             ? GroupSectionEmptyStateRow(
                 title: emptyStateTitle,
                 description: emptyStateDescription,
@@ -47,7 +48,8 @@ class GroupSection extends StatelessWidget {
             : SizedBox(
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.75,
-                child: GroupRowsContentSection(groupsInfo: this.groupsInfo)),
+                child: ContentSectionWithRows(
+                    cellInfoItems: this.cellInfoItems, openPageForPressedCell: openPageForPressedCell)),
       ]),
     );
   }
@@ -143,30 +145,36 @@ class GroupSectionEmptyStateRow extends StatelessWidget {
   }
 }
 
-class GroupRowsContentSection extends StatefulWidget {
-  final List<GroupOverviewRowInfo> groupsInfo;
+class ContentSectionWithRows extends StatefulWidget {
+  final List<GeneralListCellInfoItem> cellInfoItems;
+  final Function(String id, String groupTitle)? openPageForPressedCell;
 
-  const GroupRowsContentSection({Key? key, required this.groupsInfo}) : super(key: key);
+  const ContentSectionWithRows({Key? key, required this.cellInfoItems, required this.openPageForPressedCell})
+      : super(key: key);
 
   @override
-  _GroupRowsContentSectionState createState() => _GroupRowsContentSectionState();
+  _ContentSectionWithRowsState createState() => _ContentSectionWithRowsState();
 }
 
-class _GroupRowsContentSectionState extends State<GroupRowsContentSection> {
+class _ContentSectionWithRowsState extends State<ContentSectionWithRows> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: widget.groupsInfo.length,
+      itemCount: widget.cellInfoItems.length,
       itemBuilder: (context, index) {
-        final groupInfoObject = widget.groupsInfo[index];
-
-        return GeneralListCell(
-          listCellInfoItem: GeneralListCellInfoItem(
-              title: groupInfoObject.title,
-              description: groupInfoObject.lastMessage,
-              timeIndication: groupInfoObject.timeIndication,
-              svg: groupInfoObject.svg),
-        );
+        return GestureDetector(
+            child: GeneralListCell(
+              listCellInfoItem: GeneralListCellInfoItem(
+                  id: widget.cellInfoItems[index].id,
+                  title: widget.cellInfoItems[index].title,
+                  description: widget.cellInfoItems[index].description,
+                  timeIndication: widget.cellInfoItems[index].timeIndication,
+                  svg: widget.cellInfoItems[index].svg),
+            ),
+            onTap: () => {
+                  if (widget.openPageForPressedCell != null)
+                    {widget.openPageForPressedCell!(widget.cellInfoItems[index].id, widget.cellInfoItems[index].title)}
+                });
       },
     );
   }
