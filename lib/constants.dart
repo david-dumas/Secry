@@ -5,6 +5,7 @@ const baseUrl = "https://sjno.nl/secry";
 
 // TODO Delete
 const temporaryPostmanBaseUrl = "https://10535ad9-1804-4207-b556-54f9e7572e48.mock.pstmn.io";
+const temporaryPostmanPrivateChatsUrl = "https://8539eecf-8870-4b43-a5bb-e3ff00286825.mock.pstmn.io";
 
 // Most used color(s)
 const kPrimaryColor = Color(0xFF3794FC);

@@ -75,5 +75,7 @@
   "success_message_password_reset_mail_successfully_sent_description" : "wachtwoord reset mail succesvol verzonden. Check je email en stel een nieuw wachtwoord in via de link",
   "success_message_password_reset_mail_tip" : "Kun je de mail niet vinden? Check je ongewenste mail (spam).",
   "general_add_group" : "Groep toevoegen",
-  "general_now" : "nu"
+  "general_now" : "nu",
+  "empty_state_no_chats_title" : "Geen chats",
+  "empty_state_no_chats_description" : "Nieuwe chat aanmaken"
 }
