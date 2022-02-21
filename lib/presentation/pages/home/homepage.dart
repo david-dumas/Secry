@@ -64,7 +64,6 @@ class _HomePageState extends State<HomePage> {
                 body: SingleChildScrollView(
                   child: GroupSection(
                     title: tr('home_my_groups'),
-                    amountOfGroups: getFilteredPrivateGroupsInfo(state.privateGroupsRowsInfo, state.searchValue).length,
                     groupsInfo: getFilteredPrivateGroupsInfo(state.privateGroupsRowsInfo, state.searchValue),
                     titleRowActionButtonText: tr('general_add_group'),
                     emptyStateTitle: tr('action_create_new_group_title'),

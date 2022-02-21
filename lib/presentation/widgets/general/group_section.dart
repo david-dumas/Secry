@@ -11,7 +11,6 @@ import 'package:secry/presentation/widgets/multi_avatar/svg_wrapper.dart';
 
 class GroupSection extends StatelessWidget {
   final String title;
-  final int amountOfGroups;
   final List<GroupOverviewRowInfo> groupsInfo;
   final String titleRowActionButtonText;
   final String emptyStateTitle;
@@ -22,7 +21,6 @@ class GroupSection extends StatelessWidget {
   const GroupSection(
       {Key? key,
       required this.title,
-      required this.amountOfGroups,
       required this.groupsInfo,
       required this.titleRowActionButtonText,
       required this.emptyStateTitle,
@@ -39,13 +37,13 @@ class GroupSection extends StatelessWidget {
         SizedBox(
           child: GroupSectionTitleRow(
               title: title,
-              amountOfGroups: amountOfGroups,
+              amountOfGroups: groupsInfo.length,
               titleRowActionButtonText: titleRowActionButtonText,
               trailingActionButtonAction: () {
                 titleRowTrailingAction;
               }),
         ),
-        amountOfGroups < 1
+        groupsInfo.length < 1
             ? GroupSectionEmptyStateRow(
                 title: emptyStateTitle,
                 description: emptyStateDescription,
