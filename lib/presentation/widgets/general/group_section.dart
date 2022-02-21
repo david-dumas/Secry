@@ -1,13 +1,8 @@
-import 'dart:math';
-
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
-import 'package:multiavatar/multiavatar.dart';
 import 'package:secry/presentation/widgets/multi_avatar/avatar_painter.dart';
-import 'package:secry/presentation/widgets/multi_avatar/svg_wrapper.dart';
 
 class GroupSection extends StatelessWidget {
   final String title;
