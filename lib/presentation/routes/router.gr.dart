@@ -10,12 +10,13 @@
 //
 // ignore_for_file: type=lint
 
-import 'package:auto_route/auto_route.dart' as _i11;
-import 'package:flutter/material.dart' as _i12;
+import 'package:auto_route/auto_route.dart' as _i12;
+import 'package:flutter/material.dart' as _i13;
 
 import '../pages/account/account_loggedout_page.dart' as _i7;
 import '../pages/account/account_page.dart' as _i6;
 import '../pages/account/reset_password_page.dart' as _i10;
+import '../pages/home/group_overview_page.dart' as _i11;
 import '../pages/home/homepage.dart' as _i3;
 import '../pages/login/login_page.dart' as _i8;
 import '../pages/saved_chats_and_surveys/saved_chats_and_surveys_page.dart'
@@ -25,80 +26,89 @@ import '../pages/signup/signup_page.dart' as _i9;
 import '../pages/splash/splash_page.dart' as _i1;
 import '../pages/tabbar/tabbar_page.dart' as _i2;
 
-class AppRouter extends _i11.RootStackRouter {
-  AppRouter([_i12.GlobalKey<_i12.NavigatorState>? navigatorKey])
+class AppRouter extends _i12.RootStackRouter {
+  AppRouter([_i13.GlobalKey<_i13.NavigatorState>? navigatorKey])
       : super(navigatorKey);
 
   @override
-  final Map<String, _i11.PageFactory> pagesMap = {
+  final Map<String, _i12.PageFactory> pagesMap = {
     SplashPageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i1.SplashPage());
     },
     TabbarPageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i2.TabbarPage());
     },
     HomePageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i3.HomePage());
     },
     GlobalSearchPageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i4.GlobalSearchPage());
     },
     SavedChatsAndSurveysPageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i5.SavedChatsAndSurveysPage());
     },
     AccountPageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.AccountPage());
     },
     AccountLoggedoutPageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i7.AccountLoggedoutPage());
     },
     LoginPageRoute.name: (routeData) {
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i8.LoginPage());
     },
     SignupPageRoute.name: (routeData) {
       final args = routeData.argsAs<SignupPageRouteArgs>(
           orElse: () => const SignupPageRouteArgs());
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: _i9.SignupPage(key: args.key));
     },
     ResetPasswordPageRoute.name: (routeData) {
       final args = routeData.argsAs<ResetPasswordPageRouteArgs>(
           orElse: () => const ResetPasswordPageRouteArgs());
-      return _i11.MaterialPageX<dynamic>(
+      return _i12.MaterialPageX<dynamic>(
           routeData: routeData, child: _i10.ResetPasswordPage(key: args.key));
+    },
+    GroupOverviewPageRoute.name: (routeData) {
+      final args = routeData.argsAs<GroupOverviewPageRouteArgs>();
+      return _i12.MaterialPageX<dynamic>(
+          routeData: routeData,
+          child: _i11.GroupOverviewPage(
+              key: args.key, title: args.title, groupId: args.groupId));
     }
   };
 
   @override
-  List<_i11.RouteConfig> get routes => [
-        _i11.RouteConfig(SplashPageRoute.name, path: '/'),
-        _i11.RouteConfig(TabbarPageRoute.name, path: '/tabbar-page'),
-        _i11.RouteConfig(HomePageRoute.name, path: '/home-page'),
-        _i11.RouteConfig(GlobalSearchPageRoute.name,
+  List<_i12.RouteConfig> get routes => [
+        _i12.RouteConfig(SplashPageRoute.name, path: '/'),
+        _i12.RouteConfig(TabbarPageRoute.name, path: '/tabbar-page'),
+        _i12.RouteConfig(HomePageRoute.name, path: '/home-page'),
+        _i12.RouteConfig(GlobalSearchPageRoute.name,
             path: '/global-search-page'),
-        _i11.RouteConfig(SavedChatsAndSurveysPageRoute.name,
+        _i12.RouteConfig(SavedChatsAndSurveysPageRoute.name,
             path: '/saved-chats-and-surveys-page'),
-        _i11.RouteConfig(AccountPageRoute.name, path: '/account-page'),
-        _i11.RouteConfig(AccountLoggedoutPageRoute.name,
+        _i12.RouteConfig(AccountPageRoute.name, path: '/account-page'),
+        _i12.RouteConfig(AccountLoggedoutPageRoute.name,
             path: '/account-loggedout-page'),
-        _i11.RouteConfig(LoginPageRoute.name, path: '/login-page'),
-        _i11.RouteConfig(SignupPageRoute.name, path: '/signup-page'),
-        _i11.RouteConfig(ResetPasswordPageRoute.name,
-            path: '/reset-password-page')
+        _i12.RouteConfig(LoginPageRoute.name, path: '/login-page'),
+        _i12.RouteConfig(SignupPageRoute.name, path: '/signup-page'),
+        _i12.RouteConfig(ResetPasswordPageRoute.name,
+            path: '/reset-password-page'),
+        _i12.RouteConfig(GroupOverviewPageRoute.name,
+            path: '/group-overview-page')
       ];
 }
 
 /// generated route for
 /// [_i1.SplashPage]
-class SplashPageRoute extends _i11.PageRouteInfo<void> {
+class SplashPageRoute extends _i12.PageRouteInfo<void> {
   const SplashPageRoute() : super(SplashPageRoute.name, path: '/');
 
   static const String name = 'SplashPageRoute';
@@ -106,7 +116,7 @@ class SplashPageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i2.TabbarPage]
-class TabbarPageRoute extends _i11.PageRouteInfo<void> {
+class TabbarPageRoute extends _i12.PageRouteInfo<void> {
   const TabbarPageRoute() : super(TabbarPageRoute.name, path: '/tabbar-page');
 
   static const String name = 'TabbarPageRoute';
@@ -114,7 +124,7 @@ class TabbarPageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i3.HomePage]
-class HomePageRoute extends _i11.PageRouteInfo<void> {
+class HomePageRoute extends _i12.PageRouteInfo<void> {
   const HomePageRoute() : super(HomePageRoute.name, path: '/home-page');
 
   static const String name = 'HomePageRoute';
@@ -122,7 +132,7 @@ class HomePageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.GlobalSearchPage]
-class GlobalSearchPageRoute extends _i11.PageRouteInfo<void> {
+class GlobalSearchPageRoute extends _i12.PageRouteInfo<void> {
   const GlobalSearchPageRoute()
       : super(GlobalSearchPageRoute.name, path: '/global-search-page');
 
@@ -131,7 +141,7 @@ class GlobalSearchPageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i5.SavedChatsAndSurveysPage]
-class SavedChatsAndSurveysPageRoute extends _i11.PageRouteInfo<void> {
+class SavedChatsAndSurveysPageRoute extends _i12.PageRouteInfo<void> {
   const SavedChatsAndSurveysPageRoute()
       : super(SavedChatsAndSurveysPageRoute.name,
             path: '/saved-chats-and-surveys-page');
@@ -141,7 +151,7 @@ class SavedChatsAndSurveysPageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i6.AccountPage]
-class AccountPageRoute extends _i11.PageRouteInfo<void> {
+class AccountPageRoute extends _i12.PageRouteInfo<void> {
   const AccountPageRoute()
       : super(AccountPageRoute.name, path: '/account-page');
 
@@ -150,7 +160,7 @@ class AccountPageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i7.AccountLoggedoutPage]
-class AccountLoggedoutPageRoute extends _i11.PageRouteInfo<void> {
+class AccountLoggedoutPageRoute extends _i12.PageRouteInfo<void> {
   const AccountLoggedoutPageRoute()
       : super(AccountLoggedoutPageRoute.name, path: '/account-loggedout-page');
 
@@ -159,7 +169,7 @@ class AccountLoggedoutPageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i8.LoginPage]
-class LoginPageRoute extends _i11.PageRouteInfo<void> {
+class LoginPageRoute extends _i12.PageRouteInfo<void> {
   const LoginPageRoute() : super(LoginPageRoute.name, path: '/login-page');
 
   static const String name = 'LoginPageRoute';
@@ -167,8 +177,8 @@ class LoginPageRoute extends _i11.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i9.SignupPage]
-class SignupPageRoute extends _i11.PageRouteInfo<SignupPageRouteArgs> {
-  SignupPageRoute({_i12.Key? key})
+class SignupPageRoute extends _i12.PageRouteInfo<SignupPageRouteArgs> {
+  SignupPageRoute({_i13.Key? key})
       : super(SignupPageRoute.name,
             path: '/signup-page', args: SignupPageRouteArgs(key: key));
 
@@ -178,7 +188,7 @@ class SignupPageRoute extends _i11.PageRouteInfo<SignupPageRouteArgs> {
 class SignupPageRouteArgs {
   const SignupPageRouteArgs({this.key});
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 
   @override
   String toString() {
@@ -189,8 +199,8 @@ class SignupPageRouteArgs {
 /// generated route for
 /// [_i10.ResetPasswordPage]
 class ResetPasswordPageRoute
-    extends _i11.PageRouteInfo<ResetPasswordPageRouteArgs> {
-  ResetPasswordPageRoute({_i12.Key? key})
+    extends _i12.PageRouteInfo<ResetPasswordPageRouteArgs> {
+  ResetPasswordPageRoute({_i13.Key? key})
       : super(ResetPasswordPageRoute.name,
             path: '/reset-password-page',
             args: ResetPasswordPageRouteArgs(key: key));
@@ -201,10 +211,40 @@ class ResetPasswordPageRoute
 class ResetPasswordPageRouteArgs {
   const ResetPasswordPageRouteArgs({this.key});
 
-  final _i12.Key? key;
+  final _i13.Key? key;
 
   @override
   String toString() {
     return 'ResetPasswordPageRouteArgs{key: $key}';
+  }
+}
+
+/// generated route for
+/// [_i11.GroupOverviewPage]
+class GroupOverviewPageRoute
+    extends _i12.PageRouteInfo<GroupOverviewPageRouteArgs> {
+  GroupOverviewPageRoute(
+      {_i13.Key? key, required String title, required String groupId})
+      : super(GroupOverviewPageRoute.name,
+            path: '/group-overview-page',
+            args: GroupOverviewPageRouteArgs(
+                key: key, title: title, groupId: groupId));
+
+  static const String name = 'GroupOverviewPageRoute';
+}
+
+class GroupOverviewPageRouteArgs {
+  const GroupOverviewPageRouteArgs(
+      {this.key, required this.title, required this.groupId});
+
+  final _i13.Key? key;
+
+  final String title;
+
+  final String groupId;
+
+  @override
+  String toString() {
+    return 'GroupOverviewPageRouteArgs{key: $key, title: $title, groupId: $groupId}';
   }
 }
