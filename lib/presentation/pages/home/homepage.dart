@@ -65,6 +65,7 @@ class _HomePageState extends State<HomePage> {
                     title: tr('home_my_groups'),
                     cellInfoItems: getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
                     titleRowActionButtonText: tr('general_add_group'),
+                    isTitleRowActionButtonVisible: true,
                     emptyStateTitle: tr('action_create_new_group_title'),
                     emptyStateDescription: tr('action_create_new_group_description'),
                     emptyStateIcon: Icon(Icons.group_add),

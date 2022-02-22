@@ -10,7 +10,7 @@ part of 'i_chats_api_service.dart';
 
 class _IChatsApiService implements IChatsApiService {
   _IChatsApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://8539eecf-8870-4b43-a5bb-e3ff00286825.mock.pstmn.io';
+    baseUrl ??= 'https://e6e670c2-7eb3-4bae-81e4-0ecebaa88385.mock.pstmn.io';
   }
 
   final Dio _dio;
@@ -25,7 +25,7 @@ class _IChatsApiService implements IChatsApiService {
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/get_private_chats',
+            .compose(_dio.options, '/get_private_chats_v2',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;

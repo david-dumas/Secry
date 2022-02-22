@@ -35,6 +35,9 @@ class GroupOverviewPage extends StatelessWidget {
                 child: GroupSection(
                   title: tr('home_chats'),
                   cellInfoItems: getChatsCellItems(state.chatInfoItems),
+                  isMaximumNumberOfCellsToShowEnabled: true,
+                  maximumNumberOfCellsToShow: 3,
+                  isTitleRowActionButtonVisible: getChatsCellItems(state.chatInfoItems).length > 3,
                   titleRowActionButtonText: tr('general_see_all'),
                   emptyStateTitle: tr('empty_state_no_chats_title'),
                   emptyStateDescription: tr('empty_state_no_chats_description'),

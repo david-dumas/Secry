@@ -6,6 +6,9 @@ import 'package:secry/presentation/pages/general/widgets/general_list_cell.dart'
 class GroupSection extends StatelessWidget {
   final String title;
   final List<GeneralListCellInfoItem> cellInfoItems;
+  final bool isMaximumNumberOfCellsToShowEnabled;
+  final int maximumNumberOfCellsToShow;
+  final bool isTitleRowActionButtonVisible;
   final String titleRowActionButtonText;
   final String emptyStateTitle;
   final String emptyStateDescription;
@@ -17,6 +20,9 @@ class GroupSection extends StatelessWidget {
       {Key? key,
       required this.title,
       required this.cellInfoItems,
+      this.isMaximumNumberOfCellsToShowEnabled = false,
+      this.maximumNumberOfCellsToShow = 99999,
+      required this.isTitleRowActionButtonVisible,
       required this.titleRowActionButtonText,
       required this.emptyStateTitle,
       required this.emptyStateDescription,
@@ -34,6 +40,7 @@ class GroupSection extends StatelessWidget {
           child: GroupSectionTitleRow(
               title: title,
               amountOfGroups: cellInfoItems.length,
+              isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
               titleRowActionButtonText: titleRowActionButtonText,
               trailingActionButtonAction: () {
                 titleRowTrailingAction;
@@ -49,7 +56,10 @@ class GroupSection extends StatelessWidget {
                 width: double.infinity,
                 height: MediaQuery.of(context).size.height * 0.75,
                 child: ContentSectionWithRows(
-                    cellInfoItems: this.cellInfoItems, openPageForPressedCell: openPageForPressedCell)),
+                    cellInfoItems: this.cellInfoItems,
+                    isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
+                    maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
+                    openPageForPressedCell: openPageForPressedCell)),
       ]),
     );
   }
@@ -58,6 +68,7 @@ class GroupSection extends StatelessWidget {
 class GroupSectionTitleRow extends StatelessWidget {
   final String title;
   final int amountOfGroups;
+  final bool isTitleRowActionButtonVisible;
   final String titleRowActionButtonText;
   final Function()? trailingActionButtonAction;
 
@@ -65,6 +76,7 @@ class GroupSectionTitleRow extends StatelessWidget {
       {Key? key,
       required this.title,
       required this.amountOfGroups,
+      required this.isTitleRowActionButtonVisible,
       required this.titleRowActionButtonText,
       required this.trailingActionButtonAction})
       : super(key: key);
@@ -86,7 +98,7 @@ class GroupSectionTitleRow extends StatelessWidget {
         ),
         Spacer(),
         Visibility(
-          visible: amountOfGroups > 0,
+          visible: isTitleRowActionButtonVisible,
           child: TextButton(
             child: Text(
               titleRowActionButtonText,
@@ -147,10 +159,17 @@ class GroupSectionEmptyStateRow extends StatelessWidget {
 
 class ContentSectionWithRows extends StatefulWidget {
   final List<GeneralListCellInfoItem> cellInfoItems;
+  final bool isMaximumNumberOfCellsToShowEnabled;
+  final int maximumNumberOfCellsToShow;
   final Function(String id, String groupTitle)? openPageForPressedCell;
 
-  const ContentSectionWithRows({Key? key, required this.cellInfoItems, required this.openPageForPressedCell})
-      : super(key: key);
+  const ContentSectionWithRows({
+    Key? key,
+    required this.cellInfoItems,
+    required this.openPageForPressedCell,
+    this.isMaximumNumberOfCellsToShowEnabled = false,
+    this.maximumNumberOfCellsToShow = 99999,
+  }) : super(key: key);
 
   @override
   _ContentSectionWithRowsState createState() => _ContentSectionWithRowsState();
@@ -160,7 +179,8 @@ class _ContentSectionWithRowsState extends State<ContentSectionWithRows> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemCount: widget.cellInfoItems.length,
+      itemCount:
+          widget.isMaximumNumberOfCellsToShowEnabled ? widget.maximumNumberOfCellsToShow : widget.cellInfoItems.length,
       itemBuilder: (context, index) {
         return GestureDetector(
             child: GeneralListCell(
