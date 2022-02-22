@@ -77,5 +77,7 @@
   "general_add_group" : "Groep toevoegen",
   "general_now" : "nu",
   "empty_state_no_chats_title" : "Geen chats",
-  "empty_state_no_chats_description" : "Nieuwe chat aanmaken"
+  "empty_state_no_chats_description" : "Nieuwe chat aanmaken",
+  "empty_state_no_surveys_title" : "Geen enquêtes",
+  "empty_state_no_surveys_description" : "Nieuwe enquête aanmaken"
 }

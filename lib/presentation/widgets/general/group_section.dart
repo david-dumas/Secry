@@ -33,35 +33,27 @@ class GroupSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: pagePaddingAllSides,
-      child: Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-        SizedBox(
-          child: GroupSectionTitleRow(
-              title: title,
-              amountOfGroups: cellInfoItems.length,
-              isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
-              titleRowActionButtonText: titleRowActionButtonText,
-              trailingActionButtonAction: () {
-                titleRowTrailingAction;
-              }),
-        ),
-        cellInfoItems.length < 1
-            ? GroupSectionEmptyStateRow(
-                title: emptyStateTitle,
-                description: emptyStateDescription,
-                icon: emptyStateIcon,
-              )
-            : SizedBox(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height * 0.75,
-                child: ContentSectionWithRows(
-                    cellInfoItems: this.cellInfoItems,
-                    isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
-                    maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
-                    openPageForPressedCell: openPageForPressedCell)),
-      ]),
-    );
+    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
+      GroupSectionTitleRow(
+          title: title,
+          amountOfGroups: cellInfoItems.length,
+          isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
+          titleRowActionButtonText: titleRowActionButtonText,
+          trailingActionButtonAction: () {
+            titleRowTrailingAction;
+          }),
+      cellInfoItems.length < 1
+          ? GroupSectionEmptyStateRow(
+              title: emptyStateTitle,
+              description: emptyStateDescription,
+              icon: emptyStateIcon,
+            )
+          : ContentSectionWithRows(
+              cellInfoItems: this.cellInfoItems,
+              isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
+              maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
+              openPageForPressedCell: openPageForPressedCell),
+    ]);
   }
 }
 
@@ -179,6 +171,9 @@ class _ContentSectionWithRowsState extends State<ContentSectionWithRows> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      scrollDirection: Axis.vertical,
+      shrinkWrap: true,
+      physics: const NeverScrollableScrollPhysics(),
       itemCount:
           widget.isMaximumNumberOfCellsToShowEnabled ? widget.maximumNumberOfCellsToShow : widget.cellInfoItems.length,
       itemBuilder: (context, index) {

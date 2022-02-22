@@ -77,5 +77,7 @@
   "general_add_group" : "Add group",
   "general_now" : "now",
   "empty_state_no_chats_title" : "No chats",
-  "empty_state_no_chats_description" : "Create a new chat"
+  "empty_state_no_chats_description" : "Create a new chat",
+  "empty_state_no_surveys_title" : "No surveys",
+  "empty_state_no_surveys_description" : "Create a new survey"
 }

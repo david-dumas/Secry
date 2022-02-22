@@ -30,28 +30,61 @@ class GroupOverviewPage extends StatelessWidget {
                 backgroundColor: globalWhite,
               ),
               body: SingleChildScrollView(
-                child: GroupSection(
-                  title: tr('home_chats'),
-                  cellInfoItems: getChatsCellItems(state.chatInfoItems),
-                  isMaximumNumberOfCellsToShowEnabled: true,
-                  maximumNumberOfCellsToShow: 3,
-                  isTitleRowActionButtonVisible: getChatsCellItems(state.chatInfoItems).length > 3,
-                  titleRowActionButtonText: tr('general_see_all'),
-                  emptyStateTitle: tr('empty_state_no_chats_title'),
-                  emptyStateDescription: tr('empty_state_no_chats_description'),
-                  emptyStateIcon: Icon(Icons.group_add),
-                  titleRowTrailingAction: () {
-                    // TODO handle 'see all' action
-                  },
-                  openPageForPressedCell: (String id, String groupTitle) {
-                    // TODO Open subpage for chat
-                    // pushNewScreen(
-                    //   context,
-                    //   screen: GroupOverviewPage(title: groupTitle, groupId: id),
-                    //   withNavBar: true,
-                    //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                    // );
-                  },
+                child: Padding(
+                  padding: pagePaddingAllSides,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      GroupSection(
+                        title: tr('home_chats'),
+                        cellInfoItems: getCellItemsFrom(state.chatInfoItems),
+                        isMaximumNumberOfCellsToShowEnabled: true,
+                        maximumNumberOfCellsToShow: 3,
+                        isTitleRowActionButtonVisible: getCellItemsFrom(state.chatInfoItems).length > 3,
+                        titleRowActionButtonText: tr('general_see_all'),
+                        emptyStateTitle: tr('empty_state_no_chats_title'),
+                        emptyStateDescription: tr('empty_state_no_chats_description'),
+                        emptyStateIcon: Icon(Icons.group_add),
+                        titleRowTrailingAction: () {
+                          // TODO handle 'see all' action
+                        },
+                        openPageForPressedCell: (String id, String groupTitle) {
+                          // TODO Open subpage for chat
+                          // pushNewScreen(
+                          //   context,
+                          //   screen: GroupOverviewPage(title: groupTitle, groupId: id),
+                          //   withNavBar: true,
+                          //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          // );
+                        },
+                      ),
+                      SizedBox(height: 30),
+                      GroupSection(
+                        title: tr('home_surveys'),
+                        cellInfoItems: getCellItemsFrom(state.surveyInfoItems),
+                        isMaximumNumberOfCellsToShowEnabled: true,
+                        maximumNumberOfCellsToShow: 3,
+                        isTitleRowActionButtonVisible: getCellItemsFrom(state.surveyInfoItems).length > 3,
+                        titleRowActionButtonText: tr('general_see_all'),
+                        emptyStateTitle: tr('empty_state_no_surveys_title'),
+                        emptyStateDescription: tr('empty_state_no_surveys_description'),
+                        emptyStateIcon: Icon(Icons.group_add),
+                        titleRowTrailingAction: () {
+                          // TODO handle 'see all' action
+                        },
+                        openPageForPressedCell: (String id, String groupTitle) {
+                          // TODO Open subpage for chat
+                          // pushNewScreen(
+                          //   context,
+                          //   screen: GroupOverviewPage(title: groupTitle, groupId: id),
+                          //   withNavBar: true,
+                          //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          // );
+                        },
+                      ),
+                      SizedBox(height: 50),
+                    ],
+                  ),
                 ),
               ));
         },
@@ -59,7 +92,7 @@ class GroupOverviewPage extends StatelessWidget {
     );
   }
 
-  List<GeneralListCellInfoItem> getChatsCellItems(List<GroupOverviewRowInfo> chatsInfoItems) {
+  List<GeneralListCellInfoItem> getCellItemsFrom(List<GroupOverviewRowInfo> chatsInfoItems) {
     return chatsInfoItems
         .map((groupInfoItem) => GeneralListCellInfoItem(
             id: groupInfoItem.id,
