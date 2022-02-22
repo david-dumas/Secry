@@ -12,6 +12,7 @@ import 'package:secry/constants.dart';
 import 'package:secry/presentation/widgets/general/group_section.dart';
 
 import 'package:secry/injection.dart';
+import 'package:secry/util/search/search_helper.dart';
 
 import 'group_overview_page.dart';
 
@@ -61,27 +62,31 @@ class _HomePageState extends State<HomePage> {
                       context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
                     }),
                 body: SingleChildScrollView(
-                  child: GroupSection(
-                    title: tr('home_my_groups'),
-                    cellInfoItems: getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
-                    titleRowActionButtonText: tr('general_add_group'),
-                    isTitleRowActionButtonVisible: true,
-                    emptyStateTitle: tr('action_create_new_group_title'),
-                    emptyStateDescription: tr('action_create_new_group_description'),
-                    emptyStateIcon: Icon(Icons.group_add),
-                    titleRowTrailingAction: () {
-                      // TODO handle 'add group' action
-                    },
-                    openPageForPressedCell: (String id, String groupTitle) {
-                      // TODO Open subpage for group
+                  child: Padding(
+                    padding: pagePaddingAllSides,
+                    child: GroupSection(
+                      title: tr('home_my_groups'),
+                      cellInfoItems: SearchHelper()
+                          .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
+                      titleRowActionButtonText: tr('general_add_group'),
+                      isTitleRowActionButtonVisible: true,
+                      emptyStateTitle: tr('action_create_new_group_title'),
+                      emptyStateDescription: tr('action_create_new_group_description'),
+                      emptyStateIcon: Icon(Icons.group_add),
+                      titleRowTrailingAction: () {
+                        // TODO handle 'add group' action
+                      },
+                      openPageForPressedCell: (String id, String groupTitle) {
+                        // TODO Open subpage for group
 
-                      pushNewScreen(
-                        context,
-                        screen: GroupOverviewPage(title: groupTitle, groupId: id),
-                        withNavBar: true,
-                        pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                      );
-                    },
+                        pushNewScreen(
+                          context,
+                          screen: GroupOverviewPage(title: groupTitle, groupId: id),
+                          withNavBar: true,
+                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                        );
+                      },
+                    ),
                   ),
                 ),
               );
@@ -90,33 +95,5 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
-  }
-
-  List<GeneralListCellInfoItem> getFilteredGeneralListCellItems(
-      List<GroupOverviewRowInfo> groupsInfoToFilter, String filterText) {
-    if (filterText.length < 1 || filterText == '') {
-      return groupsInfoToFilter
-          .map((groupInfoItem) => GeneralListCellInfoItem(
-              id: groupInfoItem.id,
-              title: groupInfoItem.title,
-              description: groupInfoItem.lastMessage,
-              timeIndication: groupInfoItem.timeIndication,
-              svg: groupInfoItem.svg))
-          .toList();
-    } else {
-      final filteredGroupItems = groupsInfoToFilter
-          .where((groupsInfo) =>
-              groupsInfo.title.toLowerCase().contains(filterText) ||
-              groupsInfo.lastMessage.toLowerCase().contains(filterText))
-          .toList();
-      return filteredGroupItems
-          .map((groupInfoItem) => GeneralListCellInfoItem(
-              id: groupInfoItem.id,
-              title: groupInfoItem.title,
-              description: groupInfoItem.lastMessage,
-              timeIndication: groupInfoItem.timeIndication,
-              svg: groupInfoItem.svg))
-          .toList();
-    }
   }
 }

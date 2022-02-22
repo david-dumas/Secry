@@ -18,8 +18,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$GroupOverviewEventTearOff {
   const _$GroupOverviewEventTearOff();
 
-  _GroupOverviewEvent initialized(String groupId) {
-    return _GroupOverviewEvent(
+  _Initialized initialized(String groupId) {
+    return _Initialized(
       groupId,
     );
   }
@@ -74,7 +74,7 @@ mixin _$GroupOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GroupOverviewEvent value) initialized,
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
@@ -82,14 +82,14 @@ mixin _$GroupOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
     required TResult orElse(),
@@ -115,29 +115,29 @@ class _$GroupOverviewEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$GroupOverviewEventCopyWith<$Res> {
-  factory _$GroupOverviewEventCopyWith(
-          _GroupOverviewEvent value, $Res Function(_GroupOverviewEvent) then) =
-      __$GroupOverviewEventCopyWithImpl<$Res>;
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
   $Res call({String groupId});
 }
 
 /// @nodoc
-class __$GroupOverviewEventCopyWithImpl<$Res>
+class __$InitializedCopyWithImpl<$Res>
     extends _$GroupOverviewEventCopyWithImpl<$Res>
-    implements _$GroupOverviewEventCopyWith<$Res> {
-  __$GroupOverviewEventCopyWithImpl(
-      _GroupOverviewEvent _value, $Res Function(_GroupOverviewEvent) _then)
-      : super(_value, (v) => _then(v as _GroupOverviewEvent));
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
 
   @override
-  _GroupOverviewEvent get _value => super._value as _GroupOverviewEvent;
+  _Initialized get _value => super._value as _Initialized;
 
   @override
   $Res call({
     Object? groupId = freezed,
   }) {
-    return _then(_GroupOverviewEvent(
+    return _then(_Initialized(
       groupId == freezed
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
@@ -148,8 +148,8 @@ class __$GroupOverviewEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_GroupOverviewEvent implements _GroupOverviewEvent {
-  const _$_GroupOverviewEvent(this.groupId);
+class _$_Initialized implements _Initialized {
+  const _$_Initialized(this.groupId);
 
   @override
   final String groupId;
@@ -163,7 +163,7 @@ class _$_GroupOverviewEvent implements _GroupOverviewEvent {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GroupOverviewEvent &&
+            other is _Initialized &&
             const DeepCollectionEquality().equals(other.groupId, groupId));
   }
 
@@ -173,8 +173,8 @@ class _$_GroupOverviewEvent implements _GroupOverviewEvent {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupOverviewEventCopyWith<_GroupOverviewEvent> get copyWith =>
-      __$GroupOverviewEventCopyWithImpl<_GroupOverviewEvent>(this, _$identity);
+  _$InitializedCopyWith<_Initialized> get copyWith =>
+      __$InitializedCopyWithImpl<_Initialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -219,7 +219,7 @@ class _$_GroupOverviewEvent implements _GroupOverviewEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GroupOverviewEvent value) initialized,
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
@@ -230,7 +230,7 @@ class _$_GroupOverviewEvent implements _GroupOverviewEvent {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
   }) {
@@ -240,7 +240,7 @@ class _$_GroupOverviewEvent implements _GroupOverviewEvent {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
     required TResult orElse(),
@@ -252,12 +252,12 @@ class _$_GroupOverviewEvent implements _GroupOverviewEvent {
   }
 }
 
-abstract class _GroupOverviewEvent implements GroupOverviewEvent {
-  const factory _GroupOverviewEvent(String groupId) = _$_GroupOverviewEvent;
+abstract class _Initialized implements GroupOverviewEvent {
+  const factory _Initialized(String groupId) = _$_Initialized;
 
   String get groupId;
   @JsonKey(ignore: true)
-  _$GroupOverviewEventCopyWith<_GroupOverviewEvent> get copyWith =>
+  _$InitializedCopyWith<_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -368,7 +368,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GroupOverviewEvent value) initialized,
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
@@ -379,7 +379,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
   }) {
@@ -389,7 +389,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
     required TResult orElse(),
@@ -518,7 +518,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_GroupOverviewEvent value) initialized,
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
@@ -529,7 +529,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
   }) {
@@ -539,7 +539,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_GroupOverviewEvent value)? initialized,
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
     required TResult orElse(),

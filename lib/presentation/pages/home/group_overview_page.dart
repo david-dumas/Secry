@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/group_overview/group_overview_bloc.dart';
 
 import 'package:secry/constants.dart';
@@ -10,6 +11,8 @@ import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/presentation/widgets/general/group_section.dart';
 
 import 'package:secry/injection.dart';
+
+import 'all_chats_in_group_page.dart';
 
 class GroupOverviewPage extends StatelessWidget {
   final String title;
@@ -46,16 +49,15 @@ class GroupOverviewPage extends StatelessWidget {
                         emptyStateDescription: tr('empty_state_no_chats_description'),
                         emptyStateIcon: Icon(Icons.group_add),
                         titleRowTrailingAction: () {
-                          // TODO handle 'see all' action
+                          pushNewScreen(
+                            context,
+                            screen: AllChatsInGroupPage(cellInfoItems: getCellItemsFrom(state.chatInfoItems)),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
                         },
                         openPageForPressedCell: (String id, String groupTitle) {
-                          // TODO Open subpage for chat
-                          // pushNewScreen(
-                          //   context,
-                          //   screen: GroupOverviewPage(title: groupTitle, groupId: id),
-                          //   withNavBar: true,
-                          //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                          // );
+                          // TODO open chat page for cell
                         },
                       ),
                       SizedBox(height: 30),

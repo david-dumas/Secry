@@ -40,7 +40,9 @@ class GroupSection extends StatelessWidget {
           isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
           titleRowActionButtonText: titleRowActionButtonText,
           trailingActionButtonAction: () {
-            titleRowTrailingAction;
+            if (titleRowTrailingAction != null) {
+              titleRowTrailingAction!();
+            }
           }),
       cellInfoItems.length < 1
           ? GroupSectionEmptyStateRow(
@@ -103,7 +105,9 @@ class GroupSectionTitleRow extends StatelessWidget {
               alignment: Alignment.topRight,
             ),
             onPressed: () {
-              trailingActionButtonAction;
+              if (trailingActionButtonAction != null) {
+                trailingActionButtonAction!();
+              }
             },
           ),
         )
