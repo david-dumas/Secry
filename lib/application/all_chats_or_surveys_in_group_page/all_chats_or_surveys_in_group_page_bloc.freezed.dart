@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'all_chats_in_group_page_bloc.dart';
+part of 'all_chats_or_surveys_in_group_page_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,8 +15,8 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
-class _$AllChatsInGroupPageEventTearOff {
-  const _$AllChatsInGroupPageEventTearOff();
+class _$AllChatsOrSurveysInGroupPageEventTearOff {
+  const _$AllChatsOrSurveysInGroupPageEventTearOff();
 
   _Initialized initialized(List<GeneralListCellInfoItem> cellInfoItems) {
     return _Initialized(
@@ -32,10 +32,11 @@ class _$AllChatsInGroupPageEventTearOff {
 }
 
 /// @nodoc
-const $AllChatsInGroupPageEvent = _$AllChatsInGroupPageEventTearOff();
+const $AllChatsOrSurveysInGroupPageEvent =
+    _$AllChatsOrSurveysInGroupPageEventTearOff();
 
 /// @nodoc
-mixin _$AllChatsInGroupPageEvent {
+mixin _$AllChatsOrSurveysInGroupPageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(List<GeneralListCellInfoItem> cellInfoItems)
@@ -78,20 +79,21 @@ mixin _$AllChatsInGroupPageEvent {
 }
 
 /// @nodoc
-abstract class $AllChatsInGroupPageEventCopyWith<$Res> {
-  factory $AllChatsInGroupPageEventCopyWith(AllChatsInGroupPageEvent value,
-          $Res Function(AllChatsInGroupPageEvent) then) =
-      _$AllChatsInGroupPageEventCopyWithImpl<$Res>;
+abstract class $AllChatsOrSurveysInGroupPageEventCopyWith<$Res> {
+  factory $AllChatsOrSurveysInGroupPageEventCopyWith(
+          AllChatsOrSurveysInGroupPageEvent value,
+          $Res Function(AllChatsOrSurveysInGroupPageEvent) then) =
+      _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AllChatsInGroupPageEventCopyWithImpl<$Res>
-    implements $AllChatsInGroupPageEventCopyWith<$Res> {
-  _$AllChatsInGroupPageEventCopyWithImpl(this._value, this._then);
+class _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>
+    implements $AllChatsOrSurveysInGroupPageEventCopyWith<$Res> {
+  _$AllChatsOrSurveysInGroupPageEventCopyWithImpl(this._value, this._then);
 
-  final AllChatsInGroupPageEvent _value;
+  final AllChatsOrSurveysInGroupPageEvent _value;
   // ignore: unused_field
-  final $Res Function(AllChatsInGroupPageEvent) _then;
+  final $Res Function(AllChatsOrSurveysInGroupPageEvent) _then;
 }
 
 /// @nodoc
@@ -104,7 +106,7 @@ abstract class _$InitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$InitializedCopyWithImpl<$Res>
-    extends _$AllChatsInGroupPageEventCopyWithImpl<$Res>
+    extends _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>
     implements _$InitializedCopyWith<$Res> {
   __$InitializedCopyWithImpl(
       _Initialized _value, $Res Function(_Initialized) _then)
@@ -136,7 +138,7 @@ class _$_Initialized implements _Initialized {
 
   @override
   String toString() {
-    return 'AllChatsInGroupPageEvent.initialized(cellInfoItems: $cellInfoItems)';
+    return 'AllChatsOrSurveysInGroupPageEvent.initialized(cellInfoItems: $cellInfoItems)';
   }
 
   @override
@@ -221,7 +223,7 @@ class _$_Initialized implements _Initialized {
   }
 }
 
-abstract class _Initialized implements AllChatsInGroupPageEvent {
+abstract class _Initialized implements AllChatsOrSurveysInGroupPageEvent {
   const factory _Initialized(List<GeneralListCellInfoItem> cellInfoItems) =
       _$_Initialized;
 
@@ -241,7 +243,7 @@ abstract class _$SearchValueUpdatedCopyWith<$Res> {
 
 /// @nodoc
 class __$SearchValueUpdatedCopyWithImpl<$Res>
-    extends _$AllChatsInGroupPageEventCopyWithImpl<$Res>
+    extends _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>
     implements _$SearchValueUpdatedCopyWith<$Res> {
   __$SearchValueUpdatedCopyWithImpl(
       _SearchValueUpdated _value, $Res Function(_SearchValueUpdated) _then)
@@ -273,7 +275,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
 
   @override
   String toString() {
-    return 'AllChatsInGroupPageEvent.searchValueUpdated(newValue: $newValue)';
+    return 'AllChatsOrSurveysInGroupPageEvent.searchValueUpdated(newValue: $newValue)';
   }
 
   @override
@@ -357,7 +359,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
   }
 }
 
-abstract class _SearchValueUpdated implements AllChatsInGroupPageEvent {
+abstract class _SearchValueUpdated
+    implements AllChatsOrSurveysInGroupPageEvent {
   const factory _SearchValueUpdated(String newValue) = _$_SearchValueUpdated;
 
   String get newValue;
@@ -367,13 +370,13 @@ abstract class _SearchValueUpdated implements AllChatsInGroupPageEvent {
 }
 
 /// @nodoc
-class _$AllChatsInGroupPageStateTearOff {
-  const _$AllChatsInGroupPageStateTearOff();
+class _$AllChatsOrSurveysInGroupPageStateTearOff {
+  const _$AllChatsOrSurveysInGroupPageStateTearOff();
 
-  _AllChatsInGroupPageState call(
+  _AllChatsOrSurveysInGroupPageState call(
       {required List<GeneralListCellInfoItem> cellInfoItems,
       required String searchValue}) {
-    return _AllChatsInGroupPageState(
+    return _AllChatsOrSurveysInGroupPageState(
       cellInfoItems: cellInfoItems,
       searchValue: searchValue,
     );
@@ -381,35 +384,37 @@ class _$AllChatsInGroupPageStateTearOff {
 }
 
 /// @nodoc
-const $AllChatsInGroupPageState = _$AllChatsInGroupPageStateTearOff();
+const $AllChatsOrSurveysInGroupPageState =
+    _$AllChatsOrSurveysInGroupPageStateTearOff();
 
 /// @nodoc
-mixin _$AllChatsInGroupPageState {
+mixin _$AllChatsOrSurveysInGroupPageState {
   List<GeneralListCellInfoItem> get cellInfoItems =>
       throw _privateConstructorUsedError;
   String get searchValue => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $AllChatsInGroupPageStateCopyWith<AllChatsInGroupPageState> get copyWith =>
-      throw _privateConstructorUsedError;
+  $AllChatsOrSurveysInGroupPageStateCopyWith<AllChatsOrSurveysInGroupPageState>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $AllChatsInGroupPageStateCopyWith<$Res> {
-  factory $AllChatsInGroupPageStateCopyWith(AllChatsInGroupPageState value,
-          $Res Function(AllChatsInGroupPageState) then) =
-      _$AllChatsInGroupPageStateCopyWithImpl<$Res>;
+abstract class $AllChatsOrSurveysInGroupPageStateCopyWith<$Res> {
+  factory $AllChatsOrSurveysInGroupPageStateCopyWith(
+          AllChatsOrSurveysInGroupPageState value,
+          $Res Function(AllChatsOrSurveysInGroupPageState) then) =
+      _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>;
   $Res call({List<GeneralListCellInfoItem> cellInfoItems, String searchValue});
 }
 
 /// @nodoc
-class _$AllChatsInGroupPageStateCopyWithImpl<$Res>
-    implements $AllChatsInGroupPageStateCopyWith<$Res> {
-  _$AllChatsInGroupPageStateCopyWithImpl(this._value, this._then);
+class _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>
+    implements $AllChatsOrSurveysInGroupPageStateCopyWith<$Res> {
+  _$AllChatsOrSurveysInGroupPageStateCopyWithImpl(this._value, this._then);
 
-  final AllChatsInGroupPageState _value;
+  final AllChatsOrSurveysInGroupPageState _value;
   // ignore: unused_field
-  final $Res Function(AllChatsInGroupPageState) _then;
+  final $Res Function(AllChatsOrSurveysInGroupPageState) _then;
 
   @override
   $Res call({
@@ -430,33 +435,35 @@ class _$AllChatsInGroupPageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AllChatsInGroupPageStateCopyWith<$Res>
-    implements $AllChatsInGroupPageStateCopyWith<$Res> {
-  factory _$AllChatsInGroupPageStateCopyWith(_AllChatsInGroupPageState value,
-          $Res Function(_AllChatsInGroupPageState) then) =
-      __$AllChatsInGroupPageStateCopyWithImpl<$Res>;
+abstract class _$AllChatsOrSurveysInGroupPageStateCopyWith<$Res>
+    implements $AllChatsOrSurveysInGroupPageStateCopyWith<$Res> {
+  factory _$AllChatsOrSurveysInGroupPageStateCopyWith(
+          _AllChatsOrSurveysInGroupPageState value,
+          $Res Function(_AllChatsOrSurveysInGroupPageState) then) =
+      __$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>;
   @override
   $Res call({List<GeneralListCellInfoItem> cellInfoItems, String searchValue});
 }
 
 /// @nodoc
-class __$AllChatsInGroupPageStateCopyWithImpl<$Res>
-    extends _$AllChatsInGroupPageStateCopyWithImpl<$Res>
-    implements _$AllChatsInGroupPageStateCopyWith<$Res> {
-  __$AllChatsInGroupPageStateCopyWithImpl(_AllChatsInGroupPageState _value,
-      $Res Function(_AllChatsInGroupPageState) _then)
-      : super(_value, (v) => _then(v as _AllChatsInGroupPageState));
+class __$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>
+    extends _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>
+    implements _$AllChatsOrSurveysInGroupPageStateCopyWith<$Res> {
+  __$AllChatsOrSurveysInGroupPageStateCopyWithImpl(
+      _AllChatsOrSurveysInGroupPageState _value,
+      $Res Function(_AllChatsOrSurveysInGroupPageState) _then)
+      : super(_value, (v) => _then(v as _AllChatsOrSurveysInGroupPageState));
 
   @override
-  _AllChatsInGroupPageState get _value =>
-      super._value as _AllChatsInGroupPageState;
+  _AllChatsOrSurveysInGroupPageState get _value =>
+      super._value as _AllChatsOrSurveysInGroupPageState;
 
   @override
   $Res call({
     Object? cellInfoItems = freezed,
     Object? searchValue = freezed,
   }) {
-    return _then(_AllChatsInGroupPageState(
+    return _then(_AllChatsOrSurveysInGroupPageState(
       cellInfoItems: cellInfoItems == freezed
           ? _value.cellInfoItems
           : cellInfoItems // ignore: cast_nullable_to_non_nullable
@@ -471,8 +478,9 @@ class __$AllChatsInGroupPageStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_AllChatsInGroupPageState implements _AllChatsInGroupPageState {
-  const _$_AllChatsInGroupPageState(
+class _$_AllChatsOrSurveysInGroupPageState
+    implements _AllChatsOrSurveysInGroupPageState {
+  const _$_AllChatsOrSurveysInGroupPageState(
       {required this.cellInfoItems, required this.searchValue});
 
   @override
@@ -482,14 +490,14 @@ class _$_AllChatsInGroupPageState implements _AllChatsInGroupPageState {
 
   @override
   String toString() {
-    return 'AllChatsInGroupPageState(cellInfoItems: $cellInfoItems, searchValue: $searchValue)';
+    return 'AllChatsOrSurveysInGroupPageState(cellInfoItems: $cellInfoItems, searchValue: $searchValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AllChatsInGroupPageState &&
+            other is _AllChatsOrSurveysInGroupPageState &&
             const DeepCollectionEquality()
                 .equals(other.cellInfoItems, cellInfoItems) &&
             const DeepCollectionEquality()
@@ -504,15 +512,17 @@ class _$_AllChatsInGroupPageState implements _AllChatsInGroupPageState {
 
   @JsonKey(ignore: true)
   @override
-  _$AllChatsInGroupPageStateCopyWith<_AllChatsInGroupPageState> get copyWith =>
-      __$AllChatsInGroupPageStateCopyWithImpl<_AllChatsInGroupPageState>(
-          this, _$identity);
+  _$AllChatsOrSurveysInGroupPageStateCopyWith<
+          _AllChatsOrSurveysInGroupPageState>
+      get copyWith => __$AllChatsOrSurveysInGroupPageStateCopyWithImpl<
+          _AllChatsOrSurveysInGroupPageState>(this, _$identity);
 }
 
-abstract class _AllChatsInGroupPageState implements AllChatsInGroupPageState {
-  const factory _AllChatsInGroupPageState(
+abstract class _AllChatsOrSurveysInGroupPageState
+    implements AllChatsOrSurveysInGroupPageState {
+  const factory _AllChatsOrSurveysInGroupPageState(
       {required List<GeneralListCellInfoItem> cellInfoItems,
-      required String searchValue}) = _$_AllChatsInGroupPageState;
+      required String searchValue}) = _$_AllChatsOrSurveysInGroupPageState;
 
   @override
   List<GeneralListCellInfoItem> get cellInfoItems;
@@ -520,6 +530,7 @@ abstract class _AllChatsInGroupPageState implements AllChatsInGroupPageState {
   String get searchValue;
   @override
   @JsonKey(ignore: true)
-  _$AllChatsInGroupPageStateCopyWith<_AllChatsInGroupPageState> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$AllChatsOrSurveysInGroupPageStateCopyWith<
+          _AllChatsOrSurveysInGroupPageState>
+      get copyWith => throw _privateConstructorUsedError;
 }

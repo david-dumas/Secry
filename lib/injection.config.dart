@@ -9,7 +9,7 @@ import 'package:firebase_auth/firebase_auth.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/all_chats_in_group_page/all_chats_in_group_page_bloc.dart'
+import 'application/all_chats_or_surveys_in_group_page/all_chats_or_surveys_in_group_page_bloc.dart'
     as _i3;
 import 'application/auth/reset_password/reset_password_bloc.dart' as _i25;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i12;
@@ -44,7 +44,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final registerModule = _$RegisterModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
-  gh.factory<_i3.AllChatsInGroupPageBloc>(() => _i3.AllChatsInGroupPageBloc());
+  gh.factory<_i3.AllChatsOrSurveysInGroupPageBloc>(
+      () => _i3.AllChatsOrSurveysInGroupPageBloc());
   gh.singleton<_i4.Dio>(registerModule.dio);
   gh.singleton<_i5.FirebaseAuth>(firebaseInjectableModule.firebaseAuth);
   gh.singleton<_i6.GroupsApiService>(_i6.GroupsApiService(get<_i4.Dio>()));

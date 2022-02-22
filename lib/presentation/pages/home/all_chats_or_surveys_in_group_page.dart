@@ -3,7 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
-import 'package:secry/application/all_chats_in_group_page/all_chats_in_group_page_bloc.dart';
+import 'package:secry/application/all_chats_or_surveys_in_group_page/all_chats_or_surveys_in_group_page_bloc.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/presentation/pages/general/widgets/general_list_cell.dart';
 import 'package:secry/presentation/pages/general/widgets/general_searchbar.dart';
@@ -14,23 +14,26 @@ import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/util/search/search_helper.dart';
 
-class AllChatsInGroupPage extends StatelessWidget {
+class AllChatsOrSurveysInGroupPage extends StatelessWidget {
   final List<GeneralListCellInfoItem> cellInfoItems;
   final TextEditingController searchBarTextEditingController = TextEditingController();
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final String pageTitle;
+  final String hintText;
 
-  AllChatsInGroupPage({Key? key, required this.cellInfoItems}) : super(key: key);
+  AllChatsOrSurveysInGroupPage({Key? key, required this.cellInfoItems, required this.pageTitle, required this.hintText})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>
-          getIt<AllChatsInGroupPageBloc>()..add(AllChatsInGroupPageEvent.initialized(this.cellInfoItems)),
-      child: BlocBuilder<AllChatsInGroupPageBloc, AllChatsInGroupPageState>(
+      create: (context) => getIt<AllChatsOrSurveysInGroupPageBloc>()
+        ..add(AllChatsOrSurveysInGroupPageEvent.initialized(this.cellInfoItems)),
+      child: BlocBuilder<AllChatsOrSurveysInGroupPageBloc, AllChatsOrSurveysInGroupPageState>(
         builder: (context, state) {
           return Scaffold(
             appBar: GeneralAppbar(
-              title: tr('home_all_chats'),
+              title: pageTitle,
               isSubpage: true,
               backgroundColor: globalWhite,
             ),
@@ -43,11 +46,11 @@ class AllChatsInGroupPage extends StatelessWidget {
                       formKey: _formKey,
                       searchBarTextEditingController: searchBarTextEditingController,
                       searchValue: state.searchValue,
-                      hintText: '${tr('action_search_chats')}...',
+                      hintText: hintText,
                       searchValueUpdated: (newValue) {
                         context
-                            .read<AllChatsInGroupPageBloc>()
-                            .add(AllChatsInGroupPageEvent.searchValueUpdated(newValue));
+                            .read<AllChatsOrSurveysInGroupPageBloc>()
+                            .add(AllChatsOrSurveysInGroupPageEvent.searchValueUpdated(newValue));
                       },
                     ),
                     SizedBox(height: 20),
