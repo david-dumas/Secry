@@ -1,14 +1,11 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:multiavatar/multiavatar.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
-import 'package:secry/presentation/widgets/multi_avatar/svg_wrapper.dart';
 import 'package:secry/util/avatars/avatar_helper.dart';
 
 part 'homepage_event.dart';

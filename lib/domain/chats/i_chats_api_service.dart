@@ -2,8 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:secry/constants.dart';
 import 'package:retrofit/retrofit.dart';
 
-import 'package:secry/constants.dart';
-
 part 'i_chats_api_service.g.dart';
 
 @RestApi(baseUrl: temporaryPostmanPrivateChatsUrl)
