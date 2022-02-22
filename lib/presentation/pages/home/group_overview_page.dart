@@ -12,7 +12,7 @@ import 'package:secry/presentation/widgets/general/group_section.dart';
 
 import 'package:secry/injection.dart';
 
-import 'all_chats_in_group_page.dart';
+import 'all_chats_or_surveys_in_group_page.dart';
 
 class GroupOverviewPage extends StatelessWidget {
   final String title;
@@ -51,7 +51,11 @@ class GroupOverviewPage extends StatelessWidget {
                         titleRowTrailingAction: () {
                           pushNewScreen(
                             context,
-                            screen: AllChatsInGroupPage(cellInfoItems: getCellItemsFrom(state.chatInfoItems)),
+                            screen: AllChatsOrSurveysInGroupPage(
+                              cellInfoItems: getCellItemsFrom(state.chatInfoItems),
+                              pageTitle: tr('home_all_chats'),
+                              hintText: '${tr('action_search_chats')}...',
+                            ),
                             withNavBar: true,
                             pageTransitionAnimation: PageTransitionAnimation.cupertino,
                           );
@@ -72,7 +76,16 @@ class GroupOverviewPage extends StatelessWidget {
                         emptyStateDescription: tr('empty_state_no_surveys_description'),
                         emptyStateIcon: Icon(Icons.group_add),
                         titleRowTrailingAction: () {
-                          // TODO handle 'see all' action
+                          pushNewScreen(
+                            context,
+                            screen: AllChatsOrSurveysInGroupPage(
+                              cellInfoItems: getCellItemsFrom(state.surveyInfoItems),
+                              pageTitle: tr('home_all_surveys'),
+                              hintText: '${tr('action_search_surveys')}...',
+                            ),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
                         },
                         openPageForPressedCell: (String id, String groupTitle) {
                           // TODO Open subpage for chat
