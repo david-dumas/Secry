@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/all_chats_or_surveys_in_group_page/all_chats_or_surveys_in_group_page_bloc.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
+import 'package:secry/presentation/pages/general/widgets/empty_state.dart';
 import 'package:secry/presentation/pages/general/widgets/general_list_cell.dart';
 import 'package:secry/presentation/pages/general/widgets/general_searchbar.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
@@ -31,6 +32,9 @@ class AllChatsOrSurveysInGroupPage extends StatelessWidget {
         ..add(AllChatsOrSurveysInGroupPageEvent.initialized(this.cellInfoItems)),
       child: BlocBuilder<AllChatsOrSurveysInGroupPageBloc, AllChatsOrSurveysInGroupPageState>(
         builder: (context, state) {
+          final filteredCellInfoItems =
+              SearchHelper().getFilteredGeneralListCellInfoItems(state.cellInfoItems, state.searchValue);
+
           return Scaffold(
             appBar: GeneralAppbar(
               title: pageTitle,
@@ -54,37 +58,47 @@ class AllChatsOrSurveysInGroupPage extends StatelessWidget {
                       },
                     ),
                     SizedBox(height: 20),
-                    ListView.builder(
-                      scrollDirection: Axis.vertical,
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemCount: SearchHelper()
-                          .getFilteredGeneralListCellInfoItems(state.cellInfoItems, state.searchValue)
-                          .length,
-                      itemBuilder: (context, index) {
-                        final cellInfoItem =
-                            SearchHelper().getFilteredGeneralListCellInfoItems(state.cellInfoItems, state.searchValue);
-
-                        return GestureDetector(
-                            child: GeneralListCell(
-                              listCellInfoItem: GeneralListCellInfoItem(
-                                id: cellInfoItem[index].id,
-                                title: cellInfoItem[index].title,
-                                description: cellInfoItem[index].description,
-                                timeIndication: cellInfoItem[index].timeIndication,
-                                svg: cellInfoItem[index].svg,
+                    Visibility(
+                      visible: filteredCellInfoItems.length == 0,
+                      child: Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: EmptyState(
+                          title: tr('empty_state_search_no_results_title_general'),
+                          description: tr('empty_state_search_no_results_description_general'),
+                          icon: Icons.search_off_outlined,
+                        ),
+                      ),
+                    ),
+                    Visibility(
+                      visible: filteredCellInfoItems.length > 0,
+                      child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        itemCount: filteredCellInfoItems.length,
+                        itemBuilder: (context, index) {
+                          return GestureDetector(
+                              child: GeneralListCell(
+                                listCellInfoItem: GeneralListCellInfoItem(
+                                  id: filteredCellInfoItems[index].id,
+                                  title: filteredCellInfoItems[index].title,
+                                  description: filteredCellInfoItems[index].description,
+                                  timeIndication: filteredCellInfoItems[index].timeIndication,
+                                  svg: filteredCellInfoItems[index].svg,
+                                ),
                               ),
-                            ),
-                            onTap: () => {
-                                  pushNewScreen(
-                                    context,
-                                    screen:
-                                        ChatPage(title: cellInfoItems[index].title, chatId: cellInfoItems[index].id),
-                                    withNavBar: true,
-                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                  )
-                                });
-                      },
+                              onTap: () => {
+                                    pushNewScreen(
+                                      context,
+                                      screen: ChatPage(
+                                          title: filteredCellInfoItems[index].title,
+                                          chatId: filteredCellInfoItems[index].id),
+                                      withNavBar: true,
+                                      pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                    )
+                                  });
+                        },
+                      ),
                     ),
                   ],
                 ),
