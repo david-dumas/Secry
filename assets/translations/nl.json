@@ -83,5 +83,7 @@
   "empty_state_no_chats_title" : "Geen chats",
   "empty_state_no_chats_description" : "Nieuwe chat aanmaken",
   "empty_state_no_surveys_title" : "Geen enquêtes",
-  "empty_state_no_surveys_description" : "Nieuwe enquête aanmaken"
+  "empty_state_no_surveys_description" : "Nieuwe enquête aanmaken",
+  "empty_state_search_no_results_title_general" : "geen resultaten gevonden",
+  "empty_state_search_no_results_description_general" : "Probeer uw zoekopdracht aan te passen om te vinden wat u zoekt."
 }
