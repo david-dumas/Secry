@@ -1,5 +1,6 @@
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
+import 'package:secry/util/date_and_time/text_from_date.dart';
 
 class SearchHelper {
   List<GeneralListCellInfoItem> getFilteredGeneralListCellItems(
@@ -9,22 +10,24 @@ class SearchHelper {
           .map((groupInfoItem) => GeneralListCellInfoItem(
               id: groupInfoItem.id,
               title: groupInfoItem.title,
-              description: groupInfoItem.lastMessage,
-              timeIndication: groupInfoItem.timeIndication,
+              description: groupInfoItem.lastMessageText ?? '',
+              timeIndication: groupInfoItem.lastMessageTime?.getTimeAgoTimeIndication() ?? '',
               svg: groupInfoItem.svg))
           .toList();
     } else {
       final filteredGroupItems = groupsInfoToFilter
           .where((groupsInfo) =>
               groupsInfo.title.toLowerCase().contains(filterText.toLowerCase()) ||
-              groupsInfo.lastMessage.toLowerCase().contains(filterText.toLowerCase()))
+              (groupsInfo.lastMessageTime?.getTimeAgoTimeIndication() ?? '')
+                  .toLowerCase()
+                  .contains(filterText.toLowerCase()))
           .toList();
       return filteredGroupItems
           .map((groupInfoItem) => GeneralListCellInfoItem(
               id: groupInfoItem.id,
               title: groupInfoItem.title,
-              description: groupInfoItem.lastMessage,
-              timeIndication: groupInfoItem.timeIndication,
+              description: groupInfoItem.lastMessageText ?? '',
+              timeIndication: groupInfoItem.lastMessageTime?.getTimeAgoTimeIndication() ?? '',
               svg: groupInfoItem.svg))
           .toList();
     }
