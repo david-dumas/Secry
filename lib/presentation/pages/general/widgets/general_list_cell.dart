@@ -21,8 +21,8 @@ class GeneralListCell extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.15,
+            Align(
+              alignment: Alignment.centerLeft,
               child: Container(
                 height: 44.0,
                 width: 44.0,
@@ -38,8 +38,8 @@ class GeneralListCell extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              width: MediaQuery.of(context).size.width * 0.6,
+            SizedBox(width: 16),
+            Expanded(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -55,6 +55,7 @@ class GeneralListCell extends StatelessWidget {
                 ],
               ),
             ),
+            SizedBox(width: 16),
             Align(alignment: Alignment.centerRight, child: Text(listCellInfoItem.timeIndication))
           ],
         ),
