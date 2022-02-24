@@ -41,6 +41,7 @@ class GroupOverviewPage extends StatelessWidget {
                     children: [
                       GroupSection(
                         title: tr('home_chats'),
+                        totalAmountOfGroups: getCellItemsFrom(state.chatInfoItems).length,
                         cellInfoItems: getCellItemsFrom(state.chatInfoItems),
                         isMaximumNumberOfCellsToShowEnabled: true,
                         maximumNumberOfCellsToShow: 3,
@@ -68,6 +69,7 @@ class GroupOverviewPage extends StatelessWidget {
                       SizedBox(height: 30),
                       GroupSection(
                         title: tr('home_surveys'),
+                        totalAmountOfGroups: getCellItemsFrom(state.surveyInfoItems).length,
                         cellInfoItems: getCellItemsFrom(state.surveyInfoItems),
                         isMaximumNumberOfCellsToShowEnabled: true,
                         maximumNumberOfCellsToShow: 3,

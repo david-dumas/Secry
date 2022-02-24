@@ -7,4 +7,5 @@ class HomepageEvent with _$HomepageEvent {
       _PrivateGroupsInfoUpdated;
   const factory HomepageEvent.updatedIsShowingSearchBar(bool isShowing) = _UpdatedIsShowingSearchBar;
   const factory HomepageEvent.searchValueUpdated(String newValue) = _SearchValueUpdated;
+  const factory HomepageEvent.totalNumberOfGroupsUpdated(int amount) = _TotalNumberOfGroupsUpdated;
 }

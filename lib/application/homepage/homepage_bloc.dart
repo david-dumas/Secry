@@ -23,10 +23,11 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
   Future<void> _onEvent(HomepageEvent event, Emitter<HomepageState> emit) async {
     await event.map(
       initialized: (e) async {
-        final groupsRowsInfoList = await _activityRepository.getPrivateGroups(userId: "dummyUserId");
-        await AvatarHelper().addSvgToGroupRowsInfo(groupsRowsInfoList);
+        final GroupsAndGeneralAboutInfo = await _activityRepository.getPrivateGroups(userId: "dummyUserId");
+        await AvatarHelper().addSvgToGroupRowsInfo(GroupsAndGeneralAboutInfo.groups);
 
-        add(HomepageEvent.privateGroupsInfoUpdated(groupsRowsInfoList));
+        add(HomepageEvent.privateGroupsInfoUpdated(GroupsAndGeneralAboutInfo.groups));
+        add(HomepageEvent.totalNumberOfGroupsUpdated(GroupsAndGeneralAboutInfo.totalAmountOfGroups));
       },
       privateGroupsInfoUpdated: (e) async {
         emit(state.copyWith(privateGroupsRowsInfo: e.privateGroupsRowsInfo));
@@ -37,6 +38,9 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       },
       searchValueUpdated: (e) async {
         emit(state.copyWith(searchValue: e.newValue));
+      },
+      totalNumberOfGroupsUpdated: (e) async {
+        emit(state.copyWith(totalNumberOfGroups: e.amount));
       },
     );
   }

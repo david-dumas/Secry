@@ -24,7 +24,8 @@ class GroupOverviewRowInfo {
     return GroupOverviewRowInfo(
         id: json.containsKey('id') ? json['id'].toString() : '',
         title: json.containsKey('title') ? json['title'] : '',
-        lastChatId: json.containsKey('lastChatId') ? json['lastChatId'].toString() : '',
+        lastChatId:
+            json.containsKey('lastChatId') ? (json['lastChatId'] != null ? json['lastChatId'].toString() : '') : '',
         lastMessageSender: json.containsKey('lastMessageSender')
             ? (json['lastMessageSender'] != null ? json['lastMessageSender'] : '')
             : '',

@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
+import 'package:secry/domain/general/groups_and_general_about_info.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/infrastructure/groups/groups_api_service.dart';
 
@@ -12,7 +13,7 @@ class GroupsRepository extends IGroupsRepository {
   GroupsRepository(this._groupsApiService) : super();
 
   @override
-  Future<List<GroupOverviewRowInfo>> getPrivateGroups({required String userId}) async {
+  Future<GroupsAndGeneralAboutInfo> getPrivateGroups({required String userId}) async {
     try {
       var body = jsonEncode({
         'userId': '$userId',
@@ -28,17 +29,22 @@ class GroupsRepository extends IGroupsRepository {
           List<dynamic> groups = mappedData["groups"];
           final List<GroupOverviewRowInfo> groupOverviewRowsData =
               (groups).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
+          final int totalAmountOfGroups =
+              mappedData.containsKey('total') ? (mappedData['total'] != null ? mappedData['total'] : 0) : 0;
 
-          return groupOverviewRowsData;
+          final groupsAndGeneralAboutInfo =
+              GroupsAndGeneralAboutInfo(totalAmountOfGroups: totalAmountOfGroups, groups: groupOverviewRowsData);
+
+          return groupsAndGeneralAboutInfo;
         } else {
-          return List.empty();
+          return GroupsAndGeneralAboutInfo(totalAmountOfGroups: 0, groups: []);
         }
       } else {
-        return List.empty();
+        return GroupsAndGeneralAboutInfo(totalAmountOfGroups: 0, groups: []);
       }
     } catch (error) {
       print(error);
-      return List.empty();
+      return GroupsAndGeneralAboutInfo(totalAmountOfGroups: 0, groups: []);
     }
   }
 }

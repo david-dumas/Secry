@@ -63,6 +63,7 @@ class _HomePageState extends State<HomePage> {
                     padding: pagePaddingAllSides,
                     child: GroupSection(
                       title: tr('home_my_groups'),
+                      totalAmountOfGroups: state.totalNumberOfGroups,
                       cellInfoItems: SearchHelper()
                           .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
                       titleRowActionButtonText: tr('general_add_group'),

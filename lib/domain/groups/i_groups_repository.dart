@@ -1,5 +1,5 @@
-import 'package:secry/domain/general/group_overview_row_info.dart';
+import 'package:secry/domain/general/groups_and_general_about_info.dart';
 
 abstract class IGroupsRepository {
-  Future<List<GroupOverviewRowInfo>> getPrivateGroups({required String userId});
+  Future<GroupsAndGeneralAboutInfo> getPrivateGroups({required String userId});
 }

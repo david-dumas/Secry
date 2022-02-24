@@ -40,6 +40,12 @@ class _$HomepageEventTearOff {
       newValue,
     );
   }
+
+  _TotalNumberOfGroupsUpdated totalNumberOfGroupsUpdated(int amount) {
+    return _TotalNumberOfGroupsUpdated(
+      amount,
+    );
+  }
 }
 
 /// @nodoc
@@ -54,6 +60,7 @@ mixin _$HomepageEvent {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(int amount) totalNumberOfGroupsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -63,6 +70,7 @@ mixin _$HomepageEvent {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +80,7 @@ mixin _$HomepageEvent {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -83,6 +92,8 @@ mixin _$HomepageEvent {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_TotalNumberOfGroupsUpdated value)
+        totalNumberOfGroupsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,6 +103,8 @@ mixin _$HomepageEvent {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -101,6 +114,8 @@ mixin _$HomepageEvent {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -168,6 +183,7 @@ class _$_Initialized implements _Initialized {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(int amount) totalNumberOfGroupsUpdated,
   }) {
     return initialized();
   }
@@ -180,6 +196,7 @@ class _$_Initialized implements _Initialized {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
   }) {
     return initialized?.call();
   }
@@ -192,6 +209,7 @@ class _$_Initialized implements _Initialized {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -209,6 +227,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_TotalNumberOfGroupsUpdated value)
+        totalNumberOfGroupsUpdated,
   }) {
     return initialized(this);
   }
@@ -221,6 +241,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -233,6 +255,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -319,6 +343,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(int amount) totalNumberOfGroupsUpdated,
   }) {
     return privateGroupsInfoUpdated(privateGroupsRowsInfo);
   }
@@ -331,6 +356,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
   }) {
     return privateGroupsInfoUpdated?.call(privateGroupsRowsInfo);
   }
@@ -343,6 +369,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -360,6 +387,8 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_TotalNumberOfGroupsUpdated value)
+        totalNumberOfGroupsUpdated,
   }) {
     return privateGroupsInfoUpdated(this);
   }
@@ -372,6 +401,8 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
   }) {
     return privateGroupsInfoUpdated?.call(this);
   }
@@ -384,6 +415,8 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -477,6 +510,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(int amount) totalNumberOfGroupsUpdated,
   }) {
     return updatedIsShowingSearchBar(isShowing);
   }
@@ -489,6 +523,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
   }) {
     return updatedIsShowingSearchBar?.call(isShowing);
   }
@@ -501,6 +536,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -518,6 +554,8 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_TotalNumberOfGroupsUpdated value)
+        totalNumberOfGroupsUpdated,
   }) {
     return updatedIsShowingSearchBar(this);
   }
@@ -530,6 +568,8 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
   }) {
     return updatedIsShowingSearchBar?.call(this);
   }
@@ -542,6 +582,8 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -631,6 +673,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(int amount) totalNumberOfGroupsUpdated,
   }) {
     return searchValueUpdated(newValue);
   }
@@ -643,6 +686,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
   }) {
     return searchValueUpdated?.call(newValue);
   }
@@ -655,6 +699,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (searchValueUpdated != null) {
@@ -672,6 +717,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_TotalNumberOfGroupsUpdated value)
+        totalNumberOfGroupsUpdated,
   }) {
     return searchValueUpdated(this);
   }
@@ -684,6 +731,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
   }) {
     return searchValueUpdated?.call(this);
   }
@@ -696,6 +745,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
     required TResult orElse(),
   }) {
     if (searchValueUpdated != null) {
@@ -715,16 +766,184 @@ abstract class _SearchValueUpdated implements HomepageEvent {
 }
 
 /// @nodoc
+abstract class _$TotalNumberOfGroupsUpdatedCopyWith<$Res> {
+  factory _$TotalNumberOfGroupsUpdatedCopyWith(
+          _TotalNumberOfGroupsUpdated value,
+          $Res Function(_TotalNumberOfGroupsUpdated) then) =
+      __$TotalNumberOfGroupsUpdatedCopyWithImpl<$Res>;
+  $Res call({int amount});
+}
+
+/// @nodoc
+class __$TotalNumberOfGroupsUpdatedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$TotalNumberOfGroupsUpdatedCopyWith<$Res> {
+  __$TotalNumberOfGroupsUpdatedCopyWithImpl(_TotalNumberOfGroupsUpdated _value,
+      $Res Function(_TotalNumberOfGroupsUpdated) _then)
+      : super(_value, (v) => _then(v as _TotalNumberOfGroupsUpdated));
+
+  @override
+  _TotalNumberOfGroupsUpdated get _value =>
+      super._value as _TotalNumberOfGroupsUpdated;
+
+  @override
+  $Res call({
+    Object? amount = freezed,
+  }) {
+    return _then(_TotalNumberOfGroupsUpdated(
+      amount == freezed
+          ? _value.amount
+          : amount // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_TotalNumberOfGroupsUpdated implements _TotalNumberOfGroupsUpdated {
+  const _$_TotalNumberOfGroupsUpdated(this.amount);
+
+  @override
+  final int amount;
+
+  @override
+  String toString() {
+    return 'HomepageEvent.totalNumberOfGroupsUpdated(amount: $amount)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _TotalNumberOfGroupsUpdated &&
+            const DeepCollectionEquality().equals(other.amount, amount));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(amount));
+
+  @JsonKey(ignore: true)
+  @override
+  _$TotalNumberOfGroupsUpdatedCopyWith<_TotalNumberOfGroupsUpdated>
+      get copyWith => __$TotalNumberOfGroupsUpdatedCopyWithImpl<
+          _TotalNumberOfGroupsUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(int amount) totalNumberOfGroupsUpdated,
+  }) {
+    return totalNumberOfGroupsUpdated(amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
+  }) {
+    return totalNumberOfGroupsUpdated?.call(amount);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(int amount)? totalNumberOfGroupsUpdated,
+    required TResult orElse(),
+  }) {
+    if (totalNumberOfGroupsUpdated != null) {
+      return totalNumberOfGroupsUpdated(amount);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_TotalNumberOfGroupsUpdated value)
+        totalNumberOfGroupsUpdated,
+  }) {
+    return totalNumberOfGroupsUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
+  }) {
+    return totalNumberOfGroupsUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_TotalNumberOfGroupsUpdated value)?
+        totalNumberOfGroupsUpdated,
+    required TResult orElse(),
+  }) {
+    if (totalNumberOfGroupsUpdated != null) {
+      return totalNumberOfGroupsUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TotalNumberOfGroupsUpdated implements HomepageEvent {
+  const factory _TotalNumberOfGroupsUpdated(int amount) =
+      _$_TotalNumberOfGroupsUpdated;
+
+  int get amount;
+  @JsonKey(ignore: true)
+  _$TotalNumberOfGroupsUpdatedCopyWith<_TotalNumberOfGroupsUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$HomepageStateTearOff {
   const _$HomepageStateTearOff();
 
   _HomepageState call(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      required int totalNumberOfGroups,
       required bool isShowingSearchBar,
       required String searchValue,
       required List<DrawableRoot?> privateGroupAvatarSvgs}) {
     return _HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo,
+      totalNumberOfGroups: totalNumberOfGroups,
       isShowingSearchBar: isShowingSearchBar,
       searchValue: searchValue,
       privateGroupAvatarSvgs: privateGroupAvatarSvgs,
@@ -739,6 +958,7 @@ const $HomepageState = _$HomepageStateTearOff();
 mixin _$HomepageState {
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo =>
       throw _privateConstructorUsedError;
+  int get totalNumberOfGroups => throw _privateConstructorUsedError;
   bool get isShowingSearchBar => throw _privateConstructorUsedError;
   String get searchValue => throw _privateConstructorUsedError;
   List<DrawableRoot?> get privateGroupAvatarSvgs =>
@@ -756,6 +976,7 @@ abstract class $HomepageStateCopyWith<$Res> {
       _$HomepageStateCopyWithImpl<$Res>;
   $Res call(
       {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      int totalNumberOfGroups,
       bool isShowingSearchBar,
       String searchValue,
       List<DrawableRoot?> privateGroupAvatarSvgs});
@@ -773,6 +994,7 @@ class _$HomepageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
+    Object? totalNumberOfGroups = freezed,
     Object? isShowingSearchBar = freezed,
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
@@ -782,6 +1004,10 @@ class _$HomepageStateCopyWithImpl<$Res>
           ? _value.privateGroupsRowsInfo
           : privateGroupsRowsInfo // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
+      totalNumberOfGroups: totalNumberOfGroups == freezed
+          ? _value.totalNumberOfGroups
+          : totalNumberOfGroups // ignore: cast_nullable_to_non_nullable
+              as int,
       isShowingSearchBar: isShowingSearchBar == freezed
           ? _value.isShowingSearchBar
           : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
@@ -807,6 +1033,7 @@ abstract class _$HomepageStateCopyWith<$Res>
   @override
   $Res call(
       {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      int totalNumberOfGroups,
       bool isShowingSearchBar,
       String searchValue,
       List<DrawableRoot?> privateGroupAvatarSvgs});
@@ -826,6 +1053,7 @@ class __$HomepageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
+    Object? totalNumberOfGroups = freezed,
     Object? isShowingSearchBar = freezed,
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
@@ -835,6 +1063,10 @@ class __$HomepageStateCopyWithImpl<$Res>
           ? _value.privateGroupsRowsInfo
           : privateGroupsRowsInfo // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
+      totalNumberOfGroups: totalNumberOfGroups == freezed
+          ? _value.totalNumberOfGroups
+          : totalNumberOfGroups // ignore: cast_nullable_to_non_nullable
+              as int,
       isShowingSearchBar: isShowingSearchBar == freezed
           ? _value.isShowingSearchBar
           : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
@@ -856,12 +1088,15 @@ class __$HomepageStateCopyWithImpl<$Res>
 class _$_HomepageState implements _HomepageState {
   const _$_HomepageState(
       {required this.privateGroupsRowsInfo,
+      required this.totalNumberOfGroups,
       required this.isShowingSearchBar,
       required this.searchValue,
       required this.privateGroupAvatarSvgs});
 
   @override
   final List<GroupOverviewRowInfo> privateGroupsRowsInfo;
+  @override
+  final int totalNumberOfGroups;
   @override
   final bool isShowingSearchBar;
   @override
@@ -871,7 +1106,7 @@ class _$_HomepageState implements _HomepageState {
 
   @override
   String toString() {
-    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs)';
+    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, totalNumberOfGroups: $totalNumberOfGroups, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs)';
   }
 
   @override
@@ -881,6 +1116,8 @@ class _$_HomepageState implements _HomepageState {
             other is _HomepageState &&
             const DeepCollectionEquality()
                 .equals(other.privateGroupsRowsInfo, privateGroupsRowsInfo) &&
+            const DeepCollectionEquality()
+                .equals(other.totalNumberOfGroups, totalNumberOfGroups) &&
             const DeepCollectionEquality()
                 .equals(other.isShowingSearchBar, isShowingSearchBar) &&
             const DeepCollectionEquality()
@@ -893,6 +1130,7 @@ class _$_HomepageState implements _HomepageState {
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(privateGroupsRowsInfo),
+      const DeepCollectionEquality().hash(totalNumberOfGroups),
       const DeepCollectionEquality().hash(isShowingSearchBar),
       const DeepCollectionEquality().hash(searchValue),
       const DeepCollectionEquality().hash(privateGroupAvatarSvgs));
@@ -906,12 +1144,15 @@ class _$_HomepageState implements _HomepageState {
 abstract class _HomepageState implements HomepageState {
   const factory _HomepageState(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
+      required int totalNumberOfGroups,
       required bool isShowingSearchBar,
       required String searchValue,
       required List<DrawableRoot?> privateGroupAvatarSvgs}) = _$_HomepageState;
 
   @override
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
+  @override
+  int get totalNumberOfGroups;
   @override
   bool get isShowingSearchBar;
   @override

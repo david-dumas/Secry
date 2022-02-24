@@ -5,6 +5,7 @@ import 'package:secry/presentation/pages/general/widgets/general_list_cell.dart'
 
 class GroupSection extends StatelessWidget {
   final String title;
+  final int totalAmountOfGroups;
   final List<GeneralListCellInfoItem> cellInfoItems;
   final bool isMaximumNumberOfCellsToShowEnabled;
   final int maximumNumberOfCellsToShow;
@@ -19,6 +20,7 @@ class GroupSection extends StatelessWidget {
   const GroupSection(
       {Key? key,
       required this.title,
+      required this.totalAmountOfGroups,
       required this.cellInfoItems,
       this.isMaximumNumberOfCellsToShowEnabled = false,
       this.maximumNumberOfCellsToShow = 99999,
@@ -36,7 +38,7 @@ class GroupSection extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
       GroupSectionTitleRow(
           title: title,
-          amountOfGroups: cellInfoItems.length,
+          amountOfGroups: totalAmountOfGroups,
           isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
           titleRowActionButtonText: titleRowActionButtonText,
           trailingActionButtonAction: () {
