@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/homepage/homepage_bloc.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
-import 'package:secry/domain/general/general_list_cell_info_item.dart';
-import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 import 'package:secry/constants.dart';
@@ -13,7 +11,6 @@ import 'package:secry/presentation/widgets/general/group_section.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/util/search/search_helper.dart';
-
 import 'group_overview_page.dart';
 
 class HomePage extends StatefulWidget {
