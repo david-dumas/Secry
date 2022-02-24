@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/group_overview/group_overview_bloc.dart';
+import 'package:secry/util/date_and_time/text_from_date.dart';
 
 import 'package:secry/constants.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
@@ -112,8 +113,8 @@ class GroupOverviewPage extends StatelessWidget {
         .map((groupInfoItem) => GeneralListCellInfoItem(
             id: groupInfoItem.id,
             title: groupInfoItem.title,
-            description: groupInfoItem.lastMessage,
-            timeIndication: groupInfoItem.timeIndication,
+            description: groupInfoItem.lastMessageText ?? '',
+            timeIndication: groupInfoItem.lastMessageTime?.getTimeAgoTimeIndication() ?? '',
             svg: groupInfoItem.svg))
         .toList();
   }
