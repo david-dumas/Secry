@@ -22,9 +22,17 @@ class GroupsRepository extends IGroupsRepository {
       final responseStatusCode = response.response.statusCode;
 
       if (responseStatusCode == 200) {
-        final List<GroupOverviewRowInfo> groupOverviewRowsData =
-            (json.decode(response.data) as List).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
-        return groupOverviewRowsData;
+        final mappedData = Map<String, dynamic>.from(response.data);
+
+        if (mappedData.containsKey('groups')) {
+          List<dynamic> groups = mappedData["groups"];
+          final List<GroupOverviewRowInfo> groupOverviewRowsData =
+              (groups).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
+
+          return groupOverviewRowsData;
+        } else {
+          return List.empty();
+        }
       } else {
         return List.empty();
       }
