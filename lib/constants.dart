@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 // BaseUrl
-const baseUrl = "https://sjno.nl/secry";
+const baseUrl = "https://secryapi.azurewebsites.net";
 
 // TODO Delete
 const temporaryPostmanBaseUrl = "https://10535ad9-1804-4207-b556-54f9e7572e48.mock.pstmn.io";

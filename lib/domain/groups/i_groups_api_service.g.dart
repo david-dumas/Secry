@@ -10,7 +10,7 @@ part of 'i_groups_api_service.dart';
 
 class _IGroupsApiService implements IGroupsApiService {
   _IGroupsApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://10535ad9-1804-4207-b556-54f9e7572e48.mock.pstmn.io';
+    baseUrl ??= 'https://secryapi.azurewebsites.net';
   }
 
   final Dio _dio;
@@ -25,7 +25,7 @@ class _IGroupsApiService implements IGroupsApiService {
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/get_private_groups_v2',
+            .compose(_dio.options, '/api/Group',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;

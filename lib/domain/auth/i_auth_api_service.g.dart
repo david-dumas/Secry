@@ -10,7 +10,7 @@ part of 'i_auth_api_service.dart';
 
 class _IAuthApiService implements IAuthApiService {
   _IAuthApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://sjno.nl/secry';
+    baseUrl ??= 'https://secryapi.azurewebsites.net';
   }
 
   final Dio _dio;
