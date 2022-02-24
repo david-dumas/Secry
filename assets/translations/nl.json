@@ -85,5 +85,9 @@
   "empty_state_no_surveys_title" : "Geen enquêtes",
   "empty_state_no_surveys_description" : "Nieuwe enquête aanmaken",
   "empty_state_search_no_results_title_general" : "geen resultaten gevonden",
-  "empty_state_search_no_results_description_general" : "Probeer uw zoekopdracht aan te passen om te vinden wat u zoekt."
+  "empty_state_search_no_results_description_general" : "Probeer uw zoekopdracht aan te passen om te vinden wat u zoekt.",
+  "date_time_x_seconds_ago" : "seconden geleden",
+  "date_time_x_minutes_ago" : "minuten geleden",
+  "date_time_x_hours_ago" : "uur geleden",
+  "date_time_now" : "Nu"
 }

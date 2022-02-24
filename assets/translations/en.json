@@ -85,5 +85,9 @@
   "empty_state_no_surveys_title" : "No surveys",
   "empty_state_no_surveys_description" : "Create a new survey",
   "empty_state_search_no_results_title_general" : "No results found",
-  "empty_state_search_no_results_description_general" : "Try adjusting your search to find what you are looking for."
+  "empty_state_search_no_results_description_general" : "Try adjusting your search to find what you are looking for.",
+  "date_time_x_seconds_ago" : "seconds ago",
+  "date_time_x_minutes_ago" : "minutes ago",
+  "date_time_x_hours_ago" : "hours ago",
+  "date_time_now" : "Now"
 }
