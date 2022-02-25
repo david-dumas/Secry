@@ -33,7 +33,7 @@ stages:
       inputs:
         apkFiles: '**/*.apk'
         apksign: true
-        apksignerKeystoreFile: key.jks
+        apksignerKeystoreFile: SecryAndroidKeyStore.jks
         apksignerKeystorePassword: $(SecryAndroidKeyStorePassword)
         apksignerKeystoreAlias: $(SecryAndroidKeyAlias)
         apksignerKeyPassword: $(SecryAndroidKeyPassword)
