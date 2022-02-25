@@ -5,6 +5,8 @@
 
 variables:
 - group: SecryMasterCICDVariables
+- name: 'BuildMessage'
+  value: '$(Build.SourceVersionMessage)'
 
 trigger:
 - master
@@ -48,10 +50,11 @@ stages:
         artifactName: 'drop'
 
     - task: AppCenterDistribute@3
+      displayName: Run distribute
       inputs:
         serverEndpoint: 'SecryVSAppCenter'
         appSlug: 'Secry/SecryAndroid'
         appFile: 'build/app/outputs/flutter-apk/app-release.apk'
         releaseNotesOption: 'input'
+        releaseNotesInput: '$(BuildMessage)'
         destinationType: 'groups'
-    
