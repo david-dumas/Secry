@@ -31,9 +31,9 @@ stages:
         apkFiles: '**/*.apk'
         apksign: true
         apksignerKeystoreFile: key.jks
-        apksignerKeystorePassword: $(SecryAndroidKeyStorePassword)
-        apksignerKeystoreAlias: $(SecryAndroidKeyAlias)
-        apksignerKeyPassword: $(SecryAndroidKeyPassword)
+        apksignerKeystorePassword: $(keypassword)
+        apksignerKeystoreAlias: $(key)
+        apksignerKeyPassword: $(keypassword)
 
     - task: CopyFiles@2
       inputs:
