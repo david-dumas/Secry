@@ -3,6 +3,9 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+- group: SecryMasterCICDVariables
+
 trigger:
 - master
 
@@ -32,7 +35,7 @@ stages:
         apksign: true
         apksignerKeystoreFile: key.jks
         apksignerKeystorePassword: $(keypassword)
-        apksignerKeystoreAlias: $(key)
+        apksignerKeystoreAlias: $(keyalias)
         apksignerKeyPassword: $(keypassword)
 
     - task: CopyFiles@2
