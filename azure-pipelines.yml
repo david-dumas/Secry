@@ -3,9 +3,6 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-variables:
-  projectDirectory: 'Secry'
-
 trigger:
 - master
 
@@ -22,11 +19,11 @@ stages:
       inputs:
         channel: 'stable'
         version: 'latest'
-        
+      
     - task: FlutterBuild@0
       inputs:
         target: apk
-        projectDirectory: $(projectDirectory)
+        projectDirectory: 
         
     - task: AndroidSigning@3
       displayName: 'Signing and aligning APK file(s) **/*.apk'
@@ -41,7 +38,7 @@ stages:
     - task: CopyFiles@2
       inputs:
         contents: '**/*.apk'
-        targetFolder: '$(build.artifactStagingDirectory)'
+        targetFolder: '$(Build.artifactStagingDirectory)'
 
     - task: PublishBuildArtifacts@1
       inputs:
