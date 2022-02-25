@@ -3,6 +3,9 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
+variables:
+  projectDirectory: 'Secry'
+
 trigger:
 - master
 
@@ -12,32 +15,41 @@ stages:
   - job: Build
 
     pool:
-      vmImage: 'vs2017-win2016'
+      vmImage: 'macOS-latest'
 
     steps:  
+    - task: FlutterInstall@0
+      inputs:
+        channel: 'stable'
+        version: 'latest'
+        
+    - task: FlutterBuild@0
+      inputs:
+        target: apk
+        projectDirectory: $(projectDirectory)
+        
+    - task: AndroidSigning@3
+      displayName: 'Signing and aligning APK file(s) **/*.apk'
+      inputs:
+        apkFiles: '**/*.apk'
+        apksign: true
+        apksignerKeystoreFile: key.jks
+        apksignerKeystorePassword: $(SecryAndroidKeyStorePassword)
+        apksignerKeystoreAlias: $(SecryAndroidKeyAlias)
+        apksignerKeyPassword: $(SecryAndroidKeyPassword)
+
+    - task: CopyFiles@2
+      inputs:
+        contents: '**/*.apk'
+        targetFolder: '$(build.artifactStagingDirectory)'
+
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-        ArtifactName: 'drop'
-        publishLocation: 'Container'
-
-- stage: Deploy
-  jobs:
-  - job: Deploy
-    pool:
-      vmImage: 'vs2017-win2016'
-    
-    steps:
-    - task: DownloadBuildArtifacts@1
-      inputs:
-        buildType: 'current'
-        downloadType: 'single'
-        downloadPath: '$(System.ArtifactsDirectory)'
         artifactName: 'drop'
-    - task: AzureRmWebAppDeployment@4
-      inputs:
-        ConnectionType: 'AzureRM'
-        azureSubscription: 'Azure subscription 1(1991c24f-2dd9-413a-8842-0af3238e3a2c)'
-        appType: 'webApp'
-        WebAppName: 'ci-cd-secry'
-        packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
+
+    # - task: PublishBuildArtifacts@1
+    #   inputs:
+    #     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    #     ArtifactName: 'drop'
+    #     publishLocation: 'Container'
+    
