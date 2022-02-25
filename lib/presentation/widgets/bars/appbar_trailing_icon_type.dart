@@ -1,0 +1,1 @@
+enum AppbarTrailingIconType { none, search }

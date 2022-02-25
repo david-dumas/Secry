@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "14192894461",
+    "project_id": "secryapi",
+    "storage_bucket": "secryapi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14192894461:android:5a0de8ee5c5888abf7b994",
+        "android_client_info": {
+          "package_name": "com.secry.secry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "14192894461-9sku20pgcnn1m9opmnrtpel7l68bvigo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt5A_w5yq0ZtTrnle-SWOYMp-ZFz6QakQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "14192894461-9sku20pgcnn1m9opmnrtpel7l68bvigo.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "14192894461-4nn7s74uotppo82fh3c7ohm18m9cdpjl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.secrytest.testapp.secryTest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
