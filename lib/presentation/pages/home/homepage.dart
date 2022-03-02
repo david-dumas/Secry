@@ -1,3 +1,4 @@
+import 'dart:io' show Platform;
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -5,6 +6,8 @@ import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/homepage/homepage_bloc.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:secry/presentation/pages/home/add_group_page.dart';
 
 import 'package:secry/constants.dart';
 import 'package:secry/presentation/widgets/general/group_section.dart';
@@ -72,11 +75,21 @@ class _HomePageState extends State<HomePage> {
                       emptyStateDescription: tr('action_create_new_group_description'),
                       emptyStateIcon: Icon(Icons.group_add),
                       titleRowTrailingAction: () {
-                        // TODO handle 'add group' action
+                        if (Platform.isAndroid) {
+                          pushNewScreen(
+                            context,
+                            screen: AddGroupPageAndroid(),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        } else if (Platform.isIOS) {
+                          showMaterialModalBottomSheet(
+                            context: context,
+                            builder: (context) => AddGroupPageIOS(),
+                          );
+                        }
                       },
                       openPageForPressedCell: (String id, String groupTitle) {
-                        // TODO Open subpage for group
-
                         pushNewScreen(
                           context,
                           screen: GroupOverviewPage(title: groupTitle, groupId: id),
