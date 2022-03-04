@@ -8,6 +8,7 @@ import 'package:theme_provider/theme_provider.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/theme.dart';
+import 'package:secry/constants.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -44,8 +45,8 @@ class _AppWidgetState extends State<AppWidget> {
                   locale: context.locale,
                   routerDelegate: _appRouter.delegate(),
                   routeInformationParser: _appRouter.defaultRouteParser(),
-                  theme: ThemeProvider.themeOf(themeContext).data,
                   debugShowCheckedModeBanner: false,
+                  theme: ThemeData(scaffoldBackgroundColor: globalWhite),
                 );
               }),
             );

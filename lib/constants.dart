@@ -27,6 +27,7 @@ const globalBlack = Color(0xFF000000);
 const kDarkGrayTextColor = Color(0xFF3F3F3F);
 const kDarkGray = Color(0xFF4F4F4F);
 const kMediumGrayExtraDark = Color(0xFF717171);
+const kMediumGrayV2 = Color(0xFF979797);
 const kMediumGray = Color(0xFFB3B9BC);
 const kLightGray = Color(0xFFF4F4F4);
 const globalWhite = Color(0xFFFFFFFF);
