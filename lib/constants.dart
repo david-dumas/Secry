@@ -26,9 +26,11 @@ const searchBarClearButtonColor = Color(0xFF8E8E92);
 const globalBlack = Color(0xFF000000);
 const kDarkGrayTextColor = Color(0xFF3F3F3F);
 const kDarkGray = Color(0xFF4F4F4F);
+const kMediumGrayExtraDark = Color(0xFF717171);
 const kMediumGray = Color(0xFFB3B9BC);
 const kLightGray = Color(0xFFF4F4F4);
 const globalWhite = Color(0xFFFFFFFF);
+const cancelButtonGrayWhite = Color(0XFFF2F2F2);
 
 // General spacing
 const Widget verticalSafetyScrollOffset = SizedBox(height: 50.0);
