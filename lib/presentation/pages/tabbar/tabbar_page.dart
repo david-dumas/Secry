@@ -39,7 +39,7 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
                   getBottomNavbarItem(icon: Icon(Icons.account_circle_outlined)),
                 ],
                 confineInSafeArea: true,
-                backgroundColor: Colors.white,
+                backgroundColor: globalWhite,
                 handleAndroidBackButtonPress: true,
                 onItemSelected: (newIndex) {
                   context.read<TabbarBloc>().add(TabbarEvent.selectedIndexChanged(newIndex));
