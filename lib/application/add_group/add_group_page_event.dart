@@ -7,4 +7,5 @@ class AddGroupPageEvent with _$AddGroupPageEvent {
   const factory AddGroupPageEvent.searchAllPeopleSearchValueUpdated(String newValue) =
       _SearchAllPeopleSearchValueUpdated;
   const factory AddGroupPageEvent.groupMembersUpdated(List<User> newMembers) = _GroupMembersUpdated;
+  const factory AddGroupPageEvent.currentStepIndexUpdated(int newIndex) = _CurrentStepIndexUpdated;
 }

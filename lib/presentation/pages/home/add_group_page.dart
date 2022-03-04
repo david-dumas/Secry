@@ -2,9 +2,11 @@ import 'dart:math';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/constants.dart';
 
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
+import 'package:secry/application/add_group/add_group_page_bloc.dart';
 
 class AddGroupPageAndroid extends StatelessWidget {
   const AddGroupPageAndroid({Key? key}) : super(key: key);
@@ -36,17 +38,38 @@ class AddGroupPageContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height * 0.75,
-      child: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          AddGroupPageStepOneSection(),
-          BottomNavigationButtonsSection(
-            stepIndex: 0,
-          )
-        ]),
+    return BlocProvider(
+      create: (context) => AddGroupPageBloc(),
+      child: BlocBuilder<AddGroupPageBloc, AddGroupPageState>(
+        builder: (context, state) {
+          final contentToTabbarPadding = 24.0;
+
+          return Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height -
+                (AppBar().preferredSize.height) -
+                kToolbarHeight -
+                contentToTabbarPadding,
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SingleChildScrollView(
+                    child: state.currentStepIndex == 0
+                        ? AddGroupPageStepOneSection()
+                        : AddGroupPageStepTwoSection(
+                            searchValue: state.searchAllPeopleSearchValue,
+                          ),
+                  ),
+                  BottomNavigationButtonsSection(
+                    stepIndex: state.currentStepIndex,
+                  )
+                ],
+              ),
+            ),
+          );
+        },
       ),
     );
   }
@@ -61,6 +84,7 @@ class AddGroupPageStepOneSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cameraButtonWidthHeight = max(MediaQuery.of(context).size.width * 0.22, 66).toDouble();
+    final maximumTitleLength = 24;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
@@ -89,7 +113,7 @@ class AddGroupPageStepOneSection extends StatelessWidget {
               }
               if (value.isEmpty) {
                 return tr('warning_field_is_empty');
-              } else if (value.length > 24) {
+              } else if (value.length > maximumTitleLength) {
                 return tr('warning_too_many_characters');
               }
               return null;
@@ -140,27 +164,64 @@ class AddGroupPageStepOneSection extends StatelessWidget {
   }
 }
 
-// Container(
-// foregroundDecoration: BoxDecoration(
-// borderRadius: BorderRadius.circular(8.0), border: Border.all(color: kMediumGrayV2, width: 1.0)),
-// child: Container(
-// child: Column(children: [
-// Container(
-// width: cameraButtonWidthHeight,
-// height: cameraButtonWidthHeight,
-// color: kLightGray,
-// child: IconButton(
-// iconSize: cameraButtonWidthHeight * 0.5,
-// icon: Icon(Icons.camera_alt_rounded),
-// onPressed: () {},
-// ),
-// ),
-// TextButton(child: Text("${tr('action_add_group_picture')}"), onPressed: () {})
-// ])),
-// )
+class AddGroupPageStepTwoSection extends StatefulWidget {
+  final String searchValue;
+
+  AddGroupPageStepTwoSection({Key? key, required this.searchValue}) : super(key: key);
+
+  @override
+  State<AddGroupPageStepTwoSection> createState() => _AddGroupPageStepTwoSectionState();
+}
+
+class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection> {
+  final TextEditingController searchBarSearchAllPeopleTextEditingController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(tr('action_add_people')),
+        SizedBox(height: 8),
+        TextField(
+          controller: searchBarSearchAllPeopleTextEditingController,
+          autofocus: widget.searchValue == '',
+          autocorrect: false,
+          decoration: InputDecoration(
+            fillColor: searchBarBackgroundColor,
+            filled: true,
+            contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+            suffixIcon: IconButton(
+              icon: Icon(Icons.clear),
+              color: searchBarClearButtonColor,
+              onPressed: () {
+                searchBarSearchAllPeopleTextEditingController.text = '';
+                context.read<AddGroupPageBloc>().add(AddGroupPageEvent.searchAllPeopleSearchValueUpdated(''));
+              },
+            ),
+            hintText: '${tr('action_search')}...',
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: BorderSide(
+                width: 0,
+                style: BorderStyle.none,
+              ),
+            ),
+          ),
+          onChanged: (newValue) {
+            context.read<AddGroupPageBloc>().add(AddGroupPageEvent.searchAllPeopleSearchValueUpdated(''));
+          },
+        ),
+        SizedBox(height: 20),
+      ],
+    );
+  }
+}
 
 class BottomNavigationButtonsSection extends StatelessWidget {
   final int stepIndex;
+  final totalNumberOfSteps = 2;
   final horizontalButtonsSpacing = 12.0;
   final contentToEdgePadding = 20.0;
 
@@ -188,13 +249,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
               ),
               onPressed: () {
-                if (stepIndex == 0) {
-                  // TODO close page
-                } else if (stepIndex < 2) {
-                  // TODO go to previousPage
-                } else {
-                  // TODO close page
-                }
+                handlePreviousCancelActionForIndex(context, max(0, stepIndex));
               },
               child: Text(
                 stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
@@ -218,11 +273,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                 backgroundColor: MaterialStateProperty.all(kPrimaryColor),
               ),
               onPressed: () {
-                if (stepIndex < 1) {
-                  // TODO go to next page
-                } else {
-                  // TODO handle create action AND close
-                }
+                handleNextCreateActionForIndex(context, stepIndex, totalNumberOfSteps);
               },
               child: Text(
                 stepIndex == 0 ? tr('action_next') : tr('action_create'),
@@ -233,5 +284,29 @@ class BottomNavigationButtonsSection extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void handlePreviousCancelActionForIndex(BuildContext context, int index) {
+    final newIndex = max(0, index - 1);
+
+    if (index != newIndex) {
+      context.read<AddGroupPageBloc>().add(AddGroupPageEvent.currentStepIndexUpdated(newIndex));
+    }
+
+    if (index == 0) {
+      Navigator.of(context).pop(context);
+    }
+  }
+
+  void handleNextCreateActionForIndex(BuildContext context, int index, int totalNumberOfSteps) {
+    final newIndex = min(totalNumberOfSteps - 1, index + 1);
+
+    if (index != newIndex) {
+      context.read<AddGroupPageBloc>().add(AddGroupPageEvent.currentStepIndexUpdated(newIndex));
+    }
+
+    if (index >= (totalNumberOfSteps - 1)) {
+      Navigator.of(context).pop(context);
+    }
   }
 }

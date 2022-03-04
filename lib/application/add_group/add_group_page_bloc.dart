@@ -30,6 +30,9 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
       groupMembersUpdated: (e) async {
         emit(state.copyWith(groupMembers: e.newMembers));
       },
+      currentStepIndexUpdated: (e) async {
+        emit(state.copyWith(currentStepIndex: e.newIndex));
+      },
     );
   }
 }

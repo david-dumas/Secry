@@ -42,6 +42,12 @@ class _$AddGroupPageEventTearOff {
       newMembers,
     );
   }
+
+  _CurrentStepIndexUpdated currentStepIndexUpdated(int newIndex) {
+    return _CurrentStepIndexUpdated(
+      newIndex,
+    );
+  }
 }
 
 /// @nodoc
@@ -56,6 +62,7 @@ mixin _$AddGroupPageEvent {
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +71,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,6 +80,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -82,6 +91,8 @@ mixin _$AddGroupPageEvent {
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,6 +102,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -100,6 +112,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -192,6 +205,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return groupTitleUpdated(newTitle);
   }
@@ -203,6 +217,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return groupTitleUpdated?.call(newTitle);
   }
@@ -214,6 +229,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (groupTitleUpdated != null) {
@@ -230,6 +246,8 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
   }) {
     return groupTitleUpdated(this);
   }
@@ -242,6 +260,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
     return groupTitleUpdated?.call(this);
   }
@@ -254,6 +273,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (groupTitleUpdated != null) {
@@ -342,6 +362,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return groupImageUpdated(newImage);
   }
@@ -353,6 +374,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return groupImageUpdated?.call(newImage);
   }
@@ -364,6 +386,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (groupImageUpdated != null) {
@@ -380,6 +403,8 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
   }) {
     return groupImageUpdated(this);
   }
@@ -392,6 +417,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
     return groupImageUpdated?.call(this);
   }
@@ -404,6 +430,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (groupImageUpdated != null) {
@@ -498,6 +525,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated(newValue);
   }
@@ -509,6 +537,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated?.call(newValue);
   }
@@ -520,6 +549,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (searchAllPeopleSearchValueUpdated != null) {
@@ -536,6 +566,8 @@ class _$_SearchAllPeopleSearchValueUpdated
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated(this);
   }
@@ -548,6 +580,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated?.call(this);
   }
@@ -560,6 +593,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (searchAllPeopleSearchValueUpdated != null) {
@@ -652,6 +686,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return groupMembersUpdated(newMembers);
   }
@@ -663,6 +698,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return groupMembersUpdated?.call(newMembers);
   }
@@ -674,6 +710,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
     TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUpdated != null) {
@@ -690,6 +727,8 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
   }) {
     return groupMembersUpdated(this);
   }
@@ -702,6 +741,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
     return groupMembersUpdated?.call(this);
   }
@@ -714,6 +754,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUpdated != null) {
@@ -734,6 +775,166 @@ abstract class _GroupMembersUpdated implements AddGroupPageEvent {
 }
 
 /// @nodoc
+abstract class _$CurrentStepIndexUpdatedCopyWith<$Res> {
+  factory _$CurrentStepIndexUpdatedCopyWith(_CurrentStepIndexUpdated value,
+          $Res Function(_CurrentStepIndexUpdated) then) =
+      __$CurrentStepIndexUpdatedCopyWithImpl<$Res>;
+  $Res call({int newIndex});
+}
+
+/// @nodoc
+class __$CurrentStepIndexUpdatedCopyWithImpl<$Res>
+    extends _$AddGroupPageEventCopyWithImpl<$Res>
+    implements _$CurrentStepIndexUpdatedCopyWith<$Res> {
+  __$CurrentStepIndexUpdatedCopyWithImpl(_CurrentStepIndexUpdated _value,
+      $Res Function(_CurrentStepIndexUpdated) _then)
+      : super(_value, (v) => _then(v as _CurrentStepIndexUpdated));
+
+  @override
+  _CurrentStepIndexUpdated get _value =>
+      super._value as _CurrentStepIndexUpdated;
+
+  @override
+  $Res call({
+    Object? newIndex = freezed,
+  }) {
+    return _then(_CurrentStepIndexUpdated(
+      newIndex == freezed
+          ? _value.newIndex
+          : newIndex // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
+  const _$_CurrentStepIndexUpdated(this.newIndex);
+
+  @override
+  final int newIndex;
+
+  @override
+  String toString() {
+    return 'AddGroupPageEvent.currentStepIndexUpdated(newIndex: $newIndex)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _CurrentStepIndexUpdated &&
+            const DeepCollectionEquality().equals(other.newIndex, newIndex));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(newIndex));
+
+  @JsonKey(ignore: true)
+  @override
+  _$CurrentStepIndexUpdatedCopyWith<_CurrentStepIndexUpdated> get copyWith =>
+      __$CurrentStepIndexUpdatedCopyWithImpl<_CurrentStepIndexUpdated>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String newTitle) groupTitleUpdated,
+    required TResult Function(Image newImage) groupImageUpdated,
+    required TResult Function(String newValue)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
+  }) {
+    return currentStepIndexUpdated(newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+  }) {
+    return currentStepIndexUpdated?.call(newIndex);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    required TResult orElse(),
+  }) {
+    if (currentStepIndexUpdated != null) {
+      return currentStepIndexUpdated(newIndex);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
+    required TResult Function(_GroupImageUpdated value) groupImageUpdated,
+    required TResult Function(_SearchAllPeopleSearchValueUpdated value)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
+  }) {
+    return currentStepIndexUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+  }) {
+    return currentStepIndexUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    required TResult orElse(),
+  }) {
+    if (currentStepIndexUpdated != null) {
+      return currentStepIndexUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CurrentStepIndexUpdated implements AddGroupPageEvent {
+  const factory _CurrentStepIndexUpdated(int newIndex) =
+      _$_CurrentStepIndexUpdated;
+
+  int get newIndex;
+  @JsonKey(ignore: true)
+  _$CurrentStepIndexUpdatedCopyWith<_CurrentStepIndexUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$AddGroupPageStateTearOff {
   const _$AddGroupPageStateTearOff();
 
@@ -741,12 +942,14 @@ class _$AddGroupPageStateTearOff {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
-      required List<User> groupMembers}) {
+      required List<User> groupMembers,
+      required int currentStepIndex}) {
     return _AddGroupPageState(
       groupTitle: groupTitle,
       groupImage: groupImage,
       searchAllPeopleSearchValue: searchAllPeopleSearchValue,
       groupMembers: groupMembers,
+      currentStepIndex: currentStepIndex,
     );
   }
 }
@@ -760,6 +963,7 @@ mixin _$AddGroupPageState {
   Image? get groupImage => throw _privateConstructorUsedError;
   String get searchAllPeopleSearchValue => throw _privateConstructorUsedError;
   List<User> get groupMembers => throw _privateConstructorUsedError;
+  int get currentStepIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AddGroupPageStateCopyWith<AddGroupPageState> get copyWith =>
@@ -775,7 +979,8 @@ abstract class $AddGroupPageStateCopyWith<$Res> {
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
-      List<User> groupMembers});
+      List<User> groupMembers,
+      int currentStepIndex});
 }
 
 /// @nodoc
@@ -793,6 +998,7 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
     Object? groupMembers = freezed,
+    Object? currentStepIndex = freezed,
   }) {
     return _then(_value.copyWith(
       groupTitle: groupTitle == freezed
@@ -811,6 +1017,10 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.groupMembers
           : groupMembers // ignore: cast_nullable_to_non_nullable
               as List<User>,
+      currentStepIndex: currentStepIndex == freezed
+          ? _value.currentStepIndex
+          : currentStepIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -826,7 +1036,8 @@ abstract class _$AddGroupPageStateCopyWith<$Res>
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
-      List<User> groupMembers});
+      List<User> groupMembers,
+      int currentStepIndex});
 }
 
 /// @nodoc
@@ -846,6 +1057,7 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
     Object? groupMembers = freezed,
+    Object? currentStepIndex = freezed,
   }) {
     return _then(_AddGroupPageState(
       groupTitle: groupTitle == freezed
@@ -864,6 +1076,10 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.groupMembers
           : groupMembers // ignore: cast_nullable_to_non_nullable
               as List<User>,
+      currentStepIndex: currentStepIndex == freezed
+          ? _value.currentStepIndex
+          : currentStepIndex // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -875,7 +1091,8 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       {required this.groupTitle,
       required this.groupImage,
       required this.searchAllPeopleSearchValue,
-      required this.groupMembers});
+      required this.groupMembers,
+      required this.currentStepIndex});
 
   @override
   final String groupTitle;
@@ -885,10 +1102,12 @@ class _$_AddGroupPageState implements _AddGroupPageState {
   final String searchAllPeopleSearchValue;
   @override
   final List<User> groupMembers;
+  @override
+  final int currentStepIndex;
 
   @override
   String toString() {
-    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, groupMembers: $groupMembers)';
+    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex)';
   }
 
   @override
@@ -903,7 +1122,9 @@ class _$_AddGroupPageState implements _AddGroupPageState {
             const DeepCollectionEquality().equals(
                 other.searchAllPeopleSearchValue, searchAllPeopleSearchValue) &&
             const DeepCollectionEquality()
-                .equals(other.groupMembers, groupMembers));
+                .equals(other.groupMembers, groupMembers) &&
+            const DeepCollectionEquality()
+                .equals(other.currentStepIndex, currentStepIndex));
   }
 
   @override
@@ -912,7 +1133,8 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       const DeepCollectionEquality().hash(groupTitle),
       const DeepCollectionEquality().hash(groupImage),
       const DeepCollectionEquality().hash(searchAllPeopleSearchValue),
-      const DeepCollectionEquality().hash(groupMembers));
+      const DeepCollectionEquality().hash(groupMembers),
+      const DeepCollectionEquality().hash(currentStepIndex));
 
   @JsonKey(ignore: true)
   @override
@@ -925,7 +1147,8 @@ abstract class _AddGroupPageState implements AddGroupPageState {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
-      required List<User> groupMembers}) = _$_AddGroupPageState;
+      required List<User> groupMembers,
+      required int currentStepIndex}) = _$_AddGroupPageState;
 
   @override
   String get groupTitle;
@@ -935,6 +1158,8 @@ abstract class _AddGroupPageState implements AddGroupPageState {
   String get searchAllPeopleSearchValue;
   @override
   List<User> get groupMembers;
+  @override
+  int get currentStepIndex;
   @override
   @JsonKey(ignore: true)
   _$AddGroupPageStateCopyWith<_AddGroupPageState> get copyWith =>
