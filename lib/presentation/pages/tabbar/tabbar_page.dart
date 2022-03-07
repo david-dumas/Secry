@@ -44,7 +44,7 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
                 onItemSelected: (newIndex) {
                   context.read<TabbarBloc>().add(TabbarEvent.selectedIndexChanged(newIndex));
                 },
-                resizeToAvoidBottomInset: true,
+                resizeToAvoidBottomInset: false,
                 stateManagement: true,
                 navBarHeight: MediaQuery.of(context).viewInsets.bottom > 0 ? 0.0 : kBottomNavigationBarHeight,
                 hideNavigationBarWhenKeyboardShows: true,

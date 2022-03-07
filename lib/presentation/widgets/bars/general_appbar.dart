@@ -6,6 +6,7 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
   final String title;
   final Color backgroundColor;
   final bool isSubpage;
+  final bool shouldHideBackButton;
   final bool isShowingSearchBar;
   final String searchValue;
   final GestureDetector? trailingGestureWithIcon;
@@ -15,6 +16,7 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
       {Key? key,
       this.title = '',
       this.backgroundColor = Colors.transparent,
+      this.shouldHideBackButton = false,
       this.isSubpage = false,
       this.isShowingSearchBar = false,
       this.searchValue = '',
@@ -33,7 +35,7 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: widget.isSubpage
+      leading: (widget.isSubpage && !widget.shouldHideBackButton)
           ? IconButton(
               color: kDarkGrayTextColor,
               icon: new Icon(Icons.chevron_left),
@@ -45,6 +47,8 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
               searchValue: widget.searchValue,
               searchValueChanged: widget.searchValueChanged != null ? widget.searchValueChanged! : (_) => '')
           : TitleForAppBar(title: widget.title),
+      centerTitle: false,
+      leadingWidth: widget.isSubpage ? 20 : 0,
       backgroundColor: widget.backgroundColor,
       elevation: 0.0,
       automaticallyImplyLeading: widget.isSubpage ? false : true,
