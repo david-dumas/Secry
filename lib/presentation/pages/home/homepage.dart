@@ -1,4 +1,5 @@
 import 'dart:io' show Platform;
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,6 +15,7 @@ import 'package:secry/presentation/widgets/general/group_section.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/util/search/search_helper.dart';
+import 'package:secry/presentation/routes/router.gr.dart';
 import 'group_overview_page.dart';
 
 class HomePage extends StatefulWidget {
@@ -76,12 +78,7 @@ class _HomePageState extends State<HomePage> {
                       emptyStateIcon: Icon(Icons.group_add),
                       titleRowTrailingAction: () {
                         if (Platform.isAndroid) {
-                          pushNewScreen(
-                            context,
-                            screen: AddGroupPageAndroid(),
-                            withNavBar: true,
-                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                          );
+                          AutoRouter.of(context).push(AddGroupPageAndroidRoute());
                         } else if (Platform.isIOS) {
                           showMaterialModalBottomSheet(
                             context: context,
