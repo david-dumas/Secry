@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/constants.dart';
 
@@ -77,10 +78,15 @@ class AddGroupPageContent extends StatelessWidget {
   }
 }
 
-class AddGroupPageStepOneSection extends StatelessWidget {
-  final TextEditingController _titleController = TextEditingController();
-
+class AddGroupPageStepOneSection extends StatefulWidget {
   AddGroupPageStepOneSection({Key? key}) : super(key: key);
+
+  @override
+  State<AddGroupPageStepOneSection> createState() => _AddGroupPageStepOneSectionState();
+}
+
+class _AddGroupPageStepOneSectionState extends State<AddGroupPageStepOneSection> {
+  final TextEditingController _titleController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +105,7 @@ class AddGroupPageStepOneSection extends StatelessWidget {
             controller: _titleController,
             decoration: InputDecoration(
               labelText: tr('add_group_title'),
+              suffixText: "${maximumTitleLength - _titleController.text.length}",
               border: OutlineInputBorder(),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),
@@ -108,6 +115,9 @@ class AddGroupPageStepOneSection extends StatelessWidget {
                 ),
               ),
             ),
+            inputFormatters: [
+              LengthLimitingTextInputFormatter(maximumTitleLength),
+            ],
             validator: (String? value) {
               if (value == null) {
                 return null;
@@ -118,6 +128,9 @@ class AddGroupPageStepOneSection extends StatelessWidget {
                 return tr('warning_too_many_characters');
               }
               return null;
+            },
+            onChanged: (newValue) {
+              context.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupTitleUpdated(newValue));
             },
           ),
           SizedBox(height: 30),
