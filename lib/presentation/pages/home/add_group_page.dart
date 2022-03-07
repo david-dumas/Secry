@@ -193,8 +193,11 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(tr('action_add_people')),
-              SizedBox(height: 12),
+              Text(
+                tr('action_add_people'),
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium),
+              ),
+              SizedBox(height: 16),
               TextField(
                 controller: searchBarSearchAllPeopleTextEditingController,
                 autofocus: widget.searchValue == '',
@@ -251,7 +254,52 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
             ],
           ),
         ),
-        Container(color: kLineSeparatorColor, height: 1, width: MediaQuery.of(context).size.width)
+        Container(color: kLineSeparatorColor, height: 1, width: MediaQuery.of(context).size.width),
+        Padding(
+          padding: const EdgeInsets.only(top: 30, right: 20.0, bottom: 30.0, left: 20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    tr('add_group_added_people'),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium),
+                  ),
+                  SizedBox(width: 8),
+                  Text(
+                    widget.usersAddedToGroup.length.toString(),
+                    style: TextStyle(fontSize: fontSizeMedium),
+                  ),
+                ],
+              ),
+              SizedBox(height: 20),
+              ListView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: widget.usersAddedToGroup.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                      child: UserCell(
+                          groupUser: widget.usersAddedToGroup[index],
+                          actionButtonActionNotExecutedText: tr('action_add'),
+                          actionButtonActionExecutedText: tr('action_added'),
+                          isActionButtonActionExecuted: true,
+                          userRowTrailingAction: (userId) {
+                            // TODO add user with ID
+                          }),
+                      onTap: () => {
+                            // TODO open user page
+                          });
+                },
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

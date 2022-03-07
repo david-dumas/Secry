@@ -55,14 +55,17 @@ class UserCell extends StatelessWidget {
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                            borderRadius: kButtonRadiusXxs,
-                            side: BorderSide(
-                                color: isActionButtonActionExecuted ? kWhiteButtonBorderColor : kPrimaryColor)),
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: kButtonRadiusXxs,
+                        side: BorderSide(color: isActionButtonActionExecuted ? kWhiteButtonBorderColor : kPrimaryColor),
                       ),
-                      backgroundColor:
-                          MaterialStateProperty.all(isActionButtonActionExecuted ? globalWhite : kPrimaryColor)),
+                    ),
+                    elevation: MaterialStateProperty.all(0.0),
+                    shadowColor: MaterialStateProperty.all(Colors.transparent),
+                    backgroundColor:
+                        MaterialStateProperty.all(isActionButtonActionExecuted ? globalWhite : kPrimaryColor),
+                  ),
                   onPressed: () {
                     if (userRowTrailingAction != null) {
                       userRowTrailingAction!(groupUser.id);
@@ -70,7 +73,8 @@ class UserCell extends StatelessWidget {
                   },
                   child: Text(
                     isActionButtonActionExecuted ? actionButtonActionExecutedText : actionButtonActionNotExecutedText,
-                    style: TextStyle(fontSize: 16),
+                    style: TextStyle(
+                        fontSize: 14, color: isActionButtonActionExecuted ? kMediumGrayExtraDark : globalWhite),
                   ),
                 ))
           ],
