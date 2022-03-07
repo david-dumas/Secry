@@ -17,8 +17,10 @@ class AddGroupPageAndroid extends StatelessWidget {
       appBar: GeneralAppbar(
         title: tr('general_add_group'),
         isSubpage: true,
+        shouldHideBackButton: true,
         backgroundColor: globalWhite,
       ),
+      resizeToAvoidBottomInset: false,
       body: AddGroupPageContent(),
     );
   }
@@ -46,21 +48,20 @@ class AddGroupPageContent extends StatelessWidget {
 
           return Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height -
-                (AppBar().preferredSize.height) -
-                kToolbarHeight -
-                contentToTabbarPadding,
+            height: MediaQuery.of(context).size.height,
             child: Padding(
               padding: const EdgeInsets.all(20.0),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SingleChildScrollView(
-                    child: state.currentStepIndex == 0
-                        ? AddGroupPageStepOneSection()
-                        : AddGroupPageStepTwoSection(
-                            searchValue: state.searchAllPeopleSearchValue,
-                          ),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: state.currentStepIndex == 0
+                          ? AddGroupPageStepOneSection()
+                          : AddGroupPageStepTwoSection(
+                              searchValue: state.searchAllPeopleSearchValue,
+                            ),
+                    ),
                   ),
                   BottomNavigationButtonsSection(
                     stepIndex: state.currentStepIndex,
@@ -77,7 +78,6 @@ class AddGroupPageContent extends StatelessWidget {
 
 class AddGroupPageStepOneSection extends StatelessWidget {
   final TextEditingController _titleController = TextEditingController();
-  final GlobalKey<FormState> _titleFormKey = GlobalKey<FormState>();
 
   AddGroupPageStepOneSection({Key? key}) : super(key: key);
 
@@ -90,35 +90,32 @@ class AddGroupPageStepOneSection extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(tr('add_group_title')),
         SizedBox(height: 8),
         // TODO add maximum characters (and show in ui)
-        Form(
-          key: _titleFormKey,
-          child: TextFormField(
-            controller: _titleController,
-            decoration: InputDecoration(
-              labelText: tr('add_group_title'),
-              enabledBorder: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8.0),
-                borderSide: BorderSide(
-                  color: kMediumGrayV2,
-                  width: 1.0,
-                ),
+        TextFormField(
+          controller: _titleController,
+          decoration: InputDecoration(
+            labelText: tr('add_group_title'),
+            border: OutlineInputBorder(),
+            enabledBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8.0),
+              borderSide: BorderSide(
+                color: kMediumGrayV2,
+                width: 1.0,
               ),
             ),
-            validator: (String? value) {
-              if (value == null) {
-                return null;
-              }
-              if (value.isEmpty) {
-                return tr('warning_field_is_empty');
-              } else if (value.length > maximumTitleLength) {
-                return tr('warning_too_many_characters');
-              }
-              return null;
-            },
           ),
+          validator: (String? value) {
+            if (value == null) {
+              return null;
+            }
+            if (value.isEmpty) {
+              return tr('warning_field_is_empty');
+            } else if (value.length > maximumTitleLength) {
+              return tr('warning_too_many_characters');
+            }
+            return null;
+          },
         ),
         SizedBox(height: 30),
         Text(tr('add_group_group_picture')),
@@ -213,7 +210,7 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
             context.read<AddGroupPageBloc>().add(AddGroupPageEvent.searchAllPeopleSearchValueUpdated(''));
           },
         ),
-        SizedBox(height: 20),
+        SizedBox(height: 20)
       ],
     );
   }
@@ -232,57 +229,54 @@ class BottomNavigationButtonsSection extends StatelessWidget {
     final buttonWidth = (MediaQuery.of(context).size.width - (2 * contentToEdgePadding) - horizontalButtonsSpacing) / 2;
     final buttonHeight = 44.0;
 
-    return Container(
-      color: globalWhite,
-      child: Row(
-        children: [
-          Container(
-            width: buttonWidth,
-            height: buttonHeight,
-            child: ElevatedButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: kButtonRadiusXs,
-                  ),
+    return Row(
+      children: [
+        Container(
+          width: buttonWidth,
+          height: buttonHeight,
+          child: ElevatedButton(
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: kButtonRadiusXs,
                 ),
-                backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
               ),
-              onPressed: () {
-                handlePreviousCancelActionForIndex(context, max(0, stepIndex));
-              },
-              child: Text(
-                stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: kMediumGrayExtraDark),
-              ),
+              backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
+            ),
+            onPressed: () {
+              handlePreviousCancelActionForIndex(context, max(0, stepIndex));
+            },
+            child: Text(
+              stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: kMediumGrayExtraDark),
             ),
           ),
-          SizedBox(
-            width: horizontalButtonsSpacing,
-          ),
-          Container(
-            width: buttonWidth,
-            height: buttonHeight,
-            child: ElevatedButton(
-              style: ButtonStyle(
-                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                  RoundedRectangleBorder(
-                    borderRadius: kButtonRadiusXs,
-                  ),
+        ),
+        SizedBox(
+          width: horizontalButtonsSpacing,
+        ),
+        Container(
+          width: buttonWidth,
+          height: buttonHeight,
+          child: ElevatedButton(
+            style: ButtonStyle(
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                RoundedRectangleBorder(
+                  borderRadius: kButtonRadiusXs,
                 ),
-                backgroundColor: MaterialStateProperty.all(kPrimaryColor),
               ),
-              onPressed: () {
-                handleNextCreateActionForIndex(context, stepIndex, totalNumberOfSteps);
-              },
-              child: Text(
-                stepIndex == 0 ? tr('action_next') : tr('action_create'),
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: globalWhite),
-              ),
+              backgroundColor: MaterialStateProperty.all(kPrimaryColor),
+            ),
+            onPressed: () {
+              handleNextCreateActionForIndex(context, stepIndex, totalNumberOfSteps);
+            },
+            child: Text(
+              stepIndex == 0 ? tr('action_next') : tr('action_create'),
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: globalWhite),
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
