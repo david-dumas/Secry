@@ -6,7 +6,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/constants.dart';
 
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
+import 'package:secry/presentation/pages/general/widgets/group_user_cell.dart';
 import 'package:secry/application/add_group/add_group_page_bloc.dart';
+import 'package:secry/domain/users/group_user.dart';
+
+import 'package:secry/injection.dart';
 
 class AddGroupPageAndroid extends StatelessWidget {
   const AddGroupPageAndroid({Key? key}) : super(key: key);
@@ -41,27 +45,24 @@ class AddGroupPageContent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AddGroupPageBloc(),
+      create: (context) => getIt<AddGroupPageBloc>()..add(const AddGroupPageEvent.initialized()),
       child: BlocBuilder<AddGroupPageBloc, AddGroupPageState>(
         builder: (context, state) {
-          final contentToTabbarPadding = 24.0;
-
           return Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(20.0),
-                  child: Expanded(
-                    child: SingleChildScrollView(
-                      child: state.currentStepIndex == 0
-                          ? AddGroupPageStepOneSection()
-                          : AddGroupPageStepTwoSection(
-                              searchValue: state.searchAllPeopleSearchValue,
-                            ),
-                    ),
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: state.currentStepIndex == 0
+                        ? AddGroupPageStepOneSection()
+                        : AddGroupPageStepTwoSection(
+                            searchValue: state.searchAllPeopleSearchValue,
+                            usersForSearchQuery: state.usersForSearchQuery,
+                            usersAddedToGroup: state.groupMembers,
+                          ),
                   ),
                 ),
                 BottomNavigationButtonsSection(
@@ -86,85 +87,92 @@ class AddGroupPageStepOneSection extends StatelessWidget {
     final cameraButtonWidthHeight = max(MediaQuery.of(context).size.width * 0.22, 66).toDouble();
     final maximumTitleLength = 24;
 
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        SizedBox(height: 8),
-        // TODO add maximum characters (and show in ui)
-        TextFormField(
-          controller: _titleController,
-          decoration: InputDecoration(
-            labelText: tr('add_group_title'),
-            border: OutlineInputBorder(),
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8.0),
-              borderSide: BorderSide(
-                color: kMediumGrayV2,
-                width: 1.0,
+    return Padding(
+      padding: const EdgeInsets.all(20.0),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 8),
+          // TODO add maximum characters (and show in ui)
+          TextFormField(
+            controller: _titleController,
+            decoration: InputDecoration(
+              labelText: tr('add_group_title'),
+              border: OutlineInputBorder(),
+              enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(8.0),
+                borderSide: BorderSide(
+                  color: kMediumGrayV2,
+                  width: 1.0,
+                ),
               ),
             ),
-          ),
-          validator: (String? value) {
-            if (value == null) {
+            validator: (String? value) {
+              if (value == null) {
+                return null;
+              }
+              if (value.isEmpty) {
+                return tr('warning_field_is_empty');
+              } else if (value.length > maximumTitleLength) {
+                return tr('warning_too_many_characters');
+              }
               return null;
-            }
-            if (value.isEmpty) {
-              return tr('warning_field_is_empty');
-            } else if (value.length > maximumTitleLength) {
-              return tr('warning_too_many_characters');
-            }
-            return null;
-          },
-        ),
-        SizedBox(height: 30),
-        Text(tr('add_group_group_picture')),
-        SizedBox(height: 8),
-        Container(
-          width: MediaQuery.of(context).size.width - 40,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
-            border: Border.all(color: kMediumGrayV2, width: 1.0),
+            },
           ),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
-            child: Container(
-              padding: EdgeInsets.all(20),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: <Widget>[
-                  Container(
-                    width: cameraButtonWidthHeight,
-                    height: cameraButtonWidthHeight,
-                    decoration: BoxDecoration(
-                      color: kPrimaryColor,
-                      borderRadius: BorderRadius.circular(cameraButtonWidthHeight / 2),
+          SizedBox(height: 30),
+          Text(tr('add_group_group_picture')),
+          SizedBox(height: 8),
+          Container(
+            width: MediaQuery.of(context).size.width - 40,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.0),
+              border: Border.all(color: kMediumGrayV2, width: 1.0),
+            ),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Container(
+                padding: EdgeInsets.all(20),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Container(
+                      width: cameraButtonWidthHeight,
+                      height: cameraButtonWidthHeight,
+                      decoration: BoxDecoration(
+                        color: kPrimaryColor,
+                        borderRadius: BorderRadius.circular(cameraButtonWidthHeight / 2),
+                      ),
+                      child: Icon(
+                        Icons.camera_alt_rounded,
+                        size: cameraButtonWidthHeight * 0.44,
+                        color: globalWhite,
+                      ),
                     ),
-                    child: Icon(
-                      Icons.camera_alt_rounded,
-                      size: cameraButtonWidthHeight * 0.44,
-                      color: globalWhite,
-                    ),
-                  ),
-                  SizedBox(height: 12),
-                  Text(
-                    tr('action_add_group_picture'),
-                    style: TextStyle(fontSize: 14.0),
-                  )
-                ],
+                    SizedBox(height: 12),
+                    Text(
+                      tr('action_add_group_picture'),
+                      style: TextStyle(fontSize: 14.0),
+                    )
+                  ],
+                ),
               ),
             ),
-          ),
-        )
-      ],
+          )
+        ],
+      ),
     );
   }
 }
 
 class AddGroupPageStepTwoSection extends StatefulWidget {
   final String searchValue;
+  final List<GroupUser> usersForSearchQuery;
+  final List<GroupUser> usersAddedToGroup;
 
-  AddGroupPageStepTwoSection({Key? key, required this.searchValue}) : super(key: key);
+  AddGroupPageStepTwoSection(
+      {Key? key, required this.searchValue, required this.usersForSearchQuery, required this.usersAddedToGroup})
+      : super(key: key);
 
   @override
   State<AddGroupPageStepTwoSection> createState() => _AddGroupPageStepTwoSectionState();
@@ -179,38 +187,71 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(tr('action_add_people')),
-        SizedBox(height: 8),
-        TextField(
-          controller: searchBarSearchAllPeopleTextEditingController,
-          autofocus: widget.searchValue == '',
-          autocorrect: false,
-          decoration: InputDecoration(
-            fillColor: searchBarBackgroundColor,
-            filled: true,
-            contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-            suffixIcon: IconButton(
-              icon: Icon(Icons.clear),
-              color: searchBarClearButtonColor,
-              onPressed: () {
-                searchBarSearchAllPeopleTextEditingController.text = '';
-                context.read<AddGroupPageBloc>().add(AddGroupPageEvent.searchAllPeopleSearchValueUpdated(''));
-              },
-            ),
-            hintText: '${tr('action_search')}...',
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide(
-                width: 0,
-                style: BorderStyle.none,
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(tr('action_add_people')),
+              SizedBox(height: 12),
+              TextField(
+                controller: searchBarSearchAllPeopleTextEditingController,
+                autofocus: widget.searchValue == '',
+                autocorrect: false,
+                decoration: InputDecoration(
+                  fillColor: searchBarBackgroundColor,
+                  filled: true,
+                  contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  suffixIcon: Visibility(
+                    visible: widget.searchValue.length > 0,
+                    child: IconButton(
+                      icon: Icon(Icons.clear),
+                      color: searchBarClearButtonColor,
+                      onPressed: () {
+                        searchBarSearchAllPeopleTextEditingController.text = '';
+                        context.read<AddGroupPageBloc>().add(AddGroupPageEvent.searchAllPeopleSearchValueUpdated(''));
+                      },
+                    ),
+                  ),
+                  hintText: '${tr('action_search')}...',
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(
+                      width: 0,
+                      style: BorderStyle.none,
+                    ),
+                  ),
+                ),
+                onChanged: (newValue) {
+                  context.read<AddGroupPageBloc>().add(AddGroupPageEvent.searchAllPeopleSearchValueUpdated(newValue));
+                },
               ),
-            ),
+              SizedBox(height: 20),
+              ListView.builder(
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemCount: widget.usersForSearchQuery.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                      child: UserCell(
+                          groupUser: widget.usersForSearchQuery[index],
+                          actionButtonActionNotExecutedText: tr('action_add'),
+                          actionButtonActionExecutedText: tr('action_added'),
+                          isActionButtonActionExecuted: false,
+                          userRowTrailingAction: (userId) {
+                            // TODO add user with ID
+                          }),
+                      onTap: () => {
+                            // TODO open user page
+                          });
+                },
+              ),
+            ],
           ),
-          onChanged: (newValue) {
-            context.read<AddGroupPageBloc>().add(AddGroupPageEvent.searchAllPeopleSearchValueUpdated(''));
-          },
         ),
-        SizedBox(height: 20)
+        Container(color: kLineSeparatorColor, height: 1, width: MediaQuery.of(context).size.width)
       ],
     );
   }

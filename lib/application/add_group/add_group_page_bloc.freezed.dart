@@ -18,6 +18,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$AddGroupPageEventTearOff {
   const _$AddGroupPageEventTearOff();
 
+  _Initialized initialized() {
+    return const _Initialized();
+  }
+
   _GroupTitleUpdated groupTitleUpdated(String newTitle) {
     return _GroupTitleUpdated(
       newTitle,
@@ -37,7 +41,14 @@ class _$AddGroupPageEventTearOff {
     );
   }
 
-  _GroupMembersUpdated groupMembersUpdated(List<User> newMembers) {
+  _UsersForSearchQueryUpdated usersForSearchQueryUpdated(
+      List<GroupUser> newUsers) {
+    return _UsersForSearchQueryUpdated(
+      newUsers,
+    );
+  }
+
+  _GroupMembersUpdated groupMembersUpdated(List<GroupUser> newMembers) {
     return _GroupMembersUpdated(
       newMembers,
     );
@@ -57,39 +68,49 @@ const $AddGroupPageEvent = _$AddGroupPageEventTearOff();
 mixin _$AddGroupPageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
     required TResult Function(String newTitle) groupTitleUpdated,
     required TResult Function(Image newImage) groupImageUpdated,
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
-    required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
     required TResult Function(_GroupImageUpdated value) groupImageUpdated,
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
@@ -97,20 +118,26 @@ mixin _$AddGroupPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
@@ -133,6 +160,150 @@ class _$AddGroupPageEventCopyWithImpl<$Res>
   final AddGroupPageEvent _value;
   // ignore: unused_field
   final $Res Function(AddGroupPageEvent) _then;
+}
+
+/// @nodoc
+abstract class _$InitializedCopyWith<$Res> {
+  factory _$InitializedCopyWith(
+          _Initialized value, $Res Function(_Initialized) then) =
+      __$InitializedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$InitializedCopyWithImpl<$Res>
+    extends _$AddGroupPageEventCopyWithImpl<$Res>
+    implements _$InitializedCopyWith<$Res> {
+  __$InitializedCopyWithImpl(
+      _Initialized _value, $Res Function(_Initialized) _then)
+      : super(_value, (v) => _then(v as _Initialized));
+
+  @override
+  _Initialized get _value => super._value as _Initialized;
+}
+
+/// @nodoc
+
+class _$_Initialized implements _Initialized {
+  const _$_Initialized();
+
+  @override
+  String toString() {
+    return 'AddGroupPageEvent.initialized()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initialized);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String newTitle) groupTitleUpdated,
+    required TResult Function(Image newImage) groupImageUpdated,
+    required TResult Function(String newValue)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
+  }) {
+    return initialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+  }) {
+    return initialized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
+    required TResult Function(_GroupImageUpdated value) groupImageUpdated,
+    required TResult Function(_SearchAllPeopleSearchValueUpdated value)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
+    required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
+  }) {
+    return initialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+  }) {
+    return initialized?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    required TResult orElse(),
+  }) {
+    if (initialized != null) {
+      return initialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Initialized implements AddGroupPageEvent {
+  const factory _Initialized() = _$_Initialized;
 }
 
 /// @nodoc
@@ -200,11 +371,14 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
     required TResult Function(String newTitle) groupTitleUpdated,
     required TResult Function(Image newImage) groupImageUpdated,
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
-    required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return groupTitleUpdated(newTitle);
@@ -213,10 +387,12 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return groupTitleUpdated?.call(newTitle);
@@ -225,10 +401,12 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
@@ -241,10 +419,13 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
     required TResult Function(_GroupImageUpdated value) groupImageUpdated,
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
@@ -255,10 +436,13 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
@@ -268,10 +452,13 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
@@ -357,11 +544,14 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
     required TResult Function(String newTitle) groupTitleUpdated,
     required TResult Function(Image newImage) groupImageUpdated,
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
-    required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return groupImageUpdated(newImage);
@@ -370,10 +560,12 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return groupImageUpdated?.call(newImage);
@@ -382,10 +574,12 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
@@ -398,10 +592,13 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
     required TResult Function(_GroupImageUpdated value) groupImageUpdated,
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
@@ -412,10 +609,13 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
@@ -425,10 +625,13 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
@@ -520,11 +723,14 @@ class _$_SearchAllPeopleSearchValueUpdated
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
     required TResult Function(String newTitle) groupTitleUpdated,
     required TResult Function(Image newImage) groupImageUpdated,
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
-    required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated(newValue);
@@ -533,10 +739,12 @@ class _$_SearchAllPeopleSearchValueUpdated
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated?.call(newValue);
@@ -545,10 +753,12 @@ class _$_SearchAllPeopleSearchValueUpdated
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
@@ -561,10 +771,13 @@ class _$_SearchAllPeopleSearchValueUpdated
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
     required TResult Function(_GroupImageUpdated value) groupImageUpdated,
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
@@ -575,10 +788,13 @@ class _$_SearchAllPeopleSearchValueUpdated
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
@@ -588,10 +804,13 @@ class _$_SearchAllPeopleSearchValueUpdated
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
@@ -615,11 +834,188 @@ abstract class _SearchAllPeopleSearchValueUpdated implements AddGroupPageEvent {
 }
 
 /// @nodoc
+abstract class _$UsersForSearchQueryUpdatedCopyWith<$Res> {
+  factory _$UsersForSearchQueryUpdatedCopyWith(
+          _UsersForSearchQueryUpdated value,
+          $Res Function(_UsersForSearchQueryUpdated) then) =
+      __$UsersForSearchQueryUpdatedCopyWithImpl<$Res>;
+  $Res call({List<GroupUser> newUsers});
+}
+
+/// @nodoc
+class __$UsersForSearchQueryUpdatedCopyWithImpl<$Res>
+    extends _$AddGroupPageEventCopyWithImpl<$Res>
+    implements _$UsersForSearchQueryUpdatedCopyWith<$Res> {
+  __$UsersForSearchQueryUpdatedCopyWithImpl(_UsersForSearchQueryUpdated _value,
+      $Res Function(_UsersForSearchQueryUpdated) _then)
+      : super(_value, (v) => _then(v as _UsersForSearchQueryUpdated));
+
+  @override
+  _UsersForSearchQueryUpdated get _value =>
+      super._value as _UsersForSearchQueryUpdated;
+
+  @override
+  $Res call({
+    Object? newUsers = freezed,
+  }) {
+    return _then(_UsersForSearchQueryUpdated(
+      newUsers == freezed
+          ? _value.newUsers
+          : newUsers // ignore: cast_nullable_to_non_nullable
+              as List<GroupUser>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
+  const _$_UsersForSearchQueryUpdated(this.newUsers);
+
+  @override
+  final List<GroupUser> newUsers;
+
+  @override
+  String toString() {
+    return 'AddGroupPageEvent.usersForSearchQueryUpdated(newUsers: $newUsers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _UsersForSearchQueryUpdated &&
+            const DeepCollectionEquality().equals(other.newUsers, newUsers));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(newUsers));
+
+  @JsonKey(ignore: true)
+  @override
+  _$UsersForSearchQueryUpdatedCopyWith<_UsersForSearchQueryUpdated>
+      get copyWith => __$UsersForSearchQueryUpdatedCopyWithImpl<
+          _UsersForSearchQueryUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String newTitle) groupTitleUpdated,
+    required TResult Function(Image newImage) groupImageUpdated,
+    required TResult Function(String newValue)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
+  }) {
+    return usersForSearchQueryUpdated(newUsers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+  }) {
+    return usersForSearchQueryUpdated?.call(newUsers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    required TResult orElse(),
+  }) {
+    if (usersForSearchQueryUpdated != null) {
+      return usersForSearchQueryUpdated(newUsers);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
+    required TResult Function(_GroupImageUpdated value) groupImageUpdated,
+    required TResult Function(_SearchAllPeopleSearchValueUpdated value)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
+    required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
+  }) {
+    return usersForSearchQueryUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+  }) {
+    return usersForSearchQueryUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    required TResult orElse(),
+  }) {
+    if (usersForSearchQueryUpdated != null) {
+      return usersForSearchQueryUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _UsersForSearchQueryUpdated implements AddGroupPageEvent {
+  const factory _UsersForSearchQueryUpdated(List<GroupUser> newUsers) =
+      _$_UsersForSearchQueryUpdated;
+
+  List<GroupUser> get newUsers;
+  @JsonKey(ignore: true)
+  _$UsersForSearchQueryUpdatedCopyWith<_UsersForSearchQueryUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class _$GroupMembersUpdatedCopyWith<$Res> {
   factory _$GroupMembersUpdatedCopyWith(_GroupMembersUpdated value,
           $Res Function(_GroupMembersUpdated) then) =
       __$GroupMembersUpdatedCopyWithImpl<$Res>;
-  $Res call({List<User> newMembers});
+  $Res call({List<GroupUser> newMembers});
 }
 
 /// @nodoc
@@ -641,7 +1037,7 @@ class __$GroupMembersUpdatedCopyWithImpl<$Res>
       newMembers == freezed
           ? _value.newMembers
           : newMembers // ignore: cast_nullable_to_non_nullable
-              as List<User>,
+              as List<GroupUser>,
     ));
   }
 }
@@ -652,7 +1048,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   const _$_GroupMembersUpdated(this.newMembers);
 
   @override
-  final List<User> newMembers;
+  final List<GroupUser> newMembers;
 
   @override
   String toString() {
@@ -681,11 +1077,14 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
     required TResult Function(String newTitle) groupTitleUpdated,
     required TResult Function(Image newImage) groupImageUpdated,
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
-    required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return groupMembersUpdated(newMembers);
@@ -694,10 +1093,12 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return groupMembersUpdated?.call(newMembers);
@@ -706,10 +1107,12 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
@@ -722,10 +1125,13 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
     required TResult Function(_GroupImageUpdated value) groupImageUpdated,
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
@@ -736,10 +1142,13 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
@@ -749,10 +1158,13 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
@@ -765,10 +1177,10 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
 }
 
 abstract class _GroupMembersUpdated implements AddGroupPageEvent {
-  const factory _GroupMembersUpdated(List<User> newMembers) =
+  const factory _GroupMembersUpdated(List<GroupUser> newMembers) =
       _$_GroupMembersUpdated;
 
-  List<User> get newMembers;
+  List<GroupUser> get newMembers;
   @JsonKey(ignore: true)
   _$GroupMembersUpdatedCopyWith<_GroupMembersUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -841,11 +1253,14 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
     required TResult Function(String newTitle) groupTitleUpdated,
     required TResult Function(Image newImage) groupImageUpdated,
     required TResult Function(String newValue)
         searchAllPeopleSearchValueUpdated,
-    required TResult Function(List<User> newMembers) groupMembersUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
   }) {
     return currentStepIndexUpdated(newIndex);
@@ -854,10 +1269,12 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
   }) {
     return currentStepIndexUpdated?.call(newIndex);
@@ -866,10 +1283,12 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
     TResult Function(String newTitle)? groupTitleUpdated,
     TResult Function(Image newImage)? groupImageUpdated,
     TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
-    TResult Function(List<User> newMembers)? groupMembersUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
     required TResult orElse(),
   }) {
@@ -882,10 +1301,13 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
     required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
     required TResult Function(_GroupImageUpdated value) groupImageUpdated,
     required TResult Function(_SearchAllPeopleSearchValueUpdated value)
         searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
@@ -896,10 +1318,13 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
   }) {
@@ -909,10 +1334,13 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
     TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
     TResult Function(_GroupImageUpdated value)? groupImageUpdated,
     TResult Function(_SearchAllPeopleSearchValueUpdated value)?
         searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     required TResult orElse(),
@@ -942,12 +1370,14 @@ class _$AddGroupPageStateTearOff {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
-      required List<User> groupMembers,
+      required List<GroupUser> usersForSearchQuery,
+      required List<GroupUser> groupMembers,
       required int currentStepIndex}) {
     return _AddGroupPageState(
       groupTitle: groupTitle,
       groupImage: groupImage,
       searchAllPeopleSearchValue: searchAllPeopleSearchValue,
+      usersForSearchQuery: usersForSearchQuery,
       groupMembers: groupMembers,
       currentStepIndex: currentStepIndex,
     );
@@ -962,7 +1392,8 @@ mixin _$AddGroupPageState {
   String get groupTitle => throw _privateConstructorUsedError;
   Image? get groupImage => throw _privateConstructorUsedError;
   String get searchAllPeopleSearchValue => throw _privateConstructorUsedError;
-  List<User> get groupMembers => throw _privateConstructorUsedError;
+  List<GroupUser> get usersForSearchQuery => throw _privateConstructorUsedError;
+  List<GroupUser> get groupMembers => throw _privateConstructorUsedError;
   int get currentStepIndex => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -979,7 +1410,8 @@ abstract class $AddGroupPageStateCopyWith<$Res> {
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
-      List<User> groupMembers,
+      List<GroupUser> usersForSearchQuery,
+      List<GroupUser> groupMembers,
       int currentStepIndex});
 }
 
@@ -997,6 +1429,7 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupTitle = freezed,
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
+    Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
   }) {
@@ -1013,10 +1446,14 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.searchAllPeopleSearchValue
           : searchAllPeopleSearchValue // ignore: cast_nullable_to_non_nullable
               as String,
+      usersForSearchQuery: usersForSearchQuery == freezed
+          ? _value.usersForSearchQuery
+          : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
+              as List<GroupUser>,
       groupMembers: groupMembers == freezed
           ? _value.groupMembers
           : groupMembers // ignore: cast_nullable_to_non_nullable
-              as List<User>,
+              as List<GroupUser>,
       currentStepIndex: currentStepIndex == freezed
           ? _value.currentStepIndex
           : currentStepIndex // ignore: cast_nullable_to_non_nullable
@@ -1036,7 +1473,8 @@ abstract class _$AddGroupPageStateCopyWith<$Res>
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
-      List<User> groupMembers,
+      List<GroupUser> usersForSearchQuery,
+      List<GroupUser> groupMembers,
       int currentStepIndex});
 }
 
@@ -1056,6 +1494,7 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupTitle = freezed,
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
+    Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
   }) {
@@ -1072,10 +1511,14 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.searchAllPeopleSearchValue
           : searchAllPeopleSearchValue // ignore: cast_nullable_to_non_nullable
               as String,
+      usersForSearchQuery: usersForSearchQuery == freezed
+          ? _value.usersForSearchQuery
+          : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
+              as List<GroupUser>,
       groupMembers: groupMembers == freezed
           ? _value.groupMembers
           : groupMembers // ignore: cast_nullable_to_non_nullable
-              as List<User>,
+              as List<GroupUser>,
       currentStepIndex: currentStepIndex == freezed
           ? _value.currentStepIndex
           : currentStepIndex // ignore: cast_nullable_to_non_nullable
@@ -1091,6 +1534,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       {required this.groupTitle,
       required this.groupImage,
       required this.searchAllPeopleSearchValue,
+      required this.usersForSearchQuery,
       required this.groupMembers,
       required this.currentStepIndex});
 
@@ -1101,13 +1545,15 @@ class _$_AddGroupPageState implements _AddGroupPageState {
   @override
   final String searchAllPeopleSearchValue;
   @override
-  final List<User> groupMembers;
+  final List<GroupUser> usersForSearchQuery;
+  @override
+  final List<GroupUser> groupMembers;
   @override
   final int currentStepIndex;
 
   @override
   String toString() {
-    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex)';
+    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, usersForSearchQuery: $usersForSearchQuery, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex)';
   }
 
   @override
@@ -1122,6 +1568,8 @@ class _$_AddGroupPageState implements _AddGroupPageState {
             const DeepCollectionEquality().equals(
                 other.searchAllPeopleSearchValue, searchAllPeopleSearchValue) &&
             const DeepCollectionEquality()
+                .equals(other.usersForSearchQuery, usersForSearchQuery) &&
+            const DeepCollectionEquality()
                 .equals(other.groupMembers, groupMembers) &&
             const DeepCollectionEquality()
                 .equals(other.currentStepIndex, currentStepIndex));
@@ -1133,6 +1581,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       const DeepCollectionEquality().hash(groupTitle),
       const DeepCollectionEquality().hash(groupImage),
       const DeepCollectionEquality().hash(searchAllPeopleSearchValue),
+      const DeepCollectionEquality().hash(usersForSearchQuery),
       const DeepCollectionEquality().hash(groupMembers),
       const DeepCollectionEquality().hash(currentStepIndex));
 
@@ -1147,7 +1596,8 @@ abstract class _AddGroupPageState implements AddGroupPageState {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
-      required List<User> groupMembers,
+      required List<GroupUser> usersForSearchQuery,
+      required List<GroupUser> groupMembers,
       required int currentStepIndex}) = _$_AddGroupPageState;
 
   @override
@@ -1157,7 +1607,9 @@ abstract class _AddGroupPageState implements AddGroupPageState {
   @override
   String get searchAllPeopleSearchValue;
   @override
-  List<User> get groupMembers;
+  List<GroupUser> get usersForSearchQuery;
+  @override
+  List<GroupUser> get groupMembers;
   @override
   int get currentStepIndex;
   @override

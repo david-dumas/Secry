@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
-
-import 'package:secry/presentation/pages/account/account_page.dart';
 import 'package:secry/presentation/pages/home/homepage.dart';
 import 'package:secry/presentation/pages/saved_chats_and_surveys/saved_chats_and_surveys_page.dart';
 import 'package:secry/presentation/pages/search/global_search_page.dart';
+import 'package:secry/presentation/pages/account/account_page.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/constants.dart';

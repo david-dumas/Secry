@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:injectable/injectable.dart';
-import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/users/i_users_repository.dart';
 import 'package:secry/infrastructure/users/users_api_service.dart';
 import 'package:secry/domain/users/group_user.dart';

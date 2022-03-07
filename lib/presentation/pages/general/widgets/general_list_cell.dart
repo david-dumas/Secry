@@ -33,7 +33,7 @@ class GeneralListCell extends StatelessWidget {
                         child: Container(),
                       ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: globalWhite,
                   shape: BoxShape.circle,
                 ),
               ),
