@@ -49,12 +49,12 @@ class AddGroupPageContent extends StatelessWidget {
           return Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Expanded(
                     child: SingleChildScrollView(
                       child: state.currentStepIndex == 0
                           ? AddGroupPageStepOneSection()
@@ -63,11 +63,11 @@ class AddGroupPageContent extends StatelessWidget {
                             ),
                     ),
                   ),
-                  BottomNavigationButtonsSection(
-                    stepIndex: state.currentStepIndex,
-                  )
-                ],
-              ),
+                ),
+                BottomNavigationButtonsSection(
+                  stepIndex: state.currentStepIndex,
+                )
+              ],
             ),
           );
         },
@@ -227,56 +227,67 @@ class BottomNavigationButtonsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final buttonWidth = (MediaQuery.of(context).size.width - (2 * contentToEdgePadding) - horizontalButtonsSpacing) / 2;
-    final buttonHeight = 44.0;
+    final buttonHeight = 50.0;
+    final padding = 20.0;
 
-    return Row(
-      children: [
-        Container(
-          width: buttonWidth,
-          height: buttonHeight,
-          child: ElevatedButton(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: kButtonRadiusXs,
+    return Container(
+      height: buttonHeight + (2 * padding),
+      width: MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(border: Border(top: BorderSide(width: 1, color: kLineSeparatorColor))),
+      child: Center(
+        child: Padding(
+          padding: EdgeInsets.all(padding),
+          child: Row(
+            children: [
+              Container(
+                width: buttonWidth,
+                height: buttonHeight,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: kButtonRadiusXs,
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
+                  ),
+                  onPressed: () {
+                    handlePreviousCancelActionForIndex(context, max(0, stepIndex));
+                  },
+                  child: Text(
+                    stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: kMediumGrayExtraDark),
+                  ),
                 ),
               ),
-              backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
-            ),
-            onPressed: () {
-              handlePreviousCancelActionForIndex(context, max(0, stepIndex));
-            },
-            child: Text(
-              stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: kMediumGrayExtraDark),
-            ),
-          ),
-        ),
-        SizedBox(
-          width: horizontalButtonsSpacing,
-        ),
-        Container(
-          width: buttonWidth,
-          height: buttonHeight,
-          child: ElevatedButton(
-            style: ButtonStyle(
-              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                RoundedRectangleBorder(
-                  borderRadius: kButtonRadiusXs,
+              SizedBox(
+                width: horizontalButtonsSpacing,
+              ),
+              Container(
+                width: buttonWidth,
+                height: buttonHeight,
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                      RoundedRectangleBorder(
+                        borderRadius: kButtonRadiusXs,
+                      ),
+                    ),
+                    backgroundColor: MaterialStateProperty.all(kPrimaryColor),
+                  ),
+                  onPressed: () {
+                    handleNextCreateActionForIndex(context, stepIndex, totalNumberOfSteps);
+                  },
+                  child: Text(
+                    stepIndex == 0 ? tr('action_next') : tr('action_create'),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: globalWhite),
+                  ),
                 ),
               ),
-              backgroundColor: MaterialStateProperty.all(kPrimaryColor),
-            ),
-            onPressed: () {
-              handleNextCreateActionForIndex(context, stepIndex, totalNumberOfSteps);
-            },
-            child: Text(
-              stepIndex == 0 ? tr('action_next') : tr('action_create'),
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: globalWhite),
-            ),
+            ],
           ),
         ),
-      ],
+      ),
     );
   }
 
