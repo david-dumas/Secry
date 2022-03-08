@@ -86,16 +86,16 @@ class AllChatsOrSurveysInGroupPage extends StatelessWidget {
                                   svg: filteredCellInfoItems[index].svg,
                                 ),
                               ),
-                              onTap: () => {
-                                    pushNewScreen(
-                                      context,
-                                      screen: ChatPage(
-                                          title: filteredCellInfoItems[index].title,
-                                          chatId: filteredCellInfoItems[index].id),
-                                      withNavBar: true,
-                                      pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                    )
-                                  });
+                              onTap: () {
+                                pushNewScreen(
+                                  context,
+                                  screen: ChatPage(
+                                      title: filteredCellInfoItems[index].title,
+                                      chatId: filteredCellInfoItems[index].id),
+                                  withNavBar: true,
+                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                );
+                              });
                         },
                       ),
                     ),

@@ -5,6 +5,7 @@ class AddGroupPageEvent with _$AddGroupPageEvent {
   const factory AddGroupPageEvent.initialized() = _Initialized;
   const factory AddGroupPageEvent.groupTitleUpdated(String newTitle) = _GroupTitleUpdated;
   const factory AddGroupPageEvent.groupImageUpdated(Image newImage) = _GroupImageUpdated;
+  const factory AddGroupPageEvent.groupImageDeleted() = _GroupImageDeleted;
   const factory AddGroupPageEvent.searchAllPeopleSearchValueUpdated(String newValue) =
       _SearchAllPeopleSearchValueUpdated;
   const factory AddGroupPageEvent.usersForSearchQueryUpdated(List<GroupUser> newUsers) = _UsersForSearchQueryUpdated;

@@ -11,6 +11,7 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i14;
+import 'package:flutter/cupertino.dart' as _i16;
 import 'package:flutter/material.dart' as _i15;
 
 import '../pages/account/account_loggedout_page.dart' as _i7;
@@ -194,7 +195,7 @@ class LoginPageRoute extends _i14.PageRouteInfo<void> {
 /// generated route for
 /// [_i9.SignupPage]
 class SignupPageRoute extends _i14.PageRouteInfo<SignupPageRouteArgs> {
-  SignupPageRoute({_i15.Key? key})
+  SignupPageRoute({_i16.Key? key})
       : super(SignupPageRoute.name,
             path: '/signup-page', args: SignupPageRouteArgs(key: key));
 
@@ -204,7 +205,7 @@ class SignupPageRoute extends _i14.PageRouteInfo<SignupPageRouteArgs> {
 class SignupPageRouteArgs {
   const SignupPageRouteArgs({this.key});
 
-  final _i15.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -216,7 +217,7 @@ class SignupPageRouteArgs {
 /// [_i10.ResetPasswordPage]
 class ResetPasswordPageRoute
     extends _i14.PageRouteInfo<ResetPasswordPageRouteArgs> {
-  ResetPasswordPageRoute({_i15.Key? key})
+  ResetPasswordPageRoute({_i16.Key? key})
       : super(ResetPasswordPageRoute.name,
             path: '/reset-password-page',
             args: ResetPasswordPageRouteArgs(key: key));
@@ -227,7 +228,7 @@ class ResetPasswordPageRoute
 class ResetPasswordPageRouteArgs {
   const ResetPasswordPageRouteArgs({this.key});
 
-  final _i15.Key? key;
+  final _i16.Key? key;
 
   @override
   String toString() {
@@ -240,7 +241,7 @@ class ResetPasswordPageRouteArgs {
 class GroupOverviewPageRoute
     extends _i14.PageRouteInfo<GroupOverviewPageRouteArgs> {
   GroupOverviewPageRoute(
-      {_i15.Key? key, required String title, required String groupId})
+      {_i16.Key? key, required String title, required String groupId})
       : super(GroupOverviewPageRoute.name,
             path: '/group-overview-page',
             args: GroupOverviewPageRouteArgs(
@@ -253,7 +254,7 @@ class GroupOverviewPageRouteArgs {
   const GroupOverviewPageRouteArgs(
       {this.key, required this.title, required this.groupId});
 
-  final _i15.Key? key;
+  final _i16.Key? key;
 
   final String title;
 
@@ -268,7 +269,7 @@ class GroupOverviewPageRouteArgs {
 /// generated route for
 /// [_i12.ChatPage]
 class ChatPageRoute extends _i14.PageRouteInfo<ChatPageRouteArgs> {
-  ChatPageRoute({_i15.Key? key, required String title, required String chatId})
+  ChatPageRoute({_i16.Key? key, required String title, required String chatId})
       : super(ChatPageRoute.name,
             path: '/chat-page',
             args: ChatPageRouteArgs(key: key, title: title, chatId: chatId));
@@ -280,7 +281,7 @@ class ChatPageRouteArgs {
   const ChatPageRouteArgs(
       {this.key, required this.title, required this.chatId});
 
-  final _i15.Key? key;
+  final _i16.Key? key;
 
   final String title;
 

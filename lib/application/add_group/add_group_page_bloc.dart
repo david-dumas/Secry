@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -33,6 +33,9 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
       },
       groupImageUpdated: (e) async {
         emit(state.copyWith(groupImage: e.newImage));
+      },
+      groupImageDeleted: (e) async {
+        emit(state.copyWith(groupImage: null));
       },
       searchAllPeopleSearchValueUpdated: (e) async {
         emit(state.copyWith(searchAllPeopleSearchValue: e.newValue));

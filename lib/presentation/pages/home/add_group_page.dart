@@ -1,14 +1,17 @@
 import 'dart:math';
+import 'dart:io';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:secry/constants.dart';
 
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/presentation/pages/general/widgets/group_user_cell.dart';
 import 'package:secry/application/add_group/add_group_page_bloc.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:secry/domain/users/group_user.dart';
 
 import 'package:secry/injection.dart';
@@ -58,7 +61,7 @@ class AddGroupPageContent extends StatelessWidget {
                 Expanded(
                   child: SingleChildScrollView(
                     child: state.currentStepIndex == 0
-                        ? AddGroupPageStepOneSection()
+                        ? AddGroupPageStepOneSection(groupImage: state.groupImage)
                         : AddGroupPageStepTwoSection(
                             searchValue: state.searchAllPeopleSearchValue,
                             usersForSearchQuery: state.usersForSearchQuery,
@@ -79,7 +82,9 @@ class AddGroupPageContent extends StatelessWidget {
 }
 
 class AddGroupPageStepOneSection extends StatefulWidget {
-  AddGroupPageStepOneSection({Key? key}) : super(key: key);
+  final Image? groupImage;
+
+  AddGroupPageStepOneSection({Key? key, this.groupImage = null}) : super(key: key);
 
   @override
   State<AddGroupPageStepOneSection> createState() => _AddGroupPageStepOneSectionState();
@@ -87,10 +92,11 @@ class AddGroupPageStepOneSection extends StatefulWidget {
 
 class _AddGroupPageStepOneSectionState extends State<AddGroupPageStepOneSection> {
   final TextEditingController _titleController = TextEditingController();
+  final ImagePicker _imagePicker = ImagePicker();
 
   @override
-  Widget build(BuildContext context) {
-    final cameraButtonWidthHeight = max(MediaQuery.of(context).size.width * 0.22, 66).toDouble();
+  Widget build(BuildContext mainContext) {
+    final cameraButtonWidthHeight = max(MediaQuery.of(mainContext).size.width * 0.22, 66).toDouble();
     final maximumTitleLength = 24;
 
     return Padding(
@@ -103,6 +109,8 @@ class _AddGroupPageStepOneSectionState extends State<AddGroupPageStepOneSection>
           // TODO add maximum characters (and show in ui)
           TextFormField(
             controller: _titleController,
+            autofocus: false, // _titleController.text.length == 0,
+            textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               labelText: tr('add_group_title'),
               suffixText: "${maximumTitleLength - _titleController.text.length}",
@@ -130,47 +138,143 @@ class _AddGroupPageStepOneSectionState extends State<AddGroupPageStepOneSection>
               return null;
             },
             onChanged: (newValue) {
-              context.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupTitleUpdated(newValue));
+              mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupTitleUpdated(newValue));
             },
           ),
           SizedBox(height: 30),
           Text(tr('add_group_group_picture')),
           SizedBox(height: 8),
-          Container(
-            width: MediaQuery.of(context).size.width - 40,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              border: Border.all(color: kMediumGrayV2, width: 1.0),
-            ),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Container(
-                padding: EdgeInsets.all(20),
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Container(
-                      width: cameraButtonWidthHeight,
-                      height: cameraButtonWidthHeight,
-                      decoration: BoxDecoration(
-                        color: kPrimaryColor,
-                        borderRadius: BorderRadius.circular(cameraButtonWidthHeight / 2),
-                      ),
-                      child: Icon(
-                        Icons.camera_alt_rounded,
-                        size: cameraButtonWidthHeight * 0.44,
-                        color: globalWhite,
-                      ),
-                    ),
-                    SizedBox(height: 12),
-                    Text(
-                      tr('action_add_group_picture'),
-                      style: TextStyle(fontSize: 14.0),
-                    )
-                  ],
+          GestureDetector(
+            child: Container(
+              width: MediaQuery.of(mainContext).size.width - 40,
+              height: 150,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(8.0),
+                border: Border.all(color: kMediumGrayV2, width: 1.0),
+              ),
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(8.0),
+                child: Container(
+                  child: widget.groupImage != null
+                      ? Container(
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: widget.groupImage!.image,
+                              fit: BoxFit.fitWidth, // TODO add possibility to scroll to part of image to use
+                            ),
+                          ),
+                        )
+                      : Padding(
+                          padding: EdgeInsets.all(20),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              Container(
+                                width: cameraButtonWidthHeight,
+                                height: cameraButtonWidthHeight,
+                                decoration: BoxDecoration(
+                                  color: kPrimaryColor,
+                                  borderRadius: BorderRadius.circular(cameraButtonWidthHeight / 2),
+                                ),
+                                child: Icon(
+                                  Icons.camera_alt_rounded,
+                                  size: cameraButtonWidthHeight * 0.44,
+                                  color: globalWhite,
+                                ),
+                              ),
+                              SizedBox(height: 12),
+                              Text(
+                                tr('action_add_group_picture'),
+                                style: TextStyle(fontSize: 14.0),
+                              )
+                            ],
+                          ),
+                        ),
                 ),
               ),
             ),
+            onTap: () {
+              showMaterialModalBottomSheet(
+                context: context,
+                builder: (context) {
+                  return StatefulBuilder(builder: (BuildContext context, StateSetter setState) {
+                    return Wrap(
+                      children: [
+                        Center(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Container(
+                                width: MediaQuery.of(mainContext).size.width,
+                                height: 55,
+                                child: TextButton(
+                                  onPressed: () async {
+                                    try {
+                                      final cameraImage = await _imagePicker.pickImage(source: ImageSource.camera);
+                                      if (cameraImage != null) {
+                                        final image = Image.file(File(cameraImage.path));
+                                        mainContext
+                                            .read<AddGroupPageBloc>()
+                                            .add(AddGroupPageEvent.groupImageUpdated(image));
+
+                                        Navigator.of(context).pop(context);
+                                      }
+                                    } catch (e) {
+                                      // TODO log pick image error
+                                    }
+                                  },
+                                  child: Text(
+                                    tr('action_make_picture'),
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: 55,
+                                child: TextButton(
+                                  onPressed: () async {
+                                    try {
+                                      final XFile? galleryImage =
+                                          await _imagePicker.pickImage(source: ImageSource.gallery);
+                                      if (galleryImage != null) {
+                                        final image = Image.file(File(galleryImage.path));
+                                        mainContext
+                                            .read<AddGroupPageBloc>()
+                                            .add(AddGroupPageEvent.groupImageUpdated(image));
+
+                                        Navigator.of(context).pop(context);
+                                      }
+                                    } catch (e) {
+                                      // TODO log image from gallery error
+                                    }
+                                  },
+                                  child: Text(
+                                    tr('action_choose_picture'),
+                                  ),
+                                ),
+                              ),
+                              Visibility(
+                                visible: widget.groupImage != null,
+                                child: TextButton(
+                                  onPressed: () async {
+                                    mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupImageDeleted());
+                                    Navigator.of(context).pop(context);
+                                  },
+                                  child: Text(
+                                    tr('action_delete_picture'),
+                                  ),
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                            ],
+                          ),
+                        )
+                      ],
+                    );
+                  });
+                },
+              );
+            },
           )
         ],
       ),
@@ -213,7 +317,7 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
               SizedBox(height: 16),
               TextField(
                 controller: searchBarSearchAllPeopleTextEditingController,
-                autofocus: widget.searchValue == '',
+                autofocus: false, //widget.searchValue == '',
                 autocorrect: false,
                 decoration: InputDecoration(
                   fillColor: searchBarBackgroundColor,
@@ -259,9 +363,9 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
                           userRowTrailingAction: (userId) {
                             // TODO add user with ID
                           }),
-                      onTap: () => {
-                            // TODO open user page
-                          });
+                      onTap: () {
+                        // TODO open user page
+                      });
                 },
               ),
             ],
@@ -305,9 +409,9 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
                           userRowTrailingAction: (userId) {
                             // TODO add user with ID
                           }),
-                      onTap: () => {
-                            // TODO open user page
-                          });
+                      onTap: () {
+                        // TODO open user page
+                      });
                 },
               ),
             ],
