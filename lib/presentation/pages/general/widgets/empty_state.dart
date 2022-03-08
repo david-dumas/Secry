@@ -3,15 +3,22 @@ import 'package:flutter/cupertino.dart';
 class EmptyState extends StatelessWidget {
   final String title;
   final String description;
-  final IconData icon;
+  final IconData? icon;
+  final CrossAxisAlignment crossAxisAlignment;
 
-  const EmptyState({Key? key, required this.title, required this.description, required this.icon}) : super(key: key);
+  const EmptyState(
+      {Key? key,
+      required this.title,
+      required this.description,
+      this.icon = null,
+      this.crossAxisAlignment = CrossAxisAlignment.center})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
