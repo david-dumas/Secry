@@ -15,6 +15,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:secry/domain/users/group_user.dart';
 
 import 'package:secry/injection.dart';
+import 'package:secry/util/dialogs/dialog_helper.dart';
 
 class AddGroupPageAndroid extends StatelessWidget {
   const AddGroupPageAndroid({Key? key}) : super(key: key);
@@ -71,6 +72,8 @@ class AddGroupPageContent extends StatelessWidget {
                 ),
                 BottomNavigationButtonsSection(
                   stepIndex: state.currentStepIndex,
+                  groupTitle: state.groupTitle,
+                  groupMembers: state.groupMembers,
                 )
               ],
             ),
@@ -424,11 +427,16 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
 
 class BottomNavigationButtonsSection extends StatelessWidget {
   final int stepIndex;
+  final String groupTitle;
+  List<GroupUser> groupMembers;
+
   final totalNumberOfSteps = 2;
   final horizontalButtonsSpacing = 12.0;
   final contentToEdgePadding = 20.0;
 
-  const BottomNavigationButtonsSection({Key? key, required this.stepIndex}) : super(key: key);
+  BottomNavigationButtonsSection(
+      {Key? key, required this.stepIndex, required this.groupTitle, required this.groupMembers})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -458,7 +466,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
                   ),
                   onPressed: () {
-                    handlePreviousCancelActionForIndex(context, max(0, stepIndex));
+                    handlePreviousOrCancelActionForIndex(context, max(0, stepIndex));
                   },
                   child: Text(
                     stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
@@ -482,7 +490,11 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                     backgroundColor: MaterialStateProperty.all(kPrimaryColor),
                   ),
                   onPressed: () {
-                    handleNextCreateActionForIndex(context, stepIndex, totalNumberOfSteps);
+                    handleNextOrCreateActionForIndex(context,
+                        currentIndex: stepIndex,
+                        totalNumberOfSteps: totalNumberOfSteps,
+                        groupTitle: groupTitle,
+                        groupMembers: groupMembers);
                   },
                   child: Text(
                     stepIndex == 0 ? tr('action_next') : tr('action_create'),
@@ -497,7 +509,18 @@ class BottomNavigationButtonsSection extends StatelessWidget {
     );
   }
 
-  void handlePreviousCancelActionForIndex(BuildContext context, int index) {
+  bool validateIfNextStepChangeActionIsAllowed(
+      {required int currentIndex, required String groupTitle, required List<GroupUser> groupMembers}) {
+    if (currentIndex == 0) {
+      return groupTitle.length > 0;
+    } else if (currentIndex > 0) {
+      return groupTitle.length > 0 && groupMembers.length > 0;
+    } else {
+      return false;
+    }
+  }
+
+  void handlePreviousOrCancelActionForIndex(BuildContext context, int index) {
     final newIndex = max(0, index - 1);
 
     if (index != newIndex) {
@@ -509,14 +532,36 @@ class BottomNavigationButtonsSection extends StatelessWidget {
     }
   }
 
-  void handleNextCreateActionForIndex(BuildContext context, int index, int totalNumberOfSteps) {
-    final newIndex = min(totalNumberOfSteps - 1, index + 1);
+  void handleNextOrCreateActionForIndex(BuildContext context,
+      {required int currentIndex,
+      required int totalNumberOfSteps,
+      required String groupTitle,
+      required List<GroupUser> groupMembers}) {
+    final newIndex = min(totalNumberOfSteps - 1, currentIndex + 1);
+    final isNextStepAllowed = validateIfNextStepChangeActionIsAllowed(
+        currentIndex: currentIndex, groupTitle: groupTitle, groupMembers: groupMembers);
 
-    if (index != newIndex) {
+    if (!isNextStepAllowed) {
+      final warningTitle = tr('warning_title_general');
+      var warningMessage = "";
+
+      if (currentIndex == 0 && groupTitle.length == 0) {
+        warningMessage = tr('warning_title_minimum_length');
+      } else if (currentIndex > 0 && groupMembers.length == 0) {
+        warningMessage = tr('warning_minimum_group_members');
+      } else {
+        warningMessage = tr('warning_fill_in_all_fields_to_continue');
+      }
+
+      DialogHelper().showAlertDialog(context, title: warningTitle, description: warningMessage);
+      return;
+    }
+
+    if (currentIndex != newIndex) {
       context.read<AddGroupPageBloc>().add(AddGroupPageEvent.currentStepIndexUpdated(newIndex));
     }
 
-    if (index >= (totalNumberOfSteps - 1)) {
+    if (currentIndex >= (totalNumberOfSteps - 1)) {
       Navigator.of(context).pop(context);
     }
   }
