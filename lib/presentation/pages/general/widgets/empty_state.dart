@@ -22,7 +22,7 @@ class EmptyState extends StatelessWidget {
       children: [
         Text(
           title,
-          textAlign: TextAlign.center,
+          textAlign: crossAxisAlignment == CrossAxisAlignment.center ? TextAlign.center : TextAlign.start,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -31,16 +31,19 @@ class EmptyState extends StatelessWidget {
         SizedBox(height: 8),
         Text(
           description,
-          textAlign: TextAlign.center,
+          textAlign: crossAxisAlignment == CrossAxisAlignment.center ? TextAlign.center : TextAlign.start,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.normal,
           ),
         ),
         SizedBox(height: 12),
-        Icon(
-          icon,
-          size: 24,
+        Visibility(
+          visible: icon != null,
+          child: Icon(
+            icon,
+            size: 24,
+          ),
         ),
       ],
     );
