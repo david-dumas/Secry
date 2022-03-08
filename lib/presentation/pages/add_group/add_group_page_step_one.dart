@@ -9,8 +9,9 @@ import 'package:secry/presentation/pages/add_group/widgets/choose_image_tile.dar
 
 class AddGroupPageStepOne extends StatefulWidget {
   final Image? groupImage;
+  final String groupTitle;
 
-  AddGroupPageStepOne({Key? key, this.groupImage = null}) : super(key: key);
+  AddGroupPageStepOne({Key? key, required this.groupTitle, this.groupImage = null}) : super(key: key);
 
   @override
   State<AddGroupPageStepOne> createState() => _AddGroupPageStepOneState();
@@ -19,6 +20,12 @@ class AddGroupPageStepOne extends StatefulWidget {
 class _AddGroupPageStepOneState extends State<AddGroupPageStepOne> {
   final TextEditingController _titleController = TextEditingController();
   final maximumTitleLength = 24;
+
+  @override
+  void initState() {
+    _titleController.text = widget.groupTitle;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext mainContext) {

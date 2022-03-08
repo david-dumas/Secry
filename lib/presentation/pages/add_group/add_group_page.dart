@@ -56,7 +56,7 @@ class AddGroupPageContent extends StatelessWidget {
                 Expanded(
                   child: SingleChildScrollView(
                     child: state.currentStepIndex == 0
-                        ? AddGroupPageStepOne(groupImage: state.groupImage)
+                        ? AddGroupPageStepOne(groupTitle: state.groupTitle, groupImage: state.groupImage)
                         : AddGroupPageStepTwo(
                             searchValue: state.searchAllPeopleSearchValue,
                             usersForSearchQuery: state.usersForSearchQuery,
