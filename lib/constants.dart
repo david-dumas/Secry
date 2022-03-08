@@ -16,6 +16,8 @@ const kPrimaryColor = Color(0xFF3794FC);
 const kBottomMenuUnselectedColor = Color(0xFFB9BEBC);
 const kLineSeparatorColor = Color(0xFFDEE5EF);
 
+const cancelColor = Color(0xFFE90000);
+
 // Colors for buttons and input field
 const kWhiteButtonBorderColor = Color(0xFFDEE5EF);
 const kWhiteInputFieldBorderStyle = Color(0xFFD7D7D7);

@@ -11,7 +11,7 @@ import 'package:secry/presentation/pages/splash/splash_page.dart';
 import 'package:secry/presentation/pages/tabbar/tabbar_page.dart';
 import 'package:secry/presentation/pages/account/account_loggedout_page.dart';
 import 'package:secry/presentation/pages/signup/signup_page.dart';
-import 'package:secry/presentation/pages/home/add_group_page.dart';
+import 'package:secry/presentation/pages/add_group/add_group_page.dart';
 
 @MaterialAutoRouter(routes: [
   MaterialRoute(page: SplashPage, initial: true),

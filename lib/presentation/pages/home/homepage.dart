@@ -8,7 +8,7 @@ import 'package:secry/application/homepage/homepage_bloc.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
-import 'package:secry/presentation/pages/home/add_group_page.dart';
+import 'package:secry/presentation/pages/add_group/add_group_page.dart';
 
 import 'package:secry/constants.dart';
 import 'package:secry/presentation/widgets/general/group_section.dart';
