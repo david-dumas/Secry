@@ -19,6 +19,8 @@ class AddGroupPageStepTwo extends StatefulWidget {
 }
 
 class _AddGroupPageStepTwoState extends State<AddGroupPageStepTwo> {
+  final TextEditingController searchBarSearchAllPeopleTextEditingController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -26,9 +28,9 @@ class _AddGroupPageStepTwoState extends State<AddGroupPageStepTwo> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SearchAndAddPeopleSection(
-          searchValue: widget.searchValue,
-          usersForSearchQuery: widget.usersForSearchQuery,
-        ),
+            searchValue: widget.searchValue,
+            usersForSearchQuery: widget.usersForSearchQuery,
+            searchBarSearchAllPeopleTextEditingController: searchBarSearchAllPeopleTextEditingController),
         Container(color: kLineSeparatorColor, height: 1, width: MediaQuery.of(context).size.width),
         AddedPeopleSection(groupMembers: widget.usersAddedToGroup),
       ],

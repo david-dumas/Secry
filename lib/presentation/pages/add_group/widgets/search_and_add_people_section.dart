@@ -12,9 +12,14 @@ import 'package:secry/presentation/pages/general/widgets/group_user_cell.dart';
 class SearchAndAddPeopleSection extends StatelessWidget {
   final String searchValue;
   final List<GroupUser> usersForSearchQuery;
-  final TextEditingController searchBarSearchAllPeopleTextEditingController = TextEditingController();
+  final TextEditingController searchBarSearchAllPeopleTextEditingController;
 
-  SearchAndAddPeopleSection({Key? key, required this.searchValue, required this.usersForSearchQuery}) : super(key: key);
+  SearchAndAddPeopleSection(
+      {Key? key,
+      required this.searchValue,
+      required this.usersForSearchQuery,
+      required this.searchBarSearchAllPeopleTextEditingController})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
