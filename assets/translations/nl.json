@@ -104,6 +104,8 @@
   "empty_state_search_no_results_description_general" : "Probeer uw zoekopdracht aan te passen om te vinden wat u zoekt.",
   "empty_state_add_group_title" : "No one added yet",
   "empty_state_add_group_description" : "Add people to create group",
+  "empty_state_no_group_members_title" : "Nog niemand toegevoegd",
+  "empty_state_no_group_members_description" : "Voeg mensen toe om een groep te maken",
   "date_time_x_seconds_ago" : "seconden geleden",
   "date_time_x_minutes_ago" : "minuten geleden",
   "date_time_x_hours_ago" : "uur geleden",

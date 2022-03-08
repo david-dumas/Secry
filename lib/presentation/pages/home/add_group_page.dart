@@ -11,6 +11,7 @@ import 'package:secry/constants.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/presentation/pages/general/widgets/group_user_cell.dart';
 import 'package:secry/application/add_group/add_group_page_bloc.dart';
+import 'package:secry/presentation/pages/general/widgets/empty_state.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:secry/domain/users/group_user.dart';
 
@@ -381,42 +382,51 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    tr('add_group_added_people'),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium),
-                  ),
-                  SizedBox(width: 8),
-                  Text(
-                    widget.usersAddedToGroup.length.toString(),
-                    style: TextStyle(fontSize: fontSizeMedium),
-                  ),
-                ],
+              Visibility(
+                visible: widget.usersAddedToGroup.length > 0,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      tr('add_group_added_people'),
+                      style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium),
+                    ),
+                    SizedBox(width: 8),
+                    Text(
+                      widget.usersAddedToGroup.length.toString(),
+                      style: TextStyle(fontSize: fontSizeMedium),
+                    ),
+                  ],
+                ),
               ),
-              SizedBox(height: 20),
-              ListView.builder(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: widget.usersAddedToGroup.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                      child: UserCell(
-                          groupUser: widget.usersAddedToGroup[index],
-                          actionButtonActionNotExecutedText: tr('action_add'),
-                          actionButtonActionExecutedText: tr('action_added'),
-                          isActionButtonActionExecuted: true,
-                          userRowTrailingAction: (userId) {
-                            // TODO add user with ID
-                          }),
-                      onTap: () {
-                        // TODO open user page
-                      });
-                },
-              ),
+              SizedBox(height: widget.usersAddedToGroup.length > 0 ? 20 : 0),
+              widget.usersAddedToGroup.length == 0
+                  ? EmptyState(
+                      title: tr('empty_state_no_group_members_title'),
+                      description: tr('empty_state_no_group_members_description'),
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                    )
+                  : ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: widget.usersAddedToGroup.length,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                            child: UserCell(
+                                groupUser: widget.usersAddedToGroup[index],
+                                actionButtonActionNotExecutedText: tr('action_add'),
+                                actionButtonActionExecutedText: tr('action_added'),
+                                isActionButtonActionExecuted: true,
+                                userRowTrailingAction: (userId) {
+                                  // TODO add user with ID
+                                }),
+                            onTap: () {
+                              // TODO open user page
+                            });
+                      },
+                    ),
             ],
           ),
         ),
