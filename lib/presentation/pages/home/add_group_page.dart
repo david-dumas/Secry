@@ -352,26 +352,35 @@ class _AddGroupPageStepTwoSectionState extends State<AddGroupPageStepTwoSection>
                 },
               ),
               SizedBox(height: 20),
-              ListView.builder(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                physics: const NeverScrollableScrollPhysics(),
-                itemCount: widget.usersForSearchQuery.length,
-                itemBuilder: (context, index) {
-                  return GestureDetector(
-                      child: UserCell(
-                          groupUser: widget.usersForSearchQuery[index],
-                          actionButtonActionNotExecutedText: tr('action_add'),
-                          actionButtonActionExecutedText: tr('action_added'),
-                          isActionButtonActionExecuted: false,
-                          userRowTrailingAction: (userId) {
-                            // TODO add user with ID
-                          }),
-                      onTap: () {
-                        // TODO open user page
-                      });
-                },
-              ),
+              widget.usersForSearchQuery.length == 0 && widget.searchValue.length > 0
+                  ? Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 20),
+                      child: EmptyState(
+                        title: tr('empty_state_search_no_results_title_general'),
+                        description: tr('empty_state_search_no_results_description_general'),
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                      ),
+                    )
+                  : ListView.builder(
+                      scrollDirection: Axis.vertical,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemCount: widget.usersForSearchQuery.length,
+                      itemBuilder: (context, index) {
+                        return GestureDetector(
+                            child: UserCell(
+                                groupUser: widget.usersForSearchQuery[index],
+                                actionButtonActionNotExecutedText: tr('action_add'),
+                                actionButtonActionExecutedText: tr('action_added'),
+                                isActionButtonActionExecuted: false,
+                                userRowTrailingAction: (userId) {
+                                  // TODO add user with ID
+                                }),
+                            onTap: () {
+                              // TODO open user page
+                            });
+                      },
+                    ),
             ],
           ),
         ),
