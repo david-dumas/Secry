@@ -48,7 +48,7 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
               searchValueChanged: widget.searchValueChanged != null ? widget.searchValueChanged! : (_) => '')
           : TitleForAppBar(title: widget.title),
       centerTitle: false,
-      leadingWidth: widget.isSubpage ? 20 : 0,
+      leadingWidth: widget.isSubpage ? 56 : 0,
       backgroundColor: widget.backgroundColor,
       elevation: 0.0,
       automaticallyImplyLeading: widget.isSubpage ? false : true,
