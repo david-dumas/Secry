@@ -82,6 +82,7 @@ class _HomePageState extends State<HomePage> {
                         } else if (Platform.isIOS) {
                           showMaterialModalBottomSheet(
                             context: context,
+                            useRootNavigator: true,
                             builder: (context) => AddGroupPageIOS(),
                           );
                         }

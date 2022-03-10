@@ -1,3 +1,4 @@
+import 'dart:io' show Platform;
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -49,10 +50,11 @@ class AddGroupPageContent extends StatelessWidget {
         builder: (context, state) {
           return Container(
             width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
+            height: MediaQuery.of(context).size.height * 0.93,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Visibility(visible: Platform.isIOS, child: SizedBox(height: 20)),
                 Expanded(
                   child: SingleChildScrollView(
                     child: state.currentStepIndex == 0
@@ -68,7 +70,8 @@ class AddGroupPageContent extends StatelessWidget {
                   stepIndex: state.currentStepIndex,
                   groupTitle: state.groupTitle,
                   groupMembers: state.groupMembers,
-                )
+                ),
+                Visibility(visible: Platform.isIOS, child: SizedBox(height: 30)),
               ],
             ),
           );
