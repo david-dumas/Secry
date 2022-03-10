@@ -25,7 +25,7 @@ class ChooseImageTile extends StatelessWidget {
     return GestureDetector(
       child: Container(
         width: MediaQuery.of(mainContext).size.width - 40,
-        height: 150, // max(150, MediaQuery.of(context).size.height * 0.25),
+        height: max(150, MediaQuery.of(context).size.height * 0.25),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(8.0),
           border: Border.all(color: kMediumGrayV2, width: 1.0),
@@ -46,6 +46,8 @@ class ChooseImageTile extends StatelessWidget {
                     padding: EdgeInsets.all(20),
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         Container(
                           width: cameraButtonWidthHeight,
