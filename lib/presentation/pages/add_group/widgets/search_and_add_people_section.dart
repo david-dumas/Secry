@@ -13,12 +13,12 @@ class SearchAndAddPeopleSection extends StatelessWidget {
   final List<GroupUser> usersForSearchQuery;
   final TextEditingController searchBarSearchAllPeopleTextEditingController;
 
-  SearchAndAddPeopleSection(
-      {Key? key,
-      required this.searchValue,
-      required this.usersForSearchQuery,
-      required this.searchBarSearchAllPeopleTextEditingController})
-      : super(key: key);
+  SearchAndAddPeopleSection({
+    Key? key,
+    required this.searchValue,
+    required this.usersForSearchQuery,
+    required this.searchBarSearchAllPeopleTextEditingController,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

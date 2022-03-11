@@ -1572,6 +1572,8 @@ class _$AddGroupPageStateTearOff {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
+      required int searchUsersPaginationPageNumber,
+      required int searchUsersPaginationPageSize,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
       required int currentStepIndex}) {
@@ -1579,6 +1581,8 @@ class _$AddGroupPageStateTearOff {
       groupTitle: groupTitle,
       groupImage: groupImage,
       searchAllPeopleSearchValue: searchAllPeopleSearchValue,
+      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber,
+      searchUsersPaginationPageSize: searchUsersPaginationPageSize,
       usersForSearchQuery: usersForSearchQuery,
       groupMembers: groupMembers,
       currentStepIndex: currentStepIndex,
@@ -1594,6 +1598,8 @@ mixin _$AddGroupPageState {
   String get groupTitle => throw _privateConstructorUsedError;
   Image? get groupImage => throw _privateConstructorUsedError;
   String get searchAllPeopleSearchValue => throw _privateConstructorUsedError;
+  int get searchUsersPaginationPageNumber => throw _privateConstructorUsedError;
+  int get searchUsersPaginationPageSize => throw _privateConstructorUsedError;
   List<GroupUser> get usersForSearchQuery => throw _privateConstructorUsedError;
   List<GroupUser> get groupMembers => throw _privateConstructorUsedError;
   int get currentStepIndex => throw _privateConstructorUsedError;
@@ -1612,6 +1618,8 @@ abstract class $AddGroupPageStateCopyWith<$Res> {
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
+      int searchUsersPaginationPageNumber,
+      int searchUsersPaginationPageSize,
       List<GroupUser> usersForSearchQuery,
       List<GroupUser> groupMembers,
       int currentStepIndex});
@@ -1631,6 +1639,8 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupTitle = freezed,
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
+    Object? searchUsersPaginationPageNumber = freezed,
+    Object? searchUsersPaginationPageSize = freezed,
     Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
@@ -1648,6 +1658,15 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.searchAllPeopleSearchValue
           : searchAllPeopleSearchValue // ignore: cast_nullable_to_non_nullable
               as String,
+      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber ==
+              freezed
+          ? _value.searchUsersPaginationPageNumber
+          : searchUsersPaginationPageNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      searchUsersPaginationPageSize: searchUsersPaginationPageSize == freezed
+          ? _value.searchUsersPaginationPageSize
+          : searchUsersPaginationPageSize // ignore: cast_nullable_to_non_nullable
+              as int,
       usersForSearchQuery: usersForSearchQuery == freezed
           ? _value.usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
@@ -1675,6 +1694,8 @@ abstract class _$AddGroupPageStateCopyWith<$Res>
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
+      int searchUsersPaginationPageNumber,
+      int searchUsersPaginationPageSize,
       List<GroupUser> usersForSearchQuery,
       List<GroupUser> groupMembers,
       int currentStepIndex});
@@ -1696,6 +1717,8 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupTitle = freezed,
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
+    Object? searchUsersPaginationPageNumber = freezed,
+    Object? searchUsersPaginationPageSize = freezed,
     Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
@@ -1713,6 +1736,15 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.searchAllPeopleSearchValue
           : searchAllPeopleSearchValue // ignore: cast_nullable_to_non_nullable
               as String,
+      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber ==
+              freezed
+          ? _value.searchUsersPaginationPageNumber
+          : searchUsersPaginationPageNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      searchUsersPaginationPageSize: searchUsersPaginationPageSize == freezed
+          ? _value.searchUsersPaginationPageSize
+          : searchUsersPaginationPageSize // ignore: cast_nullable_to_non_nullable
+              as int,
       usersForSearchQuery: usersForSearchQuery == freezed
           ? _value.usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
@@ -1736,6 +1768,8 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       {required this.groupTitle,
       required this.groupImage,
       required this.searchAllPeopleSearchValue,
+      required this.searchUsersPaginationPageNumber,
+      required this.searchUsersPaginationPageSize,
       required this.usersForSearchQuery,
       required this.groupMembers,
       required this.currentStepIndex});
@@ -1747,6 +1781,10 @@ class _$_AddGroupPageState implements _AddGroupPageState {
   @override
   final String searchAllPeopleSearchValue;
   @override
+  final int searchUsersPaginationPageNumber;
+  @override
+  final int searchUsersPaginationPageSize;
+  @override
   final List<GroupUser> usersForSearchQuery;
   @override
   final List<GroupUser> groupMembers;
@@ -1755,7 +1793,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
 
   @override
   String toString() {
-    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, usersForSearchQuery: $usersForSearchQuery, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex)';
+    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, searchUsersPaginationPageNumber: $searchUsersPaginationPageNumber, searchUsersPaginationPageSize: $searchUsersPaginationPageSize, usersForSearchQuery: $usersForSearchQuery, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex)';
   }
 
   @override
@@ -1769,6 +1807,12 @@ class _$_AddGroupPageState implements _AddGroupPageState {
                 .equals(other.groupImage, groupImage) &&
             const DeepCollectionEquality().equals(
                 other.searchAllPeopleSearchValue, searchAllPeopleSearchValue) &&
+            const DeepCollectionEquality().equals(
+                other.searchUsersPaginationPageNumber,
+                searchUsersPaginationPageNumber) &&
+            const DeepCollectionEquality().equals(
+                other.searchUsersPaginationPageSize,
+                searchUsersPaginationPageSize) &&
             const DeepCollectionEquality()
                 .equals(other.usersForSearchQuery, usersForSearchQuery) &&
             const DeepCollectionEquality()
@@ -1783,6 +1827,8 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       const DeepCollectionEquality().hash(groupTitle),
       const DeepCollectionEquality().hash(groupImage),
       const DeepCollectionEquality().hash(searchAllPeopleSearchValue),
+      const DeepCollectionEquality().hash(searchUsersPaginationPageNumber),
+      const DeepCollectionEquality().hash(searchUsersPaginationPageSize),
       const DeepCollectionEquality().hash(usersForSearchQuery),
       const DeepCollectionEquality().hash(groupMembers),
       const DeepCollectionEquality().hash(currentStepIndex));
@@ -1798,6 +1844,8 @@ abstract class _AddGroupPageState implements AddGroupPageState {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
+      required int searchUsersPaginationPageNumber,
+      required int searchUsersPaginationPageSize,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
       required int currentStepIndex}) = _$_AddGroupPageState;
@@ -1808,6 +1856,10 @@ abstract class _AddGroupPageState implements AddGroupPageState {
   Image? get groupImage;
   @override
   String get searchAllPeopleSearchValue;
+  @override
+  int get searchUsersPaginationPageNumber;
+  @override
+  int get searchUsersPaginationPageSize;
   @override
   List<GroupUser> get usersForSearchQuery;
   @override

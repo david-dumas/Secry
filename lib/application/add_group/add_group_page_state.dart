@@ -6,6 +6,8 @@ class AddGroupPageState with _$AddGroupPageState {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
+      required int searchUsersPaginationPageNumber,
+      required int searchUsersPaginationPageSize,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
       required int currentStepIndex}) = _AddGroupPageState;
@@ -14,6 +16,8 @@ class AddGroupPageState with _$AddGroupPageState {
       groupTitle: "",
       groupImage: null,
       searchAllPeopleSearchValue: "",
+      searchUsersPaginationPageNumber: 1,
+      searchUsersPaginationPageSize: 3,
       usersForSearchQuery: [],
       groupMembers: [],
       currentStepIndex: 0);

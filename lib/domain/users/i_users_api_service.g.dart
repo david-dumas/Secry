@@ -10,7 +10,7 @@ part of 'i_users_api_service.dart';
 
 class _IUsersAPIService implements IUsersAPIService {
   _IUsersAPIService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://b45c710f-f287-487b-8f85-fc63a088a546.mock.pstmn.io';
+    baseUrl ??= 'https://secryapi.azurewebsites.net';
   }
 
   final Dio _dio;
@@ -18,14 +18,20 @@ class _IUsersAPIService implements IUsersAPIService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<dynamic>> getUsersToSearchInNewGroup() async {
+  Future<HttpResponse<dynamic>> getUsersToSearchInNewGroup(
+      token, searchQuery, pageNumber, pageSize) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'SearchQuery': searchQuery,
+      r'PageNumber': pageNumber,
+      r'PageSize': pageSize
+    };
+    final _headers = <String, dynamic>{r'Authorization': token};
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/get_users_to_search_in_new_group',
+            .compose(_dio.options, '/api/v2/auth',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;

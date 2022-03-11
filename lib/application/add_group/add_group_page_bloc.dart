@@ -22,7 +22,7 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
   Future<void> _onEvent(AddGroupPageEvent event, Emitter<AddGroupPageState> emit) async {
     await event.map(
       initialized: (e) async {
-        final usersToSearchInNewGroup = await _usersRepository.getUsersForSearchQuery(searchQuery: "");
+        final usersToSearchInNewGroup = await getUsersForSearchQuery(state.searchAllPeopleSearchValue);
         final usersAddedToNewGroup = await _usersRepository.getDummyUsersForAddedGroup();
 
         add(AddGroupPageEvent.usersForSearchQueryUpdated(usersToSearchInNewGroup));
@@ -39,6 +39,9 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
       },
       searchAllPeopleSearchValueUpdated: (e) async {
         emit(state.copyWith(searchAllPeopleSearchValue: e.newValue));
+
+        final usersToSearchInNewGroup = await getUsersForSearchQuery(e.newValue);
+        add(AddGroupPageEvent.usersForSearchQueryUpdated(usersToSearchInNewGroup));
       },
       usersForSearchQueryUpdated: (e) async {
         emit(state.copyWith(usersForSearchQuery: e.newUsers));
@@ -50,5 +53,12 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
         emit(state.copyWith(currentStepIndex: e.newIndex));
       },
     );
+  }
+
+  Future<List<GroupUser>> getUsersForSearchQuery(String searchValue) async {
+    return _usersRepository.getUsersForSearchQuery(
+        searchQuery: searchValue,
+        pageNumber: state.searchUsersPaginationPageNumber,
+        pageSize: state.searchUsersPaginationPageSize);
   }
 }
