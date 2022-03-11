@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/general/groups_and_general_about_info.dart';
@@ -15,10 +13,6 @@ class GroupsRepository extends IGroupsRepository {
   @override
   Future<GroupsAndGeneralAboutInfo> getPrivateGroups({required String userId}) async {
     try {
-      var body = jsonEncode({
-        'userId': '$userId',
-      });
-
       final response = await _groupsApiService.api.getPrivateGroups();
       final responseStatusCode = response.response.statusCode;
 
