@@ -46,7 +46,7 @@ class UserCell extends StatelessWidget {
             SizedBox(width: 16),
             Expanded(
               child: Text(
-                "${groupUser.firstName} ${groupUser.lastName ?? ''}",
+                groupUser.fullName,
                 style: TextStyle(fontWeight: FontWeight.normal),
               ),
             ),
