@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -66,7 +68,7 @@ class SearchAndAddPeopleSection extends StatelessWidget {
             },
           ),
           SizedBox(height: 20),
-          usersForSearchQuery.length == 0 && searchValue.length > 0
+          usersForSearchQuery.length == 0
               ? Padding(
                   padding: const EdgeInsets.symmetric(vertical: 20),
                   child: EmptyState(
@@ -79,7 +81,7 @@ class SearchAndAddPeopleSection extends StatelessWidget {
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
-                  itemCount: usersForSearchQuery.length,
+                  itemCount: min(3, usersForSearchQuery.length),
                   itemBuilder: (context, index) {
                     return GestureDetector(
                         child: UserCell(
@@ -87,8 +89,8 @@ class SearchAndAddPeopleSection extends StatelessWidget {
                             actionButtonActionNotExecutedText: tr('action_add'),
                             actionButtonActionExecutedText: tr('action_added'),
                             isActionButtonActionExecuted: false,
-                            userRowTrailingAction: (userId) {
-                              // TODO add user with ID
+                            userRowTrailingAction: (user) {
+                              context.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupMembersUserAdded(user));
                             }),
                         onTap: () {
                           // TODO open user page

@@ -17,7 +17,7 @@ class AddGroupPageState with _$AddGroupPageState {
       groupImage: null,
       searchAllPeopleSearchValue: "",
       searchUsersPaginationPageNumber: 1,
-      searchUsersPaginationPageSize: 3,
+      searchUsersPaginationPageSize: 10,
       usersForSearchQuery: [],
       groupMembers: [],
       currentStepIndex: 0);

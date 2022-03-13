@@ -1,10 +1,12 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:secry/constants.dart';
 import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/presentation/pages/general/widgets/empty_state.dart';
 import 'package:secry/presentation/pages/general/widgets/group_user_cell.dart';
+import 'package:secry/application/add_group/add_group_page_bloc.dart';
 
 class AddedPeopleSection extends StatelessWidget {
   final List<GroupUser> groupMembers;
@@ -56,8 +58,8 @@ class AddedPeopleSection extends StatelessWidget {
                             actionButtonActionNotExecutedText: tr('action_add'),
                             actionButtonActionExecutedText: tr('action_added'),
                             isActionButtonActionExecuted: true,
-                            userRowTrailingAction: (userId) {
-                              // TODO add user with ID
+                            userRowTrailingAction: (user) {
+                              context.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupMembersUserDeleted(user.id));
                             }),
                         onTap: () {
                           // TODO open user page

@@ -46,6 +46,14 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
       usersForSearchQueryUpdated: (e) async {
         emit(state.copyWith(usersForSearchQuery: e.newUsers));
       },
+      groupMembersUserAdded: (e) async {
+        if (state.groupMembers.firstWhereOrNull((user) => user.id == e.addedUser.id) == null) {
+          add(AddGroupPageEvent.groupMembersUpdated([...state.groupMembers, e.addedUser]));
+        }
+      },
+      groupMembersUserDeleted: (e) async {
+        add(AddGroupPageEvent.groupMembersUpdated([...state.groupMembers]..removeWhere((user) => user.id == e.userId)));
+      },
       groupMembersUpdated: (e) async {
         emit(state.copyWith(groupMembers: e.newMembers));
       },

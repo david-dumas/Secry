@@ -8,7 +8,7 @@ class UserCell extends StatelessWidget {
   final String actionButtonActionNotExecutedText;
   final String actionButtonActionExecutedText;
   final bool isActionButtonActionExecuted;
-  final Function(String userId)? userRowTrailingAction;
+  final Function(GroupUser groupUser)? userRowTrailingAction;
 
   const UserCell(
       {Key? key,
@@ -68,7 +68,7 @@ class UserCell extends StatelessWidget {
                   ),
                   onPressed: () {
                     if (userRowTrailingAction != null) {
-                      userRowTrailingAction!(groupUser.id);
+                      userRowTrailingAction!(groupUser);
                     }
                   },
                   child: Text(
