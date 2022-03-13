@@ -75,6 +75,10 @@ class _$AddGroupPageEventTearOff {
       newIndex,
     );
   }
+
+  _NewGroupCreated newGroupCreated() {
+    return const _NewGroupCreated();
+  }
 }
 
 /// @nodoc
@@ -96,6 +100,7 @@ mixin _$AddGroupPageEvent {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -110,6 +115,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -124,6 +130,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -144,6 +151,7 @@ mixin _$AddGroupPageEvent {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -160,6 +168,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -176,6 +185,7 @@ mixin _$AddGroupPageEvent {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -251,6 +261,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return initialized();
   }
@@ -268,6 +279,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return initialized?.call();
   }
@@ -285,6 +297,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -311,6 +324,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return initialized(this);
   }
@@ -330,6 +344,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return initialized?.call(this);
   }
@@ -349,6 +364,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -439,6 +455,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return groupTitleUpdated(newTitle);
   }
@@ -456,6 +473,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return groupTitleUpdated?.call(newTitle);
   }
@@ -473,6 +491,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupTitleUpdated != null) {
@@ -499,6 +518,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return groupTitleUpdated(this);
   }
@@ -518,6 +538,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return groupTitleUpdated?.call(this);
   }
@@ -537,6 +558,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupTitleUpdated != null) {
@@ -632,6 +654,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return groupImageUpdated(newImage);
   }
@@ -649,6 +672,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return groupImageUpdated?.call(newImage);
   }
@@ -666,6 +690,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupImageUpdated != null) {
@@ -692,6 +717,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return groupImageUpdated(this);
   }
@@ -711,6 +737,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return groupImageUpdated?.call(this);
   }
@@ -730,6 +757,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupImageUpdated != null) {
@@ -801,6 +829,7 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return groupImageDeleted();
   }
@@ -818,6 +847,7 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return groupImageDeleted?.call();
   }
@@ -835,6 +865,7 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupImageDeleted != null) {
@@ -861,6 +892,7 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return groupImageDeleted(this);
   }
@@ -880,6 +912,7 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return groupImageDeleted?.call(this);
   }
@@ -899,6 +932,7 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupImageDeleted != null) {
@@ -995,6 +1029,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return searchAllPeopleSearchValueUpdated(newValue);
   }
@@ -1012,6 +1047,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return searchAllPeopleSearchValueUpdated?.call(newValue);
   }
@@ -1029,6 +1065,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (searchAllPeopleSearchValueUpdated != null) {
@@ -1055,6 +1092,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return searchAllPeopleSearchValueUpdated(this);
   }
@@ -1074,6 +1112,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return searchAllPeopleSearchValueUpdated?.call(this);
   }
@@ -1093,6 +1132,7 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (searchAllPeopleSearchValueUpdated != null) {
@@ -1193,6 +1233,7 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return usersForSearchQueryUpdated(newUsers);
   }
@@ -1210,6 +1251,7 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return usersForSearchQueryUpdated?.call(newUsers);
   }
@@ -1227,6 +1269,7 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (usersForSearchQueryUpdated != null) {
@@ -1253,6 +1296,7 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return usersForSearchQueryUpdated(this);
   }
@@ -1272,6 +1316,7 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return usersForSearchQueryUpdated?.call(this);
   }
@@ -1291,6 +1336,7 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (usersForSearchQueryUpdated != null) {
@@ -1388,6 +1434,7 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return groupMembersUserAdded(addedUser);
   }
@@ -1405,6 +1452,7 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return groupMembersUserAdded?.call(addedUser);
   }
@@ -1422,6 +1470,7 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupMembersUserAdded != null) {
@@ -1448,6 +1497,7 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return groupMembersUserAdded(this);
   }
@@ -1467,6 +1517,7 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return groupMembersUserAdded?.call(this);
   }
@@ -1486,6 +1537,7 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupMembersUserAdded != null) {
@@ -1584,6 +1636,7 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return groupMembersUserDeleted(userId);
   }
@@ -1601,6 +1654,7 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return groupMembersUserDeleted?.call(userId);
   }
@@ -1618,6 +1672,7 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupMembersUserDeleted != null) {
@@ -1644,6 +1699,7 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return groupMembersUserDeleted(this);
   }
@@ -1663,6 +1719,7 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return groupMembersUserDeleted?.call(this);
   }
@@ -1682,6 +1739,7 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupMembersUserDeleted != null) {
@@ -1780,6 +1838,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return groupMembersUpdated(newMembers);
   }
@@ -1797,6 +1856,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return groupMembersUpdated?.call(newMembers);
   }
@@ -1814,6 +1874,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupMembersUpdated != null) {
@@ -1840,6 +1901,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return groupMembersUpdated(this);
   }
@@ -1859,6 +1921,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return groupMembersUpdated?.call(this);
   }
@@ -1878,6 +1941,7 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (groupMembersUpdated != null) {
@@ -1976,6 +2040,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     required TResult Function(String userId) groupMembersUserDeleted,
     required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
   }) {
     return currentStepIndexUpdated(newIndex);
   }
@@ -1993,6 +2058,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
   }) {
     return currentStepIndexUpdated?.call(newIndex);
   }
@@ -2010,6 +2076,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(String userId)? groupMembersUserDeleted,
     TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
     required TResult orElse(),
   }) {
     if (currentStepIndexUpdated != null) {
@@ -2036,6 +2103,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
   }) {
     return currentStepIndexUpdated(this);
   }
@@ -2055,6 +2123,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
   }) {
     return currentStepIndexUpdated?.call(this);
   }
@@ -2074,6 +2143,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
     TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
     required TResult orElse(),
   }) {
     if (currentStepIndexUpdated != null) {
@@ -2091,6 +2161,176 @@ abstract class _CurrentStepIndexUpdated implements AddGroupPageEvent {
   @JsonKey(ignore: true)
   _$CurrentStepIndexUpdatedCopyWith<_CurrentStepIndexUpdated> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$NewGroupCreatedCopyWith<$Res> {
+  factory _$NewGroupCreatedCopyWith(
+          _NewGroupCreated value, $Res Function(_NewGroupCreated) then) =
+      __$NewGroupCreatedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$NewGroupCreatedCopyWithImpl<$Res>
+    extends _$AddGroupPageEventCopyWithImpl<$Res>
+    implements _$NewGroupCreatedCopyWith<$Res> {
+  __$NewGroupCreatedCopyWithImpl(
+      _NewGroupCreated _value, $Res Function(_NewGroupCreated) _then)
+      : super(_value, (v) => _then(v as _NewGroupCreated));
+
+  @override
+  _NewGroupCreated get _value => super._value as _NewGroupCreated;
+}
+
+/// @nodoc
+
+class _$_NewGroupCreated implements _NewGroupCreated {
+  const _$_NewGroupCreated();
+
+  @override
+  String toString() {
+    return 'AddGroupPageEvent.newGroupCreated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NewGroupCreated);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String newTitle) groupTitleUpdated,
+    required TResult Function(Image newImage) groupImageUpdated,
+    required TResult Function() groupImageDeleted,
+    required TResult Function(String newValue)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(GroupUser addedUser) groupMembersUserAdded,
+    required TResult Function(String userId) groupMembersUserDeleted,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
+  }) {
+    return newGroupCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function()? groupImageDeleted,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(GroupUser addedUser)? groupMembersUserAdded,
+    TResult Function(String userId)? groupMembersUserDeleted,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
+  }) {
+    return newGroupCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function()? groupImageDeleted,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(GroupUser addedUser)? groupMembersUserAdded,
+    TResult Function(String userId)? groupMembersUserDeleted,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
+    required TResult orElse(),
+  }) {
+    if (newGroupCreated != null) {
+      return newGroupCreated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
+    required TResult Function(_GroupImageUpdated value) groupImageUpdated,
+    required TResult Function(_GroupImageDeleted value) groupImageDeleted,
+    required TResult Function(_SearchAllPeopleSearchValueUpdated value)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
+    required TResult Function(_GroupMembersUserAdded value)
+        groupMembersUserAdded,
+    required TResult Function(_GroupMembersUserDeleted value)
+        groupMembersUserDeleted,
+    required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
+  }) {
+    return newGroupCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_GroupImageDeleted value)? groupImageDeleted,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUserAdded value)? groupMembersUserAdded,
+    TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
+  }) {
+    return newGroupCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_GroupImageDeleted value)? groupImageDeleted,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUserAdded value)? groupMembersUserAdded,
+    TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
+    required TResult orElse(),
+  }) {
+    if (newGroupCreated != null) {
+      return newGroupCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NewGroupCreated implements AddGroupPageEvent {
+  const factory _NewGroupCreated() = _$_NewGroupCreated;
 }
 
 /// @nodoc

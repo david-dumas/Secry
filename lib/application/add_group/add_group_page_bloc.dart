@@ -7,6 +7,8 @@ import 'package:injectable/injectable.dart';
 import 'package:secry/domain/users/i_users_repository.dart';
 import 'package:secry/domain/users/group_user.dart';
 
+import 'package:secry/domain/groups/new_group.dart';
+
 part 'add_group_page_event.dart';
 part 'add_group_page_state.dart';
 part 'add_group_page_bloc.freezed.dart';
@@ -23,10 +25,8 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
     await event.map(
       initialized: (e) async {
         final usersToSearchInNewGroup = await getUsersForSearchQuery(state.searchAllPeopleSearchValue);
-        final usersAddedToNewGroup = await _usersRepository.getDummyUsersForAddedGroup();
 
         add(AddGroupPageEvent.usersForSearchQueryUpdated(usersToSearchInNewGroup));
-        add(AddGroupPageEvent.groupMembersUpdated(usersAddedToNewGroup));
       },
       groupTitleUpdated: (e) async {
         emit(state.copyWith(groupTitle: e.newTitle));
@@ -59,6 +59,17 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
       },
       currentStepIndexUpdated: (e) async {
         emit(state.copyWith(currentStepIndex: e.newIndex));
+      },
+      newGroupCreated: (e) async {
+        final listWithGroupMemberIds = state.groupMembers.map((groupMember) => groupMember.id).toList();
+
+        final newGroup = NewGroup(
+            title: state.groupTitle,
+            imageUrl:
+                'https://firebasestorage.googleapis.com/v0/b/bakeryapp-75e68.appspot.com/o/users%2FIMG_1733-min.jpeg?alt=media&token=6ebf28ca-14c1-4c5b-abb2-fbbe1fc5d0ef',
+            memberIds: listWithGroupMemberIds);
+
+        await _usersRepository.createNewGroup(newGroup);
       },
     );
   }

@@ -12,7 +12,7 @@ abstract class IUsersAPIService {
   Future<HttpResponse<dynamic>> getUsersToSearchInNewGroup(@Header('Authorization') String token,
       @Query("SearchQuery") String searchQuery, @Query("PageNumber") int pageNumber, @Query("PageSize") int pageSize);
 
-  // TODO Delete
-  @GET('/get_users_added_to_new_group')
-  Future<HttpResponse<dynamic>> getUsersAddedToNewGroup();
+  @POST('/api/v2/group')
+  @Headers(<String, dynamic>{"accept": "application/json", "Content-Type": "application/json"})
+  Future<HttpResponse<dynamic>> createNewGroup(@Header('Authorization') String token, @Body() String body);
 }

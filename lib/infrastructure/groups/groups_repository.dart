@@ -37,7 +37,7 @@ class GroupsRepository extends IGroupsRepository {
         return GroupsAndGeneralAboutInfo(totalAmountOfGroups: 0, groups: []);
       }
     } catch (error) {
-      print(error);
+      // TODO log error
       return GroupsAndGeneralAboutInfo(totalAmountOfGroups: 0, groups: []);
     }
   }

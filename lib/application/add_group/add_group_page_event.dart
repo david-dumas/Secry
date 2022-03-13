@@ -13,4 +13,5 @@ class AddGroupPageEvent with _$AddGroupPageEvent {
   const factory AddGroupPageEvent.groupMembersUserDeleted(String userId) = _GroupMembersUserDeleted;
   const factory AddGroupPageEvent.groupMembersUpdated(List<GroupUser> newMembers) = _GroupMembersUpdated;
   const factory AddGroupPageEvent.currentStepIndexUpdated(int newIndex) = _CurrentStepIndexUpdated;
+  const factory AddGroupPageEvent.newGroupCreated() = _NewGroupCreated;
 }
