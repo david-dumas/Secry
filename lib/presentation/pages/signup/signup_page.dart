@@ -242,7 +242,7 @@ class _SignupPageState extends State<SignupPage> {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    print('Terms of Service"');
+                                    // TODO open terms of service page
                                   }),
                             TextSpan(text: " " + tr("general_and") + " "),
                             TextSpan(
@@ -254,7 +254,7 @@ class _SignupPageState extends State<SignupPage> {
                                 ),
                                 recognizer: TapGestureRecognizer()
                                   ..onTap = () {
-                                    print('Privacy Policy"');
+                                    // TODO open Privacy Policy page
                                   }),
                           ],
                         ),

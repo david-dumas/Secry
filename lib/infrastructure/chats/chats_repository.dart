@@ -26,7 +26,7 @@ class ChatsRepository extends IChatsRepository {
         return List.empty();
       }
     } catch (error) {
-      print(error);
+      // TODO log error
       return List.empty();
     }
   }

@@ -5,6 +5,8 @@ import 'package:injectable/injectable.dart';
 import 'package:secry/domain/users/i_users_repository.dart';
 import 'package:secry/infrastructure/users/users_api_service.dart';
 import 'package:secry/domain/users/group_user.dart';
+import 'package:secry/domain/groups/new_group.dart';
+import 'package:secry/util/network_and_requests/response_util.dart';
 
 @Singleton(as: IUsersRepository)
 class UsersRepository extends IUsersRepository {
@@ -45,26 +47,31 @@ class UsersRepository extends IUsersRepository {
         return List.empty();
       }
     } catch (error) {
-      print(error);
+      // TODO log error
       return List.empty();
     }
   }
 
-  Future<List<GroupUser>> getDummyUsersForAddedGroup() async {
+  Future<bool> createNewGroup(NewGroup group) async {
     try {
-      final response = await _usersApiService.api.getUsersAddedToNewGroup();
-      final responseStatusCode = response.response.statusCode;
+      final token = await FirebaseAuth.instance.currentUser?.getIdToken();
+      if (token == null && token != "") {
+        return false;
+      }
 
-      if (responseStatusCode == 200) {
-        final List<GroupUser> addedUsersData =
-            (json.decode(response.data) as List).map((json) => GroupUser.fromJsonMap(json)).toList();
-        return addedUsersData;
+      final bearerToken = "Bearer $token";
+      final body = jsonEncode(group.toJson());
+
+      final response = await _usersApiService.api.createNewGroup(bearerToken, body);
+
+      if (response.isSuccessful) {
+        return true;
       } else {
-        return List.empty();
+        return false;
       }
     } catch (error) {
-      print(error);
-      return List.empty();
+      // TODO log error
+      return false;
     }
   }
 }
