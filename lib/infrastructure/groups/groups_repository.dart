@@ -2,14 +2,17 @@ import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
+import 'package:secry/domain/chats/general_chat_info.dart';
 import 'package:secry/domain/general/general_group_info.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/general/groups_and_general_about_info.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
+import 'package:secry/domain/surveys/general_survey_info.dart';
 import 'package:secry/infrastructure/groups/groups_api_service.dart';
 import 'package:secry/util/network_and_requests/response_util.dart';
 
 import 'package:secry/domain/groups/new_group.dart';
+import 'package:secry/domain/groups/group_chats_and_surveys_general_info.dart';
 
 @Singleton(as: IGroupsRepository)
 class GroupsRepository extends IGroupsRepository {
@@ -22,7 +25,7 @@ class GroupsRepository extends IGroupsRepository {
     try {
       final token = await FirebaseAuth.instance.currentUser?.getIdToken();
       if (token == null && token != "") {
-        // TODO handle not logged error and show on homepage
+        // TODO handle not logged in error and show on homepage
         return GroupsAndGeneralAboutInfo(generalInfo: null, groups: []);
       }
       final bearerToken = "Bearer $token";
@@ -79,6 +82,7 @@ class GroupsRepository extends IGroupsRepository {
     try {
       final token = await FirebaseAuth.instance.currentUser?.getIdToken();
       if (token == null && token != "") {
+        // TODO handle not logged in error and show on homepage
         return false;
       }
 
@@ -95,6 +99,64 @@ class GroupsRepository extends IGroupsRepository {
     } catch (error) {
       // TODO log error
       return false;
+    }
+  }
+
+  Future<GroupChatsAndSurveysGeneralInfo?> getChatsAndSurveys({required String groupId}) async {
+    try {
+      final token = await FirebaseAuth.instance.currentUser?.getIdToken();
+      if (token == null && token != "") {
+        // TODO handle not logged in error and show on homepage
+        return null;
+      }
+
+      final bearerToken = "Bearer $token";
+      final response =
+          await _groupsApiService.api.getGroupChatsAndSurveysWithGeneralGroupInfo(groupId, bearerToken, groupId);
+
+      if (response.isSuccessful) {
+        final mappedData = Map<String, dynamic>.from(response.data);
+
+        if (!mappedData.containsKey('id')) {
+          return null;
+        }
+
+        List<GeneralChatInfo> generalChatInfoData = [];
+        List<GeneralSurveyInfo> generalSurveyInfoData = [];
+
+        final String groupId = mappedData.containsKey('id') ? (mappedData['id'] != null ? mappedData['id'] : '') : '';
+        final String groupTitle =
+            mappedData.containsKey('title') ? (mappedData['title'] != null ? mappedData['title'] : '') : '';
+        final String groupImageUrl =
+            mappedData.containsKey('imageUrl') ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '') : '';
+        final DateTime? groupCreatedAt = mappedData.containsKey('createdAt')
+            ? (mappedData['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt']) : null)
+            : null;
+
+        if (mappedData.containsKey('chats')) {
+          List<dynamic> chats = mappedData["chats"];
+          generalChatInfoData = (chats).map((json) => GeneralChatInfo.fromJsonMap(json)).toList();
+        }
+
+        if (mappedData.containsKey('surveys')) {
+          List<dynamic> surveys = mappedData["surveys"];
+          generalSurveyInfoData = (surveys).map((json) => GeneralSurveyInfo.fromJsonMap(json)).toList();
+        }
+
+        final groupChatsAndSurveysGeneralInfo = GroupChatsAndSurveysGeneralInfo(
+            id: groupId,
+            title: groupTitle,
+            imageUrl: groupImageUrl,
+            createdAt: groupCreatedAt,
+            chats: generalChatInfoData,
+            surveys: generalSurveyInfoData);
+        return groupChatsAndSurveysGeneralInfo;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      // TODO log error
+      return null;
     }
   }
 }

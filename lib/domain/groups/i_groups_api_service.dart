@@ -16,4 +16,9 @@ abstract class IGroupsApiService {
   @POST('/api/v2/group')
   @Headers(<String, dynamic>{"accept": "application/json", "Content-Type": "application/json"})
   Future<HttpResponse<dynamic>> createNewGroup(@Header('Authorization') String token, @Body() String body);
+
+  @GET('/api/v2/group/{groupId}')
+  @Headers(<String, dynamic>{"accept": "application/json"})
+  Future<HttpResponse<dynamic>> getGroupChatsAndSurveysWithGeneralGroupInfo(
+      @Path("groupId") groupIdAsPath, @Header('Authorization') String token, @Query("groupId") String groupId);
 }

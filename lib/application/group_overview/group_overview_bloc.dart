@@ -3,9 +3,8 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:secry/domain/chats/i_chats_repository.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
-import 'package:secry/domain/surveys/i_surveys_repository.dart';
+import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/util/avatars/avatar_helper.dart';
 
 part 'group_overview_event.dart';
@@ -14,23 +13,36 @@ part 'group_overview_bloc.freezed.dart';
 
 @injectable
 class GroupOverviewBloc extends Bloc<GroupOverviewEvent, GroupOverviewState> {
-  final IChatsRepository _chatsRepository;
-  final ISurveysRepository _surveysRepository;
+  final IGroupsRepository _groupsRepository;
 
-  GroupOverviewBloc(this._chatsRepository, this._surveysRepository) : super(GroupOverviewState.initial()) {
+  GroupOverviewBloc(this._groupsRepository) : super(GroupOverviewState.initial()) {
     on<GroupOverviewEvent>(_onEvent);
   }
 
   Future<void> _onEvent(GroupOverviewEvent event, Emitter<GroupOverviewState> emit) async {
     await event.map(
       initialized: (e) async {
-        final mostRecentGroupChats = await _chatsRepository.getMostRecentChatsForGroup(groupId: e.groupId);
-        await AvatarHelper().addSvgToGroupRowsInfo(mostRecentGroupChats);
-        add(GroupOverviewEvent.chatInfoItemsUpdated(mostRecentGroupChats));
+        final groupChatsAndSurveysWithGeneralGroupInfo = await _groupsRepository.getChatsAndSurveys(groupId: e.groupId);
 
-        final mostRecentGroupSurveys = await _surveysRepository.getMostRecentSurveysForGroup(groupId: e.groupId);
-        await AvatarHelper().addSvgToGroupRowsInfo(mostRecentGroupSurveys);
-        add(GroupOverviewEvent.surveyInfoItemsUpdated(mostRecentGroupSurveys));
+        if (groupChatsAndSurveysWithGeneralGroupInfo != null) {
+          final mostRecentGroupChats = groupChatsAndSurveysWithGeneralGroupInfo.chats;
+          final chatOverviewRows = mostRecentGroupChats
+              .map((generalChatInfo) => GroupOverviewRowInfo(
+                  id: generalChatInfo.id, title: generalChatInfo.title, createdAt: generalChatInfo.createdAt))
+              .toList();
+
+          await AvatarHelper().addSvgToGroupRowsInfo(chatOverviewRows);
+          add(GroupOverviewEvent.chatInfoItemsUpdated(chatOverviewRows));
+
+          final mostRecentGroupSurveys = groupChatsAndSurveysWithGeneralGroupInfo.surveys;
+          final surveyOverviewRows = mostRecentGroupSurveys
+              .map((generalSurveyInfo) => GroupOverviewRowInfo(
+                  id: generalSurveyInfo.id, title: generalSurveyInfo.title, createdAt: generalSurveyInfo.createdAt))
+              .toList();
+
+          await AvatarHelper().addSvgToGroupRowsInfo(surveyOverviewRows);
+          add(GroupOverviewEvent.surveyInfoItemsUpdated(surveyOverviewRows));
+        }
       },
       chatInfoItemsUpdated: (e) async {
         emit(state.copyWith(chatInfoItems: e.chatInfoItems));
