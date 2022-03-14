@@ -18,14 +18,22 @@ class _IGroupsApiService implements IGroupsApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<dynamic>> getPrivateGroups() async {
+  Future<HttpResponse<dynamic>> getPrivateGroups(
+      token, pageNumber, pageSize) async {
     const _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{
+      r'PageNumber': pageNumber,
+      r'PageSize': pageSize
+    };
+    final _headers = <String, dynamic>{
+      r'accept': 'application/json',
+      r'Authorization': token
+    };
+    _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/api/Group',
+            .compose(_dio.options, '/api/v2/group',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;

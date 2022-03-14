@@ -57,6 +57,9 @@ class GroupSection extends StatelessWidget {
               isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
               maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
               openPageForPressedCell: openPageForPressedCell),
+      SizedBox(
+        height: 50,
+      )
     ]);
   }
 }

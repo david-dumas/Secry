@@ -4,14 +4,14 @@ part of 'homepage_bloc.dart';
 class HomepageState with _$HomepageState {
   const factory HomepageState(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      required int totalNumberOfGroups,
+      required GeneralGroupInfo? generalGroupInfo,
       required bool isShowingSearchBar,
       required String searchValue,
       required List<DrawableRoot?> privateGroupAvatarSvgs}) = _HomepageState;
 
   factory HomepageState.initial() => HomepageState(
       privateGroupsRowsInfo: [],
-      totalNumberOfGroups: 0,
+      generalGroupInfo: null,
       isShowingSearchBar: false,
       searchValue: '',
       privateGroupAvatarSvgs: []);

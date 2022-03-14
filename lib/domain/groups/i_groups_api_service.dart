@@ -1,4 +1,4 @@
-import 'package:dio/dio.dart';
+import 'package:dio/dio.dart' hide Headers;
 import 'package:secry/constants.dart';
 import 'package:retrofit/retrofit.dart';
 
@@ -8,8 +8,8 @@ part 'i_groups_api_service.g.dart';
 abstract class IGroupsApiService {
   factory IGroupsApiService(Dio dio, {String baseUrl}) = _IGroupsApiService;
 
-  @GET('/api/Group')
+  @GET('/api/v2/group')
+  @Headers(<String, dynamic>{"accept": "application/json"})
   Future<HttpResponse<dynamic>> getPrivateGroups(
-      // @Body() String body,
-      );
+      @Header('Authorization') String token, @Query("PageNumber") int pageNumber, @Query("PageSize") int pageSize);
 }

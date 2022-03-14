@@ -1,8 +1,9 @@
+import 'general_group_info.dart';
 import 'group_overview_row_info.dart';
 
 class GroupsAndGeneralAboutInfo {
-  final int totalAmountOfGroups;
+  final GeneralGroupInfo? generalInfo;
   final List<GroupOverviewRowInfo> groups;
 
-  GroupsAndGeneralAboutInfo({required this.totalAmountOfGroups, required this.groups});
+  GroupsAndGeneralAboutInfo({required this.generalInfo, required this.groups});
 }
