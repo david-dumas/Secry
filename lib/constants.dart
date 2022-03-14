@@ -7,6 +7,7 @@ const baseUrl = "https://secryapi.azurewebsites.net";
 const temporaryPostmanBaseUrl = "https://10535ad9-1804-4207-b556-54f9e7572e48.mock.pstmn.io";
 const temporaryPostmanPrivateChatsUrl = "https://e6e670c2-7eb3-4bae-81e4-0ecebaa88385.mock.pstmn.io";
 const temporaryPostmanPrivateSurveysUrl = "https://413f4f84-f2a1-41f7-a154-43d6a09af11a.mock.pstmn.io";
+const temporaryPostmanGetUsersForCreateNewGroup = "https://b45c710f-f287-487b-8f85-fc63a088a546.mock.pstmn.io";
 
 // Most used color(s)
 const kPrimaryColor = Color(0xFF3794FC);
@@ -14,6 +15,8 @@ const kPrimaryColor = Color(0xFF3794FC);
 // Colors for tabbar and separators
 const kBottomMenuUnselectedColor = Color(0xFFB9BEBC);
 const kLineSeparatorColor = Color(0xFFDEE5EF);
+
+const cancelColor = Color(0xFFE90000);
 
 // Colors for buttons and input field
 const kWhiteButtonBorderColor = Color(0xFFDEE5EF);
@@ -26,9 +29,12 @@ const searchBarClearButtonColor = Color(0xFF8E8E92);
 const globalBlack = Color(0xFF000000);
 const kDarkGrayTextColor = Color(0xFF3F3F3F);
 const kDarkGray = Color(0xFF4F4F4F);
+const kMediumGrayExtraDark = Color(0xFF717171);
+const kMediumGrayV2 = Color(0xFF979797);
 const kMediumGray = Color(0xFFB3B9BC);
 const kLightGray = Color(0xFFF4F4F4);
 const globalWhite = Color(0xFFFFFFFF);
+const cancelButtonGrayWhite = Color(0XFFF2F2F2);
 
 // General spacing
 const Widget verticalSafetyScrollOffset = SizedBox(height: 50.0);

@@ -13,8 +13,9 @@ class GeneralListCell extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
+    return Container(
       width: double.infinity,
+      color: globalWhite,
       child: Padding(
         padding: const EdgeInsets.only(bottom: marginMedium),
         child: Row(
@@ -33,7 +34,7 @@ class GeneralListCell extends StatelessWidget {
                         child: Container(),
                       ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  color: globalWhite,
                   shape: BoxShape.circle,
                 ),
               ),

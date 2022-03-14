@@ -3,19 +3,26 @@ import 'package:flutter/cupertino.dart';
 class EmptyState extends StatelessWidget {
   final String title;
   final String description;
-  final IconData icon;
+  final IconData? icon;
+  final CrossAxisAlignment crossAxisAlignment;
 
-  const EmptyState({Key? key, required this.title, required this.description, required this.icon}) : super(key: key);
+  const EmptyState(
+      {Key? key,
+      required this.title,
+      required this.description,
+      this.icon = null,
+      this.crossAxisAlignment = CrossAxisAlignment.center})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           title,
-          textAlign: TextAlign.center,
+          textAlign: crossAxisAlignment == CrossAxisAlignment.center ? TextAlign.center : TextAlign.start,
           style: TextStyle(
             fontSize: 18,
             fontWeight: FontWeight.bold,
@@ -24,16 +31,19 @@ class EmptyState extends StatelessWidget {
         SizedBox(height: 8),
         Text(
           description,
-          textAlign: TextAlign.center,
+          textAlign: crossAxisAlignment == CrossAxisAlignment.center ? TextAlign.center : TextAlign.start,
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.normal,
           ),
         ),
         SizedBox(height: 12),
-        Icon(
-          icon,
-          size: 24,
+        Visibility(
+          visible: icon != null,
+          child: Icon(
+            icon,
+            size: 24,
+          ),
         ),
       ],
     );

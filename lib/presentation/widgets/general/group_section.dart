@@ -57,6 +57,9 @@ class GroupSection extends StatelessWidget {
               isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
               maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
               openPageForPressedCell: openPageForPressedCell),
+      SizedBox(
+        height: 50,
+      )
     ]);
   }
 }
@@ -192,10 +195,11 @@ class _ContentSectionWithRowsState extends State<ContentSectionWithRows> {
                   timeIndication: widget.cellInfoItems[index].timeIndication,
                   svg: widget.cellInfoItems[index].svg),
             ),
-            onTap: () => {
-                  if (widget.openPageForPressedCell != null)
-                    {widget.openPageForPressedCell!(widget.cellInfoItems[index].id, widget.cellInfoItems[index].title)}
-                });
+            onTap: () {
+              if (widget.openPageForPressedCell != null) {
+                widget.openPageForPressedCell!(widget.cellInfoItems[index].id, widget.cellInfoItems[index].title);
+              }
+            });
       },
     );
   }

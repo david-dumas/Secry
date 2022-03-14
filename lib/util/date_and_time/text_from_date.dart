@@ -50,6 +50,6 @@ extension DateOnlyCompare on DateTime {
 
   // Returns date with format: yyyy-mm-dd
   String getShortDateTextFromDateTime() {
-    return DateFormat('yyyy-MM-dd').format(this);
+    return DateFormat('dd-MM-yyyy').format(this);
   }
 }

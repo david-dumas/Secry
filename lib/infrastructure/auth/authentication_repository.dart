@@ -19,6 +19,7 @@ class AuthenticationRepository extends IAuthenticationInterface {
     var dio = Dio();
 
     final jsonUser = user.toJson();
+    // TODO check if containsKey
     jsonUser['password'] = password;
 
     try {

@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:secry/domain/general/general_group_info.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/util/avatars/avatar_helper.dart';
@@ -23,11 +24,14 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
   Future<void> _onEvent(HomepageEvent event, Emitter<HomepageState> emit) async {
     await event.map(
       initialized: (e) async {
-        final GroupsAndGeneralAboutInfo = await _activityRepository.getPrivateGroups(userId: "dummyUserId");
-        await AvatarHelper().addSvgToGroupRowsInfo(GroupsAndGeneralAboutInfo.groups);
+        final groupsAndGeneralAboutInfo = await _activityRepository.getPrivateGroups(pageNumber: 1, pageSize: 50);
+        await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
 
-        add(HomepageEvent.privateGroupsInfoUpdated(GroupsAndGeneralAboutInfo.groups));
-        add(HomepageEvent.totalNumberOfGroupsUpdated(GroupsAndGeneralAboutInfo.totalAmountOfGroups));
+        add(HomepageEvent.privateGroupsInfoUpdated(groupsAndGeneralAboutInfo.groups));
+
+        if (groupsAndGeneralAboutInfo.generalInfo != null) {
+          add(HomepageEvent.generalGroupInfoUpdated(groupsAndGeneralAboutInfo.generalInfo!));
+        }
       },
       privateGroupsInfoUpdated: (e) async {
         emit(state.copyWith(privateGroupsRowsInfo: e.privateGroupsRowsInfo));
@@ -39,8 +43,8 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       searchValueUpdated: (e) async {
         emit(state.copyWith(searchValue: e.newValue));
       },
-      totalNumberOfGroupsUpdated: (e) async {
-        emit(state.copyWith(totalNumberOfGroups: e.amount));
+      generalGroupInfoUpdated: (e) async {
+        emit(state.copyWith(generalGroupInfo: e.newGroupInfo));
       },
     );
   }

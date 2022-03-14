@@ -115,8 +115,8 @@ class GroupOverviewPage extends StatelessWidget {
         .map((groupInfoItem) => GeneralListCellInfoItem(
             id: groupInfoItem.id,
             title: groupInfoItem.title,
-            description: groupInfoItem.lastMessageText ?? '',
-            timeIndication: groupInfoItem.lastMessageTime?.getTimeAgoTimeIndication() ?? '',
+            description: groupInfoItem.lastChatMessage?.text ?? '',
+            timeIndication: groupInfoItem.lastChatMessage?.createdAt?.getTimeAgoTimeIndication() ?? '',
             svg: groupInfoItem.svg))
         .toList();
   }

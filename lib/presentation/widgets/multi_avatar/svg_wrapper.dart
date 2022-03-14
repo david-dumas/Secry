@@ -9,7 +9,7 @@ class SvgWrapper {
     try {
       return await svg.fromSvgString(rawSvg, rawSvg);
     } catch (e) {
-      print(e);
+      // TODO log generateLogo error
       return null;
     }
   }
