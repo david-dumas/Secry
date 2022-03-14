@@ -24,7 +24,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
   Future<void> _onEvent(HomepageEvent event, Emitter<HomepageState> emit) async {
     await event.map(
       initialized: (e) async {
-        final groupsAndGeneralAboutInfo = await _activityRepository.getPrivateGroups(pageNumber: 1, pageSize: 10);
+        final groupsAndGeneralAboutInfo = await _activityRepository.getPrivateGroups(pageNumber: 1, pageSize: 50);
         await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
 
         add(HomepageEvent.privateGroupsInfoUpdated(groupsAndGeneralAboutInfo.groups));
