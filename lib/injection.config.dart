@@ -81,8 +81,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i28.ResetPasswordBloc(get<_i20.IAuthenticationInterface>()));
   gh.factory<_i29.SignUpFormBloc>(
       () => _i29.SignUpFormBloc(get<_i20.IAuthenticationInterface>()));
-  gh.factory<_i30.AddGroupPageBloc>(
-      () => _i30.AddGroupPageBloc(get<_i26.IUsersRepository>()));
+  gh.factory<_i30.AddGroupPageBloc>(() => _i30.AddGroupPageBloc(
+      get<_i26.IUsersRepository>(), get<_i9.IGroupsRepository>()));
   gh.factory<_i31.GroupOverviewBloc>(() => _i31.GroupOverviewBloc(
       get<_i22.IChatsRepository>(), get<_i24.ISurveysRepository>()));
   return get;

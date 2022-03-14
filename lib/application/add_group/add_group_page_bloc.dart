@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/domain/users/i_users_repository.dart';
 import 'package:secry/domain/users/group_user.dart';
 
@@ -16,8 +17,9 @@ part 'add_group_page_bloc.freezed.dart';
 @injectable
 class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
   final IUsersRepository _usersRepository;
+  final IGroupsRepository _groupsRepository;
 
-  AddGroupPageBloc(this._usersRepository) : super(AddGroupPageState.initial()) {
+  AddGroupPageBloc(this._usersRepository, this._groupsRepository) : super(AddGroupPageState.initial()) {
     on<AddGroupPageEvent>(_onEvent);
   }
 
@@ -63,13 +65,9 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
       newGroupCreated: (e) async {
         final listWithGroupMemberIds = state.groupMembers.map((groupMember) => groupMember.id).toList();
 
-        final newGroup = NewGroup(
-            title: state.groupTitle,
-            imageUrl:
-                'https://firebasestorage.googleapis.com/v0/b/bakeryapp-75e68.appspot.com/o/users%2FIMG_1733-min.jpeg?alt=media&token=6ebf28ca-14c1-4c5b-abb2-fbbe1fc5d0ef',
-            memberIds: listWithGroupMemberIds);
+        final newGroup = NewGroup(title: state.groupTitle, imageUrl: 'test123', memberIds: listWithGroupMemberIds);
 
-        await _usersRepository.createNewGroup(newGroup);
+        await _groupsRepository.createNewGroup(newGroup);
       },
     );
   }

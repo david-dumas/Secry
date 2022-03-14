@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/general/general_group_info.dart';
@@ -6,6 +8,8 @@ import 'package:secry/domain/general/groups_and_general_about_info.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/infrastructure/groups/groups_api_service.dart';
 import 'package:secry/util/network_and_requests/response_util.dart';
+
+import 'package:secry/domain/groups/new_group.dart';
 
 @Singleton(as: IGroupsRepository)
 class GroupsRepository extends IGroupsRepository {
@@ -68,6 +72,29 @@ class GroupsRepository extends IGroupsRepository {
     } catch (error) {
       // TODO log error
       return GroupsAndGeneralAboutInfo(generalInfo: null, groups: []);
+    }
+  }
+
+  Future<bool> createNewGroup(NewGroup group) async {
+    try {
+      final token = await FirebaseAuth.instance.currentUser?.getIdToken();
+      if (token == null && token != "") {
+        return false;
+      }
+
+      final bearerToken = "Bearer $token";
+      final body = jsonEncode(group.toJson());
+
+      final response = await _groupsApiService.api.createNewGroup(bearerToken, body);
+
+      if (response.isSuccessful) {
+        return true;
+      } else {
+        return false;
+      }
+    } catch (error) {
+      // TODO log error
+      return false;
     }
   }
 }

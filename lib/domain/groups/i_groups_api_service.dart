@@ -12,4 +12,8 @@ abstract class IGroupsApiService {
   @Headers(<String, dynamic>{"accept": "application/json"})
   Future<HttpResponse<dynamic>> getPrivateGroups(
       @Header('Authorization') String token, @Query("PageNumber") int pageNumber, @Query("PageSize") int pageSize);
+
+  @POST('/api/v2/group')
+  @Headers(<String, dynamic>{"accept": "application/json", "Content-Type": "application/json"})
+  Future<HttpResponse<dynamic>> createNewGroup(@Header('Authorization') String token, @Body() String body);
 }
