@@ -99,6 +99,9 @@ class AllChatsOrSurveysInGroupPage extends StatelessWidget {
                         },
                       ),
                     ),
+                    SizedBox(
+                      height: 50,
+                    )
                   ],
                 ),
               ),
