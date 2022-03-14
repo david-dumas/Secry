@@ -6,6 +6,7 @@ class GeneralSearchbar extends StatelessWidget {
   final GlobalKey<FormState> _formKey;
   final TextEditingController searchBarTextEditingController;
   final String searchValue;
+  final bool isAutoFocusEnabled;
   final String hintText;
   final Function(String newValue) searchValueUpdated;
 
@@ -14,6 +15,7 @@ class GeneralSearchbar extends StatelessWidget {
     required GlobalKey<FormState> formKey,
     required this.searchBarTextEditingController,
     required this.searchValue,
+    this.isAutoFocusEnabled = false,
     required this.hintText,
     required this.searchValueUpdated,
   })  : _formKey = formKey,
@@ -25,7 +27,7 @@ class GeneralSearchbar extends StatelessWidget {
       key: _formKey,
       child: TextField(
         controller: searchBarTextEditingController,
-        autofocus: searchValue == '',
+        autofocus: !isAutoFocusEnabled ? false : searchValue == '',
         autocorrect: false,
         decoration: InputDecoration(
           fillColor: searchBarBackgroundColor,
