@@ -80,6 +80,7 @@ class _HomePageState extends State<HomePage> {
                         emptyStateTitle: tr('action_create_new_group_title'),
                         emptyStateDescription: tr('action_create_new_group_description'),
                         emptyStateIcon: Icon(Icons.group_add),
+                        bottomMargin: 50.0,
                         titleRowTrailingAction: () {
                           if (Platform.isAndroid) {
                             AutoRouter.of(context).push(AddGroupPageAndroidRoute()).then((isRefreshNeeded) async {

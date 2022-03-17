@@ -13,6 +13,7 @@ class GroupSection extends StatelessWidget {
   final String titleRowActionButtonText;
   final String emptyStateTitle;
   final String emptyStateDescription;
+  final double bottomMargin;
   final Icon emptyStateIcon;
   final Function()? titleRowTrailingAction;
   final Function(String id, String groupTitle)? openPageForPressedCell;
@@ -28,6 +29,7 @@ class GroupSection extends StatelessWidget {
       required this.titleRowActionButtonText,
       required this.emptyStateTitle,
       required this.emptyStateDescription,
+      this.bottomMargin = 30.0,
       required this.emptyStateIcon,
       required this.titleRowTrailingAction,
       required this.openPageForPressedCell})
@@ -58,7 +60,7 @@ class GroupSection extends StatelessWidget {
               maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
               openPageForPressedCell: openPageForPressedCell),
       SizedBox(
-        height: 50,
+        height: bottomMargin,
       )
     ]);
   }

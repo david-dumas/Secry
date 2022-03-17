@@ -66,7 +66,6 @@ class GroupOverviewPage extends StatelessWidget {
                           // TODO open chat page for cell
                         },
                       ),
-                      SizedBox(height: 30),
                       GroupSection(
                         title: tr('home_surveys'),
                         totalAmountOfGroups: getCellItemsFrom(state.surveyInfoItems).length,
