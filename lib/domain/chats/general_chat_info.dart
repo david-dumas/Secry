@@ -16,7 +16,7 @@ class GeneralChatInfo {
           ? (json['lastChatMessage'] != null ? LastChatMessage.fromJsonMap(json['lastChatMessage']) : null)
           : null,
       createdAt: json.containsKey('createdAt')
-          ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt']) : null)
+          ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000) : null)
           : null,
     );
   }

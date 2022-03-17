@@ -10,7 +10,7 @@ class LastChatMessage {
       sender: json.containsKey('sender') ? (json['sender'] != null ? json['sender'] : '') : '',
       text: json.containsKey('text') ? (json['text'] != null ? json['text'] : '') : '',
       createdAt: json.containsKey('createdAt')
-          ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt']) : null)
+          ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000) : null)
           : null,
     );
   }
