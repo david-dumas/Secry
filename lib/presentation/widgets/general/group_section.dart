@@ -183,8 +183,10 @@ class _ContentSectionWithRowsState extends State<ContentSectionWithRows> {
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount:
-          widget.isMaximumNumberOfCellsToShowEnabled ? widget.maximumNumberOfCellsToShow : widget.cellInfoItems.length,
+      itemCount: (widget.isMaximumNumberOfCellsToShowEnabled &&
+              widget.cellInfoItems.length > widget.maximumNumberOfCellsToShow)
+          ? widget.maximumNumberOfCellsToShow
+          : widget.cellInfoItems.length,
       itemBuilder: (context, index) {
         return GestureDetector(
             child: GeneralListCell(
