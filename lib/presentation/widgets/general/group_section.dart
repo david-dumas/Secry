@@ -11,6 +11,7 @@ class GroupSection extends StatelessWidget {
   final int maximumNumberOfCellsToShow;
   final bool isTitleRowActionButtonVisible;
   final String titleRowActionButtonText;
+  final bool isDataFetched;
   final String emptyStateTitle;
   final String emptyStateDescription;
   final double bottomMargin;
@@ -27,6 +28,7 @@ class GroupSection extends StatelessWidget {
       this.maximumNumberOfCellsToShow = 99999,
       required this.isTitleRowActionButtonVisible,
       required this.titleRowActionButtonText,
+      required this.isDataFetched,
       required this.emptyStateTitle,
       required this.emptyStateDescription,
       this.bottomMargin = 30.0,
@@ -49,7 +51,7 @@ class GroupSection extends StatelessWidget {
             }
           }),
       SizedBox(height: cellInfoItems.length < 1 || !isTitleRowActionButtonVisible ? 16.0 : 0.0),
-      cellInfoItems.length < 1
+      (cellInfoItems.length < 1 && isDataFetched)
           ? GroupSectionEmptyStateRow(title: emptyStateTitle, description: emptyStateDescription)
           : ContentSectionWithRows(
               cellInfoItems: this.cellInfoItems,

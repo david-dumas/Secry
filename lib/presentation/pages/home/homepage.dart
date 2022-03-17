@@ -76,6 +76,7 @@ class _HomePageState extends State<HomePage> {
                         cellInfoItems: SearchHelper()
                             .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
                         titleRowActionButtonText: tr('general_add_group'),
+                        isDataFetched: state.isDataFetched,
                         isTitleRowActionButtonVisible: true,
                         emptyStateTitle: tr('action_create_new_group_title'),
                         emptyStateDescription: tr('action_create_new_group_description'),

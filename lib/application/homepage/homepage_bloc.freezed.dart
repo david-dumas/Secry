@@ -1113,13 +1113,15 @@ class _$HomepageStateTearOff {
       required GeneralGroupInfo? generalGroupInfo,
       required bool isShowingSearchBar,
       required String searchValue,
-      required List<DrawableRoot?> privateGroupAvatarSvgs}) {
+      required List<DrawableRoot?> privateGroupAvatarSvgs,
+      required bool isDataFetched}) {
     return _HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo,
       generalGroupInfo: generalGroupInfo,
       isShowingSearchBar: isShowingSearchBar,
       searchValue: searchValue,
       privateGroupAvatarSvgs: privateGroupAvatarSvgs,
+      isDataFetched: isDataFetched,
     );
   }
 }
@@ -1136,6 +1138,7 @@ mixin _$HomepageState {
   String get searchValue => throw _privateConstructorUsedError;
   List<DrawableRoot?> get privateGroupAvatarSvgs =>
       throw _privateConstructorUsedError;
+  bool get isDataFetched => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomepageStateCopyWith<HomepageState> get copyWith =>
@@ -1152,7 +1155,8 @@ abstract class $HomepageStateCopyWith<$Res> {
       GeneralGroupInfo? generalGroupInfo,
       bool isShowingSearchBar,
       String searchValue,
-      List<DrawableRoot?> privateGroupAvatarSvgs});
+      List<DrawableRoot?> privateGroupAvatarSvgs,
+      bool isDataFetched});
 }
 
 /// @nodoc
@@ -1171,6 +1175,7 @@ class _$HomepageStateCopyWithImpl<$Res>
     Object? isShowingSearchBar = freezed,
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
+    Object? isDataFetched = freezed,
   }) {
     return _then(_value.copyWith(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
@@ -1193,6 +1198,10 @@ class _$HomepageStateCopyWithImpl<$Res>
           ? _value.privateGroupAvatarSvgs
           : privateGroupAvatarSvgs // ignore: cast_nullable_to_non_nullable
               as List<DrawableRoot?>,
+      isDataFetched: isDataFetched == freezed
+          ? _value.isDataFetched
+          : isDataFetched // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1209,7 +1218,8 @@ abstract class _$HomepageStateCopyWith<$Res>
       GeneralGroupInfo? generalGroupInfo,
       bool isShowingSearchBar,
       String searchValue,
-      List<DrawableRoot?> privateGroupAvatarSvgs});
+      List<DrawableRoot?> privateGroupAvatarSvgs,
+      bool isDataFetched});
 }
 
 /// @nodoc
@@ -1230,6 +1240,7 @@ class __$HomepageStateCopyWithImpl<$Res>
     Object? isShowingSearchBar = freezed,
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
+    Object? isDataFetched = freezed,
   }) {
     return _then(_HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
@@ -1252,6 +1263,10 @@ class __$HomepageStateCopyWithImpl<$Res>
           ? _value.privateGroupAvatarSvgs
           : privateGroupAvatarSvgs // ignore: cast_nullable_to_non_nullable
               as List<DrawableRoot?>,
+      isDataFetched: isDataFetched == freezed
+          ? _value.isDataFetched
+          : isDataFetched // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1264,7 +1279,8 @@ class _$_HomepageState implements _HomepageState {
       required this.generalGroupInfo,
       required this.isShowingSearchBar,
       required this.searchValue,
-      required this.privateGroupAvatarSvgs});
+      required this.privateGroupAvatarSvgs,
+      required this.isDataFetched});
 
   @override
   final List<GroupOverviewRowInfo> privateGroupsRowsInfo;
@@ -1276,10 +1292,12 @@ class _$_HomepageState implements _HomepageState {
   final String searchValue;
   @override
   final List<DrawableRoot?> privateGroupAvatarSvgs;
+  @override
+  final bool isDataFetched;
 
   @override
   String toString() {
-    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, generalGroupInfo: $generalGroupInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs)';
+    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, generalGroupInfo: $generalGroupInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs, isDataFetched: $isDataFetched)';
   }
 
   @override
@@ -1296,7 +1314,9 @@ class _$_HomepageState implements _HomepageState {
             const DeepCollectionEquality()
                 .equals(other.searchValue, searchValue) &&
             const DeepCollectionEquality()
-                .equals(other.privateGroupAvatarSvgs, privateGroupAvatarSvgs));
+                .equals(other.privateGroupAvatarSvgs, privateGroupAvatarSvgs) &&
+            const DeepCollectionEquality()
+                .equals(other.isDataFetched, isDataFetched));
   }
 
   @override
@@ -1306,7 +1326,8 @@ class _$_HomepageState implements _HomepageState {
       const DeepCollectionEquality().hash(generalGroupInfo),
       const DeepCollectionEquality().hash(isShowingSearchBar),
       const DeepCollectionEquality().hash(searchValue),
-      const DeepCollectionEquality().hash(privateGroupAvatarSvgs));
+      const DeepCollectionEquality().hash(privateGroupAvatarSvgs),
+      const DeepCollectionEquality().hash(isDataFetched));
 
   @JsonKey(ignore: true)
   @override
@@ -1320,7 +1341,8 @@ abstract class _HomepageState implements HomepageState {
       required GeneralGroupInfo? generalGroupInfo,
       required bool isShowingSearchBar,
       required String searchValue,
-      required List<DrawableRoot?> privateGroupAvatarSvgs}) = _$_HomepageState;
+      required List<DrawableRoot?> privateGroupAvatarSvgs,
+      required bool isDataFetched}) = _$_HomepageState;
 
   @override
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
@@ -1332,6 +1354,8 @@ abstract class _HomepageState implements HomepageState {
   String get searchValue;
   @override
   List<DrawableRoot?> get privateGroupAvatarSvgs;
+  @override
+  bool get isDataFetched;
   @override
   @JsonKey(ignore: true)
   _$HomepageStateCopyWith<_HomepageState> get copyWith =>

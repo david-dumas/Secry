@@ -62,5 +62,6 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
     if (groupsAndGeneralAboutInfo.generalInfo != null) {
       add(HomepageEvent.generalGroupInfoUpdated(groupsAndGeneralAboutInfo.generalInfo!));
     }
+    emit(state.copyWith(isDataFetched: true));
   }
 }

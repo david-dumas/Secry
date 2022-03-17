@@ -7,4 +7,5 @@ class GroupOverviewEvent with _$GroupOverviewEvent {
       _ChatInfoItemsUpdated;
   const factory GroupOverviewEvent.surveyInfoItemsUpdated(List<GroupOverviewRowInfo> surveyInfoItems) =
       _SurveyInfoItemsUpdated;
+  const factory GroupOverviewEvent.groupOverviewRefreshed(String groupId) = _GroupOverviewRefreshed;
 }

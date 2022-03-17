@@ -20,36 +20,40 @@ class GroupOverviewBloc extends Bloc<GroupOverviewEvent, GroupOverviewState> {
   }
 
   Future<void> _onEvent(GroupOverviewEvent event, Emitter<GroupOverviewState> emit) async {
-    await event.map(
-      initialized: (e) async {
-        final groupChatsAndSurveysWithGeneralGroupInfo = await _groupsRepository.getChatsAndSurveys(groupId: e.groupId);
+    await event.map(initialized: (e) async {
+      fetchChatsAndSurveys(groupId: e.groupId);
+    }, chatInfoItemsUpdated: (e) async {
+      emit(state.copyWith(chatInfoItems: e.chatInfoItems));
+    }, surveyInfoItemsUpdated: (e) async {
+      emit(state.copyWith(surveyInfoItems: e.surveyInfoItems));
+    }, groupOverviewRefreshed: (e) async {
+      fetchChatsAndSurveys(groupId: e.groupId);
+    });
+  }
 
-        if (groupChatsAndSurveysWithGeneralGroupInfo != null) {
-          final mostRecentGroupChats = groupChatsAndSurveysWithGeneralGroupInfo.chats;
-          final chatOverviewRows = mostRecentGroupChats
-              .map((generalChatInfo) => GroupOverviewRowInfo(
-                  id: generalChatInfo.id, title: generalChatInfo.title, createdAt: generalChatInfo.createdAt))
-              .toList();
+  Future<void> fetchChatsAndSurveys({required String groupId}) async {
+    final groupChatsAndSurveysWithGeneralGroupInfo = await _groupsRepository.getChatsAndSurveys(groupId: groupId);
 
-          await AvatarHelper().addSvgToGroupRowsInfo(chatOverviewRows);
-          add(GroupOverviewEvent.chatInfoItemsUpdated(chatOverviewRows));
+    if (groupChatsAndSurveysWithGeneralGroupInfo != null) {
+      final mostRecentGroupChats = groupChatsAndSurveysWithGeneralGroupInfo.chats;
+      final chatOverviewRows = mostRecentGroupChats
+          .map((generalChatInfo) => GroupOverviewRowInfo(
+              id: generalChatInfo.id, title: generalChatInfo.title, createdAt: generalChatInfo.createdAt))
+          .toList();
 
-          final mostRecentGroupSurveys = groupChatsAndSurveysWithGeneralGroupInfo.surveys;
-          final surveyOverviewRows = mostRecentGroupSurveys
-              .map((generalSurveyInfo) => GroupOverviewRowInfo(
-                  id: generalSurveyInfo.id, title: generalSurveyInfo.title, createdAt: generalSurveyInfo.createdAt))
-              .toList();
+      await AvatarHelper().addSvgToGroupRowsInfo(chatOverviewRows);
+      add(GroupOverviewEvent.chatInfoItemsUpdated(chatOverviewRows));
 
-          await AvatarHelper().addSvgToGroupRowsInfo(surveyOverviewRows);
-          add(GroupOverviewEvent.surveyInfoItemsUpdated(surveyOverviewRows));
-        }
-      },
-      chatInfoItemsUpdated: (e) async {
-        emit(state.copyWith(chatInfoItems: e.chatInfoItems));
-      },
-      surveyInfoItemsUpdated: (e) async {
-        emit(state.copyWith(surveyInfoItems: e.surveyInfoItems));
-      },
-    );
+      final mostRecentGroupSurveys = groupChatsAndSurveysWithGeneralGroupInfo.surveys;
+      final surveyOverviewRows = mostRecentGroupSurveys
+          .map((generalSurveyInfo) => GroupOverviewRowInfo(
+              id: generalSurveyInfo.id, title: generalSurveyInfo.title, createdAt: generalSurveyInfo.createdAt))
+          .toList();
+
+      await AvatarHelper().addSvgToGroupRowsInfo(surveyOverviewRows);
+      add(GroupOverviewEvent.surveyInfoItemsUpdated(surveyOverviewRows));
+
+      emit(state.copyWith(isDataFetched: true));
+    }
   }
 }

@@ -37,6 +37,12 @@ class _$GroupOverviewEventTearOff {
       surveyInfoItems,
     );
   }
+
+  _GroupOverviewRefreshed groupOverviewRefreshed(String groupId) {
+    return _GroupOverviewRefreshed(
+      groupId,
+    );
+  }
 }
 
 /// @nodoc
@@ -51,6 +57,7 @@ mixin _$GroupOverviewEvent {
         chatInfoItemsUpdated,
     required TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)
         surveyInfoItemsUpdated,
+    required TResult Function(String groupId) groupOverviewRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,6 +67,7 @@ mixin _$GroupOverviewEvent {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -69,6 +77,7 @@ mixin _$GroupOverviewEvent {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -78,6 +87,8 @@ mixin _$GroupOverviewEvent {
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
+    required TResult Function(_GroupOverviewRefreshed value)
+        groupOverviewRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -85,6 +96,7 @@ mixin _$GroupOverviewEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -92,6 +104,7 @@ mixin _$GroupOverviewEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -184,6 +197,7 @@ class _$_Initialized implements _Initialized {
         chatInfoItemsUpdated,
     required TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)
         surveyInfoItemsUpdated,
+    required TResult Function(String groupId) groupOverviewRefreshed,
   }) {
     return initialized(groupId);
   }
@@ -196,6 +210,7 @@ class _$_Initialized implements _Initialized {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
   }) {
     return initialized?.call(groupId);
   }
@@ -208,6 +223,7 @@ class _$_Initialized implements _Initialized {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -223,6 +239,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
+    required TResult Function(_GroupOverviewRefreshed value)
+        groupOverviewRefreshed,
   }) {
     return initialized(this);
   }
@@ -233,6 +251,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
   }) {
     return initialized?.call(this);
   }
@@ -243,6 +262,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -333,6 +353,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
         chatInfoItemsUpdated,
     required TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)
         surveyInfoItemsUpdated,
+    required TResult Function(String groupId) groupOverviewRefreshed,
   }) {
     return chatInfoItemsUpdated(chatInfoItems);
   }
@@ -345,6 +366,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
   }) {
     return chatInfoItemsUpdated?.call(chatInfoItems);
   }
@@ -357,6 +379,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
     required TResult orElse(),
   }) {
     if (chatInfoItemsUpdated != null) {
@@ -372,6 +395,8 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
+    required TResult Function(_GroupOverviewRefreshed value)
+        groupOverviewRefreshed,
   }) {
     return chatInfoItemsUpdated(this);
   }
@@ -382,6 +407,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
   }) {
     return chatInfoItemsUpdated?.call(this);
   }
@@ -392,6 +418,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
     required TResult orElse(),
   }) {
     if (chatInfoItemsUpdated != null) {
@@ -483,6 +510,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
         chatInfoItemsUpdated,
     required TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)
         surveyInfoItemsUpdated,
+    required TResult Function(String groupId) groupOverviewRefreshed,
   }) {
     return surveyInfoItemsUpdated(surveyInfoItems);
   }
@@ -495,6 +523,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
   }) {
     return surveyInfoItemsUpdated?.call(surveyInfoItems);
   }
@@ -507,6 +536,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
         chatInfoItemsUpdated,
     TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
     required TResult orElse(),
   }) {
     if (surveyInfoItemsUpdated != null) {
@@ -522,6 +552,8 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
     required TResult Function(_SurveyInfoItemsUpdated value)
         surveyInfoItemsUpdated,
+    required TResult Function(_GroupOverviewRefreshed value)
+        groupOverviewRefreshed,
   }) {
     return surveyInfoItemsUpdated(this);
   }
@@ -532,6 +564,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
   }) {
     return surveyInfoItemsUpdated?.call(this);
   }
@@ -542,6 +575,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
     TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
     required TResult orElse(),
   }) {
     if (surveyInfoItemsUpdated != null) {
@@ -562,15 +596,173 @@ abstract class _SurveyInfoItemsUpdated implements GroupOverviewEvent {
 }
 
 /// @nodoc
+abstract class _$GroupOverviewRefreshedCopyWith<$Res> {
+  factory _$GroupOverviewRefreshedCopyWith(_GroupOverviewRefreshed value,
+          $Res Function(_GroupOverviewRefreshed) then) =
+      __$GroupOverviewRefreshedCopyWithImpl<$Res>;
+  $Res call({String groupId});
+}
+
+/// @nodoc
+class __$GroupOverviewRefreshedCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    implements _$GroupOverviewRefreshedCopyWith<$Res> {
+  __$GroupOverviewRefreshedCopyWithImpl(_GroupOverviewRefreshed _value,
+      $Res Function(_GroupOverviewRefreshed) _then)
+      : super(_value, (v) => _then(v as _GroupOverviewRefreshed));
+
+  @override
+  _GroupOverviewRefreshed get _value => super._value as _GroupOverviewRefreshed;
+
+  @override
+  $Res call({
+    Object? groupId = freezed,
+  }) {
+    return _then(_GroupOverviewRefreshed(
+      groupId == freezed
+          ? _value.groupId
+          : groupId // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
+  const _$_GroupOverviewRefreshed(this.groupId);
+
+  @override
+  final String groupId;
+
+  @override
+  String toString() {
+    return 'GroupOverviewEvent.groupOverviewRefreshed(groupId: $groupId)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _GroupOverviewRefreshed &&
+            const DeepCollectionEquality().equals(other.groupId, groupId));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(groupId));
+
+  @JsonKey(ignore: true)
+  @override
+  _$GroupOverviewRefreshedCopyWith<_GroupOverviewRefreshed> get copyWith =>
+      __$GroupOverviewRefreshedCopyWithImpl<_GroupOverviewRefreshed>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String groupId) initialized,
+    required TResult Function(List<GroupOverviewRowInfo> chatInfoItems)
+        chatInfoItemsUpdated,
+    required TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)
+        surveyInfoItemsUpdated,
+    required TResult Function(String groupId) groupOverviewRefreshed,
+  }) {
+    return groupOverviewRefreshed(groupId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String groupId)? initialized,
+    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+        chatInfoItemsUpdated,
+    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+        surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
+  }) {
+    return groupOverviewRefreshed?.call(groupId);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String groupId)? initialized,
+    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+        chatInfoItemsUpdated,
+    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+        surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
+    required TResult orElse(),
+  }) {
+    if (groupOverviewRefreshed != null) {
+      return groupOverviewRefreshed(groupId);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
+    required TResult Function(_SurveyInfoItemsUpdated value)
+        surveyInfoItemsUpdated,
+    required TResult Function(_GroupOverviewRefreshed value)
+        groupOverviewRefreshed,
+  }) {
+    return groupOverviewRefreshed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+  }) {
+    return groupOverviewRefreshed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    required TResult orElse(),
+  }) {
+    if (groupOverviewRefreshed != null) {
+      return groupOverviewRefreshed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GroupOverviewRefreshed implements GroupOverviewEvent {
+  const factory _GroupOverviewRefreshed(String groupId) =
+      _$_GroupOverviewRefreshed;
+
+  String get groupId;
+  @JsonKey(ignore: true)
+  _$GroupOverviewRefreshedCopyWith<_GroupOverviewRefreshed> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$GroupOverviewStateTearOff {
   const _$GroupOverviewStateTearOff();
 
   _GroupOverviewState call(
       {required List<GroupOverviewRowInfo> chatInfoItems,
-      required List<GroupOverviewRowInfo> surveyInfoItems}) {
+      required List<GroupOverviewRowInfo> surveyInfoItems,
+      required bool isDataFetched}) {
     return _GroupOverviewState(
       chatInfoItems: chatInfoItems,
       surveyInfoItems: surveyInfoItems,
+      isDataFetched: isDataFetched,
     );
   }
 }
@@ -584,6 +776,7 @@ mixin _$GroupOverviewState {
       throw _privateConstructorUsedError;
   List<GroupOverviewRowInfo> get surveyInfoItems =>
       throw _privateConstructorUsedError;
+  bool get isDataFetched => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GroupOverviewStateCopyWith<GroupOverviewState> get copyWith =>
@@ -597,7 +790,8 @@ abstract class $GroupOverviewStateCopyWith<$Res> {
       _$GroupOverviewStateCopyWithImpl<$Res>;
   $Res call(
       {List<GroupOverviewRowInfo> chatInfoItems,
-      List<GroupOverviewRowInfo> surveyInfoItems});
+      List<GroupOverviewRowInfo> surveyInfoItems,
+      bool isDataFetched});
 }
 
 /// @nodoc
@@ -613,6 +807,7 @@ class _$GroupOverviewStateCopyWithImpl<$Res>
   $Res call({
     Object? chatInfoItems = freezed,
     Object? surveyInfoItems = freezed,
+    Object? isDataFetched = freezed,
   }) {
     return _then(_value.copyWith(
       chatInfoItems: chatInfoItems == freezed
@@ -623,6 +818,10 @@ class _$GroupOverviewStateCopyWithImpl<$Res>
           ? _value.surveyInfoItems
           : surveyInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
+      isDataFetched: isDataFetched == freezed
+          ? _value.isDataFetched
+          : isDataFetched // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -636,7 +835,8 @@ abstract class _$GroupOverviewStateCopyWith<$Res>
   @override
   $Res call(
       {List<GroupOverviewRowInfo> chatInfoItems,
-      List<GroupOverviewRowInfo> surveyInfoItems});
+      List<GroupOverviewRowInfo> surveyInfoItems,
+      bool isDataFetched});
 }
 
 /// @nodoc
@@ -654,6 +854,7 @@ class __$GroupOverviewStateCopyWithImpl<$Res>
   $Res call({
     Object? chatInfoItems = freezed,
     Object? surveyInfoItems = freezed,
+    Object? isDataFetched = freezed,
   }) {
     return _then(_GroupOverviewState(
       chatInfoItems: chatInfoItems == freezed
@@ -664,6 +865,10 @@ class __$GroupOverviewStateCopyWithImpl<$Res>
           ? _value.surveyInfoItems
           : surveyInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
+      isDataFetched: isDataFetched == freezed
+          ? _value.isDataFetched
+          : isDataFetched // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -672,16 +877,20 @@ class __$GroupOverviewStateCopyWithImpl<$Res>
 
 class _$_GroupOverviewState implements _GroupOverviewState {
   const _$_GroupOverviewState(
-      {required this.chatInfoItems, required this.surveyInfoItems});
+      {required this.chatInfoItems,
+      required this.surveyInfoItems,
+      required this.isDataFetched});
 
   @override
   final List<GroupOverviewRowInfo> chatInfoItems;
   @override
   final List<GroupOverviewRowInfo> surveyInfoItems;
+  @override
+  final bool isDataFetched;
 
   @override
   String toString() {
-    return 'GroupOverviewState(chatInfoItems: $chatInfoItems, surveyInfoItems: $surveyInfoItems)';
+    return 'GroupOverviewState(chatInfoItems: $chatInfoItems, surveyInfoItems: $surveyInfoItems, isDataFetched: $isDataFetched)';
   }
 
   @override
@@ -692,14 +901,17 @@ class _$_GroupOverviewState implements _GroupOverviewState {
             const DeepCollectionEquality()
                 .equals(other.chatInfoItems, chatInfoItems) &&
             const DeepCollectionEquality()
-                .equals(other.surveyInfoItems, surveyInfoItems));
+                .equals(other.surveyInfoItems, surveyInfoItems) &&
+            const DeepCollectionEquality()
+                .equals(other.isDataFetched, isDataFetched));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(chatInfoItems),
-      const DeepCollectionEquality().hash(surveyInfoItems));
+      const DeepCollectionEquality().hash(surveyInfoItems),
+      const DeepCollectionEquality().hash(isDataFetched));
 
   @JsonKey(ignore: true)
   @override
@@ -709,14 +921,16 @@ class _$_GroupOverviewState implements _GroupOverviewState {
 
 abstract class _GroupOverviewState implements GroupOverviewState {
   const factory _GroupOverviewState(
-          {required List<GroupOverviewRowInfo> chatInfoItems,
-          required List<GroupOverviewRowInfo> surveyInfoItems}) =
-      _$_GroupOverviewState;
+      {required List<GroupOverviewRowInfo> chatInfoItems,
+      required List<GroupOverviewRowInfo> surveyInfoItems,
+      required bool isDataFetched}) = _$_GroupOverviewState;
 
   @override
   List<GroupOverviewRowInfo> get chatInfoItems;
   @override
   List<GroupOverviewRowInfo> get surveyInfoItems;
+  @override
+  bool get isDataFetched;
   @override
   @JsonKey(ignore: true)
   _$GroupOverviewStateCopyWith<_GroupOverviewState> get copyWith =>
