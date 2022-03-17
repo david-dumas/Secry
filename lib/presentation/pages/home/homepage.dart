@@ -83,10 +83,7 @@ class _HomePageState extends State<HomePage> {
                         titleRowTrailingAction: () {
                           if (Platform.isAndroid) {
                             AutoRouter.of(context).push(AddGroupPageAndroidRoute()).then((isRefreshNeeded) async {
-                              // TODO use database listener instead of delay
-                              await Future.delayed(const Duration(milliseconds: 250), () {
-                                context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
-                              });
+                              context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
                             });
                           } else if (Platform.isIOS) {
                             showMaterialModalBottomSheet(
@@ -94,10 +91,7 @@ class _HomePageState extends State<HomePage> {
                               useRootNavigator: true,
                               builder: (context) => AddGroupPageIOS(),
                             ).then((isRefreshNeeded) async {
-                              // TODO use database listener instead of delay
-                              await Future.delayed(const Duration(milliseconds: 250), () {
-                                context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
-                              });
+                              context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
                             });
                             ;
                           }
