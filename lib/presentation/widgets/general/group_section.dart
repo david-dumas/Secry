@@ -48,12 +48,9 @@ class GroupSection extends StatelessWidget {
               titleRowTrailingAction!();
             }
           }),
+      SizedBox(height: cellInfoItems.length < 1 || !isTitleRowActionButtonVisible ? 16.0 : 0.0),
       cellInfoItems.length < 1
-          ? GroupSectionEmptyStateRow(
-              title: emptyStateTitle,
-              description: emptyStateDescription,
-              icon: emptyStateIcon,
-            )
+          ? GroupSectionEmptyStateRow(title: emptyStateTitle, description: emptyStateDescription)
           : ContentSectionWithRows(
               cellInfoItems: this.cellInfoItems,
               isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
