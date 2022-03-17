@@ -1,5 +1,6 @@
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:secry/domain/chats/last_chat_message.dart';
+import 'package:secry/util/date_and_time/text_from_date.dart';
 
 class GroupOverviewRowInfo {
   final String id;
@@ -28,5 +29,12 @@ class GroupOverviewRowInfo {
         createdAt: json.containsKey('createdAt')
             ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000) : null)
             : null);
+  }
+}
+
+extension TimeAgo on GroupOverviewRowInfo {
+  String getTimoAgoLabel() {
+    return this.lastChatMessage?.createdAt?.getTimeAgoTimeIndication() ??
+        (this.createdAt?.getTimeAgoTimeIndication() ?? '');
   }
 }

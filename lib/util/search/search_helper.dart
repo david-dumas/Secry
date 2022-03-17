@@ -11,7 +11,7 @@ class SearchHelper {
               id: groupInfoItem.id,
               title: groupInfoItem.title,
               description: groupInfoItem.lastChatMessage?.text ?? '',
-              timeIndication: groupInfoItem.lastChatMessage?.createdAt?.getTimeAgoTimeIndication() ?? '',
+              timeIndication: groupInfoItem.getTimoAgoLabel(),
               svg: groupInfoItem.svg))
           .toList();
     } else {
@@ -27,7 +27,7 @@ class SearchHelper {
               id: groupInfoItem.id,
               title: groupInfoItem.title,
               description: groupInfoItem.lastChatMessage?.text ?? '',
-              timeIndication: groupInfoItem.lastChatMessage?.createdAt?.getTimeAgoTimeIndication() ?? '',
+              timeIndication: groupInfoItem.getTimoAgoLabel(),
               svg: groupInfoItem.svg))
           .toList();
     }
