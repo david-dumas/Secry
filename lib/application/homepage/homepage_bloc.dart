@@ -50,6 +50,13 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
         await _activityRepository.getPrivateGroups(pageNumber: pageNumber, pageSize: pageSize);
     await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
 
+    groupsAndGeneralAboutInfo.groups.sort((group1, group2) {
+      return (group2.lastChatMessage?.createdAt?.millisecondsSinceEpoch ??
+              (group2.createdAt?.millisecondsSinceEpoch ?? 0))
+          .compareTo(group1.lastChatMessage?.createdAt?.millisecondsSinceEpoch ??
+              (group1.createdAt?.millisecondsSinceEpoch ?? 0));
+    });
+
     add(HomepageEvent.privateGroupsInfoUpdated(groupsAndGeneralAboutInfo.groups));
 
     if (groupsAndGeneralAboutInfo.generalInfo != null) {
