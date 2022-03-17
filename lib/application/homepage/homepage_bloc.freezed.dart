@@ -47,6 +47,10 @@ class _$HomepageEventTearOff {
       newGroupInfo,
     );
   }
+
+  _GroupsRefreshed groupsRefreshed() {
+    return const _GroupsRefreshed();
+  }
 }
 
 /// @nodoc
@@ -63,6 +67,7 @@ mixin _$HomepageEvent {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,6 +78,7 @@ mixin _$HomepageEvent {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -83,6 +89,7 @@ mixin _$HomepageEvent {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -96,6 +103,7 @@ mixin _$HomepageEvent {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -106,6 +114,7 @@ mixin _$HomepageEvent {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -116,6 +125,7 @@ mixin _$HomepageEvent {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -185,6 +195,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() groupsRefreshed,
   }) {
     return initialized();
   }
@@ -198,6 +209,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
   }) {
     return initialized?.call();
   }
@@ -211,6 +223,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -230,6 +243,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return initialized(this);
   }
@@ -243,6 +257,7 @@ class _$_Initialized implements _Initialized {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return initialized?.call(this);
   }
@@ -256,6 +271,7 @@ class _$_Initialized implements _Initialized {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -344,6 +360,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated(privateGroupsRowsInfo);
   }
@@ -357,6 +374,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated?.call(privateGroupsRowsInfo);
   }
@@ -370,6 +388,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -389,6 +408,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated(this);
   }
@@ -402,6 +422,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated?.call(this);
   }
@@ -415,6 +436,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -510,6 +532,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar(isShowing);
   }
@@ -523,6 +546,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar?.call(isShowing);
   }
@@ -536,6 +560,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -555,6 +580,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar(this);
   }
@@ -568,6 +594,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar?.call(this);
   }
@@ -581,6 +608,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -672,6 +700,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() groupsRefreshed,
   }) {
     return searchValueUpdated(newValue);
   }
@@ -685,6 +714,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
   }) {
     return searchValueUpdated?.call(newValue);
   }
@@ -698,6 +728,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (searchValueUpdated != null) {
@@ -717,6 +748,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return searchValueUpdated(this);
   }
@@ -730,6 +762,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return searchValueUpdated?.call(this);
   }
@@ -743,6 +776,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (searchValueUpdated != null) {
@@ -836,6 +870,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() groupsRefreshed,
   }) {
     return generalGroupInfoUpdated(newGroupInfo);
   }
@@ -849,6 +884,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
   }) {
     return generalGroupInfoUpdated?.call(newGroupInfo);
   }
@@ -862,6 +898,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (generalGroupInfoUpdated != null) {
@@ -881,6 +918,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return generalGroupInfoUpdated(this);
   }
@@ -894,6 +932,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return generalGroupInfoUpdated?.call(this);
   }
@@ -907,6 +946,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
     if (generalGroupInfoUpdated != null) {
@@ -924,6 +964,144 @@ abstract class _GeneralGroupInfoUpdated implements HomepageEvent {
   @JsonKey(ignore: true)
   _$GeneralGroupInfoUpdatedCopyWith<_GeneralGroupInfoUpdated> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$GroupsRefreshedCopyWith<$Res> {
+  factory _$GroupsRefreshedCopyWith(
+          _GroupsRefreshed value, $Res Function(_GroupsRefreshed) then) =
+      __$GroupsRefreshedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GroupsRefreshedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$GroupsRefreshedCopyWith<$Res> {
+  __$GroupsRefreshedCopyWithImpl(
+      _GroupsRefreshed _value, $Res Function(_GroupsRefreshed) _then)
+      : super(_value, (v) => _then(v as _GroupsRefreshed));
+
+  @override
+  _GroupsRefreshed get _value => super._value as _GroupsRefreshed;
+}
+
+/// @nodoc
+
+class _$_GroupsRefreshed implements _GroupsRefreshed {
+  const _$_GroupsRefreshed();
+
+  @override
+  String toString() {
+    return 'HomepageEvent.groupsRefreshed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _GroupsRefreshed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(GeneralGroupInfo newGroupInfo)
+        generalGroupInfoUpdated,
+    required TResult Function() groupsRefreshed,
+  }) {
+    return groupsRefreshed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
+  }) {
+    return groupsRefreshed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? groupsRefreshed,
+    required TResult orElse(),
+  }) {
+    if (groupsRefreshed != null) {
+      return groupsRefreshed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_GeneralGroupInfoUpdated value)
+        generalGroupInfoUpdated,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+  }) {
+    return groupsRefreshed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+  }) {
+    return groupsRefreshed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    required TResult orElse(),
+  }) {
+    if (groupsRefreshed != null) {
+      return groupsRefreshed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GroupsRefreshed implements HomepageEvent {
+  const factory _GroupsRefreshed() = _$_GroupsRefreshed;
 }
 
 /// @nodoc

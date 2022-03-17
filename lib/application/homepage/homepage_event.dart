@@ -8,4 +8,5 @@ class HomepageEvent with _$HomepageEvent {
   const factory HomepageEvent.updatedIsShowingSearchBar(bool isShowing) = _UpdatedIsShowingSearchBar;
   const factory HomepageEvent.searchValueUpdated(String newValue) = _SearchValueUpdated;
   const factory HomepageEvent.generalGroupInfoUpdated(GeneralGroupInfo newGroupInfo) = _GeneralGroupInfoUpdated;
+  const factory HomepageEvent.groupsRefreshed() = _GroupsRefreshed;
 }

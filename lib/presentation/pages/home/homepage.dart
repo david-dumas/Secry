@@ -63,38 +63,43 @@ class _HomePageState extends State<HomePage> {
                     searchValueChanged: (newValue) {
                       context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
                     }),
-                body: SingleChildScrollView(
-                  child: Padding(
-                    padding: pagePaddingAllSides,
-                    child: GroupSection(
-                      title: tr('home_my_groups'),
-                      totalAmountOfGroups: state.generalGroupInfo?.totalNumberOfGroups ?? 0,
-                      cellInfoItems: SearchHelper()
-                          .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
-                      titleRowActionButtonText: tr('general_add_group'),
-                      isTitleRowActionButtonVisible: true,
-                      emptyStateTitle: tr('action_create_new_group_title'),
-                      emptyStateDescription: tr('action_create_new_group_description'),
-                      emptyStateIcon: Icon(Icons.group_add),
-                      titleRowTrailingAction: () {
-                        if (Platform.isAndroid) {
-                          AutoRouter.of(context).push(AddGroupPageAndroidRoute());
-                        } else if (Platform.isIOS) {
-                          showMaterialModalBottomSheet(
-                            context: context,
-                            useRootNavigator: true,
-                            builder: (context) => AddGroupPageIOS(),
+                body: RefreshIndicator(
+                  onRefresh: () async {
+                    context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                  },
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: pagePaddingAllSides,
+                      child: GroupSection(
+                        title: tr('home_my_groups'),
+                        totalAmountOfGroups: state.generalGroupInfo?.totalNumberOfGroups ?? 0,
+                        cellInfoItems: SearchHelper()
+                            .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
+                        titleRowActionButtonText: tr('general_add_group'),
+                        isTitleRowActionButtonVisible: true,
+                        emptyStateTitle: tr('action_create_new_group_title'),
+                        emptyStateDescription: tr('action_create_new_group_description'),
+                        emptyStateIcon: Icon(Icons.group_add),
+                        titleRowTrailingAction: () {
+                          if (Platform.isAndroid) {
+                            AutoRouter.of(context).push(AddGroupPageAndroidRoute());
+                          } else if (Platform.isIOS) {
+                            showMaterialModalBottomSheet(
+                              context: context,
+                              useRootNavigator: true,
+                              builder: (context) => AddGroupPageIOS(),
+                            );
+                          }
+                        },
+                        openPageForPressedCell: (String id, String groupTitle) {
+                          pushNewScreen(
+                            context,
+                            screen: GroupOverviewPage(title: groupTitle, groupId: id),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
                           );
-                        }
-                      },
-                      openPageForPressedCell: (String id, String groupTitle) {
-                        pushNewScreen(
-                          context,
-                          screen: GroupOverviewPage(title: groupTitle, groupId: id),
-                          withNavBar: true,
-                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                        );
-                      },
+                        },
+                      ),
                     ),
                   ),
                 ),
