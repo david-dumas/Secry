@@ -24,7 +24,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
   Future<void> _onEvent(HomepageEvent event, Emitter<HomepageState> emit) async {
     await event.map(
       initialized: (e) async {
-        fetchGgroups(pageNumber: 1, pageSize: 50);
+        fetchGroups(pageNumber: 1, pageSize: 50);
       },
       privateGroupsInfoUpdated: (e) async {
         emit(state.copyWith(privateGroupsRowsInfo: e.privateGroupsRowsInfo));
@@ -40,12 +40,12 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
         emit(state.copyWith(generalGroupInfo: e.newGroupInfo));
       },
       groupsRefreshed: (e) async {
-        fetchGgroups(pageNumber: 1, pageSize: 50);
+        fetchGroups(pageNumber: 1, pageSize: 50);
       },
     );
   }
 
-  Future<void> fetchGgroups({required int pageNumber, required int pageSize}) async {
+  Future<void> fetchGroups({required int pageNumber, required int pageSize}) async {
     final groupsAndGeneralAboutInfo =
         await _activityRepository.getPrivateGroups(pageNumber: pageNumber, pageSize: pageSize);
     await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
