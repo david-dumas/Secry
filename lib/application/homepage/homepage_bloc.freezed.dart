@@ -48,6 +48,10 @@ class _$HomepageEventTearOff {
     );
   }
 
+  _ScrolledToLoadMoreItems scrolledToLoadMoreItems() {
+    return const _ScrolledToLoadMoreItems();
+  }
+
   _GroupsRefreshed groupsRefreshed() {
     return const _GroupsRefreshed();
   }
@@ -67,6 +71,7 @@ mixin _$HomepageEvent {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
     required TResult Function() groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
@@ -78,6 +83,7 @@ mixin _$HomepageEvent {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
@@ -89,6 +95,7 @@ mixin _$HomepageEvent {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) =>
@@ -103,6 +110,8 @@ mixin _$HomepageEvent {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
     required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
@@ -114,6 +123,7 @@ mixin _$HomepageEvent {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) =>
       throw _privateConstructorUsedError;
@@ -125,6 +135,7 @@ mixin _$HomepageEvent {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) =>
@@ -195,6 +206,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
     required TResult Function() groupsRefreshed,
   }) {
     return initialized();
@@ -209,6 +221,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
   }) {
     return initialized?.call();
@@ -223,6 +236,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -243,6 +257,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
     required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return initialized(this);
@@ -257,6 +273,7 @@ class _$_Initialized implements _Initialized {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return initialized?.call(this);
@@ -271,6 +288,7 @@ class _$_Initialized implements _Initialized {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -360,6 +378,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
     required TResult Function() groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated(privateGroupsRowsInfo);
@@ -374,6 +393,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated?.call(privateGroupsRowsInfo);
@@ -388,6 +408,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -408,6 +429,8 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
     required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated(this);
@@ -422,6 +445,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return privateGroupsInfoUpdated?.call(this);
@@ -436,6 +460,7 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -532,6 +557,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
     required TResult Function() groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar(isShowing);
@@ -546,6 +572,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar?.call(isShowing);
@@ -560,6 +587,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -580,6 +608,8 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
     required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar(this);
@@ -594,6 +624,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return updatedIsShowingSearchBar?.call(this);
@@ -608,6 +639,7 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -700,6 +732,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
     required TResult Function() groupsRefreshed,
   }) {
     return searchValueUpdated(newValue);
@@ -714,6 +747,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
   }) {
     return searchValueUpdated?.call(newValue);
@@ -728,6 +762,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -748,6 +783,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
     required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return searchValueUpdated(this);
@@ -762,6 +799,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return searchValueUpdated?.call(this);
@@ -776,6 +814,7 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -870,6 +909,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
     required TResult Function() groupsRefreshed,
   }) {
     return generalGroupInfoUpdated(newGroupInfo);
@@ -884,6 +924,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
   }) {
     return generalGroupInfoUpdated?.call(newGroupInfo);
@@ -898,6 +939,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -918,6 +960,8 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
     required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return generalGroupInfoUpdated(this);
@@ -932,6 +976,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return generalGroupInfoUpdated?.call(this);
@@ -946,6 +991,7 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -964,6 +1010,152 @@ abstract class _GeneralGroupInfoUpdated implements HomepageEvent {
   @JsonKey(ignore: true)
   _$GeneralGroupInfoUpdatedCopyWith<_GeneralGroupInfoUpdated> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ScrolledToLoadMoreItemsCopyWith<$Res> {
+  factory _$ScrolledToLoadMoreItemsCopyWith(_ScrolledToLoadMoreItems value,
+          $Res Function(_ScrolledToLoadMoreItems) then) =
+      __$ScrolledToLoadMoreItemsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ScrolledToLoadMoreItemsCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$ScrolledToLoadMoreItemsCopyWith<$Res> {
+  __$ScrolledToLoadMoreItemsCopyWithImpl(_ScrolledToLoadMoreItems _value,
+      $Res Function(_ScrolledToLoadMoreItems) _then)
+      : super(_value, (v) => _then(v as _ScrolledToLoadMoreItems));
+
+  @override
+  _ScrolledToLoadMoreItems get _value =>
+      super._value as _ScrolledToLoadMoreItems;
+}
+
+/// @nodoc
+
+class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
+  const _$_ScrolledToLoadMoreItems();
+
+  @override
+  String toString() {
+    return 'HomepageEvent.scrolledToLoadMoreItems()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ScrolledToLoadMoreItems);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(GeneralGroupInfo newGroupInfo)
+        generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+  }) {
+    return scrolledToLoadMoreItems();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+  }) {
+    return scrolledToLoadMoreItems?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    required TResult orElse(),
+  }) {
+    if (scrolledToLoadMoreItems != null) {
+      return scrolledToLoadMoreItems();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_GeneralGroupInfoUpdated value)
+        generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+  }) {
+    return scrolledToLoadMoreItems(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+  }) {
+    return scrolledToLoadMoreItems?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    required TResult orElse(),
+  }) {
+    if (scrolledToLoadMoreItems != null) {
+      return scrolledToLoadMoreItems(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ScrolledToLoadMoreItems implements HomepageEvent {
+  const factory _ScrolledToLoadMoreItems() = _$_ScrolledToLoadMoreItems;
 }
 
 /// @nodoc
@@ -1014,6 +1206,7 @@ class _$_GroupsRefreshed implements _GroupsRefreshed {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(GeneralGroupInfo newGroupInfo)
         generalGroupInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
     required TResult Function() groupsRefreshed,
   }) {
     return groupsRefreshed();
@@ -1028,6 +1221,7 @@ class _$_GroupsRefreshed implements _GroupsRefreshed {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
   }) {
     return groupsRefreshed?.call();
@@ -1042,6 +1236,7 @@ class _$_GroupsRefreshed implements _GroupsRefreshed {
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
     TResult Function()? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -1062,6 +1257,8 @@ class _$_GroupsRefreshed implements _GroupsRefreshed {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_GeneralGroupInfoUpdated value)
         generalGroupInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
     required TResult Function(_GroupsRefreshed value) groupsRefreshed,
   }) {
     return groupsRefreshed(this);
@@ -1076,6 +1273,7 @@ class _$_GroupsRefreshed implements _GroupsRefreshed {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
   }) {
     return groupsRefreshed?.call(this);
@@ -1090,6 +1288,7 @@ class _$_GroupsRefreshed implements _GroupsRefreshed {
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_GroupsRefreshed value)? groupsRefreshed,
     required TResult orElse(),
   }) {
@@ -1114,7 +1313,9 @@ class _$HomepageStateTearOff {
       required bool isShowingSearchBar,
       required String searchValue,
       required List<DrawableRoot?> privateGroupAvatarSvgs,
-      required bool isDataFetched}) {
+      required bool isDataFetched,
+      required int pageNumber,
+      required int pageSize}) {
     return _HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo,
       generalGroupInfo: generalGroupInfo,
@@ -1122,6 +1323,8 @@ class _$HomepageStateTearOff {
       searchValue: searchValue,
       privateGroupAvatarSvgs: privateGroupAvatarSvgs,
       isDataFetched: isDataFetched,
+      pageNumber: pageNumber,
+      pageSize: pageSize,
     );
   }
 }
@@ -1139,6 +1342,8 @@ mixin _$HomepageState {
   List<DrawableRoot?> get privateGroupAvatarSvgs =>
       throw _privateConstructorUsedError;
   bool get isDataFetched => throw _privateConstructorUsedError;
+  int get pageNumber => throw _privateConstructorUsedError;
+  int get pageSize => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $HomepageStateCopyWith<HomepageState> get copyWith =>
@@ -1156,7 +1361,9 @@ abstract class $HomepageStateCopyWith<$Res> {
       bool isShowingSearchBar,
       String searchValue,
       List<DrawableRoot?> privateGroupAvatarSvgs,
-      bool isDataFetched});
+      bool isDataFetched,
+      int pageNumber,
+      int pageSize});
 }
 
 /// @nodoc
@@ -1176,6 +1383,8 @@ class _$HomepageStateCopyWithImpl<$Res>
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
     Object? isDataFetched = freezed,
+    Object? pageNumber = freezed,
+    Object? pageSize = freezed,
   }) {
     return _then(_value.copyWith(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
@@ -1202,6 +1411,14 @@ class _$HomepageStateCopyWithImpl<$Res>
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
               as bool,
+      pageNumber: pageNumber == freezed
+          ? _value.pageNumber
+          : pageNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSize: pageSize == freezed
+          ? _value.pageSize
+          : pageSize // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1219,7 +1436,9 @@ abstract class _$HomepageStateCopyWith<$Res>
       bool isShowingSearchBar,
       String searchValue,
       List<DrawableRoot?> privateGroupAvatarSvgs,
-      bool isDataFetched});
+      bool isDataFetched,
+      int pageNumber,
+      int pageSize});
 }
 
 /// @nodoc
@@ -1241,6 +1460,8 @@ class __$HomepageStateCopyWithImpl<$Res>
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
     Object? isDataFetched = freezed,
+    Object? pageNumber = freezed,
+    Object? pageSize = freezed,
   }) {
     return _then(_HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
@@ -1267,6 +1488,14 @@ class __$HomepageStateCopyWithImpl<$Res>
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
               as bool,
+      pageNumber: pageNumber == freezed
+          ? _value.pageNumber
+          : pageNumber // ignore: cast_nullable_to_non_nullable
+              as int,
+      pageSize: pageSize == freezed
+          ? _value.pageSize
+          : pageSize // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1280,7 +1509,9 @@ class _$_HomepageState implements _HomepageState {
       required this.isShowingSearchBar,
       required this.searchValue,
       required this.privateGroupAvatarSvgs,
-      required this.isDataFetched});
+      required this.isDataFetched,
+      required this.pageNumber,
+      required this.pageSize});
 
   @override
   final List<GroupOverviewRowInfo> privateGroupsRowsInfo;
@@ -1294,10 +1525,14 @@ class _$_HomepageState implements _HomepageState {
   final List<DrawableRoot?> privateGroupAvatarSvgs;
   @override
   final bool isDataFetched;
+  @override
+  final int pageNumber;
+  @override
+  final int pageSize;
 
   @override
   String toString() {
-    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, generalGroupInfo: $generalGroupInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs, isDataFetched: $isDataFetched)';
+    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, generalGroupInfo: $generalGroupInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs, isDataFetched: $isDataFetched, pageNumber: $pageNumber, pageSize: $pageSize)';
   }
 
   @override
@@ -1316,7 +1551,10 @@ class _$_HomepageState implements _HomepageState {
             const DeepCollectionEquality()
                 .equals(other.privateGroupAvatarSvgs, privateGroupAvatarSvgs) &&
             const DeepCollectionEquality()
-                .equals(other.isDataFetched, isDataFetched));
+                .equals(other.isDataFetched, isDataFetched) &&
+            const DeepCollectionEquality()
+                .equals(other.pageNumber, pageNumber) &&
+            const DeepCollectionEquality().equals(other.pageSize, pageSize));
   }
 
   @override
@@ -1327,7 +1565,9 @@ class _$_HomepageState implements _HomepageState {
       const DeepCollectionEquality().hash(isShowingSearchBar),
       const DeepCollectionEquality().hash(searchValue),
       const DeepCollectionEquality().hash(privateGroupAvatarSvgs),
-      const DeepCollectionEquality().hash(isDataFetched));
+      const DeepCollectionEquality().hash(isDataFetched),
+      const DeepCollectionEquality().hash(pageNumber),
+      const DeepCollectionEquality().hash(pageSize));
 
   @JsonKey(ignore: true)
   @override
@@ -1342,7 +1582,9 @@ abstract class _HomepageState implements HomepageState {
       required bool isShowingSearchBar,
       required String searchValue,
       required List<DrawableRoot?> privateGroupAvatarSvgs,
-      required bool isDataFetched}) = _$_HomepageState;
+      required bool isDataFetched,
+      required int pageNumber,
+      required int pageSize}) = _$_HomepageState;
 
   @override
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
@@ -1356,6 +1598,10 @@ abstract class _HomepageState implements HomepageState {
   List<DrawableRoot?> get privateGroupAvatarSvgs;
   @override
   bool get isDataFetched;
+  @override
+  int get pageNumber;
+  @override
+  int get pageSize;
   @override
   @JsonKey(ignore: true)
   _$HomepageStateCopyWith<_HomepageState> get copyWith =>

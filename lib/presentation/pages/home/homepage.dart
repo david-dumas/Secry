@@ -26,6 +26,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TabbarBloc, TabbarState>(
@@ -68,6 +70,13 @@ class _HomePageState extends State<HomePage> {
                     context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
                   },
                   child: SingleChildScrollView(
+                    controller: _scrollController
+                      ..addListener(() {
+                        if (_scrollController.offset == _scrollController.position.maxScrollExtent) {
+                          // TODO check is isn't already fetching
+                          context.read<HomepageBloc>().add(HomepageEvent.scrolledToLoadMoreItems());
+                        }
+                      }),
                     child: Padding(
                       padding: pagePaddingAllSides,
                       child: GroupSection(

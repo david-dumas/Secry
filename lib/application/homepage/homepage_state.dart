@@ -8,7 +8,9 @@ class HomepageState with _$HomepageState {
       required bool isShowingSearchBar,
       required String searchValue,
       required List<DrawableRoot?> privateGroupAvatarSvgs,
-      required bool isDataFetched}) = _HomepageState;
+      required bool isDataFetched,
+      required int pageNumber,
+      required int pageSize}) = _HomepageState;
 
   factory HomepageState.initial() => HomepageState(
       privateGroupsRowsInfo: [],
@@ -16,5 +18,7 @@ class HomepageState with _$HomepageState {
       isShowingSearchBar: false,
       searchValue: '',
       privateGroupAvatarSvgs: [],
-      isDataFetched: false);
+      isDataFetched: false,
+      pageNumber: 1,
+      pageSize: 15);
 }

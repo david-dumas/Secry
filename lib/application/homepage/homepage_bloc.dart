@@ -24,7 +24,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
   Future<void> _onEvent(HomepageEvent event, Emitter<HomepageState> emit) async {
     await event.map(
       initialized: (e) async {
-        fetchGroups(pageNumber: 1, pageSize: 50);
+        fetchGroups(pageNumber: 1, pageSize: state.pageSize);
       },
       privateGroupsInfoUpdated: (e) async {
         emit(state.copyWith(privateGroupsRowsInfo: e.privateGroupsRowsInfo));
@@ -39,8 +39,20 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       generalGroupInfoUpdated: (e) async {
         emit(state.copyWith(generalGroupInfo: e.newGroupInfo));
       },
+      scrolledToLoadMoreItems: (e) async {
+        if (state.generalGroupInfo != null) {
+          if (state.generalGroupInfo!.hasNextPage) {
+            emit(state.copyWith(pageNumber: state.pageNumber + 1));
+            fetchGroups(pageNumber: state.pageNumber, pageSize: state.pageSize);
+          } else {
+            // TODO show all items are fetched
+          }
+        } else {
+          fetchGroups(pageNumber: 1, pageSize: state.pageSize);
+        }
+      },
       groupsRefreshed: (e) async {
-        fetchGroups(pageNumber: 1, pageSize: 50);
+        fetchGroups(pageNumber: 1, pageSize: state.pageSize);
       },
     );
   }
@@ -50,14 +62,22 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
         await _activityRepository.getPrivateGroups(pageNumber: pageNumber, pageSize: pageSize);
     await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
 
-    groupsAndGeneralAboutInfo.groups.sort((group1, group2) {
+    List<GroupOverviewRowInfo> privateGroupsRowsInfo = [];
+
+    if (pageNumber == 1) {
+      privateGroupsRowsInfo = [...[]..addAll(groupsAndGeneralAboutInfo.groups)];
+    } else {
+      privateGroupsRowsInfo = [...state.privateGroupsRowsInfo..addAll(groupsAndGeneralAboutInfo.groups)];
+    }
+
+    privateGroupsRowsInfo.sort((group1, group2) {
       return (group2.lastChatMessage?.createdAt?.millisecondsSinceEpoch ??
               (group2.createdAt?.millisecondsSinceEpoch ?? 0))
           .compareTo(group1.lastChatMessage?.createdAt?.millisecondsSinceEpoch ??
               (group1.createdAt?.millisecondsSinceEpoch ?? 0));
     });
 
-    add(HomepageEvent.privateGroupsInfoUpdated(groupsAndGeneralAboutInfo.groups));
+    add(HomepageEvent.privateGroupsInfoUpdated(privateGroupsRowsInfo));
 
     if (groupsAndGeneralAboutInfo.generalInfo != null) {
       add(HomepageEvent.generalGroupInfoUpdated(groupsAndGeneralAboutInfo.generalInfo!));
