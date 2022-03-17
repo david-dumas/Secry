@@ -123,9 +123,9 @@ class GroupSectionTitleRow extends StatelessWidget {
 class GroupSectionEmptyStateRow extends StatelessWidget {
   final String title;
   final String description;
-  final Icon icon;
+  final IconData? iconData;
 
-  const GroupSectionEmptyStateRow({Key? key, required this.title, required this.description, required this.icon})
+  const GroupSectionEmptyStateRow({Key? key, required this.title, required this.description, this.iconData = null})
       : super(key: key);
 
   @override
@@ -133,8 +133,8 @@ class GroupSectionEmptyStateRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        icon,
-        SizedBox(width: 12),
+        Visibility(visible: iconData != null, child: Icon(iconData)),
+        SizedBox(width: iconData != null ? 12 : 0),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
