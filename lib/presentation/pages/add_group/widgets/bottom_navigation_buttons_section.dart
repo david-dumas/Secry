@@ -113,7 +113,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
     }
 
     if (index == 0) {
-      Navigator.of(context).pop(context);
+      Navigator.of(context).pop(false);
     }
   }
 
@@ -148,7 +148,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
 
     if (currentIndex >= (totalNumberOfSteps - 1)) {
       context.read<AddGroupPageBloc>().add(AddGroupPageEvent.newGroupCreated());
-      Navigator.of(context).pop(context);
+      Navigator.of(context).pop(true);
     }
   }
 }

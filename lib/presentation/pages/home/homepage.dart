@@ -82,13 +82,24 @@ class _HomePageState extends State<HomePage> {
                         emptyStateIcon: Icon(Icons.group_add),
                         titleRowTrailingAction: () {
                           if (Platform.isAndroid) {
-                            AutoRouter.of(context).push(AddGroupPageAndroidRoute());
+                            AutoRouter.of(context).push(AddGroupPageAndroidRoute()).then((isRefreshNeeded) async {
+                              // TODO use database listener instead of delay
+                              await Future.delayed(const Duration(milliseconds: 250), () {
+                                context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                              });
+                            });
                           } else if (Platform.isIOS) {
                             showMaterialModalBottomSheet(
                               context: context,
                               useRootNavigator: true,
                               builder: (context) => AddGroupPageIOS(),
-                            );
+                            ).then((isRefreshNeeded) async {
+                              // TODO use database listener instead of delay
+                              await Future.delayed(const Duration(milliseconds: 250), () {
+                                context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                              });
+                            });
+                            ;
                           }
                         },
                         openPageForPressedCell: (String id, String groupTitle) {
