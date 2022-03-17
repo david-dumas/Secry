@@ -10,7 +10,10 @@ class AddGroupPageState with _$AddGroupPageState {
       required int searchUsersPaginationPageSize,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
-      required int currentStepIndex}) = _AddGroupPageState;
+      required int currentStepIndex,
+      required bool isGroupSuccessfullyCreated,
+      required bool isCreateNewGroupRequestExecuted
+      }) = _AddGroupPageState;
 
   factory AddGroupPageState.initial() => AddGroupPageState(
       groupTitle: "",
@@ -20,5 +23,8 @@ class AddGroupPageState with _$AddGroupPageState {
       searchUsersPaginationPageSize: 10,
       usersForSearchQuery: [],
       groupMembers: [],
-      currentStepIndex: 0);
+      currentStepIndex: 0,
+      isGroupSuccessfullyCreated: false,
+      isCreateNewGroupRequestExecuted: false
+  );
 }

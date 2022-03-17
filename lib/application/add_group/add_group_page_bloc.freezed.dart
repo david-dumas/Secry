@@ -2345,7 +2345,9 @@ class _$AddGroupPageStateTearOff {
       required int searchUsersPaginationPageSize,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
-      required int currentStepIndex}) {
+      required int currentStepIndex,
+      required bool isGroupSuccessfullyCreated,
+      required bool isCreateNewGroupRequestExecuted}) {
     return _AddGroupPageState(
       groupTitle: groupTitle,
       groupImage: groupImage,
@@ -2355,6 +2357,8 @@ class _$AddGroupPageStateTearOff {
       usersForSearchQuery: usersForSearchQuery,
       groupMembers: groupMembers,
       currentStepIndex: currentStepIndex,
+      isGroupSuccessfullyCreated: isGroupSuccessfullyCreated,
+      isCreateNewGroupRequestExecuted: isCreateNewGroupRequestExecuted,
     );
   }
 }
@@ -2372,6 +2376,9 @@ mixin _$AddGroupPageState {
   List<GroupUser> get usersForSearchQuery => throw _privateConstructorUsedError;
   List<GroupUser> get groupMembers => throw _privateConstructorUsedError;
   int get currentStepIndex => throw _privateConstructorUsedError;
+  bool get isGroupSuccessfullyCreated => throw _privateConstructorUsedError;
+  bool get isCreateNewGroupRequestExecuted =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AddGroupPageStateCopyWith<AddGroupPageState> get copyWith =>
@@ -2391,7 +2398,9 @@ abstract class $AddGroupPageStateCopyWith<$Res> {
       int searchUsersPaginationPageSize,
       List<GroupUser> usersForSearchQuery,
       List<GroupUser> groupMembers,
-      int currentStepIndex});
+      int currentStepIndex,
+      bool isGroupSuccessfullyCreated,
+      bool isCreateNewGroupRequestExecuted});
 }
 
 /// @nodoc
@@ -2413,6 +2422,8 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
     Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
+    Object? isGroupSuccessfullyCreated = freezed,
+    Object? isCreateNewGroupRequestExecuted = freezed,
   }) {
     return _then(_value.copyWith(
       groupTitle: groupTitle == freezed
@@ -2448,6 +2459,15 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.currentStepIndex
           : currentStepIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      isGroupSuccessfullyCreated: isGroupSuccessfullyCreated == freezed
+          ? _value.isGroupSuccessfullyCreated
+          : isGroupSuccessfullyCreated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCreateNewGroupRequestExecuted: isCreateNewGroupRequestExecuted ==
+              freezed
+          ? _value.isCreateNewGroupRequestExecuted
+          : isCreateNewGroupRequestExecuted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2467,7 +2487,9 @@ abstract class _$AddGroupPageStateCopyWith<$Res>
       int searchUsersPaginationPageSize,
       List<GroupUser> usersForSearchQuery,
       List<GroupUser> groupMembers,
-      int currentStepIndex});
+      int currentStepIndex,
+      bool isGroupSuccessfullyCreated,
+      bool isCreateNewGroupRequestExecuted});
 }
 
 /// @nodoc
@@ -2491,6 +2513,8 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
     Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
+    Object? isGroupSuccessfullyCreated = freezed,
+    Object? isCreateNewGroupRequestExecuted = freezed,
   }) {
     return _then(_AddGroupPageState(
       groupTitle: groupTitle == freezed
@@ -2526,6 +2550,15 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.currentStepIndex
           : currentStepIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      isGroupSuccessfullyCreated: isGroupSuccessfullyCreated == freezed
+          ? _value.isGroupSuccessfullyCreated
+          : isGroupSuccessfullyCreated // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isCreateNewGroupRequestExecuted: isCreateNewGroupRequestExecuted ==
+              freezed
+          ? _value.isCreateNewGroupRequestExecuted
+          : isCreateNewGroupRequestExecuted // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -2541,7 +2574,9 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       required this.searchUsersPaginationPageSize,
       required this.usersForSearchQuery,
       required this.groupMembers,
-      required this.currentStepIndex});
+      required this.currentStepIndex,
+      required this.isGroupSuccessfullyCreated,
+      required this.isCreateNewGroupRequestExecuted});
 
   @override
   final String groupTitle;
@@ -2559,10 +2594,14 @@ class _$_AddGroupPageState implements _AddGroupPageState {
   final List<GroupUser> groupMembers;
   @override
   final int currentStepIndex;
+  @override
+  final bool isGroupSuccessfullyCreated;
+  @override
+  final bool isCreateNewGroupRequestExecuted;
 
   @override
   String toString() {
-    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, searchUsersPaginationPageNumber: $searchUsersPaginationPageNumber, searchUsersPaginationPageSize: $searchUsersPaginationPageSize, usersForSearchQuery: $usersForSearchQuery, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex)';
+    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, searchUsersPaginationPageNumber: $searchUsersPaginationPageNumber, searchUsersPaginationPageSize: $searchUsersPaginationPageSize, usersForSearchQuery: $usersForSearchQuery, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex, isGroupSuccessfullyCreated: $isGroupSuccessfullyCreated, isCreateNewGroupRequestExecuted: $isCreateNewGroupRequestExecuted)';
   }
 
   @override
@@ -2587,7 +2626,12 @@ class _$_AddGroupPageState implements _AddGroupPageState {
             const DeepCollectionEquality()
                 .equals(other.groupMembers, groupMembers) &&
             const DeepCollectionEquality()
-                .equals(other.currentStepIndex, currentStepIndex));
+                .equals(other.currentStepIndex, currentStepIndex) &&
+            const DeepCollectionEquality().equals(
+                other.isGroupSuccessfullyCreated, isGroupSuccessfullyCreated) &&
+            const DeepCollectionEquality().equals(
+                other.isCreateNewGroupRequestExecuted,
+                isCreateNewGroupRequestExecuted));
   }
 
   @override
@@ -2600,7 +2644,9 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       const DeepCollectionEquality().hash(searchUsersPaginationPageSize),
       const DeepCollectionEquality().hash(usersForSearchQuery),
       const DeepCollectionEquality().hash(groupMembers),
-      const DeepCollectionEquality().hash(currentStepIndex));
+      const DeepCollectionEquality().hash(currentStepIndex),
+      const DeepCollectionEquality().hash(isGroupSuccessfullyCreated),
+      const DeepCollectionEquality().hash(isCreateNewGroupRequestExecuted));
 
   @JsonKey(ignore: true)
   @override
@@ -2617,7 +2663,9 @@ abstract class _AddGroupPageState implements AddGroupPageState {
       required int searchUsersPaginationPageSize,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
-      required int currentStepIndex}) = _$_AddGroupPageState;
+      required int currentStepIndex,
+      required bool isGroupSuccessfullyCreated,
+      required bool isCreateNewGroupRequestExecuted}) = _$_AddGroupPageState;
 
   @override
   String get groupTitle;
@@ -2635,6 +2683,10 @@ abstract class _AddGroupPageState implements AddGroupPageState {
   List<GroupUser> get groupMembers;
   @override
   int get currentStepIndex;
+  @override
+  bool get isGroupSuccessfullyCreated;
+  @override
+  bool get isCreateNewGroupRequestExecuted;
   @override
   @JsonKey(ignore: true)
   _$AddGroupPageStateCopyWith<_AddGroupPageState> get copyWith =>

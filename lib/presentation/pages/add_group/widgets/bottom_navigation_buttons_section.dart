@@ -148,7 +148,6 @@ class BottomNavigationButtonsSection extends StatelessWidget {
 
     if (currentIndex >= (totalNumberOfSteps - 1)) {
       context.read<AddGroupPageBloc>().add(AddGroupPageEvent.newGroupCreated());
-      Navigator.of(context).pop(true);
     }
   }
 }

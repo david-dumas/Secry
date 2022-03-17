@@ -67,7 +67,9 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
 
         final newGroup = NewGroup(title: state.groupTitle, imageUrl: 'test123', memberIds: listWithGroupMemberIds);
 
-        await _groupsRepository.createNewGroup(newGroup);
+        final isNewGroupSuccessfullyCreated = await _groupsRepository.createNewGroup(newGroup);
+        emit(state.copyWith(isGroupSuccessfullyCreated: isNewGroupSuccessfullyCreated));
+        emit(state.copyWith(isCreateNewGroupRequestExecuted: true));
       },
     );
   }
