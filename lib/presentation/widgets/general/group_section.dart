@@ -11,6 +11,8 @@ class GroupSection extends StatelessWidget {
   final int maximumNumberOfCellsToShow;
   final bool isTitleRowActionButtonVisible;
   final String titleRowActionButtonText;
+  final bool isFetchingInitialGroups;
+  final bool isFetchingMoreGroupsForScrollDown;
   final bool isDataFetched;
   final String emptyStateTitle;
   final String emptyStateDescription;
@@ -28,6 +30,8 @@ class GroupSection extends StatelessWidget {
       this.maximumNumberOfCellsToShow = 99999,
       required this.isTitleRowActionButtonVisible,
       required this.titleRowActionButtonText,
+      this.isFetchingInitialGroups = false,
+      this.isFetchingMoreGroupsForScrollDown = false,
       required this.isDataFetched,
       required this.emptyStateTitle,
       required this.emptyStateDescription,
@@ -39,29 +43,53 @@ class GroupSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-      GroupSectionTitleRow(
-          title: title,
-          amountOfGroups: totalAmountOfGroups,
-          isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
-          titleRowActionButtonText: titleRowActionButtonText,
-          trailingActionButtonAction: () {
-            if (titleRowTrailingAction != null) {
-              titleRowTrailingAction!();
-            }
-          }),
-      SizedBox(height: cellInfoItems.length < 1 || !isTitleRowActionButtonVisible ? 16.0 : 0.0),
-      (cellInfoItems.length < 1 && isDataFetched)
-          ? GroupSectionEmptyStateRow(title: emptyStateTitle, description: emptyStateDescription)
-          : ContentSectionWithRows(
-              cellInfoItems: this.cellInfoItems,
-              isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
-              maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
-              openPageForPressedCell: openPageForPressedCell),
-      SizedBox(
-        height: bottomMargin,
-      )
-    ]);
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: isFetchingInitialGroups
+          ? MediaQuery.of(context).size.height - (AppBar().preferredSize.height) - kToolbarHeight - bottomMargin
+          : null,
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GroupSectionTitleRow(
+                title: title,
+                amountOfGroups: totalAmountOfGroups,
+                isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
+                titleRowActionButtonText: titleRowActionButtonText,
+                trailingActionButtonAction: () {
+                  if (titleRowTrailingAction != null) {
+                    titleRowTrailingAction!();
+                  }
+                }),
+            SizedBox(height: cellInfoItems.length < 1 || !isTitleRowActionButtonVisible ? 16.0 : 0.0),
+            Visibility(
+              visible: isFetchingInitialGroups,
+              child: Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(child: CircularProgressIndicator()),
+                  ],
+                ),
+              ),
+            ),
+            Visibility(
+              visible: !isFetchingInitialGroups,
+              child: (cellInfoItems.length < 1 && isDataFetched)
+                  ? GroupSectionEmptyStateRow(title: emptyStateTitle, description: emptyStateDescription)
+                  : ContentSectionWithRows(
+                      cellInfoItems: this.cellInfoItems,
+                      isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
+                      maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
+                      openPageForPressedCell: openPageForPressedCell),
+            ),
+            SizedBox(
+              height: bottomMargin,
+            )
+          ]),
+    );
   }
 }
 

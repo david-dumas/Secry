@@ -10,7 +10,9 @@ class HomepageState with _$HomepageState {
       required List<DrawableRoot?> privateGroupAvatarSvgs,
       required bool isDataFetched,
       required int pageNumber,
-      required int pageSize}) = _HomepageState;
+      required int pageSize,
+      required bool isFetchingInitialGroups,
+      required bool isFetchingMoreGroupsForScrollDown}) = _HomepageState;
 
   factory HomepageState.initial() => HomepageState(
       privateGroupsRowsInfo: [],
@@ -20,5 +22,7 @@ class HomepageState with _$HomepageState {
       privateGroupAvatarSvgs: [],
       isDataFetched: false,
       pageNumber: 1,
-      pageSize: 15);
+      pageSize: 15,
+      isFetchingInitialGroups: false,
+      isFetchingMoreGroupsForScrollDown: false);
 }

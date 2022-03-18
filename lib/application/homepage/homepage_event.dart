@@ -10,4 +10,8 @@ class HomepageEvent with _$HomepageEvent {
   const factory HomepageEvent.generalGroupInfoUpdated(GeneralGroupInfo newGroupInfo) = _GeneralGroupInfoUpdated;
   const factory HomepageEvent.scrolledToLoadMoreItems() = _ScrolledToLoadMoreItems;
   const factory HomepageEvent.groupsRefreshed() = _GroupsRefreshed;
+  const factory HomepageEvent.isFetchingInitialGroupsUpdated(bool isFetching) = _IsFetchingInitialGroupsUpdated;
+  const factory HomepageEvent.isFetchingMoreGroupsForScrollDownUpdated(bool isFetching) =
+      _IsFetchingMoreGroupsForScrollDownUpdated;
+  const factory HomepageEvent.isDataFetchedUpdated(bool isFetched) = _IsDataFetchedUpdated;
 }

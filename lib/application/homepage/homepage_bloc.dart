@@ -54,10 +54,25 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       groupsRefreshed: (e) async {
         fetchGroups(pageNumber: 1, pageSize: state.pageSize);
       },
+      isFetchingInitialGroupsUpdated: (e) async {
+        emit(state.copyWith(isFetchingInitialGroups: e.isFetching));
+      },
+      isFetchingMoreGroupsForScrollDownUpdated: (e) async {
+        emit(state.copyWith(isFetchingMoreGroupsForScrollDown: e.isFetching));
+      },
+      isDataFetchedUpdated: (e) async {
+        emit(state.copyWith(isDataFetched: e.isFetched));
+      },
     );
   }
 
   Future<void> fetchGroups({required int pageNumber, required int pageSize}) async {
+    if (pageNumber == 1) {
+      add(HomepageEvent.isFetchingInitialGroupsUpdated(true));
+    } else {
+      add(HomepageEvent.isFetchingMoreGroupsForScrollDownUpdated(true));
+    }
+
     final groupsAndGeneralAboutInfo =
         await _activityRepository.getPrivateGroups(pageNumber: pageNumber, pageSize: pageSize);
     await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
@@ -82,6 +97,12 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
     if (groupsAndGeneralAboutInfo.generalInfo != null) {
       add(HomepageEvent.generalGroupInfoUpdated(groupsAndGeneralAboutInfo.generalInfo!));
     }
-    emit(state.copyWith(isDataFetched: true));
+
+    if (pageNumber == 1) {
+      add(HomepageEvent.isFetchingInitialGroupsUpdated(false));
+    } else {
+      add(HomepageEvent.isFetchingMoreGroupsForScrollDownUpdated(false));
+    }
+    add(HomepageEvent.isDataFetchedUpdated(true));
   }
 }
