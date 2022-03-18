@@ -51,6 +51,7 @@ class GroupOverviewPage extends StatelessWidget {
                           maximumNumberOfCellsToShow: 3,
                           isTitleRowActionButtonVisible: getCellItemsFrom(state.chatInfoItems).length > 3,
                           titleRowActionButtonText: tr('general_see_all'),
+                          isFetchingInitialGroups: state.isFetching,
                           isDataFetched: state.isDataFetched,
                           emptyStateTitle: tr('empty_state_no_chats_title'),
                           emptyStateDescription: tr('empty_state_no_chats_description'),

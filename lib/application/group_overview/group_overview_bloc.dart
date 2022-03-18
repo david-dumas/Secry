@@ -28,10 +28,16 @@ class GroupOverviewBloc extends Bloc<GroupOverviewEvent, GroupOverviewState> {
       emit(state.copyWith(surveyInfoItems: e.surveyInfoItems));
     }, groupOverviewRefreshed: (e) async {
       fetchChatsAndSurveys(groupId: e.groupId);
+    }, isFetchingUpdated: (e) async {
+      emit(state.copyWith(isFetching: e.isFetching));
+    }, isDataFetchedUpdated: (e) async {
+      emit(state.copyWith(isDataFetched: e.isFetched));
     });
   }
 
   Future<void> fetchChatsAndSurveys({required String groupId}) async {
+    add(GroupOverviewEvent.isFetchingUpdated(true));
+
     final groupChatsAndSurveysWithGeneralGroupInfo = await _groupsRepository.getChatsAndSurveys(groupId: groupId);
 
     if (groupChatsAndSurveysWithGeneralGroupInfo != null) {
@@ -53,7 +59,8 @@ class GroupOverviewBloc extends Bloc<GroupOverviewEvent, GroupOverviewState> {
       await AvatarHelper().addSvgToGroupRowsInfo(surveyOverviewRows);
       add(GroupOverviewEvent.surveyInfoItemsUpdated(surveyOverviewRows));
 
-      emit(state.copyWith(isDataFetched: true));
+      add(GroupOverviewEvent.isFetchingUpdated(false));
+      add(GroupOverviewEvent.isDataFetchedUpdated(true));
     }
   }
 }
