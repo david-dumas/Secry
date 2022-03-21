@@ -44,11 +44,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
           if (state.generalGroupInfo!.hasNextPage) {
             emit(state.copyWith(pageNumber: state.pageNumber + 1));
             fetchGroups(pageNumber: state.pageNumber, pageSize: state.pageSize);
-          } else {
-            // TODO show all items are fetched
           }
-        } else {
-          fetchGroups(pageNumber: 1, pageSize: state.pageSize);
         }
       },
       groupsRefreshed: (e) async {
