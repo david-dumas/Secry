@@ -71,6 +71,8 @@ class AddGroupPageContent extends StatelessWidget {
                             usersForSearchQuery:
                                 getUsersFromListThatAreNotInOtherList(state.usersForSearchQuery, state.groupMembers),
                             usersAddedToGroup: state.groupMembers,
+                            areUsersFetched: state.areUsersForSearchUsersFetched,
+                            isFetchingUsers: state.isFetchingUsersForSearch,
                           ),
                   ),
                 ),
