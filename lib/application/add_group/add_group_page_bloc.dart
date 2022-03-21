@@ -26,9 +26,7 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
   Future<void> _onEvent(AddGroupPageEvent event, Emitter<AddGroupPageState> emit) async {
     await event.map(
       initialized: (e) async {
-        final usersToSearchInNewGroup = await getUsersForSearchQuery(state.searchAllPeopleSearchValue);
-
-        add(AddGroupPageEvent.usersForSearchQueryUpdated(usersToSearchInNewGroup));
+        getUsersForSearchQuery(state.searchAllPeopleSearchValue);
       },
       groupTitleUpdated: (e) async {
         emit(state.copyWith(groupTitle: e.newTitle));
@@ -40,10 +38,9 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
         emit(state.copyWith(groupImage: null));
       },
       searchAllPeopleSearchValueUpdated: (e) async {
+        // TODO fetch after X seconds of not typing
         emit(state.copyWith(searchAllPeopleSearchValue: e.newValue));
-
-        final usersToSearchInNewGroup = await getUsersForSearchQuery(e.newValue);
-        add(AddGroupPageEvent.usersForSearchQueryUpdated(usersToSearchInNewGroup));
+        getUsersForSearchQuery(e.newValue);
       },
       usersForSearchQueryUpdated: (e) async {
         emit(state.copyWith(usersForSearchQuery: e.newUsers));
@@ -71,13 +68,27 @@ class AddGroupPageBloc extends Bloc<AddGroupPageEvent, AddGroupPageState> {
         emit(state.copyWith(isGroupSuccessfullyCreated: isNewGroupSuccessfullyCreated));
         emit(state.copyWith(isCreateNewGroupRequestExecuted: true));
       },
+      areUsersForSearchUsersFetchedUpdated: (e) async {
+        emit(state.copyWith(areUsersForSearchUsersFetched: e.areFetched));
+      },
+      isFetchingUsersForSearchQueryUpdated: (e) async {
+        emit(state.copyWith(isFetchingUsersForSearch: e.isFetching));
+      },
     );
   }
 
-  Future<List<GroupUser>> getUsersForSearchQuery(String searchValue) async {
-    return _usersRepository.getUsersForSearchQuery(
+  Future<void> getUsersForSearchQuery(String searchValue) async {
+    add(AddGroupPageEvent.areUsersForSearchUsersFetchedUpdated(false));
+    add(AddGroupPageEvent.isFetchingUsersForSearchQueryUpdated(true));
+
+    // TODO save last GeneralPaginationInfo in state
+    final fetchedUsers = await _usersRepository.getUsersForSearchQuery(
         searchQuery: searchValue,
         pageNumber: state.searchUsersPaginationPageNumber,
         pageSize: state.searchUsersPaginationPageSize);
+
+    add(AddGroupPageEvent.areUsersForSearchUsersFetchedUpdated(true));
+    add(AddGroupPageEvent.isFetchingUsersForSearchQueryUpdated(false));
+    add(AddGroupPageEvent.usersForSearchQueryUpdated(fetchedUsers));
   }
 }

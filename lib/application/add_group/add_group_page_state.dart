@@ -11,9 +11,10 @@ class AddGroupPageState with _$AddGroupPageState {
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
       required int currentStepIndex,
+      required bool areUsersForSearchUsersFetched,
+      required bool isFetchingUsersForSearch,
       required bool isGroupSuccessfullyCreated,
-      required bool isCreateNewGroupRequestExecuted
-      }) = _AddGroupPageState;
+      required bool isCreateNewGroupRequestExecuted}) = _AddGroupPageState;
 
   factory AddGroupPageState.initial() => AddGroupPageState(
       groupTitle: "",
@@ -24,7 +25,8 @@ class AddGroupPageState with _$AddGroupPageState {
       usersForSearchQuery: [],
       groupMembers: [],
       currentStepIndex: 0,
+      areUsersForSearchUsersFetched: false,
+      isFetchingUsersForSearch: false,
       isGroupSuccessfullyCreated: false,
-      isCreateNewGroupRequestExecuted: false
-  );
+      isCreateNewGroupRequestExecuted: false);
 }
