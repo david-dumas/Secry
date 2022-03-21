@@ -72,8 +72,8 @@ class _HomePageState extends State<HomePage> {
                   child: SingleChildScrollView(
                     controller: _scrollController
                       ..addListener(() {
-                        if (_scrollController.offset == _scrollController.position.maxScrollExtent) {
-                          // TODO check is isn't already fetching
+                        if (_scrollController.offset == _scrollController.position.maxScrollExtent &&
+                            !state.isFetchingMoreGroupsForScrollDown) {
                           context.read<HomepageBloc>().add(HomepageEvent.scrolledToLoadMoreItems());
                         }
                       }),
