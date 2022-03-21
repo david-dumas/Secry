@@ -71,6 +71,7 @@ class GlobalSearchBloc extends Bloc<GlobalSearchEvent, GlobalSearchState> {
       add(GlobalSearchEvent.isFetchingMoreDataForScrollDownUpdated(true));
     }
 
+    // TODO save last GeneralPaginationInfo in state
     final usersFromGlobalSearch = await _usersRepository.getUsersForSearchQuery(
         searchQuery: searchValue, pageNumber: paginationPageNumber, pageSize: paginationPageSize);
 
