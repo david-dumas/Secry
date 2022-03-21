@@ -15,6 +15,7 @@ import 'application/all_chats_or_surveys_in_group_page/all_chats_or_surveys_in_g
 import 'application/auth/reset_password/reset_password_bloc.dart' as _i29;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i12;
 import 'application/auth/sign_up_form/sign_up_form_bloc.dart' as _i30;
+import 'application/global_search/global_search_bloc.dart' as _i32;
 import 'application/group_overview/group_overview_bloc.dart' as _i19;
 import 'application/homepage/homepage_bloc.dart' as _i20;
 import 'application/main/main_bloc.dart' as _i11;
@@ -31,8 +32,8 @@ import 'infrastructure/auth/authentication_repository.dart' as _i22;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i8;
 import 'infrastructure/chats/chats_api_service.dart' as _i18;
 import 'infrastructure/chats/chats_repository.dart' as _i24;
-import 'infrastructure/core/common_injectable_module.dart' as _i32;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i33;
+import 'infrastructure/core/common_injectable_module.dart' as _i33;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i34;
 import 'infrastructure/groups/groups_api_service.dart' as _i6;
 import 'infrastructure/groups/groups_repository.dart' as _i10;
 import 'infrastructure/surveys/surveys_api_service.dart' as _i14;
@@ -85,9 +86,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i30.SignUpFormBloc(get<_i21.IAuthenticationInterface>()));
   gh.factory<_i31.AddGroupPageBloc>(() => _i31.AddGroupPageBloc(
       get<_i27.IUsersRepository>(), get<_i9.IGroupsRepository>()));
+  gh.factory<_i32.GlobalSearchBloc>(
+      () => _i32.GlobalSearchBloc(get<_i27.IUsersRepository>()));
   return get;
 }
 
-class _$RegisterModule extends _i32.RegisterModule {}
+class _$RegisterModule extends _i33.RegisterModule {}
 
-class _$FirebaseInjectableModule extends _i33.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i34.FirebaseInjectableModule {}

@@ -47,8 +47,10 @@ class AppRouter extends _i14.RootStackRouter {
           routeData: routeData, child: const _i3.HomePage());
     },
     GlobalSearchPageRoute.name: (routeData) {
+      final args = routeData.argsAs<GlobalSearchPageRouteArgs>(
+          orElse: () => const GlobalSearchPageRouteArgs());
       return _i14.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.GlobalSearchPage());
+          routeData: routeData, child: _i4.GlobalSearchPage(key: args.key));
     },
     SavedChatsAndSurveysPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
@@ -148,11 +150,25 @@ class HomePageRoute extends _i14.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.GlobalSearchPage]
-class GlobalSearchPageRoute extends _i14.PageRouteInfo<void> {
-  const GlobalSearchPageRoute()
-      : super(GlobalSearchPageRoute.name, path: '/global-search-page');
+class GlobalSearchPageRoute
+    extends _i14.PageRouteInfo<GlobalSearchPageRouteArgs> {
+  GlobalSearchPageRoute({_i15.Key? key})
+      : super(GlobalSearchPageRoute.name,
+            path: '/global-search-page',
+            args: GlobalSearchPageRouteArgs(key: key));
 
   static const String name = 'GlobalSearchPageRoute';
+}
+
+class GlobalSearchPageRouteArgs {
+  const GlobalSearchPageRouteArgs({this.key});
+
+  final _i15.Key? key;
+
+  @override
+  String toString() {
+    return 'GlobalSearchPageRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
