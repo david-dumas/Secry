@@ -14,14 +14,12 @@ class AccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return BlocBuilder<TabbarBloc, TabbarState>(
       builder: (mainContext, mainState) {
         return Scaffold(
           appBar: GeneralAppbar(),
           body: Padding(
-            padding: EdgeInsets.only(bottom: screenHeight * 0.1),
+            padding: EdgeInsets.only(bottom: 50.0),
             child: Center(
               child: SingleChildScrollView(
                 child: Padding(

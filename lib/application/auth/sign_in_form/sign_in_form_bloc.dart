@@ -20,7 +20,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
 
   Future<void> _onEvent(SignInFormEvent event, Emitter<SignInFormState> emit) async {
     await event.map(
-      initialized: (e) async {},
+      initialized: (e) async {
+        // TODO retrieve email from persistentStorage if available
+      },
       emailChanged: (e) async {
         emit(state.copyWith(inputEmail: e.newEmail));
       },
