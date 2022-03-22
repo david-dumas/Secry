@@ -22,8 +22,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return BlocProvider(
       create: (context) => getIt<SignInFormBloc>(),
       child: BlocBuilder<TabbarBloc, TabbarState>(
@@ -61,7 +59,7 @@ class _LoginPageState extends State<LoginPage> {
                 body: Center(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: screenHeight * 0.1),
+                      padding: EdgeInsets.only(bottom: verticalSafetyScrollOffsetHeight),
                       child: Padding(
                         padding: pagePaddingZeroTop,
                         child: Column(
