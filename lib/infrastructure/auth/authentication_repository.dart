@@ -30,7 +30,6 @@ class AuthenticationRepository extends IAuthenticationInterface {
         onReceiveProgress: (a, b) => print('Received : ${a / b}'),
       );
 
-      print("Success");
       print(json.decode(response.data));
     } on DioError catch (e) {
       // The request was made and the server responded with a status code
