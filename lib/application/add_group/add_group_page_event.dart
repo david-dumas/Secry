@@ -18,4 +18,6 @@ class AddGroupPageEvent with _$AddGroupPageEvent {
       _AreUsersForSearchUsersFetchedUpdated;
   const factory AddGroupPageEvent.isFetchingUsersForSearchQueryUpdated(bool isFetching) =
       _IsFetchingUsersForSearchQueryUpdated;
+  const factory AddGroupPageEvent.searchUsersPaginationInfoUpdated(PaginationInfo? newPaginationInfo) =
+      _SearchUsersPaginationInfoUpdated;
 }

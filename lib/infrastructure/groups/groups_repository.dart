@@ -2,10 +2,11 @@ import 'dart:convert';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
+import 'package:secry/constants.dart';
 import 'package:secry/domain/chats/general_chat_info.dart';
-import 'package:secry/domain/general/general_group_info.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/general/groups_and_general_about_info.dart';
+import 'package:secry/domain/general/pagination_info.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/domain/surveys/general_survey_info.dart';
 import 'package:secry/infrastructure/groups/groups_api_service.dart';
@@ -26,7 +27,7 @@ class GroupsRepository extends IGroupsRepository {
       final token = await FirebaseAuth.instance.currentUser?.getIdToken();
       if (token == null && token != "") {
         // TODO handle not logged in error and show on homepage
-        return GroupsAndGeneralAboutInfo(generalInfo: null, groups: []);
+        return GroupsAndGeneralAboutInfo(paginationInfo: null, groups: []);
       }
       final bearerToken = "Bearer $token";
 
@@ -40,6 +41,7 @@ class GroupsRepository extends IGroupsRepository {
           final List<GroupOverviewRowInfo> groupOverviewRowsData =
               (groups).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
 
+          // TODO use json.fromFactoryMap instead of all single map functions
           final int pageNumber = mappedData.containsKey('pageNumber')
               ? (mappedData['pageNumber'] != null ? mappedData['pageNumber'] : 1)
               : 1;
@@ -55,26 +57,27 @@ class GroupsRepository extends IGroupsRepository {
           final bool hasNextPage = mappedData.containsKey('hasNextPage')
               ? (mappedData['hasNextPage'] != null ? mappedData['hasNextPage'] : false)
               : false;
-          final generalGroupInfo = GeneralGroupInfo(
+          final generalGroupInfo = PaginationInfo(
               pageNumber: pageNumber,
+              pageSize: defaultPageSize,
               totalPages: totalPages,
-              totalNumberOfGroups: totalAmountOfGroups,
+              totalCount: totalAmountOfGroups,
               hasPreviousPage: hasPreviousPage,
               hasNextPage: hasNextPage);
 
           final groupsAndGeneralAboutInfo =
-              GroupsAndGeneralAboutInfo(generalInfo: generalGroupInfo, groups: groupOverviewRowsData);
+              GroupsAndGeneralAboutInfo(paginationInfo: generalGroupInfo, groups: groupOverviewRowsData);
 
           return groupsAndGeneralAboutInfo;
         } else {
-          return GroupsAndGeneralAboutInfo(generalInfo: null, groups: []);
+          return GroupsAndGeneralAboutInfo(paginationInfo: null, groups: []);
         }
       } else {
-        return GroupsAndGeneralAboutInfo(generalInfo: null, groups: []);
+        return GroupsAndGeneralAboutInfo(paginationInfo: null, groups: []);
       }
     } catch (error) {
       // TODO log error
-      return GroupsAndGeneralAboutInfo(generalInfo: null, groups: []);
+      return GroupsAndGeneralAboutInfo(paginationInfo: null, groups: []);
     }
   }
 

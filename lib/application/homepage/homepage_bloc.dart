@@ -4,7 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:secry/domain/general/general_group_info.dart';
+import 'package:secry/constants.dart';
+import 'package:secry/domain/general/pagination_info.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/util/avatars/avatar_helper.dart';
@@ -24,7 +25,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
   Future<void> _onEvent(HomepageEvent event, Emitter<HomepageState> emit) async {
     await event.map(
       initialized: (e) async {
-        fetchGroups(pageNumber: 1, pageSize: state.pageSize);
+        fetchGroups(pageNumber: 1, pageSize: state.paginationInfo?.pageSize ?? defaultPageSize);
       },
       privateGroupsInfoUpdated: (e) async {
         emit(state.copyWith(privateGroupsRowsInfo: e.privateGroupsRowsInfo));
@@ -36,19 +37,25 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       searchValueUpdated: (e) async {
         emit(state.copyWith(searchValue: e.newValue));
       },
-      generalGroupInfoUpdated: (e) async {
-        emit(state.copyWith(generalGroupInfo: e.newGroupInfo));
+      paginationInfoUpdated: (e) async {
+        emit(state.copyWith(paginationInfo: e.paginationInfo));
       },
       scrolledToLoadMoreItems: (e) async {
-        if (state.generalGroupInfo != null) {
-          if (state.generalGroupInfo!.hasNextPage) {
-            emit(state.copyWith(pageNumber: state.pageNumber + 1));
-            fetchGroups(pageNumber: state.pageNumber, pageSize: state.pageSize);
-          }
+        if (state.paginationInfo != null && (state.paginationInfo?.hasNextPage ?? false)) {
+          final newPaginationInfo = new PaginationInfo(
+              pageNumber: (state.paginationInfo!.pageNumber) + 1,
+              pageSize: state.paginationInfo!.pageSize,
+              totalPages: state.paginationInfo!.totalPages,
+              totalCount: state.paginationInfo!.totalCount,
+              hasPreviousPage: state.paginationInfo!.hasPreviousPage,
+              hasNextPage: state.paginationInfo!.hasNextPage);
+          emit(state.copyWith(paginationInfo: newPaginationInfo));
+
+          fetchGroups(pageNumber: newPaginationInfo.pageNumber, pageSize: state.paginationInfo!.pageSize);
         }
       },
       groupsRefreshed: (e) async {
-        fetchGroups(pageNumber: 1, pageSize: state.pageSize);
+        fetchGroups(pageNumber: 1, pageSize: state.paginationInfo?.pageSize ?? defaultPageSize);
       },
       isFetchingInitialGroupsUpdated: (e) async {
         emit(state.copyWith(isFetchingInitialGroups: e.isFetching));
@@ -90,10 +97,7 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
 
     add(HomepageEvent.privateGroupsInfoUpdated(privateGroupsRowsInfo));
 
-    if (groupsAndGeneralAboutInfo.generalInfo != null) {
-      add(HomepageEvent.generalGroupInfoUpdated(groupsAndGeneralAboutInfo.generalInfo!));
-    }
-
+    add(HomepageEvent.paginationInfoUpdated(groupsAndGeneralAboutInfo.paginationInfo!));
     if (pageNumber == 1) {
       add(HomepageEvent.isFetchingInitialGroupsUpdated(false));
     } else {

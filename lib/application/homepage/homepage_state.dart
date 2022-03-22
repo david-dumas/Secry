@@ -4,25 +4,21 @@ part of 'homepage_bloc.dart';
 class HomepageState with _$HomepageState {
   const factory HomepageState(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      required GeneralGroupInfo? generalGroupInfo,
+      required PaginationInfo? paginationInfo,
       required bool isShowingSearchBar,
       required String searchValue,
       required List<DrawableRoot?> privateGroupAvatarSvgs,
       required bool isDataFetched,
-      required int pageNumber,
-      required int pageSize,
       required bool isFetchingInitialGroups,
       required bool isFetchingMoreGroupsForScrollDown}) = _HomepageState;
 
   factory HomepageState.initial() => HomepageState(
       privateGroupsRowsInfo: [],
-      generalGroupInfo: null,
+      paginationInfo: null,
       isShowingSearchBar: false,
       searchValue: '',
       privateGroupAvatarSvgs: [],
       isDataFetched: false,
-      pageNumber: 1,
-      pageSize: 15,
       isFetchingInitialGroups: false,
       isFetchingMoreGroupsForScrollDown: false);
 }

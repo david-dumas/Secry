@@ -93,6 +93,13 @@ class _$AddGroupPageEventTearOff {
       isFetching,
     );
   }
+
+  _SearchUsersPaginationInfoUpdated searchUsersPaginationInfoUpdated(
+      PaginationInfo? newPaginationInfo) {
+    return _SearchUsersPaginationInfoUpdated(
+      newPaginationInfo,
+    );
+  }
 }
 
 /// @nodoc
@@ -119,6 +126,8 @@ mixin _$AddGroupPageEvent {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -136,6 +145,8 @@ mixin _$AddGroupPageEvent {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -153,6 +164,8 @@ mixin _$AddGroupPageEvent {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -178,6 +191,8 @@ mixin _$AddGroupPageEvent {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -199,6 +214,8 @@ mixin _$AddGroupPageEvent {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -220,6 +237,8 @@ mixin _$AddGroupPageEvent {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -300,6 +319,8 @@ class _$_Initialized implements _Initialized {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return initialized();
   }
@@ -320,6 +341,8 @@ class _$_Initialized implements _Initialized {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return initialized?.call();
   }
@@ -340,6 +363,8 @@ class _$_Initialized implements _Initialized {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -371,6 +396,8 @@ class _$_Initialized implements _Initialized {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return initialized(this);
   }
@@ -395,6 +422,8 @@ class _$_Initialized implements _Initialized {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -419,6 +448,8 @@ class _$_Initialized implements _Initialized {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -514,6 +545,8 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupTitleUpdated(newTitle);
   }
@@ -534,6 +567,8 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupTitleUpdated?.call(newTitle);
   }
@@ -554,6 +589,8 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupTitleUpdated != null) {
@@ -585,6 +622,8 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupTitleUpdated(this);
   }
@@ -609,6 +648,8 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupTitleUpdated?.call(this);
   }
@@ -633,6 +674,8 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupTitleUpdated != null) {
@@ -733,6 +776,8 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageUpdated(newImage);
   }
@@ -753,6 +798,8 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageUpdated?.call(newImage);
   }
@@ -773,6 +820,8 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupImageUpdated != null) {
@@ -804,6 +853,8 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageUpdated(this);
   }
@@ -828,6 +879,8 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageUpdated?.call(this);
   }
@@ -852,6 +905,8 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupImageUpdated != null) {
@@ -928,6 +983,8 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageDeleted();
   }
@@ -948,6 +1005,8 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageDeleted?.call();
   }
@@ -968,6 +1027,8 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupImageDeleted != null) {
@@ -999,6 +1060,8 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageDeleted(this);
   }
@@ -1023,6 +1086,8 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupImageDeleted?.call(this);
   }
@@ -1047,6 +1112,8 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupImageDeleted != null) {
@@ -1148,6 +1215,8 @@ class _$_SearchAllPeopleSearchValueUpdated
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated(newValue);
   }
@@ -1168,6 +1237,8 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated?.call(newValue);
   }
@@ -1188,6 +1259,8 @@ class _$_SearchAllPeopleSearchValueUpdated
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (searchAllPeopleSearchValueUpdated != null) {
@@ -1219,6 +1292,8 @@ class _$_SearchAllPeopleSearchValueUpdated
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated(this);
   }
@@ -1243,6 +1318,8 @@ class _$_SearchAllPeopleSearchValueUpdated
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return searchAllPeopleSearchValueUpdated?.call(this);
   }
@@ -1267,6 +1344,8 @@ class _$_SearchAllPeopleSearchValueUpdated
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (searchAllPeopleSearchValueUpdated != null) {
@@ -1372,6 +1451,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return usersForSearchQueryUpdated(newUsers);
   }
@@ -1392,6 +1473,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return usersForSearchQueryUpdated?.call(newUsers);
   }
@@ -1412,6 +1495,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (usersForSearchQueryUpdated != null) {
@@ -1443,6 +1528,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return usersForSearchQueryUpdated(this);
   }
@@ -1467,6 +1554,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return usersForSearchQueryUpdated?.call(this);
   }
@@ -1491,6 +1580,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (usersForSearchQueryUpdated != null) {
@@ -1593,6 +1684,8 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserAdded(addedUser);
   }
@@ -1613,6 +1706,8 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserAdded?.call(addedUser);
   }
@@ -1633,6 +1728,8 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUserAdded != null) {
@@ -1664,6 +1761,8 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserAdded(this);
   }
@@ -1688,6 +1787,8 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserAdded?.call(this);
   }
@@ -1712,6 +1813,8 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUserAdded != null) {
@@ -1815,6 +1918,8 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserDeleted(userId);
   }
@@ -1835,6 +1940,8 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserDeleted?.call(userId);
   }
@@ -1855,6 +1962,8 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUserDeleted != null) {
@@ -1886,6 +1995,8 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserDeleted(this);
   }
@@ -1910,6 +2021,8 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUserDeleted?.call(this);
   }
@@ -1934,6 +2047,8 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUserDeleted != null) {
@@ -2037,6 +2152,8 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUpdated(newMembers);
   }
@@ -2057,6 +2174,8 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUpdated?.call(newMembers);
   }
@@ -2077,6 +2196,8 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUpdated != null) {
@@ -2108,6 +2229,8 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUpdated(this);
   }
@@ -2132,6 +2255,8 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return groupMembersUpdated?.call(this);
   }
@@ -2156,6 +2281,8 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (groupMembersUpdated != null) {
@@ -2259,6 +2386,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return currentStepIndexUpdated(newIndex);
   }
@@ -2279,6 +2408,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return currentStepIndexUpdated?.call(newIndex);
   }
@@ -2299,6 +2430,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (currentStepIndexUpdated != null) {
@@ -2330,6 +2463,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return currentStepIndexUpdated(this);
   }
@@ -2354,6 +2489,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return currentStepIndexUpdated?.call(this);
   }
@@ -2378,6 +2515,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (currentStepIndexUpdated != null) {
@@ -2455,6 +2594,8 @@ class _$_NewGroupCreated implements _NewGroupCreated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return newGroupCreated();
   }
@@ -2475,6 +2616,8 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return newGroupCreated?.call();
   }
@@ -2495,6 +2638,8 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (newGroupCreated != null) {
@@ -2526,6 +2671,8 @@ class _$_NewGroupCreated implements _NewGroupCreated {
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return newGroupCreated(this);
   }
@@ -2550,6 +2697,8 @@ class _$_NewGroupCreated implements _NewGroupCreated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return newGroupCreated?.call(this);
   }
@@ -2574,6 +2723,8 @@ class _$_NewGroupCreated implements _NewGroupCreated {
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (newGroupCreated != null) {
@@ -2676,6 +2827,8 @@ class _$_AreUsersForSearchUsersFetchedUpdated
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return areUsersForSearchUsersFetchedUpdated(areFetched);
   }
@@ -2696,6 +2849,8 @@ class _$_AreUsersForSearchUsersFetchedUpdated
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return areUsersForSearchUsersFetchedUpdated?.call(areFetched);
   }
@@ -2716,6 +2871,8 @@ class _$_AreUsersForSearchUsersFetchedUpdated
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (areUsersForSearchUsersFetchedUpdated != null) {
@@ -2747,6 +2904,8 @@ class _$_AreUsersForSearchUsersFetchedUpdated
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return areUsersForSearchUsersFetchedUpdated(this);
   }
@@ -2771,6 +2930,8 @@ class _$_AreUsersForSearchUsersFetchedUpdated
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return areUsersForSearchUsersFetchedUpdated?.call(this);
   }
@@ -2795,6 +2956,8 @@ class _$_AreUsersForSearchUsersFetchedUpdated
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (areUsersForSearchUsersFetchedUpdated != null) {
@@ -2905,6 +3068,8 @@ class _$_IsFetchingUsersForSearchQueryUpdated
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(bool isFetching)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
   }) {
     return isFetchingUsersForSearchQueryUpdated(isFetching);
   }
@@ -2925,6 +3090,8 @@ class _$_IsFetchingUsersForSearchQueryUpdated
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return isFetchingUsersForSearchQueryUpdated?.call(isFetching);
   }
@@ -2945,6 +3112,8 @@ class _$_IsFetchingUsersForSearchQueryUpdated
     TResult Function()? newGroupCreated,
     TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
     TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (isFetchingUsersForSearchQueryUpdated != null) {
@@ -2976,6 +3145,8 @@ class _$_IsFetchingUsersForSearchQueryUpdated
         areUsersForSearchUsersFetchedUpdated,
     required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
         isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
   }) {
     return isFetchingUsersForSearchQueryUpdated(this);
   }
@@ -3000,6 +3171,8 @@ class _$_IsFetchingUsersForSearchQueryUpdated
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
   }) {
     return isFetchingUsersForSearchQueryUpdated?.call(this);
   }
@@ -3024,6 +3197,8 @@ class _$_IsFetchingUsersForSearchQueryUpdated
         areUsersForSearchUsersFetchedUpdated,
     TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
         isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     required TResult orElse(),
   }) {
     if (isFetchingUsersForSearchQueryUpdated != null) {
@@ -3046,6 +3221,244 @@ abstract class _IsFetchingUsersForSearchQueryUpdated
 }
 
 /// @nodoc
+abstract class _$SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
+  factory _$SearchUsersPaginationInfoUpdatedCopyWith(
+          _SearchUsersPaginationInfoUpdated value,
+          $Res Function(_SearchUsersPaginationInfoUpdated) then) =
+      __$SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>;
+  $Res call({PaginationInfo? newPaginationInfo});
+}
+
+/// @nodoc
+class __$SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>
+    extends _$AddGroupPageEventCopyWithImpl<$Res>
+    implements _$SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
+  __$SearchUsersPaginationInfoUpdatedCopyWithImpl(
+      _SearchUsersPaginationInfoUpdated _value,
+      $Res Function(_SearchUsersPaginationInfoUpdated) _then)
+      : super(_value, (v) => _then(v as _SearchUsersPaginationInfoUpdated));
+
+  @override
+  _SearchUsersPaginationInfoUpdated get _value =>
+      super._value as _SearchUsersPaginationInfoUpdated;
+
+  @override
+  $Res call({
+    Object? newPaginationInfo = freezed,
+  }) {
+    return _then(_SearchUsersPaginationInfoUpdated(
+      newPaginationInfo == freezed
+          ? _value.newPaginationInfo
+          : newPaginationInfo // ignore: cast_nullable_to_non_nullable
+              as PaginationInfo?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_SearchUsersPaginationInfoUpdated
+    implements _SearchUsersPaginationInfoUpdated {
+  const _$_SearchUsersPaginationInfoUpdated(this.newPaginationInfo);
+
+  @override
+  final PaginationInfo? newPaginationInfo;
+
+  @override
+  String toString() {
+    return 'AddGroupPageEvent.searchUsersPaginationInfoUpdated(newPaginationInfo: $newPaginationInfo)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SearchUsersPaginationInfoUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.newPaginationInfo, newPaginationInfo));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(newPaginationInfo));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SearchUsersPaginationInfoUpdatedCopyWith<_SearchUsersPaginationInfoUpdated>
+      get copyWith => __$SearchUsersPaginationInfoUpdatedCopyWithImpl<
+          _SearchUsersPaginationInfoUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String newTitle) groupTitleUpdated,
+    required TResult Function(Image newImage) groupImageUpdated,
+    required TResult Function() groupImageDeleted,
+    required TResult Function(String newValue)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(List<GroupUser> newUsers)
+        usersForSearchQueryUpdated,
+    required TResult Function(GroupUser addedUser) groupMembersUserAdded,
+    required TResult Function(String userId) groupMembersUserDeleted,
+    required TResult Function(List<GroupUser> newMembers) groupMembersUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newGroupCreated,
+    required TResult Function(bool areFetched)
+        areUsersForSearchUsersFetchedUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(PaginationInfo? newPaginationInfo)
+        searchUsersPaginationInfoUpdated,
+  }) {
+    return searchUsersPaginationInfoUpdated(newPaginationInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function()? groupImageDeleted,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(GroupUser addedUser)? groupMembersUserAdded,
+    TResult Function(String userId)? groupMembersUserDeleted,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
+    TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
+    TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
+  }) {
+    return searchUsersPaginationInfoUpdated?.call(newPaginationInfo);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? groupTitleUpdated,
+    TResult Function(Image newImage)? groupImageUpdated,
+    TResult Function()? groupImageDeleted,
+    TResult Function(String newValue)? searchAllPeopleSearchValueUpdated,
+    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult Function(GroupUser addedUser)? groupMembersUserAdded,
+    TResult Function(String userId)? groupMembersUserDeleted,
+    TResult Function(List<GroupUser> newMembers)? groupMembersUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newGroupCreated,
+    TResult Function(bool areFetched)? areUsersForSearchUsersFetchedUpdated,
+    TResult Function(bool isFetching)? isFetchingUsersForSearchQueryUpdated,
+    TResult Function(PaginationInfo? newPaginationInfo)?
+        searchUsersPaginationInfoUpdated,
+    required TResult orElse(),
+  }) {
+    if (searchUsersPaginationInfoUpdated != null) {
+      return searchUsersPaginationInfoUpdated(newPaginationInfo);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_GroupTitleUpdated value) groupTitleUpdated,
+    required TResult Function(_GroupImageUpdated value) groupImageUpdated,
+    required TResult Function(_GroupImageDeleted value) groupImageDeleted,
+    required TResult Function(_SearchAllPeopleSearchValueUpdated value)
+        searchAllPeopleSearchValueUpdated,
+    required TResult Function(_UsersForSearchQueryUpdated value)
+        usersForSearchQueryUpdated,
+    required TResult Function(_GroupMembersUserAdded value)
+        groupMembersUserAdded,
+    required TResult Function(_GroupMembersUserDeleted value)
+        groupMembersUserDeleted,
+    required TResult Function(_GroupMembersUpdated value) groupMembersUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
+    required TResult Function(_NewGroupCreated value) newGroupCreated,
+    required TResult Function(_AreUsersForSearchUsersFetchedUpdated value)
+        areUsersForSearchUsersFetchedUpdated,
+    required TResult Function(_IsFetchingUsersForSearchQueryUpdated value)
+        isFetchingUsersForSearchQueryUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
+  }) {
+    return searchUsersPaginationInfoUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_GroupImageDeleted value)? groupImageDeleted,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUserAdded value)? groupMembersUserAdded,
+    TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
+    TResult Function(_AreUsersForSearchUsersFetchedUpdated value)?
+        areUsersForSearchUsersFetchedUpdated,
+    TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
+        isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
+  }) {
+    return searchUsersPaginationInfoUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_GroupTitleUpdated value)? groupTitleUpdated,
+    TResult Function(_GroupImageUpdated value)? groupImageUpdated,
+    TResult Function(_GroupImageDeleted value)? groupImageDeleted,
+    TResult Function(_SearchAllPeopleSearchValueUpdated value)?
+        searchAllPeopleSearchValueUpdated,
+    TResult Function(_UsersForSearchQueryUpdated value)?
+        usersForSearchQueryUpdated,
+    TResult Function(_GroupMembersUserAdded value)? groupMembersUserAdded,
+    TResult Function(_GroupMembersUserDeleted value)? groupMembersUserDeleted,
+    TResult Function(_GroupMembersUpdated value)? groupMembersUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewGroupCreated value)? newGroupCreated,
+    TResult Function(_AreUsersForSearchUsersFetchedUpdated value)?
+        areUsersForSearchUsersFetchedUpdated,
+    TResult Function(_IsFetchingUsersForSearchQueryUpdated value)?
+        isFetchingUsersForSearchQueryUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
+    required TResult orElse(),
+  }) {
+    if (searchUsersPaginationInfoUpdated != null) {
+      return searchUsersPaginationInfoUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SearchUsersPaginationInfoUpdated implements AddGroupPageEvent {
+  const factory _SearchUsersPaginationInfoUpdated(
+      PaginationInfo? newPaginationInfo) = _$_SearchUsersPaginationInfoUpdated;
+
+  PaginationInfo? get newPaginationInfo;
+  @JsonKey(ignore: true)
+  _$SearchUsersPaginationInfoUpdatedCopyWith<_SearchUsersPaginationInfoUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$AddGroupPageStateTearOff {
   const _$AddGroupPageStateTearOff();
 
@@ -3053,8 +3466,7 @@ class _$AddGroupPageStateTearOff {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
-      required int searchUsersPaginationPageNumber,
-      required int searchUsersPaginationPageSize,
+      required PaginationInfo? paginationInfo,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
       required int currentStepIndex,
@@ -3066,8 +3478,7 @@ class _$AddGroupPageStateTearOff {
       groupTitle: groupTitle,
       groupImage: groupImage,
       searchAllPeopleSearchValue: searchAllPeopleSearchValue,
-      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber,
-      searchUsersPaginationPageSize: searchUsersPaginationPageSize,
+      paginationInfo: paginationInfo,
       usersForSearchQuery: usersForSearchQuery,
       groupMembers: groupMembers,
       currentStepIndex: currentStepIndex,
@@ -3087,8 +3498,7 @@ mixin _$AddGroupPageState {
   String get groupTitle => throw _privateConstructorUsedError;
   Image? get groupImage => throw _privateConstructorUsedError;
   String get searchAllPeopleSearchValue => throw _privateConstructorUsedError;
-  int get searchUsersPaginationPageNumber => throw _privateConstructorUsedError;
-  int get searchUsersPaginationPageSize => throw _privateConstructorUsedError;
+  PaginationInfo? get paginationInfo => throw _privateConstructorUsedError;
   List<GroupUser> get usersForSearchQuery => throw _privateConstructorUsedError;
   List<GroupUser> get groupMembers => throw _privateConstructorUsedError;
   int get currentStepIndex => throw _privateConstructorUsedError;
@@ -3112,8 +3522,7 @@ abstract class $AddGroupPageStateCopyWith<$Res> {
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
-      int searchUsersPaginationPageNumber,
-      int searchUsersPaginationPageSize,
+      PaginationInfo? paginationInfo,
       List<GroupUser> usersForSearchQuery,
       List<GroupUser> groupMembers,
       int currentStepIndex,
@@ -3137,8 +3546,7 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupTitle = freezed,
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
-    Object? searchUsersPaginationPageNumber = freezed,
-    Object? searchUsersPaginationPageSize = freezed,
+    Object? paginationInfo = freezed,
     Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
@@ -3160,15 +3568,10 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.searchAllPeopleSearchValue
           : searchAllPeopleSearchValue // ignore: cast_nullable_to_non_nullable
               as String,
-      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber ==
-              freezed
-          ? _value.searchUsersPaginationPageNumber
-          : searchUsersPaginationPageNumber // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchUsersPaginationPageSize: searchUsersPaginationPageSize == freezed
-          ? _value.searchUsersPaginationPageSize
-          : searchUsersPaginationPageSize // ignore: cast_nullable_to_non_nullable
-              as int,
+      paginationInfo: paginationInfo == freezed
+          ? _value.paginationInfo
+          : paginationInfo // ignore: cast_nullable_to_non_nullable
+              as PaginationInfo?,
       usersForSearchQuery: usersForSearchQuery == freezed
           ? _value.usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
@@ -3213,8 +3616,7 @@ abstract class _$AddGroupPageStateCopyWith<$Res>
       {String groupTitle,
       Image? groupImage,
       String searchAllPeopleSearchValue,
-      int searchUsersPaginationPageNumber,
-      int searchUsersPaginationPageSize,
+      PaginationInfo? paginationInfo,
       List<GroupUser> usersForSearchQuery,
       List<GroupUser> groupMembers,
       int currentStepIndex,
@@ -3240,8 +3642,7 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
     Object? groupTitle = freezed,
     Object? groupImage = freezed,
     Object? searchAllPeopleSearchValue = freezed,
-    Object? searchUsersPaginationPageNumber = freezed,
-    Object? searchUsersPaginationPageSize = freezed,
+    Object? paginationInfo = freezed,
     Object? usersForSearchQuery = freezed,
     Object? groupMembers = freezed,
     Object? currentStepIndex = freezed,
@@ -3263,15 +3664,10 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
           ? _value.searchAllPeopleSearchValue
           : searchAllPeopleSearchValue // ignore: cast_nullable_to_non_nullable
               as String,
-      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber ==
-              freezed
-          ? _value.searchUsersPaginationPageNumber
-          : searchUsersPaginationPageNumber // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchUsersPaginationPageSize: searchUsersPaginationPageSize == freezed
-          ? _value.searchUsersPaginationPageSize
-          : searchUsersPaginationPageSize // ignore: cast_nullable_to_non_nullable
-              as int,
+      paginationInfo: paginationInfo == freezed
+          ? _value.paginationInfo
+          : paginationInfo // ignore: cast_nullable_to_non_nullable
+              as PaginationInfo?,
       usersForSearchQuery: usersForSearchQuery == freezed
           ? _value.usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
@@ -3312,8 +3708,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       {required this.groupTitle,
       required this.groupImage,
       required this.searchAllPeopleSearchValue,
-      required this.searchUsersPaginationPageNumber,
-      required this.searchUsersPaginationPageSize,
+      required this.paginationInfo,
       required this.usersForSearchQuery,
       required this.groupMembers,
       required this.currentStepIndex,
@@ -3329,9 +3724,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
   @override
   final String searchAllPeopleSearchValue;
   @override
-  final int searchUsersPaginationPageNumber;
-  @override
-  final int searchUsersPaginationPageSize;
+  final PaginationInfo? paginationInfo;
   @override
   final List<GroupUser> usersForSearchQuery;
   @override
@@ -3349,7 +3742,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
 
   @override
   String toString() {
-    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, searchUsersPaginationPageNumber: $searchUsersPaginationPageNumber, searchUsersPaginationPageSize: $searchUsersPaginationPageSize, usersForSearchQuery: $usersForSearchQuery, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex, areUsersForSearchUsersFetched: $areUsersForSearchUsersFetched, isFetchingUsersForSearch: $isFetchingUsersForSearch, isGroupSuccessfullyCreated: $isGroupSuccessfullyCreated, isCreateNewGroupRequestExecuted: $isCreateNewGroupRequestExecuted)';
+    return 'AddGroupPageState(groupTitle: $groupTitle, groupImage: $groupImage, searchAllPeopleSearchValue: $searchAllPeopleSearchValue, paginationInfo: $paginationInfo, usersForSearchQuery: $usersForSearchQuery, groupMembers: $groupMembers, currentStepIndex: $currentStepIndex, areUsersForSearchUsersFetched: $areUsersForSearchUsersFetched, isFetchingUsersForSearch: $isFetchingUsersForSearch, isGroupSuccessfullyCreated: $isGroupSuccessfullyCreated, isCreateNewGroupRequestExecuted: $isCreateNewGroupRequestExecuted)';
   }
 
   @override
@@ -3363,12 +3756,8 @@ class _$_AddGroupPageState implements _AddGroupPageState {
                 .equals(other.groupImage, groupImage) &&
             const DeepCollectionEquality().equals(
                 other.searchAllPeopleSearchValue, searchAllPeopleSearchValue) &&
-            const DeepCollectionEquality().equals(
-                other.searchUsersPaginationPageNumber,
-                searchUsersPaginationPageNumber) &&
-            const DeepCollectionEquality().equals(
-                other.searchUsersPaginationPageSize,
-                searchUsersPaginationPageSize) &&
+            const DeepCollectionEquality()
+                .equals(other.paginationInfo, paginationInfo) &&
             const DeepCollectionEquality()
                 .equals(other.usersForSearchQuery, usersForSearchQuery) &&
             const DeepCollectionEquality()
@@ -3393,8 +3782,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       const DeepCollectionEquality().hash(groupTitle),
       const DeepCollectionEquality().hash(groupImage),
       const DeepCollectionEquality().hash(searchAllPeopleSearchValue),
-      const DeepCollectionEquality().hash(searchUsersPaginationPageNumber),
-      const DeepCollectionEquality().hash(searchUsersPaginationPageSize),
+      const DeepCollectionEquality().hash(paginationInfo),
       const DeepCollectionEquality().hash(usersForSearchQuery),
       const DeepCollectionEquality().hash(groupMembers),
       const DeepCollectionEquality().hash(currentStepIndex),
@@ -3414,8 +3802,7 @@ abstract class _AddGroupPageState implements AddGroupPageState {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
-      required int searchUsersPaginationPageNumber,
-      required int searchUsersPaginationPageSize,
+      required PaginationInfo? paginationInfo,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
       required int currentStepIndex,
@@ -3431,9 +3818,7 @@ abstract class _AddGroupPageState implements AddGroupPageState {
   @override
   String get searchAllPeopleSearchValue;
   @override
-  int get searchUsersPaginationPageNumber;
-  @override
-  int get searchUsersPaginationPageSize;
+  PaginationInfo? get paginationInfo;
   @override
   List<GroupUser> get usersForSearchQuery;
   @override

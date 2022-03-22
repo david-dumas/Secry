@@ -35,10 +35,10 @@ class _$GlobalSearchEventTearOff {
     );
   }
 
-  _SearchUsersPaginationPageNumberUpdated
-      searchUsersPaginationPageNumberUpdated(int newValue) {
-    return _SearchUsersPaginationPageNumberUpdated(
-      newValue,
+  _SearchUsersPaginationInfoUpdated searchUsersPaginationInfoUpdated(
+      PaginationInfo? paginationInfo) {
+    return _SearchUsersPaginationInfoUpdated(
+      paginationInfo,
     );
   }
 
@@ -81,8 +81,8 @@ mixin _$GlobalSearchEvent {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -96,7 +96,8 @@ mixin _$GlobalSearchEvent {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -109,7 +110,8 @@ mixin _$GlobalSearchEvent {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -124,8 +126,8 @@ mixin _$GlobalSearchEvent {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -142,8 +144,8 @@ mixin _$GlobalSearchEvent {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -159,8 +161,8 @@ mixin _$GlobalSearchEvent {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -235,8 +237,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -253,7 +255,8 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -269,7 +272,8 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -290,8 +294,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -311,8 +315,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -331,8 +335,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -422,8 +426,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -440,7 +444,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -456,7 +461,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -477,8 +483,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -498,8 +504,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -518,8 +524,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -617,8 +623,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -635,7 +641,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -651,7 +658,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -672,8 +680,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -693,8 +701,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -713,8 +721,8 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -742,73 +750,72 @@ abstract class _UsersForSearchQueryUpdated implements GlobalSearchEvent {
 }
 
 /// @nodoc
-abstract class _$SearchUsersPaginationPageNumberUpdatedCopyWith<$Res> {
-  factory _$SearchUsersPaginationPageNumberUpdatedCopyWith(
-          _SearchUsersPaginationPageNumberUpdated value,
-          $Res Function(_SearchUsersPaginationPageNumberUpdated) then) =
-      __$SearchUsersPaginationPageNumberUpdatedCopyWithImpl<$Res>;
-  $Res call({int newValue});
+abstract class _$SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
+  factory _$SearchUsersPaginationInfoUpdatedCopyWith(
+          _SearchUsersPaginationInfoUpdated value,
+          $Res Function(_SearchUsersPaginationInfoUpdated) then) =
+      __$SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>;
+  $Res call({PaginationInfo? paginationInfo});
 }
 
 /// @nodoc
-class __$SearchUsersPaginationPageNumberUpdatedCopyWithImpl<$Res>
+class __$SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>
     extends _$GlobalSearchEventCopyWithImpl<$Res>
-    implements _$SearchUsersPaginationPageNumberUpdatedCopyWith<$Res> {
-  __$SearchUsersPaginationPageNumberUpdatedCopyWithImpl(
-      _SearchUsersPaginationPageNumberUpdated _value,
-      $Res Function(_SearchUsersPaginationPageNumberUpdated) _then)
-      : super(
-            _value, (v) => _then(v as _SearchUsersPaginationPageNumberUpdated));
+    implements _$SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
+  __$SearchUsersPaginationInfoUpdatedCopyWithImpl(
+      _SearchUsersPaginationInfoUpdated _value,
+      $Res Function(_SearchUsersPaginationInfoUpdated) _then)
+      : super(_value, (v) => _then(v as _SearchUsersPaginationInfoUpdated));
 
   @override
-  _SearchUsersPaginationPageNumberUpdated get _value =>
-      super._value as _SearchUsersPaginationPageNumberUpdated;
+  _SearchUsersPaginationInfoUpdated get _value =>
+      super._value as _SearchUsersPaginationInfoUpdated;
 
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? paginationInfo = freezed,
   }) {
-    return _then(_SearchUsersPaginationPageNumberUpdated(
-      newValue == freezed
-          ? _value.newValue
-          : newValue // ignore: cast_nullable_to_non_nullable
-              as int,
+    return _then(_SearchUsersPaginationInfoUpdated(
+      paginationInfo == freezed
+          ? _value.paginationInfo
+          : paginationInfo // ignore: cast_nullable_to_non_nullable
+              as PaginationInfo?,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_SearchUsersPaginationPageNumberUpdated
-    implements _SearchUsersPaginationPageNumberUpdated {
-  const _$_SearchUsersPaginationPageNumberUpdated(this.newValue);
+class _$_SearchUsersPaginationInfoUpdated
+    implements _SearchUsersPaginationInfoUpdated {
+  const _$_SearchUsersPaginationInfoUpdated(this.paginationInfo);
 
   @override
-  final int newValue;
+  final PaginationInfo? paginationInfo;
 
   @override
   String toString() {
-    return 'GlobalSearchEvent.searchUsersPaginationPageNumberUpdated(newValue: $newValue)';
+    return 'GlobalSearchEvent.searchUsersPaginationInfoUpdated(paginationInfo: $paginationInfo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchUsersPaginationPageNumberUpdated &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            other is _SearchUsersPaginationInfoUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.paginationInfo, paginationInfo));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(paginationInfo));
 
   @JsonKey(ignore: true)
   @override
-  _$SearchUsersPaginationPageNumberUpdatedCopyWith<
-          _SearchUsersPaginationPageNumberUpdated>
-      get copyWith => __$SearchUsersPaginationPageNumberUpdatedCopyWithImpl<
-          _SearchUsersPaginationPageNumberUpdated>(this, _$identity);
+  _$SearchUsersPaginationInfoUpdatedCopyWith<_SearchUsersPaginationInfoUpdated>
+      get copyWith => __$SearchUsersPaginationInfoUpdatedCopyWithImpl<
+          _SearchUsersPaginationInfoUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -817,8 +824,8 @@ class _$_SearchUsersPaginationPageNumberUpdated
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -826,7 +833,7 @@ class _$_SearchUsersPaginationPageNumberUpdated
         isFetchingMoreDataForScrollDownUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
   }) {
-    return searchUsersPaginationPageNumberUpdated(newValue);
+    return searchUsersPaginationInfoUpdated(paginationInfo);
   }
 
   @override
@@ -835,14 +842,15 @@ class _$_SearchUsersPaginationPageNumberUpdated
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
     TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
   }) {
-    return searchUsersPaginationPageNumberUpdated?.call(newValue);
+    return searchUsersPaginationInfoUpdated?.call(paginationInfo);
   }
 
   @override
@@ -851,7 +859,8 @@ class _$_SearchUsersPaginationPageNumberUpdated
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -859,8 +868,8 @@ class _$_SearchUsersPaginationPageNumberUpdated
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
-    if (searchUsersPaginationPageNumberUpdated != null) {
-      return searchUsersPaginationPageNumberUpdated(newValue);
+    if (searchUsersPaginationInfoUpdated != null) {
+      return searchUsersPaginationInfoUpdated(paginationInfo);
     }
     return orElse();
   }
@@ -872,8 +881,8 @@ class _$_SearchUsersPaginationPageNumberUpdated
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -883,7 +892,7 @@ class _$_SearchUsersPaginationPageNumberUpdated
         isFetchingMoreDataForScrollDownUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
   }) {
-    return searchUsersPaginationPageNumberUpdated(this);
+    return searchUsersPaginationInfoUpdated(this);
   }
 
   @override
@@ -893,8 +902,8 @@ class _$_SearchUsersPaginationPageNumberUpdated
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -903,7 +912,7 @@ class _$_SearchUsersPaginationPageNumberUpdated
         isFetchingMoreDataForScrollDownUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
-    return searchUsersPaginationPageNumberUpdated?.call(this);
+    return searchUsersPaginationInfoUpdated?.call(this);
   }
 
   @override
@@ -913,8 +922,8 @@ class _$_SearchUsersPaginationPageNumberUpdated
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -924,22 +933,20 @@ class _$_SearchUsersPaginationPageNumberUpdated
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
-    if (searchUsersPaginationPageNumberUpdated != null) {
-      return searchUsersPaginationPageNumberUpdated(this);
+    if (searchUsersPaginationInfoUpdated != null) {
+      return searchUsersPaginationInfoUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class _SearchUsersPaginationPageNumberUpdated
-    implements GlobalSearchEvent {
-  const factory _SearchUsersPaginationPageNumberUpdated(int newValue) =
-      _$_SearchUsersPaginationPageNumberUpdated;
+abstract class _SearchUsersPaginationInfoUpdated implements GlobalSearchEvent {
+  const factory _SearchUsersPaginationInfoUpdated(
+      PaginationInfo? paginationInfo) = _$_SearchUsersPaginationInfoUpdated;
 
-  int get newValue;
+  PaginationInfo? get paginationInfo;
   @JsonKey(ignore: true)
-  _$SearchUsersPaginationPageNumberUpdatedCopyWith<
-          _SearchUsersPaginationPageNumberUpdated>
+  _$SearchUsersPaginationInfoUpdatedCopyWith<_SearchUsersPaginationInfoUpdated>
       get copyWith => throw _privateConstructorUsedError;
 }
 
@@ -988,8 +995,8 @@ class _$_PageRefreshed implements _PageRefreshed {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -1006,7 +1013,8 @@ class _$_PageRefreshed implements _PageRefreshed {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1022,7 +1030,8 @@ class _$_PageRefreshed implements _PageRefreshed {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1043,8 +1052,8 @@ class _$_PageRefreshed implements _PageRefreshed {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -1064,8 +1073,8 @@ class _$_PageRefreshed implements _PageRefreshed {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1084,8 +1093,8 @@ class _$_PageRefreshed implements _PageRefreshed {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1152,8 +1161,8 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -1170,7 +1179,8 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1186,7 +1196,8 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1207,8 +1218,8 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -1228,8 +1239,8 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1248,8 +1259,8 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1344,8 +1355,8 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -1362,7 +1373,8 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1378,7 +1390,8 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1399,8 +1412,8 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -1420,8 +1433,8 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1440,8 +1453,8 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1545,8 +1558,8 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -1563,7 +1576,8 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1579,7 +1593,8 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1600,8 +1615,8 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -1621,8 +1636,8 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1641,8 +1656,8 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1741,8 +1756,8 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     required TResult Function(String newValue) searchValueUpdated,
     required TResult Function(List<GroupUser> newUsers)
         usersForSearchQueryUpdated,
-    required TResult Function(int newValue)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(PaginationInfo? paginationInfo)
+        searchUsersPaginationInfoUpdated,
     required TResult Function() pageRefreshed,
     required TResult Function() scrolledToLoadMoreItems,
     required TResult Function(bool isFetching) isFetchingInitialDataUpdated,
@@ -1759,7 +1774,8 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1775,7 +1791,8 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function()? initialized,
     TResult Function(String newValue)? searchValueUpdated,
     TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(int newValue)? searchUsersPaginationPageNumberUpdated,
+    TResult Function(PaginationInfo? paginationInfo)?
+        searchUsersPaginationInfoUpdated,
     TResult Function()? pageRefreshed,
     TResult Function()? scrolledToLoadMoreItems,
     TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
@@ -1796,8 +1813,8 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
     required TResult Function(_UsersForSearchQueryUpdated value)
         usersForSearchQueryUpdated,
-    required TResult Function(_SearchUsersPaginationPageNumberUpdated value)
-        searchUsersPaginationPageNumberUpdated,
+    required TResult Function(_SearchUsersPaginationInfoUpdated value)
+        searchUsersPaginationInfoUpdated,
     required TResult Function(_PageRefreshed value) pageRefreshed,
     required TResult Function(_ScrolledToLoadMoreItems value)
         scrolledToLoadMoreItems,
@@ -1817,8 +1834,8 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1837,8 +1854,8 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
     TResult Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationPageNumberUpdated value)?
-        searchUsersPaginationPageNumberUpdated,
+    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+        searchUsersPaginationInfoUpdated,
     TResult Function(_PageRefreshed value)? pageRefreshed,
     TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
     TResult Function(_IsFetchingInitialDataUpdated value)?
@@ -1871,17 +1888,13 @@ class _$GlobalSearchStateTearOff {
   _GlobalSearchState call(
       {required String searchValue,
       required List<GroupUser> usersForSearchQuery,
-      required int searchUsersPaginationPageNumber,
-      required int searchUsersPaginationPageSize,
       required bool isDataFetched,
       required bool isFetchingInitialData,
       required bool isFetchingMoreDataForScrollDown,
-      required GeneralPaginationInfo? paginationInfo}) {
+      required PaginationInfo? paginationInfo}) {
     return _GlobalSearchState(
       searchValue: searchValue,
       usersForSearchQuery: usersForSearchQuery,
-      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber,
-      searchUsersPaginationPageSize: searchUsersPaginationPageSize,
       isDataFetched: isDataFetched,
       isFetchingInitialData: isFetchingInitialData,
       isFetchingMoreDataForScrollDown: isFetchingMoreDataForScrollDown,
@@ -1897,14 +1910,11 @@ const $GlobalSearchState = _$GlobalSearchStateTearOff();
 mixin _$GlobalSearchState {
   String get searchValue => throw _privateConstructorUsedError;
   List<GroupUser> get usersForSearchQuery => throw _privateConstructorUsedError;
-  int get searchUsersPaginationPageNumber => throw _privateConstructorUsedError;
-  int get searchUsersPaginationPageSize => throw _privateConstructorUsedError;
   bool get isDataFetched => throw _privateConstructorUsedError;
   bool get isFetchingInitialData => throw _privateConstructorUsedError;
   bool get isFetchingMoreDataForScrollDown =>
       throw _privateConstructorUsedError;
-  GeneralPaginationInfo? get paginationInfo =>
-      throw _privateConstructorUsedError;
+  PaginationInfo? get paginationInfo => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $GlobalSearchStateCopyWith<GlobalSearchState> get copyWith =>
@@ -1919,12 +1929,10 @@ abstract class $GlobalSearchStateCopyWith<$Res> {
   $Res call(
       {String searchValue,
       List<GroupUser> usersForSearchQuery,
-      int searchUsersPaginationPageNumber,
-      int searchUsersPaginationPageSize,
       bool isDataFetched,
       bool isFetchingInitialData,
       bool isFetchingMoreDataForScrollDown,
-      GeneralPaginationInfo? paginationInfo});
+      PaginationInfo? paginationInfo});
 }
 
 /// @nodoc
@@ -1940,8 +1948,6 @@ class _$GlobalSearchStateCopyWithImpl<$Res>
   $Res call({
     Object? searchValue = freezed,
     Object? usersForSearchQuery = freezed,
-    Object? searchUsersPaginationPageNumber = freezed,
-    Object? searchUsersPaginationPageSize = freezed,
     Object? isDataFetched = freezed,
     Object? isFetchingInitialData = freezed,
     Object? isFetchingMoreDataForScrollDown = freezed,
@@ -1956,15 +1962,6 @@ class _$GlobalSearchStateCopyWithImpl<$Res>
           ? _value.usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
-      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber ==
-              freezed
-          ? _value.searchUsersPaginationPageNumber
-          : searchUsersPaginationPageNumber // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchUsersPaginationPageSize: searchUsersPaginationPageSize == freezed
-          ? _value.searchUsersPaginationPageSize
-          : searchUsersPaginationPageSize // ignore: cast_nullable_to_non_nullable
-              as int,
       isDataFetched: isDataFetched == freezed
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
@@ -1981,7 +1978,7 @@ class _$GlobalSearchStateCopyWithImpl<$Res>
       paginationInfo: paginationInfo == freezed
           ? _value.paginationInfo
           : paginationInfo // ignore: cast_nullable_to_non_nullable
-              as GeneralPaginationInfo?,
+              as PaginationInfo?,
     ));
   }
 }
@@ -1996,12 +1993,10 @@ abstract class _$GlobalSearchStateCopyWith<$Res>
   $Res call(
       {String searchValue,
       List<GroupUser> usersForSearchQuery,
-      int searchUsersPaginationPageNumber,
-      int searchUsersPaginationPageSize,
       bool isDataFetched,
       bool isFetchingInitialData,
       bool isFetchingMoreDataForScrollDown,
-      GeneralPaginationInfo? paginationInfo});
+      PaginationInfo? paginationInfo});
 }
 
 /// @nodoc
@@ -2019,8 +2014,6 @@ class __$GlobalSearchStateCopyWithImpl<$Res>
   $Res call({
     Object? searchValue = freezed,
     Object? usersForSearchQuery = freezed,
-    Object? searchUsersPaginationPageNumber = freezed,
-    Object? searchUsersPaginationPageSize = freezed,
     Object? isDataFetched = freezed,
     Object? isFetchingInitialData = freezed,
     Object? isFetchingMoreDataForScrollDown = freezed,
@@ -2035,15 +2028,6 @@ class __$GlobalSearchStateCopyWithImpl<$Res>
           ? _value.usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
-      searchUsersPaginationPageNumber: searchUsersPaginationPageNumber ==
-              freezed
-          ? _value.searchUsersPaginationPageNumber
-          : searchUsersPaginationPageNumber // ignore: cast_nullable_to_non_nullable
-              as int,
-      searchUsersPaginationPageSize: searchUsersPaginationPageSize == freezed
-          ? _value.searchUsersPaginationPageSize
-          : searchUsersPaginationPageSize // ignore: cast_nullable_to_non_nullable
-              as int,
       isDataFetched: isDataFetched == freezed
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
@@ -2060,7 +2044,7 @@ class __$GlobalSearchStateCopyWithImpl<$Res>
       paginationInfo: paginationInfo == freezed
           ? _value.paginationInfo
           : paginationInfo // ignore: cast_nullable_to_non_nullable
-              as GeneralPaginationInfo?,
+              as PaginationInfo?,
     ));
   }
 }
@@ -2071,8 +2055,6 @@ class _$_GlobalSearchState implements _GlobalSearchState {
   const _$_GlobalSearchState(
       {required this.searchValue,
       required this.usersForSearchQuery,
-      required this.searchUsersPaginationPageNumber,
-      required this.searchUsersPaginationPageSize,
       required this.isDataFetched,
       required this.isFetchingInitialData,
       required this.isFetchingMoreDataForScrollDown,
@@ -2083,21 +2065,17 @@ class _$_GlobalSearchState implements _GlobalSearchState {
   @override
   final List<GroupUser> usersForSearchQuery;
   @override
-  final int searchUsersPaginationPageNumber;
-  @override
-  final int searchUsersPaginationPageSize;
-  @override
   final bool isDataFetched;
   @override
   final bool isFetchingInitialData;
   @override
   final bool isFetchingMoreDataForScrollDown;
   @override
-  final GeneralPaginationInfo? paginationInfo;
+  final PaginationInfo? paginationInfo;
 
   @override
   String toString() {
-    return 'GlobalSearchState(searchValue: $searchValue, usersForSearchQuery: $usersForSearchQuery, searchUsersPaginationPageNumber: $searchUsersPaginationPageNumber, searchUsersPaginationPageSize: $searchUsersPaginationPageSize, isDataFetched: $isDataFetched, isFetchingInitialData: $isFetchingInitialData, isFetchingMoreDataForScrollDown: $isFetchingMoreDataForScrollDown, paginationInfo: $paginationInfo)';
+    return 'GlobalSearchState(searchValue: $searchValue, usersForSearchQuery: $usersForSearchQuery, isDataFetched: $isDataFetched, isFetchingInitialData: $isFetchingInitialData, isFetchingMoreDataForScrollDown: $isFetchingMoreDataForScrollDown, paginationInfo: $paginationInfo)';
   }
 
   @override
@@ -2109,12 +2087,6 @@ class _$_GlobalSearchState implements _GlobalSearchState {
                 .equals(other.searchValue, searchValue) &&
             const DeepCollectionEquality()
                 .equals(other.usersForSearchQuery, usersForSearchQuery) &&
-            const DeepCollectionEquality().equals(
-                other.searchUsersPaginationPageNumber,
-                searchUsersPaginationPageNumber) &&
-            const DeepCollectionEquality().equals(
-                other.searchUsersPaginationPageSize,
-                searchUsersPaginationPageSize) &&
             const DeepCollectionEquality()
                 .equals(other.isDataFetched, isDataFetched) &&
             const DeepCollectionEquality()
@@ -2131,8 +2103,6 @@ class _$_GlobalSearchState implements _GlobalSearchState {
       runtimeType,
       const DeepCollectionEquality().hash(searchValue),
       const DeepCollectionEquality().hash(usersForSearchQuery),
-      const DeepCollectionEquality().hash(searchUsersPaginationPageNumber),
-      const DeepCollectionEquality().hash(searchUsersPaginationPageSize),
       const DeepCollectionEquality().hash(isDataFetched),
       const DeepCollectionEquality().hash(isFetchingInitialData),
       const DeepCollectionEquality().hash(isFetchingMoreDataForScrollDown),
@@ -2148,21 +2118,15 @@ abstract class _GlobalSearchState implements GlobalSearchState {
   const factory _GlobalSearchState(
       {required String searchValue,
       required List<GroupUser> usersForSearchQuery,
-      required int searchUsersPaginationPageNumber,
-      required int searchUsersPaginationPageSize,
       required bool isDataFetched,
       required bool isFetchingInitialData,
       required bool isFetchingMoreDataForScrollDown,
-      required GeneralPaginationInfo? paginationInfo}) = _$_GlobalSearchState;
+      required PaginationInfo? paginationInfo}) = _$_GlobalSearchState;
 
   @override
   String get searchValue;
   @override
   List<GroupUser> get usersForSearchQuery;
-  @override
-  int get searchUsersPaginationPageNumber;
-  @override
-  int get searchUsersPaginationPageSize;
   @override
   bool get isDataFetched;
   @override
@@ -2170,7 +2134,7 @@ abstract class _GlobalSearchState implements GlobalSearchState {
   @override
   bool get isFetchingMoreDataForScrollDown;
   @override
-  GeneralPaginationInfo? get paginationInfo;
+  PaginationInfo? get paginationInfo;
   @override
   @JsonKey(ignore: true)
   _$GlobalSearchStateCopyWith<_GlobalSearchState> get copyWith =>

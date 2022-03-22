@@ -9,6 +9,8 @@ const temporaryPostmanPrivateChatsUrl = "https://e6e670c2-7eb3-4bae-81e4-0ecebaa
 const temporaryPostmanPrivateSurveysUrl = "https://413f4f84-f2a1-41f7-a154-43d6a09af11a.mock.pstmn.io";
 const temporaryPostmanGetUsersForCreateNewGroup = "https://b45c710f-f287-487b-8f85-fc63a088a546.mock.pstmn.io";
 
+const defaultPageSize = 15;
+
 // Most used color(s)
 const kPrimaryColor = Color(0xFF3794FC);
 

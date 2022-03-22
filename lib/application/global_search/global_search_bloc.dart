@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:secry/constants.dart';
 
 import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/domain/users/i_users_repository.dart';
@@ -25,34 +26,40 @@ class GlobalSearchBloc extends Bloc<GlobalSearchEvent, GlobalSearchState> {
     await event.map(initialized: (e) async {
       getUsersForSearchQuery(
           searchValue: state.searchValue,
-          paginationPageNumber: state.searchUsersPaginationPageNumber,
-          paginationPageSize: state.searchUsersPaginationPageSize);
+          paginationPageNumber: state.paginationInfo?.pageNumber ?? 1,
+          paginationPageSize: state.paginationInfo?.pageSize ?? defaultPageSize);
     }, searchValueUpdated: (e) async {
       // TODO fetch after X seconds without typing
       emit(state.copyWith(searchValue: e.newValue));
 
       getUsersForSearchQuery(
           searchValue: e.newValue,
-          paginationPageNumber: state.searchUsersPaginationPageNumber,
-          paginationPageSize: state.searchUsersPaginationPageSize);
+          paginationPageNumber: state.paginationInfo?.pageNumber ?? 1,
+          paginationPageSize: state.paginationInfo?.pageSize ?? defaultPageSize);
     }, usersForSearchQueryUpdated: (e) async {
       emit(state.copyWith(usersForSearchQuery: e.newUsers));
-    }, searchUsersPaginationPageNumberUpdated: (e) async {
-      emit(state.copyWith(searchUsersPaginationPageNumber: e.newValue));
+    }, searchUsersPaginationInfoUpdated: (e) async {
+      emit(state.copyWith(paginationInfo: e.paginationInfo));
     }, pageRefreshed: (e) async {
       getUsersForSearchQuery(
           searchValue: state.searchValue,
-          paginationPageNumber: state.searchUsersPaginationPageNumber,
-          paginationPageSize: state.searchUsersPaginationPageSize);
+          paginationPageNumber: state.paginationInfo?.pageNumber ?? 1,
+          paginationPageSize: state.paginationInfo?.pageSize ?? defaultPageSize);
     }, scrolledToLoadMoreItems: (e) async {
-      if (state.paginationInfo != null) {
-        if (state.paginationInfo!.hasNextPage) {
-          emit(state.copyWith(searchUsersPaginationPageNumber: state.searchUsersPaginationPageNumber + 1));
-          getUsersForSearchQuery(
-              searchValue: state.searchValue,
-              paginationPageNumber: state.searchUsersPaginationPageNumber,
-              paginationPageSize: state.searchUsersPaginationPageSize);
-        }
+      if (state.paginationInfo != null && (state.paginationInfo?.hasNextPage ?? false)) {
+        final newPaginationInfo = new PaginationInfo(
+            pageNumber: (state.paginationInfo!.pageNumber) + 1,
+            pageSize: state.paginationInfo!.pageSize,
+            totalPages: state.paginationInfo!.totalPages,
+            totalCount: state.paginationInfo!.totalCount,
+            hasPreviousPage: state.paginationInfo!.hasPreviousPage,
+            hasNextPage: state.paginationInfo!.hasNextPage);
+        emit(state.copyWith(paginationInfo: newPaginationInfo));
+
+        getUsersForSearchQuery(
+            searchValue: state.searchValue,
+            paginationPageNumber: newPaginationInfo.pageNumber,
+            paginationPageSize: state.paginationInfo!.pageSize);
       }
     }, isFetchingInitialDataUpdated: (e) async {
       emit(state.copyWith(isFetchingInitialData: e.isFetching));
@@ -71,13 +78,13 @@ class GlobalSearchBloc extends Bloc<GlobalSearchEvent, GlobalSearchState> {
       add(GlobalSearchEvent.isFetchingMoreDataForScrollDownUpdated(true));
     }
 
-    // TODO save last GeneralPaginationInfo in state
-    final usersFromGlobalSearch = await _usersRepository.getUsersForSearchQuery(
+    final usersAndPaginationInfo = await _usersRepository.getUsersAndPaginationInfoForSearchQuery(
         searchQuery: searchValue, pageNumber: paginationPageNumber, pageSize: paginationPageSize);
 
-    add(GlobalSearchEvent.usersForSearchQueryUpdated(usersFromGlobalSearch));
-    add(GlobalSearchEvent.isDataFetchedUpdated(true));
+    add(GlobalSearchEvent.usersForSearchQueryUpdated(usersAndPaginationInfo.users));
+    add(GlobalSearchEvent.searchUsersPaginationInfoUpdated(usersAndPaginationInfo.paginationInfo));
 
+    add(GlobalSearchEvent.isDataFetchedUpdated(true));
     if (paginationPageNumber == 1) {
       add(GlobalSearchEvent.isFetchingInitialDataUpdated(false));
     } else {

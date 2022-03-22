@@ -7,7 +7,7 @@ class HomepageEvent with _$HomepageEvent {
       _PrivateGroupsInfoUpdated;
   const factory HomepageEvent.updatedIsShowingSearchBar(bool isShowing) = _UpdatedIsShowingSearchBar;
   const factory HomepageEvent.searchValueUpdated(String newValue) = _SearchValueUpdated;
-  const factory HomepageEvent.generalGroupInfoUpdated(GeneralGroupInfo newGroupInfo) = _GeneralGroupInfoUpdated;
+  const factory HomepageEvent.paginationInfoUpdated(PaginationInfo paginationInfo) = _PaginationInfoUpdated;
   const factory HomepageEvent.scrolledToLoadMoreItems() = _ScrolledToLoadMoreItems;
   const factory HomepageEvent.groupsRefreshed() = _GroupsRefreshed;
   const factory HomepageEvent.isFetchingInitialGroupsUpdated(bool isFetching) = _IsFetchingInitialGroupsUpdated;
