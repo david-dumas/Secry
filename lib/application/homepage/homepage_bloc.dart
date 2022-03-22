@@ -97,7 +97,9 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
 
     add(HomepageEvent.privateGroupsInfoUpdated(privateGroupsRowsInfo));
 
-    add(HomepageEvent.paginationInfoUpdated(groupsAndGeneralAboutInfo.paginationInfo!));
+    if (groupsAndGeneralAboutInfo.paginationInfo != null) {
+      add(HomepageEvent.paginationInfoUpdated(groupsAndGeneralAboutInfo.paginationInfo!));
+    }
     if (pageNumber == 1) {
       add(HomepageEvent.isFetchingInitialGroupsUpdated(false));
     } else {
