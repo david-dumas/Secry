@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:secry/application/all_chats_or_surveys_in_group_page/all_chats_or_surveys_in_group_page_bloc.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/presentation/pages/general/widgets/empty_state.dart';
