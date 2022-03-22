@@ -29,6 +29,9 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       isShowingPasswordToggled: (e) async {
         emit(state.copyWith(isShowingPassword: e.isShowing));
       },
+      isShowingErrorMessagesUpdated: (e) async {
+        emit(state.copyWith(isShowingErrorMessages: e.isShowing));
+      },
       passwordChanged: (e) async {
         emit(state.copyWith(inputPassword: e.newPassword));
       },

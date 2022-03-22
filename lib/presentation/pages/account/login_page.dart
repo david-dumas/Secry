@@ -10,6 +10,7 @@ import 'package:secry/presentation/pages/account/reset_password_page.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
+import 'package:secry/util/dialogs/dialog_helper.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -33,7 +34,16 @@ class _LoginPageState extends State<LoginPage> {
                 () => {},
                 (either) => either.fold(
                   (failure) {
-                    // TODO Show login error
+                    if (state.isShowingErrorMessages) {
+                      DialogHelper().showAlertDialog(
+                        context,
+                        title: tr('warning_title_general'),
+                        description: tr(state.currentErrorMessageTag),
+                        extraActionOnClose: () async {
+                          context.read<SignInFormBloc>().add(SignInFormEvent.isShowingErrorMessagesUpdated(false));
+                        },
+                      );
+                    }
                   },
                   (_) {
                     // Successfully logged in

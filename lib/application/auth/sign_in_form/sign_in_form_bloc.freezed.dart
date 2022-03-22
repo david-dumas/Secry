@@ -28,6 +28,12 @@ class _$SignInFormEventTearOff {
     );
   }
 
+  _IsShowingErrorMessagesUpdated isShowingErrorMessagesUpdated(bool isShowing) {
+    return _IsShowingErrorMessagesUpdated(
+      isShowing,
+    );
+  }
+
   _SignInPressed signInPressed() {
     return const _SignInPressed();
   }
@@ -54,6 +60,7 @@ mixin _$SignInFormEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -63,6 +70,7 @@ mixin _$SignInFormEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -72,6 +80,7 @@ mixin _$SignInFormEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -83,6 +92,8 @@ mixin _$SignInFormEvent {
     required TResult Function(_SignInForm value) initialized,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -92,6 +103,8 @@ mixin _$SignInFormEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -101,6 +114,8 @@ mixin _$SignInFormEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -169,6 +184,7 @@ class _$_SignInForm implements _SignInForm {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -181,6 +197,7 @@ class _$_SignInForm implements _SignInForm {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -193,6 +210,7 @@ class _$_SignInForm implements _SignInForm {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -210,6 +228,8 @@ class _$_SignInForm implements _SignInForm {
     required TResult Function(_SignInForm value) initialized,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -222,6 +242,8 @@ class _$_SignInForm implements _SignInForm {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -234,6 +256,8 @@ class _$_SignInForm implements _SignInForm {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -319,6 +343,7 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -331,6 +356,7 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -343,6 +369,7 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -360,6 +387,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     required TResult Function(_SignInForm value) initialized,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -372,6 +401,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -384,6 +415,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -404,6 +437,174 @@ abstract class _IsShowingPasswordToggled implements SignInFormEvent {
   @JsonKey(ignore: true)
   _$IsShowingPasswordToggledCopyWith<_IsShowingPasswordToggled> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  factory _$IsShowingErrorMessagesUpdatedCopyWith(
+          _IsShowingErrorMessagesUpdated value,
+          $Res Function(_IsShowingErrorMessagesUpdated) then) =
+      __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isShowing});
+}
+
+/// @nodoc
+class __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  __$IsShowingErrorMessagesUpdatedCopyWithImpl(
+      _IsShowingErrorMessagesUpdated _value,
+      $Res Function(_IsShowingErrorMessagesUpdated) _then)
+      : super(_value, (v) => _then(v as _IsShowingErrorMessagesUpdated));
+
+  @override
+  _IsShowingErrorMessagesUpdated get _value =>
+      super._value as _IsShowingErrorMessagesUpdated;
+
+  @override
+  $Res call({
+    Object? isShowing = freezed,
+  }) {
+    return _then(_IsShowingErrorMessagesUpdated(
+      isShowing == freezed
+          ? _value.isShowing
+          : isShowing // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsShowingErrorMessagesUpdated
+    implements _IsShowingErrorMessagesUpdated {
+  const _$_IsShowingErrorMessagesUpdated(this.isShowing);
+
+  @override
+  final bool isShowing;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.isShowingErrorMessagesUpdated(isShowing: $isShowing)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsShowingErrorMessagesUpdated &&
+            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
+      get copyWith => __$IsShowingErrorMessagesUpdatedCopyWithImpl<
+          _IsShowingErrorMessagesUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
+    required TResult Function() signInPressed,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newPassword) passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated?.call(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (isShowingErrorMessagesUpdated != null) {
+      return isShowingErrorMessagesUpdated(isShowing);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
+    required TResult Function(_SignInPressed value) signInPressed,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (isShowingErrorMessagesUpdated != null) {
+      return isShowingErrorMessagesUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsShowingErrorMessagesUpdated implements SignInFormEvent {
+  const factory _IsShowingErrorMessagesUpdated(bool isShowing) =
+      _$_IsShowingErrorMessagesUpdated;
+
+  bool get isShowing;
+  @JsonKey(ignore: true)
+  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -449,6 +650,7 @@ class _$_SignInPressed implements _SignInPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -461,6 +663,7 @@ class _$_SignInPressed implements _SignInPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -473,6 +676,7 @@ class _$_SignInPressed implements _SignInPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -490,6 +694,8 @@ class _$_SignInPressed implements _SignInPressed {
     required TResult Function(_SignInForm value) initialized,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -502,6 +708,8 @@ class _$_SignInPressed implements _SignInPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -514,6 +722,8 @@ class _$_SignInPressed implements _SignInPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -597,6 +807,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -609,6 +820,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -621,6 +833,7 @@ class _$_EmailChanged implements _EmailChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -638,6 +851,8 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_SignInForm value) initialized,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -650,6 +865,8 @@ class _$_EmailChanged implements _EmailChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -662,6 +879,8 @@ class _$_EmailChanged implements _EmailChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -751,6 +970,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -763,6 +983,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -775,6 +996,7 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -792,6 +1014,8 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_SignInForm value) initialized,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -804,6 +1028,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -816,6 +1042,8 @@ class _$_PasswordChanged implements _PasswordChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
