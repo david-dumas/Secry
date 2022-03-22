@@ -1,5 +1,4 @@
 import 'package:secry/constants.dart';
-import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/domain/users/users_and_pagination_info.dart';
 
 abstract class IUsersRepository {

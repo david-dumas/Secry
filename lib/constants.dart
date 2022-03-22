@@ -40,6 +40,7 @@ const cancelButtonGrayWhite = Color(0XFFF2F2F2);
 
 // General spacing
 const Widget verticalSafetyScrollOffset = SizedBox(height: 50.0);
+const verticalSafetyScrollOffsetHeight = 50.0;
 
 // Horizontal Spacing
 const Widget horizontalSpaceTiny = SizedBox(width: 5.0);

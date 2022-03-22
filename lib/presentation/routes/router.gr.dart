@@ -13,7 +13,7 @@
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
 
-import '../pages/account/account_loggedout_page.dart' as _i7;
+import '../pages/account/account_overview_page.dart' as _i7;
 import '../pages/account/account_page.dart' as _i6;
 import '../pages/account/reset_password_page.dart' as _i10;
 import '../pages/add_group/add_group_page.dart' as _i13;
@@ -60,9 +60,9 @@ class AppRouter extends _i14.RootStackRouter {
       return _i14.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i6.AccountPage());
     },
-    AccountLoggedoutPageRoute.name: (routeData) {
+    AccountOverviewPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.AccountLoggedoutPage());
+          routeData: routeData, child: const _i7.AccountOverviewPage());
     },
     LoginPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
@@ -110,8 +110,8 @@ class AppRouter extends _i14.RootStackRouter {
         _i14.RouteConfig(SavedChatsAndSurveysPageRoute.name,
             path: '/saved-chats-and-surveys-page'),
         _i14.RouteConfig(AccountPageRoute.name, path: '/account-page'),
-        _i14.RouteConfig(AccountLoggedoutPageRoute.name,
-            path: '/account-loggedout-page'),
+        _i14.RouteConfig(AccountOverviewPageRoute.name,
+            path: '/account-overview-page'),
         _i14.RouteConfig(LoginPageRoute.name, path: '/login-page'),
         _i14.RouteConfig(SignupPageRoute.name, path: '/signup-page'),
         _i14.RouteConfig(ResetPasswordPageRoute.name,
@@ -191,12 +191,12 @@ class AccountPageRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i7.AccountLoggedoutPage]
-class AccountLoggedoutPageRoute extends _i14.PageRouteInfo<void> {
-  const AccountLoggedoutPageRoute()
-      : super(AccountLoggedoutPageRoute.name, path: '/account-loggedout-page');
+/// [_i7.AccountOverviewPage]
+class AccountOverviewPageRoute extends _i14.PageRouteInfo<void> {
+  const AccountOverviewPageRoute()
+      : super(AccountOverviewPageRoute.name, path: '/account-overview-page');
 
-  static const String name = 'AccountLoggedoutPageRoute';
+  static const String name = 'AccountOverviewPageRoute';
 }
 
 /// generated route for

@@ -4,4 +4,5 @@ part of 'tabbar_bloc.dart';
 class TabbarEvent with _$TabbarEvent {
   const factory TabbarEvent.initialized() = _Initialized;
   const factory TabbarEvent.selectedIndexChanged(int index) = _SelectedIndexChanged;
+  const factory TabbarEvent.isUserSignedInUpdated(bool isSignedIn) = _IsUserSignedInUpdated;
 }

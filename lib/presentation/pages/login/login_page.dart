@@ -9,6 +9,8 @@ import 'package:secry/injection.dart';
 import 'package:secry/presentation/pages/account/reset_password_page.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
+import 'package:secry/application/tabbar/tabbar_bloc.dart';
+
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
@@ -23,126 +25,131 @@ class _LoginPageState extends State<LoginPage> {
 
     return BlocProvider(
       create: (context) => getIt<SignInFormBloc>(),
-      child: BlocConsumer<SignInFormBloc, SignInFormState>(
-        listener: (context, state) {
-          state.signInFailureOrUnitOption.fold(
-            () => {},
-            (either) => either.fold(
-              (failure) {
-                // TODO Show login error
-              },
-              (_) {
-                // Successfully logged in
-                // TODO navigate to homepage AND load user related content
-              },
-            ),
-          );
-        },
-        builder: (context, state) {
-          return Scaffold(
-            backgroundColor: globalWhite,
-            appBar: GeneralAppbar(
-              isSubpage: true,
-            ),
-            body: Center(
-              child: SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.only(bottom: screenHeight * 0.1),
-                  child: Padding(
-                    padding: pagePaddingZeroTop,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Align(
-                          alignment: Alignment.centerLeft,
-                          child: Text(
-                            tr('account_login_title'),
-                            textAlign: TextAlign.left,
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26, color: kPrimaryColor),
-                          ),
-                        ),
-                        SizedBox(height: 26),
-                        TextFormField(
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.email_outlined),
-                            labelText: tr('account_email'),
-                          ),
-                          onChanged: (value) => context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(value)),
-                        ),
-                        SizedBox(height: 12),
-                        TextFormField(
-                          obscureText: !state.isShowingPassword,
-                          decoration: InputDecoration(
-                            border: OutlineInputBorder(),
-                            prefixIcon: Icon(Icons.lock_outline),
-                            labelText: tr('account_password'),
-                            suffixIcon: IconButton(
-                              icon: state.isShowingPassword ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
-                              onPressed: () {
-                                context
-                                    .read<SignInFormBloc>()
-                                    .add(SignInFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
-                              },
-                            ),
-                          ),
-                          onChanged: (value) =>
-                              context.read<SignInFormBloc>().add(SignInFormEvent.passwordChanged(value)),
-                        ),
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: [
-                            TextButton(
-                              onPressed: () {
-                                pushNewScreen(
-                                  context,
-                                  screen: ResetPasswordPage(),
-                                  withNavBar: true,
-                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                );
-                              },
+      child: BlocBuilder<TabbarBloc, TabbarState>(
+        builder: (mainContext, mainState) {
+          return BlocConsumer<SignInFormBloc, SignInFormState>(
+            listener: (context, state) {
+              state.signInFailureOrUnitOption.fold(
+                () => {},
+                (either) => either.fold(
+                  (failure) {
+                    // TODO Show login error
+                  },
+                  (_) {
+                    // Successfully logged in
+                    Navigator.of(context).pop();
+                  },
+                ),
+              );
+            },
+            builder: (context, state) {
+              return Scaffold(
+                backgroundColor: globalWhite,
+                appBar: GeneralAppbar(
+                  isSubpage: true,
+                ),
+                body: Center(
+                  child: SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: screenHeight * 0.1),
+                      child: Padding(
+                        padding: pagePaddingZeroTop,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: <Widget>[
+                            Align(
+                              alignment: Alignment.centerLeft,
                               child: Text(
-                                tr('account_forgot_your_password'),
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                  decoration: TextDecoration.underline,
-                                  fontSize: 16.0,
+                                tr('account_login_title'),
+                                textAlign: TextAlign.left,
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26, color: kPrimaryColor),
+                              ),
+                            ),
+                            SizedBox(height: 26),
+                            TextFormField(
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                prefixIcon: Icon(Icons.email_outlined),
+                                labelText: tr('account_email'),
+                              ),
+                              onChanged: (value) =>
+                                  context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(value)),
+                            ),
+                            SizedBox(height: 12),
+                            TextFormField(
+                              obscureText: !state.isShowingPassword,
+                              decoration: InputDecoration(
+                                border: OutlineInputBorder(),
+                                prefixIcon: Icon(Icons.lock_outline),
+                                labelText: tr('account_password'),
+                                suffixIcon: IconButton(
+                                  icon: state.isShowingPassword ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+                                  onPressed: () {
+                                    context
+                                        .read<SignInFormBloc>()
+                                        .add(SignInFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
+                                  },
+                                ),
+                              ),
+                              onChanged: (value) =>
+                                  context.read<SignInFormBloc>().add(SignInFormEvent.passwordChanged(value)),
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                TextButton(
+                                  onPressed: () {
+                                    pushNewScreen(
+                                      context,
+                                      screen: ResetPasswordPage(),
+                                      withNavBar: true,
+                                      pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                    );
+                                  },
+                                  child: Text(
+                                    tr('account_forgot_your_password'),
+                                    textAlign: TextAlign.center,
+                                    style: TextStyle(
+                                      decoration: TextDecoration.underline,
+                                      fontSize: 16.0,
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20.0),
+                              child: Container(
+                                width: MediaQuery.of(context).size.width,
+                                height: kButtonHeightMedium,
+                                child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                        borderRadius: kButtonRadiusMedium,
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    context.read<SignInFormBloc>().add(SignInFormEvent.signInPressed());
+                                  },
+                                  child: Text(
+                                    tr('action_login'),
+                                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                                  ),
                                 ),
                               ),
                             ),
                           ],
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 20.0),
-                          child: Container(
-                            width: MediaQuery.of(context).size.width,
-                            height: kButtonHeightMedium,
-                            child: ElevatedButton(
-                              style: ButtonStyle(
-                                shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                                    borderRadius: kButtonRadiusMedium,
-                                  ),
-                                ),
-                              ),
-                              onPressed: () {
-                                context.read<SignInFormBloc>().add(SignInFormEvent.signInPressed());
-                              },
-                              child: Text(
-                                tr('action_login'),
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ),
+              );
+            },
           );
         },
       ),

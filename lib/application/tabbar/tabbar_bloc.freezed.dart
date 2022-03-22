@@ -27,6 +27,12 @@ class _$TabbarEventTearOff {
       index,
     );
   }
+
+  _IsUserSignedInUpdated isUserSignedInUpdated(bool isSignedIn) {
+    return _IsUserSignedInUpdated(
+      isSignedIn,
+    );
+  }
 }
 
 /// @nodoc
@@ -38,18 +44,21 @@ mixin _$TabbarEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(int index) selectedIndexChanged,
+    required TResult Function(bool isSignedIn) isUserSignedInUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -57,18 +66,22 @@ mixin _$TabbarEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_SelectedIndexChanged value) selectedIndexChanged,
+    required TResult Function(_IsUserSignedInUpdated value)
+        isUserSignedInUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -132,6 +145,7 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(int index) selectedIndexChanged,
+    required TResult Function(bool isSignedIn) isUserSignedInUpdated,
   }) {
     return initialized();
   }
@@ -141,6 +155,7 @@ class _$_Initialized implements _Initialized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
   }) {
     return initialized?.call();
   }
@@ -150,6 +165,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -163,6 +179,8 @@ class _$_Initialized implements _Initialized {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_SelectedIndexChanged value) selectedIndexChanged,
+    required TResult Function(_IsUserSignedInUpdated value)
+        isUserSignedInUpdated,
   }) {
     return initialized(this);
   }
@@ -172,6 +190,7 @@ class _$_Initialized implements _Initialized {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -181,6 +200,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -262,6 +282,7 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(int index) selectedIndexChanged,
+    required TResult Function(bool isSignedIn) isUserSignedInUpdated,
   }) {
     return selectedIndexChanged(index);
   }
@@ -271,6 +292,7 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
   }) {
     return selectedIndexChanged?.call(index);
   }
@@ -280,6 +302,7 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
     required TResult orElse(),
   }) {
     if (selectedIndexChanged != null) {
@@ -293,6 +316,8 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_SelectedIndexChanged value) selectedIndexChanged,
+    required TResult Function(_IsUserSignedInUpdated value)
+        isUserSignedInUpdated,
   }) {
     return selectedIndexChanged(this);
   }
@@ -302,6 +327,7 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
   }) {
     return selectedIndexChanged?.call(this);
   }
@@ -311,6 +337,7 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
     required TResult orElse(),
   }) {
     if (selectedIndexChanged != null) {
@@ -330,17 +357,163 @@ abstract class _SelectedIndexChanged implements TabbarEvent {
 }
 
 /// @nodoc
+abstract class _$IsUserSignedInUpdatedCopyWith<$Res> {
+  factory _$IsUserSignedInUpdatedCopyWith(_IsUserSignedInUpdated value,
+          $Res Function(_IsUserSignedInUpdated) then) =
+      __$IsUserSignedInUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isSignedIn});
+}
+
+/// @nodoc
+class __$IsUserSignedInUpdatedCopyWithImpl<$Res>
+    extends _$TabbarEventCopyWithImpl<$Res>
+    implements _$IsUserSignedInUpdatedCopyWith<$Res> {
+  __$IsUserSignedInUpdatedCopyWithImpl(_IsUserSignedInUpdated _value,
+      $Res Function(_IsUserSignedInUpdated) _then)
+      : super(_value, (v) => _then(v as _IsUserSignedInUpdated));
+
+  @override
+  _IsUserSignedInUpdated get _value => super._value as _IsUserSignedInUpdated;
+
+  @override
+  $Res call({
+    Object? isSignedIn = freezed,
+  }) {
+    return _then(_IsUserSignedInUpdated(
+      isSignedIn == freezed
+          ? _value.isSignedIn
+          : isSignedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsUserSignedInUpdated implements _IsUserSignedInUpdated {
+  const _$_IsUserSignedInUpdated(this.isSignedIn);
+
+  @override
+  final bool isSignedIn;
+
+  @override
+  String toString() {
+    return 'TabbarEvent.isUserSignedInUpdated(isSignedIn: $isSignedIn)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsUserSignedInUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.isSignedIn, isSignedIn));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isSignedIn));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsUserSignedInUpdatedCopyWith<_IsUserSignedInUpdated> get copyWith =>
+      __$IsUserSignedInUpdatedCopyWithImpl<_IsUserSignedInUpdated>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(int index) selectedIndexChanged,
+    required TResult Function(bool isSignedIn) isUserSignedInUpdated,
+  }) {
+    return isUserSignedInUpdated(isSignedIn);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
+  }) {
+    return isUserSignedInUpdated?.call(isSignedIn);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(int index)? selectedIndexChanged,
+    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
+    required TResult orElse(),
+  }) {
+    if (isUserSignedInUpdated != null) {
+      return isUserSignedInUpdated(isSignedIn);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_SelectedIndexChanged value) selectedIndexChanged,
+    required TResult Function(_IsUserSignedInUpdated value)
+        isUserSignedInUpdated,
+  }) {
+    return isUserSignedInUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
+  }) {
+    return isUserSignedInUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
+    required TResult orElse(),
+  }) {
+    if (isUserSignedInUpdated != null) {
+      return isUserSignedInUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsUserSignedInUpdated implements TabbarEvent {
+  const factory _IsUserSignedInUpdated(bool isSignedIn) =
+      _$_IsUserSignedInUpdated;
+
+  bool get isSignedIn;
+  @JsonKey(ignore: true)
+  _$IsUserSignedInUpdatedCopyWith<_IsUserSignedInUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$TabbarStateTearOff {
   const _$TabbarStateTearOff();
 
   _TabbarState call(
       {required int selectedIndex,
       required List<String> titleTagsForSelectedIndex,
-      required String currentTitleTagForSelectedIndex}) {
+      required String currentTitleTagForSelectedIndex,
+      required bool isUserSignedIn}) {
     return _TabbarState(
       selectedIndex: selectedIndex,
       titleTagsForSelectedIndex: titleTagsForSelectedIndex,
       currentTitleTagForSelectedIndex: currentTitleTagForSelectedIndex,
+      isUserSignedIn: isUserSignedIn,
     );
   }
 }
@@ -355,6 +528,7 @@ mixin _$TabbarState {
       throw _privateConstructorUsedError;
   String get currentTitleTagForSelectedIndex =>
       throw _privateConstructorUsedError;
+  bool get isUserSignedIn => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TabbarStateCopyWith<TabbarState> get copyWith =>
@@ -369,7 +543,8 @@ abstract class $TabbarStateCopyWith<$Res> {
   $Res call(
       {int selectedIndex,
       List<String> titleTagsForSelectedIndex,
-      String currentTitleTagForSelectedIndex});
+      String currentTitleTagForSelectedIndex,
+      bool isUserSignedIn});
 }
 
 /// @nodoc
@@ -385,6 +560,7 @@ class _$TabbarStateCopyWithImpl<$Res> implements $TabbarStateCopyWith<$Res> {
     Object? selectedIndex = freezed,
     Object? titleTagsForSelectedIndex = freezed,
     Object? currentTitleTagForSelectedIndex = freezed,
+    Object? isUserSignedIn = freezed,
   }) {
     return _then(_value.copyWith(
       selectedIndex: selectedIndex == freezed
@@ -400,6 +576,10 @@ class _$TabbarStateCopyWithImpl<$Res> implements $TabbarStateCopyWith<$Res> {
           ? _value.currentTitleTagForSelectedIndex
           : currentTitleTagForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as String,
+      isUserSignedIn: isUserSignedIn == freezed
+          ? _value.isUserSignedIn
+          : isUserSignedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -414,7 +594,8 @@ abstract class _$TabbarStateCopyWith<$Res>
   $Res call(
       {int selectedIndex,
       List<String> titleTagsForSelectedIndex,
-      String currentTitleTagForSelectedIndex});
+      String currentTitleTagForSelectedIndex,
+      bool isUserSignedIn});
 }
 
 /// @nodoc
@@ -432,6 +613,7 @@ class __$TabbarStateCopyWithImpl<$Res> extends _$TabbarStateCopyWithImpl<$Res>
     Object? selectedIndex = freezed,
     Object? titleTagsForSelectedIndex = freezed,
     Object? currentTitleTagForSelectedIndex = freezed,
+    Object? isUserSignedIn = freezed,
   }) {
     return _then(_TabbarState(
       selectedIndex: selectedIndex == freezed
@@ -447,6 +629,10 @@ class __$TabbarStateCopyWithImpl<$Res> extends _$TabbarStateCopyWithImpl<$Res>
           ? _value.currentTitleTagForSelectedIndex
           : currentTitleTagForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as String,
+      isUserSignedIn: isUserSignedIn == freezed
+          ? _value.isUserSignedIn
+          : isUserSignedIn // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -457,7 +643,8 @@ class _$_TabbarState implements _TabbarState {
   const _$_TabbarState(
       {required this.selectedIndex,
       required this.titleTagsForSelectedIndex,
-      required this.currentTitleTagForSelectedIndex});
+      required this.currentTitleTagForSelectedIndex,
+      required this.isUserSignedIn});
 
   @override
   final int selectedIndex;
@@ -465,10 +652,12 @@ class _$_TabbarState implements _TabbarState {
   final List<String> titleTagsForSelectedIndex;
   @override
   final String currentTitleTagForSelectedIndex;
+  @override
+  final bool isUserSignedIn;
 
   @override
   String toString() {
-    return 'TabbarState(selectedIndex: $selectedIndex, titleTagsForSelectedIndex: $titleTagsForSelectedIndex, currentTitleTagForSelectedIndex: $currentTitleTagForSelectedIndex)';
+    return 'TabbarState(selectedIndex: $selectedIndex, titleTagsForSelectedIndex: $titleTagsForSelectedIndex, currentTitleTagForSelectedIndex: $currentTitleTagForSelectedIndex, isUserSignedIn: $isUserSignedIn)';
   }
 
   @override
@@ -482,7 +671,9 @@ class _$_TabbarState implements _TabbarState {
                 other.titleTagsForSelectedIndex, titleTagsForSelectedIndex) &&
             const DeepCollectionEquality().equals(
                 other.currentTitleTagForSelectedIndex,
-                currentTitleTagForSelectedIndex));
+                currentTitleTagForSelectedIndex) &&
+            const DeepCollectionEquality()
+                .equals(other.isUserSignedIn, isUserSignedIn));
   }
 
   @override
@@ -490,7 +681,8 @@ class _$_TabbarState implements _TabbarState {
       runtimeType,
       const DeepCollectionEquality().hash(selectedIndex),
       const DeepCollectionEquality().hash(titleTagsForSelectedIndex),
-      const DeepCollectionEquality().hash(currentTitleTagForSelectedIndex));
+      const DeepCollectionEquality().hash(currentTitleTagForSelectedIndex),
+      const DeepCollectionEquality().hash(isUserSignedIn));
 
   @JsonKey(ignore: true)
   @override
@@ -502,7 +694,8 @@ abstract class _TabbarState implements TabbarState {
   const factory _TabbarState(
       {required int selectedIndex,
       required List<String> titleTagsForSelectedIndex,
-      required String currentTitleTagForSelectedIndex}) = _$_TabbarState;
+      required String currentTitleTagForSelectedIndex,
+      required bool isUserSignedIn}) = _$_TabbarState;
 
   @override
   int get selectedIndex;
@@ -510,6 +703,8 @@ abstract class _TabbarState implements TabbarState {
   List<String> get titleTagsForSelectedIndex;
   @override
   String get currentTitleTagForSelectedIndex;
+  @override
+  bool get isUserSignedIn;
   @override
   @JsonKey(ignore: true)
   _$TabbarStateCopyWith<_TabbarState> get copyWith =>
