@@ -5,12 +5,12 @@ import 'package:secry/presentation/pages/account/reset_password_page.dart';
 import 'package:secry/presentation/pages/home/chat_page.dart';
 import 'package:secry/presentation/pages/home/group_overview_page.dart';
 import 'package:secry/presentation/pages/home/homepage.dart';
-import 'package:secry/presentation/pages/login/login_page.dart';
+import 'package:secry/presentation/pages/account/login_page.dart';
 import 'package:secry/presentation/pages/saved_chats_and_surveys/saved_chats_and_surveys_page.dart';
 import 'package:secry/presentation/pages/search/global_search_page.dart';
 import 'package:secry/presentation/pages/splash/splash_page.dart';
 import 'package:secry/presentation/pages/tabbar/tabbar_page.dart';
-import 'package:secry/presentation/pages/signup/signup_page.dart';
+import 'package:secry/presentation/pages/account/signup_page.dart';
 import 'package:secry/presentation/pages/add_group/add_group_page.dart';
 
 @MaterialAutoRouter(routes: [

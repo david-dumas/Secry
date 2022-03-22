@@ -4,8 +4,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/constants.dart';
-import 'package:secry/presentation/pages/login/login_page.dart';
-import 'package:secry/presentation/pages/signup/signup_page.dart';
+import 'package:secry/presentation/pages/account/login_page.dart';
+import 'package:secry/presentation/pages/account/signup_page.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
