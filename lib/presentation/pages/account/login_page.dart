@@ -11,6 +11,7 @@ import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/util/dialogs/dialog_helper.dart';
+import 'package:secry/util/validation/email_validator.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -79,30 +80,42 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             SizedBox(height: 26),
                             TextFormField(
-                              controller: _emailTextEditController,
-                              decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  prefixIcon: Icon(Icons.email_outlined),
-                                  labelText: tr('account_email'),
-                                  suffixIcon: Visibility(
-                                    visible: state.isShowingClearEmailButton,
-                                    child: IconButton(
-                                      onPressed: () {
-                                        context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(""));
-                                        context
-                                            .read<SignInFormBloc>()
-                                            .add(SignInFormEvent.isShowingClearEmailInputToggled(false));
-                                        _emailTextEditController.clear();
-                                      },
-                                      icon: Icon(
-                                        Icons.clear,
-                                        color: kMediumGray,
+                                controller: _emailTextEditController,
+                                decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    prefixIcon: Icon(Icons.email_outlined),
+                                    labelText: tr('account_email'),
+                                    suffixIcon: Visibility(
+                                      visible: state.isShowingClearEmailButton,
+                                      child: IconButton(
+                                        onPressed: () {
+                                          context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(""));
+                                          context
+                                              .read<SignInFormBloc>()
+                                              .add(SignInFormEvent.isShowingClearEmailInputToggled(false));
+                                          _emailTextEditController.clear();
+                                        },
+                                        icon: Icon(
+                                          Icons.clear,
+                                          color: kMediumGray,
+                                        ),
                                       ),
+                                    )),
+                                onChanged: (value) =>
+                                    context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(value)),
+                                validator: (value) {
+                                  final emailInputFailureOrSuccessUnit =
+                                      EmailValidator().getEmailInputFailureOrSuccessUnit(email: value ?? '');
+
+                                  return emailInputFailureOrSuccessUnit.fold(
+                                    (invalidEmailError) => invalidEmailError.maybeMap(
+                                      noEmailEntered: (_) => tr('account_warning_please_enter_email'),
+                                      emailInvalid: (_) => tr('account_warning_please_enter_valid_email'),
+                                      orElse: () => null,
                                     ),
-                                  )),
-                              onChanged: (value) =>
-                                  context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(value)),
-                            ),
+                                    (_) => null,
+                                  );
+                                }),
                             SizedBox(height: 12),
                             TextFormField(
                               obscureText: !state.isShowingPassword,
@@ -160,7 +173,13 @@ class _LoginPageState extends State<LoginPage> {
                                     ),
                                   ),
                                   onPressed: () {
-                                    context.read<SignInFormBloc>().add(SignInFormEvent.signInPressed());
+                                    final isValid = _formKey.currentState?.validate() ?? false;
+
+                                    if (isValid) {
+                                      _formKey.currentState?.save();
+
+                                      context.read<SignInFormBloc>().add(SignInFormEvent.signInPressed());
+                                    }
                                   },
                                   child: Text(
                                     tr('action_login'),
