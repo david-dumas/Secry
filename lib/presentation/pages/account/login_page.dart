@@ -20,6 +20,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _emailTextEditController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -59,9 +62,9 @@ class _LoginPageState extends State<LoginPage> {
                 body: Center(
                   child: SingleChildScrollView(
                     child: Padding(
-                      padding: EdgeInsets.only(bottom: verticalSafetyScrollOffsetHeight),
-                      child: Padding(
-                        padding: pagePaddingZeroTop,
+                      padding: pagePaddingZeroTop,
+                      child: Form(
+                        key: _formKey,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,11 +79,27 @@ class _LoginPageState extends State<LoginPage> {
                             ),
                             SizedBox(height: 26),
                             TextFormField(
+                              controller: _emailTextEditController,
                               decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                prefixIcon: Icon(Icons.email_outlined),
-                                labelText: tr('account_email'),
-                              ),
+                                  border: OutlineInputBorder(),
+                                  prefixIcon: Icon(Icons.email_outlined),
+                                  labelText: tr('account_email'),
+                                  suffixIcon: Visibility(
+                                    visible: state.isShowingClearEmailButton,
+                                    child: IconButton(
+                                      onPressed: () {
+                                        context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(""));
+                                        context
+                                            .read<SignInFormBloc>()
+                                            .add(SignInFormEvent.isShowingClearEmailInputToggled(false));
+                                        _emailTextEditController.clear();
+                                      },
+                                      icon: Icon(
+                                        Icons.clear,
+                                        color: kMediumGray,
+                                      ),
+                                    ),
+                                  )),
                               onChanged: (value) =>
                                   context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(value)),
                             ),

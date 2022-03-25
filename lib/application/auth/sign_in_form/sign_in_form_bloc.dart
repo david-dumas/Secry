@@ -23,8 +23,17 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       initialized: (e) async {
         // TODO retrieve email from persistentStorage if available
       },
+      isShowingClearEmailInputToggled: (e) async {
+        emit(state.copyWith(isShowingClearEmailButton: e.isShowing));
+      },
       emailChanged: (e) async {
         emit(state.copyWith(inputEmail: e.newEmail));
+
+        if (e.newEmail.length == 0) {
+          emit(state.copyWith(isShowingClearEmailButton: false));
+        } else {
+          emit(state.copyWith(isShowingClearEmailButton: true));
+        }
       },
       isShowingPasswordToggled: (e) async {
         emit(state.copyWith(isShowingPassword: e.isShowing));
