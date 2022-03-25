@@ -12,6 +12,7 @@ import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/util/dialogs/dialog_helper.dart';
 import 'package:secry/util/validation/email_validator.dart';
+import 'package:secry/util/validation/password_validator.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -118,23 +119,44 @@ class _LoginPageState extends State<LoginPage> {
                                 }),
                             SizedBox(height: 12),
                             TextFormField(
-                              obscureText: !state.isShowingPassword,
-                              decoration: InputDecoration(
-                                border: OutlineInputBorder(),
-                                prefixIcon: Icon(Icons.lock_outline),
-                                labelText: tr('account_password'),
-                                suffixIcon: IconButton(
-                                  icon: state.isShowingPassword ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
-                                  onPressed: () {
-                                    context
-                                        .read<SignInFormBloc>()
-                                        .add(SignInFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
-                                  },
+                                obscureText: !state.isShowingPassword,
+                                decoration: InputDecoration(
+                                  border: OutlineInputBorder(),
+                                  prefixIcon: Icon(Icons.lock_outline),
+                                  labelText: tr('account_password'),
+                                  suffixIcon: IconButton(
+                                    icon: state.isShowingPassword ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+                                    onPressed: () {
+                                      context
+                                          .read<SignInFormBloc>()
+                                          .add(SignInFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
+                                    },
+                                  ),
                                 ),
-                              ),
-                              onChanged: (value) =>
-                                  context.read<SignInFormBloc>().add(SignInFormEvent.passwordChanged(value)),
-                            ),
+                                onChanged: (value) =>
+                                    context.read<SignInFormBloc>().add(SignInFormEvent.passwordChanged(value)),
+                                validator: (value) {
+                                  final passwordInputFailureOrSuccessUnit =
+                                      PasswordValidator().getPasswordInputFailureOrSuccessUnit(password: value ?? '');
+
+                                  return passwordInputFailureOrSuccessUnit.fold(
+                                    (invalidPasswordError) => invalidPasswordError.maybeMap(
+                                      tooShort: (_) => tr('account_warning_password_too_short'),
+                                      noLowercaseCharacterUsed: (_) =>
+                                          tr('account_warning_password_must_contain_at_least_one_lowercase_character'),
+                                      noUppercaseCharacterUsed: (_) =>
+                                          tr('account_warning_password_must_contain_at_least_one_uppercase_character'),
+                                      noSpecialCharacterUsed: (_) =>
+                                          tr('account_warning_password_must_contain_at_least_one_special_character'),
+                                      noNumberUsed: (_) =>
+                                          tr('account_warning_password_must_contain_at_least_one_number'),
+                                      invalidNotComplexEnough: (_) =>
+                                          tr('account_warning_password_invalid_not_complex_enough'),
+                                      orElse: () => null,
+                                    ),
+                                    (_) => null,
+                                  );
+                                }),
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.end,
