@@ -211,9 +211,9 @@ class _SignupPageState extends State<SignupPage> {
                                       ),
                                     ),
                                     onPressed: () {
-                                      final isValid = _formKey.currentState?.validate();
+                                      final isValid = _formKey.currentState?.validate() ?? false;
 
-                                      if (isValid!) {
+                                      if (isValid) {
                                         _formKey.currentState?.save();
 
                                         context.read<SignUpFormBloc>().add(SignUpFormEvent.signUpPressed());
