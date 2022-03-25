@@ -9,13 +9,12 @@ import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final _emailTextEditController = TextEditingController();
 
   ResetPasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext buildContext) {
-    var _emailTextEditController = TextEditingController();
-
     return BlocProvider(
       create: (context) => getIt<ResetPasswordBloc>(),
       child: BlocConsumer<ResetPasswordBloc, ResetPasswordState>(
@@ -189,7 +188,7 @@ class ResetPasswordPage extends StatelessWidget {
                             if (isValid!) {
                               _formKey.currentState?.save();
 
-                            context.read<ResetPasswordBloc>().add(ResetPasswordEvent.resetPasswordPressed());
+                              context.read<ResetPasswordBloc>().add(ResetPasswordEvent.resetPasswordPressed());
                             }
                           },
                           child: Text(
