@@ -192,11 +192,6 @@ class _SignupPageState extends State<SignupPage> {
                                     context.read<SignUpFormBloc>().add(SignUpFormEvent.repeatPasswordChanged(value)),
                               ),
                               verticalSpaceSmall,
-                              Text(
-                                tr('page_register_password_condition'),
-                                textAlign: TextAlign.left,
-                                style: buttonTextStyleMedium,
-                              ),
                               Padding(
                                 padding: const EdgeInsets.symmetric(vertical: 16.0),
                                 child: Container(
