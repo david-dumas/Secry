@@ -45,7 +45,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: kButtonRadiusXs,
+                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
                       ),
                     ),
                     backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
@@ -69,7 +69,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: kButtonRadiusXs,
+                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
                       ),
                     ),
                     backgroundColor: MaterialStateProperty.all(kPrimaryColor),

@@ -190,7 +190,7 @@ class _LoginPageState extends State<LoginPage> {
                                   style: ButtonStyle(
                                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                       RoundedRectangleBorder(
-                                        borderRadius: kButtonRadiusMedium,
+                                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
                                       ),
                                     ),
                                   ),

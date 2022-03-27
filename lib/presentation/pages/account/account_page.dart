@@ -51,7 +51,7 @@ class AccountPage extends StatelessWidget {
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
-                                borderRadius: kButtonRadiusMedium,
+                                borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
                               ),
                             ),
                           ),

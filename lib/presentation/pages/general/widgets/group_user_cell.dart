@@ -61,7 +61,7 @@ class UserCell extends StatelessWidget {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: kButtonRadiusXxs,
+                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXxs)),
                         side: BorderSide(color: isActionButtonActionExecuted ? kWhiteButtonBorderColor : kPrimaryColor),
                       ),
                     ),

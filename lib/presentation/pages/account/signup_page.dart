@@ -147,29 +147,29 @@ class _SignupPageState extends State<SignupPage> {
                                 children: [
                                   Focus(
                                     child: TextFormField(
-                                controller: _pass,
-                                obscureText: !state.isShowingPassword,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: tr('account_password'),
-                                  suffixIcon: IconButton(
+                                      controller: _pass,
+                                      obscureText: !state.isShowingPassword,
+                                      decoration: InputDecoration(
+                                        border: OutlineInputBorder(),
+                                        labelText: tr('account_password'),
+                                        suffixIcon: IconButton(
                                           icon: state.isShowingPassword
                                               ? Icon(Icons.visibility_off)
                                               : Icon(Icons.visibility),
-                                    onPressed: () {
+                                          onPressed: () {
                                             context.read<SignUpFormBloc>().add(
                                                 SignUpFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
-                                    },
-                                  ),
-                                ),
-                                validator: (value) {
+                                          },
+                                        ),
+                                      ),
+                                      validator: (value) {
                                         if (value!.length < validationMinimumPasswordLength) {
                                           return "${tr('account_warning_password_at_least_x_characters_part_1')} ${validationMinimumPasswordLength} ${tr('account_warning_password_at_least_x_characters_part_2')}";
-                                  } else {
-                                    return null;
-                                  }
-                                },
-                                keyboardType: TextInputType.visiblePassword,
+                                        } else {
+                                          return null;
+                                        }
+                                      },
+                                      keyboardType: TextInputType.visiblePassword,
                                       onChanged: (value) => context
                                           .read<SignUpFormBloc>()
                                           .add(SignUpFormEvent.firstPasswordChanged(value)),
@@ -228,7 +228,7 @@ class _SignupPageState extends State<SignupPage> {
                                     style: ButtonStyle(
                                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
-                                          borderRadius: kButtonRadiusMedium,
+                                          borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
                                         ),
                                       ),
                                     ),
