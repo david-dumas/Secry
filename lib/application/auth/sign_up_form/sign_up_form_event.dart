@@ -13,4 +13,5 @@ class SignUpFormEvent with _$SignUpFormEvent {
   const factory SignUpFormEvent.repeatPasswordChanged(String newRepeatPassword) = _RepeatPasswordChanged;
   const factory SignUpFormEvent.isShowingPasswordToggled(bool isShowing) = _IsShowingPasswordToggled;
   const factory SignUpFormEvent.isShowingRepeatPasswordToggled(bool isShowing) = _IsShowingRepeatPasswordToggled;
+  const factory SignUpFormEvent.isShowingPasswordValidationChecker(bool isShowing) = _IsShowingPasswordValidationChecker;
 }

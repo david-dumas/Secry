@@ -7,7 +7,9 @@ import 'package:secry/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:country_code_picker/country_code_picker.dart';
+import 'package:secry/presentation/pages/account/widgets/password_validation_checker.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
+import 'package:secry/util/validation/password_validator.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -19,6 +21,7 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _pass = TextEditingController();
+  final passwordValidationCheckerKey = new GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -139,31 +142,55 @@ class _SignupPageState extends State<SignupPage> {
                                     context.read<SignUpFormBloc>().add(SignUpFormEvent.emailChanged(value)),
                               ),
                               verticalSpaceSmall,
-                              TextFormField(
+                              Column(
+                                key: passwordValidationCheckerKey,
+                                children: [
+                                  Focus(
+                                    child: TextFormField(
                                 controller: _pass,
                                 obscureText: !state.isShowingPassword,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
                                   labelText: tr('account_password'),
                                   suffixIcon: IconButton(
-                                    icon: state.isShowingPassword ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
+                                          icon: state.isShowingPassword
+                                              ? Icon(Icons.visibility_off)
+                                              : Icon(Icons.visibility),
                                     onPressed: () {
-                                      context
-                                          .read<SignUpFormBloc>()
-                                          .add(SignUpFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
+                                            context.read<SignUpFormBloc>().add(
+                                                SignUpFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
                                     },
                                   ),
                                 ),
                                 validator: (value) {
-                                  if (value!.length < 6) {
-                                    return tr('account_warning_password_at_least_x_characters');
+                                        if (value!.length < validationMinimumPasswordLength) {
+                                          return "${tr('account_warning_password_at_least_x_characters_part_1')} ${validationMinimumPasswordLength} ${tr('account_warning_password_at_least_x_characters_part_2')}";
                                   } else {
                                     return null;
                                   }
                                 },
                                 keyboardType: TextInputType.visiblePassword,
-                                onChanged: (value) =>
-                                    context.read<SignUpFormBloc>().add(SignUpFormEvent.firstPasswordChanged(value)),
+                                      onChanged: (value) => context
+                                          .read<SignUpFormBloc>()
+                                          .add(SignUpFormEvent.firstPasswordChanged(value)),
+                                    ),
+                                    onFocusChange: (hasFocus) {
+                                      context
+                                          .read<SignUpFormBloc>()
+                                          .add(SignUpFormEvent.isShowingPasswordValidationChecker(hasFocus));
+
+                                      if (hasFocus && passwordValidationCheckerKey.currentContext != null) {
+                                        Scrollable.ensureVisible(passwordValidationCheckerKey.currentContext!);
+                                      }
+                                    },
+                                  ),
+                                  SizedBox(height: 12.0),
+                                  Visibility(
+                                      visible: state.isShowingPasswordValidationChecker,
+                                      child: PasswordValidationChecker(
+                                          passwordValidationStatus:
+                                              PasswordValidator().getPasswordValidationStatus(state.passwordInput)))
+                                ],
                               ),
                               verticalSpaceSmall,
                               TextFormField(

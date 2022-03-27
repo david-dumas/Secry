@@ -14,6 +14,13 @@ const defaultPageSize = 15;
 // Most used color(s)
 const kPrimaryColor = Color(0xFF3794FC);
 
+const appIconColorBlue1 = Color(0xFFEDF5FF);
+const appIconColorBlue2 = Color(0xFFD6EBFF);
+const appIconColorBlue3 = Color(0xFFA9D1FF);
+const appIconColorBlue4 = Color(0xFF8CC2FF);
+const appIconColorBlue5 = Color(0xFF53A4FF);
+const appIconColorBlue6 = Color(0xFF3794FC);
+
 // Colors for tabbar and separators
 const kBottomMenuUnselectedColor = Color(0xFFB9BEBC);
 const kLineSeparatorColor = Color(0xFFDEE5EF);
@@ -62,12 +69,12 @@ const pagePaddingZeroTop = EdgeInsets.only(left: 20, right: 20, bottom: 32);
 const pagePaddingAllSides = EdgeInsets.only(top: 20, right: 20, bottom: 32, left: 20);
 
 // Button radius
-const kButtonRadiusXxs = BorderRadius.all(Radius.circular(8));
-const kButtonRadiusXs = BorderRadius.all(Radius.circular(12));
-const kButtonRadiusSmall = BorderRadius.all(Radius.circular(16));
-const kButtonRadiusMedium = BorderRadius.all(Radius.circular(20));
-const kButtonRadiusLarge = BorderRadius.all(Radius.circular(24));
-const kButtonRadiusXl = BorderRadius.all(Radius.circular(32));
+const kButtonRadiusXxs = 8.0;
+const kButtonRadiusXs = 12.0;
+const kButtonRadiusSmall = 16.0;
+const kButtonRadiusMedium = 20.0;
+const kButtonRadiusLarge = 24.0;
+const kButtonRadiusXl = 32.0;
 
 // Button heights
 const kButtonHeightSmall = 44.0;
@@ -109,3 +116,5 @@ const buttonTextStyleMedium = TextStyle(
   fontSize: 16,
   fontWeight: FontWeight.bold,
 );
+
+const validationMinimumPasswordLength = 6;

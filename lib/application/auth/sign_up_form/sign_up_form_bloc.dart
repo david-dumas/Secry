@@ -59,6 +59,9 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       isShowingRepeatPasswordToggled: (e) async {
         emit(state.copyWith(isShowingRepeatPassword: e.isShowing));
       },
+      isShowingPasswordValidationChecker: (e) async {
+        emit(state.copyWith(isShowingPasswordValidationChecker: e.isShowing));
+      },
     );
   }
 }
