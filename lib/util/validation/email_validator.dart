@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:secry/domain/auth/validation_failures/email_failure.dart';
 
 class EmailValidator {
@@ -10,5 +11,13 @@ class EmailValidator {
     } else {
       return right(unit);
     }
+  }
+
+  String getErrorTextForFailure({required EmailFailure failure}) {
+    return failure.maybeMap(
+      noEmailEntered: (_) => tr('account_warning_please_enter_email'),
+      emailInvalid: (_) => tr('account_warning_please_enter_valid_email'),
+      orElse: () => tr('account_warning_please_enter_valid_email'),
+    );
   }
 }

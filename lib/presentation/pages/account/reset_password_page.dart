@@ -6,6 +6,7 @@ import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
+import 'package:secry/util/validation/email_validator.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -160,11 +161,14 @@ class ResetPasswordPage extends StatelessWidget {
                           ),
                         ),
                         validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return tr('account_warning_please_enter_email');
-                          } else {
-                            return null;
-                          }
+                          final emailValidator = EmailValidator();
+                          final emailInputFailureOrSuccessUnit =
+                              emailValidator.getEmailInputFailureOrSuccessUnit(email: value ?? '');
+
+                          return emailInputFailureOrSuccessUnit.fold(
+                            (invalidEmailError) => emailValidator.getErrorTextForFailure(failure: invalidEmailError),
+                            (_) => null,
+                          );
                         },
                         keyboardType: TextInputType.emailAddress,
                         onChanged: (value) =>

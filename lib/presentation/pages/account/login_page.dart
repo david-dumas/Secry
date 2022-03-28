@@ -106,15 +106,13 @@ class _LoginPageState extends State<LoginPage> {
                                 onChanged: (value) =>
                                     context.read<SignInFormBloc>().add(SignInFormEvent.emailChanged(value)),
                                 validator: (value) {
+                                  final emailValidator = EmailValidator();
                                   final emailInputFailureOrSuccessUnit =
-                                      EmailValidator().getEmailInputFailureOrSuccessUnit(email: value ?? '');
+                                      emailValidator.getEmailInputFailureOrSuccessUnit(email: value ?? '');
 
                                   return emailInputFailureOrSuccessUnit.fold(
-                                    (invalidEmailError) => invalidEmailError.maybeMap(
-                                      noEmailEntered: (_) => tr('account_warning_please_enter_email'),
-                                      emailInvalid: (_) => tr('account_warning_please_enter_valid_email'),
-                                      orElse: () => null,
-                                    ),
+                                    (invalidEmailError) =>
+                                        emailValidator.getErrorTextForFailure(failure: invalidEmailError),
                                     (_) => null,
                                   );
                                 }),
