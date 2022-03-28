@@ -20,4 +20,6 @@ class SignUpFormEvent with _$SignUpFormEvent {
   const factory SignUpFormEvent.isShowingPasswordValidationChecker(bool isShowing) =
       _IsShowingPasswordValidationChecker;
   const factory SignUpFormEvent.isShowingErrorMessagesUpdated(bool isShowing) = _IsShowingErrorMessagesUpdated;
+  const factory SignUpFormEvent.signUpFailureOrUnitOptionUpdated(Option<Either<AuthFailure, Unit>> newFailureOrUnit) =
+      _SignUpFailureOrUnitOptionUpdated;
 }

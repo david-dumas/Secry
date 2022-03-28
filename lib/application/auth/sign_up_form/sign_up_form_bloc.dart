@@ -35,12 +35,13 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
             email: state.emailInput,
             phone: state.phoneDialCodeInput + state.phoneInput);
 
-        final failureOrUnit =
+        final signUpFailureOrUnit =
             await _authenticationRepository.createNewUser(user: newUser, password: state.passwordInput);
 
-        await failureOrUnit.fold(
+        await signUpFailureOrUnit.fold(
           (failure) {
             add(SignUpFormEvent.isShowingErrorMessagesUpdated(true));
+            add(SignUpFormEvent.signUpFailureOrUnitOptionUpdated(optionOf(signUpFailureOrUnit)));
 
             failure.maybeMap(
               emailAlreadyExists: (_) {
@@ -63,16 +64,16 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
           (userCreatedSuccessfully) async {
             add(SignUpFormEvent.isShowingErrorMessagesUpdated(false));
 
-            final failureOrUnit = await _authFacade.signIn(email: state.emailInput, password: state.passwordInput);
-            failureOrUnit.fold((_) {
+            final loginFailureOrUnit = await _authFacade.signIn(email: state.emailInput, password: state.passwordInput);
+            loginFailureOrUnit.fold((_) {
+              add(SignUpFormEvent.signUpFailureOrUnitOptionUpdated(optionOf(loginFailureOrUnit)));
               // TODO log error
             }, (success) {
               add(SignUpFormEvent.isShowingErrorMessagesUpdated(false));
+              add(SignUpFormEvent.signUpFailureOrUnitOptionUpdated(optionOf(loginFailureOrUnit)));
             });
           },
         );
-
-        emit(state.copyWith(signUpFailureOrUnitOption: optionOf(failureOrUnit)));
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));
@@ -112,6 +113,9 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       },
       isShowingErrorMessagesUpdated: (e) async {
         emit(state.copyWith(isShowingErrorMessages: e.isShowing));
+      },
+      signUpFailureOrUnitOptionUpdated: (e) async {
+        emit(state.copyWith(signUpFailureOrUnitOption: e.newFailureOrUnit));
       },
     );
   }
