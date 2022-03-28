@@ -1,0 +1,1 @@
+enum PasswordType { firstPassword, repeatPassword }

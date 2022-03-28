@@ -68,6 +68,20 @@ class _$SignUpFormEventTearOff {
     );
   }
 
+  _IsPasswordCheckedAndValidUpdated isPasswordCheckedAndValidUpdated(
+      {required bool isValid}) {
+    return _IsPasswordCheckedAndValidUpdated(
+      isValid: isValid,
+    );
+  }
+
+  _IsRepeatPasswordCheckedAndValidUpdated
+      isRepeatPasswordCheckedAndValidUpdated({required bool isValid}) {
+    return _IsRepeatPasswordCheckedAndValidUpdated(
+      isValid: isValid,
+    );
+  }
+
   _IsShowingPasswordToggled isShowingPasswordToggled(bool isShowing) {
     return _IsShowingPasswordToggled(
       isShowing,
@@ -105,6 +119,9 @@ mixin _$SignUpFormEvent {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -122,6 +139,8 @@ mixin _$SignUpFormEvent {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -138,6 +157,8 @@ mixin _$SignUpFormEvent {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -156,6 +177,10 @@ mixin _$SignUpFormEvent {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -175,6 +200,10 @@ mixin _$SignUpFormEvent {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -193,6 +222,10 @@ mixin _$SignUpFormEvent {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -270,6 +303,9 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -290,6 +326,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -309,6 +347,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -333,6 +373,10 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -355,6 +399,10 @@ class _$_Initialized implements _Initialized {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -376,6 +424,10 @@ class _$_Initialized implements _Initialized {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -444,6 +496,9 @@ class _$_signUpPressed implements _signUpPressed {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -464,6 +519,8 @@ class _$_signUpPressed implements _signUpPressed {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -483,6 +540,8 @@ class _$_signUpPressed implements _signUpPressed {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -507,6 +566,10 @@ class _$_signUpPressed implements _signUpPressed {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -529,6 +592,10 @@ class _$_signUpPressed implements _signUpPressed {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -550,6 +617,10 @@ class _$_signUpPressed implements _signUpPressed {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -643,6 +714,9 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -663,6 +737,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -682,6 +758,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -706,6 +784,10 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -728,6 +810,10 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -749,6 +835,10 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -847,6 +937,9 @@ class _$_LastNameChanged implements _LastNameChanged {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -867,6 +960,8 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -886,6 +981,8 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -910,6 +1007,10 @@ class _$_LastNameChanged implements _LastNameChanged {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -932,6 +1033,10 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -953,6 +1058,10 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1052,6 +1161,9 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -1072,6 +1184,8 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1091,6 +1205,8 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1115,6 +1231,10 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -1137,6 +1257,10 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1158,6 +1282,10 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1256,6 +1384,9 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -1276,6 +1407,8 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1295,6 +1428,8 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1319,6 +1454,10 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -1341,6 +1480,10 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1362,6 +1505,10 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1459,6 +1606,9 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -1479,6 +1629,8 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1498,6 +1650,8 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1522,6 +1676,10 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -1544,6 +1702,10 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1565,6 +1727,10 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1664,6 +1830,9 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -1684,6 +1853,8 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1703,6 +1874,8 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1727,6 +1900,10 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -1749,6 +1926,10 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1770,6 +1951,10 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1870,6 +2055,9 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -1890,6 +2078,8 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1909,6 +2099,8 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -1933,6 +2125,10 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -1955,6 +2151,10 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1976,6 +2176,10 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -1998,6 +2202,466 @@ abstract class _RepeatPasswordChanged implements SignUpFormEvent {
   @JsonKey(ignore: true)
   _$RepeatPasswordChangedCopyWith<_RepeatPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$IsPasswordCheckedAndValidUpdatedCopyWith<$Res> {
+  factory _$IsPasswordCheckedAndValidUpdatedCopyWith(
+          _IsPasswordCheckedAndValidUpdated value,
+          $Res Function(_IsPasswordCheckedAndValidUpdated) then) =
+      __$IsPasswordCheckedAndValidUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isValid});
+}
+
+/// @nodoc
+class __$IsPasswordCheckedAndValidUpdatedCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
+    implements _$IsPasswordCheckedAndValidUpdatedCopyWith<$Res> {
+  __$IsPasswordCheckedAndValidUpdatedCopyWithImpl(
+      _IsPasswordCheckedAndValidUpdated _value,
+      $Res Function(_IsPasswordCheckedAndValidUpdated) _then)
+      : super(_value, (v) => _then(v as _IsPasswordCheckedAndValidUpdated));
+
+  @override
+  _IsPasswordCheckedAndValidUpdated get _value =>
+      super._value as _IsPasswordCheckedAndValidUpdated;
+
+  @override
+  $Res call({
+    Object? isValid = freezed,
+  }) {
+    return _then(_IsPasswordCheckedAndValidUpdated(
+      isValid: isValid == freezed
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsPasswordCheckedAndValidUpdated
+    implements _IsPasswordCheckedAndValidUpdated {
+  const _$_IsPasswordCheckedAndValidUpdated({required this.isValid});
+
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'SignUpFormEvent.isPasswordCheckedAndValidUpdated(isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsPasswordCheckedAndValidUpdated &&
+            const DeepCollectionEquality().equals(other.isValid, isValid));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isValid));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsPasswordCheckedAndValidUpdatedCopyWith<_IsPasswordCheckedAndValidUpdated>
+      get copyWith => __$IsPasswordCheckedAndValidUpdatedCopyWithImpl<
+          _IsPasswordCheckedAndValidUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function() signUpPressed,
+    required TResult Function(String newFirstName) firstNameChanged,
+    required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
+    required TResult Function(String newPhone) phoneChanged,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newFirstPassword) firstPasswordChanged,
+    required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
+    required TResult Function(bool isShowing)
+        isShowingPasswordValidationChecker,
+  }) {
+    return isPasswordCheckedAndValidUpdated(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
+    TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+  }) {
+    return isPasswordCheckedAndValidUpdated?.call(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
+    TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    required TResult orElse(),
+  }) {
+    if (isPasswordCheckedAndValidUpdated != null) {
+      return isPasswordCheckedAndValidUpdated(isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
+    required TResult Function(_FirstNameChanged value) firstNameChanged,
+    required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
+        repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingRepeatPasswordToggled value)
+        isShowingRepeatPasswordToggled,
+    required TResult Function(_IsShowingPasswordValidationChecker value)
+        isShowingPasswordValidationChecker,
+  }) {
+    return isPasswordCheckedAndValidUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingRepeatPasswordToggled value)?
+        isShowingRepeatPasswordToggled,
+    TResult Function(_IsShowingPasswordValidationChecker value)?
+        isShowingPasswordValidationChecker,
+  }) {
+    return isPasswordCheckedAndValidUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingRepeatPasswordToggled value)?
+        isShowingRepeatPasswordToggled,
+    TResult Function(_IsShowingPasswordValidationChecker value)?
+        isShowingPasswordValidationChecker,
+    required TResult orElse(),
+  }) {
+    if (isPasswordCheckedAndValidUpdated != null) {
+      return isPasswordCheckedAndValidUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsPasswordCheckedAndValidUpdated implements SignUpFormEvent {
+  const factory _IsPasswordCheckedAndValidUpdated({required bool isValid}) =
+      _$_IsPasswordCheckedAndValidUpdated;
+
+  bool get isValid;
+  @JsonKey(ignore: true)
+  _$IsPasswordCheckedAndValidUpdatedCopyWith<_IsPasswordCheckedAndValidUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$IsRepeatPasswordCheckedAndValidUpdatedCopyWith<$Res> {
+  factory _$IsRepeatPasswordCheckedAndValidUpdatedCopyWith(
+          _IsRepeatPasswordCheckedAndValidUpdated value,
+          $Res Function(_IsRepeatPasswordCheckedAndValidUpdated) then) =
+      __$IsRepeatPasswordCheckedAndValidUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isValid});
+}
+
+/// @nodoc
+class __$IsRepeatPasswordCheckedAndValidUpdatedCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
+    implements _$IsRepeatPasswordCheckedAndValidUpdatedCopyWith<$Res> {
+  __$IsRepeatPasswordCheckedAndValidUpdatedCopyWithImpl(
+      _IsRepeatPasswordCheckedAndValidUpdated _value,
+      $Res Function(_IsRepeatPasswordCheckedAndValidUpdated) _then)
+      : super(
+            _value, (v) => _then(v as _IsRepeatPasswordCheckedAndValidUpdated));
+
+  @override
+  _IsRepeatPasswordCheckedAndValidUpdated get _value =>
+      super._value as _IsRepeatPasswordCheckedAndValidUpdated;
+
+  @override
+  $Res call({
+    Object? isValid = freezed,
+  }) {
+    return _then(_IsRepeatPasswordCheckedAndValidUpdated(
+      isValid: isValid == freezed
+          ? _value.isValid
+          : isValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsRepeatPasswordCheckedAndValidUpdated
+    implements _IsRepeatPasswordCheckedAndValidUpdated {
+  const _$_IsRepeatPasswordCheckedAndValidUpdated({required this.isValid});
+
+  @override
+  final bool isValid;
+
+  @override
+  String toString() {
+    return 'SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(isValid: $isValid)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsRepeatPasswordCheckedAndValidUpdated &&
+            const DeepCollectionEquality().equals(other.isValid, isValid));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isValid));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsRepeatPasswordCheckedAndValidUpdatedCopyWith<
+          _IsRepeatPasswordCheckedAndValidUpdated>
+      get copyWith => __$IsRepeatPasswordCheckedAndValidUpdatedCopyWithImpl<
+          _IsRepeatPasswordCheckedAndValidUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function() signUpPressed,
+    required TResult Function(String newFirstName) firstNameChanged,
+    required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
+    required TResult Function(String newPhone) phoneChanged,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newFirstPassword) firstPasswordChanged,
+    required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
+    required TResult Function(bool isShowing)
+        isShowingPasswordValidationChecker,
+  }) {
+    return isRepeatPasswordCheckedAndValidUpdated(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
+    TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+  }) {
+    return isRepeatPasswordCheckedAndValidUpdated?.call(isValid);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
+    TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    required TResult orElse(),
+  }) {
+    if (isRepeatPasswordCheckedAndValidUpdated != null) {
+      return isRepeatPasswordCheckedAndValidUpdated(isValid);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
+    required TResult Function(_FirstNameChanged value) firstNameChanged,
+    required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
+        repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingRepeatPasswordToggled value)
+        isShowingRepeatPasswordToggled,
+    required TResult Function(_IsShowingPasswordValidationChecker value)
+        isShowingPasswordValidationChecker,
+  }) {
+    return isRepeatPasswordCheckedAndValidUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingRepeatPasswordToggled value)?
+        isShowingRepeatPasswordToggled,
+    TResult Function(_IsShowingPasswordValidationChecker value)?
+        isShowingPasswordValidationChecker,
+  }) {
+    return isRepeatPasswordCheckedAndValidUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingRepeatPasswordToggled value)?
+        isShowingRepeatPasswordToggled,
+    TResult Function(_IsShowingPasswordValidationChecker value)?
+        isShowingPasswordValidationChecker,
+    required TResult orElse(),
+  }) {
+    if (isRepeatPasswordCheckedAndValidUpdated != null) {
+      return isRepeatPasswordCheckedAndValidUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsRepeatPasswordCheckedAndValidUpdated
+    implements SignUpFormEvent {
+  const factory _IsRepeatPasswordCheckedAndValidUpdated(
+      {required bool isValid}) = _$_IsRepeatPasswordCheckedAndValidUpdated;
+
+  bool get isValid;
+  @JsonKey(ignore: true)
+  _$IsRepeatPasswordCheckedAndValidUpdatedCopyWith<
+          _IsRepeatPasswordCheckedAndValidUpdated>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -2076,6 +2740,9 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -2096,6 +2763,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -2115,6 +2784,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -2139,6 +2810,10 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -2161,6 +2836,10 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -2182,6 +2861,10 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -2285,6 +2968,9 @@ class _$_IsShowingRepeatPasswordToggled
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -2305,6 +2991,8 @@ class _$_IsShowingRepeatPasswordToggled
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -2324,6 +3012,8 @@ class _$_IsShowingRepeatPasswordToggled
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -2348,6 +3038,10 @@ class _$_IsShowingRepeatPasswordToggled
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -2370,6 +3064,10 @@ class _$_IsShowingRepeatPasswordToggled
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -2391,6 +3089,10 @@ class _$_IsShowingRepeatPasswordToggled
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -2495,6 +3197,9 @@ class _$_IsShowingPasswordValidationChecker
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newFirstPassword) firstPasswordChanged,
     required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
@@ -2515,6 +3220,8 @@ class _$_IsShowingPasswordValidationChecker
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -2534,6 +3241,8 @@ class _$_IsShowingPasswordValidationChecker
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newFirstPassword)? firstPasswordChanged,
     TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
@@ -2558,6 +3267,10 @@ class _$_IsShowingPasswordValidationChecker
     required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
     required TResult Function(_RepeatPasswordChanged value)
         repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
     required TResult Function(_IsShowingRepeatPasswordToggled value)
@@ -2580,6 +3293,10 @@ class _$_IsShowingPasswordValidationChecker
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -2601,6 +3318,10 @@ class _$_IsShowingPasswordValidationChecker
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
     TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
     TResult Function(_IsShowingRepeatPasswordToggled value)?
         isShowingRepeatPasswordToggled,
@@ -2641,6 +3362,8 @@ class _$SignUpFormStateTearOff {
       required String repeatPasswordInput,
       required bool isShowingPassword,
       required bool isShowingRepeatPassword,
+      required bool isPasswordCheckedAndValid,
+      required bool isRepeatPasswordCheckedAndValid,
       required bool isShowingPasswordValidationChecker}) {
     return _SignUpFormState(
       statusMessage: statusMessage,
@@ -2653,6 +3376,8 @@ class _$SignUpFormStateTearOff {
       repeatPasswordInput: repeatPasswordInput,
       isShowingPassword: isShowingPassword,
       isShowingRepeatPassword: isShowingRepeatPassword,
+      isPasswordCheckedAndValid: isPasswordCheckedAndValid,
+      isRepeatPasswordCheckedAndValid: isRepeatPasswordCheckedAndValid,
       isShowingPasswordValidationChecker: isShowingPasswordValidationChecker,
     );
   }
@@ -2673,6 +3398,9 @@ mixin _$SignUpFormState {
   String get repeatPasswordInput => throw _privateConstructorUsedError;
   bool get isShowingPassword => throw _privateConstructorUsedError;
   bool get isShowingRepeatPassword => throw _privateConstructorUsedError;
+  bool get isPasswordCheckedAndValid => throw _privateConstructorUsedError;
+  bool get isRepeatPasswordCheckedAndValid =>
+      throw _privateConstructorUsedError;
   bool get isShowingPasswordValidationChecker =>
       throw _privateConstructorUsedError;
 
@@ -2697,6 +3425,8 @@ abstract class $SignUpFormStateCopyWith<$Res> {
       String repeatPasswordInput,
       bool isShowingPassword,
       bool isShowingRepeatPassword,
+      bool isPasswordCheckedAndValid,
+      bool isRepeatPasswordCheckedAndValid,
       bool isShowingPasswordValidationChecker});
 }
 
@@ -2721,6 +3451,8 @@ class _$SignUpFormStateCopyWithImpl<$Res>
     Object? repeatPasswordInput = freezed,
     Object? isShowingPassword = freezed,
     Object? isShowingRepeatPassword = freezed,
+    Object? isPasswordCheckedAndValid = freezed,
+    Object? isRepeatPasswordCheckedAndValid = freezed,
     Object? isShowingPasswordValidationChecker = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2764,6 +3496,15 @@ class _$SignUpFormStateCopyWithImpl<$Res>
           ? _value.isShowingRepeatPassword
           : isShowingRepeatPassword // ignore: cast_nullable_to_non_nullable
               as bool,
+      isPasswordCheckedAndValid: isPasswordCheckedAndValid == freezed
+          ? _value.isPasswordCheckedAndValid
+          : isPasswordCheckedAndValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRepeatPasswordCheckedAndValid: isRepeatPasswordCheckedAndValid ==
+              freezed
+          ? _value.isRepeatPasswordCheckedAndValid
+          : isRepeatPasswordCheckedAndValid // ignore: cast_nullable_to_non_nullable
+              as bool,
       isShowingPasswordValidationChecker: isShowingPasswordValidationChecker ==
               freezed
           ? _value.isShowingPasswordValidationChecker
@@ -2791,6 +3532,8 @@ abstract class _$SignUpFormStateCopyWith<$Res>
       String repeatPasswordInput,
       bool isShowingPassword,
       bool isShowingRepeatPassword,
+      bool isPasswordCheckedAndValid,
+      bool isRepeatPasswordCheckedAndValid,
       bool isShowingPasswordValidationChecker});
 }
 
@@ -2817,6 +3560,8 @@ class __$SignUpFormStateCopyWithImpl<$Res>
     Object? repeatPasswordInput = freezed,
     Object? isShowingPassword = freezed,
     Object? isShowingRepeatPassword = freezed,
+    Object? isPasswordCheckedAndValid = freezed,
+    Object? isRepeatPasswordCheckedAndValid = freezed,
     Object? isShowingPasswordValidationChecker = freezed,
   }) {
     return _then(_SignUpFormState(
@@ -2860,6 +3605,15 @@ class __$SignUpFormStateCopyWithImpl<$Res>
           ? _value.isShowingRepeatPassword
           : isShowingRepeatPassword // ignore: cast_nullable_to_non_nullable
               as bool,
+      isPasswordCheckedAndValid: isPasswordCheckedAndValid == freezed
+          ? _value.isPasswordCheckedAndValid
+          : isPasswordCheckedAndValid // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isRepeatPasswordCheckedAndValid: isRepeatPasswordCheckedAndValid ==
+              freezed
+          ? _value.isRepeatPasswordCheckedAndValid
+          : isRepeatPasswordCheckedAndValid // ignore: cast_nullable_to_non_nullable
+              as bool,
       isShowingPasswordValidationChecker: isShowingPasswordValidationChecker ==
               freezed
           ? _value.isShowingPasswordValidationChecker
@@ -2883,6 +3637,8 @@ class _$_SignUpFormState implements _SignUpFormState {
       required this.repeatPasswordInput,
       required this.isShowingPassword,
       required this.isShowingRepeatPassword,
+      required this.isPasswordCheckedAndValid,
+      required this.isRepeatPasswordCheckedAndValid,
       required this.isShowingPasswordValidationChecker});
 
   @override
@@ -2906,11 +3662,15 @@ class _$_SignUpFormState implements _SignUpFormState {
   @override
   final bool isShowingRepeatPassword;
   @override
+  final bool isPasswordCheckedAndValid;
+  @override
+  final bool isRepeatPasswordCheckedAndValid;
+  @override
   final bool isShowingPasswordValidationChecker;
 
   @override
   String toString() {
-    return 'SignUpFormState(statusMessage: $statusMessage, firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, phoneDialCodeInput: $phoneDialCodeInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput, isShowingPassword: $isShowingPassword, isShowingRepeatPassword: $isShowingRepeatPassword, isShowingPasswordValidationChecker: $isShowingPasswordValidationChecker)';
+    return 'SignUpFormState(statusMessage: $statusMessage, firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, phoneDialCodeInput: $phoneDialCodeInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput, isShowingPassword: $isShowingPassword, isShowingRepeatPassword: $isShowingRepeatPassword, isPasswordCheckedAndValid: $isPasswordCheckedAndValid, isRepeatPasswordCheckedAndValid: $isRepeatPasswordCheckedAndValid, isShowingPasswordValidationChecker: $isShowingPasswordValidationChecker)';
   }
 
   @override
@@ -2939,6 +3699,11 @@ class _$_SignUpFormState implements _SignUpFormState {
             const DeepCollectionEquality().equals(
                 other.isShowingRepeatPassword, isShowingRepeatPassword) &&
             const DeepCollectionEquality().equals(
+                other.isPasswordCheckedAndValid, isPasswordCheckedAndValid) &&
+            const DeepCollectionEquality().equals(
+                other.isRepeatPasswordCheckedAndValid,
+                isRepeatPasswordCheckedAndValid) &&
+            const DeepCollectionEquality().equals(
                 other.isShowingPasswordValidationChecker,
                 isShowingPasswordValidationChecker));
   }
@@ -2956,6 +3721,8 @@ class _$_SignUpFormState implements _SignUpFormState {
       const DeepCollectionEquality().hash(repeatPasswordInput),
       const DeepCollectionEquality().hash(isShowingPassword),
       const DeepCollectionEquality().hash(isShowingRepeatPassword),
+      const DeepCollectionEquality().hash(isPasswordCheckedAndValid),
+      const DeepCollectionEquality().hash(isRepeatPasswordCheckedAndValid),
       const DeepCollectionEquality().hash(isShowingPasswordValidationChecker));
 
   @JsonKey(ignore: true)
@@ -2976,6 +3743,8 @@ abstract class _SignUpFormState implements SignUpFormState {
       required String repeatPasswordInput,
       required bool isShowingPassword,
       required bool isShowingRepeatPassword,
+      required bool isPasswordCheckedAndValid,
+      required bool isRepeatPasswordCheckedAndValid,
       required bool isShowingPasswordValidationChecker}) = _$_SignUpFormState;
 
   @override
@@ -2998,6 +3767,10 @@ abstract class _SignUpFormState implements SignUpFormState {
   bool get isShowingPassword;
   @override
   bool get isShowingRepeatPassword;
+  @override
+  bool get isPasswordCheckedAndValid;
+  @override
+  bool get isRepeatPasswordCheckedAndValid;
   @override
   bool get isShowingPasswordValidationChecker;
   @override

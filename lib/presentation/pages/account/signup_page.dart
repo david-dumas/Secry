@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/auth/sign_up_form/sign_up_form_bloc.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/domain/auth/password_type.dart';
 import 'package:secry/injection.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:secry/presentation/pages/account/widgets/password_validation_checker.dart';
@@ -153,9 +154,12 @@ class _SignupPageState extends State<SignupPage> {
                                         border: OutlineInputBorder(),
                                         labelText: tr('account_password'),
                                         suffixIcon: IconButton(
-                                          icon: state.isShowingPassword
+                                          icon: state.isPasswordCheckedAndValid
+                                              ? Icon(Icons.check)
+                                              : (state.isShowingPassword
                                               ? Icon(Icons.visibility_off)
-                                              : Icon(Icons.visibility),
+                                                  : Icon(Icons.visibility)),
+                                          color: state.isPasswordCheckedAndValid ? kPrimaryColor : kMediumGrayV2,
                                           onPressed: () {
                                             context.read<SignUpFormBloc>().add(
                                                 SignUpFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
@@ -163,11 +167,22 @@ class _SignupPageState extends State<SignupPage> {
                                         ),
                                       ),
                                       validator: (value) {
-                                        if (value!.length < validationMinimumPasswordLength) {
-                                          return "${tr('account_warning_password_at_least_x_characters_part_1')} ${validationMinimumPasswordLength} ${tr('account_warning_password_at_least_x_characters_part_2')}";
-                                        } else {
-                                          return null;
-                                        }
+                                        final passwordValidator = PasswordValidator();
+                                        final passwordInputFailureOrSuccessUnit = passwordValidator
+                                            .getPasswordInputFailureOrSuccessUnit(password: value ?? '');
+
+                                        return passwordInputFailureOrSuccessUnit.fold(
+                                          (invalidPasswordError) {
+                                            context
+                                                .read<SignUpFormBloc>()
+                                                .add(SignUpFormEvent.isPasswordCheckedAndValidUpdated(isValid: false));
+
+                                            return passwordValidator.getErrorTextForFailure(
+                                                passwordFailure: invalidPasswordError,
+                                                deviceWidth: MediaQuery.of(context).size.width);
+                                          },
+                                          (_) => null,
+                                        );
                                       },
                                       keyboardType: TextInputType.visiblePassword,
                                       onChanged: (value) => context
@@ -182,6 +197,22 @@ class _SignupPageState extends State<SignupPage> {
                                       if (hasFocus && passwordValidationCheckerKey.currentContext != null) {
                                         Scrollable.ensureVisible(passwordValidationCheckerKey.currentContext!);
                                       }
+
+                                      Future.delayed(Duration.zero, () {
+                                        handlePasswordValidationForLayout(
+                                            context: context,
+                                            hasFocus: hasFocus,
+                                            passwordType: PasswordType.firstPassword,
+                                            password: state.passwordInput,
+                                            repeatPassword: state.repeatPasswordInput);
+                                      });
+
+                                      handlePasswordValidationForLayout(
+                                          context: context,
+                                          hasFocus: false,
+                                          passwordType: PasswordType.repeatPassword,
+                                          password: state.passwordInput,
+                                          repeatPassword: state.repeatPasswordInput);
                                     },
                                   ),
                                   SizedBox(height: 12.0),
@@ -193,17 +224,26 @@ class _SignupPageState extends State<SignupPage> {
                                 ],
                               ),
                               verticalSpaceSmall,
-                              TextFormField(
+                              Focus(
+                                child: TextFormField(
                                 obscureText: !state.isShowingRepeatPassword,
                                 decoration: InputDecoration(
                                   border: OutlineInputBorder(),
                                   labelText: tr('account_repeat_password'),
                                   suffixIcon: IconButton(
-                                    icon: state.isShowingRepeatPassword
+                                      icon: (state.isRepeatPasswordCheckedAndValid ||
+                                              state.passwordInput == state.repeatPasswordInput)
+                                          ? Icon(Icons.check)
+                                          : (state.isShowingRepeatPassword
                                         ? Icon(Icons.visibility_off)
-                                        : Icon(Icons.visibility),
+                                              : Icon(Icons.visibility)),
+                                      color: (state.isRepeatPasswordCheckedAndValid ||
+                                              state.passwordInput == state.repeatPasswordInput)
+                                          ? kPrimaryColor
+                                          : kMediumGrayV2,
                                     onPressed: () {
-                                      context.read<SignUpFormBloc>().add(SignUpFormEvent.isShowingRepeatPasswordToggled(
+                                        context.read<SignUpFormBloc>().add(
+                                            SignUpFormEvent.isShowingRepeatPasswordToggled(
                                           !state.isShowingRepeatPassword));
                                     },
                                   ),
@@ -211,12 +251,45 @@ class _SignupPageState extends State<SignupPage> {
                                 validator: (value) {
                                   if (value != state.passwordInput) {
                                     return tr('account_warning_password_does_not_match');
+                                    } else {
+                                      final passwordValidator = PasswordValidator();
+                                      final passwordInputFailureOrSuccessUnit =
+                                          passwordValidator.getPasswordInputFailureOrSuccessUnit(password: value ?? '');
+
+                                      return passwordInputFailureOrSuccessUnit.fold(
+                                        (invalidPasswordError) {
+                                          context.read<SignUpFormBloc>().add(
+                                              SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(isValid: false));
+
+                                          return passwordValidator.getErrorTextForFailure(
+                                              passwordFailure: invalidPasswordError,
+                                              deviceWidth: MediaQuery.of(context).size.width);
+                                        },
+                                        (_) => null,
+                                      );
                                   }
-                                  return null;
                                 },
                                 keyboardType: TextInputType.visiblePassword,
                                 onChanged: (value) =>
                                     context.read<SignUpFormBloc>().add(SignUpFormEvent.repeatPasswordChanged(value)),
+                              ),
+                                onFocusChange: (hasFocus) {
+                                  handlePasswordValidationForLayout(
+                                      context: context,
+                                      hasFocus: false,
+                                      passwordType: PasswordType.firstPassword,
+                                      password: state.passwordInput,
+                                      repeatPassword: state.repeatPasswordInput);
+
+                                  Future.delayed(Duration.zero, () {
+                                    handlePasswordValidationForLayout(
+                                        context: context,
+                                        hasFocus: hasFocus,
+                                        passwordType: PasswordType.repeatPassword,
+                                        password: state.passwordInput,
+                                        repeatPassword: state.repeatPasswordInput);
+                                  });
+                                },
                               ),
                               verticalSpaceSmall,
                               Padding(
@@ -289,5 +362,46 @@ class _SignupPageState extends State<SignupPage> {
         },
       ),
     );
+  }
+
+  void handlePasswordValidationForLayout(
+      {required BuildContext context,
+      required bool hasFocus,
+      required PasswordType passwordType,
+      required String password,
+      required String repeatPassword}) {
+    if (!hasFocus) {
+      final passwordInputFailureOrSuccessUnit = PasswordValidator().getPasswordInputFailureOrSuccessUnit(
+          password: passwordType == PasswordType.firstPassword ? password : repeatPassword);
+
+      return passwordInputFailureOrSuccessUnit.fold(
+        (failure) {
+          if (passwordType == PasswordType.firstPassword) {
+            context.read<SignUpFormBloc>().add(SignUpFormEvent.isPasswordCheckedAndValidUpdated(isValid: false));
+          } else {
+            context.read<SignUpFormBloc>().add(SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(isValid: false));
+          }
+        },
+        (success) {
+          if (passwordType == PasswordType.firstPassword) {
+            context.read<SignUpFormBloc>().add(SignUpFormEvent.isPasswordCheckedAndValidUpdated(isValid: true));
+          } else {
+            if (password == repeatPassword) {
+              context.read<SignUpFormBloc>().add(SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(isValid: true));
+            } else {
+              context
+                  .read<SignUpFormBloc>()
+                  .add(SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(isValid: false));
+            }
+          }
+        },
+      );
+    } else {
+      if (passwordType == PasswordType.firstPassword) {
+        context.read<SignUpFormBloc>().add(SignUpFormEvent.isPasswordCheckedAndValidUpdated(isValid: false));
+      } else {
+        context.read<SignUpFormBloc>().add(SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(isValid: false));
+      }
+    }
   }
 }

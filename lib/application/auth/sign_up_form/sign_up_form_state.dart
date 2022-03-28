@@ -13,6 +13,8 @@ class SignUpFormState with _$SignUpFormState {
       required String repeatPasswordInput,
       required bool isShowingPassword,
       required bool isShowingRepeatPassword,
+      required bool isPasswordCheckedAndValid,
+      required bool isRepeatPasswordCheckedAndValid,
       required bool isShowingPasswordValidationChecker}) = _SignUpFormState;
 
   factory SignUpFormState.initial() => SignUpFormState(
@@ -26,5 +28,7 @@ class SignUpFormState with _$SignUpFormState {
       statusMessage: '',
       isShowingPassword: false,
       isShowingRepeatPassword: false,
+      isPasswordCheckedAndValid: false,
+      isRepeatPasswordCheckedAndValid: false,
       isShowingPasswordValidationChecker: false);
 }
