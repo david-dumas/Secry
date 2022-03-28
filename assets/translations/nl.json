@@ -72,6 +72,7 @@
   "account_warning_please_enter_phone_number" : "Gelieve uw telefoonnummer in te vullen",
   "account_warning_please_enter_email" : "Gelieve uw email in te vullen",
   "account_warning_please_enter_valid_email" : "Voer een geldig emailadres in",
+  "account_warning_please_enter_valid_password" : "Voer een geldig wachtwoord in",
   "account_warning_password_at_least_x_characters_part_1" : "Het wachtwoord moet tenminste",
   "account_warning_password_at_least_x_characters_part_2" : "characters zijn.",
   "account_warning_password_does_not_match" : "Wachtwoorden komen niet overeen",

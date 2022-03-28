@@ -1,9 +1,11 @@
 import 'dart:ui';
 
 import 'package:dartz/dartz.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/domain/auth/password_validation_status.dart';
 import 'package:secry/domain/auth/validation_failures/password_failure.dart';
+import 'package:secry/util/screen_size_and_dimensions/screen_size_helper.dart';
 
 class PasswordValidator {
   Either<PasswordFailure, Unit> getPasswordInputFailureOrSuccessUnit({required String password}) {
@@ -117,5 +119,29 @@ class PasswordValidator {
     } else {
       return kPrimaryColor;
     }
+  }
+
+  String getErrorTextForFailure({required PasswordFailure passwordFailure, required double deviceWidth}) {
+    final isSmallDevice = ScreenSizeHelper().isSmallDevice(deviceWidth: deviceWidth);
+
+    return passwordFailure.maybeMap(
+      tooShort: (_) => tr('account_warning_password_too_short'),
+      noLowercaseCharacterUsed: (_) => isSmallDevice
+          ? tr('account_warning_password_must_contain_at_least_one_lowercase_character_short_version')
+          : tr('account_warning_password_must_contain_at_least_one_lowercase_character'),
+      noUppercaseCharacterUsed: (_) => isSmallDevice
+          ? tr('account_warning_password_must_contain_at_least_one_uppercase_character_short_version')
+          : tr('account_warning_password_must_contain_at_least_one_uppercase_character'),
+      noSpecialCharacterUsed: (_) => isSmallDevice
+          ? tr('account_warning_password_must_contain_at_least_one_special_character_short_version')
+          : tr('account_warning_password_must_contain_at_least_one_special_character'),
+      noNumberUsed: (_) => isSmallDevice
+          ? tr('account_warning_password_must_contain_at_least_one_number_short_version')
+          : tr('account_warning_password_must_contain_at_least_one_number'),
+      invalidNotComplexEnough: (_) => isSmallDevice
+          ? tr('account_warning_password_invalid_not_complex_enough_short_version')
+          : tr('account_warning_password_invalid_not_complex_enough'),
+      orElse: () => tr('account_warning_please_enter_valid_password'),
+    );
   }
 }
