@@ -10,6 +10,7 @@ import 'package:secry/injection.dart';
 import 'package:country_code_picker/country_code_picker.dart';
 import 'package:secry/presentation/pages/account/widgets/password_validation_checker.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
+import 'package:secry/util/validation/email_validator.dart';
 import 'package:secry/util/validation/password_validator.dart';
 
 class SignupPage extends StatefulWidget {
@@ -126,16 +127,15 @@ class _SignupPageState extends State<SignupPage> {
                                   labelText: tr('account_email'),
                                 ),
                                 validator: (value) {
-                                  final pattern = r'(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$)';
-                                  final regExp = RegExp(pattern);
+                                  final emailValidator = EmailValidator();
+                                  final emailInputFailureOrSuccessUnit =
+                                      emailValidator.getEmailInputFailureOrSuccessUnit(email: value ?? '');
 
-                                  if (value == null || value.isEmpty) {
-                                    return tr('account_warning_please_enter_email');
-                                  } else if (!regExp.hasMatch(value)) {
-                                    return tr('account_warning_please_enter_valid_email');
-                                  } else {
-                                    return null;
-                                  }
+                                  return emailInputFailureOrSuccessUnit.fold(
+                                    (invalidEmailError) =>
+                                        emailValidator.getErrorTextForFailure(failure: invalidEmailError),
+                                    (_) => null,
+                                  );
                                 },
                                 keyboardType: TextInputType.emailAddress,
                                 onChanged: (value) =>
@@ -156,7 +156,7 @@ class _SignupPageState extends State<SignupPage> {
                                           icon: state.isPasswordCheckedAndValid
                                               ? Icon(Icons.check)
                                               : (state.isShowingPassword
-                                              ? Icon(Icons.visibility_off)
+                                                  ? Icon(Icons.visibility_off)
                                                   : Icon(Icons.visibility)),
                                           color: state.isPasswordCheckedAndValid ? kPrimaryColor : kMediumGrayV2,
                                           onPressed: () {
@@ -225,31 +225,31 @@ class _SignupPageState extends State<SignupPage> {
                               verticalSpaceSmall,
                               Focus(
                                 child: TextFormField(
-                                obscureText: !state.isShowingRepeatPassword,
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: tr('account_repeat_password'),
-                                  suffixIcon: IconButton(
+                                  obscureText: !state.isShowingRepeatPassword,
+                                  decoration: InputDecoration(
+                                    border: OutlineInputBorder(),
+                                    labelText: tr('account_repeat_password'),
+                                    suffixIcon: IconButton(
                                       icon: (state.isRepeatPasswordCheckedAndValid ||
                                               state.passwordInput == state.repeatPasswordInput)
                                           ? Icon(Icons.check)
                                           : (state.isShowingRepeatPassword
-                                        ? Icon(Icons.visibility_off)
+                                              ? Icon(Icons.visibility_off)
                                               : Icon(Icons.visibility)),
                                       color: (state.isRepeatPasswordCheckedAndValid ||
                                               state.passwordInput == state.repeatPasswordInput)
                                           ? kPrimaryColor
                                           : kMediumGrayV2,
-                                    onPressed: () {
+                                      onPressed: () {
                                         context.read<SignUpFormBloc>().add(
                                             SignUpFormEvent.isShowingRepeatPasswordToggled(
-                                          !state.isShowingRepeatPassword));
-                                    },
+                                                !state.isShowingRepeatPassword));
+                                      },
+                                    ),
                                   ),
-                                ),
-                                validator: (value) {
-                                  if (value != state.passwordInput) {
-                                    return tr('account_warning_password_does_not_match');
+                                  validator: (value) {
+                                    if (value != state.passwordInput) {
+                                      return tr('account_warning_password_does_not_match');
                                     } else {
                                       final passwordValidator = PasswordValidator();
                                       final passwordInputFailureOrSuccessUnit =
@@ -266,12 +266,12 @@ class _SignupPageState extends State<SignupPage> {
                                         },
                                         (_) => null,
                                       );
-                                  }
-                                },
-                                keyboardType: TextInputType.visiblePassword,
-                                onChanged: (value) =>
-                                    context.read<SignUpFormBloc>().add(SignUpFormEvent.repeatPasswordChanged(value)),
-                              ),
+                                    }
+                                  },
+                                  keyboardType: TextInputType.visiblePassword,
+                                  onChanged: (value) =>
+                                      context.read<SignUpFormBloc>().add(SignUpFormEvent.repeatPasswordChanged(value)),
+                                ),
                                 onFocusChange: (hasFocus) {
                                   handlePasswordValidationForLayout(
                                       context: context,
