@@ -3,8 +3,7 @@ part of 'sign_up_form_bloc.dart';
 @freezed
 class SignUpFormState with _$SignUpFormState {
   const factory SignUpFormState(
-      {required String statusMessage,
-      required String firstNameInput,
+      {required String firstNameInput,
       required String lastNameInput,
       required String emailInput,
       required String phoneInput,
@@ -15,7 +14,10 @@ class SignUpFormState with _$SignUpFormState {
       required bool isShowingRepeatPassword,
       required bool isPasswordCheckedAndValid,
       required bool isRepeatPasswordCheckedAndValid,
-      required bool isShowingPasswordValidationChecker}) = _SignUpFormState;
+      required bool isShowingPasswordValidationChecker,
+      required bool isShowingErrorMessages,
+      required String currentErrorMessageTag,
+      required Option<Either<AuthFailure, Unit>> signUpFailureOrUnitOption}) = _SignUpFormState;
 
   factory SignUpFormState.initial() => SignUpFormState(
       firstNameInput: '',
@@ -25,10 +27,12 @@ class SignUpFormState with _$SignUpFormState {
       phoneDialCodeInput: '',
       passwordInput: '',
       repeatPasswordInput: '',
-      statusMessage: '',
       isShowingPassword: false,
       isShowingRepeatPassword: false,
       isPasswordCheckedAndValid: false,
       isRepeatPasswordCheckedAndValid: false,
-      isShowingPasswordValidationChecker: false);
+      isShowingPasswordValidationChecker: false,
+      isShowingErrorMessages: false,
+      currentErrorMessageTag: '',
+      signUpFailureOrUnitOption: none());
 }

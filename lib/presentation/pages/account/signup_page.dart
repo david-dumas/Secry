@@ -12,6 +12,8 @@ import 'package:secry/presentation/pages/account/widgets/password_validation_che
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/util/validation/email_validator.dart';
 import 'package:secry/util/validation/password_validator.dart';
+import 'package:secry/util/dialogs/dialog_helper.dart';
+import 'package:secry/application/tabbar/tabbar_bloc.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -29,335 +31,363 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<SignUpFormBloc>(),
-      child: BlocBuilder<SignUpFormBloc, SignUpFormState>(
-        builder: (context, state) {
-          return Scaffold(
-              appBar: GeneralAppbar(
-                isSubpage: true,
-              ),
-              body: SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 20,
-                    right: 20,
-                    bottom: 32,
-                    left: 20,
+      child: BlocBuilder<TabbarBloc, TabbarState>(
+        builder: (mainContext, mainState) {
+          return BlocConsumer<SignUpFormBloc, SignUpFormState>(
+            listener: (context, state) {
+              state.signUpFailureOrUnitOption.fold(
+                () => {},
+                (either) => either.fold(
+                  (failure) {
+                    if (state.isShowingErrorMessages) {
+                      DialogHelper().showAlertDialog(
+                        context,
+                        title: tr('warning_title_general'),
+                        description: tr(state.currentErrorMessageTag),
+                        extraActionOnClose: () async {
+                          context.read<SignUpFormBloc>().add(SignUpFormEvent.isShowingErrorMessagesUpdated(false));
+                        },
+                      );
+                    }
+                  },
+                  (_) {
+                    // Successfully signed up and logged in
+                    Navigator.of(context).pop();
+                  },
+                ),
+              );
+            },
+            builder: (context, state) {
+              return Scaffold(
+                  appBar: GeneralAppbar(
+                    isSubpage: true,
                   ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        tr('action_create_account'),
-                        textAlign: TextAlign.left,
-                        style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26, color: kPrimaryColor),
+                  body: SingleChildScrollView(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        top: 20,
+                        right: 20,
+                        bottom: 32,
+                        left: 20,
                       ),
-                      verticalSpaceRegular,
-                      Form(
-                          key: _formKey,
-                          child: Column(
-                            children: [
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: tr('account_first_name'),
-                                ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return tr('account_warning_please_enter_first_name');
-                                  }
-                                  return null;
-                                },
-                                onChanged: (value) =>
-                                    context.read<SignUpFormBloc>().add(SignUpFormEvent.firstNameChanged(value)),
-                              ),
-                              verticalSpaceSmall,
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: tr('account_last_name'),
-                                ),
-                                validator: (value) {
-                                  if (value == null || value.isEmpty) {
-                                    return tr('account_warning_please_enter_last_name');
-                                  }
-                                  return null;
-                                },
-                                onChanged: (value) =>
-                                    context.read<SignUpFormBloc>().add(SignUpFormEvent.lastNameChanged(value)),
-                              ),
-                              verticalSpaceSmall,
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  prefixIcon: Container(
-                                    padding: EdgeInsets.all(10.0),
-                                    child: CountryCodePicker(
-                                      initialSelection: 'NL',
-                                      onInit: (value) => context
-                                          .read<SignUpFormBloc>()
-                                          .add(SignUpFormEvent.phoneDialCodeChanged(value!.dialCode.toString())),
-                                      enabled: true,
-                                      onChanged: (value) => context
-                                          .read<SignUpFormBloc>()
-                                          .add(SignUpFormEvent.phoneDialCodeChanged(value.dialCode.toString())),
-                                      // Initial selection
-                                      favorite: ['+31', 'NL'],
-                                      showFlagDialog: true,
-                                    ),
-                                  ),
-                                  border: OutlineInputBorder(),
-                                  labelText: tr('account_phone'),
-                                ),
-                                validator: (String? value) {
-                                  if (value == null || value.isEmpty) {
-                                    return tr('account_warning_please_enter_phone_number');
-                                  }
-                                  return null;
-                                },
-                                keyboardType: TextInputType.number,
-                                inputFormatters: [
-                                  FilteringTextInputFormatter.digitsOnly,
-                                ],
-                                onChanged: (value) =>
-                                    context.read<SignUpFormBloc>().add(SignUpFormEvent.phoneChanged(value)),
-                              ),
-                              verticalSpaceSmall,
-                              TextFormField(
-                                decoration: InputDecoration(
-                                  border: OutlineInputBorder(),
-                                  labelText: tr('account_email'),
-                                ),
-                                validator: (value) {
-                                  final emailValidator = EmailValidator();
-                                  final emailInputFailureOrSuccessUnit =
-                                      emailValidator.getEmailInputFailureOrSuccessUnit(email: value ?? '');
-
-                                  return emailInputFailureOrSuccessUnit.fold(
-                                    (invalidEmailError) =>
-                                        emailValidator.getErrorTextForFailure(failure: invalidEmailError),
-                                    (_) => null,
-                                  );
-                                },
-                                keyboardType: TextInputType.emailAddress,
-                                onChanged: (value) =>
-                                    context.read<SignUpFormBloc>().add(SignUpFormEvent.emailChanged(value)),
-                              ),
-                              verticalSpaceSmall,
-                              Column(
-                                key: passwordValidationCheckerKey,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            tr('action_create_account'),
+                            textAlign: TextAlign.left,
+                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26, color: kPrimaryColor),
+                          ),
+                          verticalSpaceRegular,
+                          Form(
+                              key: _formKey,
+                              child: Column(
                                 children: [
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: tr('account_first_name'),
+                                    ),
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return tr('account_warning_please_enter_first_name');
+                                      }
+                                      return null;
+                                    },
+                                    onChanged: (value) =>
+                                        context.read<SignUpFormBloc>().add(SignUpFormEvent.firstNameChanged(value)),
+                                  ),
+                                  verticalSpaceSmall,
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: tr('account_last_name'),
+                                    ),
+                                    validator: (value) {
+                                      if (value == null || value.isEmpty) {
+                                        return tr('account_warning_please_enter_last_name');
+                                      }
+                                      return null;
+                                    },
+                                    onChanged: (value) =>
+                                        context.read<SignUpFormBloc>().add(SignUpFormEvent.lastNameChanged(value)),
+                                  ),
+                                  verticalSpaceSmall,
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                      prefixIcon: Container(
+                                        padding: EdgeInsets.all(10.0),
+                                        child: CountryCodePicker(
+                                          initialSelection: 'NL',
+                                          onInit: (value) => context
+                                              .read<SignUpFormBloc>()
+                                              .add(SignUpFormEvent.phoneDialCodeChanged(value!.dialCode.toString())),
+                                          enabled: true,
+                                          onChanged: (value) => context
+                                              .read<SignUpFormBloc>()
+                                              .add(SignUpFormEvent.phoneDialCodeChanged(value.dialCode.toString())),
+                                          // Initial selection
+                                          favorite: ['+31', 'NL'],
+                                          showFlagDialog: true,
+                                        ),
+                                      ),
+                                      border: OutlineInputBorder(),
+                                      labelText: tr('account_phone'),
+                                    ),
+                                    validator: (String? value) {
+                                      if (value == null || value.isEmpty) {
+                                        return tr('account_warning_please_enter_phone_number');
+                                      }
+                                      return null;
+                                    },
+                                    keyboardType: TextInputType.number,
+                                    inputFormatters: [
+                                      FilteringTextInputFormatter.digitsOnly,
+                                    ],
+                                    onChanged: (value) =>
+                                        context.read<SignUpFormBloc>().add(SignUpFormEvent.phoneChanged(value)),
+                                  ),
+                                  verticalSpaceSmall,
+                                  TextFormField(
+                                    decoration: InputDecoration(
+                                      border: OutlineInputBorder(),
+                                      labelText: tr('account_email'),
+                                    ),
+                                    validator: (value) {
+                                      final emailValidator = EmailValidator();
+                                      final emailInputFailureOrSuccessUnit =
+                                          emailValidator.getEmailInputFailureOrSuccessUnit(email: value ?? '');
+
+                                      return emailInputFailureOrSuccessUnit.fold(
+                                        (invalidEmailError) =>
+                                            emailValidator.getErrorTextForFailure(failure: invalidEmailError),
+                                        (_) => null,
+                                      );
+                                    },
+                                    keyboardType: TextInputType.emailAddress,
+                                    onChanged: (value) =>
+                                        context.read<SignUpFormBloc>().add(SignUpFormEvent.emailChanged(value)),
+                                  ),
+                                  verticalSpaceSmall,
+                                  Column(
+                                    key: passwordValidationCheckerKey,
+                                    children: [
+                                      Focus(
+                                        child: TextFormField(
+                                          controller: _pass,
+                                          obscureText: !state.isShowingPassword,
+                                          decoration: InputDecoration(
+                                            border: OutlineInputBorder(),
+                                            labelText: tr('account_password'),
+                                            suffixIcon: IconButton(
+                                              icon: state.isPasswordCheckedAndValid
+                                                  ? Icon(Icons.check)
+                                                  : (state.isShowingPassword
+                                                      ? Icon(Icons.visibility_off)
+                                                      : Icon(Icons.visibility)),
+                                              color: state.isPasswordCheckedAndValid ? kPrimaryColor : kMediumGrayV2,
+                                              onPressed: () {
+                                                context.read<SignUpFormBloc>().add(
+                                                    SignUpFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
+                                              },
+                                            ),
+                                          ),
+                                          validator: (value) {
+                                            final passwordValidator = PasswordValidator();
+                                            final passwordInputFailureOrSuccessUnit = passwordValidator
+                                                .getPasswordInputFailureOrSuccessUnit(password: value ?? '');
+
+                                            return passwordInputFailureOrSuccessUnit.fold(
+                                              (invalidPasswordError) {
+                                                context.read<SignUpFormBloc>().add(
+                                                    SignUpFormEvent.isPasswordCheckedAndValidUpdated(isValid: false));
+
+                                                return passwordValidator.getErrorTextForFailure(
+                                                    passwordFailure: invalidPasswordError,
+                                                    deviceWidth: MediaQuery.of(context).size.width);
+                                              },
+                                              (_) => null,
+                                            );
+                                          },
+                                          keyboardType: TextInputType.visiblePassword,
+                                          onChanged: (value) => context
+                                              .read<SignUpFormBloc>()
+                                              .add(SignUpFormEvent.firstPasswordChanged(value)),
+                                        ),
+                                        onFocusChange: (hasFocus) {
+                                          context
+                                              .read<SignUpFormBloc>()
+                                              .add(SignUpFormEvent.isShowingPasswordValidationChecker(hasFocus));
+
+                                          if (hasFocus && passwordValidationCheckerKey.currentContext != null) {
+                                            Scrollable.ensureVisible(passwordValidationCheckerKey.currentContext!);
+                                          }
+
+                                          Future.delayed(Duration.zero, () {
+                                            handlePasswordValidationForLayout(
+                                                context: context,
+                                                hasFocus: hasFocus,
+                                                passwordType: PasswordType.firstPassword,
+                                                password: state.passwordInput,
+                                                repeatPassword: state.repeatPasswordInput);
+                                          });
+
+                                          handlePasswordValidationForLayout(
+                                              context: context,
+                                              hasFocus: false,
+                                              passwordType: PasswordType.repeatPassword,
+                                              password: state.passwordInput,
+                                              repeatPassword: state.repeatPasswordInput);
+                                        },
+                                      ),
+                                      SizedBox(height: 12.0),
+                                      Visibility(
+                                          visible: state.isShowingPasswordValidationChecker,
+                                          child: PasswordValidationChecker(
+                                              passwordValidationStatus:
+                                                  PasswordValidator().getPasswordValidationStatus(state.passwordInput)))
+                                    ],
+                                  ),
+                                  verticalSpaceSmall,
                                   Focus(
                                     child: TextFormField(
-                                      controller: _pass,
-                                      obscureText: !state.isShowingPassword,
+                                      obscureText: !state.isShowingRepeatPassword,
                                       decoration: InputDecoration(
                                         border: OutlineInputBorder(),
-                                        labelText: tr('account_password'),
+                                        labelText: tr('account_repeat_password'),
                                         suffixIcon: IconButton(
-                                          icon: state.isPasswordCheckedAndValid
+                                          icon: (state.isRepeatPasswordCheckedAndValid ||
+                                                  state.passwordInput == state.repeatPasswordInput)
                                               ? Icon(Icons.check)
-                                              : (state.isShowingPassword
+                                              : (state.isShowingRepeatPassword
                                                   ? Icon(Icons.visibility_off)
                                                   : Icon(Icons.visibility)),
-                                          color: state.isPasswordCheckedAndValid ? kPrimaryColor : kMediumGrayV2,
+                                          color: (state.isRepeatPasswordCheckedAndValid ||
+                                                  state.passwordInput == state.repeatPasswordInput)
+                                              ? kPrimaryColor
+                                              : kMediumGrayV2,
                                           onPressed: () {
                                             context.read<SignUpFormBloc>().add(
-                                                SignUpFormEvent.isShowingPasswordToggled(!state.isShowingPassword));
+                                                SignUpFormEvent.isShowingRepeatPasswordToggled(
+                                                    !state.isShowingRepeatPassword));
                                           },
                                         ),
                                       ),
                                       validator: (value) {
-                                        final passwordValidator = PasswordValidator();
-                                        final passwordInputFailureOrSuccessUnit = passwordValidator
-                                            .getPasswordInputFailureOrSuccessUnit(password: value ?? '');
+                                        if (value != state.passwordInput) {
+                                          return tr('account_warning_password_does_not_match');
+                                        } else {
+                                          final passwordValidator = PasswordValidator();
+                                          final passwordInputFailureOrSuccessUnit = passwordValidator
+                                              .getPasswordInputFailureOrSuccessUnit(password: value ?? '');
 
-                                        return passwordInputFailureOrSuccessUnit.fold(
-                                          (invalidPasswordError) {
-                                            context
-                                                .read<SignUpFormBloc>()
-                                                .add(SignUpFormEvent.isPasswordCheckedAndValidUpdated(isValid: false));
+                                          return passwordInputFailureOrSuccessUnit.fold(
+                                            (invalidPasswordError) {
+                                              context.read<SignUpFormBloc>().add(
+                                                  SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(
+                                                      isValid: false));
 
-                                            return passwordValidator.getErrorTextForFailure(
-                                                passwordFailure: invalidPasswordError,
-                                                deviceWidth: MediaQuery.of(context).size.width);
-                                          },
-                                          (_) => null,
-                                        );
+                                              return passwordValidator.getErrorTextForFailure(
+                                                  passwordFailure: invalidPasswordError,
+                                                  deviceWidth: MediaQuery.of(context).size.width);
+                                            },
+                                            (_) => null,
+                                          );
+                                        }
                                       },
                                       keyboardType: TextInputType.visiblePassword,
                                       onChanged: (value) => context
                                           .read<SignUpFormBloc>()
-                                          .add(SignUpFormEvent.firstPasswordChanged(value)),
+                                          .add(SignUpFormEvent.repeatPasswordChanged(value)),
                                     ),
                                     onFocusChange: (hasFocus) {
-                                      context
-                                          .read<SignUpFormBloc>()
-                                          .add(SignUpFormEvent.isShowingPasswordValidationChecker(hasFocus));
-
-                                      if (hasFocus && passwordValidationCheckerKey.currentContext != null) {
-                                        Scrollable.ensureVisible(passwordValidationCheckerKey.currentContext!);
-                                      }
+                                      handlePasswordValidationForLayout(
+                                          context: context,
+                                          hasFocus: false,
+                                          passwordType: PasswordType.firstPassword,
+                                          password: state.passwordInput,
+                                          repeatPassword: state.repeatPasswordInput);
 
                                       Future.delayed(Duration.zero, () {
                                         handlePasswordValidationForLayout(
                                             context: context,
                                             hasFocus: hasFocus,
-                                            passwordType: PasswordType.firstPassword,
+                                            passwordType: PasswordType.repeatPassword,
                                             password: state.passwordInput,
                                             repeatPassword: state.repeatPasswordInput);
                                       });
-
-                                      handlePasswordValidationForLayout(
-                                          context: context,
-                                          hasFocus: false,
-                                          passwordType: PasswordType.repeatPassword,
-                                          password: state.passwordInput,
-                                          repeatPassword: state.repeatPasswordInput);
                                     },
                                   ),
-                                  SizedBox(height: 12.0),
-                                  Visibility(
-                                      visible: state.isShowingPasswordValidationChecker,
-                                      child: PasswordValidationChecker(
-                                          passwordValidationStatus:
-                                              PasswordValidator().getPasswordValidationStatus(state.passwordInput)))
-                                ],
-                              ),
-                              verticalSpaceSmall,
-                              Focus(
-                                child: TextFormField(
-                                  obscureText: !state.isShowingRepeatPassword,
-                                  decoration: InputDecoration(
-                                    border: OutlineInputBorder(),
-                                    labelText: tr('account_repeat_password'),
-                                    suffixIcon: IconButton(
-                                      icon: (state.isRepeatPasswordCheckedAndValid ||
-                                              state.passwordInput == state.repeatPasswordInput)
-                                          ? Icon(Icons.check)
-                                          : (state.isShowingRepeatPassword
-                                              ? Icon(Icons.visibility_off)
-                                              : Icon(Icons.visibility)),
-                                      color: (state.isRepeatPasswordCheckedAndValid ||
-                                              state.passwordInput == state.repeatPasswordInput)
-                                          ? kPrimaryColor
-                                          : kMediumGrayV2,
-                                      onPressed: () {
-                                        context.read<SignUpFormBloc>().add(
-                                            SignUpFormEvent.isShowingRepeatPasswordToggled(
-                                                !state.isShowingRepeatPassword));
-                                      },
-                                    ),
-                                  ),
-                                  validator: (value) {
-                                    if (value != state.passwordInput) {
-                                      return tr('account_warning_password_does_not_match');
-                                    } else {
-                                      final passwordValidator = PasswordValidator();
-                                      final passwordInputFailureOrSuccessUnit =
-                                          passwordValidator.getPasswordInputFailureOrSuccessUnit(password: value ?? '');
+                                  verticalSpaceSmall,
+                                  Padding(
+                                    padding: const EdgeInsets.symmetric(vertical: 16.0),
+                                    child: Container(
+                                      width: MediaQuery.of(context).size.width,
+                                      height: kButtonHeightMedium,
+                                      child: ElevatedButton(
+                                        style: ButtonStyle(
+                                          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                                            RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
+                                            ),
+                                          ),
+                                        ),
+                                        onPressed: () {
+                                          final isValid = _formKey.currentState?.validate() ?? false;
 
-                                      return passwordInputFailureOrSuccessUnit.fold(
-                                        (invalidPasswordError) {
-                                          context.read<SignUpFormBloc>().add(
-                                              SignUpFormEvent.isRepeatPasswordCheckedAndValidUpdated(isValid: false));
+                                          if (isValid) {
+                                            _formKey.currentState?.save();
 
-                                          return passwordValidator.getErrorTextForFailure(
-                                              passwordFailure: invalidPasswordError,
-                                              deviceWidth: MediaQuery.of(context).size.width);
+                                            context.read<SignUpFormBloc>().add(SignUpFormEvent.signUpPressed());
+                                          }
                                         },
-                                        (_) => null,
-                                      );
-                                    }
-                                  },
-                                  keyboardType: TextInputType.visiblePassword,
-                                  onChanged: (value) =>
-                                      context.read<SignUpFormBloc>().add(SignUpFormEvent.repeatPasswordChanged(value)),
-                                ),
-                                onFocusChange: (hasFocus) {
-                                  handlePasswordValidationForLayout(
-                                      context: context,
-                                      hasFocus: false,
-                                      passwordType: PasswordType.firstPassword,
-                                      password: state.passwordInput,
-                                      repeatPassword: state.repeatPasswordInput);
-
-                                  Future.delayed(Duration.zero, () {
-                                    handlePasswordValidationForLayout(
-                                        context: context,
-                                        hasFocus: hasFocus,
-                                        passwordType: PasswordType.repeatPassword,
-                                        password: state.passwordInput,
-                                        repeatPassword: state.repeatPasswordInput);
-                                  });
-                                },
-                              ),
-                              verticalSpaceSmall,
-                              Padding(
-                                padding: const EdgeInsets.symmetric(vertical: 16.0),
-                                child: Container(
-                                  width: MediaQuery.of(context).size.width,
-                                  height: kButtonHeightMedium,
-                                  child: ElevatedButton(
-                                    style: ButtonStyle(
-                                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
+                                        child: Text(
+                                          tr('action_register'),
+                                          style: buttonTextStyleMedium,
                                         ),
                                       ),
                                     ),
-                                    onPressed: () {
-                                      final isValid = _formKey.currentState?.validate() ?? false;
-
-                                      if (isValid) {
-                                        _formKey.currentState?.save();
-
-                                        context.read<SignUpFormBloc>().add(SignUpFormEvent.signUpPressed());
-                                      }
-                                    },
-                                    child: Text(
-                                      tr('action_register'),
-                                      style: buttonTextStyleMedium,
-                                    ),
                                   ),
-                                ),
-                              ),
-                            ],
-                          )),
-                      RichText(
-                        text: TextSpan(
-                          style: mainContentTextStyleMedium,
-                          children: <TextSpan>[
-                            TextSpan(text: tr("account_terms_agree_text") + " "),
-                            TextSpan(
-                                text: tr("account_terms_of_use"),
-                                style: TextStyle(
-                                  color: kPrimaryColor,
-                                  decoration: TextDecoration.underline,
-                                  //fontWeight: FontWeight.bold
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    // TODO open terms of service page
-                                  }),
-                            TextSpan(text: " " + tr("general_and") + " "),
-                            TextSpan(
-                                text: tr("account_privacy_policy"),
-                                style: TextStyle(
-                                  color: kPrimaryColor,
-                                  decoration: TextDecoration.underline,
-                                  //fontWeight: FontWeight.bold
-                                ),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    // TODO open Privacy Policy page
-                                  }),
-                          ],
-                        ),
+                                ],
+                              )),
+                          RichText(
+                            text: TextSpan(
+                              style: mainContentTextStyleMedium,
+                              children: <TextSpan>[
+                                TextSpan(text: tr("account_terms_agree_text") + " "),
+                                TextSpan(
+                                    text: tr("account_terms_of_use"),
+                                    style: TextStyle(
+                                      color: kPrimaryColor,
+                                      decoration: TextDecoration.underline,
+                                      //fontWeight: FontWeight.bold
+                                    ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        // TODO open terms of service page
+                                      }),
+                                TextSpan(text: " " + tr("general_and") + " "),
+                                TextSpan(
+                                    text: tr("account_privacy_policy"),
+                                    style: TextStyle(
+                                      color: kPrimaryColor,
+                                      decoration: TextDecoration.underline,
+                                      //fontWeight: FontWeight.bold
+                                    ),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        // TODO open Privacy Policy page
+                                      }),
+                              ],
+                            ),
+                          ),
+                          verticalSafetyScrollOffset
+                        ],
                       ),
-                      verticalSafetyScrollOffset
-                    ],
-                  ),
-                ),
-              ));
+                    ),
+                  ));
+            },
+          );
         },
       ),
     );

@@ -101,6 +101,12 @@ class _$SignUpFormEventTearOff {
       isShowing,
     );
   }
+
+  _IsShowingErrorMessagesUpdated isShowingErrorMessagesUpdated(bool isShowing) {
+    return _IsShowingErrorMessagesUpdated(
+      isShowing,
+    );
+  }
 }
 
 /// @nodoc
@@ -126,6 +132,7 @@ mixin _$SignUpFormEvent {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -144,6 +151,7 @@ mixin _$SignUpFormEvent {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -162,6 +170,7 @@ mixin _$SignUpFormEvent {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -187,6 +196,8 @@ mixin _$SignUpFormEvent {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -209,6 +220,8 @@ mixin _$SignUpFormEvent {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -231,6 +244,8 @@ mixin _$SignUpFormEvent {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -310,6 +325,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return initialized();
   }
@@ -331,6 +347,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return initialized?.call();
   }
@@ -352,6 +369,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -383,6 +401,8 @@ class _$_Initialized implements _Initialized {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return initialized(this);
   }
@@ -408,6 +428,8 @@ class _$_Initialized implements _Initialized {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -433,6 +455,8 @@ class _$_Initialized implements _Initialized {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -503,6 +527,7 @@ class _$_signUpPressed implements _signUpPressed {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return signUpPressed();
   }
@@ -524,6 +549,7 @@ class _$_signUpPressed implements _signUpPressed {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return signUpPressed?.call();
   }
@@ -545,6 +571,7 @@ class _$_signUpPressed implements _signUpPressed {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (signUpPressed != null) {
@@ -576,6 +603,8 @@ class _$_signUpPressed implements _signUpPressed {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return signUpPressed(this);
   }
@@ -601,6 +630,8 @@ class _$_signUpPressed implements _signUpPressed {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return signUpPressed?.call(this);
   }
@@ -626,6 +657,8 @@ class _$_signUpPressed implements _signUpPressed {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (signUpPressed != null) {
@@ -721,6 +754,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return firstNameChanged(newFirstName);
   }
@@ -742,6 +776,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return firstNameChanged?.call(newFirstName);
   }
@@ -763,6 +798,7 @@ class _$_FirstNameChanged implements _FirstNameChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (firstNameChanged != null) {
@@ -794,6 +830,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return firstNameChanged(this);
   }
@@ -819,6 +857,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return firstNameChanged?.call(this);
   }
@@ -844,6 +884,8 @@ class _$_FirstNameChanged implements _FirstNameChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (firstNameChanged != null) {
@@ -944,6 +986,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return lastNameChanged(newLastName);
   }
@@ -965,6 +1008,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return lastNameChanged?.call(newLastName);
   }
@@ -986,6 +1030,7 @@ class _$_LastNameChanged implements _LastNameChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (lastNameChanged != null) {
@@ -1017,6 +1062,8 @@ class _$_LastNameChanged implements _LastNameChanged {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return lastNameChanged(this);
   }
@@ -1042,6 +1089,8 @@ class _$_LastNameChanged implements _LastNameChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return lastNameChanged?.call(this);
   }
@@ -1067,6 +1116,8 @@ class _$_LastNameChanged implements _LastNameChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (lastNameChanged != null) {
@@ -1168,6 +1219,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return phoneDialCodeChanged(newPhoneDialCode);
   }
@@ -1189,6 +1241,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return phoneDialCodeChanged?.call(newPhoneDialCode);
   }
@@ -1210,6 +1263,7 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (phoneDialCodeChanged != null) {
@@ -1241,6 +1295,8 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return phoneDialCodeChanged(this);
   }
@@ -1266,6 +1322,8 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return phoneDialCodeChanged?.call(this);
   }
@@ -1291,6 +1349,8 @@ class _$_PhoneDialCodeChanged implements _PhoneDialCodeChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (phoneDialCodeChanged != null) {
@@ -1391,6 +1451,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return phoneChanged(newPhone);
   }
@@ -1412,6 +1473,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return phoneChanged?.call(newPhone);
   }
@@ -1433,6 +1495,7 @@ class _$_PhoneChanged implements _PhoneChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (phoneChanged != null) {
@@ -1464,6 +1527,8 @@ class _$_PhoneChanged implements _PhoneChanged {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return phoneChanged(this);
   }
@@ -1489,6 +1554,8 @@ class _$_PhoneChanged implements _PhoneChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return phoneChanged?.call(this);
   }
@@ -1514,6 +1581,8 @@ class _$_PhoneChanged implements _PhoneChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (phoneChanged != null) {
@@ -1613,6 +1682,7 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return emailChanged(newEmail);
   }
@@ -1634,6 +1704,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return emailChanged?.call(newEmail);
   }
@@ -1655,6 +1726,7 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -1686,6 +1758,8 @@ class _$_EmailChanged implements _EmailChanged {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return emailChanged(this);
   }
@@ -1711,6 +1785,8 @@ class _$_EmailChanged implements _EmailChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return emailChanged?.call(this);
   }
@@ -1736,6 +1812,8 @@ class _$_EmailChanged implements _EmailChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -1837,6 +1915,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return firstPasswordChanged(newFirstPassword);
   }
@@ -1858,6 +1937,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return firstPasswordChanged?.call(newFirstPassword);
   }
@@ -1879,6 +1959,7 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (firstPasswordChanged != null) {
@@ -1910,6 +1991,8 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return firstPasswordChanged(this);
   }
@@ -1935,6 +2018,8 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return firstPasswordChanged?.call(this);
   }
@@ -1960,6 +2045,8 @@ class _$_FirstPasswordChanged implements _FirstPasswordChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (firstPasswordChanged != null) {
@@ -2062,6 +2149,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return repeatPasswordChanged(newRepeatPassword);
   }
@@ -2083,6 +2171,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return repeatPasswordChanged?.call(newRepeatPassword);
   }
@@ -2104,6 +2193,7 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (repeatPasswordChanged != null) {
@@ -2135,6 +2225,8 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return repeatPasswordChanged(this);
   }
@@ -2160,6 +2252,8 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return repeatPasswordChanged?.call(this);
   }
@@ -2185,6 +2279,8 @@ class _$_RepeatPasswordChanged implements _RepeatPasswordChanged {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (repeatPasswordChanged != null) {
@@ -2290,6 +2386,7 @@ class _$_IsPasswordCheckedAndValidUpdated
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return isPasswordCheckedAndValidUpdated(isValid);
   }
@@ -2311,6 +2408,7 @@ class _$_IsPasswordCheckedAndValidUpdated
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return isPasswordCheckedAndValidUpdated?.call(isValid);
   }
@@ -2332,6 +2430,7 @@ class _$_IsPasswordCheckedAndValidUpdated
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isPasswordCheckedAndValidUpdated != null) {
@@ -2363,6 +2462,8 @@ class _$_IsPasswordCheckedAndValidUpdated
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return isPasswordCheckedAndValidUpdated(this);
   }
@@ -2388,6 +2489,8 @@ class _$_IsPasswordCheckedAndValidUpdated
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return isPasswordCheckedAndValidUpdated?.call(this);
   }
@@ -2413,6 +2516,8 @@ class _$_IsPasswordCheckedAndValidUpdated
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isPasswordCheckedAndValidUpdated != null) {
@@ -2520,6 +2625,7 @@ class _$_IsRepeatPasswordCheckedAndValidUpdated
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return isRepeatPasswordCheckedAndValidUpdated(isValid);
   }
@@ -2541,6 +2647,7 @@ class _$_IsRepeatPasswordCheckedAndValidUpdated
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return isRepeatPasswordCheckedAndValidUpdated?.call(isValid);
   }
@@ -2562,6 +2669,7 @@ class _$_IsRepeatPasswordCheckedAndValidUpdated
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isRepeatPasswordCheckedAndValidUpdated != null) {
@@ -2593,6 +2701,8 @@ class _$_IsRepeatPasswordCheckedAndValidUpdated
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return isRepeatPasswordCheckedAndValidUpdated(this);
   }
@@ -2618,6 +2728,8 @@ class _$_IsRepeatPasswordCheckedAndValidUpdated
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return isRepeatPasswordCheckedAndValidUpdated?.call(this);
   }
@@ -2643,6 +2755,8 @@ class _$_IsRepeatPasswordCheckedAndValidUpdated
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isRepeatPasswordCheckedAndValidUpdated != null) {
@@ -2747,6 +2861,7 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordToggled(isShowing);
   }
@@ -2768,6 +2883,7 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordToggled?.call(isShowing);
   }
@@ -2789,6 +2905,7 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isShowingPasswordToggled != null) {
@@ -2820,6 +2937,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordToggled(this);
   }
@@ -2845,6 +2964,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordToggled?.call(this);
   }
@@ -2870,6 +2991,8 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isShowingPasswordToggled != null) {
@@ -2975,6 +3098,7 @@ class _$_IsShowingRepeatPasswordToggled
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return isShowingRepeatPasswordToggled(isShowing);
   }
@@ -2996,6 +3120,7 @@ class _$_IsShowingRepeatPasswordToggled
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return isShowingRepeatPasswordToggled?.call(isShowing);
   }
@@ -3017,6 +3142,7 @@ class _$_IsShowingRepeatPasswordToggled
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isShowingRepeatPasswordToggled != null) {
@@ -3048,6 +3174,8 @@ class _$_IsShowingRepeatPasswordToggled
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return isShowingRepeatPasswordToggled(this);
   }
@@ -3073,6 +3201,8 @@ class _$_IsShowingRepeatPasswordToggled
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return isShowingRepeatPasswordToggled?.call(this);
   }
@@ -3098,6 +3228,8 @@ class _$_IsShowingRepeatPasswordToggled
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isShowingRepeatPasswordToggled != null) {
@@ -3204,6 +3336,7 @@ class _$_IsShowingPasswordValidationChecker
     required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
     required TResult Function(bool isShowing)
         isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordValidationChecker(isShowing);
   }
@@ -3225,6 +3358,7 @@ class _$_IsShowingPasswordValidationChecker
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordValidationChecker?.call(isShowing);
   }
@@ -3246,6 +3380,7 @@ class _$_IsShowingPasswordValidationChecker
     TResult Function(bool isShowing)? isShowingPasswordToggled,
     TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
     TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isShowingPasswordValidationChecker != null) {
@@ -3277,6 +3412,8 @@ class _$_IsShowingPasswordValidationChecker
         isShowingRepeatPasswordToggled,
     required TResult Function(_IsShowingPasswordValidationChecker value)
         isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordValidationChecker(this);
   }
@@ -3302,6 +3439,8 @@ class _$_IsShowingPasswordValidationChecker
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
   }) {
     return isShowingPasswordValidationChecker?.call(this);
   }
@@ -3327,6 +3466,8 @@ class _$_IsShowingPasswordValidationChecker
         isShowingRepeatPasswordToggled,
     TResult Function(_IsShowingPasswordValidationChecker value)?
         isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     required TResult orElse(),
   }) {
     if (isShowingPasswordValidationChecker != null) {
@@ -3348,12 +3489,248 @@ abstract class _IsShowingPasswordValidationChecker implements SignUpFormEvent {
 }
 
 /// @nodoc
+abstract class _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  factory _$IsShowingErrorMessagesUpdatedCopyWith(
+          _IsShowingErrorMessagesUpdated value,
+          $Res Function(_IsShowingErrorMessagesUpdated) then) =
+      __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isShowing});
+}
+
+/// @nodoc
+class __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
+    implements _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  __$IsShowingErrorMessagesUpdatedCopyWithImpl(
+      _IsShowingErrorMessagesUpdated _value,
+      $Res Function(_IsShowingErrorMessagesUpdated) _then)
+      : super(_value, (v) => _then(v as _IsShowingErrorMessagesUpdated));
+
+  @override
+  _IsShowingErrorMessagesUpdated get _value =>
+      super._value as _IsShowingErrorMessagesUpdated;
+
+  @override
+  $Res call({
+    Object? isShowing = freezed,
+  }) {
+    return _then(_IsShowingErrorMessagesUpdated(
+      isShowing == freezed
+          ? _value.isShowing
+          : isShowing // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsShowingErrorMessagesUpdated
+    implements _IsShowingErrorMessagesUpdated {
+  const _$_IsShowingErrorMessagesUpdated(this.isShowing);
+
+  @override
+  final bool isShowing;
+
+  @override
+  String toString() {
+    return 'SignUpFormEvent.isShowingErrorMessagesUpdated(isShowing: $isShowing)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsShowingErrorMessagesUpdated &&
+            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
+      get copyWith => __$IsShowingErrorMessagesUpdatedCopyWithImpl<
+          _IsShowingErrorMessagesUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function() signUpPressed,
+    required TResult Function(String newFirstName) firstNameChanged,
+    required TResult Function(String newLastName) lastNameChanged,
+    required TResult Function(String newPhoneDialCode) phoneDialCodeChanged,
+    required TResult Function(String newPhone) phoneChanged,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newFirstPassword) firstPasswordChanged,
+    required TResult Function(String newRepeatPassword) repeatPasswordChanged,
+    required TResult Function(bool isValid) isPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isValid)
+        isRepeatPasswordCheckedAndValidUpdated,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingRepeatPasswordToggled,
+    required TResult Function(bool isShowing)
+        isShowingPasswordValidationChecker,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
+  }) {
+    return isShowingErrorMessagesUpdated(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
+    TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+  }) {
+    return isShowingErrorMessagesUpdated?.call(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function()? signUpPressed,
+    TResult Function(String newFirstName)? firstNameChanged,
+    TResult Function(String newLastName)? lastNameChanged,
+    TResult Function(String newPhoneDialCode)? phoneDialCodeChanged,
+    TResult Function(String newPhone)? phoneChanged,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newFirstPassword)? firstPasswordChanged,
+    TResult Function(String newRepeatPassword)? repeatPasswordChanged,
+    TResult Function(bool isValid)? isPasswordCheckedAndValidUpdated,
+    TResult Function(bool isValid)? isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingRepeatPasswordToggled,
+    TResult Function(bool isShowing)? isShowingPasswordValidationChecker,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    required TResult orElse(),
+  }) {
+    if (isShowingErrorMessagesUpdated != null) {
+      return isShowingErrorMessagesUpdated(isShowing);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_signUpPressed value) signUpPressed,
+    required TResult Function(_FirstNameChanged value) firstNameChanged,
+    required TResult Function(_LastNameChanged value) lastNameChanged,
+    required TResult Function(_PhoneDialCodeChanged value) phoneDialCodeChanged,
+    required TResult Function(_PhoneChanged value) phoneChanged,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_FirstPasswordChanged value) firstPasswordChanged,
+    required TResult Function(_RepeatPasswordChanged value)
+        repeatPasswordChanged,
+    required TResult Function(_IsPasswordCheckedAndValidUpdated value)
+        isPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)
+        isRepeatPasswordCheckedAndValidUpdated,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingRepeatPasswordToggled value)
+        isShowingRepeatPasswordToggled,
+    required TResult Function(_IsShowingPasswordValidationChecker value)
+        isShowingPasswordValidationChecker,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
+  }) {
+    return isShowingErrorMessagesUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingRepeatPasswordToggled value)?
+        isShowingRepeatPasswordToggled,
+    TResult Function(_IsShowingPasswordValidationChecker value)?
+        isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+  }) {
+    return isShowingErrorMessagesUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_signUpPressed value)? signUpPressed,
+    TResult Function(_FirstNameChanged value)? firstNameChanged,
+    TResult Function(_LastNameChanged value)? lastNameChanged,
+    TResult Function(_PhoneDialCodeChanged value)? phoneDialCodeChanged,
+    TResult Function(_PhoneChanged value)? phoneChanged,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_FirstPasswordChanged value)? firstPasswordChanged,
+    TResult Function(_RepeatPasswordChanged value)? repeatPasswordChanged,
+    TResult Function(_IsPasswordCheckedAndValidUpdated value)?
+        isPasswordCheckedAndValidUpdated,
+    TResult Function(_IsRepeatPasswordCheckedAndValidUpdated value)?
+        isRepeatPasswordCheckedAndValidUpdated,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingRepeatPasswordToggled value)?
+        isShowingRepeatPasswordToggled,
+    TResult Function(_IsShowingPasswordValidationChecker value)?
+        isShowingPasswordValidationChecker,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    required TResult orElse(),
+  }) {
+    if (isShowingErrorMessagesUpdated != null) {
+      return isShowingErrorMessagesUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsShowingErrorMessagesUpdated implements SignUpFormEvent {
+  const factory _IsShowingErrorMessagesUpdated(bool isShowing) =
+      _$_IsShowingErrorMessagesUpdated;
+
+  bool get isShowing;
+  @JsonKey(ignore: true)
+  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$SignUpFormStateTearOff {
   const _$SignUpFormStateTearOff();
 
   _SignUpFormState call(
-      {required String statusMessage,
-      required String firstNameInput,
+      {required String firstNameInput,
       required String lastNameInput,
       required String emailInput,
       required String phoneInput,
@@ -3364,9 +3741,11 @@ class _$SignUpFormStateTearOff {
       required bool isShowingRepeatPassword,
       required bool isPasswordCheckedAndValid,
       required bool isRepeatPasswordCheckedAndValid,
-      required bool isShowingPasswordValidationChecker}) {
+      required bool isShowingPasswordValidationChecker,
+      required bool isShowingErrorMessages,
+      required String currentErrorMessageTag,
+      required Option<Either<AuthFailure, Unit>> signUpFailureOrUnitOption}) {
     return _SignUpFormState(
-      statusMessage: statusMessage,
       firstNameInput: firstNameInput,
       lastNameInput: lastNameInput,
       emailInput: emailInput,
@@ -3379,6 +3758,9 @@ class _$SignUpFormStateTearOff {
       isPasswordCheckedAndValid: isPasswordCheckedAndValid,
       isRepeatPasswordCheckedAndValid: isRepeatPasswordCheckedAndValid,
       isShowingPasswordValidationChecker: isShowingPasswordValidationChecker,
+      isShowingErrorMessages: isShowingErrorMessages,
+      currentErrorMessageTag: currentErrorMessageTag,
+      signUpFailureOrUnitOption: signUpFailureOrUnitOption,
     );
   }
 }
@@ -3388,7 +3770,6 @@ const $SignUpFormState = _$SignUpFormStateTearOff();
 
 /// @nodoc
 mixin _$SignUpFormState {
-  String get statusMessage => throw _privateConstructorUsedError;
   String get firstNameInput => throw _privateConstructorUsedError;
   String get lastNameInput => throw _privateConstructorUsedError;
   String get emailInput => throw _privateConstructorUsedError;
@@ -3403,6 +3784,10 @@ mixin _$SignUpFormState {
       throw _privateConstructorUsedError;
   bool get isShowingPasswordValidationChecker =>
       throw _privateConstructorUsedError;
+  bool get isShowingErrorMessages => throw _privateConstructorUsedError;
+  String get currentErrorMessageTag => throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get signUpFailureOrUnitOption =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignUpFormStateCopyWith<SignUpFormState> get copyWith =>
@@ -3415,8 +3800,7 @@ abstract class $SignUpFormStateCopyWith<$Res> {
           SignUpFormState value, $Res Function(SignUpFormState) then) =
       _$SignUpFormStateCopyWithImpl<$Res>;
   $Res call(
-      {String statusMessage,
-      String firstNameInput,
+      {String firstNameInput,
       String lastNameInput,
       String emailInput,
       String phoneInput,
@@ -3427,7 +3811,10 @@ abstract class $SignUpFormStateCopyWith<$Res> {
       bool isShowingRepeatPassword,
       bool isPasswordCheckedAndValid,
       bool isRepeatPasswordCheckedAndValid,
-      bool isShowingPasswordValidationChecker});
+      bool isShowingPasswordValidationChecker,
+      bool isShowingErrorMessages,
+      String currentErrorMessageTag,
+      Option<Either<AuthFailure, Unit>> signUpFailureOrUnitOption});
 }
 
 /// @nodoc
@@ -3441,7 +3828,6 @@ class _$SignUpFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? statusMessage = freezed,
     Object? firstNameInput = freezed,
     Object? lastNameInput = freezed,
     Object? emailInput = freezed,
@@ -3454,12 +3840,11 @@ class _$SignUpFormStateCopyWithImpl<$Res>
     Object? isPasswordCheckedAndValid = freezed,
     Object? isRepeatPasswordCheckedAndValid = freezed,
     Object? isShowingPasswordValidationChecker = freezed,
+    Object? isShowingErrorMessages = freezed,
+    Object? currentErrorMessageTag = freezed,
+    Object? signUpFailureOrUnitOption = freezed,
   }) {
     return _then(_value.copyWith(
-      statusMessage: statusMessage == freezed
-          ? _value.statusMessage
-          : statusMessage // ignore: cast_nullable_to_non_nullable
-              as String,
       firstNameInput: firstNameInput == freezed
           ? _value.firstNameInput
           : firstNameInput // ignore: cast_nullable_to_non_nullable
@@ -3510,6 +3895,18 @@ class _$SignUpFormStateCopyWithImpl<$Res>
           ? _value.isShowingPasswordValidationChecker
           : isShowingPasswordValidationChecker // ignore: cast_nullable_to_non_nullable
               as bool,
+      isShowingErrorMessages: isShowingErrorMessages == freezed
+          ? _value.isShowingErrorMessages
+          : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      currentErrorMessageTag: currentErrorMessageTag == freezed
+          ? _value.currentErrorMessageTag
+          : currentErrorMessageTag // ignore: cast_nullable_to_non_nullable
+              as String,
+      signUpFailureOrUnitOption: signUpFailureOrUnitOption == freezed
+          ? _value.signUpFailureOrUnitOption
+          : signUpFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -3522,8 +3919,7 @@ abstract class _$SignUpFormStateCopyWith<$Res>
       __$SignUpFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String statusMessage,
-      String firstNameInput,
+      {String firstNameInput,
       String lastNameInput,
       String emailInput,
       String phoneInput,
@@ -3534,7 +3930,10 @@ abstract class _$SignUpFormStateCopyWith<$Res>
       bool isShowingRepeatPassword,
       bool isPasswordCheckedAndValid,
       bool isRepeatPasswordCheckedAndValid,
-      bool isShowingPasswordValidationChecker});
+      bool isShowingPasswordValidationChecker,
+      bool isShowingErrorMessages,
+      String currentErrorMessageTag,
+      Option<Either<AuthFailure, Unit>> signUpFailureOrUnitOption});
 }
 
 /// @nodoc
@@ -3550,7 +3949,6 @@ class __$SignUpFormStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? statusMessage = freezed,
     Object? firstNameInput = freezed,
     Object? lastNameInput = freezed,
     Object? emailInput = freezed,
@@ -3563,12 +3961,11 @@ class __$SignUpFormStateCopyWithImpl<$Res>
     Object? isPasswordCheckedAndValid = freezed,
     Object? isRepeatPasswordCheckedAndValid = freezed,
     Object? isShowingPasswordValidationChecker = freezed,
+    Object? isShowingErrorMessages = freezed,
+    Object? currentErrorMessageTag = freezed,
+    Object? signUpFailureOrUnitOption = freezed,
   }) {
     return _then(_SignUpFormState(
-      statusMessage: statusMessage == freezed
-          ? _value.statusMessage
-          : statusMessage // ignore: cast_nullable_to_non_nullable
-              as String,
       firstNameInput: firstNameInput == freezed
           ? _value.firstNameInput
           : firstNameInput // ignore: cast_nullable_to_non_nullable
@@ -3619,6 +4016,18 @@ class __$SignUpFormStateCopyWithImpl<$Res>
           ? _value.isShowingPasswordValidationChecker
           : isShowingPasswordValidationChecker // ignore: cast_nullable_to_non_nullable
               as bool,
+      isShowingErrorMessages: isShowingErrorMessages == freezed
+          ? _value.isShowingErrorMessages
+          : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      currentErrorMessageTag: currentErrorMessageTag == freezed
+          ? _value.currentErrorMessageTag
+          : currentErrorMessageTag // ignore: cast_nullable_to_non_nullable
+              as String,
+      signUpFailureOrUnitOption: signUpFailureOrUnitOption == freezed
+          ? _value.signUpFailureOrUnitOption
+          : signUpFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
+              as Option<Either<AuthFailure, Unit>>,
     ));
   }
 }
@@ -3627,8 +4036,7 @@ class __$SignUpFormStateCopyWithImpl<$Res>
 
 class _$_SignUpFormState implements _SignUpFormState {
   const _$_SignUpFormState(
-      {required this.statusMessage,
-      required this.firstNameInput,
+      {required this.firstNameInput,
       required this.lastNameInput,
       required this.emailInput,
       required this.phoneInput,
@@ -3639,10 +4047,11 @@ class _$_SignUpFormState implements _SignUpFormState {
       required this.isShowingRepeatPassword,
       required this.isPasswordCheckedAndValid,
       required this.isRepeatPasswordCheckedAndValid,
-      required this.isShowingPasswordValidationChecker});
+      required this.isShowingPasswordValidationChecker,
+      required this.isShowingErrorMessages,
+      required this.currentErrorMessageTag,
+      required this.signUpFailureOrUnitOption});
 
-  @override
-  final String statusMessage;
   @override
   final String firstNameInput;
   @override
@@ -3667,10 +4076,16 @@ class _$_SignUpFormState implements _SignUpFormState {
   final bool isRepeatPasswordCheckedAndValid;
   @override
   final bool isShowingPasswordValidationChecker;
+  @override
+  final bool isShowingErrorMessages;
+  @override
+  final String currentErrorMessageTag;
+  @override
+  final Option<Either<AuthFailure, Unit>> signUpFailureOrUnitOption;
 
   @override
   String toString() {
-    return 'SignUpFormState(statusMessage: $statusMessage, firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, phoneDialCodeInput: $phoneDialCodeInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput, isShowingPassword: $isShowingPassword, isShowingRepeatPassword: $isShowingRepeatPassword, isPasswordCheckedAndValid: $isPasswordCheckedAndValid, isRepeatPasswordCheckedAndValid: $isRepeatPasswordCheckedAndValid, isShowingPasswordValidationChecker: $isShowingPasswordValidationChecker)';
+    return 'SignUpFormState(firstNameInput: $firstNameInput, lastNameInput: $lastNameInput, emailInput: $emailInput, phoneInput: $phoneInput, phoneDialCodeInput: $phoneDialCodeInput, passwordInput: $passwordInput, repeatPasswordInput: $repeatPasswordInput, isShowingPassword: $isShowingPassword, isShowingRepeatPassword: $isShowingRepeatPassword, isPasswordCheckedAndValid: $isPasswordCheckedAndValid, isRepeatPasswordCheckedAndValid: $isRepeatPasswordCheckedAndValid, isShowingPasswordValidationChecker: $isShowingPasswordValidationChecker, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag, signUpFailureOrUnitOption: $signUpFailureOrUnitOption)';
   }
 
   @override
@@ -3678,8 +4093,6 @@ class _$_SignUpFormState implements _SignUpFormState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SignUpFormState &&
-            const DeepCollectionEquality()
-                .equals(other.statusMessage, statusMessage) &&
             const DeepCollectionEquality()
                 .equals(other.firstNameInput, firstNameInput) &&
             const DeepCollectionEquality()
@@ -3705,13 +4118,18 @@ class _$_SignUpFormState implements _SignUpFormState {
                 isRepeatPasswordCheckedAndValid) &&
             const DeepCollectionEquality().equals(
                 other.isShowingPasswordValidationChecker,
-                isShowingPasswordValidationChecker));
+                isShowingPasswordValidationChecker) &&
+            const DeepCollectionEquality()
+                .equals(other.isShowingErrorMessages, isShowingErrorMessages) &&
+            const DeepCollectionEquality()
+                .equals(other.currentErrorMessageTag, currentErrorMessageTag) &&
+            const DeepCollectionEquality().equals(
+                other.signUpFailureOrUnitOption, signUpFailureOrUnitOption));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(statusMessage),
       const DeepCollectionEquality().hash(firstNameInput),
       const DeepCollectionEquality().hash(lastNameInput),
       const DeepCollectionEquality().hash(emailInput),
@@ -3723,7 +4141,10 @@ class _$_SignUpFormState implements _SignUpFormState {
       const DeepCollectionEquality().hash(isShowingRepeatPassword),
       const DeepCollectionEquality().hash(isPasswordCheckedAndValid),
       const DeepCollectionEquality().hash(isRepeatPasswordCheckedAndValid),
-      const DeepCollectionEquality().hash(isShowingPasswordValidationChecker));
+      const DeepCollectionEquality().hash(isShowingPasswordValidationChecker),
+      const DeepCollectionEquality().hash(isShowingErrorMessages),
+      const DeepCollectionEquality().hash(currentErrorMessageTag),
+      const DeepCollectionEquality().hash(signUpFailureOrUnitOption));
 
   @JsonKey(ignore: true)
   @override
@@ -3733,8 +4154,7 @@ class _$_SignUpFormState implements _SignUpFormState {
 
 abstract class _SignUpFormState implements SignUpFormState {
   const factory _SignUpFormState(
-      {required String statusMessage,
-      required String firstNameInput,
+      {required String firstNameInput,
       required String lastNameInput,
       required String emailInput,
       required String phoneInput,
@@ -3745,10 +4165,12 @@ abstract class _SignUpFormState implements SignUpFormState {
       required bool isShowingRepeatPassword,
       required bool isPasswordCheckedAndValid,
       required bool isRepeatPasswordCheckedAndValid,
-      required bool isShowingPasswordValidationChecker}) = _$_SignUpFormState;
+      required bool isShowingPasswordValidationChecker,
+      required bool isShowingErrorMessages,
+      required String currentErrorMessageTag,
+      required Option<Either<AuthFailure, Unit>>
+          signUpFailureOrUnitOption}) = _$_SignUpFormState;
 
-  @override
-  String get statusMessage;
   @override
   String get firstNameInput;
   @override
@@ -3773,6 +4195,12 @@ abstract class _SignUpFormState implements SignUpFormState {
   bool get isRepeatPasswordCheckedAndValid;
   @override
   bool get isShowingPasswordValidationChecker;
+  @override
+  bool get isShowingErrorMessages;
+  @override
+  String get currentErrorMessageTag;
+  @override
+  Option<Either<AuthFailure, Unit>> get signUpFailureOrUnitOption;
   @override
   @JsonKey(ignore: true)
   _$SignUpFormStateCopyWith<_SignUpFormState> get copyWith =>

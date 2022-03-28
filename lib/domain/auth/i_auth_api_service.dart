@@ -12,4 +12,9 @@ abstract class IAuthApiService {
   Future<HttpResponse<dynamic>> resetPassword(
     @Body() String body,
   );
+
+  @POST('/api/v2/auth')
+  Future<HttpResponse<dynamic>> createNewUser(
+    @Body() String body,
+  );
 }
