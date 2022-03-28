@@ -6,6 +6,7 @@ import 'package:secry/domain/users/users_and_pagination_info.dart';
 import 'package:secry/infrastructure/users/users_api_service.dart';
 import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/domain/general/pagination_info.dart';
+import 'package:secry/util/network_and_requests/response_util.dart';
 
 @Singleton(as: IUsersRepository)
 class UsersRepository extends IUsersRepository {
@@ -29,9 +30,8 @@ class UsersRepository extends IUsersRepository {
         pageNumber,
         pageSize,
       );
-      final responseStatusCode = response.response.statusCode;
 
-      if (responseStatusCode == 200) {
+      if (response.isSuccessful) {
         final mappedData = Map<String, dynamic>.from(response.data);
 
         if (mappedData.containsKey('items')) {
