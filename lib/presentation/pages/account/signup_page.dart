@@ -100,7 +100,6 @@ class _SignupPageState extends State<SignupPage> {
                                           .add(SignUpFormEvent.phoneDialCodeChanged(value.dialCode.toString())),
                                       // Initial selection
                                       favorite: ['+31', 'NL'],
-                                      countryFilter: ['NL', 'BE', 'ES', 'IT', 'FR', 'DE'],
                                       showFlagDialog: true,
                                     ),
                                   ),
