@@ -75,7 +75,7 @@
   "account_warning_please_enter_valid_password" : "Please enter a valid password",
   "account_warning_password_at_least_x_characters_part_1" : "Password must be at least",
   "account_warning_password_at_least_x_characters_part_2" : "characters.",
-  "account_warning_password_does_not_match" : "Password does Not match",
+  "account_warning_password_does_not_match" : "Password does not match",
   "account_warning_password_too_short" : "Password too short",
   "account_warning_password_must_contain_at_least_one_lowercase_character" : "Password must contain at least one lowercase character",
   "account_warning_password_must_contain_at_least_one_uppercase_character" : "Password must contain at least one uppercase character",
