@@ -29,11 +29,11 @@ class ResetPasswordBloc extends Bloc<ResetPasswordEvent, ResetPasswordState> {
       },
       resetPasswordPressed: (e) async {
         final isPasswordSuccessfullyReset = await _authApiRepository.resetPassword(email: state.inputEmail);
+        emit(state.copyWith(didTryToResetPassword: true));
         emit(state.copyWith(isPasswordResetMailSuccessfullySent: isPasswordSuccessfullyReset));
       },
       isShowingClearEmailInputToggled: (e) async {
         emit(state.copyWith(isShowingClearEmailButton: e.isShowing));
-        emit(state.copyWith(didTryToResetPassword: true));
       },
     );
   }
