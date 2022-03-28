@@ -25,7 +25,13 @@ class _IAuthApiService implements IAuthApiService {
     final _data = body;
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'POST', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/v1/auth/user/reset-password',
+            .compose(_dio.options, '/api/v2/auth/reset-password',
+                queryParameters: queryParameters, data: _data)
+            .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
+    final value = _result.data;
+    final httpResponse = HttpResponse(value, _result);
+    return httpResponse;
+  }
 
   @override
   Future<HttpResponse<dynamic>> createNewUser(body) async {
