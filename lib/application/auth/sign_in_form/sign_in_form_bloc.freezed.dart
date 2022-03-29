@@ -1323,7 +1323,8 @@ class _$SignInFormStateTearOff {
       required bool isShowingPassword,
       required bool isShowingErrorMessages,
       required String currentErrorMessageTag,
-      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption}) {
+      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      required bool isLoading}) {
     return _SignInFormState(
       inputEmail: inputEmail,
       isShowingClearEmailButton: isShowingClearEmailButton,
@@ -1332,6 +1333,7 @@ class _$SignInFormStateTearOff {
       isShowingErrorMessages: isShowingErrorMessages,
       currentErrorMessageTag: currentErrorMessageTag,
       signInFailureOrUnitOption: signInFailureOrUnitOption,
+      isLoading: isLoading,
     );
   }
 }
@@ -1349,6 +1351,7 @@ mixin _$SignInFormState {
   String get currentErrorMessageTag => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get signInFailureOrUnitOption =>
       throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -1367,7 +1370,8 @@ abstract class $SignInFormStateCopyWith<$Res> {
       bool isShowingPassword,
       bool isShowingErrorMessages,
       String currentErrorMessageTag,
-      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption});
+      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      bool isLoading});
 }
 
 /// @nodoc
@@ -1388,6 +1392,7 @@ class _$SignInFormStateCopyWithImpl<$Res>
     Object? isShowingErrorMessages = freezed,
     Object? currentErrorMessageTag = freezed,
     Object? signInFailureOrUnitOption = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_value.copyWith(
       inputEmail: inputEmail == freezed
@@ -1418,6 +1423,10 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.signInFailureOrUnitOption
           : signInFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1436,7 +1445,8 @@ abstract class _$SignInFormStateCopyWith<$Res>
       bool isShowingPassword,
       bool isShowingErrorMessages,
       String currentErrorMessageTag,
-      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption});
+      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      bool isLoading});
 }
 
 /// @nodoc
@@ -1459,6 +1469,7 @@ class __$SignInFormStateCopyWithImpl<$Res>
     Object? isShowingErrorMessages = freezed,
     Object? currentErrorMessageTag = freezed,
     Object? signInFailureOrUnitOption = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_SignInFormState(
       inputEmail: inputEmail == freezed
@@ -1489,6 +1500,10 @@ class __$SignInFormStateCopyWithImpl<$Res>
           ? _value.signInFailureOrUnitOption
           : signInFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1503,7 +1518,8 @@ class _$_SignInFormState implements _SignInFormState {
       required this.isShowingPassword,
       required this.isShowingErrorMessages,
       required this.currentErrorMessageTag,
-      required this.signInFailureOrUnitOption});
+      required this.signInFailureOrUnitOption,
+      required this.isLoading});
 
   @override
   final String inputEmail;
@@ -1519,10 +1535,12 @@ class _$_SignInFormState implements _SignInFormState {
   final String currentErrorMessageTag;
   @override
   final Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption;
+  @override
+  final bool isLoading;
 
   @override
   String toString() {
-    return 'SignInFormState(inputEmail: $inputEmail, isShowingClearEmailButton: $isShowingClearEmailButton, inputPassword: $inputPassword, isShowingPassword: $isShowingPassword, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag, signInFailureOrUnitOption: $signInFailureOrUnitOption)';
+    return 'SignInFormState(inputEmail: $inputEmail, isShowingClearEmailButton: $isShowingClearEmailButton, inputPassword: $inputPassword, isShowingPassword: $isShowingPassword, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag, signInFailureOrUnitOption: $signInFailureOrUnitOption, isLoading: $isLoading)';
   }
 
   @override
@@ -1543,7 +1561,8 @@ class _$_SignInFormState implements _SignInFormState {
             const DeepCollectionEquality()
                 .equals(other.currentErrorMessageTag, currentErrorMessageTag) &&
             const DeepCollectionEquality().equals(
-                other.signInFailureOrUnitOption, signInFailureOrUnitOption));
+                other.signInFailureOrUnitOption, signInFailureOrUnitOption) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading));
   }
 
   @override
@@ -1555,7 +1574,8 @@ class _$_SignInFormState implements _SignInFormState {
       const DeepCollectionEquality().hash(isShowingPassword),
       const DeepCollectionEquality().hash(isShowingErrorMessages),
       const DeepCollectionEquality().hash(currentErrorMessageTag),
-      const DeepCollectionEquality().hash(signInFailureOrUnitOption));
+      const DeepCollectionEquality().hash(signInFailureOrUnitOption),
+      const DeepCollectionEquality().hash(isLoading));
 
   @JsonKey(ignore: true)
   @override
@@ -1571,8 +1591,8 @@ abstract class _SignInFormState implements SignInFormState {
       required bool isShowingPassword,
       required bool isShowingErrorMessages,
       required String currentErrorMessageTag,
-      required Option<Either<AuthFailure, Unit>>
-          signInFailureOrUnitOption}) = _$_SignInFormState;
+      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      required bool isLoading}) = _$_SignInFormState;
 
   @override
   String get inputEmail;
@@ -1588,6 +1608,8 @@ abstract class _SignInFormState implements SignInFormState {
   String get currentErrorMessageTag;
   @override
   Option<Either<AuthFailure, Unit>> get signInFailureOrUnitOption;
+  @override
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>

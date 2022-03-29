@@ -46,6 +46,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
       },
       signInPressed: (e) async {
         emit(state.copyWith(signInFailureOrUnitOption: none()));
+        emit(state.copyWith(isLoading: true));
 
         final failureOrUnit = await _authFacade.signIn(email: state.inputEmail, password: state.inputPassword);
         await failureOrUnit.fold(
@@ -78,6 +79,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           },
         );
 
+        emit(state.copyWith(isLoading: false));
         emit(state.copyWith(signInFailureOrUnitOption: optionOf(failureOrUnit)));
       },
     );

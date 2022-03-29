@@ -9,11 +9,10 @@ import 'package:secry/injection.dart';
 import 'package:secry/presentation/pages/account/reset_password_page.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
-import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/util/dialogs/dialog_helper.dart';
-import 'package:secry/util/screen_size_and_dimensions/screen_size_helper.dart';
 import 'package:secry/util/validation/email_validator.dart';
 import 'package:secry/util/validation/password_validator.dart';
+import 'package:secry/presentation/pages/general/widgets/general_progress_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -168,20 +167,13 @@ class _LoginPageState extends State<LoginPage> {
                               ),
                             ],
                           ),
-                          Padding(
-                            padding: const EdgeInsets.only(top: 20.0),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: kButtonHeightMedium,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
-                                    ),
-                                  ),
-                                ),
-                                onPressed: () {
+                          SizedBox(
+                            width: double.infinity,
+                            height: kButtonHeightMedium,
+                            child: GeneralProgressButton(
+                                title: tr('action_login'),
+                                isLoading: state.isLoading,
+                                onButtonPressed: () {
                                   final isValid = _formKey.currentState?.validate() ?? false;
 
                                   if (isValid) {
@@ -189,13 +181,7 @@ class _LoginPageState extends State<LoginPage> {
 
                                     context.read<SignInFormBloc>().add(SignInFormEvent.signInPressed());
                                   }
-                                },
-                                child: Text(
-                                  tr('action_login'),
-                                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-                                ),
-                              ),
-                            ),
+                                }),
                           ),
                         ],
                       ),
