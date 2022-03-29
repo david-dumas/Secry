@@ -27,7 +27,12 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
     await event.map(
       initialized: (e) async {},
       signUpPressed: (e) async {
+        if (state.isLoading || state.isShowingErrorMessages) {
+          return;
+        }
+
         emit(state.copyWith(signUpFailureOrUnitOption: none()));
+        emit(state.copyWith(isLoading: true));
 
         final newUser = User(
             firstName: state.firstNameInput,
@@ -74,6 +79,7 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
             });
           },
         );
+        add(SignUpFormEvent.isLoadingUpdated(false));
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));
@@ -116,6 +122,9 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       },
       signUpFailureOrUnitOptionUpdated: (e) async {
         emit(state.copyWith(signUpFailureOrUnitOption: e.newFailureOrUnit));
+      },
+      isLoadingUpdated: (e) async {
+        emit(state.copyWith(isLoading: e.isLoading));
       },
     );
   }

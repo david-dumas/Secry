@@ -17,7 +17,8 @@ class SignUpFormState with _$SignUpFormState {
       required bool isShowingPasswordValidationChecker,
       required bool isShowingErrorMessages,
       required String currentErrorMessageTag,
-      required Option<Either<AuthFailure, Unit>> signUpFailureOrUnitOption}) = _SignUpFormState;
+      required Option<Either<AuthFailure, Unit>> signUpFailureOrUnitOption,
+      required bool isLoading}) = _SignUpFormState;
 
   factory SignUpFormState.initial() => SignUpFormState(
       firstNameInput: '',
@@ -34,5 +35,6 @@ class SignUpFormState with _$SignUpFormState {
       isShowingPasswordValidationChecker: false,
       isShowingErrorMessages: false,
       currentErrorMessageTag: '',
-      signUpFailureOrUnitOption: none());
+      signUpFailureOrUnitOption: none(),
+      isLoading: false);
 }

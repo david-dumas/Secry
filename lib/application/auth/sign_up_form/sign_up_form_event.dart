@@ -22,4 +22,5 @@ class SignUpFormEvent with _$SignUpFormEvent {
   const factory SignUpFormEvent.isShowingErrorMessagesUpdated(bool isShowing) = _IsShowingErrorMessagesUpdated;
   const factory SignUpFormEvent.signUpFailureOrUnitOptionUpdated(Option<Either<AuthFailure, Unit>> newFailureOrUnit) =
       _SignUpFailureOrUnitOptionUpdated;
+  const factory SignUpFormEvent.isLoadingUpdated(bool isLoading) = _IsLoadingUpdated;
 }

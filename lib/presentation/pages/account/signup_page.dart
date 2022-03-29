@@ -13,7 +13,7 @@ import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/util/validation/email_validator.dart';
 import 'package:secry/util/validation/password_validator.dart';
 import 'package:secry/util/dialogs/dialog_helper.dart';
-import 'package:secry/application/tabbar/tabbar_bloc.dart';
+import 'package:secry/presentation/pages/general/widgets/general_progress_button.dart';
 
 class SignupPage extends StatefulWidget {
   SignupPage({Key? key}) : super(key: key);
@@ -50,7 +50,9 @@ class _SignupPageState extends State<SignupPage> {
                 },
                 (_) {
                   // Successfully signed up and logged in
-                  Navigator.of(context).pop();
+                  Future.delayed(Duration.zero, () {
+                    Navigator.of(context).pop();
+                  });
                 },
               ),
             );
@@ -316,33 +318,21 @@ class _SignupPageState extends State<SignupPage> {
                                   },
                                 ),
                                 verticalSpaceSmall,
-                                Padding(
-                                  padding: const EdgeInsets.symmetric(vertical: 16.0),
-                                  child: Container(
-                                    width: MediaQuery.of(context).size.width,
-                                    height: kButtonHeightMedium,
-                                    child: ElevatedButton(
-                                      style: ButtonStyle(
-                                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                          RoundedRectangleBorder(
-                                            borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
-                                          ),
-                                        ),
-                                      ),
-                                      onPressed: () {
-                                        final isValid = _formKey.currentState?.validate() ?? false;
+                                SizedBox(
+                                  width: double.infinity,
+                                  height: kButtonHeightMedium,
+                                  child: GeneralProgressButton(
+                                    title: tr('action_register'),
+                                    isLoading: state.isLoading,
+                                    onButtonPressed: () {
+                                      final isValid = _formKey.currentState?.validate() ?? false;
 
-                                        if (isValid) {
-                                          _formKey.currentState?.save();
+                                      if (isValid) {
+                                        _formKey.currentState?.save();
 
-                                          context.read<SignUpFormBloc>().add(SignUpFormEvent.signUpPressed());
-                                        }
-                                      },
-                                      child: Text(
-                                        tr('action_register'),
-                                        style: buttonTextStyleMedium,
-                                      ),
-                                    ),
+                                        context.read<SignUpFormBloc>().add(SignUpFormEvent.signUpPressed());
+                                      }
+                                    },
                                   ),
                                 ),
                               ],

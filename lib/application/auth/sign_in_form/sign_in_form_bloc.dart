@@ -45,6 +45,10 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         emit(state.copyWith(inputPassword: e.newPassword));
       },
       signInPressed: (e) async {
+        if (state.isLoading) {
+          return;
+        }
+
         emit(state.copyWith(signInFailureOrUnitOption: none()));
         emit(state.copyWith(isLoading: true));
 
