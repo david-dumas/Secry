@@ -46,12 +46,12 @@ class AuthenticationRepository extends IAuthenticationInterface {
       final response = await _authenticationApiService.auth.resetPassword(body);
 
       if (response.isSuccessful) {
-        return Future<bool>.value(true);
+        return true;
       } else {
-        return Future<bool>.value(false);
+        return false;
       }
     } catch (error) {
-      return Future<bool>.value(false);
+      return false;
     }
   }
 }

@@ -6,11 +6,14 @@ import 'package:secry/constants.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
+import 'package:secry/util/dialogs/dialog_helper.dart';
 import 'package:secry/util/validation/email_validator.dart';
+import 'package:secry/presentation/pages/general/widgets/general_progress_button.dart';
 
 class ResetPasswordPage extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _emailTextEditController = TextEditingController();
+  bool isShowingDialog = false;
 
   ResetPasswordPage({Key? key}) : super(key: key);
 
@@ -20,101 +23,43 @@ class ResetPasswordPage extends StatelessWidget {
       create: (context) => getIt<ResetPasswordBloc>(),
       child: BlocConsumer<ResetPasswordBloc, ResetPasswordState>(
         listener: (context, state) {
-          if (state.isPasswordResetMailSuccessfullySent) {
+          if (state.isPasswordResetMailSuccessfullySent && !isShowingDialog && !state.isLoading) {
+            isShowingDialog = true;
+
+            DialogHelper().showSimpleDialogWithTip(context,
+                title: tr('success_message_success_title'),
+                description: tr('success_message_password_reset_mail_successfully_sent_description'),
+                tip: tr('success_message_password_reset_mail_tip'),
+                buttonText: tr('action_go_to_login'), onButtonPressed: () {
+              Navigator.of(buildContext).popUntil((route) {
+                return route.settings.name == LoginPageRoute.name;
+              });
+            });
+          } else if (state.didTryToResetPassword && !isShowingDialog && !state.isLoading) {
+            isShowingDialog = true;
             showDialog(
-              context: context,
-              barrierDismissible: true,
-              builder: (context) => SimpleDialog(
-                insetPadding: EdgeInsets.all(20),
-                contentPadding: EdgeInsets.all(32),
-                children: [
-                  Text(
-                    tr('success_message_success_title'),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Text(
-                    tr('success_message_password_reset_mail_successfully_sent_description'),
-                    style: TextStyle(fontSize: 18),
-                  ),
-                  SizedBox(
-                    height: 8,
-                  ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      Icon(
-                        Icons.privacy_tip_outlined,
-                        color: kPrimaryColor,
-                      ),
-                      SizedBox(
-                        width: 8,
-                      ),
-                      Flexible(
-                        child: Text(
-                          tr('success_message_password_reset_mail_tip'),
-                          style: TextStyle(color: kPrimaryColor, fontSize: 18),
-                          maxLines: 3,
-                        ),
+                context: context,
+                barrierDismissible: true,
+                builder: (context) {
+                  // TODO Show title / description based on error code
+
+                  return AlertDialog(
+                    title: Text(tr('account_error_title')),
+                    content: SingleChildScrollView(
+                      child:
+                          Padding(padding: const EdgeInsets.only(top: 8.0), child: Text(tr('account_error_general'))),
+                    ),
+                    actions: [
+                      TextButton(
+                        onPressed: () {
+                          isShowingDialog = false;
+                          Navigator.of(context).pop(context);
+                        },
+                        child: Text(tr('action_ok')),
                       ),
                     ],
-                  ),
-                  SizedBox(height: 16),
-                  SizedBox(
-                    width: double.infinity,
-                    height: kButtonHeightMedium,
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
-                          ),
-                        ),
-                      ),
-                      onPressed: () {
-                        Navigator.of(context).pop(context);
-
-                        Navigator.of(buildContext).popUntil((route) {
-                          return route.settings.name == LoginPageRoute.name;
-                        });
-                      },
-                      child: Text(
-                        tr('action_go_to_login'),
-                        style: TextStyle(fontSize: 16),
-                      ),
-                    ),
-                  )
-                ],
-              ),
-            );
-          } else {
-            if (state.didTryToResetPassword) {
-              showDialog(
-                  context: context,
-                  barrierDismissible: true,
-                  builder: (context) {
-                    // TODO Show title / description based on error code
-
-                    return AlertDialog(
-                      title: Text(tr('account_error_title')),
-                      content: SingleChildScrollView(
-                        child:
-                            Padding(padding: const EdgeInsets.only(top: 8.0), child: Text(tr('account_error_general'))),
-                      ),
-                      actions: [
-                        TextButton(
-                          onPressed: () {
-                            Navigator.of(context).pop(context);
-                          },
-                          child: Text(tr('action_ok')),
-                        ),
-                      ],
-                    );
-                  });
-            }
+                  );
+                });
           }
         },
         builder: (context, state) {
@@ -178,15 +123,10 @@ class ResetPasswordPage extends StatelessWidget {
                       SizedBox(
                         width: double.infinity,
                         height: kButtonHeightMedium,
-                        child: ElevatedButton(
-                          style: ButtonStyle(
-                            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                              RoundedRectangleBorder(
-                                borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
-                              ),
-                            ),
-                          ),
-                          onPressed: () {
+                        child: GeneralProgressButton(
+                          title: tr('action_reset_password'),
+                          isLoading: state.isLoading,
+                          onButtonPressed: () {
                             final isValid = _formKey.currentState?.validate();
 
                             if (isValid!) {
@@ -195,10 +135,6 @@ class ResetPasswordPage extends StatelessWidget {
                               context.read<ResetPasswordBloc>().add(ResetPasswordEvent.resetPasswordPressed());
                             }
                           },
-                          child: Text(
-                            tr('action_reset_password'),
-                            style: buttonTextStyleMedium,
-                          ),
                         ),
                       ),
                     ],
