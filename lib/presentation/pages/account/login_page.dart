@@ -46,10 +46,7 @@ class _LoginPageState extends State<LoginPage> {
                     );
                   }
                 },
-                (_) {
-                  // Successfully logged in
-                  Navigator.of(context).pop();
-                },
+                (success) {},
               ),
             );
           },
