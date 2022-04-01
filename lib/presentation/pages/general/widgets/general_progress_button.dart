@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 
@@ -7,12 +6,8 @@ class GeneralProgressButton extends StatelessWidget {
   final bool isLoading;
   final Function() onButtonPressed;
 
-  const GeneralProgressButton({
-    Key? key,
-    required this.title,
-    required this.isLoading,
-    required this.onButtonPressed
-  }) : super(key: key);
+  const GeneralProgressButton({Key? key, required this.title, required this.isLoading, required this.onButtonPressed})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -31,12 +26,11 @@ class GeneralProgressButton extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Container(
           child: isLoading
-              ? SizedBox(
-              width: 25, height: 25, child: CircularProgressIndicator(color: globalWhite))
+              ? SizedBox(width: 25, height: 25, child: CircularProgressIndicator(color: globalWhite))
               : Text(
-            title,
-            style: buttonTextStyleMedium,
-          ),
+                  title,
+                  style: buttonTextStyleMedium,
+                ),
         ),
       ),
     );
