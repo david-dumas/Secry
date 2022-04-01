@@ -35,7 +35,7 @@ class PasswordValidationChecker extends StatelessWidget {
               children: [
                 Text(
                     "${tr('account_password_tip_at_least_x_characters_part_1')} ${validationMinimumPasswordLength} ${tr('account_password_tip_at_least_x_characters_part_2')}"),
-                Icon(Icons.check, color: passwordValidationStatus.isAtLeast6Characters ? kPrimaryColor : kMediumGrayV2)
+                Icon(Icons.check, color: passwordValidationStatus.isAtLeast6Characters ? kPrimaryColor : globalWhite)
               ],
             ),
             SizedBox(height: verticalTipSpacing),
@@ -44,7 +44,7 @@ class PasswordValidationChecker extends StatelessWidget {
               children: [
                 Text(tr('account_password_tip_at_least_one_lowercase_character')),
                 Icon(Icons.check,
-                    color: passwordValidationStatus.hasAtLeastOneLowercaseCharacter ? kPrimaryColor : kMediumGrayV2)
+                    color: passwordValidationStatus.hasAtLeastOneLowercaseCharacter ? kPrimaryColor : globalWhite)
               ],
             ),
             SizedBox(height: verticalTipSpacing),
@@ -53,7 +53,7 @@ class PasswordValidationChecker extends StatelessWidget {
               children: [
                 Text(tr('account_password_tip_at_least_one_uppercase_characters')),
                 Icon(Icons.check,
-                    color: passwordValidationStatus.hasAtLeastOneUppercaseCharacter ? kPrimaryColor : kMediumGrayV2)
+                    color: passwordValidationStatus.hasAtLeastOneUppercaseCharacter ? kPrimaryColor : globalWhite)
               ],
             ),
             SizedBox(height: verticalTipSpacing),
@@ -61,7 +61,7 @@ class PasswordValidationChecker extends StatelessWidget {
               mainAxisAlignment: tipRowAlignment,
               children: [
                 Text(tr('account_password_tip_at_least_one_number')),
-                Icon(Icons.check, color: passwordValidationStatus.hasAtLeastOneNumber ? kPrimaryColor : kMediumGrayV2)
+                Icon(Icons.check, color: passwordValidationStatus.hasAtLeastOneNumber ? kPrimaryColor : globalWhite)
               ],
             ),
             SizedBox(height: verticalTipSpacing),
@@ -70,7 +70,7 @@ class PasswordValidationChecker extends StatelessWidget {
               children: [
                 Text(tr('account_password_tip_use_special_characters')),
                 Icon(Icons.check,
-                    color: passwordValidationStatus.hasAtLeastOneSpecialCharacter ? kPrimaryColor : kMediumGrayV2)
+                    color: passwordValidationStatus.hasAtLeastOneSpecialCharacter ? kPrimaryColor : globalWhite)
               ],
             ),
             SizedBox(height: verticalTipSpacing),
