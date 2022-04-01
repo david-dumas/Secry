@@ -48,7 +48,12 @@ class AddGroupPageContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt<AddGroupPageBloc>()..add(const AddGroupPageEvent.initialized()),
-      child: BlocBuilder<AddGroupPageBloc, AddGroupPageState>(
+      child: BlocConsumer<AddGroupPageBloc, AddGroupPageState>(
+        listener: (context, state) {
+          if (state.isCreateNewGroupRequestExecuted) {
+            Navigator.of(context).pop(state.isGroupSuccessfullyCreated);
+          }
+        },
         builder: (context, state) {
           return Container(
             width: MediaQuery.of(context).size.width,
@@ -66,6 +71,8 @@ class AddGroupPageContent extends StatelessWidget {
                             usersForSearchQuery:
                                 getUsersFromListThatAreNotInOtherList(state.usersForSearchQuery, state.groupMembers),
                             usersAddedToGroup: state.groupMembers,
+                            areUsersFetched: state.areUsersForSearchUsersFetched,
+                            isFetchingUsers: state.isFetchingUsersForSearch,
                           ),
                   ),
                 ),

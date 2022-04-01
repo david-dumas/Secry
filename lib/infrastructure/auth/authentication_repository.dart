@@ -1,8 +1,11 @@
 import 'dart:convert';
+import 'package:dartz/dartz.dart';
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/auth/i_authentication_interface.dart';
 import 'package:secry/domain/auth/user.dart';
+import 'package:secry/domain/auth/auth_failure.dart';
+import 'package:secry/util/network_and_requests/response_util.dart';
 import 'authentication_api_service.dart';
 
 @Singleton(as: IAuthenticationInterface)
@@ -12,36 +15,28 @@ class AuthenticationRepository extends IAuthenticationInterface {
   AuthenticationRepository(this._authenticationApiService) : super();
 
   @override
-  Future createNewUser(User user, String password) async {
-    // TODO use same format as with "resetPassword" below in this file.
-    // TODO Do NOT call Dio directly
-
-    var dio = Dio();
-
-    final jsonUser = user.toJson();
-    // TODO check if containsKey
-    jsonUser['password'] = password;
-
+  Future<Either<AuthFailure, Unit>> createNewUser({required User user, required String password}) async {
     try {
-      var response = await dio.post(
-        'https://sjno.nl/secry/v1/auth/user',
-        data: jsonUser,
-        onSendProgress: (a, b) => print('Send : ${a / b}'),
-        onReceiveProgress: (a, b) => print('Received : ${a / b}'),
-      );
+      var body = jsonEncode({
+        'email': user.email,
+        'phoneNumber': user.phone ?? null,
+        'firstName': user.firstName,
+        'lastName': user.lastName,
+        'password': password
+      });
 
-      print("Success");
-      print(json.decode(response.data));
-    } on DioError catch (e) {
-      // The request was made and the server responded with a status code
-      if (e.response != null) {
-        //print(e.response!.data);
-        return e.response;
+      final response = await _authenticationApiService.auth.createNewUser(body);
+
+      if (response.isSuccessful) {
+        return right(unit);
       } else {
-        // Something happened in setting up or sending the request that triggered an Error
-        print(e.requestOptions);
-        print(e.message);
+        return left(AuthFailure.generalError());
       }
+    } catch (error) {
+      if (error is DioError) {
+        // TODO log error
+      }
+      return left(AuthFailure.generalError());
     }
   }
 
@@ -53,16 +48,14 @@ class AuthenticationRepository extends IAuthenticationInterface {
       });
 
       final response = await _authenticationApiService.auth.resetPassword(body);
-      final responseStatusCode = response.response.statusCode;
 
-      if (responseStatusCode == 200) {
-        return Future<bool>.value(true);
+      if (response.isSuccessful) {
+        return true;
       } else {
-        return Future<bool>.value(false);
+        return false;
       }
     } catch (error) {
-      print(error);
-      return Future<bool>.value(false);
+      return false;
     }
   }
 }

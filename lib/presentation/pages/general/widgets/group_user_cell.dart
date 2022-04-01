@@ -4,6 +4,7 @@ import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/constants.dart';
 
 class UserCell extends StatelessWidget {
+  final bool isAddingPeopleFeatureEnabled;
   final GroupUser groupUser;
   final String actionButtonActionNotExecutedText;
   final String actionButtonActionExecutedText;
@@ -12,11 +13,12 @@ class UserCell extends StatelessWidget {
 
   const UserCell(
       {Key? key,
+      this.isAddingPeopleFeatureEnabled = false,
       required this.groupUser,
-      required this.actionButtonActionNotExecutedText,
-      required this.actionButtonActionExecutedText,
-      required this.isActionButtonActionExecuted,
-      required this.userRowTrailingAction})
+      this.actionButtonActionNotExecutedText = "",
+      this.actionButtonActionExecutedText = "",
+      this.isActionButtonActionExecuted = false,
+      this.userRowTrailingAction = null})
       : super(key: key);
 
   @override
@@ -51,13 +53,15 @@ class UserCell extends StatelessWidget {
               ),
             ),
             SizedBox(width: 16),
-            Align(
+            Visibility(
+              visible: isAddingPeopleFeatureEnabled,
+              child: Align(
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: kButtonRadiusXxs,
+                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXxs)),
                         side: BorderSide(color: isActionButtonActionExecuted ? kWhiteButtonBorderColor : kPrimaryColor),
                       ),
                     ),
@@ -76,7 +80,9 @@ class UserCell extends StatelessWidget {
                     style: TextStyle(
                         fontSize: 14, color: isActionButtonActionExecuted ? kMediumGrayExtraDark : globalWhite),
                   ),
-                ))
+                ),
+              ),
+            )
           ],
         ),
       ),

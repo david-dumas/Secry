@@ -11,8 +11,12 @@ class GroupSection extends StatelessWidget {
   final int maximumNumberOfCellsToShow;
   final bool isTitleRowActionButtonVisible;
   final String titleRowActionButtonText;
+  final bool isFetchingInitialGroups;
+  final bool isFetchingMoreGroupsForScrollDown;
+  final bool isDataFetched;
   final String emptyStateTitle;
   final String emptyStateDescription;
+  final double bottomMargin;
   final Icon emptyStateIcon;
   final Function()? titleRowTrailingAction;
   final Function(String id, String groupTitle)? openPageForPressedCell;
@@ -26,8 +30,12 @@ class GroupSection extends StatelessWidget {
       this.maximumNumberOfCellsToShow = 99999,
       required this.isTitleRowActionButtonVisible,
       required this.titleRowActionButtonText,
+      this.isFetchingInitialGroups = false,
+      this.isFetchingMoreGroupsForScrollDown = false,
+      required this.isDataFetched,
       required this.emptyStateTitle,
       required this.emptyStateDescription,
+      this.bottomMargin = 30.0,
       required this.emptyStateIcon,
       required this.titleRowTrailingAction,
       required this.openPageForPressedCell})
@@ -35,32 +43,53 @@ class GroupSection extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(crossAxisAlignment: CrossAxisAlignment.stretch, children: [
-      GroupSectionTitleRow(
-          title: title,
-          amountOfGroups: totalAmountOfGroups,
-          isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
-          titleRowActionButtonText: titleRowActionButtonText,
-          trailingActionButtonAction: () {
-            if (titleRowTrailingAction != null) {
-              titleRowTrailingAction!();
-            }
-          }),
-      cellInfoItems.length < 1
-          ? GroupSectionEmptyStateRow(
-              title: emptyStateTitle,
-              description: emptyStateDescription,
-              icon: emptyStateIcon,
+    return Container(
+      width: MediaQuery.of(context).size.width,
+      height: isFetchingInitialGroups
+          ? MediaQuery.of(context).size.height - (AppBar().preferredSize.height) - kToolbarHeight - bottomMargin
+          : null,
+      child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            GroupSectionTitleRow(
+                title: title,
+                amountOfGroups: totalAmountOfGroups,
+                isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
+                titleRowActionButtonText: titleRowActionButtonText,
+                trailingActionButtonAction: () {
+                  if (titleRowTrailingAction != null) {
+                    titleRowTrailingAction!();
+                  }
+                }),
+            SizedBox(height: cellInfoItems.length < 1 || !isTitleRowActionButtonVisible ? 16.0 : 0.0),
+            Visibility(
+              visible: isFetchingInitialGroups,
+              child: Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(child: CircularProgressIndicator()),
+                  ],
+                ),
+              ),
+            ),
+            Visibility(
+              visible: !isFetchingInitialGroups,
+              child: (cellInfoItems.length < 1 && isDataFetched)
+                  ? GroupSectionEmptyStateRow(title: emptyStateTitle, description: emptyStateDescription)
+                  : ContentSectionWithRows(
+                      cellInfoItems: this.cellInfoItems,
+                      isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
+                      maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
+                      openPageForPressedCell: openPageForPressedCell),
+            ),
+            SizedBox(
+              height: bottomMargin,
             )
-          : ContentSectionWithRows(
-              cellInfoItems: this.cellInfoItems,
-              isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
-              maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
-              openPageForPressedCell: openPageForPressedCell),
-      SizedBox(
-        height: 50,
-      )
-    ]);
+          ]),
+    );
   }
 }
 
@@ -124,9 +153,9 @@ class GroupSectionTitleRow extends StatelessWidget {
 class GroupSectionEmptyStateRow extends StatelessWidget {
   final String title;
   final String description;
-  final Icon icon;
+  final IconData? iconData;
 
-  const GroupSectionEmptyStateRow({Key? key, required this.title, required this.description, required this.icon})
+  const GroupSectionEmptyStateRow({Key? key, required this.title, required this.description, this.iconData = null})
       : super(key: key);
 
   @override
@@ -134,8 +163,8 @@ class GroupSectionEmptyStateRow extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        icon,
-        SizedBox(width: 12),
+        Visibility(visible: iconData != null, child: Icon(iconData)),
+        SizedBox(width: iconData != null ? 12 : 0),
         Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -183,8 +212,10 @@ class _ContentSectionWithRowsState extends State<ContentSectionWithRows> {
       scrollDirection: Axis.vertical,
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount:
-          widget.isMaximumNumberOfCellsToShowEnabled ? widget.maximumNumberOfCellsToShow : widget.cellInfoItems.length,
+      itemCount: (widget.isMaximumNumberOfCellsToShowEnabled &&
+              widget.cellInfoItems.length > widget.maximumNumberOfCellsToShow)
+          ? widget.maximumNumberOfCellsToShow
+          : widget.cellInfoItems.length,
       itemBuilder: (context, index) {
         return GestureDetector(
             child: GeneralListCell(

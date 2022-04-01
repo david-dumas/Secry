@@ -5,7 +5,8 @@ class TabbarState with _$TabbarState {
   const factory TabbarState(
       {required int selectedIndex,
       required List<String> titleTagsForSelectedIndex,
-      required String currentTitleTagForSelectedIndex}) = _TabbarState;
+      required String currentTitleTagForSelectedIndex,
+      required bool isUserSignedIn}) = _TabbarState;
 
   factory TabbarState.initial() => TabbarState(
       selectedIndex: 0,
@@ -15,5 +16,6 @@ class TabbarState with _$TabbarState {
         'page_title_saved_groups_and_surveys',
         'page_title_account',
       ],
-      currentTitleTagForSelectedIndex: 'page_title_home');
+      currentTitleTagForSelectedIndex: 'page_title_home',
+      isUserSignedIn: false);
 }

@@ -3,7 +3,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:secry/application/homepage/homepage_bloc.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
@@ -26,6 +26,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  final ScrollController _scrollController = ScrollController();
+
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<TabbarBloc, TabbarState>(
@@ -63,38 +65,58 @@ class _HomePageState extends State<HomePage> {
                     searchValueChanged: (newValue) {
                       context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
                     }),
-                body: SingleChildScrollView(
-                  child: Padding(
-                    padding: pagePaddingAllSides,
-                    child: GroupSection(
-                      title: tr('home_my_groups'),
-                      totalAmountOfGroups: state.generalGroupInfo?.totalNumberOfGroups ?? 0,
-                      cellInfoItems: SearchHelper()
-                          .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
-                      titleRowActionButtonText: tr('general_add_group'),
-                      isTitleRowActionButtonVisible: true,
-                      emptyStateTitle: tr('action_create_new_group_title'),
-                      emptyStateDescription: tr('action_create_new_group_description'),
-                      emptyStateIcon: Icon(Icons.group_add),
-                      titleRowTrailingAction: () {
-                        if (Platform.isAndroid) {
-                          AutoRouter.of(context).push(AddGroupPageAndroidRoute());
-                        } else if (Platform.isIOS) {
-                          showMaterialModalBottomSheet(
-                            context: context,
-                            useRootNavigator: true,
-                            builder: (context) => AddGroupPageIOS(),
-                          );
+                body: RefreshIndicator(
+                  onRefresh: () async {
+                    context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                  },
+                  child: SingleChildScrollView(
+                    controller: _scrollController
+                      ..addListener(() {
+                        if (_scrollController.offset == _scrollController.position.maxScrollExtent &&
+                            !state.isFetchingMoreGroupsForScrollDown) {
+                          context.read<HomepageBloc>().add(HomepageEvent.scrolledToLoadMoreItems());
                         }
-                      },
-                      openPageForPressedCell: (String id, String groupTitle) {
-                        pushNewScreen(
-                          context,
-                          screen: GroupOverviewPage(title: groupTitle, groupId: id),
-                          withNavBar: true,
-                          pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                        );
-                      },
+                      }),
+                    child: Padding(
+                      padding: pagePaddingAllSides,
+                      child: GroupSection(
+                        title: tr('home_my_groups'),
+                        totalAmountOfGroups: state.paginationInfo?.totalCount ?? 0,
+                        cellInfoItems: SearchHelper()
+                            .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
+                        titleRowActionButtonText: tr('general_add_group'),
+                        isFetchingInitialGroups: state.isFetchingInitialGroups,
+                        isDataFetched: state.isDataFetched,
+                        isTitleRowActionButtonVisible: true,
+                        emptyStateTitle: tr('action_create_new_group_title'),
+                        emptyStateDescription: tr('action_create_new_group_description'),
+                        emptyStateIcon: Icon(Icons.group_add),
+                        bottomMargin: 50.0,
+                        titleRowTrailingAction: () {
+                          if (Platform.isAndroid) {
+                            AutoRouter.of(context).push(AddGroupPageAndroidRoute()).then((isRefreshNeeded) async {
+                              context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                            });
+                          } else if (Platform.isIOS) {
+                            showMaterialModalBottomSheet(
+                              context: context,
+                              useRootNavigator: true,
+                              builder: (context) => AddGroupPageIOS(),
+                            ).then((isRefreshNeeded) async {
+                              context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                            });
+                            ;
+                          }
+                        },
+                        openPageForPressedCell: (String id, String groupTitle) {
+                          pushNewScreen(
+                            context,
+                            screen: GroupOverviewPage(title: groupTitle, groupId: id),
+                            withNavBar: true,
+                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                          );
+                        },
+                      ),
                     ),
                   ),
                 ),

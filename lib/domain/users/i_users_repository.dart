@@ -1,5 +1,7 @@
-import 'package:secry/domain/users/group_user.dart';
+import 'package:secry/constants.dart';
+import 'package:secry/domain/users/users_and_pagination_info.dart';
 
 abstract class IUsersRepository {
-  Future<List<GroupUser>> getUsersForSearchQuery({required String searchQuery, int pageNumber = 1, int pageSize = 10});
+  Future<UsersAndPaginationInfo> getUsersAndPaginationInfoForSearchQuery(
+      {required String searchQuery, int pageNumber = 1, int pageSize = defaultPageSize});
 }

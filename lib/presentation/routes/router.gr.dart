@@ -13,18 +13,18 @@
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
 
-import '../pages/account/account_loggedout_page.dart' as _i7;
-import '../pages/account/account_page.dart' as _i6;
+import '../pages/account/account_go_to_login_or_signup_page.dart' as _i6;
+import '../pages/account/account_overview_page.dart' as _i7;
+import '../pages/account/login_page.dart' as _i8;
 import '../pages/account/reset_password_page.dart' as _i10;
+import '../pages/account/signup_page.dart' as _i9;
 import '../pages/add_group/add_group_page.dart' as _i13;
 import '../pages/home/chat_page.dart' as _i12;
 import '../pages/home/group_overview_page.dart' as _i11;
 import '../pages/home/homepage.dart' as _i3;
-import '../pages/login/login_page.dart' as _i8;
 import '../pages/saved_chats_and_surveys/saved_chats_and_surveys_page.dart'
     as _i5;
 import '../pages/search/global_search_page.dart' as _i4;
-import '../pages/signup/signup_page.dart' as _i9;
 import '../pages/splash/splash_page.dart' as _i1;
 import '../pages/tabbar/tabbar_page.dart' as _i2;
 
@@ -47,20 +47,23 @@ class AppRouter extends _i14.RootStackRouter {
           routeData: routeData, child: const _i3.HomePage());
     },
     GlobalSearchPageRoute.name: (routeData) {
+      final args = routeData.argsAs<GlobalSearchPageRouteArgs>(
+          orElse: () => const GlobalSearchPageRouteArgs());
       return _i14.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i4.GlobalSearchPage());
+          routeData: routeData, child: _i4.GlobalSearchPage(key: args.key));
     },
     SavedChatsAndSurveysPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i5.SavedChatsAndSurveysPage());
     },
-    AccountPageRoute.name: (routeData) {
+    AccountGoToLoginOrSignUpPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i6.AccountPage());
+          routeData: routeData,
+          child: const _i6.AccountGoToLoginOrSignUpPage());
     },
-    AccountLoggedoutPageRoute.name: (routeData) {
+    AccountOverviewPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.AccountLoggedoutPage());
+          routeData: routeData, child: const _i7.AccountOverviewPage());
     },
     LoginPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
@@ -107,9 +110,10 @@ class AppRouter extends _i14.RootStackRouter {
             path: '/global-search-page'),
         _i14.RouteConfig(SavedChatsAndSurveysPageRoute.name,
             path: '/saved-chats-and-surveys-page'),
-        _i14.RouteConfig(AccountPageRoute.name, path: '/account-page'),
-        _i14.RouteConfig(AccountLoggedoutPageRoute.name,
-            path: '/account-loggedout-page'),
+        _i14.RouteConfig(AccountGoToLoginOrSignUpPageRoute.name,
+            path: '/account-go-to-login-or-sign-up-page'),
+        _i14.RouteConfig(AccountOverviewPageRoute.name,
+            path: '/account-overview-page'),
         _i14.RouteConfig(LoginPageRoute.name, path: '/login-page'),
         _i14.RouteConfig(SignupPageRoute.name, path: '/signup-page'),
         _i14.RouteConfig(ResetPasswordPageRoute.name,
@@ -148,11 +152,25 @@ class HomePageRoute extends _i14.PageRouteInfo<void> {
 
 /// generated route for
 /// [_i4.GlobalSearchPage]
-class GlobalSearchPageRoute extends _i14.PageRouteInfo<void> {
-  const GlobalSearchPageRoute()
-      : super(GlobalSearchPageRoute.name, path: '/global-search-page');
+class GlobalSearchPageRoute
+    extends _i14.PageRouteInfo<GlobalSearchPageRouteArgs> {
+  GlobalSearchPageRoute({_i15.Key? key})
+      : super(GlobalSearchPageRoute.name,
+            path: '/global-search-page',
+            args: GlobalSearchPageRouteArgs(key: key));
 
   static const String name = 'GlobalSearchPageRoute';
+}
+
+class GlobalSearchPageRouteArgs {
+  const GlobalSearchPageRouteArgs({this.key});
+
+  final _i15.Key? key;
+
+  @override
+  String toString() {
+    return 'GlobalSearchPageRouteArgs{key: $key}';
+  }
 }
 
 /// generated route for
@@ -166,21 +184,22 @@ class SavedChatsAndSurveysPageRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.AccountPage]
-class AccountPageRoute extends _i14.PageRouteInfo<void> {
-  const AccountPageRoute()
-      : super(AccountPageRoute.name, path: '/account-page');
+/// [_i6.AccountGoToLoginOrSignUpPage]
+class AccountGoToLoginOrSignUpPageRoute extends _i14.PageRouteInfo<void> {
+  const AccountGoToLoginOrSignUpPageRoute()
+      : super(AccountGoToLoginOrSignUpPageRoute.name,
+            path: '/account-go-to-login-or-sign-up-page');
 
-  static const String name = 'AccountPageRoute';
+  static const String name = 'AccountGoToLoginOrSignUpPageRoute';
 }
 
 /// generated route for
-/// [_i7.AccountLoggedoutPage]
-class AccountLoggedoutPageRoute extends _i14.PageRouteInfo<void> {
-  const AccountLoggedoutPageRoute()
-      : super(AccountLoggedoutPageRoute.name, path: '/account-loggedout-page');
+/// [_i7.AccountOverviewPage]
+class AccountOverviewPageRoute extends _i14.PageRouteInfo<void> {
+  const AccountOverviewPageRoute()
+      : super(AccountOverviewPageRoute.name, path: '/account-overview-page');
 
-  static const String name = 'AccountLoggedoutPageRoute';
+  static const String name = 'AccountOverviewPageRoute';
 }
 
 /// generated route for

@@ -45,7 +45,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: kButtonRadiusXs,
+                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
                       ),
                     ),
                     backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
@@ -69,7 +69,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                   style: ButtonStyle(
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
-                        borderRadius: kButtonRadiusXs,
+                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
                       ),
                     ),
                     backgroundColor: MaterialStateProperty.all(kPrimaryColor),
@@ -113,7 +113,7 @@ class BottomNavigationButtonsSection extends StatelessWidget {
     }
 
     if (index == 0) {
-      Navigator.of(context).pop(context);
+      Navigator.of(context).pop(false);
     }
   }
 
@@ -148,7 +148,6 @@ class BottomNavigationButtonsSection extends StatelessWidget {
 
     if (currentIndex >= (totalNumberOfSteps - 1)) {
       context.read<AddGroupPageBloc>().add(AddGroupPageEvent.newGroupCreated());
-      Navigator.of(context).pop(context);
     }
   }
 }

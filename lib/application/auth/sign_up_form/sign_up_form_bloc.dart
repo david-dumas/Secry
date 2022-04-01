@@ -1,10 +1,14 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/auth/i_authentication_interface.dart';
 import 'package:secry/domain/auth/user.dart';
+
+import 'package:secry/domain/auth/auth_failure.dart';
+import 'package:secry/domain/auth/i_auth_facade.dart';
 
 part 'sign_up_form_bloc.freezed.dart';
 part 'sign_up_form_event.dart';
@@ -13,8 +17,9 @@ part 'sign_up_form_state.dart';
 @injectable
 class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   final IAuthenticationInterface _authenticationRepository;
+  final IAuthFacade _authFacade;
 
-  SignUpFormBloc(this._authenticationRepository) : super(SignUpFormState.initial()) {
+  SignUpFormBloc(this._authenticationRepository, this._authFacade) : super(SignUpFormState.initial()) {
     on<SignUpFormEvent>(_onEvent);
   }
 
@@ -22,15 +27,56 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
     await event.map(
       initialized: (e) async {},
       signUpPressed: (e) async {
+        if (state.isLoading || state.isShowingErrorMessages) {
+          return;
+        }
+
+        emit(state.copyWith(signUpFailureOrUnitOption: none()));
+        emit(state.copyWith(isLoading: true));
+
         final newUser = User(
             firstName: state.firstNameInput,
             lastName: state.lastNameInput,
             email: state.emailInput,
             phone: state.phoneDialCodeInput + state.phoneInput);
 
-        var apiResponse = await _authenticationRepository.createNewUser(newUser, state.passwordInput);
-        //print(apiResponse.toString());
-        emit(state.copyWith(statusMessage: apiResponse));
+        final signUpFailureOrUnit =
+            await _authenticationRepository.createNewUser(user: newUser, password: state.passwordInput);
+
+        await signUpFailureOrUnit.fold(
+          (failure) {
+            failure.maybeMap(
+              emailAlreadyExists: (_) {
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_email_already_exists'));
+              },
+              invalidEmail: (_) {
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_invalid_email'));
+              },
+              invalidPassword: (_) {
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_password_invalid'));
+              },
+              generalError: (_) {
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
+              },
+              orElse: () {
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
+              },
+            );
+            emit(state.copyWith(isShowingErrorMessages: true));
+          },
+          (userCreatedSuccessfully) async {
+            emit(state.copyWith(isShowingErrorMessages: false));
+
+            final loginFailureOrUnit = await _authFacade.signIn(email: state.emailInput, password: state.passwordInput);
+            await loginFailureOrUnit.fold((failure) {
+              emit(state.copyWith(isShowingErrorMessages: true));
+              // TODO log HTTP / status code error
+            }, (_) {});
+          },
+        );
+
+        emit(state.copyWith(isLoading: false));
+        emit(state.copyWith(signUpFailureOrUnitOption: optionOf(signUpFailureOrUnit)));
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));
@@ -53,11 +99,29 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
       repeatPasswordChanged: (e) async {
         emit(state.copyWith(repeatPasswordInput: e.newRepeatPassword));
       },
+      isPasswordCheckedAndValidUpdated: (e) async {
+        emit(state.copyWith(isPasswordCheckedAndValid: e.isValid));
+      },
+      isRepeatPasswordCheckedAndValidUpdated: (e) async {
+        emit(state.copyWith(isRepeatPasswordCheckedAndValid: e.isValid));
+      },
       isShowingPasswordToggled: (e) async {
         emit(state.copyWith(isShowingPassword: e.isShowing));
       },
       isShowingRepeatPasswordToggled: (e) async {
         emit(state.copyWith(isShowingRepeatPassword: e.isShowing));
+      },
+      isShowingPasswordValidationChecker: (e) async {
+        emit(state.copyWith(isShowingPasswordValidationChecker: e.isShowing));
+      },
+      isShowingErrorMessagesUpdated: (e) async {
+        emit(state.copyWith(isShowingErrorMessages: e.isShowing));
+      },
+      signUpFailureOrUnitOptionUpdated: (e) async {
+        emit(state.copyWith(signUpFailureOrUnitOption: e.newFailureOrUnit));
+      },
+      isLoadingUpdated: (e) async {
+        emit(state.copyWith(isLoading: e.isLoading));
       },
     );
   }

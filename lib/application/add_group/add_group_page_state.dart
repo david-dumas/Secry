@@ -6,19 +6,25 @@ class AddGroupPageState with _$AddGroupPageState {
       {required String groupTitle,
       required Image? groupImage,
       required String searchAllPeopleSearchValue,
-      required int searchUsersPaginationPageNumber,
-      required int searchUsersPaginationPageSize,
+      required PaginationInfo? paginationInfo,
       required List<GroupUser> usersForSearchQuery,
       required List<GroupUser> groupMembers,
-      required int currentStepIndex}) = _AddGroupPageState;
+      required int currentStepIndex,
+      required bool areUsersForSearchUsersFetched,
+      required bool isFetchingUsersForSearch,
+      required bool isGroupSuccessfullyCreated,
+      required bool isCreateNewGroupRequestExecuted}) = _AddGroupPageState;
 
   factory AddGroupPageState.initial() => AddGroupPageState(
       groupTitle: "",
       groupImage: null,
       searchAllPeopleSearchValue: "",
-      searchUsersPaginationPageNumber: 1,
-      searchUsersPaginationPageSize: 10,
+      paginationInfo: null,
       usersForSearchQuery: [],
       groupMembers: [],
-      currentStepIndex: 0);
+      currentStepIndex: 0,
+      areUsersForSearchUsersFetched: false,
+      isFetchingUsersForSearch: false,
+      isGroupSuccessfullyCreated: false,
+      isCreateNewGroupRequestExecuted: false);
 }

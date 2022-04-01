@@ -14,4 +14,10 @@ class AddGroupPageEvent with _$AddGroupPageEvent {
   const factory AddGroupPageEvent.groupMembersUpdated(List<GroupUser> newMembers) = _GroupMembersUpdated;
   const factory AddGroupPageEvent.currentStepIndexUpdated(int newIndex) = _CurrentStepIndexUpdated;
   const factory AddGroupPageEvent.newGroupCreated() = _NewGroupCreated;
+  const factory AddGroupPageEvent.areUsersForSearchUsersFetchedUpdated(bool areFetched) =
+      _AreUsersForSearchUsersFetchedUpdated;
+  const factory AddGroupPageEvent.isFetchingUsersForSearchQueryUpdated(bool isFetching) =
+      _IsFetchingUsersForSearchQueryUpdated;
+  const factory AddGroupPageEvent.searchUsersPaginationInfoUpdated(PaginationInfo? newPaginationInfo) =
+      _SearchUsersPaginationInfoUpdated;
 }

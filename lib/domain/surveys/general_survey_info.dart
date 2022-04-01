@@ -10,7 +10,7 @@ class GeneralSurveyInfo {
       id: json.containsKey('id') ? (json['id'] != null ? json['id'] : '') : '',
       title: json.containsKey('title') ? (json['title'] != null ? json['title'] : '') : '',
       createdAt: json.containsKey('createdAt')
-          ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt']) : null)
+          ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000) : null)
           : null,
     );
   }

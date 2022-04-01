@@ -1,27 +1,25 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/constants.dart';
-import 'package:secry/presentation/pages/login/login_page.dart';
-import 'package:secry/presentation/pages/signup/signup_page.dart';
+import 'package:secry/presentation/pages/account/login_page.dart';
+import 'package:secry/presentation/pages/account/signup_page.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
-class AccountPage extends StatelessWidget {
-  const AccountPage({Key? key}) : super(key: key);
+class AccountGoToLoginOrSignUpPage extends StatelessWidget {
+  const AccountGoToLoginOrSignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final screenHeight = MediaQuery.of(context).size.height;
-
     return BlocBuilder<TabbarBloc, TabbarState>(
       builder: (mainContext, mainState) {
         return Scaffold(
           appBar: GeneralAppbar(),
           body: Padding(
-            padding: EdgeInsets.only(bottom: screenHeight * 0.1),
+            padding: EdgeInsets.only(bottom: 50.0),
             child: Center(
               child: SingleChildScrollView(
                 child: Padding(
@@ -53,7 +51,7 @@ class AccountPage extends StatelessWidget {
                           style: ButtonStyle(
                             shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                               RoundedRectangleBorder(
-                                borderRadius: kButtonRadiusMedium,
+                                borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
                               ),
                             ),
                           ),

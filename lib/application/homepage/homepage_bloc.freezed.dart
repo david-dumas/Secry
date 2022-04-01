@@ -41,10 +41,37 @@ class _$HomepageEventTearOff {
     );
   }
 
-  _GeneralGroupInfoUpdated generalGroupInfoUpdated(
-      GeneralGroupInfo newGroupInfo) {
-    return _GeneralGroupInfoUpdated(
-      newGroupInfo,
+  _PaginationInfoUpdated paginationInfoUpdated(PaginationInfo paginationInfo) {
+    return _PaginationInfoUpdated(
+      paginationInfo,
+    );
+  }
+
+  _ScrolledToLoadMoreItems scrolledToLoadMoreItems() {
+    return const _ScrolledToLoadMoreItems();
+  }
+
+  _GroupsRefreshed groupsRefreshed() {
+    return const _GroupsRefreshed();
+  }
+
+  _IsFetchingInitialGroupsUpdated isFetchingInitialGroupsUpdated(
+      bool isFetching) {
+    return _IsFetchingInitialGroupsUpdated(
+      isFetching,
+    );
+  }
+
+  _IsFetchingMoreGroupsForScrollDownUpdated
+      isFetchingMoreGroupsForScrollDownUpdated(bool isFetching) {
+    return _IsFetchingMoreGroupsForScrollDownUpdated(
+      isFetching,
+    );
+  }
+
+  _IsDataFetchedUpdated isDataFetchedUpdated(bool isFetched) {
+    return _IsDataFetchedUpdated(
+      isFetched,
     );
   }
 }
@@ -61,8 +88,14 @@ mixin _$HomepageEvent {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
-    required TResult Function(GeneralGroupInfo newGroupInfo)
-        generalGroupInfoUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,7 +105,12 @@ mixin _$HomepageEvent {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,7 +120,12 @@ mixin _$HomepageEvent {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -94,8 +137,16 @@ mixin _$HomepageEvent {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
-    required TResult Function(_GeneralGroupInfoUpdated value)
-        generalGroupInfoUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -105,7 +156,14 @@ mixin _$HomepageEvent {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -115,7 +173,14 @@ mixin _$HomepageEvent {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -183,8 +248,14 @@ class _$_Initialized implements _Initialized {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
-    required TResult Function(GeneralGroupInfo newGroupInfo)
-        generalGroupInfoUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
   }) {
     return initialized();
   }
@@ -197,7 +268,12 @@ class _$_Initialized implements _Initialized {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return initialized?.call();
   }
@@ -210,7 +286,12 @@ class _$_Initialized implements _Initialized {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -228,8 +309,16 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
-    required TResult Function(_GeneralGroupInfoUpdated value)
-        generalGroupInfoUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
   }) {
     return initialized(this);
   }
@@ -242,7 +331,14 @@ class _$_Initialized implements _Initialized {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -255,7 +351,14 @@ class _$_Initialized implements _Initialized {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -342,8 +445,14 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
-    required TResult Function(GeneralGroupInfo newGroupInfo)
-        generalGroupInfoUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
   }) {
     return privateGroupsInfoUpdated(privateGroupsRowsInfo);
   }
@@ -356,7 +465,12 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return privateGroupsInfoUpdated?.call(privateGroupsRowsInfo);
   }
@@ -369,7 +483,12 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -387,8 +506,16 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
-    required TResult Function(_GeneralGroupInfoUpdated value)
-        generalGroupInfoUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
   }) {
     return privateGroupsInfoUpdated(this);
   }
@@ -401,7 +528,14 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return privateGroupsInfoUpdated?.call(this);
   }
@@ -414,7 +548,14 @@ class _$_PrivateGroupsInfoUpdated implements _PrivateGroupsInfoUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (privateGroupsInfoUpdated != null) {
@@ -508,8 +649,14 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
-    required TResult Function(GeneralGroupInfo newGroupInfo)
-        generalGroupInfoUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
   }) {
     return updatedIsShowingSearchBar(isShowing);
   }
@@ -522,7 +669,12 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return updatedIsShowingSearchBar?.call(isShowing);
   }
@@ -535,7 +687,12 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -553,8 +710,16 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
-    required TResult Function(_GeneralGroupInfoUpdated value)
-        generalGroupInfoUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
   }) {
     return updatedIsShowingSearchBar(this);
   }
@@ -567,7 +732,14 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return updatedIsShowingSearchBar?.call(this);
   }
@@ -580,7 +752,14 @@ class _$_UpdatedIsShowingSearchBar implements _UpdatedIsShowingSearchBar {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (updatedIsShowingSearchBar != null) {
@@ -670,8 +849,14 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
-    required TResult Function(GeneralGroupInfo newGroupInfo)
-        generalGroupInfoUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
   }) {
     return searchValueUpdated(newValue);
   }
@@ -684,7 +869,12 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return searchValueUpdated?.call(newValue);
   }
@@ -697,7 +887,12 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (searchValueUpdated != null) {
@@ -715,8 +910,16 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
-    required TResult Function(_GeneralGroupInfoUpdated value)
-        generalGroupInfoUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
   }) {
     return searchValueUpdated(this);
   }
@@ -729,7 +932,14 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return searchValueUpdated?.call(this);
   }
@@ -742,7 +952,14 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
     if (searchValueUpdated != null) {
@@ -762,68 +979,67 @@ abstract class _SearchValueUpdated implements HomepageEvent {
 }
 
 /// @nodoc
-abstract class _$GeneralGroupInfoUpdatedCopyWith<$Res> {
-  factory _$GeneralGroupInfoUpdatedCopyWith(_GeneralGroupInfoUpdated value,
-          $Res Function(_GeneralGroupInfoUpdated) then) =
-      __$GeneralGroupInfoUpdatedCopyWithImpl<$Res>;
-  $Res call({GeneralGroupInfo newGroupInfo});
+abstract class _$PaginationInfoUpdatedCopyWith<$Res> {
+  factory _$PaginationInfoUpdatedCopyWith(_PaginationInfoUpdated value,
+          $Res Function(_PaginationInfoUpdated) then) =
+      __$PaginationInfoUpdatedCopyWithImpl<$Res>;
+  $Res call({PaginationInfo paginationInfo});
 }
 
 /// @nodoc
-class __$GeneralGroupInfoUpdatedCopyWithImpl<$Res>
+class __$PaginationInfoUpdatedCopyWithImpl<$Res>
     extends _$HomepageEventCopyWithImpl<$Res>
-    implements _$GeneralGroupInfoUpdatedCopyWith<$Res> {
-  __$GeneralGroupInfoUpdatedCopyWithImpl(_GeneralGroupInfoUpdated _value,
-      $Res Function(_GeneralGroupInfoUpdated) _then)
-      : super(_value, (v) => _then(v as _GeneralGroupInfoUpdated));
+    implements _$PaginationInfoUpdatedCopyWith<$Res> {
+  __$PaginationInfoUpdatedCopyWithImpl(_PaginationInfoUpdated _value,
+      $Res Function(_PaginationInfoUpdated) _then)
+      : super(_value, (v) => _then(v as _PaginationInfoUpdated));
 
   @override
-  _GeneralGroupInfoUpdated get _value =>
-      super._value as _GeneralGroupInfoUpdated;
+  _PaginationInfoUpdated get _value => super._value as _PaginationInfoUpdated;
 
   @override
   $Res call({
-    Object? newGroupInfo = freezed,
+    Object? paginationInfo = freezed,
   }) {
-    return _then(_GeneralGroupInfoUpdated(
-      newGroupInfo == freezed
-          ? _value.newGroupInfo
-          : newGroupInfo // ignore: cast_nullable_to_non_nullable
-              as GeneralGroupInfo,
+    return _then(_PaginationInfoUpdated(
+      paginationInfo == freezed
+          ? _value.paginationInfo
+          : paginationInfo // ignore: cast_nullable_to_non_nullable
+              as PaginationInfo,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
-  const _$_GeneralGroupInfoUpdated(this.newGroupInfo);
+class _$_PaginationInfoUpdated implements _PaginationInfoUpdated {
+  const _$_PaginationInfoUpdated(this.paginationInfo);
 
   @override
-  final GeneralGroupInfo newGroupInfo;
+  final PaginationInfo paginationInfo;
 
   @override
   String toString() {
-    return 'HomepageEvent.generalGroupInfoUpdated(newGroupInfo: $newGroupInfo)';
+    return 'HomepageEvent.paginationInfoUpdated(paginationInfo: $paginationInfo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GeneralGroupInfoUpdated &&
+            other is _PaginationInfoUpdated &&
             const DeepCollectionEquality()
-                .equals(other.newGroupInfo, newGroupInfo));
+                .equals(other.paginationInfo, paginationInfo));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(newGroupInfo));
+      runtimeType, const DeepCollectionEquality().hash(paginationInfo));
 
   @JsonKey(ignore: true)
   @override
-  _$GeneralGroupInfoUpdatedCopyWith<_GeneralGroupInfoUpdated> get copyWith =>
-      __$GeneralGroupInfoUpdatedCopyWithImpl<_GeneralGroupInfoUpdated>(
+  _$PaginationInfoUpdatedCopyWith<_PaginationInfoUpdated> get copyWith =>
+      __$PaginationInfoUpdatedCopyWithImpl<_PaginationInfoUpdated>(
           this, _$identity);
 
   @override
@@ -834,10 +1050,16 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
         privateGroupsInfoUpdated,
     required TResult Function(bool isShowing) updatedIsShowingSearchBar,
     required TResult Function(String newValue) searchValueUpdated,
-    required TResult Function(GeneralGroupInfo newGroupInfo)
-        generalGroupInfoUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
   }) {
-    return generalGroupInfoUpdated(newGroupInfo);
+    return paginationInfoUpdated(paginationInfo);
   }
 
   @override
@@ -848,9 +1070,14 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
   }) {
-    return generalGroupInfoUpdated?.call(newGroupInfo);
+    return paginationInfoUpdated?.call(paginationInfo);
   }
 
   @override
@@ -861,11 +1088,16 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
         privateGroupsInfoUpdated,
     TResult Function(bool isShowing)? updatedIsShowingSearchBar,
     TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(GeneralGroupInfo newGroupInfo)? generalGroupInfoUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
-    if (generalGroupInfoUpdated != null) {
-      return generalGroupInfoUpdated(newGroupInfo);
+    if (paginationInfoUpdated != null) {
+      return paginationInfoUpdated(paginationInfo);
     }
     return orElse();
   }
@@ -879,10 +1111,18 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     required TResult Function(_UpdatedIsShowingSearchBar value)
         updatedIsShowingSearchBar,
     required TResult Function(_SearchValueUpdated value) searchValueUpdated,
-    required TResult Function(_GeneralGroupInfoUpdated value)
-        generalGroupInfoUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
   }) {
-    return generalGroupInfoUpdated(this);
+    return paginationInfoUpdated(this);
   }
 
   @override
@@ -893,9 +1133,16 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
-    return generalGroupInfoUpdated?.call(this);
+    return paginationInfoUpdated?.call(this);
   }
 
   @override
@@ -906,23 +1153,987 @@ class _$_GeneralGroupInfoUpdated implements _GeneralGroupInfoUpdated {
     TResult Function(_UpdatedIsShowingSearchBar value)?
         updatedIsShowingSearchBar,
     TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_GeneralGroupInfoUpdated value)? generalGroupInfoUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     required TResult orElse(),
   }) {
-    if (generalGroupInfoUpdated != null) {
-      return generalGroupInfoUpdated(this);
+    if (paginationInfoUpdated != null) {
+      return paginationInfoUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class _GeneralGroupInfoUpdated implements HomepageEvent {
-  const factory _GeneralGroupInfoUpdated(GeneralGroupInfo newGroupInfo) =
-      _$_GeneralGroupInfoUpdated;
+abstract class _PaginationInfoUpdated implements HomepageEvent {
+  const factory _PaginationInfoUpdated(PaginationInfo paginationInfo) =
+      _$_PaginationInfoUpdated;
 
-  GeneralGroupInfo get newGroupInfo;
+  PaginationInfo get paginationInfo;
   @JsonKey(ignore: true)
-  _$GeneralGroupInfoUpdatedCopyWith<_GeneralGroupInfoUpdated> get copyWith =>
+  _$PaginationInfoUpdatedCopyWith<_PaginationInfoUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$ScrolledToLoadMoreItemsCopyWith<$Res> {
+  factory _$ScrolledToLoadMoreItemsCopyWith(_ScrolledToLoadMoreItems value,
+          $Res Function(_ScrolledToLoadMoreItems) then) =
+      __$ScrolledToLoadMoreItemsCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ScrolledToLoadMoreItemsCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$ScrolledToLoadMoreItemsCopyWith<$Res> {
+  __$ScrolledToLoadMoreItemsCopyWithImpl(_ScrolledToLoadMoreItems _value,
+      $Res Function(_ScrolledToLoadMoreItems) _then)
+      : super(_value, (v) => _then(v as _ScrolledToLoadMoreItems));
+
+  @override
+  _ScrolledToLoadMoreItems get _value =>
+      super._value as _ScrolledToLoadMoreItems;
+}
+
+/// @nodoc
+
+class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
+  const _$_ScrolledToLoadMoreItems();
+
+  @override
+  String toString() {
+    return 'HomepageEvent.scrolledToLoadMoreItems()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _ScrolledToLoadMoreItems);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+  }) {
+    return scrolledToLoadMoreItems();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+  }) {
+    return scrolledToLoadMoreItems?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (scrolledToLoadMoreItems != null) {
+      return scrolledToLoadMoreItems();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+  }) {
+    return scrolledToLoadMoreItems(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+  }) {
+    return scrolledToLoadMoreItems?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (scrolledToLoadMoreItems != null) {
+      return scrolledToLoadMoreItems(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ScrolledToLoadMoreItems implements HomepageEvent {
+  const factory _ScrolledToLoadMoreItems() = _$_ScrolledToLoadMoreItems;
+}
+
+/// @nodoc
+abstract class _$GroupsRefreshedCopyWith<$Res> {
+  factory _$GroupsRefreshedCopyWith(
+          _GroupsRefreshed value, $Res Function(_GroupsRefreshed) then) =
+      __$GroupsRefreshedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GroupsRefreshedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$GroupsRefreshedCopyWith<$Res> {
+  __$GroupsRefreshedCopyWithImpl(
+      _GroupsRefreshed _value, $Res Function(_GroupsRefreshed) _then)
+      : super(_value, (v) => _then(v as _GroupsRefreshed));
+
+  @override
+  _GroupsRefreshed get _value => super._value as _GroupsRefreshed;
+}
+
+/// @nodoc
+
+class _$_GroupsRefreshed implements _GroupsRefreshed {
+  const _$_GroupsRefreshed();
+
+  @override
+  String toString() {
+    return 'HomepageEvent.groupsRefreshed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _GroupsRefreshed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+  }) {
+    return groupsRefreshed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+  }) {
+    return groupsRefreshed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (groupsRefreshed != null) {
+      return groupsRefreshed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+  }) {
+    return groupsRefreshed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+  }) {
+    return groupsRefreshed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (groupsRefreshed != null) {
+      return groupsRefreshed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GroupsRefreshed implements HomepageEvent {
+  const factory _GroupsRefreshed() = _$_GroupsRefreshed;
+}
+
+/// @nodoc
+abstract class _$IsFetchingInitialGroupsUpdatedCopyWith<$Res> {
+  factory _$IsFetchingInitialGroupsUpdatedCopyWith(
+          _IsFetchingInitialGroupsUpdated value,
+          $Res Function(_IsFetchingInitialGroupsUpdated) then) =
+      __$IsFetchingInitialGroupsUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isFetching});
+}
+
+/// @nodoc
+class __$IsFetchingInitialGroupsUpdatedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$IsFetchingInitialGroupsUpdatedCopyWith<$Res> {
+  __$IsFetchingInitialGroupsUpdatedCopyWithImpl(
+      _IsFetchingInitialGroupsUpdated _value,
+      $Res Function(_IsFetchingInitialGroupsUpdated) _then)
+      : super(_value, (v) => _then(v as _IsFetchingInitialGroupsUpdated));
+
+  @override
+  _IsFetchingInitialGroupsUpdated get _value =>
+      super._value as _IsFetchingInitialGroupsUpdated;
+
+  @override
+  $Res call({
+    Object? isFetching = freezed,
+  }) {
+    return _then(_IsFetchingInitialGroupsUpdated(
+      isFetching == freezed
+          ? _value.isFetching
+          : isFetching // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsFetchingInitialGroupsUpdated
+    implements _IsFetchingInitialGroupsUpdated {
+  const _$_IsFetchingInitialGroupsUpdated(this.isFetching);
+
+  @override
+  final bool isFetching;
+
+  @override
+  String toString() {
+    return 'HomepageEvent.isFetchingInitialGroupsUpdated(isFetching: $isFetching)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsFetchingInitialGroupsUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.isFetching, isFetching));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetching));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsFetchingInitialGroupsUpdatedCopyWith<_IsFetchingInitialGroupsUpdated>
+      get copyWith => __$IsFetchingInitialGroupsUpdatedCopyWithImpl<
+          _IsFetchingInitialGroupsUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+  }) {
+    return isFetchingInitialGroupsUpdated(isFetching);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+  }) {
+    return isFetchingInitialGroupsUpdated?.call(isFetching);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (isFetchingInitialGroupsUpdated != null) {
+      return isFetchingInitialGroupsUpdated(isFetching);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+  }) {
+    return isFetchingInitialGroupsUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+  }) {
+    return isFetchingInitialGroupsUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (isFetchingInitialGroupsUpdated != null) {
+      return isFetchingInitialGroupsUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsFetchingInitialGroupsUpdated implements HomepageEvent {
+  const factory _IsFetchingInitialGroupsUpdated(bool isFetching) =
+      _$_IsFetchingInitialGroupsUpdated;
+
+  bool get isFetching;
+  @JsonKey(ignore: true)
+  _$IsFetchingInitialGroupsUpdatedCopyWith<_IsFetchingInitialGroupsUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$IsFetchingMoreGroupsForScrollDownUpdatedCopyWith<$Res> {
+  factory _$IsFetchingMoreGroupsForScrollDownUpdatedCopyWith(
+          _IsFetchingMoreGroupsForScrollDownUpdated value,
+          $Res Function(_IsFetchingMoreGroupsForScrollDownUpdated) then) =
+      __$IsFetchingMoreGroupsForScrollDownUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isFetching});
+}
+
+/// @nodoc
+class __$IsFetchingMoreGroupsForScrollDownUpdatedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$IsFetchingMoreGroupsForScrollDownUpdatedCopyWith<$Res> {
+  __$IsFetchingMoreGroupsForScrollDownUpdatedCopyWithImpl(
+      _IsFetchingMoreGroupsForScrollDownUpdated _value,
+      $Res Function(_IsFetchingMoreGroupsForScrollDownUpdated) _then)
+      : super(_value,
+            (v) => _then(v as _IsFetchingMoreGroupsForScrollDownUpdated));
+
+  @override
+  _IsFetchingMoreGroupsForScrollDownUpdated get _value =>
+      super._value as _IsFetchingMoreGroupsForScrollDownUpdated;
+
+  @override
+  $Res call({
+    Object? isFetching = freezed,
+  }) {
+    return _then(_IsFetchingMoreGroupsForScrollDownUpdated(
+      isFetching == freezed
+          ? _value.isFetching
+          : isFetching // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsFetchingMoreGroupsForScrollDownUpdated
+    implements _IsFetchingMoreGroupsForScrollDownUpdated {
+  const _$_IsFetchingMoreGroupsForScrollDownUpdated(this.isFetching);
+
+  @override
+  final bool isFetching;
+
+  @override
+  String toString() {
+    return 'HomepageEvent.isFetchingMoreGroupsForScrollDownUpdated(isFetching: $isFetching)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsFetchingMoreGroupsForScrollDownUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.isFetching, isFetching));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetching));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsFetchingMoreGroupsForScrollDownUpdatedCopyWith<
+          _IsFetchingMoreGroupsForScrollDownUpdated>
+      get copyWith => __$IsFetchingMoreGroupsForScrollDownUpdatedCopyWithImpl<
+          _IsFetchingMoreGroupsForScrollDownUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+  }) {
+    return isFetchingMoreGroupsForScrollDownUpdated(isFetching);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+  }) {
+    return isFetchingMoreGroupsForScrollDownUpdated?.call(isFetching);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (isFetchingMoreGroupsForScrollDownUpdated != null) {
+      return isFetchingMoreGroupsForScrollDownUpdated(isFetching);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+  }) {
+    return isFetchingMoreGroupsForScrollDownUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+  }) {
+    return isFetchingMoreGroupsForScrollDownUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (isFetchingMoreGroupsForScrollDownUpdated != null) {
+      return isFetchingMoreGroupsForScrollDownUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsFetchingMoreGroupsForScrollDownUpdated
+    implements HomepageEvent {
+  const factory _IsFetchingMoreGroupsForScrollDownUpdated(bool isFetching) =
+      _$_IsFetchingMoreGroupsForScrollDownUpdated;
+
+  bool get isFetching;
+  @JsonKey(ignore: true)
+  _$IsFetchingMoreGroupsForScrollDownUpdatedCopyWith<
+          _IsFetchingMoreGroupsForScrollDownUpdated>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$IsDataFetchedUpdatedCopyWith<$Res> {
+  factory _$IsDataFetchedUpdatedCopyWith(_IsDataFetchedUpdated value,
+          $Res Function(_IsDataFetchedUpdated) then) =
+      __$IsDataFetchedUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isFetched});
+}
+
+/// @nodoc
+class __$IsDataFetchedUpdatedCopyWithImpl<$Res>
+    extends _$HomepageEventCopyWithImpl<$Res>
+    implements _$IsDataFetchedUpdatedCopyWith<$Res> {
+  __$IsDataFetchedUpdatedCopyWithImpl(
+      _IsDataFetchedUpdated _value, $Res Function(_IsDataFetchedUpdated) _then)
+      : super(_value, (v) => _then(v as _IsDataFetchedUpdated));
+
+  @override
+  _IsDataFetchedUpdated get _value => super._value as _IsDataFetchedUpdated;
+
+  @override
+  $Res call({
+    Object? isFetched = freezed,
+  }) {
+    return _then(_IsDataFetchedUpdated(
+      isFetched == freezed
+          ? _value.isFetched
+          : isFetched // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
+  const _$_IsDataFetchedUpdated(this.isFetched);
+
+  @override
+  final bool isFetched;
+
+  @override
+  String toString() {
+    return 'HomepageEvent.isDataFetchedUpdated(isFetched: $isFetched)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsDataFetchedUpdated &&
+            const DeepCollectionEquality().equals(other.isFetched, isFetched));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetched));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsDataFetchedUpdatedCopyWith<_IsDataFetchedUpdated> get copyWith =>
+      __$IsDataFetchedUpdatedCopyWithImpl<_IsDataFetchedUpdated>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)
+        privateGroupsInfoUpdated,
+    required TResult Function(bool isShowing) updatedIsShowingSearchBar,
+    required TResult Function(String newValue) searchValueUpdated,
+    required TResult Function(PaginationInfo paginationInfo)
+        paginationInfoUpdated,
+    required TResult Function() scrolledToLoadMoreItems,
+    required TResult Function() groupsRefreshed,
+    required TResult Function(bool isFetching) isFetchingInitialGroupsUpdated,
+    required TResult Function(bool isFetching)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+  }) {
+    return isDataFetchedUpdated(isFetched);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+  }) {
+    return isDataFetchedUpdated?.call(isFetched);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(List<GroupOverviewRowInfo> privateGroupsRowsInfo)?
+        privateGroupsInfoUpdated,
+    TResult Function(bool isShowing)? updatedIsShowingSearchBar,
+    TResult Function(String newValue)? searchValueUpdated,
+    TResult Function(PaginationInfo paginationInfo)? paginationInfoUpdated,
+    TResult Function()? scrolledToLoadMoreItems,
+    TResult Function()? groupsRefreshed,
+    TResult Function(bool isFetching)? isFetchingInitialGroupsUpdated,
+    TResult Function(bool isFetching)? isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (isDataFetchedUpdated != null) {
+      return isDataFetchedUpdated(isFetched);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_PrivateGroupsInfoUpdated value)
+        privateGroupsInfoUpdated,
+    required TResult Function(_UpdatedIsShowingSearchBar value)
+        updatedIsShowingSearchBar,
+    required TResult Function(_SearchValueUpdated value) searchValueUpdated,
+    required TResult Function(_PaginationInfoUpdated value)
+        paginationInfoUpdated,
+    required TResult Function(_ScrolledToLoadMoreItems value)
+        scrolledToLoadMoreItems,
+    required TResult Function(_GroupsRefreshed value) groupsRefreshed,
+    required TResult Function(_IsFetchingInitialGroupsUpdated value)
+        isFetchingInitialGroupsUpdated,
+    required TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)
+        isFetchingMoreGroupsForScrollDownUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+  }) {
+    return isDataFetchedUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+  }) {
+    return isDataFetchedUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_PrivateGroupsInfoUpdated value)? privateGroupsInfoUpdated,
+    TResult Function(_UpdatedIsShowingSearchBar value)?
+        updatedIsShowingSearchBar,
+    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult Function(_PaginationInfoUpdated value)? paginationInfoUpdated,
+    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult Function(_GroupsRefreshed value)? groupsRefreshed,
+    TResult Function(_IsFetchingInitialGroupsUpdated value)?
+        isFetchingInitialGroupsUpdated,
+    TResult Function(_IsFetchingMoreGroupsForScrollDownUpdated value)?
+        isFetchingMoreGroupsForScrollDownUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    required TResult orElse(),
+  }) {
+    if (isDataFetchedUpdated != null) {
+      return isDataFetchedUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsDataFetchedUpdated implements HomepageEvent {
+  const factory _IsDataFetchedUpdated(bool isFetched) = _$_IsDataFetchedUpdated;
+
+  bool get isFetched;
+  @JsonKey(ignore: true)
+  _$IsDataFetchedUpdatedCopyWith<_IsDataFetchedUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -932,16 +2143,22 @@ class _$HomepageStateTearOff {
 
   _HomepageState call(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      required GeneralGroupInfo? generalGroupInfo,
+      required PaginationInfo? paginationInfo,
       required bool isShowingSearchBar,
       required String searchValue,
-      required List<DrawableRoot?> privateGroupAvatarSvgs}) {
+      required List<DrawableRoot?> privateGroupAvatarSvgs,
+      required bool isDataFetched,
+      required bool isFetchingInitialGroups,
+      required bool isFetchingMoreGroupsForScrollDown}) {
     return _HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo,
-      generalGroupInfo: generalGroupInfo,
+      paginationInfo: paginationInfo,
       isShowingSearchBar: isShowingSearchBar,
       searchValue: searchValue,
       privateGroupAvatarSvgs: privateGroupAvatarSvgs,
+      isDataFetched: isDataFetched,
+      isFetchingInitialGroups: isFetchingInitialGroups,
+      isFetchingMoreGroupsForScrollDown: isFetchingMoreGroupsForScrollDown,
     );
   }
 }
@@ -953,10 +2170,14 @@ const $HomepageState = _$HomepageStateTearOff();
 mixin _$HomepageState {
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo =>
       throw _privateConstructorUsedError;
-  GeneralGroupInfo? get generalGroupInfo => throw _privateConstructorUsedError;
+  PaginationInfo? get paginationInfo => throw _privateConstructorUsedError;
   bool get isShowingSearchBar => throw _privateConstructorUsedError;
   String get searchValue => throw _privateConstructorUsedError;
   List<DrawableRoot?> get privateGroupAvatarSvgs =>
+      throw _privateConstructorUsedError;
+  bool get isDataFetched => throw _privateConstructorUsedError;
+  bool get isFetchingInitialGroups => throw _privateConstructorUsedError;
+  bool get isFetchingMoreGroupsForScrollDown =>
       throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -971,10 +2192,13 @@ abstract class $HomepageStateCopyWith<$Res> {
       _$HomepageStateCopyWithImpl<$Res>;
   $Res call(
       {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      GeneralGroupInfo? generalGroupInfo,
+      PaginationInfo? paginationInfo,
       bool isShowingSearchBar,
       String searchValue,
-      List<DrawableRoot?> privateGroupAvatarSvgs});
+      List<DrawableRoot?> privateGroupAvatarSvgs,
+      bool isDataFetched,
+      bool isFetchingInitialGroups,
+      bool isFetchingMoreGroupsForScrollDown});
 }
 
 /// @nodoc
@@ -989,20 +2213,23 @@ class _$HomepageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
-    Object? generalGroupInfo = freezed,
+    Object? paginationInfo = freezed,
     Object? isShowingSearchBar = freezed,
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
+    Object? isDataFetched = freezed,
+    Object? isFetchingInitialGroups = freezed,
+    Object? isFetchingMoreGroupsForScrollDown = freezed,
   }) {
     return _then(_value.copyWith(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
           ? _value.privateGroupsRowsInfo
           : privateGroupsRowsInfo // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
-      generalGroupInfo: generalGroupInfo == freezed
-          ? _value.generalGroupInfo
-          : generalGroupInfo // ignore: cast_nullable_to_non_nullable
-              as GeneralGroupInfo?,
+      paginationInfo: paginationInfo == freezed
+          ? _value.paginationInfo
+          : paginationInfo // ignore: cast_nullable_to_non_nullable
+              as PaginationInfo?,
       isShowingSearchBar: isShowingSearchBar == freezed
           ? _value.isShowingSearchBar
           : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
@@ -1015,6 +2242,19 @@ class _$HomepageStateCopyWithImpl<$Res>
           ? _value.privateGroupAvatarSvgs
           : privateGroupAvatarSvgs // ignore: cast_nullable_to_non_nullable
               as List<DrawableRoot?>,
+      isDataFetched: isDataFetched == freezed
+          ? _value.isDataFetched
+          : isDataFetched // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFetchingInitialGroups: isFetchingInitialGroups == freezed
+          ? _value.isFetchingInitialGroups
+          : isFetchingInitialGroups // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFetchingMoreGroupsForScrollDown: isFetchingMoreGroupsForScrollDown ==
+              freezed
+          ? _value.isFetchingMoreGroupsForScrollDown
+          : isFetchingMoreGroupsForScrollDown // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1028,10 +2268,13 @@ abstract class _$HomepageStateCopyWith<$Res>
   @override
   $Res call(
       {List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      GeneralGroupInfo? generalGroupInfo,
+      PaginationInfo? paginationInfo,
       bool isShowingSearchBar,
       String searchValue,
-      List<DrawableRoot?> privateGroupAvatarSvgs});
+      List<DrawableRoot?> privateGroupAvatarSvgs,
+      bool isDataFetched,
+      bool isFetchingInitialGroups,
+      bool isFetchingMoreGroupsForScrollDown});
 }
 
 /// @nodoc
@@ -1048,20 +2291,23 @@ class __$HomepageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? privateGroupsRowsInfo = freezed,
-    Object? generalGroupInfo = freezed,
+    Object? paginationInfo = freezed,
     Object? isShowingSearchBar = freezed,
     Object? searchValue = freezed,
     Object? privateGroupAvatarSvgs = freezed,
+    Object? isDataFetched = freezed,
+    Object? isFetchingInitialGroups = freezed,
+    Object? isFetchingMoreGroupsForScrollDown = freezed,
   }) {
     return _then(_HomepageState(
       privateGroupsRowsInfo: privateGroupsRowsInfo == freezed
           ? _value.privateGroupsRowsInfo
           : privateGroupsRowsInfo // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
-      generalGroupInfo: generalGroupInfo == freezed
-          ? _value.generalGroupInfo
-          : generalGroupInfo // ignore: cast_nullable_to_non_nullable
-              as GeneralGroupInfo?,
+      paginationInfo: paginationInfo == freezed
+          ? _value.paginationInfo
+          : paginationInfo // ignore: cast_nullable_to_non_nullable
+              as PaginationInfo?,
       isShowingSearchBar: isShowingSearchBar == freezed
           ? _value.isShowingSearchBar
           : isShowingSearchBar // ignore: cast_nullable_to_non_nullable
@@ -1074,6 +2320,19 @@ class __$HomepageStateCopyWithImpl<$Res>
           ? _value.privateGroupAvatarSvgs
           : privateGroupAvatarSvgs // ignore: cast_nullable_to_non_nullable
               as List<DrawableRoot?>,
+      isDataFetched: isDataFetched == freezed
+          ? _value.isDataFetched
+          : isDataFetched // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFetchingInitialGroups: isFetchingInitialGroups == freezed
+          ? _value.isFetchingInitialGroups
+          : isFetchingInitialGroups // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isFetchingMoreGroupsForScrollDown: isFetchingMoreGroupsForScrollDown ==
+              freezed
+          ? _value.isFetchingMoreGroupsForScrollDown
+          : isFetchingMoreGroupsForScrollDown // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1083,25 +2342,34 @@ class __$HomepageStateCopyWithImpl<$Res>
 class _$_HomepageState implements _HomepageState {
   const _$_HomepageState(
       {required this.privateGroupsRowsInfo,
-      required this.generalGroupInfo,
+      required this.paginationInfo,
       required this.isShowingSearchBar,
       required this.searchValue,
-      required this.privateGroupAvatarSvgs});
+      required this.privateGroupAvatarSvgs,
+      required this.isDataFetched,
+      required this.isFetchingInitialGroups,
+      required this.isFetchingMoreGroupsForScrollDown});
 
   @override
   final List<GroupOverviewRowInfo> privateGroupsRowsInfo;
   @override
-  final GeneralGroupInfo? generalGroupInfo;
+  final PaginationInfo? paginationInfo;
   @override
   final bool isShowingSearchBar;
   @override
   final String searchValue;
   @override
   final List<DrawableRoot?> privateGroupAvatarSvgs;
+  @override
+  final bool isDataFetched;
+  @override
+  final bool isFetchingInitialGroups;
+  @override
+  final bool isFetchingMoreGroupsForScrollDown;
 
   @override
   String toString() {
-    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, generalGroupInfo: $generalGroupInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs)';
+    return 'HomepageState(privateGroupsRowsInfo: $privateGroupsRowsInfo, paginationInfo: $paginationInfo, isShowingSearchBar: $isShowingSearchBar, searchValue: $searchValue, privateGroupAvatarSvgs: $privateGroupAvatarSvgs, isDataFetched: $isDataFetched, isFetchingInitialGroups: $isFetchingInitialGroups, isFetchingMoreGroupsForScrollDown: $isFetchingMoreGroupsForScrollDown)';
   }
 
   @override
@@ -1112,23 +2380,33 @@ class _$_HomepageState implements _HomepageState {
             const DeepCollectionEquality()
                 .equals(other.privateGroupsRowsInfo, privateGroupsRowsInfo) &&
             const DeepCollectionEquality()
-                .equals(other.generalGroupInfo, generalGroupInfo) &&
+                .equals(other.paginationInfo, paginationInfo) &&
             const DeepCollectionEquality()
                 .equals(other.isShowingSearchBar, isShowingSearchBar) &&
             const DeepCollectionEquality()
                 .equals(other.searchValue, searchValue) &&
             const DeepCollectionEquality()
-                .equals(other.privateGroupAvatarSvgs, privateGroupAvatarSvgs));
+                .equals(other.privateGroupAvatarSvgs, privateGroupAvatarSvgs) &&
+            const DeepCollectionEquality()
+                .equals(other.isDataFetched, isDataFetched) &&
+            const DeepCollectionEquality().equals(
+                other.isFetchingInitialGroups, isFetchingInitialGroups) &&
+            const DeepCollectionEquality().equals(
+                other.isFetchingMoreGroupsForScrollDown,
+                isFetchingMoreGroupsForScrollDown));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(privateGroupsRowsInfo),
-      const DeepCollectionEquality().hash(generalGroupInfo),
+      const DeepCollectionEquality().hash(paginationInfo),
       const DeepCollectionEquality().hash(isShowingSearchBar),
       const DeepCollectionEquality().hash(searchValue),
-      const DeepCollectionEquality().hash(privateGroupAvatarSvgs));
+      const DeepCollectionEquality().hash(privateGroupAvatarSvgs),
+      const DeepCollectionEquality().hash(isDataFetched),
+      const DeepCollectionEquality().hash(isFetchingInitialGroups),
+      const DeepCollectionEquality().hash(isFetchingMoreGroupsForScrollDown));
 
   @JsonKey(ignore: true)
   @override
@@ -1139,21 +2417,30 @@ class _$_HomepageState implements _HomepageState {
 abstract class _HomepageState implements HomepageState {
   const factory _HomepageState(
       {required List<GroupOverviewRowInfo> privateGroupsRowsInfo,
-      required GeneralGroupInfo? generalGroupInfo,
+      required PaginationInfo? paginationInfo,
       required bool isShowingSearchBar,
       required String searchValue,
-      required List<DrawableRoot?> privateGroupAvatarSvgs}) = _$_HomepageState;
+      required List<DrawableRoot?> privateGroupAvatarSvgs,
+      required bool isDataFetched,
+      required bool isFetchingInitialGroups,
+      required bool isFetchingMoreGroupsForScrollDown}) = _$_HomepageState;
 
   @override
   List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
   @override
-  GeneralGroupInfo? get generalGroupInfo;
+  PaginationInfo? get paginationInfo;
   @override
   bool get isShowingSearchBar;
   @override
   String get searchValue;
   @override
   List<DrawableRoot?> get privateGroupAvatarSvgs;
+  @override
+  bool get isDataFetched;
+  @override
+  bool get isFetchingInitialGroups;
+  @override
+  bool get isFetchingMoreGroupsForScrollDown;
   @override
   @JsonKey(ignore: true)
   _$HomepageStateCopyWith<_HomepageState> get copyWith =>

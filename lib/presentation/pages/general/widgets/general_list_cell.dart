@@ -1,5 +1,3 @@
-// ignore: unnecessary_import
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/presentation/widgets/multi_avatar/avatar_painter.dart';
@@ -19,8 +17,6 @@ class GeneralListCell extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(bottom: marginMedium),
         child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Align(
               alignment: Alignment.centerLeft,

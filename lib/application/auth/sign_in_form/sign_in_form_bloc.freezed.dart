@@ -22,8 +22,21 @@ class _$SignInFormEventTearOff {
     return const _SignInForm();
   }
 
+  _IsShowingClearEmailInputToggled isShowingClearEmailInputToggled(
+      bool isShowing) {
+    return _IsShowingClearEmailInputToggled(
+      isShowing,
+    );
+  }
+
   _IsShowingPasswordToggled isShowingPasswordToggled(bool isShowing) {
     return _IsShowingPasswordToggled(
+      isShowing,
+    );
+  }
+
+  _IsShowingErrorMessagesUpdated isShowingErrorMessagesUpdated(bool isShowing) {
+    return _IsShowingErrorMessagesUpdated(
       isShowing,
     );
   }
@@ -53,7 +66,9 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -62,7 +77,9 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -71,7 +88,9 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -81,8 +100,12 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -91,7 +114,11 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -100,7 +127,11 @@ mixin _$SignInFormEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -168,7 +199,9 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -180,7 +213,9 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -192,7 +227,9 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -208,8 +245,12 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -221,7 +262,11 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -233,7 +278,11 @@ class _$_SignInForm implements _SignInForm {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -248,6 +297,183 @@ class _$_SignInForm implements _SignInForm {
 
 abstract class _SignInForm implements SignInFormEvent {
   const factory _SignInForm() = _$_SignInForm;
+}
+
+/// @nodoc
+abstract class _$IsShowingClearEmailInputToggledCopyWith<$Res> {
+  factory _$IsShowingClearEmailInputToggledCopyWith(
+          _IsShowingClearEmailInputToggled value,
+          $Res Function(_IsShowingClearEmailInputToggled) then) =
+      __$IsShowingClearEmailInputToggledCopyWithImpl<$Res>;
+  $Res call({bool isShowing});
+}
+
+/// @nodoc
+class __$IsShowingClearEmailInputToggledCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$IsShowingClearEmailInputToggledCopyWith<$Res> {
+  __$IsShowingClearEmailInputToggledCopyWithImpl(
+      _IsShowingClearEmailInputToggled _value,
+      $Res Function(_IsShowingClearEmailInputToggled) _then)
+      : super(_value, (v) => _then(v as _IsShowingClearEmailInputToggled));
+
+  @override
+  _IsShowingClearEmailInputToggled get _value =>
+      super._value as _IsShowingClearEmailInputToggled;
+
+  @override
+  $Res call({
+    Object? isShowing = freezed,
+  }) {
+    return _then(_IsShowingClearEmailInputToggled(
+      isShowing == freezed
+          ? _value.isShowing
+          : isShowing // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsShowingClearEmailInputToggled
+    implements _IsShowingClearEmailInputToggled {
+  const _$_IsShowingClearEmailInputToggled(this.isShowing);
+
+  @override
+  final bool isShowing;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.isShowingClearEmailInputToggled(isShowing: $isShowing)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsShowingClearEmailInputToggled &&
+            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsShowingClearEmailInputToggledCopyWith<_IsShowingClearEmailInputToggled>
+      get copyWith => __$IsShowingClearEmailInputToggledCopyWithImpl<
+          _IsShowingClearEmailInputToggled>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
+    required TResult Function() signInPressed,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newPassword) passwordChanged,
+  }) {
+    return isShowingClearEmailInputToggled(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+  }) {
+    return isShowingClearEmailInputToggled?.call(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (isShowingClearEmailInputToggled != null) {
+      return isShowingClearEmailInputToggled(isShowing);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
+    required TResult Function(_SignInPressed value) signInPressed,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return isShowingClearEmailInputToggled(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return isShowingClearEmailInputToggled?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (isShowingClearEmailInputToggled != null) {
+      return isShowingClearEmailInputToggled(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsShowingClearEmailInputToggled implements SignInFormEvent {
+  const factory _IsShowingClearEmailInputToggled(bool isShowing) =
+      _$_IsShowingClearEmailInputToggled;
+
+  bool get isShowing;
+  @JsonKey(ignore: true)
+  _$IsShowingClearEmailInputToggledCopyWith<_IsShowingClearEmailInputToggled>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -318,7 +544,9 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -330,7 +558,9 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -342,7 +572,9 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -358,8 +590,12 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -371,7 +607,11 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -383,7 +623,11 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -404,6 +648,183 @@ abstract class _IsShowingPasswordToggled implements SignInFormEvent {
   @JsonKey(ignore: true)
   _$IsShowingPasswordToggledCopyWith<_IsShowingPasswordToggled> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  factory _$IsShowingErrorMessagesUpdatedCopyWith(
+          _IsShowingErrorMessagesUpdated value,
+          $Res Function(_IsShowingErrorMessagesUpdated) then) =
+      __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>;
+  $Res call({bool isShowing});
+}
+
+/// @nodoc
+class __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  __$IsShowingErrorMessagesUpdatedCopyWithImpl(
+      _IsShowingErrorMessagesUpdated _value,
+      $Res Function(_IsShowingErrorMessagesUpdated) _then)
+      : super(_value, (v) => _then(v as _IsShowingErrorMessagesUpdated));
+
+  @override
+  _IsShowingErrorMessagesUpdated get _value =>
+      super._value as _IsShowingErrorMessagesUpdated;
+
+  @override
+  $Res call({
+    Object? isShowing = freezed,
+  }) {
+    return _then(_IsShowingErrorMessagesUpdated(
+      isShowing == freezed
+          ? _value.isShowing
+          : isShowing // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_IsShowingErrorMessagesUpdated
+    implements _IsShowingErrorMessagesUpdated {
+  const _$_IsShowingErrorMessagesUpdated(this.isShowing);
+
+  @override
+  final bool isShowing;
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.isShowingErrorMessagesUpdated(isShowing: $isShowing)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _IsShowingErrorMessagesUpdated &&
+            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+
+  @JsonKey(ignore: true)
+  @override
+  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
+      get copyWith => __$IsShowingErrorMessagesUpdatedCopyWithImpl<
+          _IsShowingErrorMessagesUpdated>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
+    required TResult Function() signInPressed,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newPassword) passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated?.call(isShowing);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (isShowingErrorMessagesUpdated != null) {
+      return isShowingErrorMessagesUpdated(isShowing);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
+    required TResult Function(_SignInPressed value) signInPressed,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+  }) {
+    return isShowingErrorMessagesUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    required TResult orElse(),
+  }) {
+    if (isShowingErrorMessagesUpdated != null) {
+      return isShowingErrorMessagesUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _IsShowingErrorMessagesUpdated implements SignInFormEvent {
+  const factory _IsShowingErrorMessagesUpdated(bool isShowing) =
+      _$_IsShowingErrorMessagesUpdated;
+
+  bool get isShowing;
+  @JsonKey(ignore: true)
+  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -448,7 +869,9 @@ class _$_SignInPressed implements _SignInPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -460,7 +883,9 @@ class _$_SignInPressed implements _SignInPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -472,7 +897,9 @@ class _$_SignInPressed implements _SignInPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -488,8 +915,12 @@ class _$_SignInPressed implements _SignInPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -501,7 +932,11 @@ class _$_SignInPressed implements _SignInPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -513,7 +948,11 @@ class _$_SignInPressed implements _SignInPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -596,7 +1035,9 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -608,7 +1049,9 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -620,7 +1063,9 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -636,8 +1081,12 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -649,7 +1098,11 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -661,7 +1114,11 @@ class _$_EmailChanged implements _EmailChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -750,7 +1207,9 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
     required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
@@ -762,7 +1221,9 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -774,7 +1235,9 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
     TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
@@ -790,8 +1253,12 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
     required TResult Function(_IsShowingPasswordToggled value)
         isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
@@ -803,7 +1270,11 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -815,7 +1286,11 @@ class _$_PasswordChanged implements _PasswordChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
     TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
@@ -843,18 +1318,22 @@ class _$SignInFormStateTearOff {
 
   _SignInFormState call(
       {required String inputEmail,
+      required bool isShowingClearEmailButton,
       required String inputPassword,
       required bool isShowingPassword,
       required bool isShowingErrorMessages,
       required String currentErrorMessageTag,
-      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption}) {
+      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      required bool isLoading}) {
     return _SignInFormState(
       inputEmail: inputEmail,
+      isShowingClearEmailButton: isShowingClearEmailButton,
       inputPassword: inputPassword,
       isShowingPassword: isShowingPassword,
       isShowingErrorMessages: isShowingErrorMessages,
       currentErrorMessageTag: currentErrorMessageTag,
       signInFailureOrUnitOption: signInFailureOrUnitOption,
+      isLoading: isLoading,
     );
   }
 }
@@ -865,12 +1344,14 @@ const $SignInFormState = _$SignInFormStateTearOff();
 /// @nodoc
 mixin _$SignInFormState {
   String get inputEmail => throw _privateConstructorUsedError;
+  bool get isShowingClearEmailButton => throw _privateConstructorUsedError;
   String get inputPassword => throw _privateConstructorUsedError;
   bool get isShowingPassword => throw _privateConstructorUsedError;
   bool get isShowingErrorMessages => throw _privateConstructorUsedError;
   String get currentErrorMessageTag => throw _privateConstructorUsedError;
   Option<Either<AuthFailure, Unit>> get signInFailureOrUnitOption =>
       throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -884,11 +1365,13 @@ abstract class $SignInFormStateCopyWith<$Res> {
       _$SignInFormStateCopyWithImpl<$Res>;
   $Res call(
       {String inputEmail,
+      bool isShowingClearEmailButton,
       String inputPassword,
       bool isShowingPassword,
       bool isShowingErrorMessages,
       String currentErrorMessageTag,
-      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption});
+      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      bool isLoading});
 }
 
 /// @nodoc
@@ -903,17 +1386,23 @@ class _$SignInFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? inputEmail = freezed,
+    Object? isShowingClearEmailButton = freezed,
     Object? inputPassword = freezed,
     Object? isShowingPassword = freezed,
     Object? isShowingErrorMessages = freezed,
     Object? currentErrorMessageTag = freezed,
     Object? signInFailureOrUnitOption = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_value.copyWith(
       inputEmail: inputEmail == freezed
           ? _value.inputEmail
           : inputEmail // ignore: cast_nullable_to_non_nullable
               as String,
+      isShowingClearEmailButton: isShowingClearEmailButton == freezed
+          ? _value.isShowingClearEmailButton
+          : isShowingClearEmailButton // ignore: cast_nullable_to_non_nullable
+              as bool,
       inputPassword: inputPassword == freezed
           ? _value.inputPassword
           : inputPassword // ignore: cast_nullable_to_non_nullable
@@ -934,6 +1423,10 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.signInFailureOrUnitOption
           : signInFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -947,11 +1440,13 @@ abstract class _$SignInFormStateCopyWith<$Res>
   @override
   $Res call(
       {String inputEmail,
+      bool isShowingClearEmailButton,
       String inputPassword,
       bool isShowingPassword,
       bool isShowingErrorMessages,
       String currentErrorMessageTag,
-      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption});
+      Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      bool isLoading});
 }
 
 /// @nodoc
@@ -968,17 +1463,23 @@ class __$SignInFormStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? inputEmail = freezed,
+    Object? isShowingClearEmailButton = freezed,
     Object? inputPassword = freezed,
     Object? isShowingPassword = freezed,
     Object? isShowingErrorMessages = freezed,
     Object? currentErrorMessageTag = freezed,
     Object? signInFailureOrUnitOption = freezed,
+    Object? isLoading = freezed,
   }) {
     return _then(_SignInFormState(
       inputEmail: inputEmail == freezed
           ? _value.inputEmail
           : inputEmail // ignore: cast_nullable_to_non_nullable
               as String,
+      isShowingClearEmailButton: isShowingClearEmailButton == freezed
+          ? _value.isShowingClearEmailButton
+          : isShowingClearEmailButton // ignore: cast_nullable_to_non_nullable
+              as bool,
       inputPassword: inputPassword == freezed
           ? _value.inputPassword
           : inputPassword // ignore: cast_nullable_to_non_nullable
@@ -999,6 +1500,10 @@ class __$SignInFormStateCopyWithImpl<$Res>
           ? _value.signInFailureOrUnitOption
           : signInFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
+      isLoading: isLoading == freezed
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -1008,14 +1513,18 @@ class __$SignInFormStateCopyWithImpl<$Res>
 class _$_SignInFormState implements _SignInFormState {
   const _$_SignInFormState(
       {required this.inputEmail,
+      required this.isShowingClearEmailButton,
       required this.inputPassword,
       required this.isShowingPassword,
       required this.isShowingErrorMessages,
       required this.currentErrorMessageTag,
-      required this.signInFailureOrUnitOption});
+      required this.signInFailureOrUnitOption,
+      required this.isLoading});
 
   @override
   final String inputEmail;
+  @override
+  final bool isShowingClearEmailButton;
   @override
   final String inputPassword;
   @override
@@ -1026,10 +1535,12 @@ class _$_SignInFormState implements _SignInFormState {
   final String currentErrorMessageTag;
   @override
   final Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption;
+  @override
+  final bool isLoading;
 
   @override
   String toString() {
-    return 'SignInFormState(inputEmail: $inputEmail, inputPassword: $inputPassword, isShowingPassword: $isShowingPassword, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag, signInFailureOrUnitOption: $signInFailureOrUnitOption)';
+    return 'SignInFormState(inputEmail: $inputEmail, isShowingClearEmailButton: $isShowingClearEmailButton, inputPassword: $inputPassword, isShowingPassword: $isShowingPassword, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag, signInFailureOrUnitOption: $signInFailureOrUnitOption, isLoading: $isLoading)';
   }
 
   @override
@@ -1039,6 +1550,8 @@ class _$_SignInFormState implements _SignInFormState {
             other is _SignInFormState &&
             const DeepCollectionEquality()
                 .equals(other.inputEmail, inputEmail) &&
+            const DeepCollectionEquality().equals(
+                other.isShowingClearEmailButton, isShowingClearEmailButton) &&
             const DeepCollectionEquality()
                 .equals(other.inputPassword, inputPassword) &&
             const DeepCollectionEquality()
@@ -1048,18 +1561,21 @@ class _$_SignInFormState implements _SignInFormState {
             const DeepCollectionEquality()
                 .equals(other.currentErrorMessageTag, currentErrorMessageTag) &&
             const DeepCollectionEquality().equals(
-                other.signInFailureOrUnitOption, signInFailureOrUnitOption));
+                other.signInFailureOrUnitOption, signInFailureOrUnitOption) &&
+            const DeepCollectionEquality().equals(other.isLoading, isLoading));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(inputEmail),
+      const DeepCollectionEquality().hash(isShowingClearEmailButton),
       const DeepCollectionEquality().hash(inputPassword),
       const DeepCollectionEquality().hash(isShowingPassword),
       const DeepCollectionEquality().hash(isShowingErrorMessages),
       const DeepCollectionEquality().hash(currentErrorMessageTag),
-      const DeepCollectionEquality().hash(signInFailureOrUnitOption));
+      const DeepCollectionEquality().hash(signInFailureOrUnitOption),
+      const DeepCollectionEquality().hash(isLoading));
 
   @JsonKey(ignore: true)
   @override
@@ -1070,15 +1586,18 @@ class _$_SignInFormState implements _SignInFormState {
 abstract class _SignInFormState implements SignInFormState {
   const factory _SignInFormState(
       {required String inputEmail,
+      required bool isShowingClearEmailButton,
       required String inputPassword,
       required bool isShowingPassword,
       required bool isShowingErrorMessages,
       required String currentErrorMessageTag,
-      required Option<Either<AuthFailure, Unit>>
-          signInFailureOrUnitOption}) = _$_SignInFormState;
+      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
+      required bool isLoading}) = _$_SignInFormState;
 
   @override
   String get inputEmail;
+  @override
+  bool get isShowingClearEmailButton;
   @override
   String get inputPassword;
   @override
@@ -1089,6 +1608,8 @@ abstract class _SignInFormState implements SignInFormState {
   String get currentErrorMessageTag;
   @override
   Option<Either<AuthFailure, Unit>> get signInFailureOrUnitOption;
+  @override
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
   _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
