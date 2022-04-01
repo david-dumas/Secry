@@ -22,7 +22,7 @@ class TabbarPage extends StatefulWidget {
 
 class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateMixin {
   late PersistentTabController _persistentTabController;
-  final accountOverviewPageKey = new GlobalKey();
+  final accountPageKey = new GlobalKey();
 
   @override
   void initState() {
@@ -36,12 +36,8 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
       create: (context) => getIt<TabbarBloc>()..add(const TabbarEvent.initialized()),
       child: BlocConsumer<TabbarBloc, TabbarState>(listener: (context, state) {
         if (_persistentTabController.index != state.selectedIndex) {
-          if (state.selectedIndex != 3 && accountOverviewPageKey.currentContext != null) {
-            Navigator.of(context).pop(accountOverviewPageKey.currentContext!);
-
-            Navigator.of(accountOverviewPageKey.currentContext!).popUntil((route) {
-              return route.settings.name == AccountPageRoute.name;
-            });
+          if (state.selectedIndex != 3 && accountPageKey.currentContext != null) {
+            Navigator.of(accountPageKey.currentContext!).pop();
           }
 
           _persistentTabController.index = state.selectedIndex;
@@ -56,7 +52,7 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
               HomePage(),
               GlobalSearchPage(),
               SavedChatsAndSurveysPage(),
-              state.isUserSignedIn ? AccountOverviewPage(key: accountOverviewPageKey) : AccountPage()
+              state.isUserSignedIn ? AccountOverviewPage() : AccountPage(key: accountPageKey)
             ],
             items: [
               getBottomNavbarItem(icon: Icon(Icons.home_outlined)),
