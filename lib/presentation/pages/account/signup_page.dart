@@ -257,13 +257,15 @@ class _SignupPageState extends State<SignupPage> {
                                       labelText: tr('account_repeat_password'),
                                       suffixIcon: IconButton(
                                         icon: (state.isRepeatPasswordCheckedAndValid ||
-                                                state.passwordInput == state.repeatPasswordInput)
+                                                (state.passwordInput == state.repeatPasswordInput &&
+                                                    state.repeatPasswordInput.length != 0))
                                             ? Icon(Icons.check)
                                             : (state.isShowingRepeatPassword
                                                 ? Icon(Icons.visibility_off)
                                                 : Icon(Icons.visibility)),
                                         color: (state.isRepeatPasswordCheckedAndValid ||
-                                                state.passwordInput == state.repeatPasswordInput)
+                                                (state.passwordInput == state.repeatPasswordInput &&
+                                                    state.repeatPasswordInput.length != 0))
                                             ? kPrimaryColor
                                             : kMediumGrayV2,
                                         onPressed: () {
@@ -274,12 +276,14 @@ class _SignupPageState extends State<SignupPage> {
                                       ),
                                     ),
                                     validator: (value) {
-                                      if (value != state.passwordInput) {
+                                      if (value == null || value.length == 0) {
+                                        return tr('account_warning_please_enter_repeat_password');
+                                      } else if (value != state.passwordInput) {
                                         return tr('account_warning_password_does_not_match');
                                       } else {
                                         final passwordValidator = PasswordValidator();
-                                        final passwordInputFailureOrSuccessUnit = passwordValidator
-                                            .getPasswordInputFailureOrSuccessUnit(password: value ?? '');
+                                        final passwordInputFailureOrSuccessUnit =
+                                            passwordValidator.getPasswordInputFailureOrSuccessUnit(password: value);
 
                                         return passwordInputFailureOrSuccessUnit.fold(
                                           (invalidPasswordError) {
