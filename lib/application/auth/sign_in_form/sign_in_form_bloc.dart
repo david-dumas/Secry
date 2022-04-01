@@ -57,13 +57,13 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
           (failure) {
             failure.maybeMap(
               emailAlreadyExists: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_email_already_exists'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_combination_email_and_password_invalid'));
               },
               invalidEmail: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_invalid_email'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_combination_email_and_password_invalid'));
               },
               invalidPassword: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_password_invalid'));
+                emit(state.copyWith(currentErrorMessageTag: 'account_error_combination_email_and_password_invalid'));
               },
               userNotFound: (_) {
                 emit(state.copyWith(currentErrorMessageTag: 'account_error_user_not_found'));

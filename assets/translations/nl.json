@@ -98,6 +98,7 @@
   "account_error_title" : "Error",
   "account_error_email_already_exists" : "Email bestaat al",
   "account_error_invalid_email" : "Email ongeldig",
+  "account_error_combination_email_and_password_invalid" : "Onjuiste email/wachtwoord combinatie",
   "account_error_password_invalid" : "Wachtwoord ongeldig",
   "account_error_user_not_found" : "Gebruiker niet gevonden",
   "account_error_general" : "Er ging iets mis, probeer het opnieuw",
