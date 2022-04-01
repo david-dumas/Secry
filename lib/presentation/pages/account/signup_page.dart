@@ -26,6 +26,7 @@ class _SignupPageState extends State<SignupPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final TextEditingController _pass = TextEditingController();
   final passwordValidationCheckerKey = new GlobalKey();
+  bool isShowingDialog = false;
 
   @override
   Widget build(BuildContext context) {
@@ -37,23 +38,21 @@ class _SignupPageState extends State<SignupPage> {
               () => {},
               (either) => either.fold(
                 (failure) {
-                  if (state.isShowingErrorMessages) {
+                  if (!state.isLoading && state.isShowingErrorMessages && !isShowingDialog) {
+                    isShowingDialog = true;
+
                     DialogHelper().showAlertDialog(
                       context,
                       title: tr('warning_title_general'),
                       description: tr(state.currentErrorMessageTag),
                       extraActionOnClose: () async {
+                        isShowingDialog = false;
                         context.read<SignUpFormBloc>().add(SignUpFormEvent.isShowingErrorMessagesUpdated(false));
                       },
                     );
                   }
                 },
-                (_) {
-                  // Successfully signed up and logged in
-                  Future.delayed(Duration.zero, () {
-                    Navigator.of(context).pop();
-                  });
-                },
+                (_) {},
               ),
             );
           },
@@ -240,7 +239,8 @@ class _SignupPageState extends State<SignupPage> {
                                             repeatPassword: state.repeatPasswordInput);
                                       },
                                     ),
-                                    SizedBox(height: 12.0),
+                                    Visibility(
+                                        visible: state.isShowingPasswordValidationChecker, child: verticalSpaceSmall),
                                     Visibility(
                                         visible: state.isShowingPasswordValidationChecker,
                                         child: PasswordValidationChecker(

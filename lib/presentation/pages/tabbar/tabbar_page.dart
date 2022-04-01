@@ -11,6 +11,8 @@ import 'package:secry/presentation/pages/account/account_page.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/constants.dart';
 
+import 'package:secry/presentation/routes/router.gr.dart';
+
 class TabbarPage extends StatefulWidget {
   const TabbarPage({Key? key}) : super(key: key);
 
@@ -20,6 +22,7 @@ class TabbarPage extends StatefulWidget {
 
 class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateMixin {
   late PersistentTabController _persistentTabController;
+  final accountOverviewPageKey = new GlobalKey();
 
   @override
   void initState() {
@@ -33,6 +36,14 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
       create: (context) => getIt<TabbarBloc>()..add(const TabbarEvent.initialized()),
       child: BlocConsumer<TabbarBloc, TabbarState>(listener: (context, state) {
         if (_persistentTabController.index != state.selectedIndex) {
+          if (state.selectedIndex != 3 && accountOverviewPageKey.currentContext != null) {
+            Navigator.of(context).pop(accountOverviewPageKey.currentContext!);
+
+            Navigator.of(accountOverviewPageKey.currentContext!).popUntil((route) {
+              return route.settings.name == AccountPageRoute.name;
+            });
+          }
+
           _persistentTabController.index = state.selectedIndex;
         }
       }, builder: (context, state) {
@@ -45,7 +56,7 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
               HomePage(),
               GlobalSearchPage(),
               SavedChatsAndSurveysPage(),
-              state.isUserSignedIn ? AccountOverviewPage() : AccountPage()
+              state.isUserSignedIn ? AccountOverviewPage(key: accountOverviewPageKey) : AccountPage()
             ],
             items: [
               getBottomNavbarItem(icon: Icon(Icons.home_outlined)),

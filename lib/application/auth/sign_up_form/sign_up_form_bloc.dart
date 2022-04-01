@@ -45,9 +45,6 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
 
         await signUpFailureOrUnit.fold(
           (failure) {
-            add(SignUpFormEvent.isShowingErrorMessagesUpdated(true));
-            add(SignUpFormEvent.signUpFailureOrUnitOptionUpdated(optionOf(signUpFailureOrUnit)));
-
             failure.maybeMap(
               emailAlreadyExists: (_) {
                 emit(state.copyWith(currentErrorMessageTag: 'account_error_email_already_exists'));
@@ -65,21 +62,21 @@ class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
                 emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
               },
             );
+            emit(state.copyWith(isShowingErrorMessages: true));
           },
           (userCreatedSuccessfully) async {
-            add(SignUpFormEvent.isShowingErrorMessagesUpdated(false));
+            emit(state.copyWith(isShowingErrorMessages: false));
 
             final loginFailureOrUnit = await _authFacade.signIn(email: state.emailInput, password: state.passwordInput);
-            loginFailureOrUnit.fold((_) {
-              add(SignUpFormEvent.signUpFailureOrUnitOptionUpdated(optionOf(loginFailureOrUnit)));
-              // TODO log error
-            }, (success) {
-              add(SignUpFormEvent.isShowingErrorMessagesUpdated(false));
-              add(SignUpFormEvent.signUpFailureOrUnitOptionUpdated(optionOf(loginFailureOrUnit)));
-            });
+            await loginFailureOrUnit.fold((failure) {
+              emit(state.copyWith(isShowingErrorMessages: true));
+              // TODO log HTTP / status code error
+            }, (_) {});
           },
         );
-        add(SignUpFormEvent.isLoadingUpdated(false));
+
+        emit(state.copyWith(isLoading: false));
+        emit(state.copyWith(signUpFailureOrUnitOption: optionOf(signUpFailureOrUnit)));
       },
       firstNameChanged: (e) async {
         emit(state.copyWith(firstNameInput: e.newFirstName));
