@@ -75,6 +75,7 @@
   "account_warning_please_enter_valid_password" : "Voer een geldig wachtwoord in",
   "account_warning_password_at_least_x_characters_part_1" : "Het wachtwoord moet tenminste",
   "account_warning_password_at_least_x_characters_part_2" : "characters zijn.",
+  "account_warning_please_enter_repeat_password" : "Herhaal het eerder ingegeven wachtwoord",
   "account_warning_password_does_not_match" : "Wachtwoorden komen niet overeen",
   "account_warning_password_too_short" : "Wachtwoord te kort",
   "account_warning_password_must_contain_at_least_one_lowercase_character" : "Wachtwoord moet ten minste één kleine letter bevatten",
