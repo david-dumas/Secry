@@ -55,8 +55,6 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         final failureOrUnit = await _authFacade.signIn(email: state.inputEmail, password: state.inputPassword);
         await failureOrUnit.fold(
           (failure) {
-            emit(state.copyWith(isShowingErrorMessages: true));
-
             failure.maybeMap(
               emailAlreadyExists: (_) {
                 emit(state.copyWith(currentErrorMessageTag: 'account_error_email_already_exists'));
@@ -77,6 +75,7 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
                 emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
               },
             );
+            emit(state.copyWith(isShowingErrorMessages: true));
           },
           (userSignedInSuccessfully) {
             emit(state.copyWith(isShowingErrorMessages: false));
