@@ -6,12 +6,10 @@ import 'package:secry/presentation/pages/account/account_overview_page.dart';
 import 'package:secry/presentation/pages/home/homepage.dart';
 import 'package:secry/presentation/pages/saved_chats_and_surveys/saved_chats_and_surveys_page.dart';
 import 'package:secry/presentation/pages/search/global_search_page.dart';
-import 'package:secry/presentation/pages/account/account_page.dart';
+import 'package:secry/presentation/pages/account/account_go_to_login_or_signup_page.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/constants.dart';
-
-import 'package:secry/presentation/routes/router.gr.dart';
 
 class TabbarPage extends StatefulWidget {
   const TabbarPage({Key? key}) : super(key: key);
@@ -52,7 +50,7 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
               HomePage(),
               GlobalSearchPage(),
               SavedChatsAndSurveysPage(),
-              state.isUserSignedIn ? AccountOverviewPage() : AccountPage(key: accountPageKey)
+              state.isUserSignedIn ? AccountOverviewPage() : AccountGoToLoginOrSignUpPage(key: accountPageKey)
             ],
             items: [
               getBottomNavbarItem(icon: Icon(Icons.home_outlined)),

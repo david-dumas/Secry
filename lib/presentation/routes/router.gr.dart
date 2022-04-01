@@ -13,8 +13,8 @@
 import 'package:auto_route/auto_route.dart' as _i14;
 import 'package:flutter/material.dart' as _i15;
 
+import '../pages/account/account_go_to_login_or_signup_page.dart' as _i6;
 import '../pages/account/account_overview_page.dart' as _i7;
-import '../pages/account/account_page.dart' as _i6;
 import '../pages/account/login_page.dart' as _i8;
 import '../pages/account/reset_password_page.dart' as _i10;
 import '../pages/account/signup_page.dart' as _i9;
@@ -56,9 +56,10 @@ class AppRouter extends _i14.RootStackRouter {
       return _i14.MaterialPageX<dynamic>(
           routeData: routeData, child: const _i5.SavedChatsAndSurveysPage());
     },
-    AccountPageRoute.name: (routeData) {
+    AccountGoToLoginOrSignUpPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i6.AccountPage());
+          routeData: routeData,
+          child: const _i6.AccountGoToLoginOrSignUpPage());
     },
     AccountOverviewPageRoute.name: (routeData) {
       return _i14.MaterialPageX<dynamic>(
@@ -109,7 +110,8 @@ class AppRouter extends _i14.RootStackRouter {
             path: '/global-search-page'),
         _i14.RouteConfig(SavedChatsAndSurveysPageRoute.name,
             path: '/saved-chats-and-surveys-page'),
-        _i14.RouteConfig(AccountPageRoute.name, path: '/account-page'),
+        _i14.RouteConfig(AccountGoToLoginOrSignUpPageRoute.name,
+            path: '/account-go-to-login-or-sign-up-page'),
         _i14.RouteConfig(AccountOverviewPageRoute.name,
             path: '/account-overview-page'),
         _i14.RouteConfig(LoginPageRoute.name, path: '/login-page'),
@@ -182,12 +184,13 @@ class SavedChatsAndSurveysPageRoute extends _i14.PageRouteInfo<void> {
 }
 
 /// generated route for
-/// [_i6.AccountPage]
-class AccountPageRoute extends _i14.PageRouteInfo<void> {
-  const AccountPageRoute()
-      : super(AccountPageRoute.name, path: '/account-page');
+/// [_i6.AccountGoToLoginOrSignUpPage]
+class AccountGoToLoginOrSignUpPageRoute extends _i14.PageRouteInfo<void> {
+  const AccountGoToLoginOrSignUpPageRoute()
+      : super(AccountGoToLoginOrSignUpPageRoute.name,
+            path: '/account-go-to-login-or-sign-up-page');
 
-  static const String name = 'AccountPageRoute';
+  static const String name = 'AccountGoToLoginOrSignUpPageRoute';
 }
 
 /// generated route for

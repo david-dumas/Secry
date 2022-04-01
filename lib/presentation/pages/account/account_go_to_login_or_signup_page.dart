@@ -9,8 +9,8 @@ import 'package:secry/presentation/pages/account/signup_page.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
-class AccountPage extends StatelessWidget {
-  const AccountPage({Key? key}) : super(key: key);
+class AccountGoToLoginOrSignUpPage extends StatelessWidget {
+  const AccountGoToLoginOrSignUpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

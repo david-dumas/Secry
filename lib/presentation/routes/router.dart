@@ -1,6 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:secry/presentation/pages/account/account_overview_page.dart';
-import 'package:secry/presentation/pages/account/account_page.dart';
+import 'package:secry/presentation/pages/account/account_go_to_login_or_signup_page.dart';
 import 'package:secry/presentation/pages/account/reset_password_page.dart';
 import 'package:secry/presentation/pages/home/chat_page.dart';
 import 'package:secry/presentation/pages/home/group_overview_page.dart';
@@ -19,7 +19,7 @@ import 'package:secry/presentation/pages/add_group/add_group_page.dart';
   MaterialRoute(page: HomePage),
   MaterialRoute(page: GlobalSearchPage),
   MaterialRoute(page: SavedChatsAndSurveysPage),
-  MaterialRoute(page: AccountPage),
+  MaterialRoute(page: AccountGoToLoginOrSignUpPage),
   MaterialRoute(page: AccountOverviewPage),
   MaterialRoute(page: LoginPage),
   MaterialRoute(page: SignupPage),

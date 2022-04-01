@@ -10,12 +10,17 @@ import 'package:secry/util/dialogs/dialog_helper.dart';
 import 'package:secry/util/validation/email_validator.dart';
 import 'package:secry/presentation/pages/general/widgets/general_progress_button.dart';
 
-class ResetPasswordPage extends StatelessWidget {
+class ResetPasswordPage extends StatefulWidget {
+  ResetPasswordPage({Key? key}) : super(key: key);
+
+  @override
+  State<ResetPasswordPage> createState() => _ResetPasswordPageState();
+}
+
+class _ResetPasswordPageState extends State<ResetPasswordPage> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   final _emailTextEditController = TextEditingController();
   bool isShowingDialog = false;
-
-  ResetPasswordPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext buildContext) {
