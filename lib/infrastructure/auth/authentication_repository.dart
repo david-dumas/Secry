@@ -1,5 +1,7 @@
 import 'dart:convert';
 import 'package:dartz/dartz.dart';
+import 'package:dio/dio.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/auth/i_authentication_interface.dart';
 import 'package:secry/domain/auth/user.dart';
@@ -32,6 +34,9 @@ class AuthenticationRepository extends IAuthenticationInterface {
         return left(AuthFailure.generalError());
       }
     } catch (error) {
+      if (error is DioError) {
+        // TODO log error
+      }
       return left(AuthFailure.generalError());
     }
   }
