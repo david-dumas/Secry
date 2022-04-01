@@ -322,6 +322,7 @@ class _SignupPageState extends State<SignupPage> {
                                   },
                                 ),
                                 verticalSpaceSmall,
+                                verticalSpaceSmall,
                                 SizedBox(
                                   width: double.infinity,
                                   height: kButtonHeightMedium,
@@ -339,6 +340,7 @@ class _SignupPageState extends State<SignupPage> {
                                     },
                                   ),
                                 ),
+                                SizedBox(height: 12.0)
                               ],
                             )),
                         RichText(
