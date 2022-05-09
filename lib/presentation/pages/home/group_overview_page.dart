@@ -31,85 +31,110 @@ class GroupOverviewPage extends StatelessWidget {
                 title: title,
                 isSubpage: true,
                 backgroundColor: globalWhite,
+                isShowingBottomBorder: true,
               ),
-              body: RefreshIndicator(
-                onRefresh: () async {
-                  context.read<GroupOverviewBloc>().add(GroupOverviewEvent.groupOverviewRefreshed(this.groupId));
-                },
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: pagePaddingAllSides,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.stretch,
+              body: Column(
+                children: [
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    height: 55,
+                    color: globalWhite,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        GroupSection(
-                          title: tr('home_chats'),
-                          totalAmountOfGroups: getCellItemsFrom(state.chatInfoItems).length,
-                          cellInfoItems: getCellItemsFrom(state.chatInfoItems),
-                          isMaximumNumberOfCellsToShowEnabled: true,
-                          maximumNumberOfCellsToShow: 3,
-                          isTitleRowActionButtonVisible: getCellItemsFrom(state.chatInfoItems).length > 3,
-                          titleRowActionButtonText: tr('general_see_all'),
-                          isFetchingInitialGroups: state.isFetching,
-                          isDataFetched: state.isDataFetched,
-                          emptyStateTitle: tr('empty_state_no_chats_title'),
-                          emptyStateDescription: tr('empty_state_no_chats_description'),
-                          emptyStateIcon: Icon(Icons.group_add),
-                          titleRowTrailingAction: () {
-                            pushNewScreen(
-                              context,
-                              screen: AllChatsOrSurveysInGroupPage(
-                                cellInfoItems: getCellItemsFrom(state.chatInfoItems),
-                                pageTitle: tr('home_all_chats'),
-                                hintText: '${tr('action_search_chats')}...',
-                              ),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                          openPageForPressedCell: (String id, String groupTitle) {
-                            // TODO open chat page for cell
-                          },
-                        ),
-                        GroupSection(
-                          title: tr('home_surveys'),
-                          totalAmountOfGroups: getCellItemsFrom(state.surveyInfoItems).length,
-                          cellInfoItems: getCellItemsFrom(state.surveyInfoItems),
-                          isMaximumNumberOfCellsToShowEnabled: true,
-                          maximumNumberOfCellsToShow: 3,
-                          isTitleRowActionButtonVisible: getCellItemsFrom(state.surveyInfoItems).length > 3,
-                          titleRowActionButtonText: tr('general_see_all'),
-                          isDataFetched: state.isDataFetched,
-                          emptyStateTitle: tr('empty_state_no_surveys_title'),
-                          emptyStateDescription: tr('empty_state_no_surveys_description'),
-                          emptyStateIcon: Icon(Icons.group_add),
-                          titleRowTrailingAction: () {
-                            pushNewScreen(
-                              context,
-                              screen: AllChatsOrSurveysInGroupPage(
-                                cellInfoItems: getCellItemsFrom(state.surveyInfoItems),
-                                pageTitle: tr('home_all_surveys'),
-                                hintText: '${tr('action_search_surveys')}...',
-                              ),
-                              withNavBar: true,
-                              pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            );
-                          },
-                          openPageForPressedCell: (String id, String groupTitle) {
-                            // TODO Open subpage for chat
-                            // pushNewScreen(
-                            //   context,
-                            //   screen: GroupOverviewPage(title: groupTitle, groupId: id),
-                            //   withNavBar: true,
-                            //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                            // );
-                          },
-                        ),
-                        SizedBox(height: 50),
+                        Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            decoration: BoxDecoration(border: Border(bottom: BorderSide(color: kPrimaryColor))),
+                            child: TextButton(onPressed: () {}, child: Text(tr('home_chats')))),
+                        Container(
+                            width: MediaQuery.of(context).size.width / 2,
+                            decoration: BoxDecoration(border: Border(bottom: BorderSide(color: kLineSeparatorColor))),
+                            child: TextButton(onPressed: () {}, child: Text(tr('home_surveys')))),
                       ],
                     ),
                   ),
-                ),
+                  Expanded(
+                    child: RefreshIndicator(
+                      onRefresh: () async {
+                        context.read<GroupOverviewBloc>().add(GroupOverviewEvent.groupOverviewRefreshed(this.groupId));
+                      },
+                      child: SingleChildScrollView(
+                        child: Padding(
+                          padding: pagePaddingAllSides,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              GroupSection(
+                                title: tr('home_chats'),
+                                totalAmountOfGroups: getCellItemsFrom(state.chatInfoItems).length,
+                                cellInfoItems: getCellItemsFrom(state.chatInfoItems),
+                                isMaximumNumberOfCellsToShowEnabled: true,
+                                maximumNumberOfCellsToShow: 3,
+                                isTitleRowActionButtonVisible: getCellItemsFrom(state.chatInfoItems).length > 3,
+                                titleRowActionButtonText: tr('general_see_all'),
+                                isFetchingInitialGroups: state.isFetching,
+                                isDataFetched: state.isDataFetched,
+                                emptyStateTitle: tr('empty_state_no_chats_title'),
+                                emptyStateDescription: tr('empty_state_no_chats_description'),
+                                emptyStateIcon: Icon(Icons.group_add),
+                                titleRowTrailingAction: () {
+                                  pushNewScreen(
+                                    context,
+                                    screen: AllChatsOrSurveysInGroupPage(
+                                      cellInfoItems: getCellItemsFrom(state.chatInfoItems),
+                                      pageTitle: tr('home_all_chats'),
+                                      hintText: '${tr('action_search_chats')}...',
+                                    ),
+                                    withNavBar: true,
+                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                  );
+                                },
+                                openPageForPressedCell: (String id, String groupTitle) {
+                                  // TODO open chat page for cell
+                                },
+                              ),
+                              GroupSection(
+                                title: tr('home_surveys'),
+                                totalAmountOfGroups: getCellItemsFrom(state.surveyInfoItems).length,
+                                cellInfoItems: getCellItemsFrom(state.surveyInfoItems),
+                                isMaximumNumberOfCellsToShowEnabled: true,
+                                maximumNumberOfCellsToShow: 3,
+                                isTitleRowActionButtonVisible: getCellItemsFrom(state.surveyInfoItems).length > 3,
+                                titleRowActionButtonText: tr('general_see_all'),
+                                isDataFetched: state.isDataFetched,
+                                emptyStateTitle: tr('empty_state_no_surveys_title'),
+                                emptyStateDescription: tr('empty_state_no_surveys_description'),
+                                emptyStateIcon: Icon(Icons.group_add),
+                                titleRowTrailingAction: () {
+                                  pushNewScreen(
+                                    context,
+                                    screen: AllChatsOrSurveysInGroupPage(
+                                      cellInfoItems: getCellItemsFrom(state.surveyInfoItems),
+                                      pageTitle: tr('home_all_surveys'),
+                                      hintText: '${tr('action_search_surveys')}...',
+                                    ),
+                                    withNavBar: true,
+                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                  );
+                                },
+                                openPageForPressedCell: (String id, String groupTitle) {
+                                  // TODO Open subpage for chat
+                                  // pushNewScreen(
+                                  //   context,
+                                  //   screen: GroupOverviewPage(title: groupTitle, groupId: id),
+                                  //   withNavBar: true,
+                                  //   pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                  // );
+                                },
+                              ),
+                              SizedBox(height: 50),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ));
         },
       ),
