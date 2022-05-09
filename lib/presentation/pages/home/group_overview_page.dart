@@ -45,11 +45,21 @@ class GroupOverviewPage extends StatelessWidget {
                         Container(
                             width: MediaQuery.of(context).size.width / 2,
                             decoration: BoxDecoration(border: Border(bottom: BorderSide(color: kPrimaryColor))),
-                            child: TextButton(onPressed: () {}, child: Text(tr('home_chats')))),
+                            child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  tr('home_chats'),
+                                  style: TextStyle(color: kPrimaryColor),
+                                ))),
                         Container(
                             width: MediaQuery.of(context).size.width / 2,
                             decoration: BoxDecoration(border: Border(bottom: BorderSide(color: kLineSeparatorColor))),
-                            child: TextButton(onPressed: () {}, child: Text(tr('home_surveys')))),
+                            child: TextButton(
+                                onPressed: () {},
+                                child: Text(
+                                  tr('home_surveys'),
+                                  style: TextStyle(color: kMediumGrayV2),
+                                ))),
                       ],
                     ),
                   ),
