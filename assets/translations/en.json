@@ -48,6 +48,8 @@
   "action_make_picture" : "Take photo",
   "action_choose_picture" : "Select from gallery",
   "action_delete_picture" : "Delete photo",
+  "action_new_chat" : "New chat",
+  "action_new_survey" : "New survey",
   "account_signed_in" : "signed in",
   "account_logged_out_overview_title" : "Join the community",
   "account_logged_out_overview_description" : "How well do you really know those around you? Secry is about the real world! Create a group with people you know and ask them anything. Talk about issues, insecurities, sex, work, anthing you want to talk about. Become aware, help each other, connect and discover secrets!",

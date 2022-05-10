@@ -6,8 +6,13 @@ class GroupOverviewState with _$GroupOverviewState {
       {required List<GroupOverviewRowInfo> chatInfoItems,
       required List<GroupOverviewRowInfo> surveyInfoItems,
       required bool isDataFetched,
-      required bool isFetching}) = _GroupOverviewState;
+      required bool isFetching,
+      required FeatureType currentFeatureType}) = _GroupOverviewState;
 
-  factory GroupOverviewState.initial() =>
-      GroupOverviewState(chatInfoItems: [], surveyInfoItems: [], isDataFetched: false, isFetching: false);
+  factory GroupOverviewState.initial() => GroupOverviewState(
+      chatInfoItems: [],
+      surveyInfoItems: [],
+      isDataFetched: false,
+      isFetching: false,
+      currentFeatureType: FeatureType.chats);
 }
