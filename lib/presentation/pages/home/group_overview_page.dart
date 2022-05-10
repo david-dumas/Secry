@@ -52,6 +52,7 @@ class GroupOverviewPage extends StatelessWidget {
                                             ? kPrimaryColor
                                             : kLineSeparatorColor))),
                             child: TextButton(
+                                style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
                                 onPressed: () {
                                   context
                                       .read<GroupOverviewBloc>()
@@ -73,6 +74,7 @@ class GroupOverviewPage extends StatelessWidget {
                                             ? kPrimaryColor
                                             : kLineSeparatorColor))),
                             child: TextButton(
+                                style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
                                 onPressed: () {
                                   context
                                       .read<GroupOverviewBloc>()
