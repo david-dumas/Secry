@@ -74,3 +74,8 @@ flutter:
   assets:
     - assets/translations/
     - assets/launcher/
+  
+  fonts:
+    - family: SocialMediaIcons
+      fonts:
+        - asset: assets/fonts/SocialMediaIcons.ttf
