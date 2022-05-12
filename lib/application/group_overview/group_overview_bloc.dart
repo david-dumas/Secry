@@ -21,21 +21,32 @@ class GroupOverviewBloc extends Bloc<GroupOverviewEvent, GroupOverviewState> {
   }
 
   Future<void> _onEvent(GroupOverviewEvent event, Emitter<GroupOverviewState> emit) async {
-    await event.map(initialized: (e) async {
-      fetchChatsAndSurveys(groupId: e.groupId);
-    }, chatInfoItemsUpdated: (e) async {
-      emit(state.copyWith(chatInfoItems: e.chatInfoItems));
-    }, surveyInfoItemsUpdated: (e) async {
-      emit(state.copyWith(surveyInfoItems: e.surveyInfoItems));
-    }, groupOverviewRefreshed: (e) async {
-      fetchChatsAndSurveys(groupId: e.groupId);
-    }, isFetchingUpdated: (e) async {
-      emit(state.copyWith(isFetching: e.isFetching));
-    }, isDataFetchedUpdated: (e) async {
-      emit(state.copyWith(isDataFetched: e.isFetched));
-    }, currentFeatureTypeUpdated: (e) async {
-      emit(state.copyWith(currentFeatureType: e.newFeatureType));
-    });
+    await event.map(
+      initialized: (e) async {
+        fetchChatsAndSurveys(groupId: e.groupId);
+      },
+      chatInfoItemsUpdated: (e) async {
+        emit(state.copyWith(chatInfoItems: e.chatInfoItems));
+      },
+      surveyInfoItemsUpdated: (e) async {
+        emit(state.copyWith(surveyInfoItems: e.surveyInfoItems));
+      },
+      groupOverviewRefreshed: (e) async {
+        fetchChatsAndSurveys(groupId: e.groupId);
+      },
+      isFetchingUpdated: (e) async {
+        emit(state.copyWith(isFetching: e.isFetching));
+      },
+      isDataFetchedUpdated: (e) async {
+        emit(state.copyWith(isDataFetched: e.isFetched));
+      },
+      currentFeatureTypeUpdated: (e) async {
+        emit(state.copyWith(currentFeatureType: e.newFeatureType));
+      },
+      groupRefreshed: (e) async {
+        // TODO handle refresh
+      },
+    );
   }
 
   Future<void> fetchChatsAndSurveys({required String groupId}) async {

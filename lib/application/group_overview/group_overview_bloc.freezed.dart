@@ -62,6 +62,10 @@ class _$GroupOverviewEventTearOff {
       newFeatureType,
     );
   }
+
+  _GroupRefreshed groupRefreshed() {
+    return const _GroupRefreshed();
+  }
 }
 
 /// @nodoc
@@ -81,6 +85,7 @@ mixin _$GroupOverviewEvent {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -94,6 +99,7 @@ mixin _$GroupOverviewEvent {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -107,6 +113,7 @@ mixin _$GroupOverviewEvent {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -122,6 +129,7 @@ mixin _$GroupOverviewEvent {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -134,6 +142,7 @@ mixin _$GroupOverviewEvent {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -146,6 +155,7 @@ mixin _$GroupOverviewEvent {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -243,6 +253,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) {
     return initialized(groupId);
   }
@@ -259,6 +270,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) {
     return initialized?.call(groupId);
   }
@@ -275,6 +287,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -296,6 +309,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) {
     return initialized(this);
   }
@@ -311,6 +325,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return initialized?.call(this);
   }
@@ -326,6 +341,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -421,6 +437,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) {
     return chatInfoItemsUpdated(chatInfoItems);
   }
@@ -437,6 +454,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) {
     return chatInfoItemsUpdated?.call(chatInfoItems);
   }
@@ -453,6 +471,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) {
     if (chatInfoItemsUpdated != null) {
@@ -474,6 +493,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) {
     return chatInfoItemsUpdated(this);
   }
@@ -489,6 +509,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return chatInfoItemsUpdated?.call(this);
   }
@@ -504,6 +525,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) {
     if (chatInfoItemsUpdated != null) {
@@ -600,6 +622,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) {
     return surveyInfoItemsUpdated(surveyInfoItems);
   }
@@ -616,6 +639,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) {
     return surveyInfoItemsUpdated?.call(surveyInfoItems);
   }
@@ -632,6 +656,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) {
     if (surveyInfoItemsUpdated != null) {
@@ -653,6 +678,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) {
     return surveyInfoItemsUpdated(this);
   }
@@ -668,6 +694,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return surveyInfoItemsUpdated?.call(this);
   }
@@ -683,6 +710,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) {
     if (surveyInfoItemsUpdated != null) {
@@ -778,6 +806,7 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) {
     return groupOverviewRefreshed(groupId);
   }
@@ -794,6 +823,7 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) {
     return groupOverviewRefreshed?.call(groupId);
   }
@@ -810,6 +840,7 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) {
     if (groupOverviewRefreshed != null) {
@@ -831,6 +862,7 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) {
     return groupOverviewRefreshed(this);
   }
@@ -846,6 +878,7 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return groupOverviewRefreshed?.call(this);
   }
@@ -861,6 +894,7 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) {
     if (groupOverviewRefreshed != null) {
@@ -956,6 +990,7 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) {
     return isFetchingUpdated(isFetching);
   }
@@ -972,6 +1007,7 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) {
     return isFetchingUpdated?.call(isFetching);
   }
@@ -988,6 +1024,7 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) {
     if (isFetchingUpdated != null) {
@@ -1009,6 +1046,7 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) {
     return isFetchingUpdated(this);
   }
@@ -1024,6 +1062,7 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return isFetchingUpdated?.call(this);
   }
@@ -1039,6 +1078,7 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) {
     if (isFetchingUpdated != null) {
@@ -1133,6 +1173,7 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) {
     return isDataFetchedUpdated(isFetched);
   }
@@ -1149,6 +1190,7 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) {
     return isDataFetchedUpdated?.call(isFetched);
   }
@@ -1165,6 +1207,7 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) {
     if (isDataFetchedUpdated != null) {
@@ -1186,6 +1229,7 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) {
     return isDataFetchedUpdated(this);
   }
@@ -1201,6 +1245,7 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return isDataFetchedUpdated?.call(this);
   }
@@ -1216,6 +1261,7 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) {
     if (isDataFetchedUpdated != null) {
@@ -1313,6 +1359,7 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
     required TResult Function(bool isFetched) isDataFetchedUpdated,
     required TResult Function(FeatureType newFeatureType)
         currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
   }) {
     return currentFeatureTypeUpdated(newFeatureType);
   }
@@ -1329,6 +1376,7 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
   }) {
     return currentFeatureTypeUpdated?.call(newFeatureType);
   }
@@ -1345,6 +1393,7 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
     TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
     required TResult orElse(),
   }) {
     if (currentFeatureTypeUpdated != null) {
@@ -1366,6 +1415,7 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
     required TResult Function(_CurrentFeatureTypeUpdated value)
         currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
   }) {
     return currentFeatureTypeUpdated(this);
   }
@@ -1381,6 +1431,7 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return currentFeatureTypeUpdated?.call(this);
   }
@@ -1396,6 +1447,7 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
     TResult Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
     required TResult orElse(),
   }) {
     if (currentFeatureTypeUpdated != null) {
@@ -1413,6 +1465,159 @@ abstract class _CurrentFeatureTypeUpdated implements GroupOverviewEvent {
   @JsonKey(ignore: true)
   _$CurrentFeatureTypeUpdatedCopyWith<_CurrentFeatureTypeUpdated>
       get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$GroupRefreshedCopyWith<$Res> {
+  factory _$GroupRefreshedCopyWith(
+          _GroupRefreshed value, $Res Function(_GroupRefreshed) then) =
+      __$GroupRefreshedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GroupRefreshedCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    implements _$GroupRefreshedCopyWith<$Res> {
+  __$GroupRefreshedCopyWithImpl(
+      _GroupRefreshed _value, $Res Function(_GroupRefreshed) _then)
+      : super(_value, (v) => _then(v as _GroupRefreshed));
+
+  @override
+  _GroupRefreshed get _value => super._value as _GroupRefreshed;
+}
+
+/// @nodoc
+
+class _$_GroupRefreshed implements _GroupRefreshed {
+  const _$_GroupRefreshed();
+
+  @override
+  String toString() {
+    return 'GroupOverviewEvent.groupRefreshed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _GroupRefreshed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String groupId) initialized,
+    required TResult Function(List<GroupOverviewRowInfo> chatInfoItems)
+        chatInfoItemsUpdated,
+    required TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)
+        surveyInfoItemsUpdated,
+    required TResult Function(String groupId) groupOverviewRefreshed,
+    required TResult Function(bool isFetching) isFetchingUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(FeatureType newFeatureType)
+        currentFeatureTypeUpdated,
+    required TResult Function() groupRefreshed,
+  }) {
+    return groupRefreshed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String groupId)? initialized,
+    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+        chatInfoItemsUpdated,
+    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+        surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
+  }) {
+    return groupRefreshed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String groupId)? initialized,
+    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+        chatInfoItemsUpdated,
+    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+        surveyInfoItemsUpdated,
+    TResult Function(String groupId)? groupOverviewRefreshed,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult Function()? groupRefreshed,
+    required TResult orElse(),
+  }) {
+    if (groupRefreshed != null) {
+      return groupRefreshed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_ChatInfoItemsUpdated value) chatInfoItemsUpdated,
+    required TResult Function(_SurveyInfoItemsUpdated value)
+        surveyInfoItemsUpdated,
+    required TResult Function(_GroupOverviewRefreshed value)
+        groupOverviewRefreshed,
+    required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentFeatureTypeUpdated value)
+        currentFeatureTypeUpdated,
+    required TResult Function(_GroupRefreshed value) groupRefreshed,
+  }) {
+    return groupRefreshed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentFeatureTypeUpdated value)?
+        currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
+  }) {
+    return groupRefreshed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentFeatureTypeUpdated value)?
+        currentFeatureTypeUpdated,
+    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    required TResult orElse(),
+  }) {
+    if (groupRefreshed != null) {
+      return groupRefreshed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GroupRefreshed implements GroupOverviewEvent {
+  const factory _GroupRefreshed() = _$_GroupRefreshed;
 }
 
 /// @nodoc

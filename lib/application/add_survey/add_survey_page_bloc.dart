@@ -16,13 +16,13 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
 
   Future<void> _onEvent(AddSurveyPageEvent event, Emitter<AddSurveyPageState> emit) async {
     await event.map(
-      initialized: (e) async {},
-      surveyTitleUpdated: (e) async {
-        emit(state.copyWith(surveyTitle: e.newTitle));
-      },
-      currentStepIndexUpdated: (e) async {
-        emit(state.copyWith(currentStepIndex: e.newIndex));
-      },
-    );
+        initialized: (e) async {},
+        surveyTitleUpdated: (e) async {
+          emit(state.copyWith(surveyTitle: e.newTitle));
+        },
+        currentStepIndexUpdated: (e) async {
+          emit(state.copyWith(currentStepIndex: e.newIndex));
+        },
+        newSurveyCreated: (e) async {});
   }
 }

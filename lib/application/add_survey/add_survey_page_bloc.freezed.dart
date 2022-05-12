@@ -33,6 +33,10 @@ class _$AddSurveyPageEventTearOff {
       newIndex,
     );
   }
+
+  _NewSurveyCreated newSurveyCreated() {
+    return const _NewSurveyCreated();
+  }
 }
 
 /// @nodoc
@@ -45,6 +49,7 @@ mixin _$AddSurveyPageEvent {
     required TResult Function() initialized,
     required TResult Function(String newTitle) surveyTitleUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newSurveyCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -52,6 +57,7 @@ mixin _$AddSurveyPageEvent {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +65,7 @@ mixin _$AddSurveyPageEvent {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -68,6 +75,7 @@ mixin _$AddSurveyPageEvent {
     required TResult Function(_SurveyTitleUpdated value) surveyTitleUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewSurveyCreated value) newSurveyCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +83,7 @@ mixin _$AddSurveyPageEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -82,6 +91,7 @@ mixin _$AddSurveyPageEvent {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -148,6 +158,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function() initialized,
     required TResult Function(String newTitle) surveyTitleUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newSurveyCreated,
   }) {
     return initialized();
   }
@@ -158,6 +169,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
   }) {
     return initialized?.call();
   }
@@ -168,6 +180,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -183,6 +196,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_SurveyTitleUpdated value) surveyTitleUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewSurveyCreated value) newSurveyCreated,
   }) {
     return initialized(this);
   }
@@ -193,6 +207,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
   }) {
     return initialized?.call(this);
   }
@@ -203,6 +218,7 @@ class _$_Initialized implements _Initialized {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -284,6 +300,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     required TResult Function() initialized,
     required TResult Function(String newTitle) surveyTitleUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newSurveyCreated,
   }) {
     return surveyTitleUpdated(newTitle);
   }
@@ -294,6 +311,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
   }) {
     return surveyTitleUpdated?.call(newTitle);
   }
@@ -304,6 +322,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
     required TResult orElse(),
   }) {
     if (surveyTitleUpdated != null) {
@@ -319,6 +338,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     required TResult Function(_SurveyTitleUpdated value) surveyTitleUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewSurveyCreated value) newSurveyCreated,
   }) {
     return surveyTitleUpdated(this);
   }
@@ -329,6 +349,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
   }) {
     return surveyTitleUpdated?.call(this);
   }
@@ -339,6 +360,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
     required TResult orElse(),
   }) {
     if (surveyTitleUpdated != null) {
@@ -427,6 +449,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     required TResult Function() initialized,
     required TResult Function(String newTitle) surveyTitleUpdated,
     required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newSurveyCreated,
   }) {
     return currentStepIndexUpdated(newIndex);
   }
@@ -437,6 +460,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
   }) {
     return currentStepIndexUpdated?.call(newIndex);
   }
@@ -447,6 +471,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function()? initialized,
     TResult Function(String newTitle)? surveyTitleUpdated,
     TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
     required TResult orElse(),
   }) {
     if (currentStepIndexUpdated != null) {
@@ -462,6 +487,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     required TResult Function(_SurveyTitleUpdated value) surveyTitleUpdated,
     required TResult Function(_CurrentStepIndexUpdated value)
         currentStepIndexUpdated,
+    required TResult Function(_NewSurveyCreated value) newSurveyCreated,
   }) {
     return currentStepIndexUpdated(this);
   }
@@ -472,6 +498,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
   }) {
     return currentStepIndexUpdated?.call(this);
   }
@@ -482,6 +509,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(_Initialized value)? initialized,
     TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
     TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
     required TResult orElse(),
   }) {
     if (currentStepIndexUpdated != null) {
@@ -499,6 +527,124 @@ abstract class _CurrentStepIndexUpdated implements AddSurveyPageEvent {
   @JsonKey(ignore: true)
   _$CurrentStepIndexUpdatedCopyWith<_CurrentStepIndexUpdated> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$NewSurveyCreatedCopyWith<$Res> {
+  factory _$NewSurveyCreatedCopyWith(
+          _NewSurveyCreated value, $Res Function(_NewSurveyCreated) then) =
+      __$NewSurveyCreatedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$NewSurveyCreatedCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    implements _$NewSurveyCreatedCopyWith<$Res> {
+  __$NewSurveyCreatedCopyWithImpl(
+      _NewSurveyCreated _value, $Res Function(_NewSurveyCreated) _then)
+      : super(_value, (v) => _then(v as _NewSurveyCreated));
+
+  @override
+  _NewSurveyCreated get _value => super._value as _NewSurveyCreated;
+}
+
+/// @nodoc
+
+class _$_NewSurveyCreated implements _NewSurveyCreated {
+  const _$_NewSurveyCreated();
+
+  @override
+  String toString() {
+    return 'AddSurveyPageEvent.newSurveyCreated()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _NewSurveyCreated);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(String newTitle) surveyTitleUpdated,
+    required TResult Function(int newIndex) currentStepIndexUpdated,
+    required TResult Function() newSurveyCreated,
+  }) {
+    return newSurveyCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? surveyTitleUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
+  }) {
+    return newSurveyCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(String newTitle)? surveyTitleUpdated,
+    TResult Function(int newIndex)? currentStepIndexUpdated,
+    TResult Function()? newSurveyCreated,
+    required TResult orElse(),
+  }) {
+    if (newSurveyCreated != null) {
+      return newSurveyCreated();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_SurveyTitleUpdated value) surveyTitleUpdated,
+    required TResult Function(_CurrentStepIndexUpdated value)
+        currentStepIndexUpdated,
+    required TResult Function(_NewSurveyCreated value) newSurveyCreated,
+  }) {
+    return newSurveyCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
+  }) {
+    return newSurveyCreated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
+    required TResult orElse(),
+  }) {
+    if (newSurveyCreated != null) {
+      return newSurveyCreated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NewSurveyCreated implements AddSurveyPageEvent {
+  const factory _NewSurveyCreated() = _$_NewSurveyCreated;
 }
 
 /// @nodoc
