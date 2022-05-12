@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'package:secry/constants.dart';
+import 'package:secry/domain/general/create_new_type.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/application/add_group/add_group_page_bloc.dart';
@@ -80,6 +81,16 @@ class AddGroupPageContent extends StatelessWidget {
                   stepIndex: state.currentStepIndex,
                   groupTitle: state.groupTitle,
                   groupMembers: state.groupMembers,
+                  featureType: CreateNewType.newGroup,
+                  currentStepIndexUpdated: (newIndex) {
+                    context.read<AddGroupPageBloc>().add(AddGroupPageEvent.currentStepIndexUpdated(newIndex));
+                  },
+                  createActionExecuted: () {
+                    context.read<AddGroupPageBloc>().add(AddGroupPageEvent.newGroupCreated());
+                  },
+                  popIfNeeded: () {
+                    Navigator.of(context).pop(false);
+                  },
                 ),
                 Visibility(visible: Platform.isIOS, child: SizedBox(height: 30)),
               ],
