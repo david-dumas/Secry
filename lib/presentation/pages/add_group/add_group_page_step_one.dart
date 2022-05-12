@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -19,7 +21,7 @@ class AddGroupPageStepOne extends StatefulWidget {
 
 class _AddGroupPageStepOneState extends State<AddGroupPageStepOne> {
   final TextEditingController _titleController = TextEditingController();
-  final maximumTitleLength = 24;
+  final maximumTitleLength = 24; // TODO load from remote config
 
   @override
   void initState() {
@@ -42,7 +44,7 @@ class _AddGroupPageStepOneState extends State<AddGroupPageStepOne> {
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               labelText: tr('add_group_title'),
-              suffixText: "${maximumTitleLength - _titleController.text.length}",
+              suffixText: "${max(0, maximumTitleLength - _titleController.text.length)}",
               border: OutlineInputBorder(),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),
