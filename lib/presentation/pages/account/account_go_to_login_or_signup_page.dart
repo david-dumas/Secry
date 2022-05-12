@@ -8,16 +8,11 @@ import 'package:secry/presentation/pages/account/login_page.dart';
 import 'package:secry/presentation/pages/account/signup_page.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
-import 'package:secry/social_media_icons_icons.dart';
+import 'widgets/or_divider.dart';
+import 'widgets/social_media_buttons.dart';
 
 class AccountGoToLoginOrSignUpPage extends StatelessWidget {
   const AccountGoToLoginOrSignUpPage({Key? key}) : super(key: key);
-
-  static const Icon facebookIcon =
-      Icon(SocialMediaIcons.facebook, color: Colors.white);
-  static const Icon twitterIcon =
-      Icon(SocialMediaIcons.twitter, color: Colors.white);
-  static const Icon googleIcon = Icon(SocialMediaIcons.google);
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +40,7 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                               fontWeight: FontWeight.bold, fontSize: 24)),
                       SizedBox(height: 16),
                       Text(
-                        'How well do you really know those around you? Secry is about the real world! Create a group with people you know and ask them anything!',
+                        tr("account_logged_out_overview_description"),
                         textAlign: TextAlign.center,
                         style: mainContentTextStyleMedium,
                       ),
@@ -82,7 +77,7 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Text('Already have an account?'),
+                          Text(tr('account_logged_out_question')),
                           TextButton(
                             style: TextButton.styleFrom(
                               textStyle: const TextStyle(
@@ -103,27 +98,33 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                           )
                         ],
                       ),
-                      orDivider(),
+                      OrDivider(),
                       Column(
                         children: [
-                          continueWithSocialMediaButton(
-                              context,
-                              googleIcon,
-                              Colors.white,
-                              'Continue with Google',
-                              Colors.grey),
-                          continueWithSocialMediaButton(
-                              context,
-                              twitterIcon,
-                              Colors.blue,
-                              'Continue with Twitter',
-                              Colors.white),
-                          continueWithSocialMediaButton(
-                              context,
-                              facebookIcon,
-                              Color.fromRGBO(63, 95, 175, 1),
-                              'Continue with Facebook',
-                              Colors.white),
+                          SocialMediaButton(
+                            context,
+                            socialMediaIcon:
+                                Image.asset('assets/fonts/google_icon.png'),
+                            buttonColor: SocialMediaButton.googleButtonColor,
+                            buttonText: tr('account_sign_up_with_google'),
+                            textColor: Colors.black,
+                          ),
+                          SocialMediaButton(
+                            context,
+                            socialMediaIcon:
+                                Image.asset('assets/fonts/twitter_icon.png'),
+                            buttonColor: SocialMediaButton.twitterButtonColor,
+                            buttonText: tr('account_sign_up_with_twitter'),
+                            textColor: Colors.white,
+                          ),
+                          SocialMediaButton(
+                            context,
+                            socialMediaIcon:
+                                Image.asset('assets/fonts/facebook_icon.png'),
+                            buttonColor: SocialMediaButton.facebookButtonColor,
+                            buttonText: tr('account_sign_up_with_facebook'),
+                            textColor: Colors.white,
+                          ),
                         ],
                       ),
                       verticalSafetyScrollOffset
@@ -137,57 +138,4 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
       },
     );
   }
-}
-
-Widget orDivider() {
-  return Row(children: <Widget>[
-    Expanded(
-      child: Container(
-          margin: const EdgeInsets.only(left: 10.0, right: 20.0),
-          child: Divider(thickness: 2.0, height: 36)),
-    ),
-    Text("OR", style: TextStyle(fontSize: 18.0)),
-    Expanded(
-      child: new Container(
-          margin: const EdgeInsets.only(left: 20.0, right: 10.0),
-          child: Divider(thickness: 2.0, height: 36)),
-    ),
-  ]);
-}
-
-Widget continueWithSocialMediaButton(
-  BuildContext context,
-  Icon socialMediaIcon,
-  Color buttonColor,
-  String continueWithText,
-  Color textColor,
-) {
-  return Container(
-    margin: EdgeInsets.only(bottom: 10.0),
-    width: MediaQuery.of(context).size.width,
-    height: kButtonHeightMedium,
-    child: OutlinedButton(
-        onPressed: () {},
-        style: ButtonStyle(
-          backgroundColor: MaterialStateProperty.all(buttonColor),
-          shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-            RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
-            ),
-          ),
-        ),
-        child: Row(
-          children: [
-            socialMediaIcon,
-            Padding(
-              padding: EdgeInsets.only(left: 15.0),
-              child: Text(
-                continueWithText,
-                style: TextStyle(color: textColor, fontSize: 16.0),
-              ),
-            )
-          ],
-        )),
-  );
 }
