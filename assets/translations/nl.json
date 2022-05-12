@@ -107,6 +107,7 @@
   "account_error_user_not_found" : "Gebruiker niet gevonden",
   "account_error_general" : "Er ging iets mis, probeer het opnieuw",
   "account_general_welcome_title" : "Welkom",
+  "account_or_divider" : "Of",
   "warning_field_is_empty" : "Veld is leeg",
   "warning_too_many_characters" : "Je hebt te veel tekens gebruikt",
   "warning_title_general" : "Let op",

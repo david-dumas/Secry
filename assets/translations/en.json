@@ -107,6 +107,7 @@
   "account_error_user_not_found" : "User not found",
   "account_error_general" : "Something went wrong, try again",
   "account_general_welcome_title" : "Welcome",
+  "account_or_divider" : "Or",
   "warning_field_is_empty" : "Field is empty",
   "warning_too_many_characters" : "You used too many characters",
   "warning_title_general" : "Warning",
