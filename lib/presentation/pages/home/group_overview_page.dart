@@ -126,7 +126,11 @@ class GroupOverviewPage extends StatelessWidget {
                                     : tr('empty_state_no_surveys_description'),
                                 emptyStateIcon: Icon(Icons.group_add),
                                 titleRowTrailingAction: () {
-                                  // TODO handle create new chat / new survey
+                                  if (state.currentFeatureType == FeatureType.chats) {
+                                    // TODO handle create new chat
+                                  } else if (state.currentFeatureType == FeatureType.surveys) {
+                                    // TODO handle create new survey
+                                  }
                                 },
                                 openPageForPressedCell: (String id, String groupTitle) {
                                   // TODO open chat / survey page for cell
