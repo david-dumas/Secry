@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
+import 'package:secry/domain/groups/feature_type.dart';
 import 'package:secry/domain/groups/i_groups_repository.dart';
 import 'package:secry/util/avatars/avatar_helper.dart';
 
@@ -32,6 +33,8 @@ class GroupOverviewBloc extends Bloc<GroupOverviewEvent, GroupOverviewState> {
       emit(state.copyWith(isFetching: e.isFetching));
     }, isDataFetchedUpdated: (e) async {
       emit(state.copyWith(isDataFetched: e.isFetched));
+    }, currentFeatureTypeUpdated: (e) async {
+      emit(state.copyWith(currentFeatureType: e.newFeatureType));
     });
   }
 

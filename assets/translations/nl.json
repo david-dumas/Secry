@@ -48,6 +48,8 @@
   "action_make_picture" : "Maak foto",
   "action_choose_picture" : "Kies foto",
   "action_delete_picture" : "Foto verwijderen",
+  "action_new_chat" : "Nieuwe chat",
+  "action_new_survey" : "Nieuwe enquête",
   "account_signed_in" : "is ingelogd",
   "account_logged_out_question" : "Heb je al een account",
   "account_logged_out_overview_title" : "Ontdek het nu!",

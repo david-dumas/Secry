@@ -8,7 +8,7 @@ class GroupSection extends StatelessWidget {
   final int totalAmountOfGroups;
   final List<GeneralListCellInfoItem> cellInfoItems;
   final bool isMaximumNumberOfCellsToShowEnabled;
-  final int maximumNumberOfCellsToShow;
+  final int? maximumNumberOfCellsToShow;
   final bool isTitleRowActionButtonVisible;
   final String titleRowActionButtonText;
   final bool isFetchingInitialGroups;
@@ -82,7 +82,7 @@ class GroupSection extends StatelessWidget {
                   : ContentSectionWithRows(
                       cellInfoItems: this.cellInfoItems,
                       isMaximumNumberOfCellsToShowEnabled: isMaximumNumberOfCellsToShowEnabled,
-                      maximumNumberOfCellsToShow: maximumNumberOfCellsToShow,
+                      maximumNumberOfCellsToShow: maximumNumberOfCellsToShow ?? 99999,
                       openPageForPressedCell: openPageForPressedCell),
             ),
             SizedBox(

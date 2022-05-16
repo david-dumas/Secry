@@ -48,6 +48,8 @@
   "action_make_picture" : "Take photo",
   "action_choose_picture" : "Select from gallery",
   "action_delete_picture" : "Delete photo",
+  "action_new_chat" : "New chat",
+  "action_new_survey" : "New survey",
   "account_signed_in" : "signed in",
   "account_logged_out_question" : "Already have an account?",
   "account_logged_out_overview_title" : "Join the community",
