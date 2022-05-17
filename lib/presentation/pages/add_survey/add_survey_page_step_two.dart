@@ -11,7 +11,11 @@ class AddSurveyPageStepTwo extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AddSurveyPageBloc, AddSurveyPageState>(builder: (context, state) {
       return Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: EdgeInsets.only(
+              top: 20.0,
+              right: 20,
+              bottom: state.questions.length == 0 ? 100.0 : MediaQuery.of(context).size.height * 0.5,
+              left: 20.0),
           child: ListView.builder(
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
@@ -21,6 +25,7 @@ class AddSurveyPageStepTwo extends StatelessWidget {
                 return NewSurveyQuestionWrapper(
                   questionIndex: index,
                   questionType: state.questions[index].questionType,
+                  questionText: state.questions[index].text,
                   bottomMargin: 50.0,
                   questionTypeUpdated: (newQuestionType) {
                     context

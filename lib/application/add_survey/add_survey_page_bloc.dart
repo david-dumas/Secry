@@ -44,20 +44,31 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
 
         if (e.newQuestionType == QuestionType.openQuestion) {
           final questionAfterChange = OpenQuestion(text: questionBeforeChange?.text ?? '');
-          handleQuestionTypeChange(e.questionIndex, questionAfterChange);
+          handleQuestionUpdate(e.questionIndex, questionAfterChange);
         } else if (e.newQuestionType == QuestionType.closedQuestion) {
           final questionAfterChange = ClosedQuestion(text: questionBeforeChange?.text ?? '', options: []);
-          handleQuestionTypeChange(e.questionIndex, questionAfterChange);
+          handleQuestionUpdate(e.questionIndex, questionAfterChange);
         }
       },
-      questionTextUpdatedForQuestionIndex: (e) async {},
+      questionTextUpdatedForQuestionIndex: (e) async {
+        final questionBeforeChange = state.questions.length > e.questionIndex ? state.questions[e.questionIndex] : null;
+
+        if (questionBeforeChange?.questionType == QuestionType.openQuestion) {
+          final questionAfterChange = OpenQuestion(text: e.newText);
+          handleQuestionUpdate(e.questionIndex, questionAfterChange);
+        } else if (questionBeforeChange?.questionType == QuestionType.closedQuestion) {
+          final questionAfterChange =
+              ClosedQuestion(text: e.newText, options: (questionBeforeChange as ClosedQuestion).options);
+          handleQuestionUpdate(e.questionIndex, questionAfterChange);
+        }
+      },
       optionAddedForQuestionIndex: (e) async {},
       optionDeletedForQuestionIndex: (e) async {},
       optionUpdatedForQuestionIndex: (e) async {},
     );
   }
 
-  void handleQuestionTypeChange(int questionIndex, Question questionAfterChange) {
+  void handleQuestionUpdate(int questionIndex, Question questionAfterChange) {
     add(AddSurveyPageEvent.questionsUpdated([...state.questions]..removeAt(questionIndex)));
 
     final newQuestions = [...state.questions];

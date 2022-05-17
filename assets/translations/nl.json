@@ -146,5 +146,6 @@
   "new_survey_question_title" : "Vraag",
   "new_survey_question_choose_type" : "Kies type vraag",
   "new_survey_question_open_question" : "Open vraag",
-  "new_survey_question_closed_question" : "Gesloten vraag"
+  "new_survey_question_closed_question" : "Gesloten vraag",
+  "survey_question_hint_text" : "Voer een vraag in..."
 }

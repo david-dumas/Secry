@@ -146,5 +146,6 @@
   "new_survey_question_title" : "Question",
   "new_survey_question_choose_type" : "Choose question type",
   "new_survey_question_open_question" : "Open question",
-  "new_survey_question_closed_question" : "Closed question"
+  "new_survey_question_closed_question" : "Closed question",
+  "survey_question_hint_text" : "Enter a question..."
 }

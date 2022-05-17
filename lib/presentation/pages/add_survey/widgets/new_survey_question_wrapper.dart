@@ -1,15 +1,23 @@
+import 'dart:math';
+
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/domain/surveys/question_type.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/choose_question_type.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/delete_question_button.dart';
+import 'package:secry/presentation/pages/add_survey/widgets/question_text_input.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/question_wrapper_title_description_section.dart';
 
-class NewSurveyQuestionWrapper extends StatelessWidget {
+import '../../../../application/add_survey/add_survey_page_bloc.dart';
+import '../../../../constants.dart';
+
+class NewSurveyQuestionWrapper extends StatefulWidget {
   final int questionIndex;
   final QuestionType questionType;
   final double bottomMargin;
+  final String questionText;
 
   final Function(QuestionType newQuestionType) questionTypeUpdated;
   final Function questionDeleted;
@@ -19,9 +27,25 @@ class NewSurveyQuestionWrapper extends StatelessWidget {
       required this.questionIndex,
       required this.questionType,
       required this.bottomMargin,
+      required this.questionText,
       required this.questionTypeUpdated,
       required this.questionDeleted})
       : super(key: key);
+
+  @override
+  State<NewSurveyQuestionWrapper> createState() => _NewSurveyQuestionWrapperState();
+}
+
+class _NewSurveyQuestionWrapperState extends State<NewSurveyQuestionWrapper> {
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final TextEditingController _questionEditingController = TextEditingController();
+  final maximumQuestionLength = 64; // TODO load from remote config
+
+  @override
+  void initState() {
+    _questionEditingController.text = widget.questionText;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,21 +56,31 @@ class NewSurveyQuestionWrapper extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            QuestionWrapperTitleDescriptionSection(questionIndex: questionIndex),
+            QuestionWrapperTitleDescriptionSection(questionIndex: widget.questionIndex),
             Visibility(
-              visible: questionIndex > 0,
-              child: DeleteQuestionButton(questionIndex: questionIndex, questionDeleted: questionDeleted),
+              visible: widget.questionIndex > 0,
+              child: DeleteQuestionButton(questionIndex: widget.questionIndex, questionDeleted: widget.questionDeleted),
             )
           ],
         ),
         Container(height: 12),
         ChooseQuestionType(
-          currentQuestionType: questionType,
+          currentQuestionType: widget.questionType,
           questionTypeChosen: (QuestionType questionType) {
-            questionTypeUpdated(questionType);
+            widget.questionTypeUpdated(questionType);
           },
         ),
-        Container(height: bottomMargin)
+        Container(height: 12),
+        QuestionTextInput(
+            formKey: _formKey,
+            questionEditingController: _questionEditingController,
+            maximumQuestionLength: maximumQuestionLength,
+            questionTextUpdated: (newValue) {
+              context
+                  .read<AddSurveyPageBloc>()
+                  .add(AddSurveyPageEvent.questionTextUpdatedForQuestionIndex(widget.questionIndex, newValue));
+            }),
+        Container(height: widget.bottomMargin)
       ],
     );
   }
