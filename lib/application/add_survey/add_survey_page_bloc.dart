@@ -7,6 +7,7 @@ import 'package:secry/domain/surveys/model/closed_question.dart';
 import 'package:secry/domain/surveys/model/open_question.dart';
 import 'package:secry/domain/surveys/question_type.dart';
 
+import '../../domain/surveys/model/option_for_closed_question.dart';
 import '../../domain/surveys/model/question.dart';
 
 part 'add_survey_page_event.dart';
@@ -46,7 +47,9 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
           final questionAfterChange = OpenQuestion(text: questionBeforeChange?.text ?? '');
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         } else if (e.newQuestionType == QuestionType.closedQuestion) {
-          final questionAfterChange = ClosedQuestion(text: questionBeforeChange?.text ?? '', options: []);
+          final questionAfterChange = ClosedQuestion(
+              text: questionBeforeChange?.text ?? '',
+              options: [OptionForClosedQuestion(text: ''), OptionForClosedQuestion(text: '')]);
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         }
       },
@@ -62,8 +65,20 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         }
       },
-      optionAddedForQuestionIndex: (e) async {},
-      optionDeletedForQuestionIndex: (e) async {},
+      optionAddedForQuestionIndex: (e) async {
+        final newOption = OptionForClosedQuestion(text: '');
+
+        final questionAfterChange = ClosedQuestion(
+            text: state.questions[e.questionIndex].text,
+            options: [...(state.questions[e.questionIndex] as ClosedQuestion).options, newOption]);
+        handleQuestionUpdate(e.questionIndex, questionAfterChange);
+      },
+      optionDeletedForQuestionIndex: (e) async {
+        final questionAfterChange = ClosedQuestion(
+            text: state.questions[e.questionIndex].text,
+            options: [...(state.questions[e.questionIndex] as ClosedQuestion).options..removeAt(e.optionIndex)]);
+        handleQuestionUpdate(e.questionIndex, questionAfterChange);
+      },
       optionUpdatedForQuestionIndex: (e) async {},
     );
   }

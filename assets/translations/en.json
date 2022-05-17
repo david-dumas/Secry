@@ -52,6 +52,7 @@
   "action_new_survey" : "New survey",
   "action_delete_question" : "Delete question",
   "action_add_question" : "Add question",
+  "action_add_option" : "Add option",
   "account_signed_in" : "signed in",
   "account_logged_out_overview_title" : "Join the community",
   "account_logged_out_overview_description" : "How well do you really know those around you? Secry is about the real world! Create a group with people you know and ask them anything. Talk about issues, insecurities, sex, work, anthing you want to talk about. Become aware, help each other, connect and discover secrets!",
@@ -147,5 +148,6 @@
   "new_survey_question_choose_type" : "Choose question type",
   "new_survey_question_open_question" : "Open question",
   "new_survey_question_closed_question" : "Closed question",
-  "survey_question_hint_text" : "Enter a question..."
+  "survey_question_hint_text" : "Enter a question...",
+  "survey_option_hint_text" : "Option..."
 }

@@ -52,6 +52,7 @@
   "action_new_survey" : "Nieuwe enquête",
   "action_delete_question" : "Vraag verwijderen",
   "action_add_question" : "Vraag toevoegen",
+  "action_add_option" : "Optie toevoegen",
   "account_signed_in" : "is ingelogd",
   "account_logged_out_overview_title" : "Ontdek het nu!",
   "account_logged_out_overview_description" : "Hoe goed ken je de mensen om je heen eigenlijk? Secry gaat over de echte wereld! Maak een groep met mensen die je kent en vraag ze alles. Praat over problemen, onzekerheden, seks, werk, alles waar je over wilt praten. Wordt bewust, help elkaar, verbindt en ontdek geheimen!",
@@ -147,5 +148,6 @@
   "new_survey_question_choose_type" : "Kies type vraag",
   "new_survey_question_open_question" : "Open vraag",
   "new_survey_question_closed_question" : "Gesloten vraag",
-  "survey_question_hint_text" : "Voer een vraag in..."
+  "survey_question_hint_text" : "Voer een vraag in...",
+  "survey_option_hint_text" : "Optie..."
 }

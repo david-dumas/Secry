@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:secry/domain/surveys/model/closed_question.dart';
+import 'package:secry/domain/surveys/question_type.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/new_survey_question_wrapper.dart';
 
 import '../../../application/add_survey/add_survey_page_bloc.dart';
@@ -26,6 +28,9 @@ class AddSurveyPageStepTwo extends StatelessWidget {
                   questionIndex: index,
                   questionType: state.questions[index].questionType,
                   questionText: state.questions[index].text,
+                  optionsIfAvailable: state.questions[index].questionType == QuestionType.closedQuestion
+                      ? (state.questions[index] as ClosedQuestion).options
+                      : [],
                   bottomMargin: 50.0,
                   questionTypeUpdated: (newQuestionType) {
                     context

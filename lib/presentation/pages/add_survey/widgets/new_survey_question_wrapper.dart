@@ -4,8 +4,10 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:secry/domain/surveys/model/option_for_closed_question.dart';
 import 'package:secry/domain/surveys/question_type.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/choose_question_type.dart';
+import 'package:secry/presentation/pages/add_survey/widgets/closed_question_options_section.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/delete_question_button.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/question_text_input.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/question_wrapper_title_description_section.dart';
@@ -18,6 +20,7 @@ class NewSurveyQuestionWrapper extends StatefulWidget {
   final QuestionType questionType;
   final double bottomMargin;
   final String questionText;
+  final List<OptionForClosedQuestion>? optionsIfAvailable;
 
   final Function(QuestionType newQuestionType) questionTypeUpdated;
   final Function questionDeleted;
@@ -28,6 +31,7 @@ class NewSurveyQuestionWrapper extends StatefulWidget {
       required this.questionType,
       required this.bottomMargin,
       required this.questionText,
+      this.optionsIfAvailable = null,
       required this.questionTypeUpdated,
       required this.questionDeleted})
       : super(key: key);
@@ -72,14 +76,23 @@ class _NewSurveyQuestionWrapperState extends State<NewSurveyQuestionWrapper> {
         ),
         Container(height: 12),
         QuestionTextInput(
-            formKey: _formKey,
-            questionEditingController: _questionEditingController,
-            maximumQuestionLength: maximumQuestionLength,
-            questionTextUpdated: (newValue) {
-              context
-                  .read<AddSurveyPageBloc>()
-                  .add(AddSurveyPageEvent.questionTextUpdatedForQuestionIndex(widget.questionIndex, newValue));
-            }),
+          formKey: _formKey,
+          questionEditingController: _questionEditingController,
+          maximumQuestionLength: maximumQuestionLength,
+          questionTextUpdated: (newValue) {
+            context
+                .read<AddSurveyPageBloc>()
+                .add(AddSurveyPageEvent.questionTextUpdatedForQuestionIndex(widget.questionIndex, newValue));
+          },
+        ),
+        Container(height: 12),
+        Visibility(
+          visible: widget.questionType == QuestionType.closedQuestion,
+          child: ClosedQuestionOptionsSection(
+            questionIndex: widget.questionIndex,
+            options: widget.optionsIfAvailable ?? [],
+          ),
+        ),
         Container(height: widget.bottomMargin)
       ],
     );

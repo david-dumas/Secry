@@ -13,8 +13,7 @@ class AddSurveyPageEvent with _$AddSurveyPageEvent {
       int questionIndex, QuestionType newQuestionType) = _QuestionTypeChangedForQuestionIndex;
   const factory AddSurveyPageEvent.questionTextUpdatedForQuestionIndex(int questionIndex, String newText) =
       _QuestionTextUpdatedForQuestionIndex;
-  const factory AddSurveyPageEvent.optionAddedForQuestionIndex(int questionIndex, String newText) =
-      _OptionAddedForQuestionIndex;
+  const factory AddSurveyPageEvent.optionAddedForQuestionIndex(int questionIndex) = _OptionAddedForQuestionIndex;
   const factory AddSurveyPageEvent.optionDeletedForQuestionIndex(int questionIndex, int optionIndex) =
       _OptionDeletedForQuestionIndex;
   const factory AddSurveyPageEvent.optionUpdatedForQuestionIndex(
