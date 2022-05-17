@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/presentation/pages/add_group/widgets/bottom_navigation_buttons_top_action_section.dart';
 import 'package:secry/util/dialogs/dialog_helper.dart';
 import 'package:secry/domain/general/create_new_type.dart';
 
@@ -14,9 +15,13 @@ class BottomNavigationButtonsSection extends StatelessWidget {
   final List<GroupUser>? groupMembers;
   final CreateNewType featureType;
 
+  final bool isShowingTopActionButton;
+  final String topActionButtonText;
+
   final Function(int newIndex) currentStepIndexUpdated;
   final Function() createActionExecuted;
   final Function() popIfNeeded;
+  final Function()? topActionButtonPressed;
 
   final totalNumberOfSteps = 2;
   final horizontalButtonsSpacing = 12.0;
@@ -28,9 +33,12 @@ class BottomNavigationButtonsSection extends StatelessWidget {
       required this.groupTitle,
       this.groupMembers = null,
       required this.featureType,
+      this.isShowingTopActionButton = false,
+      this.topActionButtonText = '',
       required this.currentStepIndexUpdated,
       required this.createActionExecuted,
-      required this.popIfNeeded})
+      required this.popIfNeeded,
+      this.topActionButtonPressed = null})
       : super(key: key);
 
   @override
@@ -38,65 +46,82 @@ class BottomNavigationButtonsSection extends StatelessWidget {
     final buttonWidth = (MediaQuery.of(context).size.width - (2 * contentToEdgePadding) - horizontalButtonsSpacing) / 2;
     final buttonHeight = 50.0;
     final padding = 20.0;
+    final borderWidth = 1.0;
 
     return Container(
-      height: buttonHeight + (2 * padding),
+      height: buttonHeight +
+          (2 * padding) +
+          (isShowingTopActionButton ? buttonHeight : 0) +
+          (isShowingTopActionButton ? padding : 0) +
+          borderWidth,
       width: MediaQuery.of(context).size.width,
-      decoration: BoxDecoration(border: Border(top: BorderSide(width: 1, color: kLineSeparatorColor))),
+      decoration: BoxDecoration(border: Border(top: BorderSide(width: borderWidth, color: kLineSeparatorColor))),
       child: Center(
         child: Padding(
           padding: EdgeInsets.all(padding),
-          child: Row(
+          child: Column(
             children: [
-              Container(
-                width: buttonWidth,
-                height: buttonHeight,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
+              Visibility(
+                visible: isShowingTopActionButton,
+                child: BottomNavigationButtonsTopActionSection(
+                    topActionButtonText: topActionButtonText,
+                    buttonHeight: buttonHeight,
+                    bottomMargin: padding,
+                    actionButtonPressed: topActionButtonPressed),
+              ),
+              Row(
+                children: [
+                  Container(
+                    width: buttonWidth,
+                    height: buttonHeight,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
+                          ),
+                        ),
+                        backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
+                      ),
+                      onPressed: () {
+                        handlePreviousOrCancelActionForIndex(context, max(0, stepIndex));
+                      },
+                      child: Text(
+                        stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: kMediumGrayExtraDark),
                       ),
                     ),
-                    backgroundColor: MaterialStateProperty.all(cancelButtonGrayWhite),
                   ),
-                  onPressed: () {
-                    handlePreviousOrCancelActionForIndex(context, max(0, stepIndex));
-                  },
-                  child: Text(
-                    stepIndex == 0 ? tr('action_cancel') : tr('action_previous'),
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: kMediumGrayExtraDark),
+                  SizedBox(
+                    width: horizontalButtonsSpacing,
                   ),
-                ),
-              ),
-              SizedBox(
-                width: horizontalButtonsSpacing,
-              ),
-              Container(
-                width: buttonWidth,
-                height: buttonHeight,
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
+                  Container(
+                    width: buttonWidth,
+                    height: buttonHeight,
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusXs)),
+                          ),
+                        ),
+                        backgroundColor: MaterialStateProperty.all(kPrimaryColor),
+                      ),
+                      onPressed: () {
+                        handleNextOrCreateActionForIndex(context,
+                            currentIndex: stepIndex,
+                            totalNumberOfSteps: totalNumberOfSteps,
+                            groupTitle: groupTitle,
+                            groupMembers: groupMembers,
+                            featureType: featureType);
+                      },
+                      child: Text(
+                        stepIndex == 0 ? tr('action_next') : tr('action_create'),
+                        style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: globalWhite),
                       ),
                     ),
-                    backgroundColor: MaterialStateProperty.all(kPrimaryColor),
                   ),
-                  onPressed: () {
-                    handleNextOrCreateActionForIndex(context,
-                        currentIndex: stepIndex,
-                        totalNumberOfSteps: totalNumberOfSteps,
-                        groupTitle: groupTitle,
-                        groupMembers: groupMembers,
-                        featureType: featureType);
-                  },
-                  child: Text(
-                    stepIndex == 0 ? tr('action_next') : tr('action_create'),
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: globalWhite),
-                  ),
-                ),
+                ],
               ),
             ],
           ),

@@ -73,6 +73,8 @@ class AddSurveyPageContent extends StatelessWidget {
                   stepIndex: state.currentStepIndex,
                   groupTitle: state.surveyTitle,
                   featureType: CreateNewType.newSurvey,
+                  isShowingTopActionButton: state.currentStepIndex == 1,
+                  topActionButtonText: tr('action_add_question'),
                   currentStepIndexUpdated: (newIndex) {
                     context.read<AddSurveyPageBloc>().add(AddSurveyPageEvent.currentStepIndexUpdated(newIndex));
                   },
@@ -81,6 +83,9 @@ class AddSurveyPageContent extends StatelessWidget {
                   },
                   popIfNeeded: () {
                     Navigator.of(context).pop(false);
+                  },
+                  topActionButtonPressed: () {
+                    context.read<AddSurveyPageBloc>().add(AddSurveyPageEvent.questionAdded());
                   },
                 ),
                 Visibility(visible: Platform.isIOS, child: SizedBox(height: 30)),

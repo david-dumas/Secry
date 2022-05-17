@@ -6,11 +6,13 @@ class AddSurveyPageState with _$AddSurveyPageState {
       {required String surveyTitle,
       required int currentStepIndex,
       required bool isSurveySuccessfullyCreated,
-      required bool isCreateNewSurveyRequestExecuted}) = _AddSurveyPageState;
+      required bool isCreateNewSurveyRequestExecuted,
+      required List<Question> questions}) = _AddSurveyPageState;
 
   factory AddSurveyPageState.initial() => AddSurveyPageState(
       surveyTitle: "",
       currentStepIndex: 0,
       isSurveySuccessfullyCreated: false,
-      isCreateNewSurveyRequestExecuted: false);
+      isCreateNewSurveyRequestExecuted: false,
+      questions: [OpenQuestion(text: '')]);
 }

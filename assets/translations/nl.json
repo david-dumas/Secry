@@ -50,6 +50,8 @@
   "action_delete_picture" : "Foto verwijderen",
   "action_new_chat" : "Nieuwe chat",
   "action_new_survey" : "Nieuwe enquête",
+  "action_delete_question" : "Vraag verwijderen",
+  "action_add_question" : "Vraag toevoegen",
   "account_signed_in" : "is ingelogd",
   "account_logged_out_overview_title" : "Ontdek het nu!",
   "account_logged_out_overview_description" : "Hoe goed ken je de mensen om je heen eigenlijk? Secry gaat over de echte wereld! Maak een groep met mensen die je kent en vraag ze alles. Praat over problemen, onzekerheden, seks, werk, alles waar je over wilt praten. Wordt bewust, help elkaar, verbindt en ontdek geheimen!",
@@ -140,5 +142,9 @@
   "add_survey_title" : "Titel",
   "add_group_group_picture" : "Groepsfoto",
   "add_group_added_people" : "Toegevoegde mensen",
-  "new_survey_step_one_general_description" : "Anoniem vragen wat je wilt\n   en eenvoudig het resultaat bekijken"
+  "new_survey_step_one_general_description" : "Anoniem vragen wat je wilt\n   en eenvoudig het resultaat bekijken",
+  "new_survey_question_title" : "Vraag",
+  "new_survey_question_choose_type" : "Kies type vraag",
+  "new_survey_question_open_question" : "Open vraag",
+  "new_survey_question_closed_question" : "Gesloten vraag"
 }
