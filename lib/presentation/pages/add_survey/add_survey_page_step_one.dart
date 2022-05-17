@@ -70,7 +70,24 @@ class _AddSurveyPageStepOneState extends State<AddSurveyPageStepOne> {
               mainContext.read<AddSurveyPageBloc>().add(AddSurveyPageEvent.surveyTitleUpdated(newValue));
             },
           ),
-          SizedBox(height: 30),
+          SizedBox(height: MediaQuery.of(context).size.height * 0.15),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.message,
+                  color: kPrimaryColor,
+                  size: 66,
+                ),
+                Container(
+                  height: 8,
+                ),
+                Text(tr('new_survey_step_one_general_description'), textAlign: TextAlign.center)
+              ],
+            ),
+          )
         ],
       ),
     );

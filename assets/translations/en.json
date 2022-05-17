@@ -139,5 +139,6 @@
   "add_group_title" : "Title",
   "add_survey_title" : "Title",
   "add_group_group_picture" : "Group picture",
-  "add_group_added_people" : "Added people"
+  "add_group_added_people" : "Added people",
+  "new_survey_step_one_general_description" : "Anonymously ask anything you want\n  and easily view the outcome"
 }

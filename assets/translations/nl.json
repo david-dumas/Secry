@@ -139,5 +139,6 @@
   "add_group_title" : "Titel",
   "add_survey_title" : "Titel",
   "add_group_group_picture" : "Groepsfoto",
-  "add_group_added_people" : "Toegevoegde mensen"
+  "add_group_added_people" : "Toegevoegde mensen",
+  "new_survey_step_one_general_description" : "Anoniem vragen wat je wilt\n   en eenvoudig het resultaat bekijken"
 }
