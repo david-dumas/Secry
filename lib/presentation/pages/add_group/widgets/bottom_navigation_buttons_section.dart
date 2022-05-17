@@ -113,8 +113,11 @@ class BottomNavigationButtonsSection extends StatelessWidget {
     if (currentIndex == 0) {
       return groupTitle.length > 0;
     } else if (currentIndex > 0) {
-      return groupTitle.length > 0 &&
-          (featureType == CreateNewType.newGroup && groupMembers != null && groupMembers.length > 0);
+      if (featureType == CreateNewType.newGroup) {
+        return groupTitle.length > 0 && (groupMembers?.length ?? 0) > 0;
+      } else {
+        return groupTitle.length > 0;
+      }
     } else {
       return false;
     }
