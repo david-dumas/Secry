@@ -20,7 +20,7 @@ class AddSurveyPageStepTwo extends StatelessWidget {
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
-              itemCount: state.questions.length == 0 ? 1 : state.questions.length,
+              itemCount: state.questions.length,
               itemBuilder: (context, index) {
                 return NewSurveyQuestionWrapper(
                   questionIndex: index,
