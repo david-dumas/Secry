@@ -41,7 +41,7 @@ class ChooseQuestionType extends StatelessWidget {
       required QuestionType buttonQuestionType,
       required Function(QuestionType questionType) buttonPressed}) {
     final selectedOptionTextStyle = TextStyle(fontSize: 16, color: kPrimaryColor);
-    final unselectedOptionTextStyle = TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: kMediumGray);
+    final unselectedOptionTextStyle = TextStyle(fontWeight: FontWeight.normal, fontSize: 16, color: kMediumGrayV2);
 
     return OutlinedButton(
       child: Text(
