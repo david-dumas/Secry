@@ -85,10 +85,14 @@ class _$AddSurveyPageEventTearOff {
   }
 
   _OptionUpdatedForQuestionIndex optionUpdatedForQuestionIndex(
-      int questionIndex, int optionIndex, String newOptionText) {
+      int questionIndex,
+      int optionIndex,
+      String oldOptionId,
+      String newOptionText) {
     return _OptionUpdatedForQuestionIndex(
       questionIndex,
       optionIndex,
+      oldOptionId,
       newOptionText,
     );
   }
@@ -115,8 +119,8 @@ mixin _$AddSurveyPageEvent {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) =>
       throw _privateConstructorUsedError;
@@ -136,7 +140,8 @@ mixin _$AddSurveyPageEvent {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) =>
       throw _privateConstructorUsedError;
@@ -156,7 +161,8 @@ mixin _$AddSurveyPageEvent {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) =>
@@ -300,8 +306,8 @@ class _$_Initialized implements _Initialized {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return initialized();
@@ -324,7 +330,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return initialized?.call();
@@ -347,7 +354,8 @@ class _$_Initialized implements _Initialized {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -518,8 +526,8 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return surveyTitleUpdated(newTitle);
@@ -542,7 +550,8 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return surveyTitleUpdated?.call(newTitle);
@@ -565,7 +574,8 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -743,8 +753,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return currentStepIndexUpdated(newIndex);
@@ -767,7 +777,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return currentStepIndexUpdated?.call(newIndex);
@@ -790,7 +801,8 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -943,8 +955,8 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return newSurveyCreated();
@@ -967,7 +979,8 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return newSurveyCreated?.call();
@@ -990,7 +1003,8 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -1162,8 +1176,8 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return questionsUpdated(newQuestions);
@@ -1186,7 +1200,8 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionsUpdated?.call(newQuestions);
@@ -1209,7 +1224,8 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -1362,8 +1378,8 @@ class _$_QuestionAdded implements _QuestionAdded {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return questionAdded();
@@ -1386,7 +1402,8 @@ class _$_QuestionAdded implements _QuestionAdded {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionAdded?.call();
@@ -1409,7 +1426,8 @@ class _$_QuestionAdded implements _QuestionAdded {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -1581,8 +1599,8 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return questionDeleted(questionIndex);
@@ -1605,7 +1623,8 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionDeleted?.call(questionIndex);
@@ -1628,7 +1647,8 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -1823,8 +1843,8 @@ class _$_QuestionTypeChangedForQuestionIndex
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return questionTypeChangedForQuestionIndex(questionIndex, newQuestionType);
@@ -1847,7 +1867,8 @@ class _$_QuestionTypeChangedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionTypeChangedForQuestionIndex?.call(
@@ -1871,7 +1892,8 @@ class _$_QuestionTypeChangedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -2071,8 +2093,8 @@ class _$_QuestionTextUpdatedForQuestionIndex
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return questionTextUpdatedForQuestionIndex(questionIndex, newText);
@@ -2095,7 +2117,8 @@ class _$_QuestionTextUpdatedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionTextUpdatedForQuestionIndex?.call(questionIndex, newText);
@@ -2118,7 +2141,8 @@ class _$_QuestionTextUpdatedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -2304,8 +2328,8 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return optionAddedForQuestionIndex(questionIndex);
@@ -2328,7 +2352,8 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return optionAddedForQuestionIndex?.call(questionIndex);
@@ -2351,7 +2376,8 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -2545,8 +2571,8 @@ class _$_OptionDeletedForQuestionIndex
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return optionDeletedForQuestionIndex(questionIndex, optionIndex);
@@ -2569,7 +2595,8 @@ class _$_OptionDeletedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return optionDeletedForQuestionIndex?.call(questionIndex, optionIndex);
@@ -2592,7 +2619,8 @@ class _$_OptionDeletedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
@@ -2697,7 +2725,11 @@ abstract class _$OptionUpdatedForQuestionIndexCopyWith<$Res> {
           _OptionUpdatedForQuestionIndex value,
           $Res Function(_OptionUpdatedForQuestionIndex) then) =
       __$OptionUpdatedForQuestionIndexCopyWithImpl<$Res>;
-  $Res call({int questionIndex, int optionIndex, String newOptionText});
+  $Res call(
+      {int questionIndex,
+      int optionIndex,
+      String oldOptionId,
+      String newOptionText});
 }
 
 /// @nodoc
@@ -2717,6 +2749,7 @@ class __$OptionUpdatedForQuestionIndexCopyWithImpl<$Res>
   $Res call({
     Object? questionIndex = freezed,
     Object? optionIndex = freezed,
+    Object? oldOptionId = freezed,
     Object? newOptionText = freezed,
   }) {
     return _then(_OptionUpdatedForQuestionIndex(
@@ -2728,6 +2761,10 @@ class __$OptionUpdatedForQuestionIndexCopyWithImpl<$Res>
           ? _value.optionIndex
           : optionIndex // ignore: cast_nullable_to_non_nullable
               as int,
+      oldOptionId == freezed
+          ? _value.oldOptionId
+          : oldOptionId // ignore: cast_nullable_to_non_nullable
+              as String,
       newOptionText == freezed
           ? _value.newOptionText
           : newOptionText // ignore: cast_nullable_to_non_nullable
@@ -2740,19 +2777,21 @@ class __$OptionUpdatedForQuestionIndexCopyWithImpl<$Res>
 
 class _$_OptionUpdatedForQuestionIndex
     implements _OptionUpdatedForQuestionIndex {
-  const _$_OptionUpdatedForQuestionIndex(
-      this.questionIndex, this.optionIndex, this.newOptionText);
+  const _$_OptionUpdatedForQuestionIndex(this.questionIndex, this.optionIndex,
+      this.oldOptionId, this.newOptionText);
 
   @override
   final int questionIndex;
   @override
   final int optionIndex;
   @override
+  final String oldOptionId;
+  @override
   final String newOptionText;
 
   @override
   String toString() {
-    return 'AddSurveyPageEvent.optionUpdatedForQuestionIndex(questionIndex: $questionIndex, optionIndex: $optionIndex, newOptionText: $newOptionText)';
+    return 'AddSurveyPageEvent.optionUpdatedForQuestionIndex(questionIndex: $questionIndex, optionIndex: $optionIndex, oldOptionId: $oldOptionId, newOptionText: $newOptionText)';
   }
 
   @override
@@ -2765,6 +2804,8 @@ class _$_OptionUpdatedForQuestionIndex
             const DeepCollectionEquality()
                 .equals(other.optionIndex, optionIndex) &&
             const DeepCollectionEquality()
+                .equals(other.oldOptionId, oldOptionId) &&
+            const DeepCollectionEquality()
                 .equals(other.newOptionText, newOptionText));
   }
 
@@ -2773,6 +2814,7 @@ class _$_OptionUpdatedForQuestionIndex
       runtimeType,
       const DeepCollectionEquality().hash(questionIndex),
       const DeepCollectionEquality().hash(optionIndex),
+      const DeepCollectionEquality().hash(oldOptionId),
       const DeepCollectionEquality().hash(newOptionText));
 
   @JsonKey(ignore: true)
@@ -2798,12 +2840,12 @@ class _$_OptionUpdatedForQuestionIndex
     required TResult Function(int questionIndex) optionAddedForQuestionIndex,
     required TResult Function(int questionIndex, int optionIndex)
         optionDeletedForQuestionIndex,
-    required TResult Function(
-            int questionIndex, int optionIndex, String newOptionText)
+    required TResult Function(int questionIndex, int optionIndex,
+            String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
     return optionUpdatedForQuestionIndex(
-        questionIndex, optionIndex, newOptionText);
+        questionIndex, optionIndex, oldOptionId, newOptionText);
   }
 
   @override
@@ -2823,11 +2865,12 @@ class _$_OptionUpdatedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
     return optionUpdatedForQuestionIndex?.call(
-        questionIndex, optionIndex, newOptionText);
+        questionIndex, optionIndex, oldOptionId, newOptionText);
   }
 
   @override
@@ -2847,13 +2890,14 @@ class _$_OptionUpdatedForQuestionIndex
     TResult Function(int questionIndex)? optionAddedForQuestionIndex,
     TResult Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String newOptionText)?
+    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+            String newOptionText)?
         optionUpdatedForQuestionIndex,
     required TResult orElse(),
   }) {
     if (optionUpdatedForQuestionIndex != null) {
       return optionUpdatedForQuestionIndex(
-          questionIndex, optionIndex, newOptionText);
+          questionIndex, optionIndex, oldOptionId, newOptionText);
     }
     return orElse();
   }
@@ -2938,11 +2982,14 @@ class _$_OptionUpdatedForQuestionIndex
 
 abstract class _OptionUpdatedForQuestionIndex implements AddSurveyPageEvent {
   const factory _OptionUpdatedForQuestionIndex(
-          int questionIndex, int optionIndex, String newOptionText) =
-      _$_OptionUpdatedForQuestionIndex;
+      int questionIndex,
+      int optionIndex,
+      String oldOptionId,
+      String newOptionText) = _$_OptionUpdatedForQuestionIndex;
 
   int get questionIndex;
   int get optionIndex;
+  String get oldOptionId;
   String get newOptionText;
   @JsonKey(ignore: true)
   _$OptionUpdatedForQuestionIndexCopyWith<_OptionUpdatedForQuestionIndex>

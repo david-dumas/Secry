@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/domain/surveys/model/option_for_closed_question.dart';
+import 'package:uuid/uuid.dart';
 
 import '../../../../application/add_survey/add_survey_page_bloc.dart';
 import '../../../../constants.dart';
@@ -22,18 +23,7 @@ class ClosedQuestionOptionsSection extends StatefulWidget {
 
 class _ClosedQuestionOptionsSectionState extends State<ClosedQuestionOptionsSection> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final List<TextEditingController> optionTextEditingControllers = [];
   final maximumOptionLength = 64; // TODO load from remote config
-
-  @override
-  void initState() {
-    // textEditingControllers for each closed question option
-    widget.options.asMap().forEach((index, option) {
-      optionTextEditingControllers.insert(index, TextEditingController());
-    });
-
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -55,9 +45,11 @@ class _ClosedQuestionOptionsSectionState extends State<ClosedQuestionOptionsSect
                         children: [
                           Expanded(
                             child: TextFormField(
-                              controller: optionTextEditingControllers.length >= optionIndex
-                                  ? optionTextEditingControllers[optionIndex]
-                                  : null,
+                              key: Key(
+                                  "${widget.options.asMap().containsKey(optionIndex) ? widget.options[optionIndex].id : UniqueKey()}"),
+                              initialValue: widget.options.asMap().containsKey(optionIndex)
+                                  ? widget.options[optionIndex].text
+                                  : '',
                               autofocus: false,
                               autocorrect: false,
                               keyboardType: TextInputType.multiline,
@@ -67,7 +59,7 @@ class _ClosedQuestionOptionsSectionState extends State<ClosedQuestionOptionsSect
                                 fillColor: globalWhite,
                                 filled: true,
                                 suffixText:
-                                    "${max(0, maximumOptionLength - optionTextEditingControllers.length >= optionIndex ? optionTextEditingControllers[optionIndex].text.length : 0)}",
+                                    "${max(0, maximumOptionLength - (widget.options.asMap().containsKey(optionIndex) ? widget.options[optionIndex].text.length : 0))}",
                                 hintText: tr('survey_option_hint_text'),
                                 contentPadding: EdgeInsets.all(20.0),
                                 border: OutlineInputBorder(
@@ -94,7 +86,12 @@ class _ClosedQuestionOptionsSectionState extends State<ClosedQuestionOptionsSect
                               },
                               onChanged: (newValue) {
                                 context.read<AddSurveyPageBloc>().add(AddSurveyPageEvent.optionUpdatedForQuestionIndex(
-                                    widget.questionIndex, optionIndex, newValue));
+                                    widget.questionIndex,
+                                    optionIndex,
+                                    widget.options.asMap().containsKey(optionIndex)
+                                        ? widget.options[optionIndex].id
+                                        : Uuid().v4(),
+                                    newValue));
                               },
                             ),
                           ),
@@ -104,11 +101,6 @@ class _ClosedQuestionOptionsSectionState extends State<ClosedQuestionOptionsSect
                             onPressed: () {
                               context.read<AddSurveyPageBloc>().add(
                                   AddSurveyPageEvent.optionDeletedForQuestionIndex(widget.questionIndex, optionIndex));
-
-                              // textEditingControllers for each closed question option
-                              widget.options.asMap().forEach((index, option) {
-                                optionTextEditingControllers.insert(index, TextEditingController());
-                              });
                             },
                           )
                         ],
@@ -138,11 +130,6 @@ class _ClosedQuestionOptionsSectionState extends State<ClosedQuestionOptionsSect
                   context
                       .read<AddSurveyPageBloc>()
                       .add(AddSurveyPageEvent.optionAddedForQuestionIndex(widget.questionIndex));
-
-                  // textEditingControllers for each closed question option
-                  widget.options.asMap().forEach((index, option) {
-                    optionTextEditingControllers.insert(index, TextEditingController());
-                  });
                 },
               ),
             ),

@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:uuid/uuid.dart';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -47,9 +48,10 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
           final questionAfterChange = OpenQuestion(text: questionBeforeChange?.text ?? '');
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         } else if (e.newQuestionType == QuestionType.closedQuestion) {
-          final questionAfterChange = ClosedQuestion(
-              text: questionBeforeChange?.text ?? '',
-              options: [OptionForClosedQuestion(text: ''), OptionForClosedQuestion(text: '')]);
+          final questionAfterChange = ClosedQuestion(text: questionBeforeChange?.text ?? '', options: [
+            OptionForClosedQuestion(id: Uuid().v4(), text: ''),
+            OptionForClosedQuestion(id: Uuid().v4(), text: '')
+          ]);
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         }
       },
@@ -66,26 +68,35 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
         }
       },
       optionAddedForQuestionIndex: (e) async {
-        final newOption = OptionForClosedQuestion(text: '');
+        final newOption = OptionForClosedQuestion(id: Uuid().v4(), text: '');
+        final changedOptions = [...(state.questions[e.questionIndex] as ClosedQuestion).options, newOption];
 
-        final questionAfterChange = ClosedQuestion(
-            text: state.questions[e.questionIndex].text,
-            options: [...(state.questions[e.questionIndex] as ClosedQuestion).options, newOption]);
+        final questionAfterChange =
+            ClosedQuestion(text: state.questions[e.questionIndex].text, options: changedOptions);
         handleQuestionUpdate(e.questionIndex, questionAfterChange);
       },
       optionDeletedForQuestionIndex: (e) async {
-        final questionAfterChange = ClosedQuestion(
-            text: state.questions[e.questionIndex].text,
-            options: [...(state.questions[e.questionIndex] as ClosedQuestion).options..removeAt(e.optionIndex)]);
+        final changedOptions = [...(state.questions[e.questionIndex] as ClosedQuestion).options];
+        changedOptions.removeAt(e.optionIndex);
+
+        final questionAfterChange =
+            ClosedQuestion(text: state.questions[e.questionIndex].text, options: changedOptions);
         handleQuestionUpdate(e.questionIndex, questionAfterChange);
       },
-      optionUpdatedForQuestionIndex: (e) async {},
+      optionUpdatedForQuestionIndex: (e) async {
+        final updatedOption = OptionForClosedQuestion(id: e.oldOptionId, text: e.newOptionText);
+
+        final changedOptions = [...(state.questions[e.questionIndex] as ClosedQuestion).options];
+        changedOptions[e.optionIndex] = updatedOption;
+
+        final questionAfterChange =
+            ClosedQuestion(text: state.questions[e.questionIndex].text, options: changedOptions);
+        handleQuestionUpdate(e.questionIndex, questionAfterChange);
+      },
     );
   }
 
   void handleQuestionUpdate(int questionIndex, Question questionAfterChange) {
-    add(AddSurveyPageEvent.questionsUpdated([...state.questions]..removeAt(questionIndex)));
-
     final newQuestions = [...state.questions];
     newQuestions[questionIndex] = questionAfterChange;
     add(AddSurveyPageEvent.questionsUpdated(newQuestions));

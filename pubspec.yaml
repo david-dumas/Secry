@@ -24,6 +24,7 @@ dependencies:
   persistent_bottom_nav_bar_v2: ^4.1.8
 
   # Native features
+  uuid: ^3.0.6
   image_picker: ^0.8.4+11
 
   # Localization

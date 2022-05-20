@@ -11,6 +11,7 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i15;
+import 'package:flutter/cupertino.dart' as _i17;
 import 'package:flutter/material.dart' as _i16;
 
 import '../pages/account/account_go_to_login_or_signup_page.dart' as _i6;
@@ -161,7 +162,7 @@ class HomePageRoute extends _i15.PageRouteInfo<void> {
 /// [_i4.GlobalSearchPage]
 class GlobalSearchPageRoute
     extends _i15.PageRouteInfo<GlobalSearchPageRouteArgs> {
-  GlobalSearchPageRoute({_i16.Key? key})
+  GlobalSearchPageRoute({_i17.Key? key})
       : super(GlobalSearchPageRoute.name,
             path: '/global-search-page',
             args: GlobalSearchPageRouteArgs(key: key));
@@ -172,7 +173,7 @@ class GlobalSearchPageRoute
 class GlobalSearchPageRouteArgs {
   const GlobalSearchPageRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
   @override
   String toString() {
@@ -220,7 +221,7 @@ class LoginPageRoute extends _i15.PageRouteInfo<void> {
 /// generated route for
 /// [_i9.SignupPage]
 class SignupPageRoute extends _i15.PageRouteInfo<SignupPageRouteArgs> {
-  SignupPageRoute({_i16.Key? key})
+  SignupPageRoute({_i17.Key? key})
       : super(SignupPageRoute.name,
             path: '/signup-page', args: SignupPageRouteArgs(key: key));
 
@@ -230,7 +231,7 @@ class SignupPageRoute extends _i15.PageRouteInfo<SignupPageRouteArgs> {
 class SignupPageRouteArgs {
   const SignupPageRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
   @override
   String toString() {
@@ -242,7 +243,7 @@ class SignupPageRouteArgs {
 /// [_i10.ResetPasswordPage]
 class ResetPasswordPageRoute
     extends _i15.PageRouteInfo<ResetPasswordPageRouteArgs> {
-  ResetPasswordPageRoute({_i16.Key? key})
+  ResetPasswordPageRoute({_i17.Key? key})
       : super(ResetPasswordPageRoute.name,
             path: '/reset-password-page',
             args: ResetPasswordPageRouteArgs(key: key));
@@ -253,7 +254,7 @@ class ResetPasswordPageRoute
 class ResetPasswordPageRouteArgs {
   const ResetPasswordPageRouteArgs({this.key});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
   @override
   String toString() {
@@ -266,7 +267,7 @@ class ResetPasswordPageRouteArgs {
 class GroupOverviewPageRoute
     extends _i15.PageRouteInfo<GroupOverviewPageRouteArgs> {
   GroupOverviewPageRoute(
-      {_i16.Key? key, required String title, required String groupId})
+      {_i17.Key? key, required String title, required String groupId})
       : super(GroupOverviewPageRoute.name,
             path: '/group-overview-page',
             args: GroupOverviewPageRouteArgs(
@@ -279,7 +280,7 @@ class GroupOverviewPageRouteArgs {
   const GroupOverviewPageRouteArgs(
       {this.key, required this.title, required this.groupId});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
   final String title;
 
@@ -294,7 +295,7 @@ class GroupOverviewPageRouteArgs {
 /// generated route for
 /// [_i12.ChatPage]
 class ChatPageRoute extends _i15.PageRouteInfo<ChatPageRouteArgs> {
-  ChatPageRoute({_i16.Key? key, required String title, required String chatId})
+  ChatPageRoute({_i17.Key? key, required String title, required String chatId})
       : super(ChatPageRoute.name,
             path: '/chat-page',
             args: ChatPageRouteArgs(key: key, title: title, chatId: chatId));
@@ -306,7 +307,7 @@ class ChatPageRouteArgs {
   const ChatPageRouteArgs(
       {this.key, required this.title, required this.chatId});
 
-  final _i16.Key? key;
+  final _i17.Key? key;
 
   final String title;
 

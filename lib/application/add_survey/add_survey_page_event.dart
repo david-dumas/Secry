@@ -17,5 +17,5 @@ class AddSurveyPageEvent with _$AddSurveyPageEvent {
   const factory AddSurveyPageEvent.optionDeletedForQuestionIndex(int questionIndex, int optionIndex) =
       _OptionDeletedForQuestionIndex;
   const factory AddSurveyPageEvent.optionUpdatedForQuestionIndex(
-      int questionIndex, int optionIndex, String newOptionText) = _OptionUpdatedForQuestionIndex;
+      int questionIndex, int optionIndex, String oldOptionId, String newOptionText) = _OptionUpdatedForQuestionIndex;
 }
