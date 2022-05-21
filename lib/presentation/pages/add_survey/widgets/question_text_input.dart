@@ -3,24 +3,24 @@ import 'dart:math';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:secry/domain/surveys/model/question.dart';
 
 import '../../../../constants.dart';
 
 class QuestionTextInput extends StatelessWidget {
+  final Question question;
   final GlobalKey<FormState> _formKey;
-  final TextEditingController _questionEditingController;
 
   final int maximumQuestionLength;
   final Function(String newValue) questionTextUpdated;
 
   const QuestionTextInput(
       {Key? key,
+      required this.question,
       required GlobalKey<FormState> formKey,
-      required TextEditingController questionEditingController,
       required this.maximumQuestionLength,
       required this.questionTextUpdated})
       : _formKey = formKey,
-        _questionEditingController = questionEditingController,
         super(key: key);
 
   @override
@@ -28,7 +28,8 @@ class QuestionTextInput extends StatelessWidget {
     return Form(
       key: _formKey,
       child: TextFormField(
-        controller: _questionEditingController,
+        key: Key(question.id),
+        initialValue: question.text,
         autofocus: false,
         autocorrect: false,
         keyboardType: TextInputType.multiline,
@@ -37,7 +38,7 @@ class QuestionTextInput extends StatelessWidget {
         decoration: InputDecoration(
           fillColor: globalWhite,
           filled: true,
-          suffixText: "${max(0, maximumQuestionLength - _questionEditingController.text.length)}",
+          suffixText: "${max(0, maximumQuestionLength - question.text.length)}",
           hintText: tr('survey_question_hint_text'),
           contentPadding: EdgeInsets.all(20.0),
           border: OutlineInputBorder(

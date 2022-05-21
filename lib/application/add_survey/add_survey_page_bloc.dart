@@ -35,23 +35,30 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
         emit(state.copyWith(questions: e.newQuestions));
       },
       questionAdded: (e) async {
-        final newQuestion = OpenQuestion(text: '');
+        final newQuestion = OpenQuestion(id: Uuid().v4(), text: '');
         add(AddSurveyPageEvent.questionsUpdated([...state.questions, newQuestion]));
       },
       questionDeleted: (e) async {
-        add(AddSurveyPageEvent.questionsUpdated([...state.questions]..removeAt(e.questionIndex)));
+        final updatedQuestions = [...state.questions];
+        updatedQuestions.removeWhere((question) => question.id == e.questionId);
+
+        add(AddSurveyPageEvent.questionsUpdated(updatedQuestions));
       },
       questionTypeChangedForQuestionIndex: (e) async {
         final questionBeforeChange = state.questions.length > e.questionIndex ? state.questions[e.questionIndex] : null;
 
         if (e.newQuestionType == QuestionType.openQuestion) {
-          final questionAfterChange = OpenQuestion(text: questionBeforeChange?.text ?? '');
+          final questionAfterChange =
+              OpenQuestion(id: questionBeforeChange?.id ?? Uuid().v4(), text: questionBeforeChange?.text ?? '');
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         } else if (e.newQuestionType == QuestionType.closedQuestion) {
-          final questionAfterChange = ClosedQuestion(text: questionBeforeChange?.text ?? '', options: [
-            OptionForClosedQuestion(id: Uuid().v4(), text: ''),
-            OptionForClosedQuestion(id: Uuid().v4(), text: '')
-          ]);
+          final questionAfterChange = ClosedQuestion(
+              id: questionBeforeChange?.id ?? Uuid().v4(),
+              text: questionBeforeChange?.text ?? '',
+              options: [
+                OptionForClosedQuestion(id: Uuid().v4(), text: ''),
+                OptionForClosedQuestion(id: Uuid().v4(), text: '')
+              ]);
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         }
       },
@@ -59,11 +66,13 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
         final questionBeforeChange = state.questions.length > e.questionIndex ? state.questions[e.questionIndex] : null;
 
         if (questionBeforeChange?.questionType == QuestionType.openQuestion) {
-          final questionAfterChange = OpenQuestion(text: e.newText);
+          final questionAfterChange = OpenQuestion(id: questionBeforeChange?.id ?? Uuid().v4(), text: e.newText);
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         } else if (questionBeforeChange?.questionType == QuestionType.closedQuestion) {
-          final questionAfterChange =
-              ClosedQuestion(text: e.newText, options: (questionBeforeChange as ClosedQuestion).options);
+          final questionAfterChange = ClosedQuestion(
+              id: questionBeforeChange?.id ?? Uuid().v4(),
+              text: e.newText,
+              options: (questionBeforeChange as ClosedQuestion).options);
           handleQuestionUpdate(e.questionIndex, questionAfterChange);
         }
       },
@@ -71,16 +80,20 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
         final newOption = OptionForClosedQuestion(id: Uuid().v4(), text: '');
         final changedOptions = [...(state.questions[e.questionIndex] as ClosedQuestion).options, newOption];
 
-        final questionAfterChange =
-            ClosedQuestion(text: state.questions[e.questionIndex].text, options: changedOptions);
+        final questionAfterChange = ClosedQuestion(
+            id: state.questions[e.questionIndex].id,
+            text: state.questions[e.questionIndex].text,
+            options: changedOptions);
         handleQuestionUpdate(e.questionIndex, questionAfterChange);
       },
       optionDeletedForQuestionIndex: (e) async {
         final changedOptions = [...(state.questions[e.questionIndex] as ClosedQuestion).options];
         changedOptions.removeAt(e.optionIndex);
 
-        final questionAfterChange =
-            ClosedQuestion(text: state.questions[e.questionIndex].text, options: changedOptions);
+        final questionAfterChange = ClosedQuestion(
+            id: state.questions[e.questionIndex].id,
+            text: state.questions[e.questionIndex].text,
+            options: changedOptions);
         handleQuestionUpdate(e.questionIndex, questionAfterChange);
       },
       optionUpdatedForQuestionIndex: (e) async {
@@ -89,8 +102,10 @@ class AddSurveyPageBloc extends Bloc<AddSurveyPageEvent, AddSurveyPageState> {
         final changedOptions = [...(state.questions[e.questionIndex] as ClosedQuestion).options];
         changedOptions[e.optionIndex] = updatedOption;
 
-        final questionAfterChange =
-            ClosedQuestion(text: state.questions[e.questionIndex].text, options: changedOptions);
+        final questionAfterChange = ClosedQuestion(
+            id: state.questions[e.questionIndex].id,
+            text: state.questions[e.questionIndex].text,
+            options: changedOptions);
         handleQuestionUpdate(e.questionIndex, questionAfterChange);
       },
     );

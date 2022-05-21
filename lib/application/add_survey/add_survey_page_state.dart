@@ -14,5 +14,5 @@ class AddSurveyPageState with _$AddSurveyPageState {
       currentStepIndex: 0,
       isSurveySuccessfullyCreated: false,
       isCreateNewSurveyRequestExecuted: false,
-      questions: [OpenQuestion(text: '')]);
+      questions: [OpenQuestion(id: Uuid().v4(), text: '')]);
 }

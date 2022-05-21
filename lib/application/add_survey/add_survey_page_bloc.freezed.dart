@@ -48,9 +48,9 @@ class _$AddSurveyPageEventTearOff {
     return const _QuestionAdded();
   }
 
-  _QuestionDeleted questionDeleted(int questionIndex) {
+  _QuestionDeleted questionDeleted(String questionId) {
     return _QuestionDeleted(
-      questionIndex,
+      questionId,
     );
   }
 
@@ -111,7 +111,7 @@ mixin _$AddSurveyPageEvent {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -132,7 +132,7 @@ mixin _$AddSurveyPageEvent {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -153,7 +153,7 @@ mixin _$AddSurveyPageEvent {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -298,7 +298,7 @@ class _$_Initialized implements _Initialized {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -322,7 +322,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -346,7 +346,7 @@ class _$_Initialized implements _Initialized {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -518,7 +518,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -542,7 +542,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -566,7 +566,7 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -745,7 +745,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -769,7 +769,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -793,7 +793,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -947,7 +947,7 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -971,7 +971,7 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -995,7 +995,7 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1168,7 +1168,7 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -1192,7 +1192,7 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1216,7 +1216,7 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1370,7 +1370,7 @@ class _$_QuestionAdded implements _QuestionAdded {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -1394,7 +1394,7 @@ class _$_QuestionAdded implements _QuestionAdded {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1418,7 +1418,7 @@ class _$_QuestionAdded implements _QuestionAdded {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1524,7 +1524,7 @@ abstract class _$QuestionDeletedCopyWith<$Res> {
   factory _$QuestionDeletedCopyWith(
           _QuestionDeleted value, $Res Function(_QuestionDeleted) then) =
       __$QuestionDeletedCopyWithImpl<$Res>;
-  $Res call({int questionIndex});
+  $Res call({String questionId});
 }
 
 /// @nodoc
@@ -1540,13 +1540,13 @@ class __$QuestionDeletedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? questionIndex = freezed,
+    Object? questionId = freezed,
   }) {
     return _then(_QuestionDeleted(
-      questionIndex == freezed
-          ? _value.questionIndex
-          : questionIndex // ignore: cast_nullable_to_non_nullable
-              as int,
+      questionId == freezed
+          ? _value.questionId
+          : questionId // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -1554,14 +1554,14 @@ class __$QuestionDeletedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_QuestionDeleted implements _QuestionDeleted {
-  const _$_QuestionDeleted(this.questionIndex);
+  const _$_QuestionDeleted(this.questionId);
 
   @override
-  final int questionIndex;
+  final String questionId;
 
   @override
   String toString() {
-    return 'AddSurveyPageEvent.questionDeleted(questionIndex: $questionIndex)';
+    return 'AddSurveyPageEvent.questionDeleted(questionId: $questionId)';
   }
 
   @override
@@ -1570,12 +1570,12 @@ class _$_QuestionDeleted implements _QuestionDeleted {
         (other.runtimeType == runtimeType &&
             other is _QuestionDeleted &&
             const DeepCollectionEquality()
-                .equals(other.questionIndex, questionIndex));
+                .equals(other.questionId, questionId));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(questionIndex));
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(questionId));
 
   @JsonKey(ignore: true)
   @override
@@ -1591,7 +1591,7 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -1603,7 +1603,7 @@ class _$_QuestionDeleted implements _QuestionDeleted {
             String oldOptionId, String newOptionText)
         optionUpdatedForQuestionIndex,
   }) {
-    return questionDeleted(questionIndex);
+    return questionDeleted(questionId);
   }
 
   @override
@@ -1615,7 +1615,7 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1627,7 +1627,7 @@ class _$_QuestionDeleted implements _QuestionDeleted {
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
-    return questionDeleted?.call(questionIndex);
+    return questionDeleted?.call(questionId);
   }
 
   @override
@@ -1639,7 +1639,7 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1653,7 +1653,7 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     required TResult orElse(),
   }) {
     if (questionDeleted != null) {
-      return questionDeleted(questionIndex);
+      return questionDeleted(questionId);
     }
     return orElse();
   }
@@ -1737,9 +1737,9 @@ class _$_QuestionDeleted implements _QuestionDeleted {
 }
 
 abstract class _QuestionDeleted implements AddSurveyPageEvent {
-  const factory _QuestionDeleted(int questionIndex) = _$_QuestionDeleted;
+  const factory _QuestionDeleted(String questionId) = _$_QuestionDeleted;
 
-  int get questionIndex;
+  String get questionId;
   @JsonKey(ignore: true)
   _$QuestionDeletedCopyWith<_QuestionDeleted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1835,7 +1835,7 @@ class _$_QuestionTypeChangedForQuestionIndex
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -1859,7 +1859,7 @@ class _$_QuestionTypeChangedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -1884,7 +1884,7 @@ class _$_QuestionTypeChangedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2085,7 +2085,7 @@ class _$_QuestionTextUpdatedForQuestionIndex
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -2109,7 +2109,7 @@ class _$_QuestionTextUpdatedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2133,7 +2133,7 @@ class _$_QuestionTextUpdatedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2320,7 +2320,7 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -2344,7 +2344,7 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2368,7 +2368,7 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2563,7 +2563,7 @@ class _$_OptionDeletedForQuestionIndex
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -2587,7 +2587,7 @@ class _$_OptionDeletedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2611,7 +2611,7 @@ class _$_OptionDeletedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2832,7 +2832,7 @@ class _$_OptionUpdatedForQuestionIndex
     required TResult Function() newSurveyCreated,
     required TResult Function(List<Question> newQuestions) questionsUpdated,
     required TResult Function() questionAdded,
-    required TResult Function(int questionIndex) questionDeleted,
+    required TResult Function(String questionId) questionDeleted,
     required TResult Function(int questionIndex, QuestionType newQuestionType)
         questionTypeChangedForQuestionIndex,
     required TResult Function(int questionIndex, String newText)
@@ -2857,7 +2857,7 @@ class _$_OptionUpdatedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?
@@ -2882,7 +2882,7 @@ class _$_OptionUpdatedForQuestionIndex
     TResult Function()? newSurveyCreated,
     TResult Function(List<Question> newQuestions)? questionsUpdated,
     TResult Function()? questionAdded,
-    TResult Function(int questionIndex)? questionDeleted,
+    TResult Function(String questionId)? questionDeleted,
     TResult Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
     TResult Function(int questionIndex, String newText)?

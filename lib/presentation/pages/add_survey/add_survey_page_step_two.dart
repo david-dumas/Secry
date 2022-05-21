@@ -27,6 +27,7 @@ class AddSurveyPageStepTwo extends StatelessWidget {
               itemCount: state.questions.length,
               itemBuilder: (context, index) {
                 return NewSurveyQuestionWrapper(
+                  question: state.questions[index],
                   questionIndex: index,
                   questionType: state.questions.asMap().containsKey(index)
                       ? state.questions[index].questionType
@@ -44,7 +45,9 @@ class AddSurveyPageStepTwo extends StatelessWidget {
                         .add(AddSurveyPageEvent.questionTypeChangedForQuestionIndex(index, newQuestionType));
                   },
                   questionDeleted: () {
-                    context.read<AddSurveyPageBloc>().add(AddSurveyPageEvent.questionDeleted(index));
+                    context
+                        .read<AddSurveyPageBloc>()
+                        .add(AddSurveyPageEvent.questionDeleted(state.questions[index].id));
                   },
                 );
               }));

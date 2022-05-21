@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/domain/surveys/model/option_for_closed_question.dart';
+import 'package:secry/domain/surveys/model/question.dart';
 import 'package:secry/domain/surveys/question_type.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/choose_question_type.dart';
 import 'package:secry/presentation/pages/add_survey/widgets/closed_question_options_section.dart';
@@ -16,6 +17,7 @@ import '../../../../application/add_survey/add_survey_page_bloc.dart';
 import '../../../../constants.dart';
 
 class NewSurveyQuestionWrapper extends StatefulWidget {
+  final Question question;
   final int questionIndex;
   final QuestionType questionType;
   final double bottomMargin;
@@ -27,6 +29,7 @@ class NewSurveyQuestionWrapper extends StatefulWidget {
 
   NewSurveyQuestionWrapper(
       {Key? key,
+      required this.question,
       required this.questionIndex,
       required this.questionType,
       required this.bottomMargin,
@@ -42,14 +45,7 @@ class NewSurveyQuestionWrapper extends StatefulWidget {
 
 class _NewSurveyQuestionWrapperState extends State<NewSurveyQuestionWrapper> {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController _questionEditingController = TextEditingController();
   final maximumQuestionLength = 64; // TODO load from remote config
-
-  @override
-  void initState() {
-    _questionEditingController.text = widget.questionText;
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -76,8 +72,8 @@ class _NewSurveyQuestionWrapperState extends State<NewSurveyQuestionWrapper> {
         ),
         Container(height: 12),
         QuestionTextInput(
+          question: widget.question,
           formKey: _formKey,
-          questionEditingController: _questionEditingController,
           maximumQuestionLength: maximumQuestionLength,
           questionTextUpdated: (newValue) {
             context

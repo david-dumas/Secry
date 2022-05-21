@@ -8,7 +8,7 @@ class AddSurveyPageEvent with _$AddSurveyPageEvent {
   const factory AddSurveyPageEvent.newSurveyCreated() = _NewSurveyCreated;
   const factory AddSurveyPageEvent.questionsUpdated(List<Question> newQuestions) = _QuestionsUpdated;
   const factory AddSurveyPageEvent.questionAdded() = _QuestionAdded;
-  const factory AddSurveyPageEvent.questionDeleted(int questionIndex) = _QuestionDeleted;
+  const factory AddSurveyPageEvent.questionDeleted(String questionId) = _QuestionDeleted;
   const factory AddSurveyPageEvent.questionTypeChangedForQuestionIndex(
       int questionIndex, QuestionType newQuestionType) = _QuestionTypeChangedForQuestionIndex;
   const factory AddSurveyPageEvent.questionTextUpdatedForQuestionIndex(int questionIndex, String newText) =
