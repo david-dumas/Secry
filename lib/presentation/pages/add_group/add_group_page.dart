@@ -52,7 +52,11 @@ class AddGroupPageContent extends StatelessWidget {
       child: BlocConsumer<AddGroupPageBloc, AddGroupPageState>(
         listener: (context, state) {
           if (state.isCreateNewGroupRequestExecuted) {
-            Navigator.of(context).pop(state.isGroupSuccessfullyCreated);
+            if (state.isGroupSuccessfullyCreated) {
+              Navigator.of(context).pop();
+            } else {
+              // TODO show pop-up with something went wrong
+            }
           }
         },
         builder: (context, state) {

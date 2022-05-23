@@ -51,7 +51,11 @@ class AddSurveyPageContent extends StatelessWidget {
       child: BlocConsumer<AddSurveyPageBloc, AddSurveyPageState>(
         listener: (context, state) {
           if (state.isCreateNewSurveyRequestExecuted) {
-            Navigator.of(context).pop(state.isSurveySuccessfullyCreated);
+            if (state.isSurveySuccessfullyCreated) {
+              Navigator.of(context).pop();
+            } else {
+              // TODO show pop-up with 'something went wrong'
+            }
           }
         },
         builder: (context, state) {
