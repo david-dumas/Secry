@@ -149,5 +149,9 @@
   "new_survey_question_open_question" : "Open vraag",
   "new_survey_question_closed_question" : "Gesloten vraag",
   "survey_question_hint_text" : "Voer een vraag in...",
-  "survey_option_hint_text" : "Optie..."
+  "survey_option_hint_text" : "Optie...",
+  "survey_questions_no_question_text_error" : "Zorg ervoor dat alle vragen zijn ingevuld",
+  "survey_questions_too_few_options_error" : "Zorg ervoor dat alle vragen ten minste twee opties hebben",
+  "survey_questions_option_without_text_or_invalid" : "Zorg ervoor dat alle opties zijn ingevuld",
+  "survey_questions_error_general" : "Zorg ervoor dat alles compleet is ingevuld"
 }

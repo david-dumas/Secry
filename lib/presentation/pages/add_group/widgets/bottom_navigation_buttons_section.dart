@@ -1,18 +1,23 @@
 import 'dart:math';
 
+import 'package:dartz/dartz.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
+import 'package:secry/domain/surveys/model/question.dart';
+import 'package:secry/domain/surveys/model/survey_question_failure.dart';
 import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/presentation/pages/add_group/widgets/bottom_navigation_buttons_top_action_section.dart';
 import 'package:secry/util/dialogs/dialog_helper.dart';
 import 'package:secry/domain/general/create_new_type.dart';
+import 'package:secry/util/validation/survey_question_validator.dart';
 
 class BottomNavigationButtonsSection extends StatelessWidget {
   final int stepIndex;
-  final String groupTitle;
+  final String featureTitle;
   final List<GroupUser>? groupMembers;
+  final List<Question>? surveyQuestions;
   final CreateNewType featureType;
 
   final bool isShowingTopActionButton;
@@ -30,8 +35,9 @@ class BottomNavigationButtonsSection extends StatelessWidget {
   BottomNavigationButtonsSection(
       {Key? key,
       required this.stepIndex,
-      required this.groupTitle,
+      required this.featureTitle,
       this.groupMembers = null,
+      this.surveyQuestions = null,
       required this.featureType,
       this.isShowingTopActionButton = false,
       this.topActionButtonText = '',
@@ -111,8 +117,9 @@ class BottomNavigationButtonsSection extends StatelessWidget {
                         handleNextOrCreateActionForIndex(context,
                             currentIndex: stepIndex,
                             totalNumberOfSteps: totalNumberOfSteps,
-                            groupTitle: groupTitle,
+                            featureTitle: featureTitle,
                             groupMembers: groupMembers,
+                            surveyQuestions: surveyQuestions,
                             featureType: featureType);
                       },
                       child: Text(
@@ -132,16 +139,24 @@ class BottomNavigationButtonsSection extends StatelessWidget {
 
   bool validateIfNextStepChangeActionIsAllowed(
       {required int currentIndex,
-      required String groupTitle,
+      required String featureTitle,
       required List<GroupUser>? groupMembers,
+      required List<Question>? surveyQuestions,
       required CreateNewType featureType}) {
     if (currentIndex == 0) {
-      return groupTitle.length > 0;
+      return featureTitle.length > 0;
     } else if (currentIndex > 0) {
       if (featureType == CreateNewType.newGroup) {
-        return groupTitle.length > 0 && (groupMembers?.length ?? 0) > 0;
+        return featureTitle.length > 0 && (groupMembers?.length ?? 0) > 0;
+      } else if (featureType == CreateNewType.newSurvey) {
+        SurveyQuestionValidator questionValidator = SurveyQuestionValidator();
+
+        return featureTitle.length > 0 &&
+            !questionValidator.isAnyQuestionInvalid(surveyQuestions ?? []) &&
+            surveyQuestions != null &&
+            surveyQuestions.length > 0;
       } else {
-        return groupTitle.length > 0;
+        return featureTitle.length > 0;
       }
     } else {
       return false;
@@ -163,22 +178,44 @@ class BottomNavigationButtonsSection extends StatelessWidget {
   void handleNextOrCreateActionForIndex(BuildContext context,
       {required int currentIndex,
       required int totalNumberOfSteps,
-      required String groupTitle,
+      required String featureTitle,
       required List<GroupUser>? groupMembers,
+      required List<Question>? surveyQuestions,
       required CreateNewType featureType}) {
     final newIndex = min(totalNumberOfSteps - 1, currentIndex + 1);
     final isNextStepAllowed = validateIfNextStepChangeActionIsAllowed(
-        currentIndex: currentIndex, groupTitle: groupTitle, groupMembers: groupMembers, featureType: featureType);
+        currentIndex: currentIndex,
+        featureTitle: featureTitle,
+        groupMembers: groupMembers,
+        surveyQuestions: surveyQuestions,
+        featureType: featureType);
 
     if (!isNextStepAllowed) {
       final warningTitle = tr('warning_title_general');
       var warningMessage = "";
 
-      if (currentIndex == 0 && groupTitle.length == 0) {
+      if (currentIndex == 0 && featureTitle.length == 0) {
         warningMessage = tr('warning_title_minimum_length');
-      } else if (currentIndex > 0 &&
-          (featureType == CreateNewType.newGroup && groupMembers != null && groupMembers.length == 0)) {
-        warningMessage = tr('warning_minimum_group_members');
+      } else if (featureType == CreateNewType.newGroup) {
+        if (currentIndex > 0 && groupMembers != null && groupMembers.length == 0) {
+          warningMessage = tr('warning_minimum_group_members');
+        }
+      } else if (featureType == CreateNewType.newSurvey) {
+        final surveyQuestionValidator = SurveyQuestionValidator();
+        final isAnyQuestionInvalid = SurveyQuestionValidator().isAnyQuestionInvalid(surveyQuestions ?? []);
+
+        if (isAnyQuestionInvalid) {
+          for (int i = 0; i < (surveyQuestions?.length ?? 0); i++) {
+            final question = surveyQuestions![i];
+
+            // If question returns a Failure (thus is invalid)
+            if (surveyQuestionValidator.surveyQuestionFailureOrUnit(question: question).isLeft()) {
+              warningMessage = surveyQuestionValidator.surveyQuestionFailureOrUnit(question: question).fold(
+                  (questionFailure) => surveyQuestionValidator.getErrorTextForFailure(failure: questionFailure),
+                  (unit) => '');
+            }
+          }
+        }
       } else {
         warningMessage = tr('warning_fill_in_all_fields_to_continue');
       }

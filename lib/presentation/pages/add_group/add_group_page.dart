@@ -79,7 +79,7 @@ class AddGroupPageContent extends StatelessWidget {
                 ),
                 BottomNavigationButtonsSection(
                   stepIndex: state.currentStepIndex,
-                  groupTitle: state.groupTitle,
+                  featureTitle: state.groupTitle,
                   groupMembers: state.groupMembers,
                   featureType: CreateNewType.newGroup,
                   currentStepIndexUpdated: (newIndex) {

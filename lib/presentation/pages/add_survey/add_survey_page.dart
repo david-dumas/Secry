@@ -71,7 +71,8 @@ class AddSurveyPageContent extends StatelessWidget {
                 ),
                 BottomNavigationButtonsSection(
                   stepIndex: state.currentStepIndex,
-                  groupTitle: state.surveyTitle,
+                  featureTitle: state.surveyTitle,
+                  surveyQuestions: state.questions,
                   featureType: CreateNewType.newSurvey,
                   isShowingTopActionButton: state.currentStepIndex == 1,
                   topActionButtonText: tr('action_add_question'),
