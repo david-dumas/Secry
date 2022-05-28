@@ -12,28 +12,12 @@ part of 'splash_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SplashEventTearOff {
-  const _$SplashEventTearOff();
-
-  _Redirect redirect(PageRouteInfo<dynamic> route, int delayInMilliseconds) {
-    return _Redirect(
-      route,
-      delayInMilliseconds,
-    );
-  }
-}
-
-/// @nodoc
-const $SplashEvent = _$SplashEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SplashEvent {
   PageRouteInfo<dynamic> get route => throw _privateConstructorUsedError;
   int get delayInMilliseconds => throw _privateConstructorUsedError;
-
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
@@ -111,28 +95,31 @@ class _$SplashEventCopyWithImpl<$Res> implements $SplashEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$RedirectCopyWith<$Res> implements $SplashEventCopyWith<$Res> {
-  factory _$RedirectCopyWith(_Redirect value, $Res Function(_Redirect) then) =
-      __$RedirectCopyWithImpl<$Res>;
+abstract class _$$_RedirectCopyWith<$Res>
+    implements $SplashEventCopyWith<$Res> {
+  factory _$$_RedirectCopyWith(
+          _$_Redirect value, $Res Function(_$_Redirect) then) =
+      __$$_RedirectCopyWithImpl<$Res>;
   @override
   $Res call({PageRouteInfo<dynamic> route, int delayInMilliseconds});
 }
 
 /// @nodoc
-class __$RedirectCopyWithImpl<$Res> extends _$SplashEventCopyWithImpl<$Res>
-    implements _$RedirectCopyWith<$Res> {
-  __$RedirectCopyWithImpl(_Redirect _value, $Res Function(_Redirect) _then)
-      : super(_value, (v) => _then(v as _Redirect));
+class __$$_RedirectCopyWithImpl<$Res> extends _$SplashEventCopyWithImpl<$Res>
+    implements _$$_RedirectCopyWith<$Res> {
+  __$$_RedirectCopyWithImpl(
+      _$_Redirect _value, $Res Function(_$_Redirect) _then)
+      : super(_value, (v) => _then(v as _$_Redirect));
 
   @override
-  _Redirect get _value => super._value as _Redirect;
+  _$_Redirect get _value => super._value as _$_Redirect;
 
   @override
   $Res call({
     Object? route = freezed,
     Object? delayInMilliseconds = freezed,
   }) {
-    return _then(_Redirect(
+    return _then(_$_Redirect(
       route == freezed
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
@@ -164,7 +151,7 @@ class _$_Redirect implements _Redirect {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _Redirect &&
+            other is _$_Redirect &&
             const DeepCollectionEquality().equals(other.route, route) &&
             const DeepCollectionEquality()
                 .equals(other.delayInMilliseconds, delayInMilliseconds));
@@ -178,8 +165,8 @@ class _$_Redirect implements _Redirect {
 
   @JsonKey(ignore: true)
   @override
-  _$RedirectCopyWith<_Redirect> get copyWith =>
-      __$RedirectCopyWithImpl<_Redirect>(this, _$identity);
+  _$$_RedirectCopyWith<_$_Redirect> get copyWith =>
+      __$$_RedirectCopyWithImpl<_$_Redirect>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -244,33 +231,18 @@ class _$_Redirect implements _Redirect {
 
 abstract class _Redirect implements SplashEvent {
   const factory _Redirect(
-      PageRouteInfo<dynamic> route, int delayInMilliseconds) = _$_Redirect;
+          final PageRouteInfo<dynamic> route, final int delayInMilliseconds) =
+      _$_Redirect;
 
   @override
-  PageRouteInfo<dynamic> get route;
+  PageRouteInfo<dynamic> get route => throw _privateConstructorUsedError;
   @override
-  int get delayInMilliseconds;
+  int get delayInMilliseconds => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$RedirectCopyWith<_Redirect> get copyWith =>
+  _$$_RedirectCopyWith<_$_Redirect> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SplashStateTearOff {
-  const _$SplashStateTearOff();
-
-  _SplashState call(
-      {required Option<PageRouteInfo> routeOption, int? delayInMilliseconds}) {
-    return _SplashState(
-      routeOption: routeOption,
-      delayInMilliseconds: delayInMilliseconds,
-    );
-  }
-}
-
-/// @nodoc
-const $SplashState = _$SplashStateTearOff();
 
 /// @nodoc
 mixin _$SplashState {
@@ -317,31 +289,31 @@ class _$SplashStateCopyWithImpl<$Res> implements $SplashStateCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$SplashStateCopyWith<$Res>
+abstract class _$$_SplashStateCopyWith<$Res>
     implements $SplashStateCopyWith<$Res> {
-  factory _$SplashStateCopyWith(
-          _SplashState value, $Res Function(_SplashState) then) =
-      __$SplashStateCopyWithImpl<$Res>;
+  factory _$$_SplashStateCopyWith(
+          _$_SplashState value, $Res Function(_$_SplashState) then) =
+      __$$_SplashStateCopyWithImpl<$Res>;
   @override
   $Res call({Option<PageRouteInfo> routeOption, int? delayInMilliseconds});
 }
 
 /// @nodoc
-class __$SplashStateCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
-    implements _$SplashStateCopyWith<$Res> {
-  __$SplashStateCopyWithImpl(
-      _SplashState _value, $Res Function(_SplashState) _then)
-      : super(_value, (v) => _then(v as _SplashState));
+class __$$_SplashStateCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
+    implements _$$_SplashStateCopyWith<$Res> {
+  __$$_SplashStateCopyWithImpl(
+      _$_SplashState _value, $Res Function(_$_SplashState) _then)
+      : super(_value, (v) => _then(v as _$_SplashState));
 
   @override
-  _SplashState get _value => super._value as _SplashState;
+  _$_SplashState get _value => super._value as _$_SplashState;
 
   @override
   $Res call({
     Object? routeOption = freezed,
     Object? delayInMilliseconds = freezed,
   }) {
-    return _then(_SplashState(
+    return _then(_$_SplashState(
       routeOption: routeOption == freezed
           ? _value.routeOption
           : routeOption // ignore: cast_nullable_to_non_nullable
@@ -373,7 +345,7 @@ class _$_SplashState implements _SplashState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SplashState &&
+            other is _$_SplashState &&
             const DeepCollectionEquality()
                 .equals(other.routeOption, routeOption) &&
             const DeepCollectionEquality()
@@ -388,21 +360,21 @@ class _$_SplashState implements _SplashState {
 
   @JsonKey(ignore: true)
   @override
-  _$SplashStateCopyWith<_SplashState> get copyWith =>
-      __$SplashStateCopyWithImpl<_SplashState>(this, _$identity);
+  _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>
+      __$$_SplashStateCopyWithImpl<_$_SplashState>(this, _$identity);
 }
 
 abstract class _SplashState implements SplashState {
   const factory _SplashState(
-      {required Option<PageRouteInfo> routeOption,
-      int? delayInMilliseconds}) = _$_SplashState;
+      {required final Option<PageRouteInfo> routeOption,
+      final int? delayInMilliseconds}) = _$_SplashState;
 
   @override
-  Option<PageRouteInfo> get routeOption;
+  Option<PageRouteInfo> get routeOption => throw _privateConstructorUsedError;
   @override
-  int? get delayInMilliseconds;
+  int? get delayInMilliseconds => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SplashStateCopyWith<_SplashState> get copyWith =>
+  _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>
       throw _privateConstructorUsedError;
 }

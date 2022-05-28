@@ -12,19 +12,7 @@ part of 'account_overview_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AccountOverviewEventTearOff {
-  const _$AccountOverviewEventTearOff();
-
-  _LogoutPressed logoutPressed() {
-    return const _LogoutPressed();
-  }
-}
-
-/// @nodoc
-const $AccountOverviewEvent = _$AccountOverviewEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AccountOverviewEvent {
@@ -80,22 +68,22 @@ class _$AccountOverviewEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$LogoutPressedCopyWith<$Res> {
-  factory _$LogoutPressedCopyWith(
-          _LogoutPressed value, $Res Function(_LogoutPressed) then) =
-      __$LogoutPressedCopyWithImpl<$Res>;
+abstract class _$$_LogoutPressedCopyWith<$Res> {
+  factory _$$_LogoutPressedCopyWith(
+          _$_LogoutPressed value, $Res Function(_$_LogoutPressed) then) =
+      __$$_LogoutPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LogoutPressedCopyWithImpl<$Res>
+class __$$_LogoutPressedCopyWithImpl<$Res>
     extends _$AccountOverviewEventCopyWithImpl<$Res>
-    implements _$LogoutPressedCopyWith<$Res> {
-  __$LogoutPressedCopyWithImpl(
-      _LogoutPressed _value, $Res Function(_LogoutPressed) _then)
-      : super(_value, (v) => _then(v as _LogoutPressed));
+    implements _$$_LogoutPressedCopyWith<$Res> {
+  __$$_LogoutPressedCopyWithImpl(
+      _$_LogoutPressed _value, $Res Function(_$_LogoutPressed) _then)
+      : super(_value, (v) => _then(v as _$_LogoutPressed));
 
   @override
-  _LogoutPressed get _value => super._value as _LogoutPressed;
+  _$_LogoutPressed get _value => super._value as _$_LogoutPressed;
 }
 
 /// @nodoc
@@ -111,7 +99,7 @@ class _$_LogoutPressed implements _LogoutPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LogoutPressed);
+        (other.runtimeType == runtimeType && other is _$_LogoutPressed);
   }
 
   @override
@@ -179,18 +167,6 @@ abstract class _LogoutPressed implements AccountOverviewEvent {
 }
 
 /// @nodoc
-class _$AccountOverviewStateTearOff {
-  const _$AccountOverviewStateTearOff();
-
-  _AccountOverviewState call() {
-    return const _AccountOverviewState();
-  }
-}
-
-/// @nodoc
-const $AccountOverviewState = _$AccountOverviewStateTearOff();
-
-/// @nodoc
 mixin _$AccountOverviewState {}
 
 /// @nodoc
@@ -211,22 +187,22 @@ class _$AccountOverviewStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AccountOverviewStateCopyWith<$Res> {
-  factory _$AccountOverviewStateCopyWith(_AccountOverviewState value,
-          $Res Function(_AccountOverviewState) then) =
-      __$AccountOverviewStateCopyWithImpl<$Res>;
+abstract class _$$_AccountOverviewStateCopyWith<$Res> {
+  factory _$$_AccountOverviewStateCopyWith(_$_AccountOverviewState value,
+          $Res Function(_$_AccountOverviewState) then) =
+      __$$_AccountOverviewStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AccountOverviewStateCopyWithImpl<$Res>
+class __$$_AccountOverviewStateCopyWithImpl<$Res>
     extends _$AccountOverviewStateCopyWithImpl<$Res>
-    implements _$AccountOverviewStateCopyWith<$Res> {
-  __$AccountOverviewStateCopyWithImpl(
-      _AccountOverviewState _value, $Res Function(_AccountOverviewState) _then)
-      : super(_value, (v) => _then(v as _AccountOverviewState));
+    implements _$$_AccountOverviewStateCopyWith<$Res> {
+  __$$_AccountOverviewStateCopyWithImpl(_$_AccountOverviewState _value,
+      $Res Function(_$_AccountOverviewState) _then)
+      : super(_value, (v) => _then(v as _$_AccountOverviewState));
 
   @override
-  _AccountOverviewState get _value => super._value as _AccountOverviewState;
+  _$_AccountOverviewState get _value => super._value as _$_AccountOverviewState;
 }
 
 /// @nodoc
@@ -242,7 +218,7 @@ class _$_AccountOverviewState implements _AccountOverviewState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _AccountOverviewState);
+        (other.runtimeType == runtimeType && other is _$_AccountOverviewState);
   }
 
   @override

@@ -8,6 +8,7 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
   final bool isSubpage;
   final bool shouldHideBackButton;
   final bool isShowingSearchBar;
+  final bool isShowingBottomBorder;
   final String searchValue;
   final GestureDetector? trailingGestureWithIcon;
   final Function(String)? searchValueChanged;
@@ -19,6 +20,7 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
       this.shouldHideBackButton = false,
       this.isSubpage = false,
       this.isShowingSearchBar = false,
+      this.isShowingBottomBorder = false,
       this.searchValue = '',
       this.trailingGestureWithIcon = null,
       this.searchValueChanged = null})
@@ -50,6 +52,14 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
       centerTitle: false,
       leadingWidth: widget.isSubpage ? 56 : 0,
       backgroundColor: widget.backgroundColor,
+      bottom: widget.isShowingBottomBorder
+          ? PreferredSize(
+              child: Container(
+                color: kLineSeparatorColor,
+                height: 1.0,
+              ),
+              preferredSize: Size.fromHeight(4.0))
+          : null,
       elevation: 0.0,
       automaticallyImplyLeading: widget.isSubpage ? false : true,
       actions: <Widget>[

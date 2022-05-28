@@ -12,28 +12,7 @@ part of 'account_go_to_login_or_signup_page_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AccountGoToLoginOrSignupPageEventTearOff {
-  const _$AccountGoToLoginOrSignupPageEventTearOff();
-
-  _ContinueWithGooglePressed continueWithGooglePressed() {
-    return const _ContinueWithGooglePressed();
-  }
-
-  _ContinueWithFacebookPressed continueWithFacebookPressed() {
-    return const _ContinueWithFacebookPressed();
-  }
-
-  _ContinueWithTwitterPressed continueWithTwitterPressed() {
-    return const _ContinueWithTwitterPressed();
-  }
-}
-
-/// @nodoc
-const $AccountGoToLoginOrSignupPageEvent =
-    _$AccountGoToLoginOrSignupPageEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AccountGoToLoginOrSignupPageEvent {
@@ -111,23 +90,25 @@ class _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$ContinueWithGooglePressedCopyWith<$Res> {
-  factory _$ContinueWithGooglePressedCopyWith(_ContinueWithGooglePressed value,
-          $Res Function(_ContinueWithGooglePressed) then) =
-      __$ContinueWithGooglePressedCopyWithImpl<$Res>;
+abstract class _$$_ContinueWithGooglePressedCopyWith<$Res> {
+  factory _$$_ContinueWithGooglePressedCopyWith(
+          _$_ContinueWithGooglePressed value,
+          $Res Function(_$_ContinueWithGooglePressed) then) =
+      __$$_ContinueWithGooglePressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ContinueWithGooglePressedCopyWithImpl<$Res>
+class __$$_ContinueWithGooglePressedCopyWithImpl<$Res>
     extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
-    implements _$ContinueWithGooglePressedCopyWith<$Res> {
-  __$ContinueWithGooglePressedCopyWithImpl(_ContinueWithGooglePressed _value,
-      $Res Function(_ContinueWithGooglePressed) _then)
-      : super(_value, (v) => _then(v as _ContinueWithGooglePressed));
+    implements _$$_ContinueWithGooglePressedCopyWith<$Res> {
+  __$$_ContinueWithGooglePressedCopyWithImpl(
+      _$_ContinueWithGooglePressed _value,
+      $Res Function(_$_ContinueWithGooglePressed) _then)
+      : super(_value, (v) => _then(v as _$_ContinueWithGooglePressed));
 
   @override
-  _ContinueWithGooglePressed get _value =>
-      super._value as _ContinueWithGooglePressed;
+  _$_ContinueWithGooglePressed get _value =>
+      super._value as _$_ContinueWithGooglePressed;
 }
 
 /// @nodoc
@@ -144,7 +125,7 @@ class _$_ContinueWithGooglePressed implements _ContinueWithGooglePressed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ContinueWithGooglePressed);
+            other is _$_ContinueWithGooglePressed);
   }
 
   @override
@@ -234,25 +215,25 @@ abstract class _ContinueWithGooglePressed
 }
 
 /// @nodoc
-abstract class _$ContinueWithFacebookPressedCopyWith<$Res> {
-  factory _$ContinueWithFacebookPressedCopyWith(
-          _ContinueWithFacebookPressed value,
-          $Res Function(_ContinueWithFacebookPressed) then) =
-      __$ContinueWithFacebookPressedCopyWithImpl<$Res>;
+abstract class _$$_ContinueWithFacebookPressedCopyWith<$Res> {
+  factory _$$_ContinueWithFacebookPressedCopyWith(
+          _$_ContinueWithFacebookPressed value,
+          $Res Function(_$_ContinueWithFacebookPressed) then) =
+      __$$_ContinueWithFacebookPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ContinueWithFacebookPressedCopyWithImpl<$Res>
+class __$$_ContinueWithFacebookPressedCopyWithImpl<$Res>
     extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
-    implements _$ContinueWithFacebookPressedCopyWith<$Res> {
-  __$ContinueWithFacebookPressedCopyWithImpl(
-      _ContinueWithFacebookPressed _value,
-      $Res Function(_ContinueWithFacebookPressed) _then)
-      : super(_value, (v) => _then(v as _ContinueWithFacebookPressed));
+    implements _$$_ContinueWithFacebookPressedCopyWith<$Res> {
+  __$$_ContinueWithFacebookPressedCopyWithImpl(
+      _$_ContinueWithFacebookPressed _value,
+      $Res Function(_$_ContinueWithFacebookPressed) _then)
+      : super(_value, (v) => _then(v as _$_ContinueWithFacebookPressed));
 
   @override
-  _ContinueWithFacebookPressed get _value =>
-      super._value as _ContinueWithFacebookPressed;
+  _$_ContinueWithFacebookPressed get _value =>
+      super._value as _$_ContinueWithFacebookPressed;
 }
 
 /// @nodoc
@@ -269,7 +250,7 @@ class _$_ContinueWithFacebookPressed implements _ContinueWithFacebookPressed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ContinueWithFacebookPressed);
+            other is _$_ContinueWithFacebookPressed);
   }
 
   @override
@@ -359,24 +340,25 @@ abstract class _ContinueWithFacebookPressed
 }
 
 /// @nodoc
-abstract class _$ContinueWithTwitterPressedCopyWith<$Res> {
-  factory _$ContinueWithTwitterPressedCopyWith(
-          _ContinueWithTwitterPressed value,
-          $Res Function(_ContinueWithTwitterPressed) then) =
-      __$ContinueWithTwitterPressedCopyWithImpl<$Res>;
+abstract class _$$_ContinueWithTwitterPressedCopyWith<$Res> {
+  factory _$$_ContinueWithTwitterPressedCopyWith(
+          _$_ContinueWithTwitterPressed value,
+          $Res Function(_$_ContinueWithTwitterPressed) then) =
+      __$$_ContinueWithTwitterPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ContinueWithTwitterPressedCopyWithImpl<$Res>
+class __$$_ContinueWithTwitterPressedCopyWithImpl<$Res>
     extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
-    implements _$ContinueWithTwitterPressedCopyWith<$Res> {
-  __$ContinueWithTwitterPressedCopyWithImpl(_ContinueWithTwitterPressed _value,
-      $Res Function(_ContinueWithTwitterPressed) _then)
-      : super(_value, (v) => _then(v as _ContinueWithTwitterPressed));
+    implements _$$_ContinueWithTwitterPressedCopyWith<$Res> {
+  __$$_ContinueWithTwitterPressedCopyWithImpl(
+      _$_ContinueWithTwitterPressed _value,
+      $Res Function(_$_ContinueWithTwitterPressed) _then)
+      : super(_value, (v) => _then(v as _$_ContinueWithTwitterPressed));
 
   @override
-  _ContinueWithTwitterPressed get _value =>
-      super._value as _ContinueWithTwitterPressed;
+  _$_ContinueWithTwitterPressed get _value =>
+      super._value as _$_ContinueWithTwitterPressed;
 }
 
 /// @nodoc
@@ -393,7 +375,7 @@ class _$_ContinueWithTwitterPressed implements _ContinueWithTwitterPressed {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ContinueWithTwitterPressed);
+            other is _$_ContinueWithTwitterPressed);
   }
 
   @override
@@ -483,22 +465,6 @@ abstract class _ContinueWithTwitterPressed
 }
 
 /// @nodoc
-class _$AccountGoToLoginOrSignupPageStateTearOff {
-  const _$AccountGoToLoginOrSignupPageStateTearOff();
-
-  _AccountGoToLoginOrSignupPageState call(
-      {required UserCredential? currentUserCredential}) {
-    return _AccountGoToLoginOrSignupPageState(
-      currentUserCredential: currentUserCredential,
-    );
-  }
-}
-
-/// @nodoc
-const $AccountGoToLoginOrSignupPageState =
-    _$AccountGoToLoginOrSignupPageStateTearOff();
-
-/// @nodoc
 mixin _$AccountGoToLoginOrSignupPageState {
   UserCredential? get currentUserCredential =>
       throw _privateConstructorUsedError;
@@ -540,34 +506,34 @@ class _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AccountGoToLoginOrSignupPageStateCopyWith<$Res>
+abstract class _$$_AccountGoToLoginOrSignupPageStateCopyWith<$Res>
     implements $AccountGoToLoginOrSignupPageStateCopyWith<$Res> {
-  factory _$AccountGoToLoginOrSignupPageStateCopyWith(
-          _AccountGoToLoginOrSignupPageState value,
-          $Res Function(_AccountGoToLoginOrSignupPageState) then) =
-      __$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>;
+  factory _$$_AccountGoToLoginOrSignupPageStateCopyWith(
+          _$_AccountGoToLoginOrSignupPageState value,
+          $Res Function(_$_AccountGoToLoginOrSignupPageState) then) =
+      __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>;
   @override
   $Res call({UserCredential? currentUserCredential});
 }
 
 /// @nodoc
-class __$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
+class __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
     extends _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
-    implements _$AccountGoToLoginOrSignupPageStateCopyWith<$Res> {
-  __$AccountGoToLoginOrSignupPageStateCopyWithImpl(
-      _AccountGoToLoginOrSignupPageState _value,
-      $Res Function(_AccountGoToLoginOrSignupPageState) _then)
-      : super(_value, (v) => _then(v as _AccountGoToLoginOrSignupPageState));
+    implements _$$_AccountGoToLoginOrSignupPageStateCopyWith<$Res> {
+  __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl(
+      _$_AccountGoToLoginOrSignupPageState _value,
+      $Res Function(_$_AccountGoToLoginOrSignupPageState) _then)
+      : super(_value, (v) => _then(v as _$_AccountGoToLoginOrSignupPageState));
 
   @override
-  _AccountGoToLoginOrSignupPageState get _value =>
-      super._value as _AccountGoToLoginOrSignupPageState;
+  _$_AccountGoToLoginOrSignupPageState get _value =>
+      super._value as _$_AccountGoToLoginOrSignupPageState;
 
   @override
   $Res call({
     Object? currentUserCredential = freezed,
   }) {
-    return _then(_AccountGoToLoginOrSignupPageState(
+    return _then(_$_AccountGoToLoginOrSignupPageState(
       currentUserCredential: currentUserCredential == freezed
           ? _value.currentUserCredential
           : currentUserCredential // ignore: cast_nullable_to_non_nullable
@@ -595,7 +561,7 @@ class _$_AccountGoToLoginOrSignupPageState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AccountGoToLoginOrSignupPageState &&
+            other is _$_AccountGoToLoginOrSignupPageState &&
             const DeepCollectionEquality()
                 .equals(other.currentUserCredential, currentUserCredential));
   }
@@ -606,23 +572,24 @@ class _$_AccountGoToLoginOrSignupPageState
 
   @JsonKey(ignore: true)
   @override
-  _$AccountGoToLoginOrSignupPageStateCopyWith<
-          _AccountGoToLoginOrSignupPageState>
-      get copyWith => __$AccountGoToLoginOrSignupPageStateCopyWithImpl<
-          _AccountGoToLoginOrSignupPageState>(this, _$identity);
+  _$$_AccountGoToLoginOrSignupPageStateCopyWith<
+          _$_AccountGoToLoginOrSignupPageState>
+      get copyWith => __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<
+          _$_AccountGoToLoginOrSignupPageState>(this, _$identity);
 }
 
 abstract class _AccountGoToLoginOrSignupPageState
     implements AccountGoToLoginOrSignupPageState {
   const factory _AccountGoToLoginOrSignupPageState(
-          {required UserCredential? currentUserCredential}) =
+          {required final UserCredential? currentUserCredential}) =
       _$_AccountGoToLoginOrSignupPageState;
 
   @override
-  UserCredential? get currentUserCredential;
+  UserCredential? get currentUserCredential =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AccountGoToLoginOrSignupPageStateCopyWith<
-          _AccountGoToLoginOrSignupPageState>
+  _$$_AccountGoToLoginOrSignupPageStateCopyWith<
+          _$_AccountGoToLoginOrSignupPageState>
       get copyWith => throw _privateConstructorUsedError;
 }

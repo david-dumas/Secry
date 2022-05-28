@@ -12,6 +12,7 @@ import 'package:secry/presentation/pages/splash/splash_page.dart';
 import 'package:secry/presentation/pages/tabbar/tabbar_page.dart';
 import 'package:secry/presentation/pages/account/signup_page.dart';
 import 'package:secry/presentation/pages/add_group/add_group_page.dart';
+import 'package:secry/presentation/pages/add_survey/add_survey_page.dart';
 
 @MaterialAutoRouter(routes: [
   MaterialRoute(page: SplashPage, initial: true),
@@ -27,5 +28,6 @@ import 'package:secry/presentation/pages/add_group/add_group_page.dart';
   MaterialRoute(page: GroupOverviewPage),
   MaterialRoute(page: ChatPage),
   MaterialRoute(page: AddGroupPageAndroid),
+  MaterialRoute(page: AddSurveyPageAndroid),
 ])
 class $AppRouter {}
