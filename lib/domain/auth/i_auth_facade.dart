@@ -6,7 +6,7 @@ import 'auth_failure.dart';
 abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> signIn({required String email, required String password});
   Future<UserCredential> signInWithGoogle();
-  Future<UserCredential> signInWithTwitter();
+  Future<UserCredential?> signInWithTwitter();
   Future<UserCredential?> signInWithFacebook();
   Option<auth.User> getSignedInUser();
   Future<void> signOut();

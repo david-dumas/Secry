@@ -69,15 +69,22 @@ class FirebaseAuthFacade implements IAuthFacade {
     return await FirebaseAuth.instance.signInWithCredential(credential);
   }
 
-  Future<UserCredential> signInWithTwitter() async {
+  Future<UserCredential?> signInWithTwitter() async {
     // Create a TwitterLogin instance
     final twitterLogin = new TwitterLogin(
-        apiKey: '66xn1E99MWHH3MK4m3Kw4hUIE',
-        apiSecretKey: ' BlUb5uyI6dq4kvfJLUGZ5nb0i0sLPijSjPu29OYCVQhniKqqcC',
-        redirectURI: 'twitter-firebase-auth://');
+        apiKey: "rgpLHWfS92Xwg4bd1ccK8xn6l",
+        apiSecretKey: "yXcRqv7xh4X4VFfZDjEoIeD2dwWrfsFAX8hFctupRwAbaxiw7j",
+        redirectURI: "secry://");
 
     // Trigger the sign-in flow
     final authResult = await twitterLogin.login();
+
+    if (authResult.authToken == null) {
+      return null;
+    }
+    if (authResult.authTokenSecret == null) {
+      return null;
+    }
 
     // Create a credential from the access token
     final twitterAuthCredential = TwitterAuthProvider.credential(
