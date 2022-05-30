@@ -25,6 +25,9 @@ mixin _$SignInFormEvent {
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -36,6 +39,9 @@ mixin _$SignInFormEvent {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -47,6 +53,9 @@ mixin _$SignInFormEvent {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -62,6 +71,12 @@ mixin _$SignInFormEvent {
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -75,6 +90,12 @@ mixin _$SignInFormEvent {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,6 +109,12 @@ mixin _$SignInFormEvent {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +185,9 @@ class _$_SignInForm implements _SignInForm {
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) {
     return initialized();
   }
@@ -172,6 +202,9 @@ class _$_SignInForm implements _SignInForm {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) {
     return initialized?.call();
   }
@@ -186,6 +219,9 @@ class _$_SignInForm implements _SignInForm {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -207,6 +243,12 @@ class _$_SignInForm implements _SignInForm {
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) {
     return initialized(this);
   }
@@ -223,6 +265,12 @@ class _$_SignInForm implements _SignInForm {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) {
     return initialized?.call(this);
   }
@@ -239,6 +287,12 @@ class _$_SignInForm implements _SignInForm {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -330,6 +384,9 @@ class _$_IsShowingClearEmailInputToggled
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) {
     return isShowingClearEmailInputToggled(isShowing);
   }
@@ -344,6 +401,9 @@ class _$_IsShowingClearEmailInputToggled
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) {
     return isShowingClearEmailInputToggled?.call(isShowing);
   }
@@ -358,6 +418,9 @@ class _$_IsShowingClearEmailInputToggled
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (isShowingClearEmailInputToggled != null) {
@@ -379,6 +442,12 @@ class _$_IsShowingClearEmailInputToggled
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) {
     return isShowingClearEmailInputToggled(this);
   }
@@ -395,6 +464,12 @@ class _$_IsShowingClearEmailInputToggled
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) {
     return isShowingClearEmailInputToggled?.call(this);
   }
@@ -411,6 +486,12 @@ class _$_IsShowingClearEmailInputToggled
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (isShowingClearEmailInputToggled != null) {
@@ -506,6 +587,9 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) {
     return isShowingPasswordToggled(isShowing);
   }
@@ -520,6 +604,9 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) {
     return isShowingPasswordToggled?.call(isShowing);
   }
@@ -534,6 +621,9 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (isShowingPasswordToggled != null) {
@@ -555,6 +645,12 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) {
     return isShowingPasswordToggled(this);
   }
@@ -571,6 +667,12 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) {
     return isShowingPasswordToggled?.call(this);
   }
@@ -587,6 +689,12 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (isShowingPasswordToggled != null) {
@@ -683,6 +791,9 @@ class _$_IsShowingErrorMessagesUpdated
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) {
     return isShowingErrorMessagesUpdated(isShowing);
   }
@@ -697,6 +808,9 @@ class _$_IsShowingErrorMessagesUpdated
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) {
     return isShowingErrorMessagesUpdated?.call(isShowing);
   }
@@ -711,6 +825,9 @@ class _$_IsShowingErrorMessagesUpdated
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (isShowingErrorMessagesUpdated != null) {
@@ -732,6 +849,12 @@ class _$_IsShowingErrorMessagesUpdated
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) {
     return isShowingErrorMessagesUpdated(this);
   }
@@ -748,6 +871,12 @@ class _$_IsShowingErrorMessagesUpdated
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) {
     return isShowingErrorMessagesUpdated?.call(this);
   }
@@ -764,6 +893,12 @@ class _$_IsShowingErrorMessagesUpdated
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (isShowingErrorMessagesUpdated != null) {
@@ -831,6 +966,9 @@ class _$_SignInPressed implements _SignInPressed {
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) {
     return signInPressed();
   }
@@ -845,6 +983,9 @@ class _$_SignInPressed implements _SignInPressed {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) {
     return signInPressed?.call();
   }
@@ -859,6 +1000,9 @@ class _$_SignInPressed implements _SignInPressed {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (signInPressed != null) {
@@ -880,6 +1024,12 @@ class _$_SignInPressed implements _SignInPressed {
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) {
     return signInPressed(this);
   }
@@ -896,6 +1046,12 @@ class _$_SignInPressed implements _SignInPressed {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) {
     return signInPressed?.call(this);
   }
@@ -912,6 +1068,12 @@ class _$_SignInPressed implements _SignInPressed {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (signInPressed != null) {
@@ -997,6 +1159,9 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) {
     return emailChanged(newEmail);
   }
@@ -1011,6 +1176,9 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) {
     return emailChanged?.call(newEmail);
   }
@@ -1025,6 +1193,9 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -1046,6 +1217,12 @@ class _$_EmailChanged implements _EmailChanged {
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) {
     return emailChanged(this);
   }
@@ -1062,6 +1239,12 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) {
     return emailChanged?.call(this);
   }
@@ -1078,6 +1261,12 @@ class _$_EmailChanged implements _EmailChanged {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (emailChanged != null) {
@@ -1169,6 +1358,9 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function() signInPressed,
     required TResult Function(String newEmail) emailChanged,
     required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
   }) {
     return passwordChanged(newPassword);
   }
@@ -1183,6 +1375,9 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
   }) {
     return passwordChanged?.call(newPassword);
   }
@@ -1197,6 +1392,9 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function()? signInPressed,
     TResult Function(String newEmail)? emailChanged,
     TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -1218,6 +1416,12 @@ class _$_PasswordChanged implements _PasswordChanged {
     required TResult Function(_SignInPressed value) signInPressed,
     required TResult Function(_EmailChanged value) emailChanged,
     required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
   }) {
     return passwordChanged(this);
   }
@@ -1234,6 +1438,12 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
   }) {
     return passwordChanged?.call(this);
   }
@@ -1250,6 +1460,12 @@ class _$_PasswordChanged implements _PasswordChanged {
     TResult Function(_SignInPressed value)? signInPressed,
     TResult Function(_EmailChanged value)? emailChanged,
     TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -1269,6 +1485,525 @@ abstract class _PasswordChanged implements SignInFormEvent {
 }
 
 /// @nodoc
+abstract class _$$_ContinueWithGooglePressedCopyWith<$Res> {
+  factory _$$_ContinueWithGooglePressedCopyWith(
+          _$_ContinueWithGooglePressed value,
+          $Res Function(_$_ContinueWithGooglePressed) then) =
+      __$$_ContinueWithGooglePressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ContinueWithGooglePressedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$$_ContinueWithGooglePressedCopyWith<$Res> {
+  __$$_ContinueWithGooglePressedCopyWithImpl(
+      _$_ContinueWithGooglePressed _value,
+      $Res Function(_$_ContinueWithGooglePressed) _then)
+      : super(_value, (v) => _then(v as _$_ContinueWithGooglePressed));
+
+  @override
+  _$_ContinueWithGooglePressed get _value =>
+      super._value as _$_ContinueWithGooglePressed;
+}
+
+/// @nodoc
+
+class _$_ContinueWithGooglePressed implements _ContinueWithGooglePressed {
+  const _$_ContinueWithGooglePressed();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.continueWithGooglePressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ContinueWithGooglePressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
+    required TResult Function() signInPressed,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
+  }) {
+    return continueWithGooglePressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
+  }) {
+    return continueWithGooglePressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
+    required TResult orElse(),
+  }) {
+    if (continueWithGooglePressed != null) {
+      return continueWithGooglePressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
+    required TResult Function(_SignInPressed value) signInPressed,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
+  }) {
+    return continueWithGooglePressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
+  }) {
+    return continueWithGooglePressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
+    required TResult orElse(),
+  }) {
+    if (continueWithGooglePressed != null) {
+      return continueWithGooglePressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ContinueWithGooglePressed implements SignInFormEvent {
+  const factory _ContinueWithGooglePressed() = _$_ContinueWithGooglePressed;
+}
+
+/// @nodoc
+abstract class _$$_ContinueWithFacebookPressedCopyWith<$Res> {
+  factory _$$_ContinueWithFacebookPressedCopyWith(
+          _$_ContinueWithFacebookPressed value,
+          $Res Function(_$_ContinueWithFacebookPressed) then) =
+      __$$_ContinueWithFacebookPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ContinueWithFacebookPressedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$$_ContinueWithFacebookPressedCopyWith<$Res> {
+  __$$_ContinueWithFacebookPressedCopyWithImpl(
+      _$_ContinueWithFacebookPressed _value,
+      $Res Function(_$_ContinueWithFacebookPressed) _then)
+      : super(_value, (v) => _then(v as _$_ContinueWithFacebookPressed));
+
+  @override
+  _$_ContinueWithFacebookPressed get _value =>
+      super._value as _$_ContinueWithFacebookPressed;
+}
+
+/// @nodoc
+
+class _$_ContinueWithFacebookPressed implements _ContinueWithFacebookPressed {
+  const _$_ContinueWithFacebookPressed();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.continueWithFacebookPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ContinueWithFacebookPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
+    required TResult Function() signInPressed,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
+  }) {
+    return continueWithFacebookPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
+  }) {
+    return continueWithFacebookPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
+    required TResult orElse(),
+  }) {
+    if (continueWithFacebookPressed != null) {
+      return continueWithFacebookPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
+    required TResult Function(_SignInPressed value) signInPressed,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
+  }) {
+    return continueWithFacebookPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
+  }) {
+    return continueWithFacebookPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
+    required TResult orElse(),
+  }) {
+    if (continueWithFacebookPressed != null) {
+      return continueWithFacebookPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ContinueWithFacebookPressed implements SignInFormEvent {
+  const factory _ContinueWithFacebookPressed() = _$_ContinueWithFacebookPressed;
+}
+
+/// @nodoc
+abstract class _$$_ContinueWithTwitterPressedCopyWith<$Res> {
+  factory _$$_ContinueWithTwitterPressedCopyWith(
+          _$_ContinueWithTwitterPressed value,
+          $Res Function(_$_ContinueWithTwitterPressed) then) =
+      __$$_ContinueWithTwitterPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ContinueWithTwitterPressedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res>
+    implements _$$_ContinueWithTwitterPressedCopyWith<$Res> {
+  __$$_ContinueWithTwitterPressedCopyWithImpl(
+      _$_ContinueWithTwitterPressed _value,
+      $Res Function(_$_ContinueWithTwitterPressed) _then)
+      : super(_value, (v) => _then(v as _$_ContinueWithTwitterPressed));
+
+  @override
+  _$_ContinueWithTwitterPressed get _value =>
+      super._value as _$_ContinueWithTwitterPressed;
+}
+
+/// @nodoc
+
+class _$_ContinueWithTwitterPressed implements _ContinueWithTwitterPressed {
+  const _$_ContinueWithTwitterPressed();
+
+  @override
+  String toString() {
+    return 'SignInFormEvent.continueWithTwitterPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ContinueWithTwitterPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(bool isShowing) isShowingClearEmailInputToggled,
+    required TResult Function(bool isShowing) isShowingPasswordToggled,
+    required TResult Function(bool isShowing) isShowingErrorMessagesUpdated,
+    required TResult Function() signInPressed,
+    required TResult Function(String newEmail) emailChanged,
+    required TResult Function(String newPassword) passwordChanged,
+    required TResult Function() continueWithGooglePressed,
+    required TResult Function() continueWithFacebookPressed,
+    required TResult Function() continueWithTwitterPressed,
+  }) {
+    return continueWithTwitterPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
+  }) {
+    return continueWithTwitterPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult Function(bool isShowing)? isShowingPasswordToggled,
+    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult Function()? signInPressed,
+    TResult Function(String newEmail)? emailChanged,
+    TResult Function(String newPassword)? passwordChanged,
+    TResult Function()? continueWithGooglePressed,
+    TResult Function()? continueWithFacebookPressed,
+    TResult Function()? continueWithTwitterPressed,
+    required TResult orElse(),
+  }) {
+    if (continueWithTwitterPressed != null) {
+      return continueWithTwitterPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_SignInForm value) initialized,
+    required TResult Function(_IsShowingClearEmailInputToggled value)
+        isShowingClearEmailInputToggled,
+    required TResult Function(_IsShowingPasswordToggled value)
+        isShowingPasswordToggled,
+    required TResult Function(_IsShowingErrorMessagesUpdated value)
+        isShowingErrorMessagesUpdated,
+    required TResult Function(_SignInPressed value) signInPressed,
+    required TResult Function(_EmailChanged value) emailChanged,
+    required TResult Function(_PasswordChanged value) passwordChanged,
+    required TResult Function(_ContinueWithGooglePressed value)
+        continueWithGooglePressed,
+    required TResult Function(_ContinueWithFacebookPressed value)
+        continueWithFacebookPressed,
+    required TResult Function(_ContinueWithTwitterPressed value)
+        continueWithTwitterPressed,
+  }) {
+    return continueWithTwitterPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
+  }) {
+    return continueWithTwitterPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_SignInForm value)? initialized,
+    TResult Function(_IsShowingClearEmailInputToggled value)?
+        isShowingClearEmailInputToggled,
+    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
+    TResult Function(_IsShowingErrorMessagesUpdated value)?
+        isShowingErrorMessagesUpdated,
+    TResult Function(_SignInPressed value)? signInPressed,
+    TResult Function(_EmailChanged value)? emailChanged,
+    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult Function(_ContinueWithGooglePressed value)?
+        continueWithGooglePressed,
+    TResult Function(_ContinueWithFacebookPressed value)?
+        continueWithFacebookPressed,
+    TResult Function(_ContinueWithTwitterPressed value)?
+        continueWithTwitterPressed,
+    required TResult orElse(),
+  }) {
+    if (continueWithTwitterPressed != null) {
+      return continueWithTwitterPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ContinueWithTwitterPressed implements SignInFormEvent {
+  const factory _ContinueWithTwitterPressed() = _$_ContinueWithTwitterPressed;
+}
+
+/// @nodoc
 mixin _$SignInFormState {
   String get inputEmail => throw _privateConstructorUsedError;
   bool get isShowingClearEmailButton => throw _privateConstructorUsedError;
@@ -1279,6 +2014,8 @@ mixin _$SignInFormState {
   Option<Either<AuthFailure, Unit>> get signInFailureOrUnitOption =>
       throw _privateConstructorUsedError;
   bool get isLoading => throw _privateConstructorUsedError;
+  UserCredential? get currentUserCredential =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SignInFormStateCopyWith<SignInFormState> get copyWith =>
@@ -1298,7 +2035,8 @@ abstract class $SignInFormStateCopyWith<$Res> {
       bool isShowingErrorMessages,
       String currentErrorMessageTag,
       Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
-      bool isLoading});
+      bool isLoading,
+      UserCredential? currentUserCredential});
 }
 
 /// @nodoc
@@ -1320,6 +2058,7 @@ class _$SignInFormStateCopyWithImpl<$Res>
     Object? currentErrorMessageTag = freezed,
     Object? signInFailureOrUnitOption = freezed,
     Object? isLoading = freezed,
+    Object? currentUserCredential = freezed,
   }) {
     return _then(_value.copyWith(
       inputEmail: inputEmail == freezed
@@ -1354,6 +2093,10 @@ class _$SignInFormStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentUserCredential: currentUserCredential == freezed
+          ? _value.currentUserCredential
+          : currentUserCredential // ignore: cast_nullable_to_non_nullable
+              as UserCredential?,
     ));
   }
 }
@@ -1373,7 +2116,8 @@ abstract class _$$_SignInFormStateCopyWith<$Res>
       bool isShowingErrorMessages,
       String currentErrorMessageTag,
       Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
-      bool isLoading});
+      bool isLoading,
+      UserCredential? currentUserCredential});
 }
 
 /// @nodoc
@@ -1397,6 +2141,7 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
     Object? currentErrorMessageTag = freezed,
     Object? signInFailureOrUnitOption = freezed,
     Object? isLoading = freezed,
+    Object? currentUserCredential = freezed,
   }) {
     return _then(_$_SignInFormState(
       inputEmail: inputEmail == freezed
@@ -1431,6 +2176,10 @@ class __$$_SignInFormStateCopyWithImpl<$Res>
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentUserCredential: currentUserCredential == freezed
+          ? _value.currentUserCredential
+          : currentUserCredential // ignore: cast_nullable_to_non_nullable
+              as UserCredential?,
     ));
   }
 }
@@ -1446,7 +2195,8 @@ class _$_SignInFormState implements _SignInFormState {
       required this.isShowingErrorMessages,
       required this.currentErrorMessageTag,
       required this.signInFailureOrUnitOption,
-      required this.isLoading});
+      required this.isLoading,
+      required this.currentUserCredential});
 
   @override
   final String inputEmail;
@@ -1464,10 +2214,12 @@ class _$_SignInFormState implements _SignInFormState {
   final Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption;
   @override
   final bool isLoading;
+  @override
+  final UserCredential? currentUserCredential;
 
   @override
   String toString() {
-    return 'SignInFormState(inputEmail: $inputEmail, isShowingClearEmailButton: $isShowingClearEmailButton, inputPassword: $inputPassword, isShowingPassword: $isShowingPassword, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag, signInFailureOrUnitOption: $signInFailureOrUnitOption, isLoading: $isLoading)';
+    return 'SignInFormState(inputEmail: $inputEmail, isShowingClearEmailButton: $isShowingClearEmailButton, inputPassword: $inputPassword, isShowingPassword: $isShowingPassword, isShowingErrorMessages: $isShowingErrorMessages, currentErrorMessageTag: $currentErrorMessageTag, signInFailureOrUnitOption: $signInFailureOrUnitOption, isLoading: $isLoading, currentUserCredential: $currentUserCredential)';
   }
 
   @override
@@ -1489,7 +2241,9 @@ class _$_SignInFormState implements _SignInFormState {
                 .equals(other.currentErrorMessageTag, currentErrorMessageTag) &&
             const DeepCollectionEquality().equals(
                 other.signInFailureOrUnitOption, signInFailureOrUnitOption) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading));
+            const DeepCollectionEquality().equals(other.isLoading, isLoading) &&
+            const DeepCollectionEquality()
+                .equals(other.currentUserCredential, currentUserCredential));
   }
 
   @override
@@ -1502,7 +2256,8 @@ class _$_SignInFormState implements _SignInFormState {
       const DeepCollectionEquality().hash(isShowingErrorMessages),
       const DeepCollectionEquality().hash(currentErrorMessageTag),
       const DeepCollectionEquality().hash(signInFailureOrUnitOption),
-      const DeepCollectionEquality().hash(isLoading));
+      const DeepCollectionEquality().hash(isLoading),
+      const DeepCollectionEquality().hash(currentUserCredential));
 
   @JsonKey(ignore: true)
   @override
@@ -1512,15 +2267,17 @@ class _$_SignInFormState implements _SignInFormState {
 
 abstract class _SignInFormState implements SignInFormState {
   const factory _SignInFormState(
-      {required final String inputEmail,
-      required final bool isShowingClearEmailButton,
-      required final String inputPassword,
-      required final bool isShowingPassword,
-      required final bool isShowingErrorMessages,
-      required final String currentErrorMessageTag,
-      required final Option<Either<AuthFailure, Unit>>
-          signInFailureOrUnitOption,
-      required final bool isLoading}) = _$_SignInFormState;
+          {required final String inputEmail,
+          required final bool isShowingClearEmailButton,
+          required final String inputPassword,
+          required final bool isShowingPassword,
+          required final bool isShowingErrorMessages,
+          required final String currentErrorMessageTag,
+          required final Option<Either<AuthFailure, Unit>>
+              signInFailureOrUnitOption,
+          required final bool isLoading,
+          required final UserCredential? currentUserCredential}) =
+      _$_SignInFormState;
 
   @override
   String get inputEmail => throw _privateConstructorUsedError;
@@ -1539,6 +2296,9 @@ abstract class _SignInFormState implements SignInFormState {
       throw _privateConstructorUsedError;
   @override
   bool get isLoading => throw _privateConstructorUsedError;
+  @override
+  UserCredential? get currentUserCredential =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>

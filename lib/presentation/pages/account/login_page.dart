@@ -207,14 +207,16 @@ class _LoginPageState extends State<LoginPage> {
                         OrDivider(),
                         Column(
                           children: [
-                            SocialMediaButton(
-                              context,
-                              socialMediaIcon:
-                                  Image.asset('assets/fonts/google_icon.png'),
-                              buttonColor: SocialMediaButton.googleButtonColor,
-                              buttonText: tr('action_login_with_google'),
-                              textColor: Colors.black,
-                            ),
+                            SocialMediaButton(context,
+                                socialMediaIcon:
+                                    Image.asset('assets/fonts/google_icon.png'),
+                                buttonColor:
+                                    SocialMediaButton.googleButtonColor,
+                                buttonText: tr('action_login_with_google'),
+                                textColor: Colors.black, buttonPressed: () {
+                              context.read<SignInFormBloc>().add(
+                                  SignInFormEvent.continueWithGooglePressed());
+                            }),
                             SocialMediaButton(
                               context,
                               socialMediaIcon:
@@ -222,6 +224,11 @@ class _LoginPageState extends State<LoginPage> {
                               buttonColor: SocialMediaButton.twitterButtonColor,
                               buttonText: tr('action_login_with_twitter'),
                               textColor: Colors.white,
+                              buttonPressed: () {
+                                context.read<SignInFormBloc>().add(
+                                    SignInFormEvent
+                                        .continueWithTwitterPressed());
+                              },
                             ),
                             SocialMediaButton(
                               context,
@@ -231,6 +238,11 @@ class _LoginPageState extends State<LoginPage> {
                                   SocialMediaButton.facebookButtonColor,
                               buttonText: tr('action_login_with_facebook'),
                               textColor: Colors.white,
+                              buttonPressed: () {
+                                context.read<SignInFormBloc>().add(
+                                    SignInFormEvent
+                                        .continueWithFacebookPressed());
+                              },
                             ),
                           ],
                         ),

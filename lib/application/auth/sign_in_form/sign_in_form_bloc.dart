@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:secry/domain/auth/auth_failure.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -18,7 +19,8 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
     on<SignInFormEvent>(_onEvent);
   }
 
-  Future<void> _onEvent(SignInFormEvent event, Emitter<SignInFormState> emit) async {
+  Future<void> _onEvent(
+      SignInFormEvent event, Emitter<SignInFormState> emit) async {
     await event.map(
       initialized: (e) async {
         // TODO retrieve email from persistentStorage if available
@@ -52,27 +54,37 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         emit(state.copyWith(signInFailureOrUnitOption: none()));
         emit(state.copyWith(isLoading: true));
 
-        final failureOrUnit = await _authFacade.signIn(email: state.inputEmail, password: state.inputPassword);
+        final failureOrUnit = await _authFacade.signIn(
+            email: state.inputEmail, password: state.inputPassword);
         await failureOrUnit.fold(
           (failure) {
             failure.maybeMap(
               emailAlreadyExists: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_combination_email_and_password_invalid'));
+                emit(state.copyWith(
+                    currentErrorMessageTag:
+                        'account_error_combination_email_and_password_invalid'));
               },
               invalidEmail: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_combination_email_and_password_invalid'));
+                emit(state.copyWith(
+                    currentErrorMessageTag:
+                        'account_error_combination_email_and_password_invalid'));
               },
               invalidPassword: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_combination_email_and_password_invalid'));
+                emit(state.copyWith(
+                    currentErrorMessageTag:
+                        'account_error_combination_email_and_password_invalid'));
               },
               userNotFound: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_user_not_found'));
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_user_not_found'));
               },
               generalError: (_) {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_general'));
               },
               orElse: () {
-                emit(state.copyWith(currentErrorMessageTag: 'account_error_general'));
+                emit(state.copyWith(
+                    currentErrorMessageTag: 'account_error_general'));
               },
             );
             emit(state.copyWith(isShowingErrorMessages: true));
@@ -83,7 +95,20 @@ class SignInFormBloc extends Bloc<SignInFormEvent, SignInFormState> {
         );
 
         emit(state.copyWith(isLoading: false));
-        emit(state.copyWith(signInFailureOrUnitOption: optionOf(failureOrUnit)));
+        emit(
+            state.copyWith(signInFailureOrUnitOption: optionOf(failureOrUnit)));
+      },
+      continueWithGooglePressed: (e) async {
+        final currentUserCredential = await _authFacade.signInWithGoogle();
+        emit(state.copyWith(currentUserCredential: currentUserCredential));
+      },
+      continueWithFacebookPressed: (e) async {
+        final currentUserCredential = await _authFacade.signInWithFacebook();
+        emit(state.copyWith(currentUserCredential: currentUserCredential));
+      },
+      continueWithTwitterPressed: (e) async {
+        final currentUserCredential = await _authFacade.signInWithTwitter();
+        emit(state.copyWith(currentUserCredential: currentUserCredential));
       },
     );
   }

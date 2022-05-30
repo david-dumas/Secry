@@ -10,7 +10,8 @@ class SignInFormState with _$SignInFormState {
       required bool isShowingErrorMessages,
       required String currentErrorMessageTag,
       required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
-      required bool isLoading}) = _SignInFormState;
+      required bool isLoading,
+      required UserCredential? currentUserCredential}) = _SignInFormState;
 
   factory SignInFormState.initial() => SignInFormState(
       inputEmail: '',
@@ -20,5 +21,6 @@ class SignInFormState with _$SignInFormState {
       isShowingErrorMessages: false,
       currentErrorMessageTag: '',
       signInFailureOrUnitOption: none(),
-      isLoading: false);
+      isLoading: false,
+      currentUserCredential: null);
 }
