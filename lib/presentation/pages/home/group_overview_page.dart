@@ -1,19 +1,22 @@
+import 'dart:io' show Platform;
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:secry/application/group_overview/group_overview_bloc.dart';
 
 import 'package:secry/constants.dart';
 import 'package:secry/domain/groups/feature_type.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
+import 'package:secry/presentation/pages/add_survey/add_survey_page.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/presentation/widgets/general/group_section.dart';
+import 'package:secry/application/add_survey/add_survey_page_bloc.dart';
 
 import 'package:secry/injection.dart';
-
-import 'all_chats_or_surveys_in_group_page.dart';
+import 'package:secry/presentation/routes/router.gr.dart';
 
 class GroupOverviewPage extends StatelessWidget {
   final String title;
@@ -129,7 +132,22 @@ class GroupOverviewPage extends StatelessWidget {
                                   if (state.currentFeatureType == FeatureType.chats) {
                                     // TODO handle create new chat
                                   } else if (state.currentFeatureType == FeatureType.surveys) {
-                                    // TODO handle create new survey
+                                    if (Platform.isAndroid) {
+                                      AutoRouter.of(context)
+                                          .push(AddSurveyPageAndroidRoute())
+                                          .then((isRefreshNeeded) async {
+                                        context.read<GroupOverviewBloc>().add(GroupOverviewEvent.groupRefreshed());
+                                      });
+                                    } else if (Platform.isIOS) {
+                                      showMaterialModalBottomSheet(
+                                        context: context,
+                                        useRootNavigator: true,
+                                        builder: (context) => AddSurveyPageIOS(),
+                                      ).then((isRefreshNeeded) async {
+                                        context.read<GroupOverviewBloc>().add(GroupOverviewEvent.groupRefreshed());
+                                      });
+                                      ;
+                                    }
                                   }
                                 },
                                 openPageForPressedCell: (String id, String groupTitle) {

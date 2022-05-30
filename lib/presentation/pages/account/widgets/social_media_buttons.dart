@@ -6,13 +6,15 @@ class SocialMediaButton extends StatelessWidget {
   final Color buttonColor;
   final String buttonText;
   final Color textColor;
+  final Function buttonPressed;
 
   SocialMediaButton(BuildContext context,
       {Key? key,
       required this.socialMediaIcon,
       required this.buttonColor,
       required this.buttonText,
-      required this.textColor})
+      required this.textColor,
+      required this.buttonPressed})
       : super(key: key);
 
   // Icons of the social media buttons
@@ -32,13 +34,14 @@ class SocialMediaButton extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: kButtonHeightMedium,
       child: OutlinedButton(
-        onPressed: () {},
+        onPressed: () {
+          buttonPressed();
+        },
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(buttonColor),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius:
-                  BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
+              borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
             ),
           ),
         ),

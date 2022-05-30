@@ -12,98 +12,7 @@ part of 'add_group_page_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AddGroupPageEventTearOff {
-  const _$AddGroupPageEventTearOff();
-
-  _Initialized initialized() {
-    return const _Initialized();
-  }
-
-  _GroupTitleUpdated groupTitleUpdated(String newTitle) {
-    return _GroupTitleUpdated(
-      newTitle,
-    );
-  }
-
-  _GroupImageUpdated groupImageUpdated(Image newImage) {
-    return _GroupImageUpdated(
-      newImage,
-    );
-  }
-
-  _GroupImageDeleted groupImageDeleted() {
-    return const _GroupImageDeleted();
-  }
-
-  _SearchAllPeopleSearchValueUpdated searchAllPeopleSearchValueUpdated(
-      String newValue) {
-    return _SearchAllPeopleSearchValueUpdated(
-      newValue,
-    );
-  }
-
-  _UsersForSearchQueryUpdated usersForSearchQueryUpdated(
-      List<GroupUser> newUsers) {
-    return _UsersForSearchQueryUpdated(
-      newUsers,
-    );
-  }
-
-  _GroupMembersUserAdded groupMembersUserAdded(GroupUser addedUser) {
-    return _GroupMembersUserAdded(
-      addedUser,
-    );
-  }
-
-  _GroupMembersUserDeleted groupMembersUserDeleted(String userId) {
-    return _GroupMembersUserDeleted(
-      userId,
-    );
-  }
-
-  _GroupMembersUpdated groupMembersUpdated(List<GroupUser> newMembers) {
-    return _GroupMembersUpdated(
-      newMembers,
-    );
-  }
-
-  _CurrentStepIndexUpdated currentStepIndexUpdated(int newIndex) {
-    return _CurrentStepIndexUpdated(
-      newIndex,
-    );
-  }
-
-  _NewGroupCreated newGroupCreated() {
-    return const _NewGroupCreated();
-  }
-
-  _AreUsersForSearchUsersFetchedUpdated areUsersForSearchUsersFetchedUpdated(
-      bool areFetched) {
-    return _AreUsersForSearchUsersFetchedUpdated(
-      areFetched,
-    );
-  }
-
-  _IsFetchingUsersForSearchQueryUpdated isFetchingUsersForSearchQueryUpdated(
-      bool isFetching) {
-    return _IsFetchingUsersForSearchQueryUpdated(
-      isFetching,
-    );
-  }
-
-  _SearchUsersPaginationInfoUpdated searchUsersPaginationInfoUpdated(
-      PaginationInfo? newPaginationInfo) {
-    return _SearchUsersPaginationInfoUpdated(
-      newPaginationInfo,
-    );
-  }
-}
-
-/// @nodoc
-const $AddGroupPageEvent = _$AddGroupPageEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AddGroupPageEvent {
@@ -262,22 +171,22 @@ class _$AddGroupPageEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res>
+class __$$_InitializedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, (v) => _then(v as _$_Initialized));
 
   @override
-  _Initialized get _value => super._value as _Initialized;
+  _$_Initialized get _value => super._value as _$_Initialized;
 }
 
 /// @nodoc
@@ -293,7 +202,7 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initialized);
+        (other.runtimeType == runtimeType && other is _$_Initialized);
   }
 
   @override
@@ -464,29 +373,29 @@ abstract class _Initialized implements AddGroupPageEvent {
 }
 
 /// @nodoc
-abstract class _$GroupTitleUpdatedCopyWith<$Res> {
-  factory _$GroupTitleUpdatedCopyWith(
-          _GroupTitleUpdated value, $Res Function(_GroupTitleUpdated) then) =
-      __$GroupTitleUpdatedCopyWithImpl<$Res>;
+abstract class _$$_GroupTitleUpdatedCopyWith<$Res> {
+  factory _$$_GroupTitleUpdatedCopyWith(_$_GroupTitleUpdated value,
+          $Res Function(_$_GroupTitleUpdated) then) =
+      __$$_GroupTitleUpdatedCopyWithImpl<$Res>;
   $Res call({String newTitle});
 }
 
 /// @nodoc
-class __$GroupTitleUpdatedCopyWithImpl<$Res>
+class __$$_GroupTitleUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$GroupTitleUpdatedCopyWith<$Res> {
-  __$GroupTitleUpdatedCopyWithImpl(
-      _GroupTitleUpdated _value, $Res Function(_GroupTitleUpdated) _then)
-      : super(_value, (v) => _then(v as _GroupTitleUpdated));
+    implements _$$_GroupTitleUpdatedCopyWith<$Res> {
+  __$$_GroupTitleUpdatedCopyWithImpl(
+      _$_GroupTitleUpdated _value, $Res Function(_$_GroupTitleUpdated) _then)
+      : super(_value, (v) => _then(v as _$_GroupTitleUpdated));
 
   @override
-  _GroupTitleUpdated get _value => super._value as _GroupTitleUpdated;
+  _$_GroupTitleUpdated get _value => super._value as _$_GroupTitleUpdated;
 
   @override
   $Res call({
     Object? newTitle = freezed,
   }) {
-    return _then(_GroupTitleUpdated(
+    return _then(_$_GroupTitleUpdated(
       newTitle == freezed
           ? _value.newTitle
           : newTitle // ignore: cast_nullable_to_non_nullable
@@ -512,7 +421,7 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GroupTitleUpdated &&
+            other is _$_GroupTitleUpdated &&
             const DeepCollectionEquality().equals(other.newTitle, newTitle));
   }
 
@@ -522,8 +431,9 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupTitleUpdatedCopyWith<_GroupTitleUpdated> get copyWith =>
-      __$GroupTitleUpdatedCopyWithImpl<_GroupTitleUpdated>(this, _$identity);
+  _$$_GroupTitleUpdatedCopyWith<_$_GroupTitleUpdated> get copyWith =>
+      __$$_GroupTitleUpdatedCopyWithImpl<_$_GroupTitleUpdated>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -686,38 +596,39 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
 }
 
 abstract class _GroupTitleUpdated implements AddGroupPageEvent {
-  const factory _GroupTitleUpdated(String newTitle) = _$_GroupTitleUpdated;
+  const factory _GroupTitleUpdated(final String newTitle) =
+      _$_GroupTitleUpdated;
 
-  String get newTitle;
+  String get newTitle => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$GroupTitleUpdatedCopyWith<_GroupTitleUpdated> get copyWith =>
+  _$$_GroupTitleUpdatedCopyWith<_$_GroupTitleUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GroupImageUpdatedCopyWith<$Res> {
-  factory _$GroupImageUpdatedCopyWith(
-          _GroupImageUpdated value, $Res Function(_GroupImageUpdated) then) =
-      __$GroupImageUpdatedCopyWithImpl<$Res>;
+abstract class _$$_GroupImageUpdatedCopyWith<$Res> {
+  factory _$$_GroupImageUpdatedCopyWith(_$_GroupImageUpdated value,
+          $Res Function(_$_GroupImageUpdated) then) =
+      __$$_GroupImageUpdatedCopyWithImpl<$Res>;
   $Res call({Image newImage});
 }
 
 /// @nodoc
-class __$GroupImageUpdatedCopyWithImpl<$Res>
+class __$$_GroupImageUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$GroupImageUpdatedCopyWith<$Res> {
-  __$GroupImageUpdatedCopyWithImpl(
-      _GroupImageUpdated _value, $Res Function(_GroupImageUpdated) _then)
-      : super(_value, (v) => _then(v as _GroupImageUpdated));
+    implements _$$_GroupImageUpdatedCopyWith<$Res> {
+  __$$_GroupImageUpdatedCopyWithImpl(
+      _$_GroupImageUpdated _value, $Res Function(_$_GroupImageUpdated) _then)
+      : super(_value, (v) => _then(v as _$_GroupImageUpdated));
 
   @override
-  _GroupImageUpdated get _value => super._value as _GroupImageUpdated;
+  _$_GroupImageUpdated get _value => super._value as _$_GroupImageUpdated;
 
   @override
   $Res call({
     Object? newImage = freezed,
   }) {
-    return _then(_GroupImageUpdated(
+    return _then(_$_GroupImageUpdated(
       newImage == freezed
           ? _value.newImage
           : newImage // ignore: cast_nullable_to_non_nullable
@@ -743,7 +654,7 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GroupImageUpdated &&
+            other is _$_GroupImageUpdated &&
             const DeepCollectionEquality().equals(other.newImage, newImage));
   }
 
@@ -753,8 +664,9 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupImageUpdatedCopyWith<_GroupImageUpdated> get copyWith =>
-      __$GroupImageUpdatedCopyWithImpl<_GroupImageUpdated>(this, _$identity);
+  _$$_GroupImageUpdatedCopyWith<_$_GroupImageUpdated> get copyWith =>
+      __$$_GroupImageUpdatedCopyWithImpl<_$_GroupImageUpdated>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -917,31 +829,31 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
 }
 
 abstract class _GroupImageUpdated implements AddGroupPageEvent {
-  const factory _GroupImageUpdated(Image newImage) = _$_GroupImageUpdated;
+  const factory _GroupImageUpdated(final Image newImage) = _$_GroupImageUpdated;
 
-  Image get newImage;
+  Image get newImage => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$GroupImageUpdatedCopyWith<_GroupImageUpdated> get copyWith =>
+  _$$_GroupImageUpdatedCopyWith<_$_GroupImageUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GroupImageDeletedCopyWith<$Res> {
-  factory _$GroupImageDeletedCopyWith(
-          _GroupImageDeleted value, $Res Function(_GroupImageDeleted) then) =
-      __$GroupImageDeletedCopyWithImpl<$Res>;
+abstract class _$$_GroupImageDeletedCopyWith<$Res> {
+  factory _$$_GroupImageDeletedCopyWith(_$_GroupImageDeleted value,
+          $Res Function(_$_GroupImageDeleted) then) =
+      __$$_GroupImageDeletedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$GroupImageDeletedCopyWithImpl<$Res>
+class __$$_GroupImageDeletedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$GroupImageDeletedCopyWith<$Res> {
-  __$GroupImageDeletedCopyWithImpl(
-      _GroupImageDeleted _value, $Res Function(_GroupImageDeleted) _then)
-      : super(_value, (v) => _then(v as _GroupImageDeleted));
+    implements _$$_GroupImageDeletedCopyWith<$Res> {
+  __$$_GroupImageDeletedCopyWithImpl(
+      _$_GroupImageDeleted _value, $Res Function(_$_GroupImageDeleted) _then)
+      : super(_value, (v) => _then(v as _$_GroupImageDeleted));
 
   @override
-  _GroupImageDeleted get _value => super._value as _GroupImageDeleted;
+  _$_GroupImageDeleted get _value => super._value as _$_GroupImageDeleted;
 }
 
 /// @nodoc
@@ -957,7 +869,7 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _GroupImageDeleted);
+        (other.runtimeType == runtimeType && other is _$_GroupImageDeleted);
   }
 
   @override
@@ -1128,32 +1040,32 @@ abstract class _GroupImageDeleted implements AddGroupPageEvent {
 }
 
 /// @nodoc
-abstract class _$SearchAllPeopleSearchValueUpdatedCopyWith<$Res> {
-  factory _$SearchAllPeopleSearchValueUpdatedCopyWith(
-          _SearchAllPeopleSearchValueUpdated value,
-          $Res Function(_SearchAllPeopleSearchValueUpdated) then) =
-      __$SearchAllPeopleSearchValueUpdatedCopyWithImpl<$Res>;
+abstract class _$$_SearchAllPeopleSearchValueUpdatedCopyWith<$Res> {
+  factory _$$_SearchAllPeopleSearchValueUpdatedCopyWith(
+          _$_SearchAllPeopleSearchValueUpdated value,
+          $Res Function(_$_SearchAllPeopleSearchValueUpdated) then) =
+      __$$_SearchAllPeopleSearchValueUpdatedCopyWithImpl<$Res>;
   $Res call({String newValue});
 }
 
 /// @nodoc
-class __$SearchAllPeopleSearchValueUpdatedCopyWithImpl<$Res>
+class __$$_SearchAllPeopleSearchValueUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$SearchAllPeopleSearchValueUpdatedCopyWith<$Res> {
-  __$SearchAllPeopleSearchValueUpdatedCopyWithImpl(
-      _SearchAllPeopleSearchValueUpdated _value,
-      $Res Function(_SearchAllPeopleSearchValueUpdated) _then)
-      : super(_value, (v) => _then(v as _SearchAllPeopleSearchValueUpdated));
+    implements _$$_SearchAllPeopleSearchValueUpdatedCopyWith<$Res> {
+  __$$_SearchAllPeopleSearchValueUpdatedCopyWithImpl(
+      _$_SearchAllPeopleSearchValueUpdated _value,
+      $Res Function(_$_SearchAllPeopleSearchValueUpdated) _then)
+      : super(_value, (v) => _then(v as _$_SearchAllPeopleSearchValueUpdated));
 
   @override
-  _SearchAllPeopleSearchValueUpdated get _value =>
-      super._value as _SearchAllPeopleSearchValueUpdated;
+  _$_SearchAllPeopleSearchValueUpdated get _value =>
+      super._value as _$_SearchAllPeopleSearchValueUpdated;
 
   @override
   $Res call({
     Object? newValue = freezed,
   }) {
-    return _then(_SearchAllPeopleSearchValueUpdated(
+    return _then(_$_SearchAllPeopleSearchValueUpdated(
       newValue == freezed
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
@@ -1180,7 +1092,7 @@ class _$_SearchAllPeopleSearchValueUpdated
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchAllPeopleSearchValueUpdated &&
+            other is _$_SearchAllPeopleSearchValueUpdated &&
             const DeepCollectionEquality().equals(other.newValue, newValue));
   }
 
@@ -1190,10 +1102,10 @@ class _$_SearchAllPeopleSearchValueUpdated
 
   @JsonKey(ignore: true)
   @override
-  _$SearchAllPeopleSearchValueUpdatedCopyWith<
-          _SearchAllPeopleSearchValueUpdated>
-      get copyWith => __$SearchAllPeopleSearchValueUpdatedCopyWithImpl<
-          _SearchAllPeopleSearchValueUpdated>(this, _$identity);
+  _$$_SearchAllPeopleSearchValueUpdatedCopyWith<
+          _$_SearchAllPeopleSearchValueUpdated>
+      get copyWith => __$$_SearchAllPeopleSearchValueUpdatedCopyWithImpl<
+          _$_SearchAllPeopleSearchValueUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1356,44 +1268,45 @@ class _$_SearchAllPeopleSearchValueUpdated
 }
 
 abstract class _SearchAllPeopleSearchValueUpdated implements AddGroupPageEvent {
-  const factory _SearchAllPeopleSearchValueUpdated(String newValue) =
+  const factory _SearchAllPeopleSearchValueUpdated(final String newValue) =
       _$_SearchAllPeopleSearchValueUpdated;
 
-  String get newValue;
+  String get newValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SearchAllPeopleSearchValueUpdatedCopyWith<
-          _SearchAllPeopleSearchValueUpdated>
+  _$$_SearchAllPeopleSearchValueUpdatedCopyWith<
+          _$_SearchAllPeopleSearchValueUpdated>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$UsersForSearchQueryUpdatedCopyWith<$Res> {
-  factory _$UsersForSearchQueryUpdatedCopyWith(
-          _UsersForSearchQueryUpdated value,
-          $Res Function(_UsersForSearchQueryUpdated) then) =
-      __$UsersForSearchQueryUpdatedCopyWithImpl<$Res>;
+abstract class _$$_UsersForSearchQueryUpdatedCopyWith<$Res> {
+  factory _$$_UsersForSearchQueryUpdatedCopyWith(
+          _$_UsersForSearchQueryUpdated value,
+          $Res Function(_$_UsersForSearchQueryUpdated) then) =
+      __$$_UsersForSearchQueryUpdatedCopyWithImpl<$Res>;
   $Res call({List<GroupUser> newUsers});
 }
 
 /// @nodoc
-class __$UsersForSearchQueryUpdatedCopyWithImpl<$Res>
+class __$$_UsersForSearchQueryUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$UsersForSearchQueryUpdatedCopyWith<$Res> {
-  __$UsersForSearchQueryUpdatedCopyWithImpl(_UsersForSearchQueryUpdated _value,
-      $Res Function(_UsersForSearchQueryUpdated) _then)
-      : super(_value, (v) => _then(v as _UsersForSearchQueryUpdated));
+    implements _$$_UsersForSearchQueryUpdatedCopyWith<$Res> {
+  __$$_UsersForSearchQueryUpdatedCopyWithImpl(
+      _$_UsersForSearchQueryUpdated _value,
+      $Res Function(_$_UsersForSearchQueryUpdated) _then)
+      : super(_value, (v) => _then(v as _$_UsersForSearchQueryUpdated));
 
   @override
-  _UsersForSearchQueryUpdated get _value =>
-      super._value as _UsersForSearchQueryUpdated;
+  _$_UsersForSearchQueryUpdated get _value =>
+      super._value as _$_UsersForSearchQueryUpdated;
 
   @override
   $Res call({
     Object? newUsers = freezed,
   }) {
-    return _then(_UsersForSearchQueryUpdated(
+    return _then(_$_UsersForSearchQueryUpdated(
       newUsers == freezed
-          ? _value.newUsers
+          ? _value._newUsers
           : newUsers // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
     ));
@@ -1403,10 +1316,15 @@ class __$UsersForSearchQueryUpdatedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
-  const _$_UsersForSearchQueryUpdated(this.newUsers);
+  const _$_UsersForSearchQueryUpdated(final List<GroupUser> newUsers)
+      : _newUsers = newUsers;
 
+  final List<GroupUser> _newUsers;
   @override
-  final List<GroupUser> newUsers;
+  List<GroupUser> get newUsers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_newUsers);
+  }
 
   @override
   String toString() {
@@ -1417,19 +1335,19 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _UsersForSearchQueryUpdated &&
-            const DeepCollectionEquality().equals(other.newUsers, newUsers));
+            other is _$_UsersForSearchQueryUpdated &&
+            const DeepCollectionEquality().equals(other._newUsers, _newUsers));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newUsers));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(_newUsers));
 
   @JsonKey(ignore: true)
   @override
-  _$UsersForSearchQueryUpdatedCopyWith<_UsersForSearchQueryUpdated>
-      get copyWith => __$UsersForSearchQueryUpdatedCopyWithImpl<
-          _UsersForSearchQueryUpdated>(this, _$identity);
+  _$$_UsersForSearchQueryUpdatedCopyWith<_$_UsersForSearchQueryUpdated>
+      get copyWith => __$$_UsersForSearchQueryUpdatedCopyWithImpl<
+          _$_UsersForSearchQueryUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1592,39 +1510,40 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
 }
 
 abstract class _UsersForSearchQueryUpdated implements AddGroupPageEvent {
-  const factory _UsersForSearchQueryUpdated(List<GroupUser> newUsers) =
+  const factory _UsersForSearchQueryUpdated(final List<GroupUser> newUsers) =
       _$_UsersForSearchQueryUpdated;
 
-  List<GroupUser> get newUsers;
+  List<GroupUser> get newUsers => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$UsersForSearchQueryUpdatedCopyWith<_UsersForSearchQueryUpdated>
+  _$$_UsersForSearchQueryUpdatedCopyWith<_$_UsersForSearchQueryUpdated>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GroupMembersUserAddedCopyWith<$Res> {
-  factory _$GroupMembersUserAddedCopyWith(_GroupMembersUserAdded value,
-          $Res Function(_GroupMembersUserAdded) then) =
-      __$GroupMembersUserAddedCopyWithImpl<$Res>;
+abstract class _$$_GroupMembersUserAddedCopyWith<$Res> {
+  factory _$$_GroupMembersUserAddedCopyWith(_$_GroupMembersUserAdded value,
+          $Res Function(_$_GroupMembersUserAdded) then) =
+      __$$_GroupMembersUserAddedCopyWithImpl<$Res>;
   $Res call({GroupUser addedUser});
 }
 
 /// @nodoc
-class __$GroupMembersUserAddedCopyWithImpl<$Res>
+class __$$_GroupMembersUserAddedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$GroupMembersUserAddedCopyWith<$Res> {
-  __$GroupMembersUserAddedCopyWithImpl(_GroupMembersUserAdded _value,
-      $Res Function(_GroupMembersUserAdded) _then)
-      : super(_value, (v) => _then(v as _GroupMembersUserAdded));
+    implements _$$_GroupMembersUserAddedCopyWith<$Res> {
+  __$$_GroupMembersUserAddedCopyWithImpl(_$_GroupMembersUserAdded _value,
+      $Res Function(_$_GroupMembersUserAdded) _then)
+      : super(_value, (v) => _then(v as _$_GroupMembersUserAdded));
 
   @override
-  _GroupMembersUserAdded get _value => super._value as _GroupMembersUserAdded;
+  _$_GroupMembersUserAdded get _value =>
+      super._value as _$_GroupMembersUserAdded;
 
   @override
   $Res call({
     Object? addedUser = freezed,
   }) {
-    return _then(_GroupMembersUserAdded(
+    return _then(_$_GroupMembersUserAdded(
       addedUser == freezed
           ? _value.addedUser
           : addedUser // ignore: cast_nullable_to_non_nullable
@@ -1650,7 +1569,7 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GroupMembersUserAdded &&
+            other is _$_GroupMembersUserAdded &&
             const DeepCollectionEquality().equals(other.addedUser, addedUser));
   }
 
@@ -1660,8 +1579,8 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupMembersUserAddedCopyWith<_GroupMembersUserAdded> get copyWith =>
-      __$GroupMembersUserAddedCopyWithImpl<_GroupMembersUserAdded>(
+  _$$_GroupMembersUserAddedCopyWith<_$_GroupMembersUserAdded> get copyWith =>
+      __$$_GroupMembersUserAddedCopyWithImpl<_$_GroupMembersUserAdded>(
           this, _$identity);
 
   @override
@@ -1825,40 +1744,40 @@ class _$_GroupMembersUserAdded implements _GroupMembersUserAdded {
 }
 
 abstract class _GroupMembersUserAdded implements AddGroupPageEvent {
-  const factory _GroupMembersUserAdded(GroupUser addedUser) =
+  const factory _GroupMembersUserAdded(final GroupUser addedUser) =
       _$_GroupMembersUserAdded;
 
-  GroupUser get addedUser;
+  GroupUser get addedUser => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$GroupMembersUserAddedCopyWith<_GroupMembersUserAdded> get copyWith =>
+  _$$_GroupMembersUserAddedCopyWith<_$_GroupMembersUserAdded> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GroupMembersUserDeletedCopyWith<$Res> {
-  factory _$GroupMembersUserDeletedCopyWith(_GroupMembersUserDeleted value,
-          $Res Function(_GroupMembersUserDeleted) then) =
-      __$GroupMembersUserDeletedCopyWithImpl<$Res>;
+abstract class _$$_GroupMembersUserDeletedCopyWith<$Res> {
+  factory _$$_GroupMembersUserDeletedCopyWith(_$_GroupMembersUserDeleted value,
+          $Res Function(_$_GroupMembersUserDeleted) then) =
+      __$$_GroupMembersUserDeletedCopyWithImpl<$Res>;
   $Res call({String userId});
 }
 
 /// @nodoc
-class __$GroupMembersUserDeletedCopyWithImpl<$Res>
+class __$$_GroupMembersUserDeletedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$GroupMembersUserDeletedCopyWith<$Res> {
-  __$GroupMembersUserDeletedCopyWithImpl(_GroupMembersUserDeleted _value,
-      $Res Function(_GroupMembersUserDeleted) _then)
-      : super(_value, (v) => _then(v as _GroupMembersUserDeleted));
+    implements _$$_GroupMembersUserDeletedCopyWith<$Res> {
+  __$$_GroupMembersUserDeletedCopyWithImpl(_$_GroupMembersUserDeleted _value,
+      $Res Function(_$_GroupMembersUserDeleted) _then)
+      : super(_value, (v) => _then(v as _$_GroupMembersUserDeleted));
 
   @override
-  _GroupMembersUserDeleted get _value =>
-      super._value as _GroupMembersUserDeleted;
+  _$_GroupMembersUserDeleted get _value =>
+      super._value as _$_GroupMembersUserDeleted;
 
   @override
   $Res call({
     Object? userId = freezed,
   }) {
-    return _then(_GroupMembersUserDeleted(
+    return _then(_$_GroupMembersUserDeleted(
       userId == freezed
           ? _value.userId
           : userId // ignore: cast_nullable_to_non_nullable
@@ -1884,7 +1803,7 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GroupMembersUserDeleted &&
+            other is _$_GroupMembersUserDeleted &&
             const DeepCollectionEquality().equals(other.userId, userId));
   }
 
@@ -1894,9 +1813,10 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
 
   @JsonKey(ignore: true)
   @override
-  _$GroupMembersUserDeletedCopyWith<_GroupMembersUserDeleted> get copyWith =>
-      __$GroupMembersUserDeletedCopyWithImpl<_GroupMembersUserDeleted>(
-          this, _$identity);
+  _$$_GroupMembersUserDeletedCopyWith<_$_GroupMembersUserDeleted>
+      get copyWith =>
+          __$$_GroupMembersUserDeletedCopyWithImpl<_$_GroupMembersUserDeleted>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2059,41 +1979,41 @@ class _$_GroupMembersUserDeleted implements _GroupMembersUserDeleted {
 }
 
 abstract class _GroupMembersUserDeleted implements AddGroupPageEvent {
-  const factory _GroupMembersUserDeleted(String userId) =
+  const factory _GroupMembersUserDeleted(final String userId) =
       _$_GroupMembersUserDeleted;
 
-  String get userId;
+  String get userId => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$GroupMembersUserDeletedCopyWith<_GroupMembersUserDeleted> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_GroupMembersUserDeletedCopyWith<_$_GroupMembersUserDeleted>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$GroupMembersUpdatedCopyWith<$Res> {
-  factory _$GroupMembersUpdatedCopyWith(_GroupMembersUpdated value,
-          $Res Function(_GroupMembersUpdated) then) =
-      __$GroupMembersUpdatedCopyWithImpl<$Res>;
+abstract class _$$_GroupMembersUpdatedCopyWith<$Res> {
+  factory _$$_GroupMembersUpdatedCopyWith(_$_GroupMembersUpdated value,
+          $Res Function(_$_GroupMembersUpdated) then) =
+      __$$_GroupMembersUpdatedCopyWithImpl<$Res>;
   $Res call({List<GroupUser> newMembers});
 }
 
 /// @nodoc
-class __$GroupMembersUpdatedCopyWithImpl<$Res>
+class __$$_GroupMembersUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$GroupMembersUpdatedCopyWith<$Res> {
-  __$GroupMembersUpdatedCopyWithImpl(
-      _GroupMembersUpdated _value, $Res Function(_GroupMembersUpdated) _then)
-      : super(_value, (v) => _then(v as _GroupMembersUpdated));
+    implements _$$_GroupMembersUpdatedCopyWith<$Res> {
+  __$$_GroupMembersUpdatedCopyWithImpl(_$_GroupMembersUpdated _value,
+      $Res Function(_$_GroupMembersUpdated) _then)
+      : super(_value, (v) => _then(v as _$_GroupMembersUpdated));
 
   @override
-  _GroupMembersUpdated get _value => super._value as _GroupMembersUpdated;
+  _$_GroupMembersUpdated get _value => super._value as _$_GroupMembersUpdated;
 
   @override
   $Res call({
     Object? newMembers = freezed,
   }) {
-    return _then(_GroupMembersUpdated(
+    return _then(_$_GroupMembersUpdated(
       newMembers == freezed
-          ? _value.newMembers
+          ? _value._newMembers
           : newMembers // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
     ));
@@ -2103,10 +2023,15 @@ class __$GroupMembersUpdatedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_GroupMembersUpdated implements _GroupMembersUpdated {
-  const _$_GroupMembersUpdated(this.newMembers);
+  const _$_GroupMembersUpdated(final List<GroupUser> newMembers)
+      : _newMembers = newMembers;
 
+  final List<GroupUser> _newMembers;
   @override
-  final List<GroupUser> newMembers;
+  List<GroupUser> get newMembers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_newMembers);
+  }
 
   @override
   String toString() {
@@ -2117,19 +2042,19 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _GroupMembersUpdated &&
+            other is _$_GroupMembersUpdated &&
             const DeepCollectionEquality()
-                .equals(other.newMembers, newMembers));
+                .equals(other._newMembers, _newMembers));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newMembers));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_newMembers));
 
   @JsonKey(ignore: true)
   @override
-  _$GroupMembersUpdatedCopyWith<_GroupMembersUpdated> get copyWith =>
-      __$GroupMembersUpdatedCopyWithImpl<_GroupMembersUpdated>(
+  _$$_GroupMembersUpdatedCopyWith<_$_GroupMembersUpdated> get copyWith =>
+      __$$_GroupMembersUpdatedCopyWithImpl<_$_GroupMembersUpdated>(
           this, _$identity);
 
   @override
@@ -2293,40 +2218,40 @@ class _$_GroupMembersUpdated implements _GroupMembersUpdated {
 }
 
 abstract class _GroupMembersUpdated implements AddGroupPageEvent {
-  const factory _GroupMembersUpdated(List<GroupUser> newMembers) =
+  const factory _GroupMembersUpdated(final List<GroupUser> newMembers) =
       _$_GroupMembersUpdated;
 
-  List<GroupUser> get newMembers;
+  List<GroupUser> get newMembers => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$GroupMembersUpdatedCopyWith<_GroupMembersUpdated> get copyWith =>
+  _$$_GroupMembersUpdatedCopyWith<_$_GroupMembersUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$CurrentStepIndexUpdatedCopyWith<$Res> {
-  factory _$CurrentStepIndexUpdatedCopyWith(_CurrentStepIndexUpdated value,
-          $Res Function(_CurrentStepIndexUpdated) then) =
-      __$CurrentStepIndexUpdatedCopyWithImpl<$Res>;
+abstract class _$$_CurrentStepIndexUpdatedCopyWith<$Res> {
+  factory _$$_CurrentStepIndexUpdatedCopyWith(_$_CurrentStepIndexUpdated value,
+          $Res Function(_$_CurrentStepIndexUpdated) then) =
+      __$$_CurrentStepIndexUpdatedCopyWithImpl<$Res>;
   $Res call({int newIndex});
 }
 
 /// @nodoc
-class __$CurrentStepIndexUpdatedCopyWithImpl<$Res>
+class __$$_CurrentStepIndexUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$CurrentStepIndexUpdatedCopyWith<$Res> {
-  __$CurrentStepIndexUpdatedCopyWithImpl(_CurrentStepIndexUpdated _value,
-      $Res Function(_CurrentStepIndexUpdated) _then)
-      : super(_value, (v) => _then(v as _CurrentStepIndexUpdated));
+    implements _$$_CurrentStepIndexUpdatedCopyWith<$Res> {
+  __$$_CurrentStepIndexUpdatedCopyWithImpl(_$_CurrentStepIndexUpdated _value,
+      $Res Function(_$_CurrentStepIndexUpdated) _then)
+      : super(_value, (v) => _then(v as _$_CurrentStepIndexUpdated));
 
   @override
-  _CurrentStepIndexUpdated get _value =>
-      super._value as _CurrentStepIndexUpdated;
+  _$_CurrentStepIndexUpdated get _value =>
+      super._value as _$_CurrentStepIndexUpdated;
 
   @override
   $Res call({
     Object? newIndex = freezed,
   }) {
-    return _then(_CurrentStepIndexUpdated(
+    return _then(_$_CurrentStepIndexUpdated(
       newIndex == freezed
           ? _value.newIndex
           : newIndex // ignore: cast_nullable_to_non_nullable
@@ -2352,7 +2277,7 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _CurrentStepIndexUpdated &&
+            other is _$_CurrentStepIndexUpdated &&
             const DeepCollectionEquality().equals(other.newIndex, newIndex));
   }
 
@@ -2362,9 +2287,10 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
 
   @JsonKey(ignore: true)
   @override
-  _$CurrentStepIndexUpdatedCopyWith<_CurrentStepIndexUpdated> get copyWith =>
-      __$CurrentStepIndexUpdatedCopyWithImpl<_CurrentStepIndexUpdated>(
-          this, _$identity);
+  _$$_CurrentStepIndexUpdatedCopyWith<_$_CurrentStepIndexUpdated>
+      get copyWith =>
+          __$$_CurrentStepIndexUpdatedCopyWithImpl<_$_CurrentStepIndexUpdated>(
+              this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2527,32 +2453,32 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
 }
 
 abstract class _CurrentStepIndexUpdated implements AddGroupPageEvent {
-  const factory _CurrentStepIndexUpdated(int newIndex) =
+  const factory _CurrentStepIndexUpdated(final int newIndex) =
       _$_CurrentStepIndexUpdated;
 
-  int get newIndex;
+  int get newIndex => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$CurrentStepIndexUpdatedCopyWith<_CurrentStepIndexUpdated> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_CurrentStepIndexUpdatedCopyWith<_$_CurrentStepIndexUpdated>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$NewGroupCreatedCopyWith<$Res> {
-  factory _$NewGroupCreatedCopyWith(
-          _NewGroupCreated value, $Res Function(_NewGroupCreated) then) =
-      __$NewGroupCreatedCopyWithImpl<$Res>;
+abstract class _$$_NewGroupCreatedCopyWith<$Res> {
+  factory _$$_NewGroupCreatedCopyWith(
+          _$_NewGroupCreated value, $Res Function(_$_NewGroupCreated) then) =
+      __$$_NewGroupCreatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NewGroupCreatedCopyWithImpl<$Res>
+class __$$_NewGroupCreatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$NewGroupCreatedCopyWith<$Res> {
-  __$NewGroupCreatedCopyWithImpl(
-      _NewGroupCreated _value, $Res Function(_NewGroupCreated) _then)
-      : super(_value, (v) => _then(v as _NewGroupCreated));
+    implements _$$_NewGroupCreatedCopyWith<$Res> {
+  __$$_NewGroupCreatedCopyWithImpl(
+      _$_NewGroupCreated _value, $Res Function(_$_NewGroupCreated) _then)
+      : super(_value, (v) => _then(v as _$_NewGroupCreated));
 
   @override
-  _NewGroupCreated get _value => super._value as _NewGroupCreated;
+  _$_NewGroupCreated get _value => super._value as _$_NewGroupCreated;
 }
 
 /// @nodoc
@@ -2568,7 +2494,7 @@ class _$_NewGroupCreated implements _NewGroupCreated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _NewGroupCreated);
+        (other.runtimeType == runtimeType && other is _$_NewGroupCreated);
   }
 
   @override
@@ -2739,32 +2665,33 @@ abstract class _NewGroupCreated implements AddGroupPageEvent {
 }
 
 /// @nodoc
-abstract class _$AreUsersForSearchUsersFetchedUpdatedCopyWith<$Res> {
-  factory _$AreUsersForSearchUsersFetchedUpdatedCopyWith(
-          _AreUsersForSearchUsersFetchedUpdated value,
-          $Res Function(_AreUsersForSearchUsersFetchedUpdated) then) =
-      __$AreUsersForSearchUsersFetchedUpdatedCopyWithImpl<$Res>;
+abstract class _$$_AreUsersForSearchUsersFetchedUpdatedCopyWith<$Res> {
+  factory _$$_AreUsersForSearchUsersFetchedUpdatedCopyWith(
+          _$_AreUsersForSearchUsersFetchedUpdated value,
+          $Res Function(_$_AreUsersForSearchUsersFetchedUpdated) then) =
+      __$$_AreUsersForSearchUsersFetchedUpdatedCopyWithImpl<$Res>;
   $Res call({bool areFetched});
 }
 
 /// @nodoc
-class __$AreUsersForSearchUsersFetchedUpdatedCopyWithImpl<$Res>
+class __$$_AreUsersForSearchUsersFetchedUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$AreUsersForSearchUsersFetchedUpdatedCopyWith<$Res> {
-  __$AreUsersForSearchUsersFetchedUpdatedCopyWithImpl(
-      _AreUsersForSearchUsersFetchedUpdated _value,
-      $Res Function(_AreUsersForSearchUsersFetchedUpdated) _then)
-      : super(_value, (v) => _then(v as _AreUsersForSearchUsersFetchedUpdated));
+    implements _$$_AreUsersForSearchUsersFetchedUpdatedCopyWith<$Res> {
+  __$$_AreUsersForSearchUsersFetchedUpdatedCopyWithImpl(
+      _$_AreUsersForSearchUsersFetchedUpdated _value,
+      $Res Function(_$_AreUsersForSearchUsersFetchedUpdated) _then)
+      : super(
+            _value, (v) => _then(v as _$_AreUsersForSearchUsersFetchedUpdated));
 
   @override
-  _AreUsersForSearchUsersFetchedUpdated get _value =>
-      super._value as _AreUsersForSearchUsersFetchedUpdated;
+  _$_AreUsersForSearchUsersFetchedUpdated get _value =>
+      super._value as _$_AreUsersForSearchUsersFetchedUpdated;
 
   @override
   $Res call({
     Object? areFetched = freezed,
   }) {
-    return _then(_AreUsersForSearchUsersFetchedUpdated(
+    return _then(_$_AreUsersForSearchUsersFetchedUpdated(
       areFetched == freezed
           ? _value.areFetched
           : areFetched // ignore: cast_nullable_to_non_nullable
@@ -2791,7 +2718,7 @@ class _$_AreUsersForSearchUsersFetchedUpdated
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AreUsersForSearchUsersFetchedUpdated &&
+            other is _$_AreUsersForSearchUsersFetchedUpdated &&
             const DeepCollectionEquality()
                 .equals(other.areFetched, areFetched));
   }
@@ -2802,10 +2729,10 @@ class _$_AreUsersForSearchUsersFetchedUpdated
 
   @JsonKey(ignore: true)
   @override
-  _$AreUsersForSearchUsersFetchedUpdatedCopyWith<
-          _AreUsersForSearchUsersFetchedUpdated>
-      get copyWith => __$AreUsersForSearchUsersFetchedUpdatedCopyWithImpl<
-          _AreUsersForSearchUsersFetchedUpdated>(this, _$identity);
+  _$$_AreUsersForSearchUsersFetchedUpdatedCopyWith<
+          _$_AreUsersForSearchUsersFetchedUpdated>
+      get copyWith => __$$_AreUsersForSearchUsersFetchedUpdatedCopyWithImpl<
+          _$_AreUsersForSearchUsersFetchedUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -2969,43 +2896,44 @@ class _$_AreUsersForSearchUsersFetchedUpdated
 
 abstract class _AreUsersForSearchUsersFetchedUpdated
     implements AddGroupPageEvent {
-  const factory _AreUsersForSearchUsersFetchedUpdated(bool areFetched) =
+  const factory _AreUsersForSearchUsersFetchedUpdated(final bool areFetched) =
       _$_AreUsersForSearchUsersFetchedUpdated;
 
-  bool get areFetched;
+  bool get areFetched => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$AreUsersForSearchUsersFetchedUpdatedCopyWith<
-          _AreUsersForSearchUsersFetchedUpdated>
+  _$$_AreUsersForSearchUsersFetchedUpdatedCopyWith<
+          _$_AreUsersForSearchUsersFetchedUpdated>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$IsFetchingUsersForSearchQueryUpdatedCopyWith<$Res> {
-  factory _$IsFetchingUsersForSearchQueryUpdatedCopyWith(
-          _IsFetchingUsersForSearchQueryUpdated value,
-          $Res Function(_IsFetchingUsersForSearchQueryUpdated) then) =
-      __$IsFetchingUsersForSearchQueryUpdatedCopyWithImpl<$Res>;
+abstract class _$$_IsFetchingUsersForSearchQueryUpdatedCopyWith<$Res> {
+  factory _$$_IsFetchingUsersForSearchQueryUpdatedCopyWith(
+          _$_IsFetchingUsersForSearchQueryUpdated value,
+          $Res Function(_$_IsFetchingUsersForSearchQueryUpdated) then) =
+      __$$_IsFetchingUsersForSearchQueryUpdatedCopyWithImpl<$Res>;
   $Res call({bool isFetching});
 }
 
 /// @nodoc
-class __$IsFetchingUsersForSearchQueryUpdatedCopyWithImpl<$Res>
+class __$$_IsFetchingUsersForSearchQueryUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$IsFetchingUsersForSearchQueryUpdatedCopyWith<$Res> {
-  __$IsFetchingUsersForSearchQueryUpdatedCopyWithImpl(
-      _IsFetchingUsersForSearchQueryUpdated _value,
-      $Res Function(_IsFetchingUsersForSearchQueryUpdated) _then)
-      : super(_value, (v) => _then(v as _IsFetchingUsersForSearchQueryUpdated));
+    implements _$$_IsFetchingUsersForSearchQueryUpdatedCopyWith<$Res> {
+  __$$_IsFetchingUsersForSearchQueryUpdatedCopyWithImpl(
+      _$_IsFetchingUsersForSearchQueryUpdated _value,
+      $Res Function(_$_IsFetchingUsersForSearchQueryUpdated) _then)
+      : super(
+            _value, (v) => _then(v as _$_IsFetchingUsersForSearchQueryUpdated));
 
   @override
-  _IsFetchingUsersForSearchQueryUpdated get _value =>
-      super._value as _IsFetchingUsersForSearchQueryUpdated;
+  _$_IsFetchingUsersForSearchQueryUpdated get _value =>
+      super._value as _$_IsFetchingUsersForSearchQueryUpdated;
 
   @override
   $Res call({
     Object? isFetching = freezed,
   }) {
-    return _then(_IsFetchingUsersForSearchQueryUpdated(
+    return _then(_$_IsFetchingUsersForSearchQueryUpdated(
       isFetching == freezed
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
@@ -3032,7 +2960,7 @@ class _$_IsFetchingUsersForSearchQueryUpdated
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IsFetchingUsersForSearchQueryUpdated &&
+            other is _$_IsFetchingUsersForSearchQueryUpdated &&
             const DeepCollectionEquality()
                 .equals(other.isFetching, isFetching));
   }
@@ -3043,10 +2971,10 @@ class _$_IsFetchingUsersForSearchQueryUpdated
 
   @JsonKey(ignore: true)
   @override
-  _$IsFetchingUsersForSearchQueryUpdatedCopyWith<
-          _IsFetchingUsersForSearchQueryUpdated>
-      get copyWith => __$IsFetchingUsersForSearchQueryUpdatedCopyWithImpl<
-          _IsFetchingUsersForSearchQueryUpdated>(this, _$identity);
+  _$$_IsFetchingUsersForSearchQueryUpdatedCopyWith<
+          _$_IsFetchingUsersForSearchQueryUpdated>
+      get copyWith => __$$_IsFetchingUsersForSearchQueryUpdatedCopyWithImpl<
+          _$_IsFetchingUsersForSearchQueryUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3210,43 +3138,43 @@ class _$_IsFetchingUsersForSearchQueryUpdated
 
 abstract class _IsFetchingUsersForSearchQueryUpdated
     implements AddGroupPageEvent {
-  const factory _IsFetchingUsersForSearchQueryUpdated(bool isFetching) =
+  const factory _IsFetchingUsersForSearchQueryUpdated(final bool isFetching) =
       _$_IsFetchingUsersForSearchQueryUpdated;
 
-  bool get isFetching;
+  bool get isFetching => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$IsFetchingUsersForSearchQueryUpdatedCopyWith<
-          _IsFetchingUsersForSearchQueryUpdated>
+  _$$_IsFetchingUsersForSearchQueryUpdatedCopyWith<
+          _$_IsFetchingUsersForSearchQueryUpdated>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
-  factory _$SearchUsersPaginationInfoUpdatedCopyWith(
-          _SearchUsersPaginationInfoUpdated value,
-          $Res Function(_SearchUsersPaginationInfoUpdated) then) =
-      __$SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>;
+abstract class _$$_SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
+  factory _$$_SearchUsersPaginationInfoUpdatedCopyWith(
+          _$_SearchUsersPaginationInfoUpdated value,
+          $Res Function(_$_SearchUsersPaginationInfoUpdated) then) =
+      __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>;
   $Res call({PaginationInfo? newPaginationInfo});
 }
 
 /// @nodoc
-class __$SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>
+class __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>
     extends _$AddGroupPageEventCopyWithImpl<$Res>
-    implements _$SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
-  __$SearchUsersPaginationInfoUpdatedCopyWithImpl(
-      _SearchUsersPaginationInfoUpdated _value,
-      $Res Function(_SearchUsersPaginationInfoUpdated) _then)
-      : super(_value, (v) => _then(v as _SearchUsersPaginationInfoUpdated));
+    implements _$$_SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
+  __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl(
+      _$_SearchUsersPaginationInfoUpdated _value,
+      $Res Function(_$_SearchUsersPaginationInfoUpdated) _then)
+      : super(_value, (v) => _then(v as _$_SearchUsersPaginationInfoUpdated));
 
   @override
-  _SearchUsersPaginationInfoUpdated get _value =>
-      super._value as _SearchUsersPaginationInfoUpdated;
+  _$_SearchUsersPaginationInfoUpdated get _value =>
+      super._value as _$_SearchUsersPaginationInfoUpdated;
 
   @override
   $Res call({
     Object? newPaginationInfo = freezed,
   }) {
-    return _then(_SearchUsersPaginationInfoUpdated(
+    return _then(_$_SearchUsersPaginationInfoUpdated(
       newPaginationInfo == freezed
           ? _value.newPaginationInfo
           : newPaginationInfo // ignore: cast_nullable_to_non_nullable
@@ -3273,7 +3201,7 @@ class _$_SearchUsersPaginationInfoUpdated
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SearchUsersPaginationInfoUpdated &&
+            other is _$_SearchUsersPaginationInfoUpdated &&
             const DeepCollectionEquality()
                 .equals(other.newPaginationInfo, newPaginationInfo));
   }
@@ -3284,9 +3212,10 @@ class _$_SearchUsersPaginationInfoUpdated
 
   @JsonKey(ignore: true)
   @override
-  _$SearchUsersPaginationInfoUpdatedCopyWith<_SearchUsersPaginationInfoUpdated>
-      get copyWith => __$SearchUsersPaginationInfoUpdatedCopyWithImpl<
-          _SearchUsersPaginationInfoUpdated>(this, _$identity);
+  _$$_SearchUsersPaginationInfoUpdatedCopyWith<
+          _$_SearchUsersPaginationInfoUpdated>
+      get copyWith => __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl<
+          _$_SearchUsersPaginationInfoUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -3450,48 +3379,15 @@ class _$_SearchUsersPaginationInfoUpdated
 
 abstract class _SearchUsersPaginationInfoUpdated implements AddGroupPageEvent {
   const factory _SearchUsersPaginationInfoUpdated(
-      PaginationInfo? newPaginationInfo) = _$_SearchUsersPaginationInfoUpdated;
+          final PaginationInfo? newPaginationInfo) =
+      _$_SearchUsersPaginationInfoUpdated;
 
-  PaginationInfo? get newPaginationInfo;
+  PaginationInfo? get newPaginationInfo => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  _$SearchUsersPaginationInfoUpdatedCopyWith<_SearchUsersPaginationInfoUpdated>
+  _$$_SearchUsersPaginationInfoUpdatedCopyWith<
+          _$_SearchUsersPaginationInfoUpdated>
       get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$AddGroupPageStateTearOff {
-  const _$AddGroupPageStateTearOff();
-
-  _AddGroupPageState call(
-      {required String groupTitle,
-      required Image? groupImage,
-      required String searchAllPeopleSearchValue,
-      required PaginationInfo? paginationInfo,
-      required List<GroupUser> usersForSearchQuery,
-      required List<GroupUser> groupMembers,
-      required int currentStepIndex,
-      required bool areUsersForSearchUsersFetched,
-      required bool isFetchingUsersForSearch,
-      required bool isGroupSuccessfullyCreated,
-      required bool isCreateNewGroupRequestExecuted}) {
-    return _AddGroupPageState(
-      groupTitle: groupTitle,
-      groupImage: groupImage,
-      searchAllPeopleSearchValue: searchAllPeopleSearchValue,
-      paginationInfo: paginationInfo,
-      usersForSearchQuery: usersForSearchQuery,
-      groupMembers: groupMembers,
-      currentStepIndex: currentStepIndex,
-      areUsersForSearchUsersFetched: areUsersForSearchUsersFetched,
-      isFetchingUsersForSearch: isFetchingUsersForSearch,
-      isGroupSuccessfullyCreated: isGroupSuccessfullyCreated,
-      isCreateNewGroupRequestExecuted: isCreateNewGroupRequestExecuted,
-    );
-  }
-}
-
-/// @nodoc
-const $AddGroupPageState = _$AddGroupPageStateTearOff();
 
 /// @nodoc
 mixin _$AddGroupPageState {
@@ -3606,11 +3502,11 @@ class _$AddGroupPageStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$AddGroupPageStateCopyWith<$Res>
+abstract class _$$_AddGroupPageStateCopyWith<$Res>
     implements $AddGroupPageStateCopyWith<$Res> {
-  factory _$AddGroupPageStateCopyWith(
-          _AddGroupPageState value, $Res Function(_AddGroupPageState) then) =
-      __$AddGroupPageStateCopyWithImpl<$Res>;
+  factory _$$_AddGroupPageStateCopyWith(_$_AddGroupPageState value,
+          $Res Function(_$_AddGroupPageState) then) =
+      __$$_AddGroupPageStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {String groupTitle,
@@ -3627,15 +3523,15 @@ abstract class _$AddGroupPageStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$AddGroupPageStateCopyWithImpl<$Res>
+class __$$_AddGroupPageStateCopyWithImpl<$Res>
     extends _$AddGroupPageStateCopyWithImpl<$Res>
-    implements _$AddGroupPageStateCopyWith<$Res> {
-  __$AddGroupPageStateCopyWithImpl(
-      _AddGroupPageState _value, $Res Function(_AddGroupPageState) _then)
-      : super(_value, (v) => _then(v as _AddGroupPageState));
+    implements _$$_AddGroupPageStateCopyWith<$Res> {
+  __$$_AddGroupPageStateCopyWithImpl(
+      _$_AddGroupPageState _value, $Res Function(_$_AddGroupPageState) _then)
+      : super(_value, (v) => _then(v as _$_AddGroupPageState));
 
   @override
-  _AddGroupPageState get _value => super._value as _AddGroupPageState;
+  _$_AddGroupPageState get _value => super._value as _$_AddGroupPageState;
 
   @override
   $Res call({
@@ -3651,7 +3547,7 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
     Object? isGroupSuccessfullyCreated = freezed,
     Object? isCreateNewGroupRequestExecuted = freezed,
   }) {
-    return _then(_AddGroupPageState(
+    return _then(_$_AddGroupPageState(
       groupTitle: groupTitle == freezed
           ? _value.groupTitle
           : groupTitle // ignore: cast_nullable_to_non_nullable
@@ -3669,11 +3565,11 @@ class __$AddGroupPageStateCopyWithImpl<$Res>
           : paginationInfo // ignore: cast_nullable_to_non_nullable
               as PaginationInfo?,
       usersForSearchQuery: usersForSearchQuery == freezed
-          ? _value.usersForSearchQuery
+          ? _value._usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
       groupMembers: groupMembers == freezed
-          ? _value.groupMembers
+          ? _value._groupMembers
           : groupMembers // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
       currentStepIndex: currentStepIndex == freezed
@@ -3709,13 +3605,15 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       required this.groupImage,
       required this.searchAllPeopleSearchValue,
       required this.paginationInfo,
-      required this.usersForSearchQuery,
-      required this.groupMembers,
+      required final List<GroupUser> usersForSearchQuery,
+      required final List<GroupUser> groupMembers,
       required this.currentStepIndex,
       required this.areUsersForSearchUsersFetched,
       required this.isFetchingUsersForSearch,
       required this.isGroupSuccessfullyCreated,
-      required this.isCreateNewGroupRequestExecuted});
+      required this.isCreateNewGroupRequestExecuted})
+      : _usersForSearchQuery = usersForSearchQuery,
+        _groupMembers = groupMembers;
 
   @override
   final String groupTitle;
@@ -3725,10 +3623,20 @@ class _$_AddGroupPageState implements _AddGroupPageState {
   final String searchAllPeopleSearchValue;
   @override
   final PaginationInfo? paginationInfo;
+  final List<GroupUser> _usersForSearchQuery;
   @override
-  final List<GroupUser> usersForSearchQuery;
+  List<GroupUser> get usersForSearchQuery {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_usersForSearchQuery);
+  }
+
+  final List<GroupUser> _groupMembers;
   @override
-  final List<GroupUser> groupMembers;
+  List<GroupUser> get groupMembers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_groupMembers);
+  }
+
   @override
   final int currentStepIndex;
   @override
@@ -3749,7 +3657,7 @@ class _$_AddGroupPageState implements _AddGroupPageState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _AddGroupPageState &&
+            other is _$_AddGroupPageState &&
             const DeepCollectionEquality()
                 .equals(other.groupTitle, groupTitle) &&
             const DeepCollectionEquality()
@@ -3759,9 +3667,9 @@ class _$_AddGroupPageState implements _AddGroupPageState {
             const DeepCollectionEquality()
                 .equals(other.paginationInfo, paginationInfo) &&
             const DeepCollectionEquality()
-                .equals(other.usersForSearchQuery, usersForSearchQuery) &&
+                .equals(other._usersForSearchQuery, _usersForSearchQuery) &&
             const DeepCollectionEquality()
-                .equals(other.groupMembers, groupMembers) &&
+                .equals(other._groupMembers, _groupMembers) &&
             const DeepCollectionEquality()
                 .equals(other.currentStepIndex, currentStepIndex) &&
             const DeepCollectionEquality().equals(
@@ -3783,8 +3691,8 @@ class _$_AddGroupPageState implements _AddGroupPageState {
       const DeepCollectionEquality().hash(groupImage),
       const DeepCollectionEquality().hash(searchAllPeopleSearchValue),
       const DeepCollectionEquality().hash(paginationInfo),
-      const DeepCollectionEquality().hash(usersForSearchQuery),
-      const DeepCollectionEquality().hash(groupMembers),
+      const DeepCollectionEquality().hash(_usersForSearchQuery),
+      const DeepCollectionEquality().hash(_groupMembers),
       const DeepCollectionEquality().hash(currentStepIndex),
       const DeepCollectionEquality().hash(areUsersForSearchUsersFetched),
       const DeepCollectionEquality().hash(isFetchingUsersForSearch),
@@ -3793,48 +3701,51 @@ class _$_AddGroupPageState implements _AddGroupPageState {
 
   @JsonKey(ignore: true)
   @override
-  _$AddGroupPageStateCopyWith<_AddGroupPageState> get copyWith =>
-      __$AddGroupPageStateCopyWithImpl<_AddGroupPageState>(this, _$identity);
+  _$$_AddGroupPageStateCopyWith<_$_AddGroupPageState> get copyWith =>
+      __$$_AddGroupPageStateCopyWithImpl<_$_AddGroupPageState>(
+          this, _$identity);
 }
 
 abstract class _AddGroupPageState implements AddGroupPageState {
   const factory _AddGroupPageState(
-      {required String groupTitle,
-      required Image? groupImage,
-      required String searchAllPeopleSearchValue,
-      required PaginationInfo? paginationInfo,
-      required List<GroupUser> usersForSearchQuery,
-      required List<GroupUser> groupMembers,
-      required int currentStepIndex,
-      required bool areUsersForSearchUsersFetched,
-      required bool isFetchingUsersForSearch,
-      required bool isGroupSuccessfullyCreated,
-      required bool isCreateNewGroupRequestExecuted}) = _$_AddGroupPageState;
+          {required final String groupTitle,
+          required final Image? groupImage,
+          required final String searchAllPeopleSearchValue,
+          required final PaginationInfo? paginationInfo,
+          required final List<GroupUser> usersForSearchQuery,
+          required final List<GroupUser> groupMembers,
+          required final int currentStepIndex,
+          required final bool areUsersForSearchUsersFetched,
+          required final bool isFetchingUsersForSearch,
+          required final bool isGroupSuccessfullyCreated,
+          required final bool isCreateNewGroupRequestExecuted}) =
+      _$_AddGroupPageState;
 
   @override
-  String get groupTitle;
+  String get groupTitle => throw _privateConstructorUsedError;
   @override
-  Image? get groupImage;
+  Image? get groupImage => throw _privateConstructorUsedError;
   @override
-  String get searchAllPeopleSearchValue;
+  String get searchAllPeopleSearchValue => throw _privateConstructorUsedError;
   @override
-  PaginationInfo? get paginationInfo;
+  PaginationInfo? get paginationInfo => throw _privateConstructorUsedError;
   @override
-  List<GroupUser> get usersForSearchQuery;
+  List<GroupUser> get usersForSearchQuery => throw _privateConstructorUsedError;
   @override
-  List<GroupUser> get groupMembers;
+  List<GroupUser> get groupMembers => throw _privateConstructorUsedError;
   @override
-  int get currentStepIndex;
+  int get currentStepIndex => throw _privateConstructorUsedError;
   @override
-  bool get areUsersForSearchUsersFetched;
+  bool get areUsersForSearchUsersFetched => throw _privateConstructorUsedError;
   @override
-  bool get isFetchingUsersForSearch;
+  bool get isFetchingUsersForSearch => throw _privateConstructorUsedError;
   @override
-  bool get isGroupSuccessfullyCreated;
+  bool get isGroupSuccessfullyCreated => throw _privateConstructorUsedError;
   @override
-  bool get isCreateNewGroupRequestExecuted;
+  bool get isCreateNewGroupRequestExecuted =>
+      throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$AddGroupPageStateCopyWith<_AddGroupPageState> get copyWith =>
+  _$$_AddGroupPageStateCopyWith<_$_AddGroupPageState> get copyWith =>
       throw _privateConstructorUsedError;
 }

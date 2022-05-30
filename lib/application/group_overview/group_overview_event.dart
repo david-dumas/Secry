@@ -11,4 +11,5 @@ class GroupOverviewEvent with _$GroupOverviewEvent {
   const factory GroupOverviewEvent.isFetchingUpdated(bool isFetching) = _IsFetchingUpdated;
   const factory GroupOverviewEvent.isDataFetchedUpdated(bool isFetched) = _IsDataFetchedUpdated;
   const factory GroupOverviewEvent.currentFeatureTypeUpdated(FeatureType newFeatureType) = _CurrentFeatureTypeUpdated;
+  const factory GroupOverviewEvent.groupRefreshed() = _GroupRefreshed;
 }

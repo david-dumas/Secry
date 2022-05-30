@@ -35,7 +35,9 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
       child: BlocConsumer<TabbarBloc, TabbarState>(listener: (context, state) {
         if (_persistentTabController.index != state.selectedIndex) {
           if (state.selectedIndex != 3 && accountPageKey.currentContext != null) {
-            Navigator.of(accountPageKey.currentContext!).pop();
+            if (Navigator.of(accountPageKey.currentContext!).canPop()) {
+              Navigator.of(accountPageKey.currentContext!).pop();
+            }
           }
 
           _persistentTabController.index = state.selectedIndex;
