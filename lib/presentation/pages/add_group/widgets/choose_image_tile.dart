@@ -11,12 +11,14 @@ class ChooseImageTile extends StatelessWidget {
   final BuildContext mainContext;
   final Image? groupImage;
   final ImagePicker _imagePicker = ImagePicker();
+  final String addPictureText;
 
-  ChooseImageTile({
-    Key? key,
-    required this.mainContext,
-    required this.groupImage,
-  }) : super(key: key);
+  ChooseImageTile(
+      {Key? key,
+      required this.mainContext,
+      required this.groupImage,
+      required this.addPictureText})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -64,7 +66,7 @@ class ChooseImageTile extends StatelessWidget {
                         ),
                         SizedBox(height: 12),
                         Text(
-                          tr('action_add_group_picture'),
+                          addPictureText,
                           style: TextStyle(fontSize: 14.0),
                         )
                       ],

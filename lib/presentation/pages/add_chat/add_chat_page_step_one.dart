@@ -6,26 +6,27 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:secry/constants.dart';
-import 'package:secry/application/add_group/add_group_page_bloc.dart';
+import 'package:secry/application/add_chat/add_chat_page_bloc.dart';
 import 'package:secry/presentation/pages/add_group/widgets/choose_image_tile.dart';
 
-class AddGroupPageStepOne extends StatefulWidget {
-  final Image? groupImage;
-  final String groupTitle;
+class AddChatPageStepOne extends StatefulWidget {
+  final Image? chatImage;
+  final String chatTitle;
 
-  AddGroupPageStepOne({Key? key, required this.groupTitle, this.groupImage = null}) : super(key: key);
+  AddChatPageStepOne({Key? key, required this.chatTitle, this.chatImage = null})
+      : super(key: key);
 
   @override
-  State<AddGroupPageStepOne> createState() => _AddGroupPageStepOneState();
+  State<AddChatPageStepOne> createState() => _AddChatPageStepOneState();
 }
 
-class _AddGroupPageStepOneState extends State<AddGroupPageStepOne> {
+class _AddChatPageStepOneState extends State<AddChatPageStepOne> {
   final TextEditingController _titleController = TextEditingController();
   final maximumTitleLength = 24; // TODO load from remote config
 
   @override
   void initState() {
-    _titleController.text = widget.groupTitle;
+    _titleController.text = widget.chatTitle;
     super.initState();
   }
 
@@ -43,8 +44,9 @@ class _AddGroupPageStepOneState extends State<AddGroupPageStepOne> {
             autofocus: false, // _titleController.text.length == 0,
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
-              labelText: tr('add_group_title'),
-              suffixText: "${max(0, maximumTitleLength - _titleController.text.length)}",
+              labelText: tr('add_chat_title'),
+              suffixText:
+                  "${max(0, maximumTitleLength - _titleController.text.length)}",
               border: OutlineInputBorder(),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),
@@ -69,16 +71,18 @@ class _AddGroupPageStepOneState extends State<AddGroupPageStepOne> {
               return null;
             },
             onChanged: (newValue) {
-              mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupTitleUpdated(newValue));
+              mainContext
+                  .read<AddChatPageBloc>()
+                  .add(AddChatPageEvent.chatTitleUpdated(newValue));
             },
           ),
           SizedBox(height: 30),
-          Text(tr('add_group_group_picture')),
+          Text(tr('add_chat_chat_picture')),
           SizedBox(height: 12),
           ChooseImageTile(
             mainContext: context,
-            groupImage: widget.groupImage,
-            addPictureText: tr('action_add_group_picture'),
+            groupImage: widget.chatImage,
+            addPictureText: tr('action_add_chat_picture'),
           )
         ],
       ),
