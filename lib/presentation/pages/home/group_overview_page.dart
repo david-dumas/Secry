@@ -10,6 +10,7 @@ import 'package:secry/constants.dart';
 import 'package:secry/domain/groups/feature_type.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
+import 'package:secry/presentation/pages/add_chat/add_chat_page.dart';
 import 'package:secry/presentation/pages/add_survey/add_survey_page.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/presentation/widgets/general/group_section.dart';
@@ -129,9 +130,20 @@ class GroupOverviewPage extends StatelessWidget {
                                     : tr('empty_state_no_surveys_description'),
                                 emptyStateIcon: Icon(Icons.group_add),
                                 titleRowTrailingAction: () {
-                                  if (state.currentFeatureType == FeatureType.chats) {
-                                    // TODO handle create new chat
-                                  } else if (state.currentFeatureType == FeatureType.surveys) {
+                                  if (state.currentFeatureType ==
+                                      FeatureType.chats) {
+                                    if (Platform.isAndroid) {
+                                      AutoRouter.of(context)
+                                          .push(AddChatPageAndroidRoute());
+                                    } else if (Platform.isIOS) {
+                                      showMaterialModalBottomSheet(
+                                        context: context,
+                                        useRootNavigator: true,
+                                        builder: (context) => AddChatPageIOS(),
+                                      );
+                                    }
+                                  } else if (state.currentFeatureType ==
+                                      FeatureType.surveys) {
                                     if (Platform.isAndroid) {
                                       AutoRouter.of(context)
                                           .push(AddSurveyPageAndroidRoute())
