@@ -22,7 +22,6 @@ mixin _$AddChatPageEvent {
     required TResult Function(String newTitle) chatTitleUpdated,
     required TResult Function(Image newImage) chatImageUpdated,
     required TResult Function() chatImageDeleted,
-    required TResult Function(int newIndex) currentStepIndexUpdated,
     required TResult Function() newChatCreated,
   }) =>
       throw _privateConstructorUsedError;
@@ -32,7 +31,6 @@ mixin _$AddChatPageEvent {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
   }) =>
       throw _privateConstructorUsedError;
@@ -42,7 +40,6 @@ mixin _$AddChatPageEvent {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
     required TResult orElse(),
   }) =>
@@ -53,8 +50,6 @@ mixin _$AddChatPageEvent {
     required TResult Function(_GroupTitleUpdated value) chatTitleUpdated,
     required TResult Function(_GroupImageUpdated value) chatImageUpdated,
     required TResult Function(_GroupImageDeleted value) chatImageDeleted,
-    required TResult Function(_CurrentStepIndexUpdated value)
-        currentStepIndexUpdated,
     required TResult Function(_NewGroupCreated value) newChatCreated,
   }) =>
       throw _privateConstructorUsedError;
@@ -64,7 +59,6 @@ mixin _$AddChatPageEvent {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
   }) =>
       throw _privateConstructorUsedError;
@@ -74,7 +68,6 @@ mixin _$AddChatPageEvent {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
     required TResult orElse(),
   }) =>
@@ -143,7 +136,6 @@ class _$_Initialized implements _Initialized {
     required TResult Function(String newTitle) chatTitleUpdated,
     required TResult Function(Image newImage) chatImageUpdated,
     required TResult Function() chatImageDeleted,
-    required TResult Function(int newIndex) currentStepIndexUpdated,
     required TResult Function() newChatCreated,
   }) {
     return initialized();
@@ -156,7 +148,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
   }) {
     return initialized?.call();
@@ -169,7 +160,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
     required TResult orElse(),
   }) {
@@ -186,8 +176,6 @@ class _$_Initialized implements _Initialized {
     required TResult Function(_GroupTitleUpdated value) chatTitleUpdated,
     required TResult Function(_GroupImageUpdated value) chatImageUpdated,
     required TResult Function(_GroupImageDeleted value) chatImageDeleted,
-    required TResult Function(_CurrentStepIndexUpdated value)
-        currentStepIndexUpdated,
     required TResult Function(_NewGroupCreated value) newChatCreated,
   }) {
     return initialized(this);
@@ -200,7 +188,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return initialized?.call(this);
@@ -213,7 +200,6 @@ class _$_Initialized implements _Initialized {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
     required TResult orElse(),
   }) {
@@ -298,7 +284,6 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     required TResult Function(String newTitle) chatTitleUpdated,
     required TResult Function(Image newImage) chatImageUpdated,
     required TResult Function() chatImageDeleted,
-    required TResult Function(int newIndex) currentStepIndexUpdated,
     required TResult Function() newChatCreated,
   }) {
     return chatTitleUpdated(newTitle);
@@ -311,7 +296,6 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
   }) {
     return chatTitleUpdated?.call(newTitle);
@@ -324,7 +308,6 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
     required TResult orElse(),
   }) {
@@ -341,8 +324,6 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     required TResult Function(_GroupTitleUpdated value) chatTitleUpdated,
     required TResult Function(_GroupImageUpdated value) chatImageUpdated,
     required TResult Function(_GroupImageDeleted value) chatImageDeleted,
-    required TResult Function(_CurrentStepIndexUpdated value)
-        currentStepIndexUpdated,
     required TResult Function(_NewGroupCreated value) newChatCreated,
   }) {
     return chatTitleUpdated(this);
@@ -355,7 +336,6 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return chatTitleUpdated?.call(this);
@@ -368,7 +348,6 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
     required TResult orElse(),
   }) {
@@ -459,7 +438,6 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     required TResult Function(String newTitle) chatTitleUpdated,
     required TResult Function(Image newImage) chatImageUpdated,
     required TResult Function() chatImageDeleted,
-    required TResult Function(int newIndex) currentStepIndexUpdated,
     required TResult Function() newChatCreated,
   }) {
     return chatImageUpdated(newImage);
@@ -472,7 +450,6 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
   }) {
     return chatImageUpdated?.call(newImage);
@@ -485,7 +462,6 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
     required TResult orElse(),
   }) {
@@ -502,8 +478,6 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     required TResult Function(_GroupTitleUpdated value) chatTitleUpdated,
     required TResult Function(_GroupImageUpdated value) chatImageUpdated,
     required TResult Function(_GroupImageDeleted value) chatImageDeleted,
-    required TResult Function(_CurrentStepIndexUpdated value)
-        currentStepIndexUpdated,
     required TResult Function(_NewGroupCreated value) newChatCreated,
   }) {
     return chatImageUpdated(this);
@@ -516,7 +490,6 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return chatImageUpdated?.call(this);
@@ -529,7 +502,6 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
     required TResult orElse(),
   }) {
@@ -594,7 +566,6 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     required TResult Function(String newTitle) chatTitleUpdated,
     required TResult Function(Image newImage) chatImageUpdated,
     required TResult Function() chatImageDeleted,
-    required TResult Function(int newIndex) currentStepIndexUpdated,
     required TResult Function() newChatCreated,
   }) {
     return chatImageDeleted();
@@ -607,7 +578,6 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
   }) {
     return chatImageDeleted?.call();
@@ -620,7 +590,6 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
     required TResult orElse(),
   }) {
@@ -637,8 +606,6 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     required TResult Function(_GroupTitleUpdated value) chatTitleUpdated,
     required TResult Function(_GroupImageUpdated value) chatImageUpdated,
     required TResult Function(_GroupImageDeleted value) chatImageDeleted,
-    required TResult Function(_CurrentStepIndexUpdated value)
-        currentStepIndexUpdated,
     required TResult Function(_NewGroupCreated value) newChatCreated,
   }) {
     return chatImageDeleted(this);
@@ -651,7 +618,6 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return chatImageDeleted?.call(this);
@@ -664,7 +630,6 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
     required TResult orElse(),
   }) {
@@ -677,169 +642,6 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
 
 abstract class _GroupImageDeleted implements AddChatPageEvent {
   const factory _GroupImageDeleted() = _$_GroupImageDeleted;
-}
-
-/// @nodoc
-abstract class _$$_CurrentStepIndexUpdatedCopyWith<$Res> {
-  factory _$$_CurrentStepIndexUpdatedCopyWith(_$_CurrentStepIndexUpdated value,
-          $Res Function(_$_CurrentStepIndexUpdated) then) =
-      __$$_CurrentStepIndexUpdatedCopyWithImpl<$Res>;
-  $Res call({int newIndex});
-}
-
-/// @nodoc
-class __$$_CurrentStepIndexUpdatedCopyWithImpl<$Res>
-    extends _$AddChatPageEventCopyWithImpl<$Res>
-    implements _$$_CurrentStepIndexUpdatedCopyWith<$Res> {
-  __$$_CurrentStepIndexUpdatedCopyWithImpl(_$_CurrentStepIndexUpdated _value,
-      $Res Function(_$_CurrentStepIndexUpdated) _then)
-      : super(_value, (v) => _then(v as _$_CurrentStepIndexUpdated));
-
-  @override
-  _$_CurrentStepIndexUpdated get _value =>
-      super._value as _$_CurrentStepIndexUpdated;
-
-  @override
-  $Res call({
-    Object? newIndex = freezed,
-  }) {
-    return _then(_$_CurrentStepIndexUpdated(
-      newIndex == freezed
-          ? _value.newIndex
-          : newIndex // ignore: cast_nullable_to_non_nullable
-              as int,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
-  const _$_CurrentStepIndexUpdated(this.newIndex);
-
-  @override
-  final int newIndex;
-
-  @override
-  String toString() {
-    return 'AddChatPageEvent.currentStepIndexUpdated(newIndex: $newIndex)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_CurrentStepIndexUpdated &&
-            const DeepCollectionEquality().equals(other.newIndex, newIndex));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newIndex));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_CurrentStepIndexUpdatedCopyWith<_$_CurrentStepIndexUpdated>
-      get copyWith =>
-          __$$_CurrentStepIndexUpdatedCopyWithImpl<_$_CurrentStepIndexUpdated>(
-              this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initialized,
-    required TResult Function(String newTitle) chatTitleUpdated,
-    required TResult Function(Image newImage) chatImageUpdated,
-    required TResult Function() chatImageDeleted,
-    required TResult Function(int newIndex) currentStepIndexUpdated,
-    required TResult Function() newChatCreated,
-  }) {
-    return currentStepIndexUpdated(newIndex);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newChatCreated,
-  }) {
-    return currentStepIndexUpdated?.call(newIndex);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newChatCreated,
-    required TResult orElse(),
-  }) {
-    if (currentStepIndexUpdated != null) {
-      return currentStepIndexUpdated(newIndex);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_GroupTitleUpdated value) chatTitleUpdated,
-    required TResult Function(_GroupImageUpdated value) chatImageUpdated,
-    required TResult Function(_GroupImageDeleted value) chatImageDeleted,
-    required TResult Function(_CurrentStepIndexUpdated value)
-        currentStepIndexUpdated,
-    required TResult Function(_NewGroupCreated value) newChatCreated,
-  }) {
-    return currentStepIndexUpdated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
-  }) {
-    return currentStepIndexUpdated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
-    required TResult orElse(),
-  }) {
-    if (currentStepIndexUpdated != null) {
-      return currentStepIndexUpdated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CurrentStepIndexUpdated implements AddChatPageEvent {
-  const factory _CurrentStepIndexUpdated(final int newIndex) =
-      _$_CurrentStepIndexUpdated;
-
-  int get newIndex => throw _privateConstructorUsedError;
-  @JsonKey(ignore: true)
-  _$$_CurrentStepIndexUpdatedCopyWith<_$_CurrentStepIndexUpdated>
-      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -887,7 +689,6 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     required TResult Function(String newTitle) chatTitleUpdated,
     required TResult Function(Image newImage) chatImageUpdated,
     required TResult Function() chatImageDeleted,
-    required TResult Function(int newIndex) currentStepIndexUpdated,
     required TResult Function() newChatCreated,
   }) {
     return newChatCreated();
@@ -900,7 +701,6 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
   }) {
     return newChatCreated?.call();
@@ -913,7 +713,6 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     TResult Function(String newTitle)? chatTitleUpdated,
     TResult Function(Image newImage)? chatImageUpdated,
     TResult Function()? chatImageDeleted,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
     TResult Function()? newChatCreated,
     required TResult orElse(),
   }) {
@@ -930,8 +729,6 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     required TResult Function(_GroupTitleUpdated value) chatTitleUpdated,
     required TResult Function(_GroupImageUpdated value) chatImageUpdated,
     required TResult Function(_GroupImageDeleted value) chatImageDeleted,
-    required TResult Function(_CurrentStepIndexUpdated value)
-        currentStepIndexUpdated,
     required TResult Function(_NewGroupCreated value) newChatCreated,
   }) {
     return newChatCreated(this);
@@ -944,7 +741,6 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return newChatCreated?.call(this);
@@ -957,7 +753,6 @@ class _$_NewGroupCreated implements _NewGroupCreated {
     TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
     TResult Function(_GroupImageUpdated value)? chatImageUpdated,
     TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
     TResult Function(_NewGroupCreated value)? newChatCreated,
     required TResult orElse(),
   }) {

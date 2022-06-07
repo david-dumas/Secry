@@ -12,21 +12,19 @@ class AddChatPageBloc extends Bloc<AddChatPageEvent, AddChatPageState> {
   AddChatPageBloc() : super(AddChatPageState.initial()) {
     on<AddChatPageEvent>(_onEvent);
   }
-}
 
-Future<void> _onEvent(
-    AddChatPageEvent event, Emitter<AddChatPageState> emit) async {
-  await event.map(
-      initialized: (e) async {},
-      chatTitleUpdated: (e) async {
-        emit(AddChatPageState.initial().copyWith(chatTitle: e.newTitle));
-      },
-      chatImageUpdated: (e) async {
-        emit(AddChatPageState.initial().copyWith(chatImage: e.newImage));
-      },
-      chatImageDeleted: (e) async {
-        AddChatPageState.initial().copyWith(chatImage: null);
-      },
-      currentStepIndexUpdated: (e) async {},
-      newChatCreated: (e) async {});
+  Future<void> _onEvent(AddChatPageEvent event, Emitter<AddChatPageState> emit) async {
+    await event.map(
+        initialized: (e) async {},
+        chatTitleUpdated: (e) async {
+          emit(state.copyWith(chatTitle: e.newTitle));
+        },
+        chatImageUpdated: (e) async {
+          emit(state.copyWith(chatImage: e.newImage));
+        },
+        chatImageDeleted: (e) async {
+          emit(state.copyWith(chatImage: null));
+        },
+        newChatCreated: (e) async {});
+  }
 }
