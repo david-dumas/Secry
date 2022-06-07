@@ -79,6 +79,12 @@ class _AddGroupPageStepOneState extends State<AddGroupPageStepOne> {
             mainContext: context,
             groupImage: widget.groupImage,
             addPictureText: tr('action_add_group_picture'),
+            imageUpdated: (Image image) {
+              mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupImageUpdated(image));
+            },
+            imageDeleted: () {
+              mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupImageDeleted());
+            },
           )
         ],
       ),

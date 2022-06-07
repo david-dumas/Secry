@@ -12,12 +12,16 @@ class ChooseImageTile extends StatelessWidget {
   final Image? groupImage;
   final ImagePicker _imagePicker = ImagePicker();
   final String addPictureText;
+  final Function(Image image) imageUpdated;
+  final Function imageDeleted;
 
   ChooseImageTile(
       {Key? key,
       required this.mainContext,
       required this.groupImage,
-      required this.addPictureText})
+      required this.addPictureText,
+      required Function(Image image) this.imageUpdated,
+      required Function this.imageDeleted})
       : super(key: key);
 
   @override
@@ -76,8 +80,12 @@ class ChooseImageTile extends StatelessWidget {
         ),
       ),
       onTap: () {
-        ModalBottomSheetHelper()
-            .showModalBottomShowWithImagePickerOptions(mainContext, groupImage: groupImage, imagePicker: _imagePicker);
+        ModalBottomSheetHelper().showModalBottomShowWithImagePickerOptions(mainContext,
+            groupImage: groupImage, imagePicker: _imagePicker, imageUpdated: (Image image) {
+          imageUpdated(image);
+        }, imageDeleted: () {
+          imageDeleted();
+        });
       },
     );
   }

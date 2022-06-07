@@ -10,7 +10,10 @@ import 'package:secry/constants.dart';
 
 class ModalBottomSheetHelper {
   showModalBottomShowWithImagePickerOptions(BuildContext mainContext,
-      {Image? groupImage, required ImagePicker imagePicker}) {
+      {Image? groupImage,
+      required ImagePicker imagePicker,
+      required Function(Image image) imageUpdated,
+      required Function imageDeleted}) {
     showMaterialModalBottomSheet(
       context: mainContext,
       builder: (context) {
@@ -33,7 +36,7 @@ class ModalBottomSheetHelper {
                             final cameraImage = await imagePicker.pickImage(source: ImageSource.camera);
                             if (cameraImage != null) {
                               final image = Image.file(File(cameraImage.path));
-                              mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupImageUpdated(image));
+                              imageUpdated(image);
 
                               Navigator.of(context).pop(context);
                             } else {
@@ -57,7 +60,7 @@ class ModalBottomSheetHelper {
                             final XFile? galleryImage = await imagePicker.pickImage(source: ImageSource.gallery);
                             if (galleryImage != null) {
                               final image = Image.file(File(galleryImage.path));
-                              mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupImageUpdated(image));
+                              imageUpdated(image);
 
                               Navigator.of(context).pop(context);
                             } else {
@@ -79,7 +82,7 @@ class ModalBottomSheetHelper {
                         height: bottomSheetButtonHeight,
                         child: TextButton(
                           onPressed: () async {
-                            mainContext.read<AddGroupPageBloc>().add(AddGroupPageEvent.groupImageDeleted());
+                            imageDeleted();
                             Navigator.of(context).pop(context);
                           },
                           child: Text(

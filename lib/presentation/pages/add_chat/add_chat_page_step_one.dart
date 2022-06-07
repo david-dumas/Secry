@@ -13,8 +13,7 @@ class AddChatPageStepOne extends StatefulWidget {
   final Image? chatImage;
   final String chatTitle;
 
-  AddChatPageStepOne({Key? key, required this.chatTitle, this.chatImage = null})
-      : super(key: key);
+  AddChatPageStepOne({Key? key, required this.chatTitle, this.chatImage = null}) : super(key: key);
 
   @override
   State<AddChatPageStepOne> createState() => _AddChatPageStepOneState();
@@ -45,8 +44,7 @@ class _AddChatPageStepOneState extends State<AddChatPageStepOne> {
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
               labelText: tr('add_chat_title'),
-              suffixText:
-                  "${max(0, maximumTitleLength - _titleController.text.length)}",
+              suffixText: "${max(0, maximumTitleLength - _titleController.text.length)}",
               border: OutlineInputBorder(),
               enabledBorder: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8.0),
@@ -71,9 +69,7 @@ class _AddChatPageStepOneState extends State<AddChatPageStepOne> {
               return null;
             },
             onChanged: (newValue) {
-              mainContext
-                  .read<AddChatPageBloc>()
-                  .add(AddChatPageEvent.chatTitleUpdated(newValue));
+              mainContext.read<AddChatPageBloc>().add(AddChatPageEvent.chatTitleUpdated(newValue));
             },
           ),
           SizedBox(height: 30),
@@ -83,6 +79,12 @@ class _AddChatPageStepOneState extends State<AddChatPageStepOne> {
             mainContext: context,
             groupImage: widget.chatImage,
             addPictureText: tr('action_add_chat_picture'),
+            imageUpdated: (Image image) {
+              mainContext.read<AddChatPageBloc>().add(AddChatPageEvent.chatImageUpdated(image));
+            },
+            imageDeleted: () {
+              mainContext.read<AddChatPageBloc>().add(AddChatPageEvent.chatImageDeleted());
+            },
           )
         ],
       ),
