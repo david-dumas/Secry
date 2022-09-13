@@ -6,7 +6,7 @@ part of 'i_auth_api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _IAuthApiService implements IAuthApiService {
   _IAuthApiService(this._dio, {this.baseUrl}) {
