@@ -211,8 +211,7 @@ abstract class _Initialized implements AllChatsOrSurveysInGroupPageEvent {
   const factory _Initialized(
       final List<GeneralListCellInfoItem> cellInfoItems) = _$_Initialized;
 
-  List<GeneralListCellInfoItem> get cellInfoItems =>
-      throw _privateConstructorUsedError;
+  List<GeneralListCellInfoItem> get cellInfoItems;
   @JsonKey(ignore: true)
   _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -350,7 +349,7 @@ abstract class _SearchValueUpdated
   const factory _SearchValueUpdated(final String newValue) =
       _$_SearchValueUpdated;
 
-  String get newValue => throw _privateConstructorUsedError;
+  String get newValue;
   @JsonKey(ignore: true)
   _$$_SearchValueUpdatedCopyWith<_$_SearchValueUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -502,10 +501,9 @@ abstract class _AllChatsOrSurveysInGroupPageState
       _$_AllChatsOrSurveysInGroupPageState;
 
   @override
-  List<GeneralListCellInfoItem> get cellInfoItems =>
-      throw _privateConstructorUsedError;
+  List<GeneralListCellInfoItem> get cellInfoItems;
   @override
-  String get searchValue => throw _privateConstructorUsedError;
+  String get searchValue;
   @override
   @JsonKey(ignore: true)
   _$$_AllChatsOrSurveysInGroupPageStateCopyWith<

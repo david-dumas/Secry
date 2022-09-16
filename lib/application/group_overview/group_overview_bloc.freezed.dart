@@ -297,7 +297,7 @@ class _$_Initialized implements _Initialized {
 abstract class _Initialized implements GroupOverviewEvent {
   const factory _Initialized(final String groupId) = _$_Initialized;
 
-  String get groupId => throw _privateConstructorUsedError;
+  String get groupId;
   @JsonKey(ignore: true)
   _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
@@ -487,8 +487,7 @@ abstract class _ChatInfoItemsUpdated implements GroupOverviewEvent {
   const factory _ChatInfoItemsUpdated(
       final List<GroupOverviewRowInfo> chatInfoItems) = _$_ChatInfoItemsUpdated;
 
-  List<GroupOverviewRowInfo> get chatInfoItems =>
-      throw _privateConstructorUsedError;
+  List<GroupOverviewRowInfo> get chatInfoItems;
   @JsonKey(ignore: true)
   _$$_ChatInfoItemsUpdatedCopyWith<_$_ChatInfoItemsUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -681,8 +680,7 @@ abstract class _SurveyInfoItemsUpdated implements GroupOverviewEvent {
           final List<GroupOverviewRowInfo> surveyInfoItems) =
       _$_SurveyInfoItemsUpdated;
 
-  List<GroupOverviewRowInfo> get surveyInfoItems =>
-      throw _privateConstructorUsedError;
+  List<GroupOverviewRowInfo> get surveyInfoItems;
   @JsonKey(ignore: true)
   _$$_SurveyInfoItemsUpdatedCopyWith<_$_SurveyInfoItemsUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -867,7 +865,7 @@ abstract class _GroupOverviewRefreshed implements GroupOverviewEvent {
   const factory _GroupOverviewRefreshed(final String groupId) =
       _$_GroupOverviewRefreshed;
 
-  String get groupId => throw _privateConstructorUsedError;
+  String get groupId;
   @JsonKey(ignore: true)
   _$$_GroupOverviewRefreshedCopyWith<_$_GroupOverviewRefreshed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1052,7 +1050,7 @@ abstract class _IsFetchingUpdated implements GroupOverviewEvent {
   const factory _IsFetchingUpdated(final bool isFetching) =
       _$_IsFetchingUpdated;
 
-  bool get isFetching => throw _privateConstructorUsedError;
+  bool get isFetching;
   @JsonKey(ignore: true)
   _$$_IsFetchingUpdatedCopyWith<_$_IsFetchingUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1236,7 +1234,7 @@ abstract class _IsDataFetchedUpdated implements GroupOverviewEvent {
   const factory _IsDataFetchedUpdated(final bool isFetched) =
       _$_IsDataFetchedUpdated;
 
-  bool get isFetched => throw _privateConstructorUsedError;
+  bool get isFetched;
   @JsonKey(ignore: true)
   _$$_IsDataFetchedUpdatedCopyWith<_$_IsDataFetchedUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1424,7 +1422,7 @@ abstract class _CurrentFeatureTypeUpdated implements GroupOverviewEvent {
   const factory _CurrentFeatureTypeUpdated(final FeatureType newFeatureType) =
       _$_CurrentFeatureTypeUpdated;
 
-  FeatureType get newFeatureType => throw _privateConstructorUsedError;
+  FeatureType get newFeatureType;
   @JsonKey(ignore: true)
   _$$_CurrentFeatureTypeUpdatedCopyWith<_$_CurrentFeatureTypeUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -1792,17 +1790,15 @@ abstract class _GroupOverviewState implements GroupOverviewState {
       required final FeatureType currentFeatureType}) = _$_GroupOverviewState;
 
   @override
-  List<GroupOverviewRowInfo> get chatInfoItems =>
-      throw _privateConstructorUsedError;
+  List<GroupOverviewRowInfo> get chatInfoItems;
   @override
-  List<GroupOverviewRowInfo> get surveyInfoItems =>
-      throw _privateConstructorUsedError;
+  List<GroupOverviewRowInfo> get surveyInfoItems;
   @override
-  bool get isDataFetched => throw _privateConstructorUsedError;
+  bool get isDataFetched;
   @override
-  bool get isFetching => throw _privateConstructorUsedError;
+  bool get isFetching;
   @override
-  FeatureType get currentFeatureType => throw _privateConstructorUsedError;
+  FeatureType get currentFeatureType;
   @override
   @JsonKey(ignore: true)
   _$$_GroupOverviewStateCopyWith<_$_GroupOverviewState> get copyWith =>

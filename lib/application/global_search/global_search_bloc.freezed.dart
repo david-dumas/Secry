@@ -488,7 +488,7 @@ abstract class _SearchValueUpdated implements GlobalSearchEvent {
   const factory _SearchValueUpdated(final String newValue) =
       _$_SearchValueUpdated;
 
-  String get newValue => throw _privateConstructorUsedError;
+  String get newValue;
   @JsonKey(ignore: true)
   _$$_SearchValueUpdatedCopyWith<_$_SearchValueUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -692,7 +692,7 @@ abstract class _UsersForSearchQueryUpdated implements GlobalSearchEvent {
   const factory _UsersForSearchQueryUpdated(final List<GroupUser> newUsers) =
       _$_UsersForSearchQueryUpdated;
 
-  List<GroupUser> get newUsers => throw _privateConstructorUsedError;
+  List<GroupUser> get newUsers;
   @JsonKey(ignore: true)
   _$$_UsersForSearchQueryUpdatedCopyWith<_$_UsersForSearchQueryUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -895,7 +895,7 @@ abstract class _SearchUsersPaginationInfoUpdated implements GlobalSearchEvent {
           final PaginationInfo? paginationInfo) =
       _$_SearchUsersPaginationInfoUpdated;
 
-  PaginationInfo? get paginationInfo => throw _privateConstructorUsedError;
+  PaginationInfo? get paginationInfo;
   @JsonKey(ignore: true)
   _$$_SearchUsersPaginationInfoUpdatedCopyWith<
           _$_SearchUsersPaginationInfoUpdated>
@@ -1428,7 +1428,7 @@ abstract class _IsFetchingInitialDataUpdated implements GlobalSearchEvent {
   const factory _IsFetchingInitialDataUpdated(final bool isFetching) =
       _$_IsFetchingInitialDataUpdated;
 
-  bool get isFetching => throw _privateConstructorUsedError;
+  bool get isFetching;
   @JsonKey(ignore: true)
   _$$_IsFetchingInitialDataUpdatedCopyWith<_$_IsFetchingInitialDataUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -1632,7 +1632,7 @@ abstract class _IsFetchingMoreDataForScrollDownUpdated
   const factory _IsFetchingMoreDataForScrollDownUpdated(final bool isFetching) =
       _$_IsFetchingMoreDataForScrollDownUpdated;
 
-  bool get isFetching => throw _privateConstructorUsedError;
+  bool get isFetching;
   @JsonKey(ignore: true)
   _$$_IsFetchingMoreDataForScrollDownUpdatedCopyWith<
           _$_IsFetchingMoreDataForScrollDownUpdated>
@@ -1829,7 +1829,7 @@ abstract class _IsDataFetchedUpdated implements GlobalSearchEvent {
   const factory _IsDataFetchedUpdated(final bool isFetched) =
       _$_IsDataFetchedUpdated;
 
-  bool get isFetched => throw _privateConstructorUsedError;
+  bool get isFetched;
   @JsonKey(ignore: true)
   _$$_IsDataFetchedUpdatedCopyWith<_$_IsDataFetchedUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2060,18 +2060,17 @@ abstract class _GlobalSearchState implements GlobalSearchState {
       required final PaginationInfo? paginationInfo}) = _$_GlobalSearchState;
 
   @override
-  String get searchValue => throw _privateConstructorUsedError;
+  String get searchValue;
   @override
-  List<GroupUser> get usersForSearchQuery => throw _privateConstructorUsedError;
+  List<GroupUser> get usersForSearchQuery;
   @override
-  bool get isDataFetched => throw _privateConstructorUsedError;
+  bool get isDataFetched;
   @override
-  bool get isFetchingInitialData => throw _privateConstructorUsedError;
+  bool get isFetchingInitialData;
   @override
-  bool get isFetchingMoreDataForScrollDown =>
-      throw _privateConstructorUsedError;
+  bool get isFetchingMoreDataForScrollDown;
   @override
-  PaginationInfo? get paginationInfo => throw _privateConstructorUsedError;
+  PaginationInfo? get paginationInfo;
   @override
   @JsonKey(ignore: true)
   _$$_GlobalSearchStateCopyWith<_$_GlobalSearchState> get copyWith =>

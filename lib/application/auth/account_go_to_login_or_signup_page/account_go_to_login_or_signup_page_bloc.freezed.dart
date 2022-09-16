@@ -585,8 +585,7 @@ abstract class _AccountGoToLoginOrSignupPageState
       _$_AccountGoToLoginOrSignupPageState;
 
   @override
-  UserCredential? get currentUserCredential =>
-      throw _privateConstructorUsedError;
+  UserCredential? get currentUserCredential;
   @override
   @JsonKey(ignore: true)
   _$$_AccountGoToLoginOrSignupPageStateCopyWith<

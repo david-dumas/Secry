@@ -235,9 +235,9 @@ abstract class _Redirect implements SplashEvent {
       _$_Redirect;
 
   @override
-  PageRouteInfo<dynamic> get route => throw _privateConstructorUsedError;
+  PageRouteInfo<dynamic> get route;
   @override
-  int get delayInMilliseconds => throw _privateConstructorUsedError;
+  int get delayInMilliseconds;
   @override
   @JsonKey(ignore: true)
   _$$_RedirectCopyWith<_$_Redirect> get copyWith =>
@@ -370,9 +370,9 @@ abstract class _SplashState implements SplashState {
       final int? delayInMilliseconds}) = _$_SplashState;
 
   @override
-  Option<PageRouteInfo> get routeOption => throw _privateConstructorUsedError;
+  Option<PageRouteInfo> get routeOption;
   @override
-  int? get delayInMilliseconds => throw _privateConstructorUsedError;
+  int? get delayInMilliseconds;
   @override
   @JsonKey(ignore: true)
   _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>

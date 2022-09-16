@@ -327,7 +327,7 @@ abstract class _SelectedIndexChanged implements TabbarEvent {
   const factory _SelectedIndexChanged(final int index) =
       _$_SelectedIndexChanged;
 
-  int get index => throw _privateConstructorUsedError;
+  int get index;
   @JsonKey(ignore: true)
   _$$_SelectedIndexChangedCopyWith<_$_SelectedIndexChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -472,7 +472,7 @@ abstract class _IsUserSignedInUpdated implements TabbarEvent {
   const factory _IsUserSignedInUpdated(final bool isSignedIn) =
       _$_IsUserSignedInUpdated;
 
-  bool get isSignedIn => throw _privateConstructorUsedError;
+  bool get isSignedIn;
   @JsonKey(ignore: true)
   _$$_IsUserSignedInUpdatedCopyWith<_$_IsUserSignedInUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -661,15 +661,13 @@ abstract class _TabbarState implements TabbarState {
       required final bool isUserSignedIn}) = _$_TabbarState;
 
   @override
-  int get selectedIndex => throw _privateConstructorUsedError;
+  int get selectedIndex;
   @override
-  List<String> get titleTagsForSelectedIndex =>
-      throw _privateConstructorUsedError;
+  List<String> get titleTagsForSelectedIndex;
   @override
-  String get currentTitleTagForSelectedIndex =>
-      throw _privateConstructorUsedError;
+  String get currentTitleTagForSelectedIndex;
   @override
-  bool get isUserSignedIn => throw _privateConstructorUsedError;
+  bool get isUserSignedIn;
   @override
   @JsonKey(ignore: true)
   _$$_TabbarStateCopyWith<_$_TabbarState> get copyWith =>

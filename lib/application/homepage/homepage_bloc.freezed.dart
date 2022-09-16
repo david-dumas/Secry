@@ -513,8 +513,7 @@ abstract class _PrivateGroupsInfoUpdated implements HomepageEvent {
           final List<GroupOverviewRowInfo> privateGroupsRowsInfo) =
       _$_PrivateGroupsInfoUpdated;
 
-  List<GroupOverviewRowInfo> get privateGroupsRowsInfo =>
-      throw _privateConstructorUsedError;
+  List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
   @JsonKey(ignore: true)
   _$$_PrivateGroupsInfoUpdatedCopyWith<_$_PrivateGroupsInfoUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -718,7 +717,7 @@ abstract class _UpdatedIsShowingSearchBar implements HomepageEvent {
   const factory _UpdatedIsShowingSearchBar(final bool isShowing) =
       _$_UpdatedIsShowingSearchBar;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_UpdatedIsShowingSearchBarCopyWith<_$_UpdatedIsShowingSearchBar>
       get copyWith => throw _privateConstructorUsedError;
@@ -919,7 +918,7 @@ abstract class _SearchValueUpdated implements HomepageEvent {
   const factory _SearchValueUpdated(final String newValue) =
       _$_SearchValueUpdated;
 
-  String get newValue => throw _privateConstructorUsedError;
+  String get newValue;
   @JsonKey(ignore: true)
   _$$_SearchValueUpdatedCopyWith<_$_SearchValueUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1122,7 +1121,7 @@ abstract class _PaginationInfoUpdated implements HomepageEvent {
   const factory _PaginationInfoUpdated(final PaginationInfo paginationInfo) =
       _$_PaginationInfoUpdated;
 
-  PaginationInfo get paginationInfo => throw _privateConstructorUsedError;
+  PaginationInfo get paginationInfo;
   @JsonKey(ignore: true)
   _$$_PaginationInfoUpdatedCopyWith<_$_PaginationInfoUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1670,7 +1669,7 @@ abstract class _IsFetchingInitialGroupsUpdated implements HomepageEvent {
   const factory _IsFetchingInitialGroupsUpdated(final bool isFetching) =
       _$_IsFetchingInitialGroupsUpdated;
 
-  bool get isFetching => throw _privateConstructorUsedError;
+  bool get isFetching;
   @JsonKey(ignore: true)
   _$$_IsFetchingInitialGroupsUpdatedCopyWith<_$_IsFetchingInitialGroupsUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -1879,7 +1878,7 @@ abstract class _IsFetchingMoreGroupsForScrollDownUpdated
   const factory _IsFetchingMoreGroupsForScrollDownUpdated(
       final bool isFetching) = _$_IsFetchingMoreGroupsForScrollDownUpdated;
 
-  bool get isFetching => throw _privateConstructorUsedError;
+  bool get isFetching;
   @JsonKey(ignore: true)
   _$$_IsFetchingMoreGroupsForScrollDownUpdatedCopyWith<
           _$_IsFetchingMoreGroupsForScrollDownUpdated>
@@ -2081,7 +2080,7 @@ abstract class _IsDataFetchedUpdated implements HomepageEvent {
   const factory _IsDataFetchedUpdated(final bool isFetched) =
       _$_IsDataFetchedUpdated;
 
-  bool get isFetched => throw _privateConstructorUsedError;
+  bool get isFetched;
   @JsonKey(ignore: true)
   _$$_IsDataFetchedUpdatedCopyWith<_$_IsDataFetchedUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2360,24 +2359,21 @@ abstract class _HomepageState implements HomepageState {
       _$_HomepageState;
 
   @override
-  List<GroupOverviewRowInfo> get privateGroupsRowsInfo =>
-      throw _privateConstructorUsedError;
+  List<GroupOverviewRowInfo> get privateGroupsRowsInfo;
   @override
-  PaginationInfo? get paginationInfo => throw _privateConstructorUsedError;
+  PaginationInfo? get paginationInfo;
   @override
-  bool get isShowingSearchBar => throw _privateConstructorUsedError;
+  bool get isShowingSearchBar;
   @override
-  String get searchValue => throw _privateConstructorUsedError;
+  String get searchValue;
   @override
-  List<DrawableRoot?> get privateGroupAvatarSvgs =>
-      throw _privateConstructorUsedError;
+  List<DrawableRoot?> get privateGroupAvatarSvgs;
   @override
-  bool get isDataFetched => throw _privateConstructorUsedError;
+  bool get isDataFetched;
   @override
-  bool get isFetchingInitialGroups => throw _privateConstructorUsedError;
+  bool get isFetchingInitialGroups;
   @override
-  bool get isFetchingMoreGroupsForScrollDown =>
-      throw _privateConstructorUsedError;
+  bool get isFetchingMoreGroupsForScrollDown;
   @override
   @JsonKey(ignore: true)
   _$$_HomepageStateCopyWith<_$_HomepageState> get copyWith =>

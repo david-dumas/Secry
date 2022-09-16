@@ -219,7 +219,7 @@ class _$_EmailChanged implements _EmailChanged {
 abstract class _EmailChanged implements ResetPasswordEvent {
   const factory _EmailChanged(final String newEmail) = _$_EmailChanged;
 
-  String get newEmail => throw _privateConstructorUsedError;
+  String get newEmail;
   @JsonKey(ignore: true)
   _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -483,7 +483,7 @@ abstract class _IsShowingClearEmailInputToggled implements ResetPasswordEvent {
   const factory _IsShowingClearEmailInputToggled(final bool isShowing) =
       _$_IsShowingClearEmailInputToggled;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingClearEmailInputToggledCopyWith<
           _$_IsShowingClearEmailInputToggled>
@@ -688,16 +688,15 @@ abstract class _ResetPasswordState implements ResetPasswordState {
       required final bool isLoading}) = _$_ResetPasswordState;
 
   @override
-  String get inputEmail => throw _privateConstructorUsedError;
+  String get inputEmail;
   @override
-  bool get isShowingClearEmailButton => throw _privateConstructorUsedError;
+  bool get isShowingClearEmailButton;
   @override
-  bool get isPasswordResetMailSuccessfullySent =>
-      throw _privateConstructorUsedError;
+  bool get isPasswordResetMailSuccessfullySent;
   @override
-  bool get didTryToResetPassword => throw _privateConstructorUsedError;
+  bool get didTryToResetPassword;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
   _$$_ResetPasswordStateCopyWith<_$_ResetPasswordState> get copyWith =>

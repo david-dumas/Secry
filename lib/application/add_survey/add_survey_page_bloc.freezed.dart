@@ -581,7 +581,7 @@ abstract class _SurveyTitleUpdated implements AddSurveyPageEvent {
   const factory _SurveyTitleUpdated(final String newTitle) =
       _$_SurveyTitleUpdated;
 
-  String get newTitle => throw _privateConstructorUsedError;
+  String get newTitle;
   @JsonKey(ignore: true)
   _$$_SurveyTitleUpdatedCopyWith<_$_SurveyTitleUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -810,7 +810,7 @@ abstract class _CurrentStepIndexUpdated implements AddSurveyPageEvent {
   const factory _CurrentStepIndexUpdated(final int newIndex) =
       _$_CurrentStepIndexUpdated;
 
-  int get newIndex => throw _privateConstructorUsedError;
+  int get newIndex;
   @JsonKey(ignore: true)
   _$$_CurrentStepIndexUpdatedCopyWith<_$_CurrentStepIndexUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -1238,7 +1238,7 @@ abstract class _QuestionsUpdated implements AddSurveyPageEvent {
   const factory _QuestionsUpdated(final List<Question> newQuestions) =
       _$_QuestionsUpdated;
 
-  List<Question> get newQuestions => throw _privateConstructorUsedError;
+  List<Question> get newQuestions;
   @JsonKey(ignore: true)
   _$$_QuestionsUpdatedCopyWith<_$_QuestionsUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1660,7 +1660,7 @@ class _$_QuestionDeleted implements _QuestionDeleted {
 abstract class _QuestionDeleted implements AddSurveyPageEvent {
   const factory _QuestionDeleted(final String questionId) = _$_QuestionDeleted;
 
-  String get questionId => throw _privateConstructorUsedError;
+  String get questionId;
   @JsonKey(ignore: true)
   _$$_QuestionDeletedCopyWith<_$_QuestionDeleted> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1910,8 +1910,8 @@ abstract class _QuestionTypeChangedForQuestionIndex
           final int questionIndex, final QuestionType newQuestionType) =
       _$_QuestionTypeChangedForQuestionIndex;
 
-  int get questionIndex => throw _privateConstructorUsedError;
-  QuestionType get newQuestionType => throw _privateConstructorUsedError;
+  int get questionIndex;
+  QuestionType get newQuestionType;
   @JsonKey(ignore: true)
   _$$_QuestionTypeChangedForQuestionIndexCopyWith<
           _$_QuestionTypeChangedForQuestionIndex>
@@ -2159,8 +2159,8 @@ abstract class _QuestionTextUpdatedForQuestionIndex
           final int questionIndex, final String newText) =
       _$_QuestionTextUpdatedForQuestionIndex;
 
-  int get questionIndex => throw _privateConstructorUsedError;
-  String get newText => throw _privateConstructorUsedError;
+  int get questionIndex;
+  String get newText;
   @JsonKey(ignore: true)
   _$$_QuestionTextUpdatedForQuestionIndexCopyWith<
           _$_QuestionTextUpdatedForQuestionIndex>
@@ -2392,7 +2392,7 @@ abstract class _OptionAddedForQuestionIndex implements AddSurveyPageEvent {
   const factory _OptionAddedForQuestionIndex(final int questionIndex) =
       _$_OptionAddedForQuestionIndex;
 
-  int get questionIndex => throw _privateConstructorUsedError;
+  int get questionIndex;
   @JsonKey(ignore: true)
   _$$_OptionAddedForQuestionIndexCopyWith<_$_OptionAddedForQuestionIndex>
       get copyWith => throw _privateConstructorUsedError;
@@ -2636,8 +2636,8 @@ abstract class _OptionDeletedForQuestionIndex implements AddSurveyPageEvent {
           final int questionIndex, final int optionIndex) =
       _$_OptionDeletedForQuestionIndex;
 
-  int get questionIndex => throw _privateConstructorUsedError;
-  int get optionIndex => throw _privateConstructorUsedError;
+  int get questionIndex;
+  int get optionIndex;
   @JsonKey(ignore: true)
   _$$_OptionDeletedForQuestionIndexCopyWith<_$_OptionDeletedForQuestionIndex>
       get copyWith => throw _privateConstructorUsedError;
@@ -2911,10 +2911,10 @@ abstract class _OptionUpdatedForQuestionIndex implements AddSurveyPageEvent {
       final String oldOptionId,
       final String newOptionText) = _$_OptionUpdatedForQuestionIndex;
 
-  int get questionIndex => throw _privateConstructorUsedError;
-  int get optionIndex => throw _privateConstructorUsedError;
-  String get oldOptionId => throw _privateConstructorUsedError;
-  String get newOptionText => throw _privateConstructorUsedError;
+  int get questionIndex;
+  int get optionIndex;
+  String get oldOptionId;
+  String get newOptionText;
   @JsonKey(ignore: true)
   _$$_OptionUpdatedForQuestionIndexCopyWith<_$_OptionUpdatedForQuestionIndex>
       get copyWith => throw _privateConstructorUsedError;
@@ -3125,16 +3125,15 @@ abstract class _AddSurveyPageState implements AddSurveyPageState {
       required final List<Question> questions}) = _$_AddSurveyPageState;
 
   @override
-  String get surveyTitle => throw _privateConstructorUsedError;
+  String get surveyTitle;
   @override
-  int get currentStepIndex => throw _privateConstructorUsedError;
+  int get currentStepIndex;
   @override
-  bool get isSurveySuccessfullyCreated => throw _privateConstructorUsedError;
+  bool get isSurveySuccessfullyCreated;
   @override
-  bool get isCreateNewSurveyRequestExecuted =>
-      throw _privateConstructorUsedError;
+  bool get isCreateNewSurveyRequestExecuted;
   @override
-  List<Question> get questions => throw _privateConstructorUsedError;
+  List<Question> get questions;
   @override
   @JsonKey(ignore: true)
   _$$_AddSurveyPageStateCopyWith<_$_AddSurveyPageState> get copyWith =>

@@ -877,7 +877,7 @@ abstract class _FirstNameChanged implements SignUpFormEvent {
   const factory _FirstNameChanged(final String newFirstName) =
       _$_FirstNameChanged;
 
-  String get newFirstName => throw _privateConstructorUsedError;
+  String get newFirstName;
   @JsonKey(ignore: true)
   _$$_FirstNameChangedCopyWith<_$_FirstNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1128,7 +1128,7 @@ class _$_LastNameChanged implements _LastNameChanged {
 abstract class _LastNameChanged implements SignUpFormEvent {
   const factory _LastNameChanged(final String newLastName) = _$_LastNameChanged;
 
-  String get newLastName => throw _privateConstructorUsedError;
+  String get newLastName;
   @JsonKey(ignore: true)
   _$$_LastNameChangedCopyWith<_$_LastNameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1381,7 +1381,7 @@ abstract class _PhoneDialCodeChanged implements SignUpFormEvent {
   const factory _PhoneDialCodeChanged(final String newPhoneDialCode) =
       _$_PhoneDialCodeChanged;
 
-  String get newPhoneDialCode => throw _privateConstructorUsedError;
+  String get newPhoneDialCode;
   @JsonKey(ignore: true)
   _$$_PhoneDialCodeChangedCopyWith<_$_PhoneDialCodeChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1631,7 +1631,7 @@ class _$_PhoneChanged implements _PhoneChanged {
 abstract class _PhoneChanged implements SignUpFormEvent {
   const factory _PhoneChanged(final String newPhone) = _$_PhoneChanged;
 
-  String get newPhone => throw _privateConstructorUsedError;
+  String get newPhone;
   @JsonKey(ignore: true)
   _$$_PhoneChangedCopyWith<_$_PhoneChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1881,7 +1881,7 @@ class _$_EmailChanged implements _EmailChanged {
 abstract class _EmailChanged implements SignUpFormEvent {
   const factory _EmailChanged(final String newEmail) = _$_EmailChanged;
 
-  String get newEmail => throw _privateConstructorUsedError;
+  String get newEmail;
   @JsonKey(ignore: true)
   _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2134,7 +2134,7 @@ abstract class _FirstPasswordChanged implements SignUpFormEvent {
   const factory _FirstPasswordChanged(final String newFirstPassword) =
       _$_FirstPasswordChanged;
 
-  String get newFirstPassword => throw _privateConstructorUsedError;
+  String get newFirstPassword;
   @JsonKey(ignore: true)
   _$$_FirstPasswordChangedCopyWith<_$_FirstPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2388,7 +2388,7 @@ abstract class _RepeatPasswordChanged implements SignUpFormEvent {
   const factory _RepeatPasswordChanged(final String newRepeatPassword) =
       _$_RepeatPasswordChanged;
 
-  String get newRepeatPassword => throw _privateConstructorUsedError;
+  String get newRepeatPassword;
   @JsonKey(ignore: true)
   _$$_RepeatPasswordChangedCopyWith<_$_RepeatPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2645,7 +2645,7 @@ abstract class _IsPasswordCheckedAndValidUpdated implements SignUpFormEvent {
   const factory _IsPasswordCheckedAndValidUpdated(
       {required final bool isValid}) = _$_IsPasswordCheckedAndValidUpdated;
 
-  bool get isValid => throw _privateConstructorUsedError;
+  bool get isValid;
   @JsonKey(ignore: true)
   _$$_IsPasswordCheckedAndValidUpdatedCopyWith<
           _$_IsPasswordCheckedAndValidUpdated>
@@ -2906,7 +2906,7 @@ abstract class _IsRepeatPasswordCheckedAndValidUpdated
           {required final bool isValid}) =
       _$_IsRepeatPasswordCheckedAndValidUpdated;
 
-  bool get isValid => throw _privateConstructorUsedError;
+  bool get isValid;
   @JsonKey(ignore: true)
   _$$_IsRepeatPasswordCheckedAndValidUpdatedCopyWith<
           _$_IsRepeatPasswordCheckedAndValidUpdated>
@@ -3161,7 +3161,7 @@ abstract class _IsShowingPasswordToggled implements SignUpFormEvent {
   const factory _IsShowingPasswordToggled(final bool isShowing) =
       _$_IsShowingPasswordToggled;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingPasswordToggledCopyWith<_$_IsShowingPasswordToggled>
       get copyWith => throw _privateConstructorUsedError;
@@ -3417,7 +3417,7 @@ abstract class _IsShowingRepeatPasswordToggled implements SignUpFormEvent {
   const factory _IsShowingRepeatPasswordToggled(final bool isShowing) =
       _$_IsShowingRepeatPasswordToggled;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingRepeatPasswordToggledCopyWith<_$_IsShowingRepeatPasswordToggled>
       get copyWith => throw _privateConstructorUsedError;
@@ -3674,7 +3674,7 @@ abstract class _IsShowingPasswordValidationChecker implements SignUpFormEvent {
   const factory _IsShowingPasswordValidationChecker(final bool isShowing) =
       _$_IsShowingPasswordValidationChecker;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingPasswordValidationCheckerCopyWith<
           _$_IsShowingPasswordValidationChecker>
@@ -3931,7 +3931,7 @@ abstract class _IsShowingErrorMessagesUpdated implements SignUpFormEvent {
   const factory _IsShowingErrorMessagesUpdated(final bool isShowing) =
       _$_IsShowingErrorMessagesUpdated;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingErrorMessagesUpdatedCopyWith<_$_IsShowingErrorMessagesUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -4190,8 +4190,7 @@ abstract class _SignUpFailureOrUnitOptionUpdated implements SignUpFormEvent {
           final Option<Either<AuthFailure, Unit>> newFailureOrUnit) =
       _$_SignUpFailureOrUnitOptionUpdated;
 
-  Option<Either<AuthFailure, Unit>> get newFailureOrUnit =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get newFailureOrUnit;
   @JsonKey(ignore: true)
   _$$_SignUpFailureOrUnitOptionUpdatedCopyWith<
           _$_SignUpFailureOrUnitOptionUpdated>
@@ -4442,7 +4441,7 @@ class _$_IsLoadingUpdated implements _IsLoadingUpdated {
 abstract class _IsLoadingUpdated implements SignUpFormEvent {
   const factory _IsLoadingUpdated(final bool isLoading) = _$_IsLoadingUpdated;
 
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @JsonKey(ignore: true)
   _$$_IsLoadingUpdatedCopyWith<_$_IsLoadingUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -4871,40 +4870,37 @@ abstract class _SignUpFormState implements SignUpFormState {
       required final bool isLoading}) = _$_SignUpFormState;
 
   @override
-  String get firstNameInput => throw _privateConstructorUsedError;
+  String get firstNameInput;
   @override
-  String get lastNameInput => throw _privateConstructorUsedError;
+  String get lastNameInput;
   @override
-  String get emailInput => throw _privateConstructorUsedError;
+  String get emailInput;
   @override
-  String get phoneInput => throw _privateConstructorUsedError;
+  String get phoneInput;
   @override
-  String get phoneDialCodeInput => throw _privateConstructorUsedError;
+  String get phoneDialCodeInput;
   @override
-  String get passwordInput => throw _privateConstructorUsedError;
+  String get passwordInput;
   @override
-  String get repeatPasswordInput => throw _privateConstructorUsedError;
+  String get repeatPasswordInput;
   @override
-  bool get isShowingPassword => throw _privateConstructorUsedError;
+  bool get isShowingPassword;
   @override
-  bool get isShowingRepeatPassword => throw _privateConstructorUsedError;
+  bool get isShowingRepeatPassword;
   @override
-  bool get isPasswordCheckedAndValid => throw _privateConstructorUsedError;
+  bool get isPasswordCheckedAndValid;
   @override
-  bool get isRepeatPasswordCheckedAndValid =>
-      throw _privateConstructorUsedError;
+  bool get isRepeatPasswordCheckedAndValid;
   @override
-  bool get isShowingPasswordValidationChecker =>
-      throw _privateConstructorUsedError;
+  bool get isShowingPasswordValidationChecker;
   @override
-  bool get isShowingErrorMessages => throw _privateConstructorUsedError;
+  bool get isShowingErrorMessages;
   @override
-  String get currentErrorMessageTag => throw _privateConstructorUsedError;
+  String get currentErrorMessageTag;
   @override
-  Option<Either<AuthFailure, Unit>> get signUpFailureOrUnitOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get signUpFailureOrUnitOption;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
   @JsonKey(ignore: true)
   _$$_SignUpFormStateCopyWith<_$_SignUpFormState> get copyWith =>

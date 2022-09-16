@@ -196,15 +196,15 @@ abstract class _User implements User {
       final String? phone}) = _$_User;
 
   @override
-  String? get uid => throw _privateConstructorUsedError;
+  String? get uid;
   @override
-  String get firstName => throw _privateConstructorUsedError;
+  String get firstName;
   @override
-  String get lastName => throw _privateConstructorUsedError;
+  String get lastName;
   @override
-  String get email => throw _privateConstructorUsedError;
+  String get email;
   @override
-  String? get phone => throw _privateConstructorUsedError;
+  String? get phone;
   @override
   @JsonKey(ignore: true)
   _$$_UserCopyWith<_$_User> get copyWith => throw _privateConstructorUsedError;

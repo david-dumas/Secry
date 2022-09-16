@@ -505,7 +505,7 @@ abstract class _IsShowingClearEmailInputToggled implements SignInFormEvent {
   const factory _IsShowingClearEmailInputToggled(final bool isShowing) =
       _$_IsShowingClearEmailInputToggled;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingClearEmailInputToggledCopyWith<
           _$_IsShowingClearEmailInputToggled>
@@ -708,7 +708,7 @@ abstract class _IsShowingPasswordToggled implements SignInFormEvent {
   const factory _IsShowingPasswordToggled(final bool isShowing) =
       _$_IsShowingPasswordToggled;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingPasswordToggledCopyWith<_$_IsShowingPasswordToggled>
       get copyWith => throw _privateConstructorUsedError;
@@ -912,7 +912,7 @@ abstract class _IsShowingErrorMessagesUpdated implements SignInFormEvent {
   const factory _IsShowingErrorMessagesUpdated(final bool isShowing) =
       _$_IsShowingErrorMessagesUpdated;
 
-  bool get isShowing => throw _privateConstructorUsedError;
+  bool get isShowing;
   @JsonKey(ignore: true)
   _$$_IsShowingErrorMessagesUpdatedCopyWith<_$_IsShowingErrorMessagesUpdated>
       get copyWith => throw _privateConstructorUsedError;
@@ -1279,7 +1279,7 @@ class _$_EmailChanged implements _EmailChanged {
 abstract class _EmailChanged implements SignInFormEvent {
   const factory _EmailChanged(final String newEmail) = _$_EmailChanged;
 
-  String get newEmail => throw _privateConstructorUsedError;
+  String get newEmail;
   @JsonKey(ignore: true)
   _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1478,7 +1478,7 @@ class _$_PasswordChanged implements _PasswordChanged {
 abstract class _PasswordChanged implements SignInFormEvent {
   const factory _PasswordChanged(final String newPassword) = _$_PasswordChanged;
 
-  String get newPassword => throw _privateConstructorUsedError;
+  String get newPassword;
   @JsonKey(ignore: true)
   _$$_PasswordChangedCopyWith<_$_PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2280,25 +2280,23 @@ abstract class _SignInFormState implements SignInFormState {
       _$_SignInFormState;
 
   @override
-  String get inputEmail => throw _privateConstructorUsedError;
+  String get inputEmail;
   @override
-  bool get isShowingClearEmailButton => throw _privateConstructorUsedError;
+  bool get isShowingClearEmailButton;
   @override
-  String get inputPassword => throw _privateConstructorUsedError;
+  String get inputPassword;
   @override
-  bool get isShowingPassword => throw _privateConstructorUsedError;
+  bool get isShowingPassword;
   @override
-  bool get isShowingErrorMessages => throw _privateConstructorUsedError;
+  bool get isShowingErrorMessages;
   @override
-  String get currentErrorMessageTag => throw _privateConstructorUsedError;
+  String get currentErrorMessageTag;
   @override
-  Option<Either<AuthFailure, Unit>> get signInFailureOrUnitOption =>
-      throw _privateConstructorUsedError;
+  Option<Either<AuthFailure, Unit>> get signInFailureOrUnitOption;
   @override
-  bool get isLoading => throw _privateConstructorUsedError;
+  bool get isLoading;
   @override
-  UserCredential? get currentUserCredential =>
-      throw _privateConstructorUsedError;
+  UserCredential? get currentUserCredential;
   @override
   @JsonKey(ignore: true)
   _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>

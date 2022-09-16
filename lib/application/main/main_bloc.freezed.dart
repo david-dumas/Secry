@@ -268,7 +268,7 @@ abstract class _MainState implements MainState {
   const factory _MainState({required final int initialState}) = _$_MainState;
 
   @override
-  int get initialState => throw _privateConstructorUsedError;
+  int get initialState;
   @override
   @JsonKey(ignore: true)
   _$$_MainStateCopyWith<_$_MainState> get copyWith =>
