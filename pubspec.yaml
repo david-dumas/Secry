@@ -35,15 +35,15 @@ dependencies:
   # Localization
   intl: ^0.17.0
   easy_localization: ^3.0.1
-  cupertino_icons: ^1.0.4
+  cupertino_icons: ^1.0.5
 
   # Dependency injection
   get_it: ^7.2.0
   injectable: ^1.5.3
 
   # Domain Driven Design
-  flutter_bloc: ^8.0.1
-  freezed_annotation: ^2.0.3
+  flutter_bloc: ^8.1.1
+  freezed_annotation: ^2.1.0
   auto_route: ^5.0.1
   dartz: ^0.10.1
   country_code_picker: ^2.0.2
@@ -57,12 +57,12 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^2.1.0+1
-  build_runner: ^2.1.11
-  injectable_generator: ^1.5.3
+  build_runner: ^2.2.1
+  injectable_generator: ^1.5.4
   auto_route_generator: ^5.0.2
   flutter_launcher_icons: ^0.10.0
-  retrofit_generator: ^4.0.0
-  json_serializable: ^6.2.0
+  retrofit_generator: ^4.0.3+2
+  json_serializable: ^6.3.2
   import_sorter: ^4.6.0
 
 flutter_icons:
@@ -73,7 +73,7 @@ flutter_icons:
   adaptive_icon_background: "assets/launcher/background.png"
   adaptive_icon_foreground: "assets/launcher/foreground.png"
 
-  flutter_lints: ^1.0.4
+  flutter_lints: ^2.0.1
 
 flutter:
   uses-material-design: true
