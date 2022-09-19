@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:injectable/injectable.dart';
 import 'package:secry/constants.dart';
+import 'package:retrofit/retrofit.dart';
 import 'package:secry/domain/chats/general_chat_info.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/domain/general/groups_and_general_about_info.dart';
@@ -20,6 +21,24 @@ class GroupsRepository extends IGroupsRepository {
   final GroupsApiService _groupsApiService;
 
   GroupsRepository(this._groupsApiService) : super();
+
+  @override
+  Future<List<GroupOverviewRowInfo>> getHomepageGroupsDummyData() async {
+    try {
+      final response = await _groupsApiService.api.getHomepageGroupsDummyData();
+
+      if (response.isSuccessful) {
+        final List<GroupOverviewRowInfo> groupOverviewRowsData =
+            (json.decode(response.data) as List).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
+        return groupOverviewRowsData;
+      } else {
+        return List.empty();
+      }
+    } catch (error) {
+      print(error);
+      return List.empty();
+    }
+  }
 
   @override
   Future<GroupsAndGeneralAboutInfo> getPrivateGroups({required int pageNumber, required int pageSize}) async {

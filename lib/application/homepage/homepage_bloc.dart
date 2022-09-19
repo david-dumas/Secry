@@ -76,16 +76,21 @@ class HomepageBloc extends Bloc<HomepageEvent, HomepageState> {
       add(HomepageEvent.isFetchingMoreGroupsForScrollDownUpdated(true));
     }
 
+    final homepageDummyDataGroups = await _activityRepository.getHomepageGroupsDummyData();
+
     final groupsAndGeneralAboutInfo =
         await _activityRepository.getPrivateGroups(pageNumber: pageNumber, pageSize: pageSize);
-    await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
+    await AvatarHelper().addSvgToGroupRowsInfo(
+        homepageDummyDataGroups); //await AvatarHelper().addSvgToGroupRowsInfo(groupsAndGeneralAboutInfo.groups);
 
     List<GroupOverviewRowInfo> privateGroupsRowsInfo = [];
 
     if (pageNumber == 1) {
-      privateGroupsRowsInfo = [...[]..addAll(groupsAndGeneralAboutInfo.groups)];
+      privateGroupsRowsInfo = [...[]..addAll(homepageDummyDataGroups)];
+      //privateGroupsRowsInfo = [...[]..addAll(groupsAndGeneralAboutInfo.groups)];
     } else {
-      privateGroupsRowsInfo = [...state.privateGroupsRowsInfo..addAll(groupsAndGeneralAboutInfo.groups)];
+      privateGroupsRowsInfo = [...state.privateGroupsRowsInfo..addAll(homepageDummyDataGroups)];
+      //privateGroupsRowsInfo = [...state.privateGroupsRowsInfo..addAll(groupsAndGeneralAboutInfo.groups)];
     }
 
     privateGroupsRowsInfo.sort((group1, group2) {
