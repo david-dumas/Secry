@@ -10,7 +10,7 @@ part of 'i_surveys_api_service.dart';
 
 class _ISurveysApiService implements ISurveysApiService {
   _ISurveysApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://413f4f84-f2a1-41f7-a154-43d6a09af11a.mock.pstmn.io';
+    baseUrl ??= 'https://57c03f3f-304a-44af-a879-a97859eade66.mock.pstmn.io';
   }
 
   final Dio _dio;

@@ -52,7 +52,8 @@ class GroupOverviewBloc extends Bloc<GroupOverviewEvent, GroupOverviewState> {
   Future<void> fetchChatsAndSurveys({required String groupId}) async {
     add(GroupOverviewEvent.isFetchingUpdated(true));
 
-    final groupChatsAndSurveysWithGeneralGroupInfo = await _groupsRepository.getChatsAndSurveys(groupId: groupId);
+    final groupChatsAndSurveysWithGeneralGroupInfo = await _groupsRepository.getHomepageGroupOverviewDummyData();
+    // final groupChatsAndSurveysWithGeneralGroupInfo = await _groupsRepository.getChatsAndSurveys(groupId: groupId);
 
     if (groupChatsAndSurveysWithGeneralGroupInfo != null) {
       final mostRecentGroupChats = groupChatsAndSurveysWithGeneralGroupInfo.chats;

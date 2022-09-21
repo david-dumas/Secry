@@ -4,12 +4,15 @@ import 'package:retrofit/retrofit.dart';
 
 part 'i_groups_api_service.g.dart';
 
-@RestApi(baseUrl: temporaryPostmanGetGroupdForHomepageUrl)
+@RestApi(baseUrl: temporaryPostmanGetGroupOverviewDummyData)
 abstract class IGroupsApiService {
   factory IGroupsApiService(Dio dio, {String baseUrl}) = _IGroupsApiService;
 
   @GET('/get_groups_dummy_data')
   Future<HttpResponse<dynamic>> getHomepageGroupsDummyData();
+
+  @GET('/get_group_overview_dummy_data')
+  Future<HttpResponse<dynamic>> getHomepageGroupOverviewDummyData();
 
   @GET('/api/v2/group')
   @Headers(<String, dynamic>{"accept": "application/json"})

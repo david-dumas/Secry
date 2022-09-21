@@ -29,7 +29,7 @@ class GroupsRepository extends IGroupsRepository {
 
       if (response.isSuccessful) {
         final List<GroupOverviewRowInfo> groupOverviewRowsData =
-            (json.decode(response.data) as List).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
+        (json.decode(response.data) as List).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
         return groupOverviewRowsData;
       } else {
         return List.empty();
@@ -37,6 +37,59 @@ class GroupsRepository extends IGroupsRepository {
     } catch (error) {
       print(error);
       return List.empty();
+    }
+  }
+
+  @override
+  Future<GroupChatsAndSurveysGeneralInfo?> getHomepageGroupOverviewDummyData() async {
+    try {
+      final response = await _groupsApiService.api.getHomepageGroupOverviewDummyData();
+
+      print("getHomepageGroupOverviewDummyData: ${response.data.toString()}");
+
+      if (response.isSuccessful) {
+        final mappedData = Map<String, dynamic>.from(response.data);
+
+        if (!mappedData.containsKey('id')) {
+          return null;
+        }
+
+        List<GeneralChatInfo> generalChatInfoData = [];
+        List<GeneralSurveyInfo> generalSurveyInfoData = [];
+
+        final String groupId = mappedData.containsKey('id') ? (mappedData['id'] != null ? mappedData['id'] : '') : '';
+        final String groupTitle =
+        mappedData.containsKey('title') ? (mappedData['title'] != null ? mappedData['title'] : '') : '';
+        final String groupImageUrl =
+        mappedData.containsKey('imageUrl') ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '') : '';
+        final DateTime? groupCreatedAt = mappedData.containsKey('createdAt')
+            ? (mappedData['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt']) : null)
+            : null;
+
+        if (mappedData.containsKey('chats')) {
+          List<dynamic> chats = mappedData["chats"];
+          generalChatInfoData = (chats).map((json) => GeneralChatInfo.fromJsonMap(json)).toList();
+        }
+
+        if (mappedData.containsKey('surveys')) {
+          List<dynamic> surveys = mappedData["surveys"];
+          generalSurveyInfoData = (surveys).map((json) => GeneralSurveyInfo.fromJsonMap(json)).toList();
+        }
+
+        final groupChatsAndSurveysGeneralInfo = GroupChatsAndSurveysGeneralInfo(
+            id: groupId,
+            title: groupTitle,
+            imageUrl: groupImageUrl,
+            createdAt: groupCreatedAt,
+            chats: generalChatInfoData,
+            surveys: generalSurveyInfoData);
+        return groupChatsAndSurveysGeneralInfo;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      print(error);
+      return null;
     }
   }
 

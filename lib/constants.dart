@@ -7,8 +7,9 @@ const baseUrl = "https://secryapi.azurewebsites.net";
 const temporaryPostmanBaseUrl = "https://10535ad9-1804-4207-b556-54f9e7572e48.mock.pstmn.io";
 const temporaryPostmanGetGroupdForHomepageUrl = "https://e46a14dc-e806-4540-b22e-4567300546ad.mock.pstmn.io";
 const temporaryPostmanPrivateChatsUrl = "https://e6e670c2-7eb3-4bae-81e4-0ecebaa88385.mock.pstmn.io";
-const temporaryPostmanPrivateSurveysUrl = "https://413f4f84-f2a1-41f7-a154-43d6a09af11a.mock.pstmn.io";
+const temporaryPostmanPrivateSurveysUrl = "https://57c03f3f-304a-44af-a879-a97859eade66.mock.pstmn.io";
 const temporaryPostmanGetUsersForCreateNewGroup = "https://b45c710f-f287-487b-8f85-fc63a088a546.mock.pstmn.io";
+const temporaryPostmanGetGroupOverviewDummyData = "https://0de92fcd-2f4c-4111-b6d3-34176fce4202.mock.pstmn.io";
 
 const defaultPageSize = 15;
 
