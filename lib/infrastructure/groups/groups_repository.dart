@@ -29,7 +29,7 @@ class GroupsRepository extends IGroupsRepository {
 
       if (response.isSuccessful) {
         final List<GroupOverviewRowInfo> groupOverviewRowsData =
-        (json.decode(response.data) as List).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
+            (json.decode(response.data) as List).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
         return groupOverviewRowsData;
       } else {
         return List.empty();
@@ -45,10 +45,8 @@ class GroupsRepository extends IGroupsRepository {
     try {
       final response = await _groupsApiService.api.getHomepageGroupOverviewDummyData();
 
-      print("getHomepageGroupOverviewDummyData: ${response.data.toString()}");
-
       if (response.isSuccessful) {
-        final mappedData = Map<String, dynamic>.from(response.data);
+        final mappedData = json.decode(response.data) as Map<String, dynamic>;
 
         if (!mappedData.containsKey('id')) {
           return null;
@@ -59,9 +57,9 @@ class GroupsRepository extends IGroupsRepository {
 
         final String groupId = mappedData.containsKey('id') ? (mappedData['id'] != null ? mappedData['id'] : '') : '';
         final String groupTitle =
-        mappedData.containsKey('title') ? (mappedData['title'] != null ? mappedData['title'] : '') : '';
+            mappedData.containsKey('title') ? (mappedData['title'] != null ? mappedData['title'] : '') : '';
         final String groupImageUrl =
-        mappedData.containsKey('imageUrl') ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '') : '';
+            mappedData.containsKey('imageUrl') ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '') : '';
         final DateTime? groupCreatedAt = mappedData.containsKey('createdAt')
             ? (mappedData['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt']) : null)
             : null;
