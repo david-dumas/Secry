@@ -5,7 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:secry/application/group_overview/group_overview_bloc.dart';
-
 import 'package:secry/constants.dart';
 import 'package:secry/domain/groups/feature_type.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
@@ -15,7 +14,6 @@ import 'package:secry/presentation/pages/add_survey/add_survey_page.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/presentation/widgets/general/group_section.dart';
 import 'package:secry/application/add_survey/add_survey_page_bloc.dart';
-
 import 'package:secry/injection.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 
@@ -33,11 +31,23 @@ class GroupOverviewPage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
               appBar: GeneralAppbar(
-                title: title,
-                isSubpage: true,
-                backgroundColor: globalWhite,
-                isShowingBottomBorder: true,
-              ),
+                  title: title,
+                  isSubpage: true,
+                  backgroundColor: globalWhite,
+                  isShowingBottomBorder: true,
+                  trailingGestureWithIcon: GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (BuildContext context) {
+                            return ReportAlertDialog();
+                          });
+                    },
+                    child: Icon(
+                      Icons.flag_outlined,
+                      color: globalBlack,
+                    ),
+                  )),
               body: Column(
                 children: [
                   Container(
@@ -130,11 +140,9 @@ class GroupOverviewPage extends StatelessWidget {
                                     : tr('empty_state_no_surveys_description'),
                                 emptyStateIcon: Icon(Icons.group_add),
                                 titleRowTrailingAction: () {
-                                  if (state.currentFeatureType ==
-                                      FeatureType.chats) {
+                                  if (state.currentFeatureType == FeatureType.chats) {
                                     if (Platform.isAndroid) {
-                                      AutoRouter.of(context)
-                                          .push(AddChatPageAndroidRoute());
+                                      AutoRouter.of(context).push(AddChatPageAndroidRoute());
                                     } else if (Platform.isIOS) {
                                       showMaterialModalBottomSheet(
                                         context: context,
@@ -142,8 +150,7 @@ class GroupOverviewPage extends StatelessWidget {
                                         builder: (context) => AddChatPageIOS(),
                                       );
                                     }
-                                  } else if (state.currentFeatureType ==
-                                      FeatureType.surveys) {
+                                  } else if (state.currentFeatureType == FeatureType.surveys) {
                                     if (Platform.isAndroid) {
                                       AutoRouter.of(context)
                                           .push(AddSurveyPageAndroidRoute())
@@ -189,5 +196,109 @@ class GroupOverviewPage extends StatelessWidget {
             timeIndication: groupInfoItem.getTimoAgoLabel(),
             svg: groupInfoItem.svg))
         .toList();
+  }
+}
+
+class ReportAlertDialog extends StatelessWidget {
+  const ReportAlertDialog({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          const Text('Report',
+              style: TextStyle(
+                fontSize: fontSizeXxl,
+              ),
+              textAlign: TextAlign.right),
+          Spacer(),
+          Container(
+            alignment: Alignment.topRight,
+            child: IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(
+                Icons.clear,
+                color: kMediumGrayV2,
+              ),
+            ),
+          ),
+        ],
+      ),
+      content: Container(
+        width: MediaQuery.of(context).size.width / 2,
+        child: Column(
+          //TODO add margin
+          mainAxisSize: MainAxisSize.max,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text("Why do you want to report this?",
+                style: TextStyle(fontSize: fontSizeSmall, color: kDarkGrayTextColor), textAlign: TextAlign.center),
+            ListView(
+              shrinkWrap: true,
+              children: <Widget>[
+                Card(
+                    child: ListTile(
+                  title: Text('I don\'t want to see it',
+                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
+                  onTap: () {},
+                )),
+                Card(
+                    child: ListTile(
+                  title: Text('Nudity or sexual content',
+                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
+                  onTap: () {},
+                )),
+                Card(
+                    child: ListTile(
+                  title: Text('Harassment or hate speech',
+                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
+                  onTap: () {},
+                )),
+                Card(
+                    child: ListTile(
+                  title: Text('Threatening, violent or concerning',
+                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
+                  onTap: () {},
+                )),
+                Card(
+                    child: ListTile(
+                  title: Text('Sale or use of drugs',
+                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
+                  onTap: () {},
+                )),
+                Card(
+                    child: ListTile(
+                  title: Text('Misleading or harmful information',
+                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
+                  onTap: () {},
+                )),
+              ],
+            ),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        Center(
+            child: SizedBox(
+          height: 44,
+          width: 348,
+          child: TextButton(
+              style: TextButton.styleFrom(foregroundColor: globalWhite, backgroundColor: kPrimaryColor),
+              onPressed: () {
+                //TODO submit form
+              },
+              child: Text(
+                'Submit',
+                style: TextStyle(fontSize: fontSizeMedium),
+              )),
+        ))
+      ],
+    );
   }
 }
