@@ -209,19 +209,16 @@ class ReportAlertDialog extends StatefulWidget {
 }
 
 class _ReportAlertDialogState extends State<ReportAlertDialog> {
-  //selected button state
-  bool _isSelected = false;
+  int _selectedIndex = 0;
 
-  //setState function to select ListTile widget
-  void _toggleSelected() {
-    setState(() {
-      if (_isSelected) {
-        _isSelected = false;
-      } else {
-        _isSelected = true;
-      }
-    });
-  }
+  List<String> reports = [
+    'I don\'t want to see it',
+    'Nudity or sexual content',
+    'Harassment or hate speech',
+    'Threatening, violent or concerning',
+    'Sale or use of drugs',
+    'Misleading or harmful information',
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -259,55 +256,24 @@ class _ReportAlertDialogState extends State<ReportAlertDialog> {
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Text("Why do you want to report this?",
+            Text('Why do you want to report this?',
                 style: TextStyle(fontSize: fontSizeSmall, color: kDarkGrayTextColor), textAlign: TextAlign.center),
-            ListView(
-              shrinkWrap: true,
-              children: <Widget>[
-                Card(
-                    child: ListTile(
-                  title: Text('I don\'t want to see it',
-                      style: TextStyle(
-                          fontSize: fontSizeMedium, color: (_isSelected ? kPrimaryColor : kDarkGrayTextColor))),
-                  selected: (_isSelected ? true : false),
-                  selectedColor: kPrimaryColor,
-                  selectedTileColor: appIconColorBlue2,
+            ListView.builder(
+              itemCount: reports.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ListTile(
+                  title: Text(reports[index]),
+                  selected: index == _selectedIndex,
+                  selectedTileColor: appIconColorBlue1,
                   onTap: () {
-                    _toggleSelected();
+                    setState(() {
+                      _selectedIndex = index;
+                    });
                   },
-                )),
-                Card(
-                    child: ListTile(
-                  title: Text('Nudity or sexual content',
-                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
-                  onTap: () {},
-                )),
-                Card(
-                    child: ListTile(
-                  title: Text('Harassment or hate speech',
-                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
-                  onTap: () {},
-                )),
-                Card(
-                    child: ListTile(
-                  title: Text('Threatening, violent or concerning',
-                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
-                  onTap: () {},
-                )),
-                Card(
-                    child: ListTile(
-                  title: Text('Sale or use of drugs',
-                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
-                  onTap: () {},
-                )),
-                Card(
-                    child: ListTile(
-                  title: Text('Misleading or harmful information',
-                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
-                  onTap: () {},
-                )),
-              ],
-            ),
+                );
+              },
+              shrinkWrap: true,
+            )
           ],
         ),
       ),
@@ -319,7 +285,7 @@ class _ReportAlertDialogState extends State<ReportAlertDialog> {
           child: TextButton(
               style: TextButton.styleFrom(foregroundColor: globalWhite, backgroundColor: kPrimaryColor),
               onPressed: () {
-                //TODO submit form
+                //TODO submit report
               },
               child: Text(
                 'Submit',
