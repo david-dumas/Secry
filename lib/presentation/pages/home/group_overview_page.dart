@@ -199,10 +199,29 @@ class GroupOverviewPage extends StatelessWidget {
   }
 }
 
-class ReportAlertDialog extends StatelessWidget {
+class ReportAlertDialog extends StatefulWidget {
   const ReportAlertDialog({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<ReportAlertDialog> createState() => _ReportAlertDialogState();
+}
+
+class _ReportAlertDialogState extends State<ReportAlertDialog> {
+  //selected button state
+  bool _isSelected = false;
+
+  //setState function to select ListTile widget
+  void _toggleSelected() {
+    setState(() {
+      if (_isSelected) {
+        _isSelected = false;
+      } else {
+        _isSelected = true;
+      }
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -210,11 +229,14 @@ class ReportAlertDialog extends StatelessWidget {
       title: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          const Text('Report',
-              style: TextStyle(
-                fontSize: fontSizeXxl,
-              ),
-              textAlign: TextAlign.right),
+          Expanded(
+            flex: 3,
+            child: const Text('Report',
+                style: TextStyle(
+                  fontSize: fontSizeXxl,
+                ),
+                textAlign: TextAlign.right),
+          ),
           Spacer(),
           Container(
             alignment: Alignment.topRight,
@@ -232,8 +254,8 @@ class ReportAlertDialog extends StatelessWidget {
       ),
       content: Container(
         width: MediaQuery.of(context).size.width / 2,
+        height: MediaQuery.of(context).size.height / 2,
         child: Column(
-          //TODO add margin
           mainAxisSize: MainAxisSize.max,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
@@ -245,8 +267,14 @@ class ReportAlertDialog extends StatelessWidget {
                 Card(
                     child: ListTile(
                   title: Text('I don\'t want to see it',
-                      style: TextStyle(fontSize: fontSizeMedium, color: kDarkGrayTextColor)),
-                  onTap: () {},
+                      style: TextStyle(
+                          fontSize: fontSizeMedium, color: (_isSelected ? kPrimaryColor : kDarkGrayTextColor))),
+                  selected: (_isSelected ? true : false),
+                  selectedColor: kPrimaryColor,
+                  selectedTileColor: appIconColorBlue2,
+                  onTap: () {
+                    _toggleSelected();
+                  },
                 )),
                 Card(
                     child: ListTile(
