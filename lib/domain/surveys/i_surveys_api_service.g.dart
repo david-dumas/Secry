@@ -10,7 +10,7 @@ part of 'i_surveys_api_service.dart';
 
 class _ISurveysApiService implements ISurveysApiService {
   _ISurveysApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://57c03f3f-304a-44af-a879-a97859eade66.mock.pstmn.io';
+    baseUrl ??= 'https://cc6b314c-af3e-43bb-b24d-7887384d69ab.mock.pstmn.io';
   }
 
   final Dio _dio;
@@ -18,14 +18,14 @@ class _ISurveysApiService implements ISurveysApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<dynamic>> getMostRecentPrivateSurveysForGroup() async {
+  Future<HttpResponse<dynamic>> getSurveysDummyData() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/get_private_surveys',
+            .compose(_dio.options, '/surveys',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;

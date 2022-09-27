@@ -4,6 +4,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:secry/application/group_overview/group_overview_bloc.dart';
 
 import 'package:secry/constants.dart';
@@ -18,6 +19,8 @@ import 'package:secry/application/add_survey/add_survey_page_bloc.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
+
+import '../survey/respond_to_survey/respond_to_survey_page.dart';
 
 class GroupOverviewPage extends StatelessWidget {
   final String title;
@@ -164,6 +167,12 @@ class GroupOverviewPage extends StatelessWidget {
                                 },
                                 openPageForPressedCell: (String id, String groupTitle) {
                                   // TODO open chat / survey page for cell
+                                  pushNewScreen(
+                                    context,
+                                    screen: RespondToSurveyPage(title: groupTitle, groupId: this.groupId,),
+                                    withNavBar: true,
+                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                  );
                                 },
                               ),
                               SizedBox(height: 50),

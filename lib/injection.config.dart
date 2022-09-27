@@ -11,7 +11,7 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/add_chat/add_chat_page_bloc.dart' as _i3;
-import 'application/add_group/add_group_page_bloc.dart' as _i35;
+import 'application/add_group/add_group_page_bloc.dart' as _i36;
 import 'application/add_survey/add_survey_page_bloc.dart' as _i4;
 import 'application/all_chats_or_surveys_in_group_page/all_chats_or_surveys_in_group_page_bloc.dart'
     as _i5;
@@ -21,11 +21,12 @@ import 'application/auth/account_overview/account_overview_bloc.dart' as _i20;
 import 'application/auth/reset_password/reset_password_bloc.dart' as _i33;
 import 'application/auth/sign_in_form/sign_in_form_bloc.dart' as _i14;
 import 'application/auth/sign_up_form/sign_up_form_bloc.dart' as _i34;
-import 'application/global_search/global_search_bloc.dart' as _i36;
+import 'application/global_search/global_search_bloc.dart' as _i37;
 import 'application/group_overview/group_overview_bloc.dart' as _i23;
 import 'application/homepage/homepage_bloc.dart' as _i24;
 import 'application/main/main_bloc.dart' as _i13;
 import 'application/splash/splash_bloc.dart' as _i15;
+import 'application/surveys/surveys_bloc.dart' as _i35;
 import 'application/tabbar/tabbar_bloc.dart' as _i17;
 import 'domain/auth/i_auth_facade.dart' as _i9;
 import 'domain/auth/i_authentication_interface.dart' as _i25;
@@ -38,8 +39,8 @@ import 'infrastructure/auth/authentication_repository.dart' as _i26;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i10;
 import 'infrastructure/chats/chats_api_service.dart' as _i22;
 import 'infrastructure/chats/chats_repository.dart' as _i28;
-import 'infrastructure/core/common_injectable_module.dart' as _i37;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i38;
+import 'infrastructure/core/common_injectable_module.dart' as _i38;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i39;
 import 'infrastructure/groups/groups_api_service.dart' as _i8;
 import 'infrastructure/groups/groups_repository.dart' as _i12;
 import 'infrastructure/surveys/surveys_api_service.dart' as _i16;
@@ -96,13 +97,15 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i33.ResetPasswordBloc(get<_i25.IAuthenticationInterface>()));
   gh.factory<_i34.SignUpFormBloc>(() => _i34.SignUpFormBloc(
       get<_i25.IAuthenticationInterface>(), get<_i9.IAuthFacade>()));
-  gh.factory<_i35.AddGroupPageBloc>(() => _i35.AddGroupPageBloc(
+  gh.factory<_i35.SurveyBloc>(
+      () => _i35.SurveyBloc(get<_i29.ISurveysRepository>()));
+  gh.factory<_i36.AddGroupPageBloc>(() => _i36.AddGroupPageBloc(
       get<_i31.IUsersRepository>(), get<_i11.IGroupsRepository>()));
-  gh.factory<_i36.GlobalSearchBloc>(
-      () => _i36.GlobalSearchBloc(get<_i31.IUsersRepository>()));
+  gh.factory<_i37.GlobalSearchBloc>(
+      () => _i37.GlobalSearchBloc(get<_i31.IUsersRepository>()));
   return get;
 }
 
-class _$RegisterModule extends _i37.RegisterModule {}
+class _$RegisterModule extends _i38.RegisterModule {}
 
-class _$FirebaseInjectableModule extends _i38.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i39.FirebaseInjectableModule {}

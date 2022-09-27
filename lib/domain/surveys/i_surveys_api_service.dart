@@ -8,8 +8,8 @@ part 'i_surveys_api_service.g.dart';
 abstract class ISurveysApiService {
   factory ISurveysApiService(Dio dio, {String baseUrl}) = _ISurveysApiService;
 
-  @GET('/get_private_surveys')
-  Future<HttpResponse<dynamic>> getMostRecentPrivateSurveysForGroup(
+  @GET('/surveys')
+  Future<HttpResponse<dynamic>> getSurveysDummyData(
       // @Body() String body,
       );
 }
