@@ -38,87 +38,113 @@ class _HomePageState extends State<HomePage> {
             builder: (context, state) {
               return Scaffold(
                 appBar: GeneralAppbar(
-                    title: tr(mainState.currentTitleTagForSelectedIndex),
-                    backgroundColor: globalWhite,
-                    isShowingSearchBar: state.isShowingSearchBar,
-                    searchValue: state.searchValue,
-                    trailingGestureWithIcon: GestureDetector(
-                      onTap: () {
-                        context
-                            .read<HomepageBloc>()
-                            .add(HomepageEvent.updatedIsShowingSearchBar(!state.isShowingSearchBar));
-                      },
-                      child: state.isShowingSearchBar
-                          ? TextButton(
-                              onPressed: () {
-                                context.read<HomepageBloc>().add(HomepageEvent.updatedIsShowingSearchBar(false));
-                              },
-                              child: Text(tr('action_cancel')),
-                              style: TextButton.styleFrom(
-                                  padding: EdgeInsets.zero, minimumSize: Size(50, 30), alignment: Alignment.center))
-                          : Icon(
-                              Icons.search,
-                              size: 26.0,
-                              color: kDarkGray,
-                            ),
-                    ),
-                    searchValueChanged: (newValue) {
-                      context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
-                    }),
+                  title: tr(mainState.currentTitleTagForSelectedIndex),
+                  backgroundColor: globalWhite,
+                  // isShowingSearchBar: state.isShowingSearchBar,
+                  // searchValue: state.searchValue,
+                  // trailingGestureWithIcon: GestureDetector(
+                  //   onTap: () {
+                  //     context
+                  //         .read<HomepageBloc>()
+                  //         .add(HomepageEvent.updatedIsShowingSearchBar(!state.isShowingSearchBar));
+                  //   },
+                  //   child: state.isShowingSearchBar
+                  //       ? TextButton(
+                  //           onPressed: () {
+                  //             context.read<HomepageBloc>().add(HomepageEvent.updatedIsShowingSearchBar(false));
+                  //           },
+                  //           child: Text(tr('action_cancel')),
+                  //           style: TextButton.styleFrom(
+                  //               padding: EdgeInsets.zero, minimumSize: Size(50, 30), alignment: Alignment.center))
+                  //       : Icon(
+                  //           Icons.search,
+                  //           size: 26.0,
+                  //           color: kDarkGray,
+                  //         ),
+                  // ),
+                  // searchValueChanged: (newValue) {
+                  //   context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
+                  // }
+                ),
                 body: RefreshIndicator(
                   onRefresh: () async {
                     context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
                   },
                   child: SingleChildScrollView(
-                    controller: _scrollController
-                      ..addListener(() {
-                        if (_scrollController.offset == _scrollController.position.maxScrollExtent &&
-                            !state.isFetchingMoreGroupsForScrollDown) {
-                          context.read<HomepageBloc>().add(HomepageEvent.scrolledToLoadMoreItems());
-                        }
-                      }),
-                    child: Padding(
-                      padding: pagePaddingAllSides,
-                      child: GroupSection(
-                        title: tr('home_my_groups'),
-                        totalAmountOfGroups: state.paginationInfo?.totalCount ?? 0,
-                        cellInfoItems: SearchHelper()
-                            .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
-                        titleRowActionButtonText: tr('general_add_group'),
-                        isFetchingInitialGroups: state.isFetchingInitialGroups,
-                        isDataFetched: state.isDataFetched,
-                        isTitleRowActionButtonVisible: true,
-                        emptyStateTitle: tr('action_create_new_group_title'),
-                        emptyStateDescription: tr('action_create_new_group_description'),
-                        emptyStateIcon: Icon(Icons.group_add),
-                        bottomMargin: 50.0,
-                        titleRowTrailingAction: () {
-                          if (Platform.isAndroid) {
-                            AutoRouter.of(context).push(AddGroupPageAndroidRoute()).then((isRefreshNeeded) async {
-                              context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
-                            });
-                          } else if (Platform.isIOS) {
-                            showMaterialModalBottomSheet(
-                              context: context,
-                              useRootNavigator: true,
-                              builder: (context) => AddGroupPageIOS(),
-                            ).then((isRefreshNeeded) async {
-                              context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
-                            });
-                            ;
+                      controller: _scrollController
+                        ..addListener(() {
+                          if (_scrollController.offset == _scrollController.position.maxScrollExtent &&
+                              !state.isFetchingMoreGroupsForScrollDown) {
+                            context.read<HomepageBloc>().add(HomepageEvent.scrolledToLoadMoreItems());
                           }
-                        },
-                        openPageForPressedCell: (String id, String groupTitle) {
-                          pushNewScreen(
-                            context,
-                            screen: GroupOverviewPage(title: groupTitle, groupId: id),
-                            withNavBar: true,
-                            pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                          );
-                        },
-                      ),
-                    ),
-                  ),
+                        }),
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: TextField(
+                                autofocus: false,
+                                autocorrect: false,
+                                decoration: InputDecoration(
+                                    fillColor: searchBarBackgroundColor,
+                                    contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                                    filled: true,
+                                    suffixIconColor: searchBarClearButtonColor,
+                                    hintText: '${tr('action_search')}...',
+                                    suffixIcon: Align(
+                                      widthFactor: 1.0,
+                                      heightFactor: 1.0,
+                                      child: Icon(
+                                        Icons.clear_rounded,
+                                      ),
+                                    ),
+                                    border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(8),
+                                        borderSide: BorderSide(width: 0, style: BorderStyle.none)))),
+                          ),
+                          Padding(
+                            padding: pagePaddingAllSides,
+                            child: GroupSection(
+                              title: tr('home_my_groups'),
+                              totalAmountOfGroups: state.paginationInfo?.totalCount ?? 0,
+                              cellInfoItems: SearchHelper()
+                                  .getFilteredGeneralListCellItems(state.privateGroupsRowsInfo, state.searchValue),
+                              titleRowActionButtonText: tr('general_add_group'),
+                              isFetchingInitialGroups: state.isFetchingInitialGroups,
+                              isDataFetched: state.isDataFetched,
+                              isTitleRowActionButtonVisible: true,
+                              emptyStateTitle: tr('action_create_new_group_title'),
+                              emptyStateDescription: tr('action_create_new_group_description'),
+                              emptyStateIcon: Icon(Icons.group_add),
+                              bottomMargin: 50.0,
+                              titleRowTrailingAction: () {
+                                if (Platform.isAndroid) {
+                                  AutoRouter.of(context).push(AddGroupPageAndroidRoute()).then((isRefreshNeeded) async {
+                                    context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                                  });
+                                } else if (Platform.isIOS) {
+                                  showMaterialModalBottomSheet(
+                                    context: context,
+                                    useRootNavigator: true,
+                                    builder: (context) => AddGroupPageIOS(),
+                                  ).then((isRefreshNeeded) async {
+                                    context.read<HomepageBloc>().add(HomepageEvent.groupsRefreshed());
+                                  });
+                                  ;
+                                }
+                              },
+                              openPageForPressedCell: (String id, String groupTitle) {
+                                pushNewScreen(
+                                  context,
+                                  screen: GroupOverviewPage(title: groupTitle, groupId: id),
+                                  withNavBar: true,
+                                  pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                );
+                              },
+                            ),
+                          ),
+                        ],
+                      )),
                 ),
               );
             },
