@@ -80,27 +80,11 @@ class _HomePageState extends State<HomePage> {
                         }),
                       child: Column(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: TextField(
-                                autofocus: false,
-                                autocorrect: false,
-                                decoration: InputDecoration(
-                                    fillColor: searchBarBackgroundColor,
-                                    contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                                    filled: true,
-                                    suffixIconColor: searchBarClearButtonColor,
-                                    hintText: '${tr('action_search')}...',
-                                    suffixIcon: Align(
-                                      widthFactor: 1.0,
-                                      heightFactor: 1.0,
-                                      child: Icon(
-                                        Icons.clear_rounded,
-                                      ),
-                                    ),
-                                    border: OutlineInputBorder(
-                                        borderRadius: BorderRadius.circular(8),
-                                        borderSide: BorderSide(width: 0, style: BorderStyle.none)))),
+                          SearchBarForHomePage(
+                              searchValue: state.searchValue,
+                              searchValueChanged: (newValue) {
+                                context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
+                              }
                           ),
                           Padding(
                             padding: pagePaddingAllSides,
@@ -152,5 +136,59 @@ class _HomePageState extends State<HomePage> {
         );
       },
     );
+  }
+}
+
+class SearchBarForHomePage extends StatefulWidget {
+  final String searchValue;
+  final Function(String) searchValueChanged;
+
+  const SearchBarForHomePage({Key? key, required this.searchValue, required this.searchValueChanged}) : super(key: key);
+
+  @override
+  State<SearchBarForHomePage> createState() => _SearchBarForHomePageState();
+}
+
+class _SearchBarForHomePageState extends State<SearchBarForHomePage> {
+  final TextEditingController searchBarTextEditingController = TextEditingController();
+  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+        child: Form(
+          key: _formKey,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: searchBarTextEditingController,
+              autofocus: widget.searchValue == '',
+              autocorrect: false,
+              decoration: InputDecoration(
+                fillColor: searchBarBackgroundColor,
+                contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+                filled: true,
+                hintText: '${tr('action_search')}...',
+                suffixIcon: IconButton(
+                  color: kDarkGray,
+                  onPressed: () {
+                    searchBarTextEditingController.text = '';
+                    widget.searchValueChanged('');
+                  },
+                  icon: Icon(
+                    Icons.clear_rounded,
+                  ),
+                ),
+                border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(8),
+                    borderSide: BorderSide(width: 0, style: BorderStyle.none)
+                ),
+              ),
+              onChanged: (newValue) {
+                this.widget.searchValueChanged(newValue);
+              },
+            ),
+      ),
+    ));
   }
 }

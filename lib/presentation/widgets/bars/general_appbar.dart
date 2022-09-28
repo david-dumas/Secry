@@ -125,7 +125,7 @@ class _SearchBarForAppBarState extends State<SearchBarForAppBar> {
                 color: searchBarClearButtonColor,
                 onPressed: () {
                   searchBarTextEditingController.text = '';
-                  this.widget.searchValueChanged('');
+                  widget.searchValueChanged('');
                 },
               ),
               hintText: '${tr('action_search')}...',
