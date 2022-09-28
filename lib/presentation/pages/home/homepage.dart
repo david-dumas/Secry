@@ -39,32 +39,7 @@ class _HomePageState extends State<HomePage> {
               return Scaffold(
                 appBar: GeneralAppbar(
                   title: tr(mainState.currentTitleTagForSelectedIndex),
-                  backgroundColor: globalWhite,
-                  // isShowingSearchBar: state.isShowingSearchBar,
-                  // searchValue: state.searchValue,
-                  // trailingGestureWithIcon: GestureDetector(
-                  //   onTap: () {
-                  //     context
-                  //         .read<HomepageBloc>()
-                  //         .add(HomepageEvent.updatedIsShowingSearchBar(!state.isShowingSearchBar));
-                  //   },
-                  //   child: state.isShowingSearchBar
-                  //       ? TextButton(
-                  //           onPressed: () {
-                  //             context.read<HomepageBloc>().add(HomepageEvent.updatedIsShowingSearchBar(false));
-                  //           },
-                  //           child: Text(tr('action_cancel')),
-                  //           style: TextButton.styleFrom(
-                  //               padding: EdgeInsets.zero, minimumSize: Size(50, 30), alignment: Alignment.center))
-                  //       : Icon(
-                  //           Icons.search,
-                  //           size: 26.0,
-                  //           color: kDarkGray,
-                  //         ),
-                  // ),
-                  // searchValueChanged: (newValue) {
-                  //   context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
-                  // }
+                  backgroundColor: globalWhite
                 ),
                 body: RefreshIndicator(
                   onRefresh: () async {

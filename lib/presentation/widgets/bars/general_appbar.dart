@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 
@@ -7,11 +6,8 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
   final Color backgroundColor;
   final bool isSubpage;
   final bool shouldHideBackButton;
-  final bool isShowingSearchBar;
   final bool isShowingBottomBorder;
-  final String searchValue;
   final GestureDetector? trailingGestureWithIcon;
-  final Function(String)? searchValueChanged;
 
   const GeneralAppbar(
       {Key? key,
@@ -19,11 +15,9 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
       this.backgroundColor = Colors.transparent,
       this.shouldHideBackButton = false,
       this.isSubpage = false,
-      this.isShowingSearchBar = false,
       this.isShowingBottomBorder = false,
-      this.searchValue = '',
       this.trailingGestureWithIcon = null,
-      this.searchValueChanged = null})
+      })
       : super(key: key);
 
   @override
@@ -44,11 +38,7 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,
-      title: widget.isShowingSearchBar
-          ? SearchBarForAppBar(
-              searchValue: widget.searchValue,
-              searchValueChanged: widget.searchValueChanged != null ? widget.searchValueChanged! : (_) => '')
-          : TitleForAppBar(title: widget.title),
+      title: TitleForAppBar(title: widget.title),
       centerTitle: false,
       leadingWidth: widget.isSubpage ? 56 : 0,
       backgroundColor: widget.backgroundColor,
@@ -84,64 +74,6 @@ class TitleForAppBar extends StatelessWidget {
       child: Text(
         title,
         style: TextStyle(color: kDarkGrayTextColor),
-      ),
-    );
-  }
-}
-
-class SearchBarForAppBar extends StatefulWidget {
-  final String searchValue;
-  final Function(String) searchValueChanged;
-
-  SearchBarForAppBar({Key? key, required this.searchValue, required this.searchValueChanged}) : super(key: key);
-
-  @override
-  State<SearchBarForAppBar> createState() => _SearchBarForAppBarState();
-}
-
-class _SearchBarForAppBarState extends State<SearchBarForAppBar> {
-  final TextEditingController searchBarTextEditingController = TextEditingController();
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      width: double.infinity,
-      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(5)),
-      child: Center(
-        child: Form(
-          key: _formKey,
-          child: TextField(
-            controller: searchBarTextEditingController,
-            autofocus: widget.searchValue == '',
-            autocorrect: false,
-            decoration: InputDecoration(
-              fillColor: searchBarBackgroundColor,
-              filled: true,
-              contentPadding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
-              suffixIcon: IconButton(
-                icon: Icon(Icons.clear),
-                color: searchBarClearButtonColor,
-                onPressed: () {
-                  searchBarTextEditingController.text = '';
-                  widget.searchValueChanged('');
-                },
-              ),
-              hintText: '${tr('action_search')}...',
-              border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(8),
-                borderSide: BorderSide(
-                  width: 0,
-                  style: BorderStyle.none,
-                ),
-              ),
-            ),
-            onChanged: (newValue) {
-              this.widget.searchValueChanged(newValue);
-            },
-          ),
-        ),
       ),
     );
   }
