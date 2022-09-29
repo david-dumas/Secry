@@ -12,6 +12,9 @@ class FilterSurveysPage extends StatefulWidget {
 }
 
 class _FilterSurveysPageState extends State<FilterSurveysPage> {
+  String _dropdownValue = 'date';
+  RangeValues _currentRangeValues = const RangeValues(0, 20);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,18 +28,72 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
             onTap: () {},
             child: TextButton(
                 onPressed: () {},
-                child: Text('Reset'),
+                child: Text(tr('filter_surveys_reset')),
                 style: TextButton.styleFrom(
                     padding: EdgeInsets.zero,
                     minimumSize: Size(40, 30),
                     foregroundColor: kDarkGrayTextColor,
-                    alignment: Alignment.center
-                )
-            )
-        ),
+                    alignment: Alignment.center))),
       ),
-      body: Column(
-        children: [Text('Testje')],
+      body: Padding(
+        padding: pagePaddingAllSides,
+        child: Form(
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(tr('filter_surveys_sort_by'), style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                SizedBox(height: marginSmall),
+                ButtonTheme(
+                  alignedDropdown: true,
+                  child: DropdownButtonFormField(
+                      onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
+                      isExpanded: true,
+                      dropdownColor: kLightGray,
+                      icon: Icon(Icons.expand_more),
+                      decoration: InputDecoration(
+                          contentPadding: EdgeInsets.fromLTRB(0, 16.0, 8.0, 16.0),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(kButtonRadiusXxs),
+                              borderSide: BorderSide(width: 1, style: BorderStyle.solid))),
+                      elevation: 0,
+                      borderRadius: BorderRadius.circular(kButtonRadiusXxs),
+                      onChanged: (String? value) {
+                        setState(() {
+                          _dropdownValue = value!;
+                        });
+                      },
+                      value: _dropdownValue,
+                      items: [
+                        DropdownMenuItem(child: Text('Date'), value: 'date'),
+                        DropdownMenuItem(child: Text('A-Z'), value: 'alphabetic')
+                      ]),
+                ),
+                SizedBox(height: marginLarge),
+                Text(tr('filter_surveys_number_of_votes'), style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                SizedBox(height: marginSmall),
+                Text('1 - 20+', style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
+                SizedBox(height: marginSmall),
+                RangeSlider(
+                  values: _currentRangeValues,
+                  max: 20,
+                  divisions: 20,
+                  labels: RangeLabels(
+                    _currentRangeValues.start.round().toString(),
+                    _currentRangeValues.end.round().toString(),
+                  ),
+                  onChanged: (RangeValues values) {
+                    setState(() {
+                      _currentRangeValues = values;
+                    });
+                  },
+                ),
+                SizedBox(height: marginSmall),
+                Divider(
+                  thickness: 1,
+                )
+              ]),
+        ),
       ),
     );
   }

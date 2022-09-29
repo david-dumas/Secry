@@ -167,5 +167,8 @@
   "survey_questions_option_without_text_or_invalid" : "Zorg ervoor dat alle opties zijn ingevuld",
   "survey_questions_error_general" : "Zorg ervoor dat alles compleet is ingevuld",
   "filter": "Filter",
-  "filter_surveys_title": "Filters"
+  "filter_surveys_title": "Filters",
+  "filter_surveys_reset": "Resetten",
+  "filter_surveys_sort_by": "Sorteren op",
+  "filter_surveys_number_of_votes": "Aantal stemmen"
 }

@@ -167,5 +167,8 @@
   "survey_questions_option_without_text_or_invalid" : "Please make sure all options are filled in",
   "survey_questions_error_general" : "Make sure everything is complete",
   "filter": "Filter",
-  "filter_surveys_title": "Filters"
+  "filter_surveys_title": "Filters",
+  "filter_surveys_reset": "Reset",
+  "filter_surveys_sort_by": "Sort by",
+  "filter_surveys_number_of_votes": "Number of votes"
 }
