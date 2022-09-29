@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:secry/presentation/pages/filter_surveys/widgets/custom_range_slider.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 import '../../../constants.dart';
@@ -13,7 +14,6 @@ class FilterSurveysPage extends StatefulWidget {
 
 class _FilterSurveysPageState extends State<FilterSurveysPage> {
   String _dropdownValue = 'date';
-  RangeValues _currentRangeValues = const RangeValues(0, 20);
 
   @override
   Widget build(BuildContext context) {
@@ -74,20 +74,7 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                 SizedBox(height: marginSmall),
                 Text('1 - 20+', style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
                 SizedBox(height: marginSmall),
-                RangeSlider(
-                  values: _currentRangeValues,
-                  max: 20,
-                  divisions: 20,
-                  labels: RangeLabels(
-                    _currentRangeValues.start.round().toString(),
-                    _currentRangeValues.end.round().toString(),
-                  ),
-                  onChanged: (RangeValues values) {
-                    setState(() {
-                      _currentRangeValues = values;
-                    });
-                  },
-                ),
+                CustomRangeSlider(),
                 SizedBox(height: marginSmall),
                 Divider(
                   thickness: 1,
@@ -98,3 +85,4 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
     );
   }
 }
+
