@@ -1,8 +1,12 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/domain/groups/feature_type.dart';
+import 'package:secry/presentation/pages/filter_surveys/filter_surveys_page.dart';
 import 'package:secry/presentation/pages/general/widgets/general_list_cell.dart';
+import 'package:secry/presentation/routes/router.gr.dart';
 
 class GroupSection extends StatelessWidget {
   final String title;
@@ -117,6 +121,8 @@ class GroupSectionTitleRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var media = MediaQuery.of(context).size;
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       crossAxisAlignment: CrossAxisAlignment.center,
@@ -131,21 +137,30 @@ class GroupSectionTitleRow extends StatelessWidget {
           style: TextStyle(fontSize: fontSizeMedium),
         ),
         Visibility(
-          visible: currentFeatureType == FeatureType.surveys,
-          child: Row(
-            children: [
-              SizedBox(width: 8),
-              TextButton.icon(     // <-- TextButton
-                onPressed: () {},
-                icon: Icon(
-                  Icons.filter_alt,
-                  size: 24.0,
-                ),
-                label: Text('Filter'),
-              ),
-            ],
-          )
-        ),
+            visible: currentFeatureType == FeatureType.surveys,
+            child: Row(
+              children: [
+                SizedBox(width: media.width < 320 ? 0 : 8),
+                media.width > 320
+                    ? TextButton.icon(
+                        onPressed: () {
+                          AutoRouter.of(context).push(FilterSurveysPageRoute());
+                        },
+                        icon: Icon(
+                          Icons.filter_alt,
+                          size: 24.0,
+                        ),
+                        label: Text(tr('filter')),
+                      )
+                    : IconButton(
+                        onPressed: () => {
+                          AutoRouter.of(context).push(FilterSurveysPageRoute())
+                        },
+                        icon: Icon(Icons.filter_alt),
+                        color: kPrimaryColor
+                      )
+              ],
+            )),
         Spacer(),
         Visibility(
           visible: isTitleRowActionButtonVisible,
