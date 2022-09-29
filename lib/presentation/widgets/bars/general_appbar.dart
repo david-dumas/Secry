@@ -12,6 +12,7 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
   final String searchValue;
   final GestureDetector? trailingGestureWithIcon;
   final Function(String)? searchValueChanged;
+  final bool shouldHaveCloseButton;
 
   const GeneralAppbar(
       {Key? key,
@@ -23,7 +24,8 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
       this.isShowingBottomBorder = false,
       this.searchValue = '',
       this.trailingGestureWithIcon = null,
-      this.searchValueChanged = null})
+      this.searchValueChanged = null,
+      this.shouldHaveCloseButton = false})
       : super(key: key);
 
   @override
@@ -40,7 +42,7 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
       leading: (widget.isSubpage && !widget.shouldHideBackButton)
           ? IconButton(
               color: kDarkGrayTextColor,
-              icon: new Icon(Icons.chevron_left),
+              icon: new Icon(widget.shouldHaveCloseButton ? Icons.close : Icons.chevron_left),
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,

@@ -20,13 +20,24 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
         isSubpage: true,
         backgroundColor: globalWhite,
         isShowingBottomBorder: true,
+        shouldHaveCloseButton: true,
+        trailingGestureWithIcon: GestureDetector(
+            onTap: () {},
+            child: TextButton(
+                onPressed: () {},
+                child: Text('Reset'),
+                style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                    minimumSize: Size(40, 30),
+                    foregroundColor: kDarkGrayTextColor,
+                    alignment: Alignment.center
+                )
+            )
+        ),
       ),
       body: Column(
-        children: [
-          Text('Testje')
-        ],
+        children: [Text('Testje')],
       ),
     );
   }
 }
-
