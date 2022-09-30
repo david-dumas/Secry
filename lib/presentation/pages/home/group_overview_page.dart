@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:secry/application/group_overview/group_overview_bloc.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/presentation/pages/general/widgets/report_alert_dialog.dart';
 import 'package:secry/domain/groups/feature_type.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
 import 'package:secry/domain/general/group_overview_row_info.dart';
@@ -196,103 +197,5 @@ class GroupOverviewPage extends StatelessWidget {
             timeIndication: groupInfoItem.getTimoAgoLabel(),
             svg: groupInfoItem.svg))
         .toList();
-  }
-}
-
-class ReportAlertDialog extends StatefulWidget {
-  const ReportAlertDialog({
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  State<ReportAlertDialog> createState() => _ReportAlertDialogState();
-}
-
-class _ReportAlertDialogState extends State<ReportAlertDialog> {
-  int _selectedIndex = 0;
-
-  List<String> reports = [
-    'I don\'t want to see it',
-    'Nudity or sexual content',
-    'Harassment or hate speech',
-    'Threatening, violent or concerning',
-    'Sale or use of drugs',
-    'Misleading or harmful information',
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return AlertDialog(
-      title: Row(
-        mainAxisAlignment: MainAxisAlignment.end,
-        children: [
-          Expanded(
-            flex: 3,
-            child: const Text('Report',
-                style: TextStyle(
-                  fontSize: fontSizeXxl,
-                ),
-                textAlign: TextAlign.right),
-          ),
-          Spacer(),
-          Container(
-            alignment: Alignment.topRight,
-            child: IconButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              icon: const Icon(
-                Icons.clear,
-                color: kMediumGrayV2,
-              ),
-            ),
-          ),
-        ],
-      ),
-      content: Container(
-        width: MediaQuery.of(context).size.width / 2,
-        height: MediaQuery.of(context).size.height / 2,
-        child: Column(
-          mainAxisSize: MainAxisSize.max,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Text('Why do you want to report this?',
-                style: TextStyle(fontSize: fontSizeSmall, color: kDarkGrayTextColor), textAlign: TextAlign.center),
-            ListView.builder(
-              itemCount: reports.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  title: Text(reports[index]),
-                  selected: index == _selectedIndex,
-                  selectedTileColor: appIconColorBlue1,
-                  onTap: () {
-                    setState(() {
-                      _selectedIndex = index;
-                    });
-                  },
-                );
-              },
-              shrinkWrap: true,
-            )
-          ],
-        ),
-      ),
-      actions: <Widget>[
-        Center(
-            child: SizedBox(
-          height: 44,
-          width: 348,
-          child: TextButton(
-              style: TextButton.styleFrom(foregroundColor: globalWhite, backgroundColor: kPrimaryColor),
-              onPressed: () {
-                //TODO submit report
-              },
-              child: Text(
-                'Submit',
-                style: TextStyle(fontSize: fontSizeMedium),
-              )),
-        ))
-      ],
-    );
   }
 }
