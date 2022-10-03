@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/custom_range_slider.dart';
+import 'package:secry/presentation/pages/filter_surveys/widgets/question_type.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 import '../../../constants.dart';
@@ -42,7 +43,8 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(tr('filter_surveys_sort_by'), style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                Text(tr('filter_surveys_sort_by'),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
                 SizedBox(height: marginSmall),
                 ButtonTheme(
                   alignedDropdown: true,
@@ -70,19 +72,33 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                       ]),
                 ),
                 SizedBox(height: marginLarge),
-                Text(tr('filter_surveys_number_of_votes'), style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                Text(tr('filter_surveys_number_of_votes'),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
                 SizedBox(height: marginSmall),
-                Text('1 - 20+', style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
+                Text('1 - 20+',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
                 SizedBox(height: marginSmall),
                 CustomRangeSlider(),
                 SizedBox(height: marginSmall),
-                Divider(
-                  thickness: 1,
-                )
+                Divider(thickness: 1),
+                SizedBox(height: marginLarge),
+                Text(tr('filter_surveys_question_type_title'),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                SizedBox(height: marginLarge),
+                QuestionType(
+                    title: tr('filter_surveys_question_type_all_questions_title'),
+                    subtitle: tr('filter_surveys_question_type_all_questions_subtitle')),
+                SizedBox(height: marginLarge),
+                QuestionType(
+                    title: tr('filter_surveys_question_type_closed_questions_title'),
+                    subtitle: tr('filter_surveys_question_type_closed_questions_subtitle')),
+                SizedBox(height: marginLarge),
+                QuestionType(
+                    title: tr('filter_surveys_question_type_open_questions_title'),
+                    subtitle: tr('filter_surveys_question_type_open_questions_subtitle')),
               ]),
         ),
       ),
     );
   }
 }
-

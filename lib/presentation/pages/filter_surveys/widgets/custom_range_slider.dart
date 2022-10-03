@@ -63,7 +63,7 @@ class CustomRangeSliderShape extends RangeSliderThumbShape {
 
     Path path = Path()
       ..addOval(Rect.fromCircle(center: center, radius: radius))
-      ..addOval(Rect.fromCircle(center: center, radius: radius - 3))
+      ..addOval(Rect.fromCircle(center: center, radius: radius - 2))
       ..fillType = PathFillType.evenOdd;
 
     Path pathTwo = Path()

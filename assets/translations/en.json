@@ -170,5 +170,12 @@
   "filter_surveys_title": "Filters",
   "filter_surveys_reset": "Reset",
   "filter_surveys_sort_by": "Sort by",
-  "filter_surveys_number_of_votes": "Number of votes"
+  "filter_surveys_number_of_votes": "Number of votes",
+  "filter_surveys_question_type_title": "Question type",
+  "filter_surveys_question_type_all_questions_title":  "All questions",
+  "filter_surveys_question_type_all_questions_subtitle": "Any type of question",
+  "filter_surveys_question_type_closed_questions_title": "Closed questions",
+  "filter_surveys_question_type_closed_questions_subtitle": "Choose given options",
+  "filter_surveys_question_type_open_questions_title": "Open questions",
+  "filter_surveys_question_type_open_questions_subtitle": "Give your own response"
 }
