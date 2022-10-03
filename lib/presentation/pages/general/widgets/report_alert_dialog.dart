@@ -83,7 +83,7 @@ class _ReportAlertDialogState extends State<ReportAlertDialog> {
       actions: <Widget>[
         Center(
             child: SizedBox(
-          height: MediaQuery.of(context).size.width * 0.10,
+          height: MediaQuery.of(context).size.height * 0.05,
           width: MediaQuery.of(context).size.width * 1,
           child: TextButton(
               style: TextButton.styleFrom(foregroundColor: globalWhite, backgroundColor: kPrimaryColor),
