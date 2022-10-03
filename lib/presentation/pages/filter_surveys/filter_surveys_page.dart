@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:secry/presentation/pages/filter_surveys/widgets/bottom_navigation_section.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/custom_range_slider.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/question_type.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
@@ -36,68 +37,75 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                     foregroundColor: kDarkGrayTextColor,
                     alignment: Alignment.center))),
       ),
-      body: Padding(
-        padding: pagePaddingAllSides,
-        child: Form(
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(tr('filter_surveys_sort_by'),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
-                SizedBox(height: marginSmall),
-                ButtonTheme(
-                  alignedDropdown: true,
-                  child: DropdownButtonFormField(
-                      onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
-                      isExpanded: true,
-                      dropdownColor: kLightGray,
-                      icon: Icon(Icons.expand_more),
-                      decoration: InputDecoration(
-                          contentPadding: EdgeInsets.fromLTRB(0, 16.0, 8.0, 16.0),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(kButtonRadiusXxs),
-                              borderSide: BorderSide(width: 1, style: BorderStyle.solid))),
-                      elevation: 0,
-                      borderRadius: BorderRadius.circular(kButtonRadiusXxs),
-                      onChanged: (String? value) {
-                        setState(() {
-                          _dropdownValue = value!;
-                        });
-                      },
-                      value: _dropdownValue,
-                      items: [
-                        DropdownMenuItem(child: Text('Date'), value: 'date'),
-                        DropdownMenuItem(child: Text('A-Z'), value: 'alphabetic')
-                      ]),
-                ),
-                SizedBox(height: marginLarge),
-                Text(tr('filter_surveys_number_of_votes'),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
-                SizedBox(height: marginSmall),
-                Text('1 - 20+',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
-                SizedBox(height: marginSmall),
-                CustomRangeSlider(),
-                SizedBox(height: marginSmall),
-                Divider(thickness: 1),
-                SizedBox(height: marginLarge),
-                Text(tr('filter_surveys_question_type_title'),
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
-                SizedBox(height: marginLarge),
-                QuestionType(
-                    title: tr('filter_surveys_question_type_all_questions_title'),
-                    subtitle: tr('filter_surveys_question_type_all_questions_subtitle')),
-                SizedBox(height: marginLarge),
-                QuestionType(
-                    title: tr('filter_surveys_question_type_closed_questions_title'),
-                    subtitle: tr('filter_surveys_question_type_closed_questions_subtitle')),
-                SizedBox(height: marginLarge),
-                QuestionType(
-                    title: tr('filter_surveys_question_type_open_questions_title'),
-                    subtitle: tr('filter_surveys_question_type_open_questions_subtitle')),
-              ]),
-        ),
+      body: Column(
+        children: [
+          Padding(
+            padding: pagePaddingAllSides,
+            child: Form(
+              child: SingleChildScrollView(
+                child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(tr('filter_surveys_sort_by'),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                      SizedBox(height: marginSmall),
+                      ButtonTheme(
+                        alignedDropdown: true,
+                        child: DropdownButtonFormField(
+                            onTap: () => FocusScope.of(context).requestFocus(new FocusNode()),
+                            isExpanded: true,
+                            dropdownColor: kLightGray,
+                            icon: Icon(Icons.expand_more),
+                            decoration: InputDecoration(
+                                contentPadding: EdgeInsets.fromLTRB(0, 16.0, 8.0, 16.0),
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(kButtonRadiusXxs),
+                                    borderSide: BorderSide(width: 1, style: BorderStyle.solid))),
+                            elevation: 0,
+                            borderRadius: BorderRadius.circular(kButtonRadiusXxs),
+                            onChanged: (String? value) {
+                              setState(() {
+                                _dropdownValue = value!;
+                              });
+                            },
+                            value: _dropdownValue,
+                            items: [
+                              DropdownMenuItem(child: Text('Date'), value: 'date'),
+                              DropdownMenuItem(child: Text('A-Z'), value: 'alphabetic')
+                            ]),
+                      ),
+                      SizedBox(height: marginLarge),
+                      Text(tr('filter_surveys_number_of_votes'),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                      SizedBox(height: marginSmall),
+                      Text('1 - 20+',
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
+                      SizedBox(height: marginSmall),
+                      CustomRangeSlider(),
+                      SizedBox(height: marginSmall),
+                      Divider(thickness: 1),
+                      SizedBox(height: marginLarge),
+                      Text(tr('filter_surveys_question_type_title'),
+                          style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                      SizedBox(height: marginLarge),
+                      QuestionType(
+                          title: tr('filter_surveys_question_type_all_questions_title'),
+                          subtitle: tr('filter_surveys_question_type_all_questions_subtitle')),
+                      SizedBox(height: marginLarge),
+                      QuestionType(
+                          title: tr('filter_surveys_question_type_closed_questions_title'),
+                          subtitle: tr('filter_surveys_question_type_closed_questions_subtitle')),
+                      SizedBox(height: marginLarge),
+                      QuestionType(
+                          title: tr('filter_surveys_question_type_open_questions_title'),
+                          subtitle: tr('filter_surveys_question_type_open_questions_subtitle'))
+                    ]),
+              ),
+            ),
+          ),
+          BottomNavigationSection()
+        ],
       ),
     );
   }
