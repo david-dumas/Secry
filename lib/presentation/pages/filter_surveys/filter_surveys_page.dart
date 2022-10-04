@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/bottom_navigation_section.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/custom_range_slider.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/question_type.dart';
+import 'package:secry/presentation/widgets/bars/appbar_icon_type.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 import '../../../constants.dart';
@@ -25,7 +26,7 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
         isSubpage: true,
         backgroundColor: globalWhite,
         isShowingBottomBorder: true,
-        shouldHaveCloseButton: true,
+        icon: AppbarIconType.close,
         trailingGestureWithIcon: GestureDetector(
             onTap: () {},
             child: TextButton(

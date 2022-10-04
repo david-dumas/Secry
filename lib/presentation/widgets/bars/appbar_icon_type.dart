@@ -1,0 +1,1 @@
+enum AppbarIconType { back, close }
