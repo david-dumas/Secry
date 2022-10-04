@@ -177,7 +177,10 @@
   "filter_surveys_question_type_closed_questions_title": "Closed questions",
   "filter_surveys_question_type_closed_questions_subtitle": "Choose given options",
   "filter_surveys_question_type_open_questions_title": "Open questions",
-  "filter_surveys_question_type_open_questions_subtitle": "Give your own response"
+  "filter_surveys_question_type_open_questions_subtitle": "Give your own response",
+  "filter_surveys_dropdown_date": "Date",
+  "filter_surveys_dropdown_alphabetic": "A-Z",
+  "filter_surveys_apply_button": "Apply",
   "report_dont_want_to_see_it" : "I don\t want to see it",
   "report_nudity_or_sexual_content" : "Nudity or sexual content",
   "report_harassment_or_hate_speecht" : "Harassment or hate speech",

@@ -74,8 +74,8 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                               },
                               value: _dropdownValue,
                               items: [
-                                DropdownMenuItem(child: Text('Date'), value: 'date'),
-                                DropdownMenuItem(child: Text('A-Z'), value: 'alphabetic')
+                                DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_date')), value: 'date'),
+                                DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_alphabetic')), value: 'alphabetic')
                               ]),
                         ),
                         SizedBox(height: marginLarge),
