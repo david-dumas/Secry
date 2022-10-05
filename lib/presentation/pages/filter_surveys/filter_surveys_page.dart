@@ -17,6 +17,8 @@ class FilterSurveysPage extends StatefulWidget {
 
 class _FilterSurveysPageState extends State<FilterSurveysPage> {
   String _dropdownValue = 'date';
+  double _startValue = 1;
+  double _endValue = 20;
 
   @override
   Widget build(BuildContext context) {
@@ -83,10 +85,10 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                         Text(tr('filter_surveys_number_of_votes'),
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
                         SizedBox(height: marginSmall),
-                        Text('1 - 20+',
+                        Text('${_startValue.round()} - ${_endValue.round()}+',
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
                         SizedBox(height: marginSmall),
-                        CustomRangeSlider(),
+                        CustomRangeSlider(startValue: _startValue, endValue: _endValue),
                         SizedBox(height: marginSmall),
                         Divider(thickness: 1),
                         SizedBox(height: marginLarge),
