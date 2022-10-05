@@ -12,16 +12,13 @@ class CustomRangeSlider extends StatefulWidget {
 }
 
 class _CustomRangeSliderState extends State<CustomRangeSlider> {
-  late double _startValue;
-  late double _endValue;
+  late RangeValues _rangeValues;
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     setState(() {
-      _startValue = widget.startValue;
-      _endValue = widget.endValue;
+      _rangeValues = RangeValues(widget.startValue, widget.endValue);
     });
   }
 
@@ -33,17 +30,16 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
         data: SliderTheme.of(context).copyWith(
             trackHeight: 2.0, overlayShape: SliderComponentShape.noOverlay, rangeThumbShape: CustomRangeSliderShape()),
         child: RangeSlider(
-          values: RangeValues(_startValue, _endValue),
-          max: 20,
-          divisions: 20,
+          values: _rangeValues,
+          max: widget.endValue,
+          divisions: widget.endValue.toInt(),
           labels: RangeLabels(
-            _startValue.round().toString(),
-            _endValue.round().toString(),
+            _rangeValues.start.round().toString(),
+            _rangeValues.end.round().toString(),
           ),
           onChanged: (RangeValues values) {
             setState(() {
-              _startValue = values.start;
-              _endValue = values.end;
+              _rangeValues = values;
             });
           },
         ),
