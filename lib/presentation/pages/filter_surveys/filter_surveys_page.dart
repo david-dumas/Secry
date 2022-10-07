@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/filter_survey/dropdown_type.dart';
 import 'package:secry/application/filter_survey/filter_survey_bloc.dart';
+import 'package:secry/application/filter_survey/question_type.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/bottom_navigation_section.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/custom_range_slider.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/question_type.dart';
@@ -20,10 +21,6 @@ class FilterSurveysPage extends StatefulWidget {
 }
 
 class _FilterSurveysPageState extends State<FilterSurveysPage> {
-  String _dropdownValue = 'date';
-  double _startValue = 1;
-  double _endValue = 20;
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -123,15 +120,33 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                               SizedBox(height: marginLarge),
                               QuestionType(
                                   title: tr('filter_surveys_question_type_all_questions_title'),
-                                  subtitle: tr('filter_surveys_question_type_all_questions_subtitle')),
+                                  subtitle: tr('filter_surveys_question_type_all_questions_subtitle'),
+                                  questionTypeOfWidget: QuestionTypeEnum.allQuestions,
+                                  selectedQuestionType: state.questionType,
+                                  questionTypeUpdated: (QuestionTypeEnum newValue) {
+                                    context.read<FilterSurveyBloc>().add(FilterSurveyEvent.questionTypeUpdated(newValue));
+                                  },
+                              ),
                               SizedBox(height: marginLarge),
                               QuestionType(
                                   title: tr('filter_surveys_question_type_closed_questions_title'),
-                                  subtitle: tr('filter_surveys_question_type_closed_questions_subtitle')),
+                                  subtitle: tr('filter_surveys_question_type_closed_questions_subtitle'),
+                                  questionTypeOfWidget: QuestionTypeEnum.closedQuestions,
+                                  selectedQuestionType: state.questionType,
+                                  questionTypeUpdated: (QuestionTypeEnum newValue) {
+                                    context.read<FilterSurveyBloc>().add(FilterSurveyEvent.questionTypeUpdated(newValue));
+                                  },
+                              ),
                               SizedBox(height: marginLarge),
                               QuestionType(
                                   title: tr('filter_surveys_question_type_open_questions_title'),
-                                  subtitle: tr('filter_surveys_question_type_open_questions_subtitle'))
+                                  subtitle: tr('filter_surveys_question_type_open_questions_subtitle'),
+                                  questionTypeOfWidget: QuestionTypeEnum.openQuestions,
+                                  selectedQuestionType: state.questionType,
+                                  questionTypeUpdated: (QuestionTypeEnum newValue) {
+                                    context.read<FilterSurveyBloc>().add(FilterSurveyEvent.questionTypeUpdated(newValue));
+                                  },
+                              )
                             ]),
                       ),
                     ),

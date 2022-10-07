@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:secry/application/filter_survey/question_type.dart';
 
 import '../../../../constants.dart';
 
-class QuestionType extends StatefulWidget {
+class QuestionType extends StatelessWidget {
   final String title;
   final String subtitle;
+  final QuestionTypeEnum questionTypeOfWidget;
+  final QuestionTypeEnum selectedQuestionType;
+  final Function(QuestionTypeEnum value) questionTypeUpdated;
 
-  const QuestionType({Key? key, required this.title, required this.subtitle}) : super(key: key);
-
-  @override
-  State<QuestionType> createState() => _FilterSurveyQuestionState();
-}
-
-class _FilterSurveyQuestionState extends State<QuestionType> {
-  bool _isChecked = false;
+  const QuestionType({Key? key, required this.title, required this.subtitle, required this.questionTypeOfWidget, required this.selectedQuestionType, required this.questionTypeUpdated}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +21,9 @@ class _FilterSurveyQuestionState extends State<QuestionType> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(widget.title, style: TextStyle(fontSize: fontSizeMedium)),
+            Text(title, style: TextStyle(fontSize: fontSizeMedium)),
             SizedBox(height: marginXs),
-            Text(widget.subtitle)
+            Text(subtitle)
           ],
         ),
         Spacer(),
@@ -35,7 +32,7 @@ class _FilterSurveyQuestionState extends State<QuestionType> {
           child: Transform.scale(
             scale: 1.4,
             child: Checkbox(
-                value: _isChecked,
+                value: this.questionTypeOfWidget == this.selectedQuestionType,
                 splashRadius: 0,
                 side: BorderSide(
                     width: 0.5
@@ -44,9 +41,9 @@ class _FilterSurveyQuestionState extends State<QuestionType> {
                     borderRadius: BorderRadius.circular(4)
                 ),
                 onChanged: (bool? value) {
-                  setState(() {
-                    _isChecked = value!;
-                  });
+                  if(value != null && value) {
+                    questionTypeUpdated(this.questionTypeOfWidget);
+                  }
                 }
             ),
           ),

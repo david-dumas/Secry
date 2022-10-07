@@ -6,7 +6,7 @@ class FilterSurveyState with _$FilterSurveyState {
       {required DropdownType sortByValue,
       required double numberOfVotesLowerBound,
       required double numberOfVotesUpperBound,
-      required String questionType,
+      required QuestionTypeEnum questionType,
       required double initialNumberOfVotesLowerBound,
       required double initialNumberOfVotesUpperBound}) = _FilterSurveyState;
 
@@ -16,6 +16,6 @@ class FilterSurveyState with _$FilterSurveyState {
         numberOfVotesUpperBound: 20.0,
         initialNumberOfVotesLowerBound: 1.0,
         initialNumberOfVotesUpperBound: 20.0,
-        questionType: "date"
+        questionType: QuestionTypeEnum.allQuestions
       );
 }

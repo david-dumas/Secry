@@ -1,0 +1,1 @@
+enum QuestionTypeEnum { allQuestions, closedQuestions, openQuestions }

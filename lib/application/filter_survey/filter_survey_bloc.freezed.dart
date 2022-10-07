@@ -24,7 +24,7 @@ mixin _$FilterSurveyEvent {
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
         initialNumberOfVotesUpdated,
-    required TResult Function(String newValue) questionTypeUpdated,
+    required TResult Function(QuestionTypeEnum newValue) questionTypeUpdated,
     required TResult Function() resetExecuted,
   }) =>
       throw _privateConstructorUsedError;
@@ -36,7 +36,7 @@ mixin _$FilterSurveyEvent {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
   }) =>
       throw _privateConstructorUsedError;
@@ -48,7 +48,7 @@ mixin _$FilterSurveyEvent {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
     required TResult orElse(),
   }) =>
@@ -153,7 +153,7 @@ class _$_Initialized implements _Initialized {
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
         initialNumberOfVotesUpdated,
-    required TResult Function(String newValue) questionTypeUpdated,
+    required TResult Function(QuestionTypeEnum newValue) questionTypeUpdated,
     required TResult Function() resetExecuted,
   }) {
     return initialized();
@@ -168,7 +168,7 @@ class _$_Initialized implements _Initialized {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
   }) {
     return initialized?.call();
@@ -183,7 +183,7 @@ class _$_Initialized implements _Initialized {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
     required TResult orElse(),
   }) {
@@ -316,7 +316,7 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
         initialNumberOfVotesUpdated,
-    required TResult Function(String newValue) questionTypeUpdated,
+    required TResult Function(QuestionTypeEnum newValue) questionTypeUpdated,
     required TResult Function() resetExecuted,
   }) {
     return sortByValueUpdated(newValue);
@@ -331,7 +331,7 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
   }) {
     return sortByValueUpdated?.call(newValue);
@@ -346,7 +346,7 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
     required TResult orElse(),
   }) {
@@ -497,7 +497,7 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
         initialNumberOfVotesUpdated,
-    required TResult Function(String newValue) questionTypeUpdated,
+    required TResult Function(QuestionTypeEnum newValue) questionTypeUpdated,
     required TResult Function() resetExecuted,
   }) {
     return numberOfVotesUpdated(lowerBound, upperBound);
@@ -512,7 +512,7 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
   }) {
     return numberOfVotesUpdated?.call(lowerBound, upperBound);
@@ -527,7 +527,7 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
     required TResult orElse(),
   }) {
@@ -683,7 +683,7 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
         initialNumberOfVotesUpdated,
-    required TResult Function(String newValue) questionTypeUpdated,
+    required TResult Function(QuestionTypeEnum newValue) questionTypeUpdated,
     required TResult Function() resetExecuted,
   }) {
     return initialNumberOfVotesUpdated(lowerBound, upperBound);
@@ -698,7 +698,7 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
   }) {
     return initialNumberOfVotesUpdated?.call(lowerBound, upperBound);
@@ -713,7 +713,7 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
     required TResult orElse(),
   }) {
@@ -787,7 +787,7 @@ abstract class _$$_QuestionTypeUpdatedCopyWith<$Res> {
   factory _$$_QuestionTypeUpdatedCopyWith(_$_QuestionTypeUpdated value,
           $Res Function(_$_QuestionTypeUpdated) then) =
       __$$_QuestionTypeUpdatedCopyWithImpl<$Res>;
-  $Res call({String newValue});
+  $Res call({QuestionTypeEnum newValue});
 }
 
 /// @nodoc
@@ -809,7 +809,7 @@ class __$$_QuestionTypeUpdatedCopyWithImpl<$Res>
       newValue == freezed
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as QuestionTypeEnum,
     ));
   }
 }
@@ -820,7 +820,7 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
   const _$_QuestionTypeUpdated(this.newValue);
 
   @override
-  final String newValue;
+  final QuestionTypeEnum newValue;
 
   @override
   String toString() {
@@ -854,7 +854,7 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
         initialNumberOfVotesUpdated,
-    required TResult Function(String newValue) questionTypeUpdated,
+    required TResult Function(QuestionTypeEnum newValue) questionTypeUpdated,
     required TResult Function() resetExecuted,
   }) {
     return questionTypeUpdated(newValue);
@@ -869,7 +869,7 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
   }) {
     return questionTypeUpdated?.call(newValue);
@@ -884,7 +884,7 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
     required TResult orElse(),
   }) {
@@ -942,10 +942,10 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
 }
 
 abstract class _QuestionTypeUpdated implements FilterSurveyEvent {
-  const factory _QuestionTypeUpdated(final String newValue) =
+  const factory _QuestionTypeUpdated(final QuestionTypeEnum newValue) =
       _$_QuestionTypeUpdated;
 
-  String get newValue;
+  QuestionTypeEnum get newValue;
   @JsonKey(ignore: true)
   _$$_QuestionTypeUpdatedCopyWith<_$_QuestionTypeUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -998,7 +998,7 @@ class _$_ResetExecuted implements _ResetExecuted {
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
         initialNumberOfVotesUpdated,
-    required TResult Function(String newValue) questionTypeUpdated,
+    required TResult Function(QuestionTypeEnum newValue) questionTypeUpdated,
     required TResult Function() resetExecuted,
   }) {
     return resetExecuted();
@@ -1013,7 +1013,7 @@ class _$_ResetExecuted implements _ResetExecuted {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
   }) {
     return resetExecuted?.call();
@@ -1028,7 +1028,7 @@ class _$_ResetExecuted implements _ResetExecuted {
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(String newValue)? questionTypeUpdated,
+    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
     TResult Function()? resetExecuted,
     required TResult orElse(),
   }) {
@@ -1094,7 +1094,7 @@ mixin _$FilterSurveyState {
   DropdownType get sortByValue => throw _privateConstructorUsedError;
   double get numberOfVotesLowerBound => throw _privateConstructorUsedError;
   double get numberOfVotesUpperBound => throw _privateConstructorUsedError;
-  String get questionType => throw _privateConstructorUsedError;
+  QuestionTypeEnum get questionType => throw _privateConstructorUsedError;
   double get initialNumberOfVotesLowerBound =>
       throw _privateConstructorUsedError;
   double get initialNumberOfVotesUpperBound =>
@@ -1114,7 +1114,7 @@ abstract class $FilterSurveyStateCopyWith<$Res> {
       {DropdownType sortByValue,
       double numberOfVotesLowerBound,
       double numberOfVotesUpperBound,
-      String questionType,
+      QuestionTypeEnum questionType,
       double initialNumberOfVotesLowerBound,
       double initialNumberOfVotesUpperBound});
 }
@@ -1153,7 +1153,7 @@ class _$FilterSurveyStateCopyWithImpl<$Res>
       questionType: questionType == freezed
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as QuestionTypeEnum,
       initialNumberOfVotesLowerBound: initialNumberOfVotesLowerBound == freezed
           ? _value.initialNumberOfVotesLowerBound
           : initialNumberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
@@ -1177,7 +1177,7 @@ abstract class _$$_FilterSurveyStateCopyWith<$Res>
       {DropdownType sortByValue,
       double numberOfVotesLowerBound,
       double numberOfVotesUpperBound,
-      String questionType,
+      QuestionTypeEnum questionType,
       double initialNumberOfVotesLowerBound,
       double initialNumberOfVotesUpperBound});
 }
@@ -1218,7 +1218,7 @@ class __$$_FilterSurveyStateCopyWithImpl<$Res>
       questionType: questionType == freezed
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
-              as String,
+              as QuestionTypeEnum,
       initialNumberOfVotesLowerBound: initialNumberOfVotesLowerBound == freezed
           ? _value.initialNumberOfVotesLowerBound
           : initialNumberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
@@ -1249,7 +1249,7 @@ class _$_FilterSurveyState implements _FilterSurveyState {
   @override
   final double numberOfVotesUpperBound;
   @override
-  final String questionType;
+  final QuestionTypeEnum questionType;
   @override
   final double initialNumberOfVotesLowerBound;
   @override
@@ -1303,7 +1303,7 @@ abstract class _FilterSurveyState implements FilterSurveyState {
           {required final DropdownType sortByValue,
           required final double numberOfVotesLowerBound,
           required final double numberOfVotesUpperBound,
-          required final String questionType,
+          required final QuestionTypeEnum questionType,
           required final double initialNumberOfVotesLowerBound,
           required final double initialNumberOfVotesUpperBound}) =
       _$_FilterSurveyState;
@@ -1315,7 +1315,7 @@ abstract class _FilterSurveyState implements FilterSurveyState {
   @override
   double get numberOfVotesUpperBound;
   @override
-  String get questionType;
+  QuestionTypeEnum get questionType;
   @override
   double get initialNumberOfVotesLowerBound;
   @override
