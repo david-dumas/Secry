@@ -181,6 +181,8 @@
   "report_dont_want_to_see_it" : "Ik wil dit niet zien",
   "filter_surveys_dropdown_date": "Datum",
   "filter_surveys_dropdown_alphabetic": "A-Z",
+  "filter_surveys_dropdown_number_of_votes": "Aantal votes",
+  "filter_surveys_dropdown_number_of_questions": "Aantal vragen",
   "filter_surveys_apply_button": "Toepassen",
   "report_nudity_or_sexual_content" : "Naaktheid of seksuele content",
   "report_harassment_or_hate_speecht" : "Intimidatie of aanzetten tot haat",

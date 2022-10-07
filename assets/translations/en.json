@@ -181,6 +181,8 @@
   "report_dont_want_to_see_it" : "I don't want to see it",
   "filter_surveys_dropdown_date": "Date",
   "filter_surveys_dropdown_alphabetic": "A-Z",
+  "filter_surveys_dropdown_number_of_votes": "Number of votes",
+  "filter_surveys_dropdown_number_of_questions": "Number of questions",
   "filter_surveys_apply_button": "Apply",
   "report_nudity_or_sexual_content" : "Nudity or sexual content",
   "report_harassment_or_hate_speecht" : "Harassment or hate speech",
