@@ -1,0 +1,1 @@
+enum DropdownType { date, alphabetic, numberOfVotes, numberOfQuestions }

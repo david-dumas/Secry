@@ -3,7 +3,7 @@ part of 'filter_survey_bloc.dart';
 @freezed
 class FilterSurveyState with _$FilterSurveyState {
   const factory FilterSurveyState(
-      {required String sortByValue,
+      {required DropdownType sortByValue,
       required double numberOfVotesLowerBound,
       required double numberOfVotesUpperBound,
       required String questionType,
@@ -11,7 +11,7 @@ class FilterSurveyState with _$FilterSurveyState {
       required double initialNumberOfVotesUpperBound}) = _FilterSurveyState;
 
   factory FilterSurveyState.initial() => FilterSurveyState(
-        sortByValue: "",
+        sortByValue: DropdownType.date,
         numberOfVotesLowerBound: 1.0,
         numberOfVotesUpperBound: 20.0,
         initialNumberOfVotesLowerBound: 1.0,

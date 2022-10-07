@@ -5,6 +5,8 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
 import 'package:injectable/injectable.dart';
 
+import 'dropdown_type.dart';
+
 part 'filter_survey_event.dart';
 part 'filter_survey_state.dart';
 part 'filter_survey_bloc.freezed.dart';
@@ -30,7 +32,7 @@ class FilterSurveyBloc extends Bloc<FilterSurveyEvent, FilterSurveyState> {
         },
         resetExecuted: (e) async {
           emit(state.copyWith(
-              sortByValue: "", numberOfVotesLowerBound: 1.0, numberOfVotesUpperBound: 20.0, questionType: "date"));
+              sortByValue: DropdownType.date, numberOfVotesLowerBound: 1.0, numberOfVotesUpperBound: 20.0, questionType: "date"));
         });
   }
 }

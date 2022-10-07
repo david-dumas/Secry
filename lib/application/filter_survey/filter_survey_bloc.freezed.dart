@@ -19,7 +19,7 @@ mixin _$FilterSurveyEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String newValue) sortByValueUpdated,
+    required TResult Function(DropdownType newValue) sortByValueUpdated,
     required TResult Function(double lowerBound, double upperBound)
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
@@ -31,7 +31,7 @@ mixin _$FilterSurveyEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -43,7 +43,7 @@ mixin _$FilterSurveyEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -148,7 +148,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String newValue) sortByValueUpdated,
+    required TResult Function(DropdownType newValue) sortByValueUpdated,
     required TResult Function(double lowerBound, double upperBound)
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
@@ -163,7 +163,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -178,7 +178,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -249,7 +249,7 @@ abstract class _$$_SortByValueUpdatedCopyWith<$Res> {
   factory _$$_SortByValueUpdatedCopyWith(_$_SortByValueUpdated value,
           $Res Function(_$_SortByValueUpdated) then) =
       __$$_SortByValueUpdatedCopyWithImpl<$Res>;
-  $Res call({String newValue});
+  $Res call({DropdownType newValue});
 }
 
 /// @nodoc
@@ -271,7 +271,7 @@ class __$$_SortByValueUpdatedCopyWithImpl<$Res>
       newValue == freezed
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DropdownType,
     ));
   }
 }
@@ -282,7 +282,7 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
   const _$_SortByValueUpdated(this.newValue);
 
   @override
-  final String newValue;
+  final DropdownType newValue;
 
   @override
   String toString() {
@@ -311,7 +311,7 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String newValue) sortByValueUpdated,
+    required TResult Function(DropdownType newValue) sortByValueUpdated,
     required TResult Function(double lowerBound, double upperBound)
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
@@ -326,7 +326,7 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -341,7 +341,7 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -404,10 +404,10 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
 }
 
 abstract class _SortByValueUpdated implements FilterSurveyEvent {
-  const factory _SortByValueUpdated(final String newValue) =
+  const factory _SortByValueUpdated(final DropdownType newValue) =
       _$_SortByValueUpdated;
 
-  String get newValue;
+  DropdownType get newValue;
   @JsonKey(ignore: true)
   _$$_SortByValueUpdatedCopyWith<_$_SortByValueUpdated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -492,7 +492,7 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String newValue) sortByValueUpdated,
+    required TResult Function(DropdownType newValue) sortByValueUpdated,
     required TResult Function(double lowerBound, double upperBound)
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
@@ -507,7 +507,7 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -522,7 +522,7 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -678,7 +678,7 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String newValue) sortByValueUpdated,
+    required TResult Function(DropdownType newValue) sortByValueUpdated,
     required TResult Function(double lowerBound, double upperBound)
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
@@ -693,7 +693,7 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -708,7 +708,7 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -849,7 +849,7 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String newValue) sortByValueUpdated,
+    required TResult Function(DropdownType newValue) sortByValueUpdated,
     required TResult Function(double lowerBound, double upperBound)
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
@@ -864,7 +864,7 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -879,7 +879,7 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -993,7 +993,7 @@ class _$_ResetExecuted implements _ResetExecuted {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
-    required TResult Function(String newValue) sortByValueUpdated,
+    required TResult Function(DropdownType newValue) sortByValueUpdated,
     required TResult Function(double lowerBound, double upperBound)
         numberOfVotesUpdated,
     required TResult Function(double lowerBound, double upperBound)
@@ -1008,7 +1008,7 @@ class _$_ResetExecuted implements _ResetExecuted {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -1023,7 +1023,7 @@ class _$_ResetExecuted implements _ResetExecuted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
-    TResult Function(String newValue)? sortByValueUpdated,
+    TResult Function(DropdownType newValue)? sortByValueUpdated,
     TResult Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
     TResult Function(double lowerBound, double upperBound)?
@@ -1091,7 +1091,7 @@ abstract class _ResetExecuted implements FilterSurveyEvent {
 
 /// @nodoc
 mixin _$FilterSurveyState {
-  String get sortByValue => throw _privateConstructorUsedError;
+  DropdownType get sortByValue => throw _privateConstructorUsedError;
   double get numberOfVotesLowerBound => throw _privateConstructorUsedError;
   double get numberOfVotesUpperBound => throw _privateConstructorUsedError;
   String get questionType => throw _privateConstructorUsedError;
@@ -1111,7 +1111,7 @@ abstract class $FilterSurveyStateCopyWith<$Res> {
           FilterSurveyState value, $Res Function(FilterSurveyState) then) =
       _$FilterSurveyStateCopyWithImpl<$Res>;
   $Res call(
-      {String sortByValue,
+      {DropdownType sortByValue,
       double numberOfVotesLowerBound,
       double numberOfVotesUpperBound,
       String questionType,
@@ -1141,7 +1141,7 @@ class _$FilterSurveyStateCopyWithImpl<$Res>
       sortByValue: sortByValue == freezed
           ? _value.sortByValue
           : sortByValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DropdownType,
       numberOfVotesLowerBound: numberOfVotesLowerBound == freezed
           ? _value.numberOfVotesLowerBound
           : numberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
@@ -1174,7 +1174,7 @@ abstract class _$$_FilterSurveyStateCopyWith<$Res>
       __$$_FilterSurveyStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String sortByValue,
+      {DropdownType sortByValue,
       double numberOfVotesLowerBound,
       double numberOfVotesUpperBound,
       String questionType,
@@ -1206,7 +1206,7 @@ class __$$_FilterSurveyStateCopyWithImpl<$Res>
       sortByValue: sortByValue == freezed
           ? _value.sortByValue
           : sortByValue // ignore: cast_nullable_to_non_nullable
-              as String,
+              as DropdownType,
       numberOfVotesLowerBound: numberOfVotesLowerBound == freezed
           ? _value.numberOfVotesLowerBound
           : numberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
@@ -1243,7 +1243,7 @@ class _$_FilterSurveyState implements _FilterSurveyState {
       required this.initialNumberOfVotesUpperBound});
 
   @override
-  final String sortByValue;
+  final DropdownType sortByValue;
   @override
   final double numberOfVotesLowerBound;
   @override
@@ -1300,7 +1300,7 @@ class _$_FilterSurveyState implements _FilterSurveyState {
 
 abstract class _FilterSurveyState implements FilterSurveyState {
   const factory _FilterSurveyState(
-          {required final String sortByValue,
+          {required final DropdownType sortByValue,
           required final double numberOfVotesLowerBound,
           required final double numberOfVotesUpperBound,
           required final String questionType,
@@ -1309,7 +1309,7 @@ abstract class _FilterSurveyState implements FilterSurveyState {
       _$_FilterSurveyState;
 
   @override
-  String get sortByValue;
+  DropdownType get sortByValue;
   @override
   double get numberOfVotesLowerBound;
   @override

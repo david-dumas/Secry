@@ -19,6 +19,7 @@ class CustomRangeSlider extends StatelessWidget {
             trackHeight: 2.0, overlayShape: SliderComponentShape.noOverlay, rangeThumbShape: CustomRangeSliderShape()),
         child: RangeSlider(
           values: RangeValues(startValue, endValue),
+          min: initialStartValue,
           max: initialEndValue,
           divisions: initialEndValue.toInt(),
           labels: RangeLabels(
