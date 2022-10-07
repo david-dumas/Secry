@@ -83,7 +83,8 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                             style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
                         SizedBox(height: marginSmall),
                         Text('1 - 20+',
-                            style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
+                            style:
+                                TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium, color: kPrimaryColor)),
                         SizedBox(height: marginSmall),
                         CustomRangeSlider(),
                         SizedBox(height: marginSmall),

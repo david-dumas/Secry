@@ -153,12 +153,9 @@ class GroupSectionTitleRow extends StatelessWidget {
                         label: Text(tr('filter')),
                       )
                     : IconButton(
-                        onPressed: () => {
-                          AutoRouter.of(context).push(FilterSurveysPageRoute())
-                        },
+                        onPressed: () => {AutoRouter.of(context).push(FilterSurveysPageRoute())},
                         icon: Icon(Icons.filter_alt),
-                        color: kPrimaryColor
-                      )
+                        color: kPrimaryColor)
               ],
             )),
         Spacer(),
