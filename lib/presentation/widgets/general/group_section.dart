@@ -121,7 +121,7 @@ class GroupSectionTitleRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var media = MediaQuery.of(context).size;
+    var screenSize = MediaQuery.of(context).size;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -140,8 +140,8 @@ class GroupSectionTitleRow extends StatelessWidget {
             visible: currentFeatureType == FeatureType.surveys,
             child: Row(
               children: [
-                SizedBox(width: media.width < 320 ? 0 : 8),
-                media.width > 320
+                SizedBox(width: screenSize.width < 320 ? 0 : 8),
+                screenSize.width > 320
                     ? TextButton.icon(
                         onPressed: () {
                           AutoRouter.of(context).push(FilterSurveysPageRoute());

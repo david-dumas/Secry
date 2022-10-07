@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/presentation/widgets/bars/appbar_icon_type.dart';
 
 class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
   final String title;
@@ -8,7 +9,7 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
   final bool shouldHideBackButton;
   final bool isShowingBottomBorder;
   final GestureDetector? trailingGestureWithIcon;
-  final bool shouldHaveCloseButton;
+  final AppbarIconType icon;
 
   const GeneralAppbar(
       {Key? key,
@@ -18,7 +19,7 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
       this.isSubpage = false,
       this.isShowingBottomBorder = false,
       this.trailingGestureWithIcon = null,
-      this.shouldHaveCloseButton = false})
+      this.icon = AppbarIconType.back})
       : super(key: key);
 
   @override
@@ -26,6 +27,15 @@ class GeneralAppbar extends StatefulWidget with PreferredSizeWidget {
 
   @override
   Size get preferredSize => Size.fromHeight(kToolbarHeight);
+
+  IconData get appbarIcon {
+    switch(icon) {
+      case AppbarIconType.back:
+        return Icons.chevron_left;
+      case AppbarIconType.close:
+        return Icons.close;
+    }
+  }
 }
 
 class _GeneralAppbarState extends State<GeneralAppbar> {
@@ -35,7 +45,7 @@ class _GeneralAppbarState extends State<GeneralAppbar> {
       leading: (widget.isSubpage && !widget.shouldHideBackButton)
           ? IconButton(
               color: kDarkGrayTextColor,
-              icon: new Icon(widget.shouldHaveCloseButton ? Icons.close : Icons.chevron_left),
+              icon: new Icon(widget.appbarIcon),
               onPressed: () => Navigator.of(context).pop(),
             )
           : null,

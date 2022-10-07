@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 
-class CustomRangeSlider extends StatefulWidget {
-  const CustomRangeSlider({Key? key}) : super(key: key);
+class CustomRangeSlider extends StatelessWidget {
+  final double startValue;
+  final double endValue;
+  final double initialStartValue;
+  final double initialEndValue;
+  final Function(double lowerBound, double upperCount) handleChange;
 
-  @override
-  State<CustomRangeSlider> createState() => _CustomRangeSliderState();
-}
-
-class _CustomRangeSliderState extends State<CustomRangeSlider> {
-  RangeValues _currentRangeValues = const RangeValues(0, 20);
+  const CustomRangeSlider({Key? key, required this.startValue, required this.endValue, required this.initialStartValue, required this.initialEndValue, required this.handleChange}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,23 +18,22 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
         data: SliderTheme.of(context).copyWith(
             trackHeight: 2.0, overlayShape: SliderComponentShape.noOverlay, rangeThumbShape: CustomRangeSliderShape()),
         child: RangeSlider(
-          values: _currentRangeValues,
-          max: 20,
-          divisions: 20,
+          values: RangeValues(startValue, endValue),
+          max: initialEndValue,
+          divisions: initialEndValue.toInt(),
           labels: RangeLabels(
-            _currentRangeValues.start.round().toString(),
-            _currentRangeValues.end.round().toString(),
+            startValue.round().toString(),
+            endValue.round().toString(),
           ),
           onChanged: (RangeValues values) {
-            setState(() {
-              _currentRangeValues = values;
-            });
+            handleChange(values.start, values.end);
           },
         ),
       ),
     );
   }
 }
+
 
 class CustomRangeSliderShape extends RangeSliderThumbShape {
   final double radius;

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 
@@ -25,8 +26,8 @@ class BottomNavigationSection extends StatelessWidget {
                 ),
                 onPressed: () {},
                 child: Text(
-                  'Apply',
-                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: globalWhite),
+                  tr('filter_surveys_apply_button'),
+                  style: TextStyle(fontSize: fontSizeMedium, fontWeight: FontWeight.normal, color: globalWhite),
                 ),
             ),
           )
