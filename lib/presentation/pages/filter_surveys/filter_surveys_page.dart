@@ -41,7 +41,9 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
               trailingGestureWithIcon: GestureDetector(
                   onTap: () {},
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        context.read<FilterSurveyBloc>().add(FilterSurveyEvent.resetExecuted());
+                      },
                       child: Text(tr('filter_surveys_reset')),
                       style: TextButton.styleFrom(
                           padding: EdgeInsets.zero,
