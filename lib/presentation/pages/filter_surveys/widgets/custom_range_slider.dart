@@ -1,26 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 
-class CustomRangeSlider extends StatefulWidget {
+class CustomRangeSlider extends StatelessWidget {
   final double startValue;
   final double endValue;
+  final double initialStartValue;
+  final double initialEndValue;
+  final Function(double lowerBound, double upperCount) handleChange;
 
-  const CustomRangeSlider({Key? key, required this.startValue, required this.endValue}) : super(key: key);
-
-  @override
-  State<CustomRangeSlider> createState() => _CustomRangeSliderState();
-}
-
-class _CustomRangeSliderState extends State<CustomRangeSlider> {
-  late RangeValues _rangeValues;
-
-  @override
-  void initState() {
-    super.initState();
-    setState(() {
-      _rangeValues = RangeValues(widget.startValue, widget.endValue);
-    });
-  }
+  const CustomRangeSlider({Key? key, required this.startValue, required this.endValue, required this.initialStartValue, required this.initialEndValue, required this.handleChange}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,23 +18,22 @@ class _CustomRangeSliderState extends State<CustomRangeSlider> {
         data: SliderTheme.of(context).copyWith(
             trackHeight: 2.0, overlayShape: SliderComponentShape.noOverlay, rangeThumbShape: CustomRangeSliderShape()),
         child: RangeSlider(
-          values: _rangeValues,
-          max: widget.endValue,
-          divisions: widget.endValue.toInt(),
+          values: RangeValues(startValue, endValue),
+          max: initialEndValue,
+          divisions: initialEndValue.toInt(),
           labels: RangeLabels(
-            _rangeValues.start.round().toString(),
-            _rangeValues.end.round().toString(),
+            startValue.round().toString(),
+            endValue.round().toString(),
           ),
           onChanged: (RangeValues values) {
-            setState(() {
-              _rangeValues = values;
-            });
+            handleChange(values.start, values.end);
           },
         ),
       ),
     );
   }
 }
+
 
 class CustomRangeSliderShape extends RangeSliderThumbShape {
   final double radius;

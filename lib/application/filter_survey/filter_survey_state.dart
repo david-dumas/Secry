@@ -4,14 +4,18 @@ part of 'filter_survey_bloc.dart';
 class FilterSurveyState with _$FilterSurveyState {
   const factory FilterSurveyState(
       {required String sortByValue,
-      required int numberOfVotesLowerBound,
-      required int numberOfVotesUpperBound,
-      required String questionType}) = _FilterSurveyState;
+      required double numberOfVotesLowerBound,
+      required double numberOfVotesUpperBound,
+      required String questionType,
+      required double initialNumberOfVotesLowerBound,
+      required double initialNumberOfVotesUpperBound}) = _FilterSurveyState;
 
   factory FilterSurveyState.initial() => FilterSurveyState(
         sortByValue: "",
-        numberOfVotesLowerBound: 1,
-        numberOfVotesUpperBound: 20,
-        questionType: "",
+        numberOfVotesLowerBound: 1.0,
+        numberOfVotesUpperBound: 20.0,
+        initialNumberOfVotesLowerBound: 1.0,
+        initialNumberOfVotesUpperBound: 20.0,
+        questionType: "date"
       );
 }
