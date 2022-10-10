@@ -96,7 +96,7 @@ class _ReportAlertDialogState extends State<ReportAlertDialog> {
                       //TODO submit report
                     },
                     child: Text(
-                      tr("submit_report"),
+                      tr("submit_button"),
                       style: TextStyle(fontSize: fontSizeMedium),
                     )),
               ))

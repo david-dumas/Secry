@@ -166,7 +166,7 @@
   "survey_questions_too_few_options_error" : "Please make sure all questions have at least two options",
   "survey_questions_option_without_text_or_invalid" : "Please make sure all options are filled in",
   "survey_questions_error_general" : "Make sure everything is complete",
-  "report_dont_want_to_see_it" : "I don\t want to see it",
+  "report_dont_want_to_see_it" : "I don't want to see it",
   "report_nudity_or_sexual_content" : "Nudity or sexual content",
   "report_harassment_or_hate_speecht" : "Harassment or hate speech",
   "report_threatening_violent_or_concerning": "Threatening, violent or concerning",
