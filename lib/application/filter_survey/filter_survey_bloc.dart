@@ -4,9 +4,8 @@ import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
 import 'package:injectable/injectable.dart';
-import 'package:secry/application/filter_survey/question_type.dart';
-
-import 'dropdown_type.dart';
+import 'package:secry/domain/surveys/model/question_type_enum.dart';
+import 'package:secry/domain/surveys/model/sort_by_type.dart';
 
 part 'filter_survey_event.dart';
 part 'filter_survey_state.dart';
@@ -33,7 +32,7 @@ class FilterSurveyBloc extends Bloc<FilterSurveyEvent, FilterSurveyState> {
         },
         resetExecuted: (e) async {
           emit(state.copyWith(
-              sortByValue: DropdownType.date, numberOfVotesLowerBound: 1.0, numberOfVotesUpperBound: 20.0, questionType: QuestionTypeEnum.allQuestions));
+              sortByValue: SortByType.date, numberOfVotesLowerBound: 1.0, numberOfVotesUpperBound: 20.0, questionType: QuestionTypeEnum.allQuestions));
         });
   }
 }

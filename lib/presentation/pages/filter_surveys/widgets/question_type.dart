@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:secry/application/filter_survey/question_type.dart';
 
 import '../../../../constants.dart';
+import '../../../../domain/surveys/model/question_type_enum.dart';
 
 class QuestionType extends StatelessWidget {
   final String title;

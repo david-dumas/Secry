@@ -1,9 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:secry/application/filter_survey/dropdown_type.dart';
 import 'package:secry/application/filter_survey/filter_survey_bloc.dart';
-import 'package:secry/application/filter_survey/question_type.dart';
+import 'package:secry/domain/surveys/model/question_type_enum.dart';
+import 'package:secry/domain/surveys/model/sort_by_type.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/bottom_navigation_section.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/custom_range_slider.dart';
 import 'package:secry/presentation/pages/filter_surveys/widgets/question_type.dart';
@@ -78,7 +78,7 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                                     elevation: 0,
                                     borderRadius: BorderRadius.circular(kButtonRadiusXxs),
                                     onChanged: (newType) {
-                                      if(newType is DropdownType) {
+                                      if(newType is SortByType) {
                                         context
                                             .read<FilterSurveyBloc>()
                                             .add(FilterSurveyEvent.sortByValueUpdated(newType));
@@ -86,10 +86,10 @@ class _FilterSurveysPageState extends State<FilterSurveysPage> {
                                     },
                                     value: state.sortByValue,
                                     items: [
-                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_date')), value: DropdownType.date),
-                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_alphabetic')), value: DropdownType.alphabetic),
-                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_number_of_votes')), value: DropdownType.numberOfVotes),
-                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_number_of_questions')), value: DropdownType.numberOfQuestions),
+                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_date')), value: SortByType.date),
+                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_alphabetic')), value: SortByType.alphabetic),
+                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_number_of_votes')), value: SortByType.numberOfVotes),
+                                      DropdownMenuItem(child: Text(tr('filter_surveys_dropdown_number_of_questions')), value: SortByType.numberOfQuestions),
                                     ]),
                               ),
                               SizedBox(height: marginLarge),
