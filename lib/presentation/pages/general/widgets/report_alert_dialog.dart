@@ -61,28 +61,30 @@ class _ReportAlertDialogState extends State<ReportAlertDialog> {
             content: Container(
               width: MediaQuery.of(context).size.width / 2,
               height: MediaQuery.of(context).size.height / 2,
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Text(tr("why_do_you_want_to_report"),
-                      style: TextStyle(fontSize: fontSizeSmall, color: kDarkGrayTextColor),
-                      textAlign: TextAlign.center),
-                  ListView.builder(
-                    itemCount: reports.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return ListTile(
-                        title: reports[index],
-                        selected: index == state.selectedReportTile,
-                        selectedTileColor: appIconColorBlue1,
-                        onTap: () {
-                          context.read<ReportDialogBloc>().add(ReportDialogEvent.reportedTileExcecuted(index));
-                        },
-                      );
-                    },
-                    shrinkWrap: true,
-                  )
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.max,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text(tr("why_do_you_want_to_report"),
+                        style: TextStyle(fontSize: fontSizeSmall, color: kDarkGrayTextColor),
+                        textAlign: TextAlign.center),
+                    ListView.builder(
+                      itemCount: reports.length,
+                      itemBuilder: (BuildContext context, int index) {
+                        return ListTile(
+                          title: reports[index],
+                          selected: index == state.selectedReportTile,
+                          selectedTileColor: appIconColorBlue1,
+                          onTap: () {
+                            context.read<ReportDialogBloc>().add(ReportDialogEvent.reportedTileExcecuted(index));
+                          },
+                        );
+                      },
+                      shrinkWrap: true,
+                    )
+                  ],
+                ),
               ),
             ),
             actions: <Widget>[
