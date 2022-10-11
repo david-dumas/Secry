@@ -17,16 +17,22 @@ class GroupChatsAndSurveysGeneralInfo {
       required this.chats,
       required this.surveys});
 
-  factory GroupChatsAndSurveysGeneralInfo.fromJsonMap(Map<String, dynamic> json) {
+  factory GroupChatsAndSurveysGeneralInfo.fromJsonMap(
+      Map<String, dynamic> json) {
     return GroupChatsAndSurveysGeneralInfo(
-        id: json.containsKey('id') ? ((json['id'] is String) ? json['id'] : '') : '',
+        id: json.containsKey('id')
+            ? ((json['id'] is String) ? json['id'] : '')
+            : '',
         title: json.containsKey('title') ? json['title'] : '',
-        imageUrl: json.containsKey('imageUrl') ? (json['imageUrl'] != null ? json['imageUrl'] : null) : null,
+        imageUrl: json.containsKey('imageUrl')
+            ? (json['imageUrl'] != null ? json['imageUrl'] : null)
+            : null,
         createdAt: json.containsKey('createdAt')
-            ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000) : null)
+            ? (json['createdAt'] != null
+                ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000)
+                : null)
             : null,
         chats: json.containsKey('chats') ? json['chats'] : [],
-        surveys: json.containsKey('surveys') ? json['surveys'] : []
-      );
+        surveys: json.containsKey('surveys') ? json['surveys'] : []);
   }
 }

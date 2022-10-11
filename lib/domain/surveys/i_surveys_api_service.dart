@@ -9,7 +9,8 @@ abstract class ISurveysApiService {
   factory ISurveysApiService(Dio dio, {String baseUrl}) = _ISurveysApiService;
 
   @GET('/surveys')
-  Future<HttpResponse<dynamic>> getSurveysDummyData(
-      // @Body() String body,
-      );
+  Future<HttpResponse<dynamic>> getSurveyDummyData();
+
+  @GET('/surveys')
+  Future<HttpResponse<dynamic>> updateSurveysDummyData();
 }

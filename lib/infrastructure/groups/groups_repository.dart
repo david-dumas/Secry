@@ -29,7 +29,9 @@ class GroupsRepository extends IGroupsRepository {
 
       if (response.isSuccessful) {
         final List<GroupOverviewRowInfo> groupOverviewRowsData =
-            (json.decode(response.data) as List).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
+            (json.decode(response.data) as List)
+                .map((json) => GroupOverviewRowInfo.fromJsonMap(json))
+                .toList();
         return groupOverviewRowsData;
       } else {
         return List.empty();
@@ -41,9 +43,11 @@ class GroupsRepository extends IGroupsRepository {
   }
 
   @override
-  Future<GroupChatsAndSurveysGeneralInfo?> getHomepageGroupOverviewDummyData() async {
+  Future<GroupChatsAndSurveysGeneralInfo?>
+      getHomepageGroupOverviewDummyData() async {
     try {
-      final response = await _groupsApiService.api.getHomepageGroupOverviewDummyData();
+      final response =
+          await _groupsApiService.api.getHomepageGroupOverviewDummyData();
 
       if (response.isSuccessful) {
         final mappedData = json.decode(response.data) as Map<String, dynamic>;
@@ -55,23 +59,32 @@ class GroupsRepository extends IGroupsRepository {
         List<GeneralChatInfo> generalChatInfoData = [];
         List<GeneralSurveyInfo> generalSurveyInfoData = [];
 
-        final String groupId = mappedData.containsKey('id') ? (mappedData['id'] != null ? mappedData['id'] : '') : '';
-        final String groupTitle =
-            mappedData.containsKey('title') ? (mappedData['title'] != null ? mappedData['title'] : '') : '';
-        final String groupImageUrl =
-            mappedData.containsKey('imageUrl') ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '') : '';
+        final String groupId = mappedData.containsKey('id')
+            ? (mappedData['id'] != null ? mappedData['id'] : '')
+            : '';
+        final String groupTitle = mappedData.containsKey('title')
+            ? (mappedData['title'] != null ? mappedData['title'] : '')
+            : '';
+        final String groupImageUrl = mappedData.containsKey('imageUrl')
+            ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '')
+            : '';
         final DateTime? groupCreatedAt = mappedData.containsKey('createdAt')
-            ? (mappedData['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt']) : null)
+            ? (mappedData['createdAt'] != null
+                ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt'])
+                : null)
             : null;
 
         if (mappedData.containsKey('chats')) {
           List<dynamic> chats = mappedData["chats"];
-          generalChatInfoData = (chats).map((json) => GeneralChatInfo.fromJsonMap(json)).toList();
+          generalChatInfoData =
+              (chats).map((json) => GeneralChatInfo.fromJsonMap(json)).toList();
         }
 
         if (mappedData.containsKey('surveys')) {
           List<dynamic> surveys = mappedData["surveys"];
-          generalSurveyInfoData = (surveys).map((json) => GeneralSurveyInfo.fromJsonMap(json)).toList();
+          generalSurveyInfoData = (surveys)
+              .map((json) => GeneralSurveyInfo.fromJsonMap(json))
+              .toList();
         }
 
         final groupChatsAndSurveysGeneralInfo = GroupChatsAndSurveysGeneralInfo(
@@ -92,7 +105,8 @@ class GroupsRepository extends IGroupsRepository {
   }
 
   @override
-  Future<GroupsAndGeneralAboutInfo> getPrivateGroups({required int pageNumber, required int pageSize}) async {
+  Future<GroupsAndGeneralAboutInfo> getPrivateGroups(
+      {required int pageNumber, required int pageSize}) async {
     try {
       final token = await FirebaseAuth.instance.currentUser?.getIdToken();
       if (token == null && token != "") {
@@ -101,31 +115,43 @@ class GroupsRepository extends IGroupsRepository {
       }
       final bearerToken = "Bearer $token";
 
-      final response = await _groupsApiService.api.getPrivateGroups(bearerToken, pageNumber, pageSize);
+      final response = await _groupsApiService.api
+          .getPrivateGroups(bearerToken, pageNumber, pageSize);
 
       if (response.isSuccessful) {
         final mappedData = Map<String, dynamic>.from(response.data);
 
         if (mappedData.containsKey('items')) {
           List<dynamic> groups = mappedData["items"];
-          final List<GroupOverviewRowInfo> groupOverviewRowsData =
-              (groups).map((json) => GroupOverviewRowInfo.fromJsonMap(json)).toList();
+          final List<GroupOverviewRowInfo> groupOverviewRowsData = (groups)
+              .map((json) => GroupOverviewRowInfo.fromJsonMap(json))
+              .toList();
 
           // TODO use json.fromFactoryMap instead of all single map functions
           final int pageNumber = mappedData.containsKey('pageNumber')
-              ? (mappedData['pageNumber'] != null ? mappedData['pageNumber'] : 1)
+              ? (mappedData['pageNumber'] != null
+                  ? mappedData['pageNumber']
+                  : 1)
               : 1;
           final int totalPages = mappedData.containsKey('totalPages')
-              ? (mappedData['totalPages'] != null ? mappedData['totalPages'] : 1)
+              ? (mappedData['totalPages'] != null
+                  ? mappedData['totalPages']
+                  : 1)
               : 1;
           final int totalAmountOfGroups = mappedData.containsKey('totalCount')
-              ? (mappedData['totalCount'] != null ? mappedData['totalCount'] : 10)
+              ? (mappedData['totalCount'] != null
+                  ? mappedData['totalCount']
+                  : 10)
               : 10;
           final bool hasPreviousPage = mappedData.containsKey('hasPreviousPage')
-              ? (mappedData['hasPreviousPage'] != null ? mappedData['hasPreviousPage'] : false)
+              ? (mappedData['hasPreviousPage'] != null
+                  ? mappedData['hasPreviousPage']
+                  : false)
               : false;
           final bool hasNextPage = mappedData.containsKey('hasNextPage')
-              ? (mappedData['hasNextPage'] != null ? mappedData['hasNextPage'] : false)
+              ? (mappedData['hasNextPage'] != null
+                  ? mappedData['hasNextPage']
+                  : false)
               : false;
           final generalGroupInfo = PaginationInfo(
               pageNumber: pageNumber,
@@ -135,8 +161,8 @@ class GroupsRepository extends IGroupsRepository {
               hasPreviousPage: hasPreviousPage,
               hasNextPage: hasNextPage);
 
-          final groupsAndGeneralAboutInfo =
-              GroupsAndGeneralAboutInfo(paginationInfo: generalGroupInfo, groups: groupOverviewRowsData);
+          final groupsAndGeneralAboutInfo = GroupsAndGeneralAboutInfo(
+              paginationInfo: generalGroupInfo, groups: groupOverviewRowsData);
 
           return groupsAndGeneralAboutInfo;
         } else {
@@ -162,7 +188,8 @@ class GroupsRepository extends IGroupsRepository {
       final bearerToken = "Bearer $token";
       final body = jsonEncode(group.toJson());
 
-      final response = await _groupsApiService.api.createNewGroup(bearerToken, body);
+      final response =
+          await _groupsApiService.api.createNewGroup(bearerToken, body);
 
       if (response.isSuccessful) {
         return true;
@@ -175,7 +202,8 @@ class GroupsRepository extends IGroupsRepository {
     }
   }
 
-  Future<GroupChatsAndSurveysGeneralInfo?> getChatsAndSurveys({required String groupId}) async {
+  Future<GroupChatsAndSurveysGeneralInfo?> getChatsAndSurveys(
+      {required String groupId}) async {
     try {
       final token = await FirebaseAuth.instance.currentUser?.getIdToken();
       if (token == null && token != "") {
@@ -184,8 +212,9 @@ class GroupsRepository extends IGroupsRepository {
       }
 
       final bearerToken = "Bearer $token";
-      final response =
-          await _groupsApiService.api.getGroupChatsAndSurveysWithGeneralGroupInfo(groupId, bearerToken, groupId);
+      final response = await _groupsApiService.api
+          .getGroupChatsAndSurveysWithGeneralGroupInfo(
+              groupId, bearerToken, groupId);
 
       if (response.isSuccessful) {
         final mappedData = Map<String, dynamic>.from(response.data);
@@ -197,23 +226,32 @@ class GroupsRepository extends IGroupsRepository {
         List<GeneralChatInfo> generalChatInfoData = [];
         List<GeneralSurveyInfo> generalSurveyInfoData = [];
 
-        final String groupId = mappedData.containsKey('id') ? (mappedData['id'] != null ? mappedData['id'] : '') : '';
-        final String groupTitle =
-            mappedData.containsKey('title') ? (mappedData['title'] != null ? mappedData['title'] : '') : '';
-        final String groupImageUrl =
-            mappedData.containsKey('imageUrl') ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '') : '';
+        final String groupId = mappedData.containsKey('id')
+            ? (mappedData['id'] != null ? mappedData['id'] : '')
+            : '';
+        final String groupTitle = mappedData.containsKey('title')
+            ? (mappedData['title'] != null ? mappedData['title'] : '')
+            : '';
+        final String groupImageUrl = mappedData.containsKey('imageUrl')
+            ? (mappedData['imageUrl'] != null ? mappedData['imageUrl'] : '')
+            : '';
         final DateTime? groupCreatedAt = mappedData.containsKey('createdAt')
-            ? (mappedData['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt']) : null)
+            ? (mappedData['createdAt'] != null
+                ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt'])
+                : null)
             : null;
 
         if (mappedData.containsKey('chats')) {
           List<dynamic> chats = mappedData["chats"];
-          generalChatInfoData = (chats).map((json) => GeneralChatInfo.fromJsonMap(json)).toList();
+          generalChatInfoData =
+              (chats).map((json) => GeneralChatInfo.fromJsonMap(json)).toList();
         }
 
         if (mappedData.containsKey('surveys')) {
           List<dynamic> surveys = mappedData["surveys"];
-          generalSurveyInfoData = (surveys).map((json) => GeneralSurveyInfo.fromJsonMap(json)).toList();
+          generalSurveyInfoData = (surveys)
+              .map((json) => GeneralSurveyInfo.fromJsonMap(json))
+              .toList();
         }
 
         final groupChatsAndSurveysGeneralInfo = GroupChatsAndSurveysGeneralInfo(

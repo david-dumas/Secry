@@ -26,12 +26,15 @@ class GroupOverviewPage extends StatelessWidget {
   final String title;
   final String groupId;
 
-  const GroupOverviewPage({Key? key, required this.title, required this.groupId}) : super(key: key);
+  const GroupOverviewPage(
+      {Key? key, required this.title, required this.groupId})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => getIt<GroupOverviewBloc>()..add(GroupOverviewEvent.initialized(this.groupId)),
+      create: (context) => getIt<GroupOverviewBloc>()
+        ..add(GroupOverviewEvent.initialized(this.groupId)),
       child: BlocBuilder<GroupOverviewBloc, GroupOverviewState>(
         builder: (context, state) {
           return Scaffold(
@@ -55,20 +58,25 @@ class GroupOverviewPage extends StatelessWidget {
                             decoration: BoxDecoration(
                                 border: Border(
                                     bottom: BorderSide(
-                                        color: state.currentFeatureType == FeatureType.chats
+                                        color: state.currentFeatureType ==
+                                                FeatureType.chats
                                             ? kPrimaryColor
                                             : kLineSeparatorColor))),
                             child: TextButton(
-                                style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
+                                style: ButtonStyle(
+                                    overlayColor: MaterialStateProperty.all(
+                                        Colors.transparent)),
                                 onPressed: () {
-                                  context
-                                      .read<GroupOverviewBloc>()
-                                      .add(GroupOverviewEvent.currentFeatureTypeUpdated(FeatureType.chats));
+                                  context.read<GroupOverviewBloc>().add(
+                                      GroupOverviewEvent
+                                          .currentFeatureTypeUpdated(
+                                              FeatureType.chats));
                                 },
                                 child: Text(
                                   tr('home_chats'),
                                   style: TextStyle(
-                                      color: state.currentFeatureType == FeatureType.chats
+                                      color: state.currentFeatureType ==
+                                              FeatureType.chats
                                           ? kPrimaryColor
                                           : kMediumGrayV2),
                                 ))),
@@ -77,20 +85,25 @@ class GroupOverviewPage extends StatelessWidget {
                             decoration: BoxDecoration(
                                 border: Border(
                                     bottom: BorderSide(
-                                        color: state.currentFeatureType == FeatureType.surveys
+                                        color: state.currentFeatureType ==
+                                                FeatureType.surveys
                                             ? kPrimaryColor
                                             : kLineSeparatorColor))),
                             child: TextButton(
-                                style: ButtonStyle(overlayColor: MaterialStateProperty.all(Colors.transparent)),
+                                style: ButtonStyle(
+                                    overlayColor: MaterialStateProperty.all(
+                                        Colors.transparent)),
                                 onPressed: () {
-                                  context
-                                      .read<GroupOverviewBloc>()
-                                      .add(GroupOverviewEvent.currentFeatureTypeUpdated(FeatureType.surveys));
+                                  context.read<GroupOverviewBloc>().add(
+                                      GroupOverviewEvent
+                                          .currentFeatureTypeUpdated(
+                                              FeatureType.surveys));
                                 },
                                 child: Text(
                                   tr('home_surveys'),
                                   style: TextStyle(
-                                      color: state.currentFeatureType == FeatureType.surveys
+                                      color: state.currentFeatureType ==
+                                              FeatureType.surveys
                                           ? kPrimaryColor
                                           : kMediumGrayV2),
                                 ))),
@@ -100,7 +113,9 @@ class GroupOverviewPage extends StatelessWidget {
                   Expanded(
                     child: RefreshIndicator(
                       onRefresh: () async {
-                        context.read<GroupOverviewBloc>().add(GroupOverviewEvent.groupOverviewRefreshed(this.groupId));
+                        context.read<GroupOverviewBloc>().add(
+                            GroupOverviewEvent.groupOverviewRefreshed(
+                                this.groupId));
                       },
                       child: SingleChildScrollView(
                         child: Padding(
@@ -109,26 +124,36 @@ class GroupOverviewPage extends StatelessWidget {
                             crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: [
                               GroupSection(
-                                title: state.currentFeatureType == FeatureType.chats
+                                title: state.currentFeatureType ==
+                                        FeatureType.chats
                                     ? tr('home_chats')
                                     : tr('home_surveys'),
-                                totalAmountOfGroups: state.currentFeatureType == FeatureType.chats
-                                    ? getCellItemsFrom(state.chatInfoItems).length
-                                    : getCellItemsFrom(state.surveyInfoItems).length,
-                                cellInfoItems: state.currentFeatureType == FeatureType.chats
+                                totalAmountOfGroups: state.currentFeatureType ==
+                                        FeatureType.chats
+                                    ? getCellItemsFrom(state.chatInfoItems)
+                                        .length
+                                    : getCellItemsFrom(state.surveyInfoItems)
+                                        .length,
+                                cellInfoItems: state.currentFeatureType ==
+                                        FeatureType.chats
                                     ? getCellItemsFrom(state.chatInfoItems)
                                     : getCellItemsFrom(state.surveyInfoItems),
                                 isMaximumNumberOfCellsToShowEnabled: false,
                                 isTitleRowActionButtonVisible: true,
-                                titleRowActionButtonText: state.currentFeatureType == FeatureType.chats
-                                    ? tr('action_new_chat')
-                                    : tr('action_new_survey'),
+                                titleRowActionButtonText:
+                                    state.currentFeatureType ==
+                                            FeatureType.chats
+                                        ? tr('action_new_chat')
+                                        : tr('action_new_survey'),
                                 isFetchingInitialGroups: state.isFetching,
                                 isDataFetched: state.isDataFetched,
-                                emptyStateTitle: state.currentFeatureType == FeatureType.chats
+                                emptyStateTitle: state.currentFeatureType ==
+                                        FeatureType.chats
                                     ? tr('empty_state_no_chats_title')
                                     : tr('empty_state_no_surveys_title'),
-                                emptyStateDescription: state.currentFeatureType == FeatureType.chats
+                                emptyStateDescription: state
+                                            .currentFeatureType ==
+                                        FeatureType.chats
                                     ? tr('empty_state_no_chats_description')
                                     : tr('empty_state_no_surveys_description'),
                                 emptyStateIcon: Icon(Icons.group_add),
@@ -151,27 +176,37 @@ class GroupOverviewPage extends StatelessWidget {
                                       AutoRouter.of(context)
                                           .push(AddSurveyPageAndroidRoute())
                                           .then((isRefreshNeeded) async {
-                                        context.read<GroupOverviewBloc>().add(GroupOverviewEvent.groupRefreshed());
+                                        context.read<GroupOverviewBloc>().add(
+                                            GroupOverviewEvent
+                                                .groupRefreshed());
                                       });
                                     } else if (Platform.isIOS) {
                                       showMaterialModalBottomSheet(
                                         context: context,
                                         useRootNavigator: true,
-                                        builder: (context) => AddSurveyPageIOS(),
+                                        builder: (context) =>
+                                            AddSurveyPageIOS(),
                                       ).then((isRefreshNeeded) async {
-                                        context.read<GroupOverviewBloc>().add(GroupOverviewEvent.groupRefreshed());
+                                        context.read<GroupOverviewBloc>().add(
+                                            GroupOverviewEvent
+                                                .groupRefreshed());
                                       });
                                       ;
                                     }
                                   }
                                 },
-                                openPageForPressedCell: (String id, String groupTitle) {
+                                openPageForPressedCell:
+                                    (String id, String groupTitle) {
                                   // TODO open chat / survey page for cell
                                   pushNewScreen(
                                     context,
-                                    screen: RespondToSurveyPage(title: groupTitle, groupId: this.groupId,),
+                                    screen: RespondToSurveyPage(
+                                      title: groupTitle,
+                                      groupId: this.groupId,
+                                    ),
                                     withNavBar: true,
-                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
+                                    pageTransitionAnimation:
+                                        PageTransitionAnimation.cupertino,
                                   );
                                 },
                               ),
@@ -189,7 +224,8 @@ class GroupOverviewPage extends StatelessWidget {
     );
   }
 
-  List<GeneralListCellInfoItem> getCellItemsFrom(List<GroupOverviewRowInfo> chatsInfoItems) {
+  List<GeneralListCellInfoItem> getCellItemsFrom(
+      List<GroupOverviewRowInfo> chatsInfoItems) {
     return chatsInfoItems
         .map((groupInfoItem) => GeneralListCellInfoItem(
             id: groupInfoItem.id,

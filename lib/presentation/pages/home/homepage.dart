@@ -16,6 +16,7 @@ import 'package:secry/presentation/widgets/general/group_section.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/util/search/search_helper.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
+import 'package:xmpp_plugin/xmpp_plugin.dart';
 import 'group_overview_page.dart';
 
 class HomePage extends StatefulWidget {

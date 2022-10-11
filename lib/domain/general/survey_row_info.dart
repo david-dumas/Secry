@@ -1,32 +1,23 @@
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:secry/domain/chats/last_chat_message.dart';
+import 'package:secry/util/date_and_time/text_from_date.dart';
 
 class SurveyRowInfo {
-  final String id;
-  final String title;
-  final String? imageUrl;
-  final LastChatMessage? lastChatMessage;
-  final DateTime? createdAt;
-  DrawableRoot? svg;
+  final String questionId;
+  final String questiontitle;
+  final String questiontype;
 
-  SurveyRowInfo(
-      {required this.id,
-        required this.title,
-        this.imageUrl = null,
-        this.lastChatMessage = null,
-        required this.createdAt,
-        this.svg = null});
+  SurveyRowInfo({
+    required this.questionId,
+    required this.questiontitle,
+    required this.questiontype
+
+  });
 
   factory SurveyRowInfo.fromJsonMap(Map<String, dynamic> json) {
+    print(SurveyRowInfo);
     return SurveyRowInfo(
-        id: json.containsKey('id') ? json['id'].toString() : '',
-        title: json.containsKey('title') ? json['title'] : '',
-        imageUrl: json.containsKey('imageUrl') ? (json['imageUrl'] != null ? json['imageUrl'] : null) : null,
-        lastChatMessage: json.containsKey('lastChatMessage')
-            ? (json['lastChatMessage'] != null ? LastChatMessage.fromJsonMap(json['lastChatMessage']) : null)
-            : null,
-        createdAt: json.containsKey('createdAt')
-            ? (json['createdAt'] != null ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000) : null)
-            : null);
+        questionId: json.containsKey('questionId') ? json['questionId'].toString() : '',
+        questiontitle:
+            json.containsKey('questiontitle') ? json['questiontitle'] : '',
+        questiontype: json.containsKey('questiontype') ? json['questiontype'] : '');
   }
 }

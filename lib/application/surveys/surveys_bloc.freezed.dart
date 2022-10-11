@@ -18,61 +18,55 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$SurveysEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String groupId) initialized,
-    required TResult Function(String groupId) SurveyRefreshed,
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
-    required TResult Function(FeatureType newFeatureType)
-        currentFeatureTypeUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SurveyRefreshed value) SurveyRefreshed,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
-    required TResult Function(_CurrentFeatureTypeUpdated value)
-        currentFeatureTypeUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -99,7 +93,7 @@ abstract class _$$_InitializedCopyWith<$Res> {
   factory _$$_InitializedCopyWith(
           _$_Initialized value, $Res Function(_$_Initialized) then) =
       __$$_InitializedCopyWithImpl<$Res>;
-  $Res call({String groupId});
+  $Res call({String id});
 }
 
 /// @nodoc
@@ -115,12 +109,12 @@ class __$$_InitializedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? groupId = freezed,
+    Object? id = freezed,
   }) {
     return _then(_$_Initialized(
-      groupId == freezed
-          ? _value.groupId
-          : groupId // ignore: cast_nullable_to_non_nullable
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as String,
     ));
   }
@@ -129,14 +123,14 @@ class __$$_InitializedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initialized implements _Initialized {
-  const _$_Initialized(this.groupId);
+  const _$_Initialized(this.id);
 
   @override
-  final String groupId;
+  final String id;
 
   @override
   String toString() {
-    return 'SurveysEvent.initialized(groupId: $groupId)';
+    return 'SurveysEvent.initialized(id: $id)';
   }
 
   @override
@@ -144,12 +138,12 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initialized &&
-            const DeepCollectionEquality().equals(other.groupId, groupId));
+            const DeepCollectionEquality().equals(other.id, id));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(groupId));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(id));
 
   @JsonKey(ignore: true)
   @override
@@ -159,40 +153,39 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String groupId) initialized,
-    required TResult Function(String groupId) SurveyRefreshed,
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
-    required TResult Function(FeatureType newFeatureType)
-        currentFeatureTypeUpdated,
   }) {
-    return initialized(groupId);
+    return initialized(id);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
   }) {
-    return initialized?.call(groupId);
+    return initialized?.call(id);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
-      return initialized(groupId);
+      return initialized(id);
     }
     return orElse();
   }
@@ -201,11 +194,10 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SurveyRefreshed value) SurveyRefreshed,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
-    required TResult Function(_CurrentFeatureTypeUpdated value)
-        currentFeatureTypeUpdated,
   }) {
     return initialized(this);
   }
@@ -214,11 +206,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -227,11 +217,9 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -242,113 +230,120 @@ class _$_Initialized implements _Initialized {
 }
 
 abstract class _Initialized implements SurveysEvent {
-  const factory _Initialized(final String groupId) = _$_Initialized;
+  const factory _Initialized(final String id) = _$_Initialized;
 
-  String get groupId;
+  String get id;
   @JsonKey(ignore: true)
   _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$$_SurveyRefreshedCopyWith<$Res> {
-  factory _$$_SurveyRefreshedCopyWith(
-          _$_SurveyRefreshed value, $Res Function(_$_SurveyRefreshed) then) =
-      __$$_SurveyRefreshedCopyWithImpl<$Res>;
-  $Res call({String groupId});
+abstract class _$$_SurveyQuestionsUpdatedCopyWith<$Res> {
+  factory _$$_SurveyQuestionsUpdatedCopyWith(_$_SurveyQuestionsUpdated value,
+          $Res Function(_$_SurveyQuestionsUpdated) then) =
+      __$$_SurveyQuestionsUpdatedCopyWithImpl<$Res>;
+  $Res call({List<SurveyRowInfo> SurveyQuestionsInfo});
 }
 
 /// @nodoc
-class __$$_SurveyRefreshedCopyWithImpl<$Res>
+class __$$_SurveyQuestionsUpdatedCopyWithImpl<$Res>
     extends _$SurveysEventCopyWithImpl<$Res>
-    implements _$$_SurveyRefreshedCopyWith<$Res> {
-  __$$_SurveyRefreshedCopyWithImpl(
-      _$_SurveyRefreshed _value, $Res Function(_$_SurveyRefreshed) _then)
-      : super(_value, (v) => _then(v as _$_SurveyRefreshed));
+    implements _$$_SurveyQuestionsUpdatedCopyWith<$Res> {
+  __$$_SurveyQuestionsUpdatedCopyWithImpl(_$_SurveyQuestionsUpdated _value,
+      $Res Function(_$_SurveyQuestionsUpdated) _then)
+      : super(_value, (v) => _then(v as _$_SurveyQuestionsUpdated));
 
   @override
-  _$_SurveyRefreshed get _value => super._value as _$_SurveyRefreshed;
+  _$_SurveyQuestionsUpdated get _value =>
+      super._value as _$_SurveyQuestionsUpdated;
 
   @override
   $Res call({
-    Object? groupId = freezed,
+    Object? SurveyQuestionsInfo = freezed,
   }) {
-    return _then(_$_SurveyRefreshed(
-      groupId == freezed
-          ? _value.groupId
-          : groupId // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$_SurveyQuestionsUpdated(
+      SurveyQuestionsInfo == freezed
+          ? _value._SurveyQuestionsInfo
+          : SurveyQuestionsInfo // ignore: cast_nullable_to_non_nullable
+              as List<SurveyRowInfo>,
     ));
   }
 }
 
 /// @nodoc
 
-class _$_SurveyRefreshed implements _SurveyRefreshed {
-  const _$_SurveyRefreshed(this.groupId);
+class _$_SurveyQuestionsUpdated implements _SurveyQuestionsUpdated {
+  const _$_SurveyQuestionsUpdated(final List<SurveyRowInfo> SurveyQuestionsInfo)
+      : _SurveyQuestionsInfo = SurveyQuestionsInfo;
 
+  final List<SurveyRowInfo> _SurveyQuestionsInfo;
   @override
-  final String groupId;
+  List<SurveyRowInfo> get SurveyQuestionsInfo {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_SurveyQuestionsInfo);
+  }
 
   @override
   String toString() {
-    return 'SurveysEvent.SurveyRefreshed(groupId: $groupId)';
+    return 'SurveysEvent.SurveyQuestionsUpdated(SurveyQuestionsInfo: $SurveyQuestionsInfo)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_SurveyRefreshed &&
-            const DeepCollectionEquality().equals(other.groupId, groupId));
+            other is _$_SurveyQuestionsUpdated &&
+            const DeepCollectionEquality()
+                .equals(other._SurveyQuestionsInfo, _SurveyQuestionsInfo));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(groupId));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_SurveyQuestionsInfo));
 
   @JsonKey(ignore: true)
   @override
-  _$$_SurveyRefreshedCopyWith<_$_SurveyRefreshed> get copyWith =>
-      __$$_SurveyRefreshedCopyWithImpl<_$_SurveyRefreshed>(this, _$identity);
+  _$$_SurveyQuestionsUpdatedCopyWith<_$_SurveyQuestionsUpdated> get copyWith =>
+      __$$_SurveyQuestionsUpdatedCopyWithImpl<_$_SurveyQuestionsUpdated>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String groupId) initialized,
-    required TResult Function(String groupId) SurveyRefreshed,
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
-    required TResult Function(FeatureType newFeatureType)
-        currentFeatureTypeUpdated,
   }) {
-    return SurveyRefreshed(groupId);
+    return SurveyQuestionsUpdated(SurveyQuestionsInfo);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
   }) {
-    return SurveyRefreshed?.call(groupId);
+    return SurveyQuestionsUpdated?.call(SurveyQuestionsInfo);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
-    if (SurveyRefreshed != null) {
-      return SurveyRefreshed(groupId);
+    if (SurveyQuestionsUpdated != null) {
+      return SurveyQuestionsUpdated(SurveyQuestionsInfo);
     }
     return orElse();
   }
@@ -357,52 +352,49 @@ class _$_SurveyRefreshed implements _SurveyRefreshed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SurveyRefreshed value) SurveyRefreshed,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
-    required TResult Function(_CurrentFeatureTypeUpdated value)
-        currentFeatureTypeUpdated,
   }) {
-    return SurveyRefreshed(this);
+    return SurveyQuestionsUpdated(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
   }) {
-    return SurveyRefreshed?.call(this);
+    return SurveyQuestionsUpdated?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
-    if (SurveyRefreshed != null) {
-      return SurveyRefreshed(this);
+    if (SurveyQuestionsUpdated != null) {
+      return SurveyQuestionsUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class _SurveyRefreshed implements SurveysEvent {
-  const factory _SurveyRefreshed(final String groupId) = _$_SurveyRefreshed;
+abstract class _SurveyQuestionsUpdated implements SurveysEvent {
+  const factory _SurveyQuestionsUpdated(
+          final List<SurveyRowInfo> SurveyQuestionsInfo) =
+      _$_SurveyQuestionsUpdated;
 
-  String get groupId;
+  List<SurveyRowInfo> get SurveyQuestionsInfo;
   @JsonKey(ignore: true)
-  _$$_SurveyRefreshedCopyWith<_$_SurveyRefreshed> get copyWith =>
+  _$$_SurveyQuestionsUpdatedCopyWith<_$_SurveyQuestionsUpdated> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -473,12 +465,11 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String groupId) initialized,
-    required TResult Function(String groupId) SurveyRefreshed,
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
-    required TResult Function(FeatureType newFeatureType)
-        currentFeatureTypeUpdated,
   }) {
     return isFetchingUpdated(isFetching);
   }
@@ -486,11 +477,11 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
   }) {
     return isFetchingUpdated?.call(isFetching);
   }
@@ -498,11 +489,11 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
     if (isFetchingUpdated != null) {
@@ -515,11 +506,10 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SurveyRefreshed value) SurveyRefreshed,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
-    required TResult Function(_CurrentFeatureTypeUpdated value)
-        currentFeatureTypeUpdated,
   }) {
     return isFetchingUpdated(this);
   }
@@ -528,11 +518,9 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
   }) {
     return isFetchingUpdated?.call(this);
   }
@@ -541,11 +529,9 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
     if (isFetchingUpdated != null) {
@@ -631,12 +617,11 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(String groupId) initialized,
-    required TResult Function(String groupId) SurveyRefreshed,
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
-    required TResult Function(FeatureType newFeatureType)
-        currentFeatureTypeUpdated,
   }) {
     return isDataFetchedUpdated(isFetched);
   }
@@ -644,11 +629,11 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
   }) {
     return isDataFetchedUpdated?.call(isFetched);
   }
@@ -656,11 +641,11 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
     if (isDataFetchedUpdated != null) {
@@ -673,11 +658,10 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SurveyRefreshed value) SurveyRefreshed,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
-    required TResult Function(_CurrentFeatureTypeUpdated value)
-        currentFeatureTypeUpdated,
   }) {
     return isDataFetchedUpdated(this);
   }
@@ -686,11 +670,9 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
   }) {
     return isDataFetchedUpdated?.call(this);
   }
@@ -699,11 +681,9 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
     required TResult orElse(),
   }) {
     if (isDataFetchedUpdated != null) {
@@ -724,174 +704,11 @@ abstract class _IsDataFetchedUpdated implements SurveysEvent {
 }
 
 /// @nodoc
-abstract class _$$_CurrentFeatureTypeUpdatedCopyWith<$Res> {
-  factory _$$_CurrentFeatureTypeUpdatedCopyWith(
-          _$_CurrentFeatureTypeUpdated value,
-          $Res Function(_$_CurrentFeatureTypeUpdated) then) =
-      __$$_CurrentFeatureTypeUpdatedCopyWithImpl<$Res>;
-  $Res call({FeatureType newFeatureType});
-}
-
-/// @nodoc
-class __$$_CurrentFeatureTypeUpdatedCopyWithImpl<$Res>
-    extends _$SurveysEventCopyWithImpl<$Res>
-    implements _$$_CurrentFeatureTypeUpdatedCopyWith<$Res> {
-  __$$_CurrentFeatureTypeUpdatedCopyWithImpl(
-      _$_CurrentFeatureTypeUpdated _value,
-      $Res Function(_$_CurrentFeatureTypeUpdated) _then)
-      : super(_value, (v) => _then(v as _$_CurrentFeatureTypeUpdated));
-
-  @override
-  _$_CurrentFeatureTypeUpdated get _value =>
-      super._value as _$_CurrentFeatureTypeUpdated;
-
-  @override
-  $Res call({
-    Object? newFeatureType = freezed,
-  }) {
-    return _then(_$_CurrentFeatureTypeUpdated(
-      newFeatureType == freezed
-          ? _value.newFeatureType
-          : newFeatureType // ignore: cast_nullable_to_non_nullable
-              as FeatureType,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
-  const _$_CurrentFeatureTypeUpdated(this.newFeatureType);
-
-  @override
-  final FeatureType newFeatureType;
-
-  @override
-  String toString() {
-    return 'SurveysEvent.currentFeatureTypeUpdated(newFeatureType: $newFeatureType)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_CurrentFeatureTypeUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.newFeatureType, newFeatureType));
-  }
-
-  @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(newFeatureType));
-
-  @JsonKey(ignore: true)
-  @override
-  _$$_CurrentFeatureTypeUpdatedCopyWith<_$_CurrentFeatureTypeUpdated>
-      get copyWith => __$$_CurrentFeatureTypeUpdatedCopyWithImpl<
-          _$_CurrentFeatureTypeUpdated>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(String groupId) initialized,
-    required TResult Function(String groupId) SurveyRefreshed,
-    required TResult Function(bool isFetching) isFetchingUpdated,
-    required TResult Function(bool isFetched) isDataFetchedUpdated,
-    required TResult Function(FeatureType newFeatureType)
-        currentFeatureTypeUpdated,
-  }) {
-    return currentFeatureTypeUpdated(newFeatureType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-  }) {
-    return currentFeatureTypeUpdated?.call(newFeatureType);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(String groupId)? SurveyRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    required TResult orElse(),
-  }) {
-    if (currentFeatureTypeUpdated != null) {
-      return currentFeatureTypeUpdated(newFeatureType);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Initialized value) initialized,
-    required TResult Function(_SurveyRefreshed value) SurveyRefreshed,
-    required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
-    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
-    required TResult Function(_CurrentFeatureTypeUpdated value)
-        currentFeatureTypeUpdated,
-  }) {
-    return currentFeatureTypeUpdated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
-  }) {
-    return currentFeatureTypeUpdated?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyRefreshed value)? SurveyRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
-        currentFeatureTypeUpdated,
-    required TResult orElse(),
-  }) {
-    if (currentFeatureTypeUpdated != null) {
-      return currentFeatureTypeUpdated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _CurrentFeatureTypeUpdated implements SurveysEvent {
-  const factory _CurrentFeatureTypeUpdated(final FeatureType newFeatureType) =
-      _$_CurrentFeatureTypeUpdated;
-
-  FeatureType get newFeatureType;
-  @JsonKey(ignore: true)
-  _$$_CurrentFeatureTypeUpdatedCopyWith<_$_CurrentFeatureTypeUpdated>
-      get copyWith => throw _privateConstructorUsedError;
-}
-
-/// @nodoc
 mixin _$SurveysState {
-  List<SurveyRowInfo> get chatInfoItems => throw _privateConstructorUsedError;
-  List<SurveyRowInfo> get surveyInfoItems => throw _privateConstructorUsedError;
+  List<SurveyRowInfo> get SurveyQuestionsInfo =>
+      throw _privateConstructorUsedError;
   bool get isDataFetched => throw _privateConstructorUsedError;
   bool get isFetching => throw _privateConstructorUsedError;
-  FeatureType get currentFeatureType => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SurveysStateCopyWith<SurveysState> get copyWith =>
@@ -904,11 +721,9 @@ abstract class $SurveysStateCopyWith<$Res> {
           SurveysState value, $Res Function(SurveysState) then) =
       _$SurveysStateCopyWithImpl<$Res>;
   $Res call(
-      {List<SurveyRowInfo> chatInfoItems,
-      List<SurveyRowInfo> surveyInfoItems,
+      {List<SurveyRowInfo> SurveyQuestionsInfo,
       bool isDataFetched,
-      bool isFetching,
-      FeatureType currentFeatureType});
+      bool isFetching});
 }
 
 /// @nodoc
@@ -921,20 +736,14 @@ class _$SurveysStateCopyWithImpl<$Res> implements $SurveysStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? chatInfoItems = freezed,
-    Object? surveyInfoItems = freezed,
+    Object? SurveyQuestionsInfo = freezed,
     Object? isDataFetched = freezed,
     Object? isFetching = freezed,
-    Object? currentFeatureType = freezed,
   }) {
     return _then(_value.copyWith(
-      chatInfoItems: chatInfoItems == freezed
-          ? _value.chatInfoItems
-          : chatInfoItems // ignore: cast_nullable_to_non_nullable
-              as List<SurveyRowInfo>,
-      surveyInfoItems: surveyInfoItems == freezed
-          ? _value.surveyInfoItems
-          : surveyInfoItems // ignore: cast_nullable_to_non_nullable
+      SurveyQuestionsInfo: SurveyQuestionsInfo == freezed
+          ? _value.SurveyQuestionsInfo
+          : SurveyQuestionsInfo // ignore: cast_nullable_to_non_nullable
               as List<SurveyRowInfo>,
       isDataFetched: isDataFetched == freezed
           ? _value.isDataFetched
@@ -944,10 +753,6 @@ class _$SurveysStateCopyWithImpl<$Res> implements $SurveysStateCopyWith<$Res> {
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentFeatureType: currentFeatureType == freezed
-          ? _value.currentFeatureType
-          : currentFeatureType // ignore: cast_nullable_to_non_nullable
-              as FeatureType,
     ));
   }
 }
@@ -960,11 +765,9 @@ abstract class _$$_SurveysStateCopyWith<$Res>
       __$$_SurveysStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<SurveyRowInfo> chatInfoItems,
-      List<SurveyRowInfo> surveyInfoItems,
+      {List<SurveyRowInfo> SurveyQuestionsInfo,
       bool isDataFetched,
-      bool isFetching,
-      FeatureType currentFeatureType});
+      bool isFetching});
 }
 
 /// @nodoc
@@ -980,20 +783,14 @@ class __$$_SurveysStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? chatInfoItems = freezed,
-    Object? surveyInfoItems = freezed,
+    Object? SurveyQuestionsInfo = freezed,
     Object? isDataFetched = freezed,
     Object? isFetching = freezed,
-    Object? currentFeatureType = freezed,
   }) {
     return _then(_$_SurveysState(
-      chatInfoItems: chatInfoItems == freezed
-          ? _value._chatInfoItems
-          : chatInfoItems // ignore: cast_nullable_to_non_nullable
-              as List<SurveyRowInfo>,
-      surveyInfoItems: surveyInfoItems == freezed
-          ? _value._surveyInfoItems
-          : surveyInfoItems // ignore: cast_nullable_to_non_nullable
+      SurveyQuestionsInfo: SurveyQuestionsInfo == freezed
+          ? _value._SurveyQuestionsInfo
+          : SurveyQuestionsInfo // ignore: cast_nullable_to_non_nullable
               as List<SurveyRowInfo>,
       isDataFetched: isDataFetched == freezed
           ? _value.isDataFetched
@@ -1003,10 +800,6 @@ class __$$_SurveysStateCopyWithImpl<$Res>
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentFeatureType: currentFeatureType == freezed
-          ? _value.currentFeatureType
-          : currentFeatureType // ignore: cast_nullable_to_non_nullable
-              as FeatureType,
     ));
   }
 }
@@ -1015,38 +808,26 @@ class __$$_SurveysStateCopyWithImpl<$Res>
 
 class _$_SurveysState implements _SurveysState {
   const _$_SurveysState(
-      {required final List<SurveyRowInfo> chatInfoItems,
-      required final List<SurveyRowInfo> surveyInfoItems,
+      {required final List<SurveyRowInfo> SurveyQuestionsInfo,
       required this.isDataFetched,
-      required this.isFetching,
-      required this.currentFeatureType})
-      : _chatInfoItems = chatInfoItems,
-        _surveyInfoItems = surveyInfoItems;
+      required this.isFetching})
+      : _SurveyQuestionsInfo = SurveyQuestionsInfo;
 
-  final List<SurveyRowInfo> _chatInfoItems;
+  final List<SurveyRowInfo> _SurveyQuestionsInfo;
   @override
-  List<SurveyRowInfo> get chatInfoItems {
+  List<SurveyRowInfo> get SurveyQuestionsInfo {
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_chatInfoItems);
-  }
-
-  final List<SurveyRowInfo> _surveyInfoItems;
-  @override
-  List<SurveyRowInfo> get surveyInfoItems {
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_surveyInfoItems);
+    return EqualUnmodifiableListView(_SurveyQuestionsInfo);
   }
 
   @override
   final bool isDataFetched;
   @override
   final bool isFetching;
-  @override
-  final FeatureType currentFeatureType;
 
   @override
   String toString() {
-    return 'SurveysState(chatInfoItems: $chatInfoItems, surveyInfoItems: $surveyInfoItems, isDataFetched: $isDataFetched, isFetching: $isFetching, currentFeatureType: $currentFeatureType)';
+    return 'SurveysState(SurveyQuestionsInfo: $SurveyQuestionsInfo, isDataFetched: $isDataFetched, isFetching: $isFetching)';
   }
 
   @override
@@ -1055,25 +836,19 @@ class _$_SurveysState implements _SurveysState {
         (other.runtimeType == runtimeType &&
             other is _$_SurveysState &&
             const DeepCollectionEquality()
-                .equals(other._chatInfoItems, _chatInfoItems) &&
-            const DeepCollectionEquality()
-                .equals(other._surveyInfoItems, _surveyInfoItems) &&
+                .equals(other._SurveyQuestionsInfo, _SurveyQuestionsInfo) &&
             const DeepCollectionEquality()
                 .equals(other.isDataFetched, isDataFetched) &&
             const DeepCollectionEquality()
-                .equals(other.isFetching, isFetching) &&
-            const DeepCollectionEquality()
-                .equals(other.currentFeatureType, currentFeatureType));
+                .equals(other.isFetching, isFetching));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(_chatInfoItems),
-      const DeepCollectionEquality().hash(_surveyInfoItems),
+      const DeepCollectionEquality().hash(_SurveyQuestionsInfo),
       const DeepCollectionEquality().hash(isDataFetched),
-      const DeepCollectionEquality().hash(isFetching),
-      const DeepCollectionEquality().hash(currentFeatureType));
+      const DeepCollectionEquality().hash(isFetching));
 
   @JsonKey(ignore: true)
   @override
@@ -1083,22 +858,16 @@ class _$_SurveysState implements _SurveysState {
 
 abstract class _SurveysState implements SurveysState {
   const factory _SurveysState(
-      {required final List<SurveyRowInfo> chatInfoItems,
-      required final List<SurveyRowInfo> surveyInfoItems,
+      {required final List<SurveyRowInfo> SurveyQuestionsInfo,
       required final bool isDataFetched,
-      required final bool isFetching,
-      required final FeatureType currentFeatureType}) = _$_SurveysState;
+      required final bool isFetching}) = _$_SurveysState;
 
   @override
-  List<SurveyRowInfo> get chatInfoItems;
-  @override
-  List<SurveyRowInfo> get surveyInfoItems;
+  List<SurveyRowInfo> get SurveyQuestionsInfo;
   @override
   bool get isDataFetched;
   @override
   bool get isFetching;
-  @override
-  FeatureType get currentFeatureType;
   @override
   @JsonKey(ignore: true)
   _$$_SurveysStateCopyWith<_$_SurveysState> get copyWith =>
