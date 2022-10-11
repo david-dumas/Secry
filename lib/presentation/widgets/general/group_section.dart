@@ -1,7 +1,12 @@
+import 'package:auto_route/auto_route.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/domain/general/general_list_cell_info_item.dart';
+import 'package:secry/domain/groups/feature_type.dart';
+import 'package:secry/presentation/pages/filter_surveys/filter_surveys_page.dart';
 import 'package:secry/presentation/pages/general/widgets/general_list_cell.dart';
+import 'package:secry/presentation/routes/router.gr.dart';
 
 class GroupSection extends StatelessWidget {
   final String title;
@@ -18,6 +23,7 @@ class GroupSection extends StatelessWidget {
   final String emptyStateDescription;
   final double bottomMargin;
   final Icon emptyStateIcon;
+  final FeatureType? currentFeatureType;
   final Function()? titleRowTrailingAction;
   final Function(String id, String groupTitle)? openPageForPressedCell;
 
@@ -38,7 +44,8 @@ class GroupSection extends StatelessWidget {
       this.bottomMargin = 30.0,
       required this.emptyStateIcon,
       required this.titleRowTrailingAction,
-      required this.openPageForPressedCell})
+      required this.openPageForPressedCell,
+      this.currentFeatureType})
       : super(key: key);
 
   @override
@@ -54,6 +61,7 @@ class GroupSection extends StatelessWidget {
           children: [
             GroupSectionTitleRow(
                 title: title,
+                currentFeatureType: currentFeatureType,
                 amountOfGroups: totalAmountOfGroups,
                 isTitleRowActionButtonVisible: isTitleRowActionButtonVisible,
                 titleRowActionButtonText: titleRowActionButtonText,
@@ -99,6 +107,7 @@ class GroupSectionTitleRow extends StatelessWidget {
   final bool isTitleRowActionButtonVisible;
   final String titleRowActionButtonText;
   final Function()? trailingActionButtonAction;
+  final FeatureType? currentFeatureType;
 
   const GroupSectionTitleRow(
       {Key? key,
@@ -106,14 +115,17 @@ class GroupSectionTitleRow extends StatelessWidget {
       required this.amountOfGroups,
       required this.isTitleRowActionButtonVisible,
       required this.titleRowActionButtonText,
-      required this.trailingActionButtonAction})
+      required this.trailingActionButtonAction,
+      required this.currentFeatureType})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var screenSize = MediaQuery.of(context).size;
+
     return Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           title,
@@ -124,19 +136,40 @@ class GroupSectionTitleRow extends StatelessWidget {
           amountOfGroups.toString(),
           style: TextStyle(fontSize: fontSizeMedium),
         ),
+        Visibility(
+            visible: currentFeatureType == FeatureType.surveys,
+            child: Row(
+              children: [
+                SizedBox(width: screenSize.width < 320 ? 0 : 8),
+                screenSize.width > 320
+                    ? TextButton.icon(
+                        onPressed: () {
+                          AutoRouter.of(context).push(FilterSurveysPageRoute());
+                        },
+                        icon: Icon(
+                          Icons.filter_alt,
+                          size: 24.0,
+                        ),
+                        label: Text(tr('filter')),
+                      )
+                    : IconButton(
+                        onPressed: () => {AutoRouter.of(context).push(FilterSurveysPageRoute())},
+                        icon: Icon(Icons.filter_alt),
+                        color: kPrimaryColor)
+              ],
+            )),
         Spacer(),
         Visibility(
           visible: isTitleRowActionButtonVisible,
           child: TextButton(
             child: Text(
               titleRowActionButtonText,
-              textAlign: TextAlign.right,
               style: TextStyle(color: kPrimaryColor),
             ),
             style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
               minimumSize: Size(77, 44),
-              alignment: Alignment.topRight,
+              alignment: Alignment.center,
             ),
             onPressed: () {
               if (trailingActionButtonAction != null) {

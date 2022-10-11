@@ -140,6 +140,7 @@ class GroupOverviewPage extends StatelessWidget {
                                     ? tr('empty_state_no_chats_description')
                                     : tr('empty_state_no_surveys_description'),
                                 emptyStateIcon: Icon(Icons.group_add),
+                                currentFeatureType: state.currentFeatureType,
                                 titleRowTrailingAction: () {
                                   if (state.currentFeatureType == FeatureType.chats) {
                                     if (Platform.isAndroid) {
