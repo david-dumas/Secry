@@ -19,7 +19,6 @@ extension DateOnlyCompare on DateTime {
     }
   }
 
-  // TODO Test
   int getNumberOfSecondsAgo() {
     if (millisecondsSinceEpoch > DateTime.now().millisecondsSinceEpoch) {
       return 0;
@@ -28,7 +27,6 @@ extension DateOnlyCompare on DateTime {
     }
   }
 
-  // TODO Test
   int getNumberOfMinutesAgo() {
     if (millisecondsSinceEpoch > DateTime.now().millisecondsSinceEpoch) {
       return 0;
@@ -38,7 +36,6 @@ extension DateOnlyCompare on DateTime {
     }
   }
 
-  // TODO Test
   int getNumberOfHoursAgo() {
     if (millisecondsSinceEpoch > DateTime.now().millisecondsSinceEpoch) {
       return 0;
