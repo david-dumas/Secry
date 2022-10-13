@@ -1,0 +1,1 @@
+enum SortByType { date, alphabetic, numberOfVotes, numberOfQuestions }
