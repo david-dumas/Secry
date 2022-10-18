@@ -97,8 +97,8 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => _i33.ResetPasswordBloc(get<_i25.IAuthenticationInterface>()));
   gh.factory<_i34.SignUpFormBloc>(() => _i34.SignUpFormBloc(
       get<_i25.IAuthenticationInterface>(), get<_i9.IAuthFacade>()));
-  gh.factory<_i35.SurveyBloc>(
-      () => _i35.SurveyBloc(get<_i29.ISurveysRepository>()));
+  gh.factory<_i35.SurveysBloc>(
+      () => _i35.SurveysBloc(get<_i29.ISurveysRepository>()));
   gh.factory<_i36.AddGroupPageBloc>(() => _i36.AddGroupPageBloc(
       get<_i31.IUsersRepository>(), get<_i11.IGroupsRepository>()));
   gh.factory<_i37.GlobalSearchBloc>(

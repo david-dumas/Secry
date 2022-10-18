@@ -204,7 +204,7 @@ class GroupOverviewPage extends StatelessWidget {
                                       title: groupTitle,
                                       groupId: this.groupId,
                                     ),
-                                    withNavBar: true,
+                                    withNavBar: false,
                                     pageTransitionAnimation:
                                         PageTransitionAnimation.cupertino,
                                   );

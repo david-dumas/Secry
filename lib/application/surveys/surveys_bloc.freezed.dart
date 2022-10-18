@@ -23,6 +23,10 @@ mixin _$SurveysEvent {
         SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -32,6 +36,10 @@ mixin _$SurveysEvent {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -41,6 +49,10 @@ mixin _$SurveysEvent {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -51,6 +63,12 @@ mixin _$SurveysEvent {
         SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -59,6 +77,9 @@ mixin _$SurveysEvent {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,6 +88,9 @@ mixin _$SurveysEvent {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -158,6 +182,10 @@ class _$_Initialized implements _Initialized {
         SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
   }) {
     return initialized(id);
   }
@@ -170,6 +198,10 @@ class _$_Initialized implements _Initialized {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
   }) {
     return initialized?.call(id);
   }
@@ -182,6 +214,10 @@ class _$_Initialized implements _Initialized {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -198,6 +234,12 @@ class _$_Initialized implements _Initialized {
         SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
   }) {
     return initialized(this);
   }
@@ -209,6 +251,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -220,6 +265,9 @@ class _$_Initialized implements _Initialized {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -316,6 +364,10 @@ class _$_SurveyQuestionsUpdated implements _SurveyQuestionsUpdated {
         SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
   }) {
     return SurveyQuestionsUpdated(SurveyQuestionsInfo);
   }
@@ -328,6 +380,10 @@ class _$_SurveyQuestionsUpdated implements _SurveyQuestionsUpdated {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
   }) {
     return SurveyQuestionsUpdated?.call(SurveyQuestionsInfo);
   }
@@ -340,6 +396,10 @@ class _$_SurveyQuestionsUpdated implements _SurveyQuestionsUpdated {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (SurveyQuestionsUpdated != null) {
@@ -356,6 +416,12 @@ class _$_SurveyQuestionsUpdated implements _SurveyQuestionsUpdated {
         SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
   }) {
     return SurveyQuestionsUpdated(this);
   }
@@ -367,6 +433,9 @@ class _$_SurveyQuestionsUpdated implements _SurveyQuestionsUpdated {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
   }) {
     return SurveyQuestionsUpdated?.call(this);
   }
@@ -378,6 +447,9 @@ class _$_SurveyQuestionsUpdated implements _SurveyQuestionsUpdated {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (SurveyQuestionsUpdated != null) {
@@ -470,6 +542,10 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
         SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
   }) {
     return isFetchingUpdated(isFetching);
   }
@@ -482,6 +558,10 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
   }) {
     return isFetchingUpdated?.call(isFetching);
   }
@@ -494,6 +574,10 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (isFetchingUpdated != null) {
@@ -510,6 +594,12 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
         SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
   }) {
     return isFetchingUpdated(this);
   }
@@ -521,6 +611,9 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
   }) {
     return isFetchingUpdated?.call(this);
   }
@@ -532,6 +625,9 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (isFetchingUpdated != null) {
@@ -622,6 +718,10 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
         SurveyQuestionsUpdated,
     required TResult Function(bool isFetching) isFetchingUpdated,
     required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
   }) {
     return isDataFetchedUpdated(isFetched);
   }
@@ -634,6 +734,10 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
   }) {
     return isDataFetchedUpdated?.call(isFetched);
   }
@@ -646,6 +750,10 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
         SurveyQuestionsUpdated,
     TResult Function(bool isFetching)? isFetchingUpdated,
     TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (isDataFetchedUpdated != null) {
@@ -662,6 +770,12 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
         SurveyQuestionsUpdated,
     required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
     required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
   }) {
     return isDataFetchedUpdated(this);
   }
@@ -673,6 +787,9 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
   }) {
     return isDataFetchedUpdated?.call(this);
   }
@@ -684,6 +801,9 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
     TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
     TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
     required TResult orElse(),
   }) {
     if (isDataFetchedUpdated != null) {
@@ -704,11 +824,556 @@ abstract class _IsDataFetchedUpdated implements SurveysEvent {
 }
 
 /// @nodoc
+abstract class _$$_CurrentQuestionUpdatedCopyWith<$Res> {
+  factory _$$_CurrentQuestionUpdatedCopyWith(_$_CurrentQuestionUpdated value,
+          $Res Function(_$_CurrentQuestionUpdated) then) =
+      __$$_CurrentQuestionUpdatedCopyWithImpl<$Res>;
+  $Res call({int currentQuestion});
+}
+
+/// @nodoc
+class __$$_CurrentQuestionUpdatedCopyWithImpl<$Res>
+    extends _$SurveysEventCopyWithImpl<$Res>
+    implements _$$_CurrentQuestionUpdatedCopyWith<$Res> {
+  __$$_CurrentQuestionUpdatedCopyWithImpl(_$_CurrentQuestionUpdated _value,
+      $Res Function(_$_CurrentQuestionUpdated) _then)
+      : super(_value, (v) => _then(v as _$_CurrentQuestionUpdated));
+
+  @override
+  _$_CurrentQuestionUpdated get _value =>
+      super._value as _$_CurrentQuestionUpdated;
+
+  @override
+  $Res call({
+    Object? currentQuestion = freezed,
+  }) {
+    return _then(_$_CurrentQuestionUpdated(
+      currentQuestion == freezed
+          ? _value.currentQuestion
+          : currentQuestion // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_CurrentQuestionUpdated implements _CurrentQuestionUpdated {
+  const _$_CurrentQuestionUpdated(this.currentQuestion);
+
+  @override
+  final int currentQuestion;
+
+  @override
+  String toString() {
+    return 'SurveysEvent.currentQuestionUpdated(currentQuestion: $currentQuestion)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_CurrentQuestionUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.currentQuestion, currentQuestion));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(currentQuestion));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_CurrentQuestionUpdatedCopyWith<_$_CurrentQuestionUpdated> get copyWith =>
+      __$$_CurrentQuestionUpdatedCopyWithImpl<_$_CurrentQuestionUpdated>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
+    required TResult Function(bool isFetching) isFetchingUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
+  }) {
+    return currentQuestionUpdated(currentQuestion);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
+  }) {
+    return currentQuestionUpdated?.call(currentQuestion);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
+    required TResult orElse(),
+  }) {
+    if (currentQuestionUpdated != null) {
+      return currentQuestionUpdated(currentQuestion);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
+    required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
+  }) {
+    return currentQuestionUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
+  }) {
+    return currentQuestionUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
+    required TResult orElse(),
+  }) {
+    if (currentQuestionUpdated != null) {
+      return currentQuestionUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CurrentQuestionUpdated implements SurveysEvent {
+  const factory _CurrentQuestionUpdated(final int currentQuestion) =
+      _$_CurrentQuestionUpdated;
+
+  int get currentQuestion;
+  @JsonKey(ignore: true)
+  _$$_CurrentQuestionUpdatedCopyWith<_$_CurrentQuestionUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_TotalQuestionsUpdatedCopyWith<$Res> {
+  factory _$$_TotalQuestionsUpdatedCopyWith(_$_TotalQuestionsUpdated value,
+          $Res Function(_$_TotalQuestionsUpdated) then) =
+      __$$_TotalQuestionsUpdatedCopyWithImpl<$Res>;
+  $Res call({int totalQuestions});
+}
+
+/// @nodoc
+class __$$_TotalQuestionsUpdatedCopyWithImpl<$Res>
+    extends _$SurveysEventCopyWithImpl<$Res>
+    implements _$$_TotalQuestionsUpdatedCopyWith<$Res> {
+  __$$_TotalQuestionsUpdatedCopyWithImpl(_$_TotalQuestionsUpdated _value,
+      $Res Function(_$_TotalQuestionsUpdated) _then)
+      : super(_value, (v) => _then(v as _$_TotalQuestionsUpdated));
+
+  @override
+  _$_TotalQuestionsUpdated get _value =>
+      super._value as _$_TotalQuestionsUpdated;
+
+  @override
+  $Res call({
+    Object? totalQuestions = freezed,
+  }) {
+    return _then(_$_TotalQuestionsUpdated(
+      totalQuestions == freezed
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_TotalQuestionsUpdated implements _TotalQuestionsUpdated {
+  const _$_TotalQuestionsUpdated(this.totalQuestions);
+
+  @override
+  final int totalQuestions;
+
+  @override
+  String toString() {
+    return 'SurveysEvent.totalQuestionsUpdated(totalQuestions: $totalQuestions)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_TotalQuestionsUpdated &&
+            const DeepCollectionEquality()
+                .equals(other.totalQuestions, totalQuestions));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(totalQuestions));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_TotalQuestionsUpdatedCopyWith<_$_TotalQuestionsUpdated> get copyWith =>
+      __$$_TotalQuestionsUpdatedCopyWithImpl<_$_TotalQuestionsUpdated>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
+    required TResult Function(bool isFetching) isFetchingUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
+  }) {
+    return totalQuestionsUpdated(totalQuestions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
+  }) {
+    return totalQuestionsUpdated?.call(totalQuestions);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
+    required TResult orElse(),
+  }) {
+    if (totalQuestionsUpdated != null) {
+      return totalQuestionsUpdated(totalQuestions);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
+    required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
+  }) {
+    return totalQuestionsUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
+  }) {
+    return totalQuestionsUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
+    required TResult orElse(),
+  }) {
+    if (totalQuestionsUpdated != null) {
+      return totalQuestionsUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _TotalQuestionsUpdated implements SurveysEvent {
+  const factory _TotalQuestionsUpdated(final int totalQuestions) =
+      _$_TotalQuestionsUpdated;
+
+  int get totalQuestions;
+  @JsonKey(ignore: true)
+  _$$_TotalQuestionsUpdatedCopyWith<_$_TotalQuestionsUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_QuestionAnswersUpdatedCopyWith<$Res> {
+  factory _$$_QuestionAnswersUpdatedCopyWith(_$_QuestionAnswersUpdated value,
+          $Res Function(_$_QuestionAnswersUpdated) then) =
+      __$$_QuestionAnswersUpdatedCopyWithImpl<$Res>;
+  $Res call({List<SurveyQuestionAnswers> QuestionAnswers});
+}
+
+/// @nodoc
+class __$$_QuestionAnswersUpdatedCopyWithImpl<$Res>
+    extends _$SurveysEventCopyWithImpl<$Res>
+    implements _$$_QuestionAnswersUpdatedCopyWith<$Res> {
+  __$$_QuestionAnswersUpdatedCopyWithImpl(_$_QuestionAnswersUpdated _value,
+      $Res Function(_$_QuestionAnswersUpdated) _then)
+      : super(_value, (v) => _then(v as _$_QuestionAnswersUpdated));
+
+  @override
+  _$_QuestionAnswersUpdated get _value =>
+      super._value as _$_QuestionAnswersUpdated;
+
+  @override
+  $Res call({
+    Object? QuestionAnswers = freezed,
+  }) {
+    return _then(_$_QuestionAnswersUpdated(
+      QuestionAnswers == freezed
+          ? _value._QuestionAnswers
+          : QuestionAnswers // ignore: cast_nullable_to_non_nullable
+              as List<SurveyQuestionAnswers>,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_QuestionAnswersUpdated implements _QuestionAnswersUpdated {
+  const _$_QuestionAnswersUpdated(
+      final List<SurveyQuestionAnswers> QuestionAnswers)
+      : _QuestionAnswers = QuestionAnswers;
+
+  final List<SurveyQuestionAnswers> _QuestionAnswers;
+  @override
+  List<SurveyQuestionAnswers> get QuestionAnswers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_QuestionAnswers);
+  }
+
+  @override
+  String toString() {
+    return 'SurveysEvent.QuestionAnswersUpdated(QuestionAnswers: $QuestionAnswers)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_QuestionAnswersUpdated &&
+            const DeepCollectionEquality()
+                .equals(other._QuestionAnswers, _QuestionAnswers));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_QuestionAnswers));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_QuestionAnswersUpdatedCopyWith<_$_QuestionAnswersUpdated> get copyWith =>
+      __$$_QuestionAnswersUpdatedCopyWithImpl<_$_QuestionAnswersUpdated>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(String id) initialized,
+    required TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)
+        SurveyQuestionsUpdated,
+    required TResult Function(bool isFetching) isFetchingUpdated,
+    required TResult Function(bool isFetched) isDataFetchedUpdated,
+    required TResult Function(int currentQuestion) currentQuestionUpdated,
+    required TResult Function(int totalQuestions) totalQuestionsUpdated,
+    required TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)
+        QuestionAnswersUpdated,
+  }) {
+    return QuestionAnswersUpdated(QuestionAnswers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
+  }) {
+    return QuestionAnswersUpdated?.call(QuestionAnswers);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(String id)? initialized,
+    TResult Function(List<SurveyRowInfo> SurveyQuestionsInfo)?
+        SurveyQuestionsUpdated,
+    TResult Function(bool isFetching)? isFetchingUpdated,
+    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult Function(int currentQuestion)? currentQuestionUpdated,
+    TResult Function(int totalQuestions)? totalQuestionsUpdated,
+    TResult Function(List<SurveyQuestionAnswers> QuestionAnswers)?
+        QuestionAnswersUpdated,
+    required TResult orElse(),
+  }) {
+    if (QuestionAnswersUpdated != null) {
+      return QuestionAnswersUpdated(QuestionAnswers);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_SurveyQuestionsUpdated value)
+        SurveyQuestionsUpdated,
+    required TResult Function(_IsFetchingUpdated value) isFetchingUpdated,
+    required TResult Function(_IsDataFetchedUpdated value) isDataFetchedUpdated,
+    required TResult Function(_CurrentQuestionUpdated value)
+        currentQuestionUpdated,
+    required TResult Function(_TotalQuestionsUpdated value)
+        totalQuestionsUpdated,
+    required TResult Function(_QuestionAnswersUpdated value)
+        QuestionAnswersUpdated,
+  }) {
+    return QuestionAnswersUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
+  }) {
+    return QuestionAnswersUpdated?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_SurveyQuestionsUpdated value)? SurveyQuestionsUpdated,
+    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult Function(_CurrentQuestionUpdated value)? currentQuestionUpdated,
+    TResult Function(_TotalQuestionsUpdated value)? totalQuestionsUpdated,
+    TResult Function(_QuestionAnswersUpdated value)? QuestionAnswersUpdated,
+    required TResult orElse(),
+  }) {
+    if (QuestionAnswersUpdated != null) {
+      return QuestionAnswersUpdated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _QuestionAnswersUpdated implements SurveysEvent {
+  const factory _QuestionAnswersUpdated(
+          final List<SurveyQuestionAnswers> QuestionAnswers) =
+      _$_QuestionAnswersUpdated;
+
+  List<SurveyQuestionAnswers> get QuestionAnswers;
+  @JsonKey(ignore: true)
+  _$$_QuestionAnswersUpdatedCopyWith<_$_QuestionAnswersUpdated> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$SurveysState {
   List<SurveyRowInfo> get SurveyQuestionsInfo =>
       throw _privateConstructorUsedError;
   bool get isDataFetched => throw _privateConstructorUsedError;
   bool get isFetching => throw _privateConstructorUsedError;
+  int get currentQuestion => throw _privateConstructorUsedError;
+  int get totalQuestions => throw _privateConstructorUsedError;
+  List<SurveyQuestionAnswers> get QuestionAnswers =>
+      throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SurveysStateCopyWith<SurveysState> get copyWith =>
@@ -723,7 +1388,10 @@ abstract class $SurveysStateCopyWith<$Res> {
   $Res call(
       {List<SurveyRowInfo> SurveyQuestionsInfo,
       bool isDataFetched,
-      bool isFetching});
+      bool isFetching,
+      int currentQuestion,
+      int totalQuestions,
+      List<SurveyQuestionAnswers> QuestionAnswers});
 }
 
 /// @nodoc
@@ -739,6 +1407,9 @@ class _$SurveysStateCopyWithImpl<$Res> implements $SurveysStateCopyWith<$Res> {
     Object? SurveyQuestionsInfo = freezed,
     Object? isDataFetched = freezed,
     Object? isFetching = freezed,
+    Object? currentQuestion = freezed,
+    Object? totalQuestions = freezed,
+    Object? QuestionAnswers = freezed,
   }) {
     return _then(_value.copyWith(
       SurveyQuestionsInfo: SurveyQuestionsInfo == freezed
@@ -753,6 +1424,18 @@ class _$SurveysStateCopyWithImpl<$Res> implements $SurveysStateCopyWith<$Res> {
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentQuestion: currentQuestion == freezed
+          ? _value.currentQuestion
+          : currentQuestion // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalQuestions: totalQuestions == freezed
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int,
+      QuestionAnswers: QuestionAnswers == freezed
+          ? _value.QuestionAnswers
+          : QuestionAnswers // ignore: cast_nullable_to_non_nullable
+              as List<SurveyQuestionAnswers>,
     ));
   }
 }
@@ -767,7 +1450,10 @@ abstract class _$$_SurveysStateCopyWith<$Res>
   $Res call(
       {List<SurveyRowInfo> SurveyQuestionsInfo,
       bool isDataFetched,
-      bool isFetching});
+      bool isFetching,
+      int currentQuestion,
+      int totalQuestions,
+      List<SurveyQuestionAnswers> QuestionAnswers});
 }
 
 /// @nodoc
@@ -786,6 +1472,9 @@ class __$$_SurveysStateCopyWithImpl<$Res>
     Object? SurveyQuestionsInfo = freezed,
     Object? isDataFetched = freezed,
     Object? isFetching = freezed,
+    Object? currentQuestion = freezed,
+    Object? totalQuestions = freezed,
+    Object? QuestionAnswers = freezed,
   }) {
     return _then(_$_SurveysState(
       SurveyQuestionsInfo: SurveyQuestionsInfo == freezed
@@ -800,6 +1489,18 @@ class __$$_SurveysStateCopyWithImpl<$Res>
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
+      currentQuestion: currentQuestion == freezed
+          ? _value.currentQuestion
+          : currentQuestion // ignore: cast_nullable_to_non_nullable
+              as int,
+      totalQuestions: totalQuestions == freezed
+          ? _value.totalQuestions
+          : totalQuestions // ignore: cast_nullable_to_non_nullable
+              as int,
+      QuestionAnswers: QuestionAnswers == freezed
+          ? _value._QuestionAnswers
+          : QuestionAnswers // ignore: cast_nullable_to_non_nullable
+              as List<SurveyQuestionAnswers>,
     ));
   }
 }
@@ -810,8 +1511,12 @@ class _$_SurveysState implements _SurveysState {
   const _$_SurveysState(
       {required final List<SurveyRowInfo> SurveyQuestionsInfo,
       required this.isDataFetched,
-      required this.isFetching})
-      : _SurveyQuestionsInfo = SurveyQuestionsInfo;
+      required this.isFetching,
+      required this.currentQuestion,
+      required this.totalQuestions,
+      required final List<SurveyQuestionAnswers> QuestionAnswers})
+      : _SurveyQuestionsInfo = SurveyQuestionsInfo,
+        _QuestionAnswers = QuestionAnswers;
 
   final List<SurveyRowInfo> _SurveyQuestionsInfo;
   @override
@@ -824,10 +1529,20 @@ class _$_SurveysState implements _SurveysState {
   final bool isDataFetched;
   @override
   final bool isFetching;
+  @override
+  final int currentQuestion;
+  @override
+  final int totalQuestions;
+  final List<SurveyQuestionAnswers> _QuestionAnswers;
+  @override
+  List<SurveyQuestionAnswers> get QuestionAnswers {
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_QuestionAnswers);
+  }
 
   @override
   String toString() {
-    return 'SurveysState(SurveyQuestionsInfo: $SurveyQuestionsInfo, isDataFetched: $isDataFetched, isFetching: $isFetching)';
+    return 'SurveysState(SurveyQuestionsInfo: $SurveyQuestionsInfo, isDataFetched: $isDataFetched, isFetching: $isFetching, currentQuestion: $currentQuestion, totalQuestions: $totalQuestions, QuestionAnswers: $QuestionAnswers)';
   }
 
   @override
@@ -840,7 +1555,13 @@ class _$_SurveysState implements _SurveysState {
             const DeepCollectionEquality()
                 .equals(other.isDataFetched, isDataFetched) &&
             const DeepCollectionEquality()
-                .equals(other.isFetching, isFetching));
+                .equals(other.isFetching, isFetching) &&
+            const DeepCollectionEquality()
+                .equals(other.currentQuestion, currentQuestion) &&
+            const DeepCollectionEquality()
+                .equals(other.totalQuestions, totalQuestions) &&
+            const DeepCollectionEquality()
+                .equals(other._QuestionAnswers, _QuestionAnswers));
   }
 
   @override
@@ -848,7 +1569,10 @@ class _$_SurveysState implements _SurveysState {
       runtimeType,
       const DeepCollectionEquality().hash(_SurveyQuestionsInfo),
       const DeepCollectionEquality().hash(isDataFetched),
-      const DeepCollectionEquality().hash(isFetching));
+      const DeepCollectionEquality().hash(isFetching),
+      const DeepCollectionEquality().hash(currentQuestion),
+      const DeepCollectionEquality().hash(totalQuestions),
+      const DeepCollectionEquality().hash(_QuestionAnswers));
 
   @JsonKey(ignore: true)
   @override
@@ -858,9 +1582,13 @@ class _$_SurveysState implements _SurveysState {
 
 abstract class _SurveysState implements SurveysState {
   const factory _SurveysState(
-      {required final List<SurveyRowInfo> SurveyQuestionsInfo,
-      required final bool isDataFetched,
-      required final bool isFetching}) = _$_SurveysState;
+          {required final List<SurveyRowInfo> SurveyQuestionsInfo,
+          required final bool isDataFetched,
+          required final bool isFetching,
+          required final int currentQuestion,
+          required final int totalQuestions,
+          required final List<SurveyQuestionAnswers> QuestionAnswers}) =
+      _$_SurveysState;
 
   @override
   List<SurveyRowInfo> get SurveyQuestionsInfo;
@@ -868,6 +1596,12 @@ abstract class _SurveysState implements SurveysState {
   bool get isDataFetched;
   @override
   bool get isFetching;
+  @override
+  int get currentQuestion;
+  @override
+  int get totalQuestions;
+  @override
+  List<SurveyQuestionAnswers> get QuestionAnswers;
   @override
   @JsonKey(ignore: true)
   _$$_SurveysStateCopyWith<_$_SurveysState> get copyWith =>

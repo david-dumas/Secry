@@ -1,12 +1,12 @@
 import 'package:flutter_svg/flutter_svg.dart';
 
-class SurveyQuestionCellInfoItem {
+class SurveyQuestionDisplayInfoItem {
   final String id;
   final String title;
-  final String questions;
+  final String type;
 
-  SurveyQuestionCellInfoItem(
+  SurveyQuestionDisplayInfoItem(
       {required this.id,
         required this.title,
-      required this.questions});
+      required this.type});
 }

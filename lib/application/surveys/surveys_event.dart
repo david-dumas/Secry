@@ -7,4 +7,8 @@ class SurveysEvent with _$SurveysEvent {
   _SurveyQuestionsUpdated;
   const factory SurveysEvent.isFetchingUpdated(bool isFetching) = _IsFetchingUpdated;
   const factory SurveysEvent.isDataFetchedUpdated(bool isFetched) = _IsDataFetchedUpdated;
+  const factory SurveysEvent.currentQuestionUpdated(int currentQuestion) = _CurrentQuestionUpdated;
+  const factory SurveysEvent.totalQuestionsUpdated(int totalQuestions) = _TotalQuestionsUpdated;
+  const factory SurveysEvent.QuestionAnswersUpdated(List<SurveyQuestionAnswers> QuestionAnswers) =
+  _QuestionAnswersUpdated;
 }
