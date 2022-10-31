@@ -72,13 +72,25 @@ class GroupSection extends StatelessWidget {
                 }),
             SizedBox(height: cellInfoItems.length < 1 || !isTitleRowActionButtonVisible ? 16.0 : 0.0),
             Visibility(
+                visible: currentFeatureType == FeatureType.chats,
+                child: Column(
+                children: [
+                  TextButton(
+                      onPressed: () {
+                        AutoRouter.of(context).push(ChatPageRoute(title: 'Studentenhuis IBB 420', chatId: "1"));
+                      },
+                      child: Text('Studentenhuis IBB 420')
+                  )
+                ],
+            )),
+            Visibility(
               visible: isFetchingInitialGroups,
               child: Expanded(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    Container(child: CircularProgressIndicator()),
+                    Container(child: CircularProgressIndicator())
                   ],
                 ),
               ),

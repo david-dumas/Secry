@@ -16,6 +16,7 @@ class ChatPage extends StatelessWidget {
         title: title,
         isSubpage: true,
         backgroundColor: globalWhite,
+        isShowingBottomBorder: true,
       ),
       body: SingleChildScrollView(
         child: Padding(
