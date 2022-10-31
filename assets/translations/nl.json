@@ -191,5 +191,6 @@
   "report_misleading_or_harmful_information": "Misleidende of schadelijke informatie",
   "why_do_you_want_to_report" : "Waarom wilt u dit rapporteren?",
   "report_title" : "Rapporteer",
-  "submit_button" : "Indienen"
+  "submit_button" : "Indienen",
+  "chat_page_send_a_message": "Verstuur een bericht..."
 }
