@@ -81,5 +81,5 @@ flutter:
     - assets/translations/
     - assets/launcher/
     - assets/fonts/google_icon.png
-    - assets/fonts/twitter_icon.png
     - assets/fonts/facebook_icon.png
+    - assets/fonts/apple_icon.png

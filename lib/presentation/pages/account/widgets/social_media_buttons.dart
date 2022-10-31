@@ -18,7 +18,7 @@ class SocialMediaButton extends StatelessWidget {
       : super(key: key);
 
   // Icons of the social media buttons
-  final Image twitterIcon = Image.asset('assets/fonts/twitter_icon.png');
+  final Image appleIcon = Image.asset('assets/fonts/apple_icon.png');
   final Image googleIcon = Image.asset('assets/fonts/google_icon.png');
   final Image facebookIcon = Image.asset('assets/fonts/facebook_icon.png');
 
@@ -26,6 +26,7 @@ class SocialMediaButton extends StatelessWidget {
   static const Color twitterButtonColor = Color.fromRGBO(85, 172, 238, 1.0);
   static const Color googleButtonColor = Color.fromRGBO(255, 255, 255, 1.0);
   static const Color facebookButtonColor = Color.fromRGBO(63, 95, 175, 1);
+  static const Color appleButtonColor = Color.fromRGBO(36, 28, 36, 1);
 
   @override
   Widget build(BuildContext context) {

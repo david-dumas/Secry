@@ -1,16 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/constants.dart';
-import 'package:secry/presentation/pages/account/login_page.dart';
-import 'package:secry/presentation/pages/account/signup_page.dart';
-import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import '../../../application/auth/account_go_to_login_or_signup_page/account_go_to_login_or_signup_page_bloc.dart';
 import '../../../injection.dart';
-import 'widgets/or_divider.dart';
 import 'widgets/social_media_buttons.dart';
 
 class AccountGoToLoginOrSignUpPage extends StatelessWidget {
@@ -25,7 +20,6 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
           child: BlocBuilder<AccountGoToLoginOrSignupPageBloc, AccountGoToLoginOrSignupPageState>(
             builder: (context, state) {
               return Scaffold(
-                appBar: GeneralAppbar(),
                 body: Padding(
                   padding: EdgeInsets.only(bottom: 50.0),
                   child: Center(
@@ -42,62 +36,8 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                             ),
                             Text(tr('account_logged_out_overview_title'),
                                 textAlign: TextAlign.center,
-                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24)),
-                            SizedBox(height: 16),
-                            Text(
-                              tr("account_logged_out_overview_description"),
-                              textAlign: TextAlign.center,
-                              style: mainContentTextStyleMedium,
-                            ),
-                            SizedBox(height: 16),
-                            Container(
-                              width: MediaQuery.of(context).size.width,
-                              height: kButtonHeightMedium,
-                              child: ElevatedButton(
-                                style: ButtonStyle(
-                                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                                    RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(Radius.circular(kButtonRadiusMedium)),
-                                    ),
-                                  ),
-                                ),
-                                onPressed: () {
-                                  pushNewScreen(
-                                    context,
-                                    screen: SignupPage(),
-                                    withNavBar: true,
-                                    pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                  );
-                                },
-                                child: Text(
-                                  tr('action_create_account'),
-                                  style: buttonTextStyleMedium,
-                                ),
-                              ),
-                            ),
-                            SizedBox(height: 4),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                Text(tr('account_logged_out_question')),
-                                TextButton(
-                                  style: TextButton.styleFrom(
-                                    textStyle: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-                                  ),
-                                  onPressed: () {
-                                    pushNewScreenWithRouteSettings(
-                                      context,
-                                      settings: RouteSettings(name: LoginPageRoute.name),
-                                      screen: LoginPage(),
-                                      withNavBar: true,
-                                      pageTransitionAnimation: PageTransitionAnimation.cupertino,
-                                    );
-                                  },
-                                  child: Text(tr('action_login')),
-                                )
-                              ],
-                            ),
-                            OrDivider(),
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeMedium)),
+                            SizedBox(height: 100),
                             Column(
                               children: [
                                 SocialMediaButton(
@@ -114,14 +54,12 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                                 ),
                                 SocialMediaButton(
                                   context,
-                                  socialMediaIcon: Image.asset('assets/fonts/twitter_icon.png'),
-                                  buttonColor: SocialMediaButton.twitterButtonColor,
-                                  buttonText: tr('account_sign_up_with_twitter'),
+                                  socialMediaIcon: Image.asset('assets/fonts/apple_icon.png'),
+                                  buttonColor: SocialMediaButton.appleButtonColor,
+                                  buttonText: tr('action_sign_up_with_apple'),
                                   textColor: Colors.white,
                                   buttonPressed: () {
-                                    context
-                                        .read<AccountGoToLoginOrSignupPageBloc>()
-                                        .add(AccountGoToLoginOrSignupPageEvent.continueWithTwitterPressed());
+                                    // Todo add bloc event
                                   },
                                 ),
                                 SocialMediaButton(
