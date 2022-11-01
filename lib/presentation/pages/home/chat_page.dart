@@ -1,5 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:secry/infrastructure/chats/chats_api_service.dart';
+import 'package:secry/infrastructure/chats/chats_xmpp_service.dart';
 import 'package:secry/presentation/pages/home/chat_message_type.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
@@ -14,6 +16,8 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final chatsXmppService = ChatsXmppService();
+
     return Scaffold(
         appBar: GeneralAppbar(
           title: title,
@@ -61,6 +65,9 @@ class ChatPage extends StatelessWidget {
                 ChatMessage(message: 'message blooooooossfsdafassdfdsfadsfadsfskl', chatMessageType: ChatMessageType.sender),
                 ChatMessage(message: 'message blooooooossfsdafasfaskfalslkfasdkfaslfassdfasfasdfdsfadsfadsfskl', chatMessageType: ChatMessageType.receiver),
                 ChatMessage(message: 'First message', chatMessageType: ChatMessageType.receiver, hasSentMultipleImagesInARow: true),
+                TextButton(onPressed: () {
+                  chatsXmppService.connect();
+                }, child: Text('text'))
               ],
             ),
           ),
