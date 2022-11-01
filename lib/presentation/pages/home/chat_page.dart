@@ -58,6 +58,9 @@ class ChatPage extends StatelessWidget {
                 ChatMessage(message: 'message blooooooossfsdafasfaskfalslkfasdkfaslfassdfasfasdfdsfadsfadsfskl', chatMessageType: ChatMessageType.sender),
                 ChatMessage(message: 'message blooooooossfsdafasfaskfalslkfasdkfaslfassdfasfasdfdsfadsfadsfskl', chatMessageType: ChatMessageType.receiver),
                 ChatMessage(message: 'First message', chatMessageType: ChatMessageType.receiver, hasSentMultipleImagesInARow: true),
+                ChatMessage(message: 'message blooooooossfsdafassdfdsfadsfadsfskl', chatMessageType: ChatMessageType.sender),
+                ChatMessage(message: 'message blooooooossfsdafasfaskfalslkfasdkfaslfassdfasfasdfdsfadsfadsfskl', chatMessageType: ChatMessageType.receiver),
+                ChatMessage(message: 'First message', chatMessageType: ChatMessageType.receiver, hasSentMultipleImagesInARow: true),
               ],
             ),
           ),
@@ -77,7 +80,7 @@ class ChatMessage extends StatelessWidget {
     final media = MediaQuery.of(context).size;
 
     return Container(
-      padding: chatMessageType == ChatMessageType.sender ? (EdgeInsets.fromLTRB(media.width * 0.30, hasSentMultipleImagesInARow ? (10.0) : (0.0), 0.0, 20.0)) : (EdgeInsets.fromLTRB(0.0, hasSentMultipleImagesInARow ? (5.0) : (0.0), media.width * 0.30, 0.0)),
+      padding: chatMessageType == ChatMessageType.sender ? (EdgeInsets.fromLTRB(media.width * 0.30, hasSentMultipleImagesInARow ? (10.0) : (20.0), 0.0, 20.0)) : (EdgeInsets.fromLTRB(0.0, hasSentMultipleImagesInARow ? (5.0) : (0.0), media.width * 0.30, 0.0)),
       child: Container(
           child: Text(message, style: TextStyle(color: chatMessageType == ChatMessageType.sender ? (globalWhite) : (globalBlack))),
           padding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 10.0),
