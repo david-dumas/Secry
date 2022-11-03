@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:secry/domain/general/general_list_cell_info_item.dart';
-import 'package:secry/presentation/widgets/multi_avatar/avatar_painter.dart';
 
 import 'package:secry/constants.dart';
 
-import '../../../../domain/general/survey_question_answers.dart';
 import '../../../../domain/general/survey_questions_display_info_item.dart';
+import '../../../../domain/surveys/survey_questions_info.dart';
 
 class SurveyQuestionDisplay extends StatelessWidget {
   final SurveyQuestionDisplayInfoItem QuestionDisplayInfoItem;
+  final SurveyQuestionsInfo QuestionAnswerInfoItem;
   final int currentQuestion;
   final int totalQuestions;
+  final int stepIndex;
 
-  const SurveyQuestionDisplay({Key? key, required this.QuestionDisplayInfoItem, required this.currentQuestion, required this.totalQuestions}) : super(key: key);
+  const SurveyQuestionDisplay({Key? key, required this.stepIndex, required this.QuestionAnswerInfoItem, required this.QuestionDisplayInfoItem, required this.currentQuestion, required this.totalQuestions}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class SurveyQuestionDisplay extends StatelessWidget {
                       style: TextStyle(fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      QuestionDisplayInfoItem.type,
+                      QuestionAnswerInfoItem.answer,
                       overflow: TextOverflow.ellipsis,
                     )
                   ],

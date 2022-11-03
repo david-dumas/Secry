@@ -1,8 +1,6 @@
 import 'dart:convert';
 
 import 'package:injectable/injectable.dart';
-import 'package:secry/domain/general/group_overview_row_info.dart';
-import 'package:secry/domain/general/survey_row_info.dart';
 import 'package:secry/domain/surveys/i_surveys_repository.dart';
 import 'package:secry/util/network_and_requests/response_util.dart';
 
@@ -16,24 +14,22 @@ class SurveysRepository extends ISurveysRepository {
 
   SurveysRepository(this._surveysApiService) : super();
 
+
   @override
-  Future<List<SurveyQuestionsInfo>> getSurveysDummyData() async {
+  Future<List<SurveyQuestionGeneralInfo>>
+  getSurveysDummyData() async {
     try {
-      print("GO");
-      final response = await _surveysApiService.api.getSurveyDummyData();
+      final response = await _surveysApiService.api.getSurveysDummyData();
       if (response.isSuccessful) {
-        print(response.data);
         final mappedData = json.decode(response.data) as Map<String, dynamic>;
-        List<SurveyQuestionsInfo> surveyQuestionsInfoData = [];
+        List<SurveyQuestionGeneralInfo> surveyQuestionsInfo = [];
         if (mappedData.containsKey('questions')) {
-          print("Ghello");
           List<dynamic> questions = mappedData["questions"];
-          print("length: ${questions.length}");
-          surveyQuestionsInfoData =
-              (questions).map((json) => SurveyQuestionsInfo.fromJsonMap(json))
+          surveyQuestionsInfo =
+              (questions).map((json) => SurveyQuestionGeneralInfo.fromJsonMap(json))
                   .toList();
         }
-        return surveyQuestionsInfoData;
+        return surveyQuestionsInfo;
       }
       else {
         print("list empty");
@@ -45,55 +41,32 @@ class SurveysRepository extends ISurveysRepository {
       return List.empty();
     }
   }
+
   @override
-  Future<SurveyQuestionGeneralInfo?>
-  updateSurveysDummyData() async {
-    try {
-      print("1");
-      final response =
-      await _surveysApiService.api.updateSurveysDummyData();
+  Future<List<SurveyQuestionsInfo>> getSurveyQuestionDummyData(questionId) async {
 
-      if (response.isSuccessful) {
-        print("2");
-        final mappedData = json.decode(response.data) as Map<String, dynamic>;
-
-        if (!mappedData.containsKey('id')) {
-          return null;
+      try {
+        final response = await _surveysApiService.api.getSurveyQuestionDummyData();
+        if (response.isSuccessful) {
+          final mappedData = json.decode(response.data) as Map<String, dynamic>;
+          List<SurveyQuestionsInfo> surveyQuestionsInfoData = [];
+          if (mappedData.containsKey('answers')) {
+            List<dynamic> questions = mappedData["answers"];
+            surveyQuestionsInfoData =
+                (questions).map((json) => SurveyQuestionsInfo.fromJsonMap(json))
+                    .toList();
+          }
+          return surveyQuestionsInfoData;
         }
-
-        List<SurveyQuestionsInfo> surveyQuestionsInfoData = [];
-
-        final String id = mappedData.containsKey('questionId')
-            ? (mappedData['questionId'] != null ? mappedData['questionId'] : '')
-            : '';
-        final String title = mappedData.containsKey('questiontitle')
-            ? (mappedData['questiontitle'] != null ? mappedData['questiontitle'] : '')
-            : '';
-        final DateTime? groupCreatedAt = mappedData.containsKey('createdAt')
-            ? (mappedData['createdAt'] != null
-            ? DateTime.fromMillisecondsSinceEpoch(mappedData['createdAt'])
-            : null)
-            : null;
-
-        if (mappedData.containsKey('questions')) {
-          List<dynamic> questions = mappedData["questions"];
-          surveyQuestionsInfoData =
-              (questions).map((json) => SurveyQuestionsInfo.fromJsonMap(json))
-              .toList();
+        else {
+          print("list empty");
+          return List.empty();
         }
-
-        final surveyQuestionGeneralInfo = SurveyQuestionGeneralInfo(
-            id: id,
-            title: title,
-            createdAt: groupCreatedAt,
-            questions: surveyQuestionsInfoData);
-        return surveyQuestionGeneralInfo;
-      } else {
-        return null;
+      } catch (error) {
+        print("catch!");
+        print(error);
+        return List.empty();
       }
-    } catch (error) {
-      print(error);
-      return null;
-    }
   }
+
 }

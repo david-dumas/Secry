@@ -1,11 +1,9 @@
 import 'dart:math';
 
-import 'package:dartz/dartz.dart';
 import 'package:easy_localization/easy_localization.dart';
 
 import 'package:flutter/material.dart';
 import 'package:secry/domain/surveys/model/question.dart';
-import 'package:secry/domain/surveys/model/survey_question_failure.dart';
 import 'package:secry/domain/users/group_user.dart';
 import 'package:secry/constants.dart';
 import 'package:secry/presentation/pages/add_group/widgets/bottom_navigation_buttons_top_action_section.dart';

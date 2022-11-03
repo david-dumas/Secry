@@ -10,7 +10,7 @@ part of 'i_surveys_api_service.dart';
 
 class _ISurveysApiService implements ISurveysApiService {
   _ISurveysApiService(this._dio, {this.baseUrl}) {
-    baseUrl ??= 'https://565e82e3-a775-4933-a532-252da9f8dbe6.mock.pstmn.io';
+    baseUrl ??= 'https://b07bbbf9-19ec-45bd-a4c7-6b142ffc8716.mock.pstmn.io';
   }
 
   final Dio _dio;
@@ -18,7 +18,7 @@ class _ISurveysApiService implements ISurveysApiService {
   String? baseUrl;
 
   @override
-  Future<HttpResponse<dynamic>> getSurveyDummyData() async {
+  Future<HttpResponse<dynamic>> getSurveysDummyData() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -34,14 +34,14 @@ class _ISurveysApiService implements ISurveysApiService {
   }
 
   @override
-  Future<HttpResponse<dynamic>> updateSurveysDummyData() async {
+  Future<HttpResponse<dynamic>> getSurveyQuestionDummyData() async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
         Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/surveys',
+            .compose(_dio.options, '/{questionId}',
                 queryParameters: queryParameters, data: _data)
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;

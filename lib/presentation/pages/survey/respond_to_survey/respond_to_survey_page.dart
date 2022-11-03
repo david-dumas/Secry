@@ -1,10 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:secry/domain/general/survey_row_info.dart';
 
 import '../../../../application/surveys/surveys_bloc.dart';
-import '../../../../domain/general/survey_question_answers.dart';
 import '../../../../domain/general/survey_questions_display_info_item.dart';
 import '../../../../domain/surveys/survey_questions_info.dart';
 import '../../../../injection.dart';
@@ -23,8 +21,6 @@ class RespondToSurveyPage extends StatelessWidget {
       create: (context) => getIt<SurveysBloc>()..add(SurveysEvent.initialized(this.groupId)),
       child: BlocBuilder<SurveysBloc, SurveysState>(
         builder: (context, state) {
-          print(context);
-          print(state);
           return Container(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
@@ -37,16 +33,21 @@ class RespondToSurveyPage extends StatelessWidget {
                         ? Container()
                         : SurveyQuestionDisplay(
                             QuestionDisplayInfoItem: SurveyQuestionDisplayInfoItem(
-                                id: state.SurveyQuestionsInfo[state.currentQuestion].id,
-                                title: state.SurveyQuestionsInfo[state.currentQuestion].title,
-                                type: state.SurveyQuestionsInfo[state.currentQuestion].type),
-                            currentQuestion: state.currentQuestion,
+                                id: state.GeneralSurveyInfo[state.currentQuestionIndex].questionId,
+                                title: state.GeneralSurveyInfo[state.currentQuestionIndex].title,
+                                type: state.GeneralSurveyInfo[state.currentQuestionIndex].type),
+                            QuestionAnswerInfoItem: SurveyQuestionsInfo(
+                              answerId: state.SurveyQuestionsInfo[state.currentQuestionIndex].answerId,
+                              answer: state.SurveyQuestionsInfo[state.currentQuestionIndex].answer
+                            ),
+                            currentQuestion: state.currentQuestionIndex,
                             totalQuestions: state.totalQuestions,
+                        stepIndex: state.currentQuestionIndex
                           )),
                 BottomNavigationButtonsSurveySection(
-                  stepIndex: state.currentQuestion,
+                  stepIndex: state.currentQuestionIndex,
                   totalQuestions: state.totalQuestions,
-                  surveyQuestions: state.SurveyQuestionsInfo,
+                  // surveyQuestions: state.GeneralSurveyInfo,
                   currentStepIndexUpdated: (newIndex) {
                     context.read<SurveysBloc>().add(SurveysEvent.currentQuestionUpdated(newIndex));
                   },

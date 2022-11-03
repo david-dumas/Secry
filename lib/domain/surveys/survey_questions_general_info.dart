@@ -1,29 +1,24 @@
-import 'package:secry/domain/surveys/survey_questions_info.dart';
-
 class SurveyQuestionGeneralInfo {
-  final String id;
+  final String questionId;
   final String title;
-  final DateTime? createdAt;
-  final List<SurveyQuestionsInfo> questions;
+  final String type;
 
   SurveyQuestionGeneralInfo(
-      {required this.id,
-        required this.title,
-        this.createdAt = null,
-        required this.questions});
+      {required this.questionId,
+      required this.title,
+      required this.type});
 
   factory SurveyQuestionGeneralInfo.fromJsonMap(
       Map<String, dynamic> json) {
     return SurveyQuestionGeneralInfo(
-        id: json.containsKey('id')
-            ? ((json['id'] is String) ? json['id'] : '')
+        questionId: json.containsKey('questionId')
+            ? ((json['questionId'] is String) ? json['questionId'] : '')
             : '',
-        title: json.containsKey('title') ? json['title'] : '',
-        createdAt: json.containsKey('createdAt')
-            ? (json['createdAt'] != null
-            ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000)
-            : null)
-            : null,
-        questions: json.containsKey('question') ? json['question'] : []);
+        title: json.containsKey('title')
+            ? ((json['title'] is String) ? json['title'] : '')
+            : '',
+        type: json.containsKey('type')
+            ? ((json['type'] is String) ? json['type'] : '')
+            : '');
   }
 }

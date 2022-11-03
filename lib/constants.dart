@@ -7,7 +7,7 @@ const baseUrl = "https://secryapi.azurewebsites.net";
 const temporaryPostmanBaseUrl = "https://10535ad9-1804-4207-b556-54f9e7572e48.mock.pstmn.io";
 const temporaryPostmanGetGroupdForHomepageUrl = "https://e46a14dc-e806-4540-b22e-4567300546ad.mock.pstmn.io";
 const temporaryPostmanPrivateChatsUrl = "https://e6e670c2-7eb3-4bae-81e4-0ecebaa88385.mock.pstmn.io";
-const temporaryPostmanPrivateSurveysUrl = "https://565e82e3-a775-4933-a532-252da9f8dbe6.mock.pstmn.io";
+const temporaryPostmanPrivateSurveysUrl = "https://b07bbbf9-19ec-45bd-a4c7-6b142ffc8716.mock.pstmn.io";
 const temporaryPostmanGetUsersForCreateNewGroup = "https://b45c710f-f287-487b-8f85-fc63a088a546.mock.pstmn.io";
 const temporaryPostmanGetGroupOverviewDummyData = "https://0de92fcd-2f4c-4111-b6d3-34176fce4202.mock.pstmn.io";
 

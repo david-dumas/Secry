@@ -1,35 +1,18 @@
 class SurveyQuestionsInfo {
-  final String id;
-  final String title;
-  final String type;
-  final List answers;
-  final DateTime? createdAt;
+  final String answerId;
+  final String answer;
 
   SurveyQuestionsInfo(
-      {required this.id,
-        required this.title,
-        required this.type,
-        required this.answers,
-        this.createdAt = null});
+      {required this.answerId,
+        required this.answer});
 
   factory SurveyQuestionsInfo.fromJsonMap(Map<String, dynamic> json) {
     return SurveyQuestionsInfo(
-        id: json.containsKey('questionId')
+        answerId: json.containsKey('questionId')
             ? (json['questionId'] != null ? json['questionId'] : '')
             : '',
-        title: json.containsKey('questiontitle')
+        answer: json.containsKey('questiontitle')
             ? (json['questiontitle'] != null ? json['questiontitle'] : '')
-            : '',
-        type: json.containsKey('questiontype')
-            ? (json['questiontype'] != null ? json['questiontype'] : '')
-            : '',
-        answers: json.containsKey('answers')
-            ? (json['answers'] != null ? json['answers'] : '')
-            : '',
-        createdAt: json.containsKey('createdAt')
-            ? (json['createdAt'] != null
-            ? DateTime.fromMillisecondsSinceEpoch(json['createdAt'] * 1000)
-            : null)
-            : null);
+            : '');
   }
 }

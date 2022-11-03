@@ -1,5 +1,3 @@
-import 'package:flutter_svg/flutter_svg.dart';
-
 class SurveyQuestionDisplayInfoItem {
   final String id;
   final String title;
