@@ -6,13 +6,19 @@ import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/presentation/widgets/multi_avatar/svg_wrapper.dart';
 
 class AvatarHelper {
-  Future<void> addSvgToGroupRowsInfo(List<GroupOverviewRowInfo> infoRows) async {
-    final listWithSvgs = await _generateAvatarSvgs(infoRows.length);
+  Future<bool> addSvgToGroupRowsInfo(List<GroupOverviewRowInfo> infoRows) async {
+    try {
+      final listWithSvgs = await _generateAvatarSvgs(infoRows.length);
 
-    for (int i = 0; i < infoRows.length; i++) {
-      if (listWithSvgs.length > i) {
-        infoRows[i].svg = listWithSvgs[i];
+      for (int i = 0; i < infoRows.length; i++) {
+        if (listWithSvgs.length > i) {
+          infoRows[i].svg = listWithSvgs[i];
+        }
       }
+
+      return true;
+    } catch (e) {
+      return false;
     }
   }
 
