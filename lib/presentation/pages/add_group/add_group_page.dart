@@ -91,7 +91,12 @@ class AddGroupPageContent extends StatelessWidget {
   }
 
   List<GroupUser> getUsersFromListThatAreNotInOtherList(List<GroupUser> list1, List<GroupUser> list2) {
-    return [...list1]..removeWhere(
-        (usersForSearchQueryUser) => list2.firstWhereOrNull((user) => usersForSearchQueryUser.id == user.id) != null);
+    /// Removes all users from list one that are not in list two
+    return [...list1]..removeWhere((usersFromListOne) =>
+        list2
+            .firstWhere((userFromListTwo) => usersFromListOne.id == userFromListTwo.id,
+                orElse: () => GroupUser(id: "", fullName: ""))
+            .id !=
+        "");
   }
 }

@@ -12,19 +12,7 @@ part of 'main_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$MainEventTearOff {
-  const _$MainEventTearOff();
-
-  _Initialized initialized() {
-    return const _Initialized();
-  }
-}
-
-/// @nodoc
-const $MainEvent = _$MainEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$MainEvent {
@@ -35,7 +23,7 @@ mixin _$MainEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult? Function()? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,7 +39,7 @@ mixin _$MainEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
+    TResult? Function(_Initialized value)? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -65,34 +53,34 @@ mixin _$MainEvent {
 /// @nodoc
 abstract class $MainEventCopyWith<$Res> {
   factory $MainEventCopyWith(MainEvent value, $Res Function(MainEvent) then) =
-      _$MainEventCopyWithImpl<$Res>;
+      _$MainEventCopyWithImpl<$Res, MainEvent>;
 }
 
 /// @nodoc
-class _$MainEventCopyWithImpl<$Res> implements $MainEventCopyWith<$Res> {
+class _$MainEventCopyWithImpl<$Res, $Val extends MainEvent>
+    implements $MainEventCopyWith<$Res> {
   _$MainEventCopyWithImpl(this._value, this._then);
 
-  final MainEvent _value;
   // ignore: unused_field
-  final $Res Function(MainEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$InitializedCopyWith<$Res> {
-  factory _$InitializedCopyWith(
-          _Initialized value, $Res Function(_Initialized) then) =
-      __$InitializedCopyWithImpl<$Res>;
+abstract class _$$_InitializedCopyWith<$Res> {
+  factory _$$_InitializedCopyWith(
+          _$_Initialized value, $Res Function(_$_Initialized) then) =
+      __$$_InitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$InitializedCopyWithImpl<$Res> extends _$MainEventCopyWithImpl<$Res>
-    implements _$InitializedCopyWith<$Res> {
-  __$InitializedCopyWithImpl(
-      _Initialized _value, $Res Function(_Initialized) _then)
-      : super(_value, (v) => _then(v as _Initialized));
-
-  @override
-  _Initialized get _value => super._value as _Initialized;
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$MainEventCopyWithImpl<$Res, _$_Initialized>
+    implements _$$_InitializedCopyWith<$Res> {
+  __$$_InitializedCopyWithImpl(
+      _$_Initialized _value, $Res Function(_$_Initialized) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -108,7 +96,7 @@ class _$_Initialized implements _Initialized {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Initialized);
+        (other.runtimeType == runtimeType && other is _$_Initialized);
   }
 
   @override
@@ -125,7 +113,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
+    TResult? Function()? initialized,
   }) {
     return initialized?.call();
   }
@@ -153,7 +141,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
+    TResult? Function(_Initialized value)? initialized,
   }) {
     return initialized?.call(this);
   }
@@ -176,20 +164,6 @@ abstract class _Initialized implements MainEvent {
 }
 
 /// @nodoc
-class _$MainStateTearOff {
-  const _$MainStateTearOff();
-
-  _MainState call({required int initialState}) {
-    return _MainState(
-      initialState: initialState,
-    );
-  }
-}
-
-/// @nodoc
-const $MainState = _$MainStateTearOff();
-
-/// @nodoc
 mixin _$MainState {
   int get initialState => throw _privateConstructorUsedError;
 
@@ -201,55 +175,60 @@ mixin _$MainState {
 /// @nodoc
 abstract class $MainStateCopyWith<$Res> {
   factory $MainStateCopyWith(MainState value, $Res Function(MainState) then) =
-      _$MainStateCopyWithImpl<$Res>;
+      _$MainStateCopyWithImpl<$Res, MainState>;
+  @useResult
   $Res call({int initialState});
 }
 
 /// @nodoc
-class _$MainStateCopyWithImpl<$Res> implements $MainStateCopyWith<$Res> {
+class _$MainStateCopyWithImpl<$Res, $Val extends MainState>
+    implements $MainStateCopyWith<$Res> {
   _$MainStateCopyWithImpl(this._value, this._then);
 
-  final MainState _value;
   // ignore: unused_field
-  final $Res Function(MainState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialState = freezed,
+    Object? initialState = null,
   }) {
     return _then(_value.copyWith(
-      initialState: initialState == freezed
+      initialState: null == initialState
           ? _value.initialState
           : initialState // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
-  factory _$MainStateCopyWith(
-          _MainState value, $Res Function(_MainState) then) =
-      __$MainStateCopyWithImpl<$Res>;
+abstract class _$$_MainStateCopyWith<$Res> implements $MainStateCopyWith<$Res> {
+  factory _$$_MainStateCopyWith(
+          _$_MainState value, $Res Function(_$_MainState) then) =
+      __$$_MainStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int initialState});
 }
 
 /// @nodoc
-class __$MainStateCopyWithImpl<$Res> extends _$MainStateCopyWithImpl<$Res>
-    implements _$MainStateCopyWith<$Res> {
-  __$MainStateCopyWithImpl(_MainState _value, $Res Function(_MainState) _then)
-      : super(_value, (v) => _then(v as _MainState));
+class __$$_MainStateCopyWithImpl<$Res>
+    extends _$MainStateCopyWithImpl<$Res, _$_MainState>
+    implements _$$_MainStateCopyWith<$Res> {
+  __$$_MainStateCopyWithImpl(
+      _$_MainState _value, $Res Function(_$_MainState) _then)
+      : super(_value, _then);
 
-  @override
-  _MainState get _value => super._value as _MainState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? initialState = freezed,
+    Object? initialState = null,
   }) {
-    return _then(_MainState(
-      initialState: initialState == freezed
+    return _then(_$_MainState(
+      initialState: null == initialState
           ? _value.initialState
           : initialState // ignore: cast_nullable_to_non_nullable
               as int,
@@ -274,28 +253,28 @@ class _$_MainState implements _MainState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _MainState &&
-            const DeepCollectionEquality()
-                .equals(other.initialState, initialState));
+            other is _$_MainState &&
+            (identical(other.initialState, initialState) ||
+                other.initialState == initialState));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(initialState));
+  int get hashCode => Object.hash(runtimeType, initialState);
 
   @JsonKey(ignore: true)
   @override
-  _$MainStateCopyWith<_MainState> get copyWith =>
-      __$MainStateCopyWithImpl<_MainState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
+      __$$_MainStateCopyWithImpl<_$_MainState>(this, _$identity);
 }
 
 abstract class _MainState implements MainState {
-  const factory _MainState({required int initialState}) = _$_MainState;
+  const factory _MainState({required final int initialState}) = _$_MainState;
 
   @override
   int get initialState;
   @override
   @JsonKey(ignore: true)
-  _$MainStateCopyWith<_MainState> get copyWith =>
+  _$$_MainStateCopyWith<_$_MainState> get copyWith =>
       throw _privateConstructorUsedError;
 }

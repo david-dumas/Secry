@@ -12,54 +12,7 @@ part of 'sign_in_form_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$SignInFormEventTearOff {
-  const _$SignInFormEventTearOff();
-
-  _SignInForm initialized() {
-    return const _SignInForm();
-  }
-
-  _IsShowingClearEmailInputToggled isShowingClearEmailInputToggled(
-      bool isShowing) {
-    return _IsShowingClearEmailInputToggled(
-      isShowing,
-    );
-  }
-
-  _IsShowingPasswordToggled isShowingPasswordToggled(bool isShowing) {
-    return _IsShowingPasswordToggled(
-      isShowing,
-    );
-  }
-
-  _IsShowingErrorMessagesUpdated isShowingErrorMessagesUpdated(bool isShowing) {
-    return _IsShowingErrorMessagesUpdated(
-      isShowing,
-    );
-  }
-
-  _SignInPressed signInPressed() {
-    return const _SignInPressed();
-  }
-
-  _EmailChanged emailChanged(String newEmail) {
-    return _EmailChanged(
-      newEmail,
-    );
-  }
-
-  _PasswordChanged passwordChanged(String newPassword) {
-    return _PasswordChanged(
-      newPassword,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInFormEvent = _$SignInFormEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$SignInFormEvent {
@@ -76,13 +29,13 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -113,15 +66,16 @@ mixin _$SignInFormEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -144,36 +98,34 @@ mixin _$SignInFormEvent {
 abstract class $SignInFormEventCopyWith<$Res> {
   factory $SignInFormEventCopyWith(
           SignInFormEvent value, $Res Function(SignInFormEvent) then) =
-      _$SignInFormEventCopyWithImpl<$Res>;
+      _$SignInFormEventCopyWithImpl<$Res, SignInFormEvent>;
 }
 
 /// @nodoc
-class _$SignInFormEventCopyWithImpl<$Res>
+class _$SignInFormEventCopyWithImpl<$Res, $Val extends SignInFormEvent>
     implements $SignInFormEventCopyWith<$Res> {
   _$SignInFormEventCopyWithImpl(this._value, this._then);
 
-  final SignInFormEvent _value;
   // ignore: unused_field
-  final $Res Function(SignInFormEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$SignInFormCopyWith<$Res> {
-  factory _$SignInFormCopyWith(
-          _SignInForm value, $Res Function(_SignInForm) then) =
-      __$SignInFormCopyWithImpl<$Res>;
+abstract class _$$_SignInFormCopyWith<$Res> {
+  factory _$$_SignInFormCopyWith(
+          _$_SignInForm value, $Res Function(_$_SignInForm) then) =
+      __$$_SignInFormCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInFormCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$SignInFormCopyWith<$Res> {
-  __$SignInFormCopyWithImpl(
-      _SignInForm _value, $Res Function(_SignInForm) _then)
-      : super(_value, (v) => _then(v as _SignInForm));
-
-  @override
-  _SignInForm get _value => super._value as _SignInForm;
+class __$$_SignInFormCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$_SignInForm>
+    implements _$$_SignInFormCopyWith<$Res> {
+  __$$_SignInFormCopyWithImpl(
+      _$_SignInForm _value, $Res Function(_$_SignInForm) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -189,7 +141,7 @@ class _$_SignInForm implements _SignInForm {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInForm);
+        (other.runtimeType == runtimeType && other is _$_SignInForm);
   }
 
   @override
@@ -212,13 +164,13 @@ class _$_SignInForm implements _SignInForm {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) {
     return initialized?.call();
   }
@@ -261,15 +213,16 @@ class _$_SignInForm implements _SignInForm {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return initialized?.call(this);
   }
@@ -300,33 +253,32 @@ abstract class _SignInForm implements SignInFormEvent {
 }
 
 /// @nodoc
-abstract class _$IsShowingClearEmailInputToggledCopyWith<$Res> {
-  factory _$IsShowingClearEmailInputToggledCopyWith(
-          _IsShowingClearEmailInputToggled value,
-          $Res Function(_IsShowingClearEmailInputToggled) then) =
-      __$IsShowingClearEmailInputToggledCopyWithImpl<$Res>;
+abstract class _$$_IsShowingClearEmailInputToggledCopyWith<$Res> {
+  factory _$$_IsShowingClearEmailInputToggledCopyWith(
+          _$_IsShowingClearEmailInputToggled value,
+          $Res Function(_$_IsShowingClearEmailInputToggled) then) =
+      __$$_IsShowingClearEmailInputToggledCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isShowing});
 }
 
 /// @nodoc
-class __$IsShowingClearEmailInputToggledCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$IsShowingClearEmailInputToggledCopyWith<$Res> {
-  __$IsShowingClearEmailInputToggledCopyWithImpl(
-      _IsShowingClearEmailInputToggled _value,
-      $Res Function(_IsShowingClearEmailInputToggled) _then)
-      : super(_value, (v) => _then(v as _IsShowingClearEmailInputToggled));
+class __$$_IsShowingClearEmailInputToggledCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res,
+        _$_IsShowingClearEmailInputToggled>
+    implements _$$_IsShowingClearEmailInputToggledCopyWith<$Res> {
+  __$$_IsShowingClearEmailInputToggledCopyWithImpl(
+      _$_IsShowingClearEmailInputToggled _value,
+      $Res Function(_$_IsShowingClearEmailInputToggled) _then)
+      : super(_value, _then);
 
-  @override
-  _IsShowingClearEmailInputToggled get _value =>
-      super._value as _IsShowingClearEmailInputToggled;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isShowing = freezed,
+    Object? isShowing = null,
   }) {
-    return _then(_IsShowingClearEmailInputToggled(
-      isShowing == freezed
+    return _then(_$_IsShowingClearEmailInputToggled(
+      null == isShowing
           ? _value.isShowing
           : isShowing // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -352,19 +304,21 @@ class _$_IsShowingClearEmailInputToggled
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IsShowingClearEmailInputToggled &&
-            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+            other is _$_IsShowingClearEmailInputToggled &&
+            (identical(other.isShowing, isShowing) ||
+                other.isShowing == isShowing));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+  int get hashCode => Object.hash(runtimeType, isShowing);
 
   @JsonKey(ignore: true)
   @override
-  _$IsShowingClearEmailInputToggledCopyWith<_IsShowingClearEmailInputToggled>
-      get copyWith => __$IsShowingClearEmailInputToggledCopyWithImpl<
-          _IsShowingClearEmailInputToggled>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_IsShowingClearEmailInputToggledCopyWith<
+          _$_IsShowingClearEmailInputToggled>
+      get copyWith => __$$_IsShowingClearEmailInputToggledCopyWithImpl<
+          _$_IsShowingClearEmailInputToggled>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -383,13 +337,13 @@ class _$_IsShowingClearEmailInputToggled
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) {
     return isShowingClearEmailInputToggled?.call(isShowing);
   }
@@ -432,15 +386,16 @@ class _$_IsShowingClearEmailInputToggled
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return isShowingClearEmailInputToggled?.call(this);
   }
@@ -467,41 +422,41 @@ class _$_IsShowingClearEmailInputToggled
 }
 
 abstract class _IsShowingClearEmailInputToggled implements SignInFormEvent {
-  const factory _IsShowingClearEmailInputToggled(bool isShowing) =
+  const factory _IsShowingClearEmailInputToggled(final bool isShowing) =
       _$_IsShowingClearEmailInputToggled;
 
   bool get isShowing;
   @JsonKey(ignore: true)
-  _$IsShowingClearEmailInputToggledCopyWith<_IsShowingClearEmailInputToggled>
+  _$$_IsShowingClearEmailInputToggledCopyWith<
+          _$_IsShowingClearEmailInputToggled>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$IsShowingPasswordToggledCopyWith<$Res> {
-  factory _$IsShowingPasswordToggledCopyWith(_IsShowingPasswordToggled value,
-          $Res Function(_IsShowingPasswordToggled) then) =
-      __$IsShowingPasswordToggledCopyWithImpl<$Res>;
+abstract class _$$_IsShowingPasswordToggledCopyWith<$Res> {
+  factory _$$_IsShowingPasswordToggledCopyWith(
+          _$_IsShowingPasswordToggled value,
+          $Res Function(_$_IsShowingPasswordToggled) then) =
+      __$$_IsShowingPasswordToggledCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isShowing});
 }
 
 /// @nodoc
-class __$IsShowingPasswordToggledCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$IsShowingPasswordToggledCopyWith<$Res> {
-  __$IsShowingPasswordToggledCopyWithImpl(_IsShowingPasswordToggled _value,
-      $Res Function(_IsShowingPasswordToggled) _then)
-      : super(_value, (v) => _then(v as _IsShowingPasswordToggled));
+class __$$_IsShowingPasswordToggledCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$_IsShowingPasswordToggled>
+    implements _$$_IsShowingPasswordToggledCopyWith<$Res> {
+  __$$_IsShowingPasswordToggledCopyWithImpl(_$_IsShowingPasswordToggled _value,
+      $Res Function(_$_IsShowingPasswordToggled) _then)
+      : super(_value, _then);
 
-  @override
-  _IsShowingPasswordToggled get _value =>
-      super._value as _IsShowingPasswordToggled;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isShowing = freezed,
+    Object? isShowing = null,
   }) {
-    return _then(_IsShowingPasswordToggled(
-      isShowing == freezed
+    return _then(_$_IsShowingPasswordToggled(
+      null == isShowing
           ? _value.isShowing
           : isShowing // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -526,19 +481,20 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IsShowingPasswordToggled &&
-            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+            other is _$_IsShowingPasswordToggled &&
+            (identical(other.isShowing, isShowing) ||
+                other.isShowing == isShowing));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+  int get hashCode => Object.hash(runtimeType, isShowing);
 
   @JsonKey(ignore: true)
   @override
-  _$IsShowingPasswordToggledCopyWith<_IsShowingPasswordToggled> get copyWith =>
-      __$IsShowingPasswordToggledCopyWithImpl<_IsShowingPasswordToggled>(
-          this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_IsShowingPasswordToggledCopyWith<_$_IsShowingPasswordToggled>
+      get copyWith => __$$_IsShowingPasswordToggledCopyWithImpl<
+          _$_IsShowingPasswordToggled>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -557,13 +513,13 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) {
     return isShowingPasswordToggled?.call(isShowing);
   }
@@ -606,15 +562,16 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return isShowingPasswordToggled?.call(this);
   }
@@ -641,43 +598,42 @@ class _$_IsShowingPasswordToggled implements _IsShowingPasswordToggled {
 }
 
 abstract class _IsShowingPasswordToggled implements SignInFormEvent {
-  const factory _IsShowingPasswordToggled(bool isShowing) =
+  const factory _IsShowingPasswordToggled(final bool isShowing) =
       _$_IsShowingPasswordToggled;
 
   bool get isShowing;
   @JsonKey(ignore: true)
-  _$IsShowingPasswordToggledCopyWith<_IsShowingPasswordToggled> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$_IsShowingPasswordToggledCopyWith<_$_IsShowingPasswordToggled>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
-  factory _$IsShowingErrorMessagesUpdatedCopyWith(
-          _IsShowingErrorMessagesUpdated value,
-          $Res Function(_IsShowingErrorMessagesUpdated) then) =
-      __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>;
+abstract class _$$_IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  factory _$$_IsShowingErrorMessagesUpdatedCopyWith(
+          _$_IsShowingErrorMessagesUpdated value,
+          $Res Function(_$_IsShowingErrorMessagesUpdated) then) =
+      __$$_IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isShowing});
 }
 
 /// @nodoc
-class __$IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$IsShowingErrorMessagesUpdatedCopyWith<$Res> {
-  __$IsShowingErrorMessagesUpdatedCopyWithImpl(
-      _IsShowingErrorMessagesUpdated _value,
-      $Res Function(_IsShowingErrorMessagesUpdated) _then)
-      : super(_value, (v) => _then(v as _IsShowingErrorMessagesUpdated));
+class __$$_IsShowingErrorMessagesUpdatedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res,
+        _$_IsShowingErrorMessagesUpdated>
+    implements _$$_IsShowingErrorMessagesUpdatedCopyWith<$Res> {
+  __$$_IsShowingErrorMessagesUpdatedCopyWithImpl(
+      _$_IsShowingErrorMessagesUpdated _value,
+      $Res Function(_$_IsShowingErrorMessagesUpdated) _then)
+      : super(_value, _then);
 
-  @override
-  _IsShowingErrorMessagesUpdated get _value =>
-      super._value as _IsShowingErrorMessagesUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isShowing = freezed,
+    Object? isShowing = null,
   }) {
-    return _then(_IsShowingErrorMessagesUpdated(
-      isShowing == freezed
+    return _then(_$_IsShowingErrorMessagesUpdated(
+      null == isShowing
           ? _value.isShowing
           : isShowing // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -703,19 +659,20 @@ class _$_IsShowingErrorMessagesUpdated
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IsShowingErrorMessagesUpdated &&
-            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+            other is _$_IsShowingErrorMessagesUpdated &&
+            (identical(other.isShowing, isShowing) ||
+                other.isShowing == isShowing));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+  int get hashCode => Object.hash(runtimeType, isShowing);
 
   @JsonKey(ignore: true)
   @override
-  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
-      get copyWith => __$IsShowingErrorMessagesUpdatedCopyWithImpl<
-          _IsShowingErrorMessagesUpdated>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_IsShowingErrorMessagesUpdatedCopyWith<_$_IsShowingErrorMessagesUpdated>
+      get copyWith => __$$_IsShowingErrorMessagesUpdatedCopyWithImpl<
+          _$_IsShowingErrorMessagesUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -734,13 +691,13 @@ class _$_IsShowingErrorMessagesUpdated
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) {
     return isShowingErrorMessagesUpdated?.call(isShowing);
   }
@@ -783,15 +740,16 @@ class _$_IsShowingErrorMessagesUpdated
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return isShowingErrorMessagesUpdated?.call(this);
   }
@@ -818,32 +776,29 @@ class _$_IsShowingErrorMessagesUpdated
 }
 
 abstract class _IsShowingErrorMessagesUpdated implements SignInFormEvent {
-  const factory _IsShowingErrorMessagesUpdated(bool isShowing) =
+  const factory _IsShowingErrorMessagesUpdated(final bool isShowing) =
       _$_IsShowingErrorMessagesUpdated;
 
   bool get isShowing;
   @JsonKey(ignore: true)
-  _$IsShowingErrorMessagesUpdatedCopyWith<_IsShowingErrorMessagesUpdated>
+  _$$_IsShowingErrorMessagesUpdatedCopyWith<_$_IsShowingErrorMessagesUpdated>
       get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$SignInPressedCopyWith<$Res> {
-  factory _$SignInPressedCopyWith(
-          _SignInPressed value, $Res Function(_SignInPressed) then) =
-      __$SignInPressedCopyWithImpl<$Res>;
+abstract class _$$_SignInPressedCopyWith<$Res> {
+  factory _$$_SignInPressedCopyWith(
+          _$_SignInPressed value, $Res Function(_$_SignInPressed) then) =
+      __$$_SignInPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$SignInPressedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$SignInPressedCopyWith<$Res> {
-  __$SignInPressedCopyWithImpl(
-      _SignInPressed _value, $Res Function(_SignInPressed) _then)
-      : super(_value, (v) => _then(v as _SignInPressed));
-
-  @override
-  _SignInPressed get _value => super._value as _SignInPressed;
+class __$$_SignInPressedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$_SignInPressed>
+    implements _$$_SignInPressedCopyWith<$Res> {
+  __$$_SignInPressedCopyWithImpl(
+      _$_SignInPressed _value, $Res Function(_$_SignInPressed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -859,7 +814,7 @@ class _$_SignInPressed implements _SignInPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _SignInPressed);
+        (other.runtimeType == runtimeType && other is _$_SignInPressed);
   }
 
   @override
@@ -882,13 +837,13 @@ class _$_SignInPressed implements _SignInPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) {
     return signInPressed?.call();
   }
@@ -931,15 +886,16 @@ class _$_SignInPressed implements _SignInPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return signInPressed?.call(this);
   }
@@ -970,30 +926,29 @@ abstract class _SignInPressed implements SignInFormEvent {
 }
 
 /// @nodoc
-abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(
-          _EmailChanged value, $Res Function(_EmailChanged) then) =
-      __$EmailChangedCopyWithImpl<$Res>;
+abstract class _$$_EmailChangedCopyWith<$Res> {
+  factory _$$_EmailChangedCopyWith(
+          _$_EmailChanged value, $Res Function(_$_EmailChanged) then) =
+      __$$_EmailChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newEmail});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(
-      _EmailChanged _value, $Res Function(_EmailChanged) _then)
-      : super(_value, (v) => _then(v as _EmailChanged));
+class __$$_EmailChangedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$_EmailChanged>
+    implements _$$_EmailChangedCopyWith<$Res> {
+  __$$_EmailChangedCopyWithImpl(
+      _$_EmailChanged _value, $Res Function(_$_EmailChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _EmailChanged get _value => super._value as _EmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newEmail = freezed,
+    Object? newEmail = null,
   }) {
-    return _then(_EmailChanged(
-      newEmail == freezed
+    return _then(_$_EmailChanged(
+      null == newEmail
           ? _value.newEmail
           : newEmail // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1018,18 +973,19 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmailChanged &&
-            const DeepCollectionEquality().equals(other.newEmail, newEmail));
+            other is _$_EmailChanged &&
+            (identical(other.newEmail, newEmail) ||
+                other.newEmail == newEmail));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newEmail));
+  int get hashCode => Object.hash(runtimeType, newEmail);
 
   @JsonKey(ignore: true)
   @override
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
-      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
+      __$$_EmailChangedCopyWithImpl<_$_EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1048,13 +1004,13 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) {
     return emailChanged?.call(newEmail);
   }
@@ -1097,15 +1053,16 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return emailChanged?.call(this);
   }
@@ -1132,39 +1089,38 @@ class _$_EmailChanged implements _EmailChanged {
 }
 
 abstract class _EmailChanged implements SignInFormEvent {
-  const factory _EmailChanged(String newEmail) = _$_EmailChanged;
+  const factory _EmailChanged(final String newEmail) = _$_EmailChanged;
 
   String get newEmail;
   @JsonKey(ignore: true)
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$PasswordChangedCopyWith<$Res> {
-  factory _$PasswordChangedCopyWith(
-          _PasswordChanged value, $Res Function(_PasswordChanged) then) =
-      __$PasswordChangedCopyWithImpl<$Res>;
+abstract class _$$_PasswordChangedCopyWith<$Res> {
+  factory _$$_PasswordChangedCopyWith(
+          _$_PasswordChanged value, $Res Function(_$_PasswordChanged) then) =
+      __$$_PasswordChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newPassword});
 }
 
 /// @nodoc
-class __$PasswordChangedCopyWithImpl<$Res>
-    extends _$SignInFormEventCopyWithImpl<$Res>
-    implements _$PasswordChangedCopyWith<$Res> {
-  __$PasswordChangedCopyWithImpl(
-      _PasswordChanged _value, $Res Function(_PasswordChanged) _then)
-      : super(_value, (v) => _then(v as _PasswordChanged));
+class __$$_PasswordChangedCopyWithImpl<$Res>
+    extends _$SignInFormEventCopyWithImpl<$Res, _$_PasswordChanged>
+    implements _$$_PasswordChangedCopyWith<$Res> {
+  __$$_PasswordChangedCopyWithImpl(
+      _$_PasswordChanged _value, $Res Function(_$_PasswordChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _PasswordChanged get _value => super._value as _PasswordChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newPassword = freezed,
+    Object? newPassword = null,
   }) {
-    return _then(_PasswordChanged(
-      newPassword == freezed
+    return _then(_$_PasswordChanged(
+      null == newPassword
           ? _value.newPassword
           : newPassword // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1189,19 +1145,19 @@ class _$_PasswordChanged implements _PasswordChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _PasswordChanged &&
-            const DeepCollectionEquality()
-                .equals(other.newPassword, newPassword));
+            other is _$_PasswordChanged &&
+            (identical(other.newPassword, newPassword) ||
+                other.newPassword == newPassword));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(newPassword));
+  int get hashCode => Object.hash(runtimeType, newPassword);
 
   @JsonKey(ignore: true)
   @override
-  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
-      __$PasswordChangedCopyWithImpl<_PasswordChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_PasswordChangedCopyWith<_$_PasswordChanged> get copyWith =>
+      __$$_PasswordChangedCopyWithImpl<_$_PasswordChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1220,13 +1176,13 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
-    TResult Function(bool isShowing)? isShowingPasswordToggled,
-    TResult Function(bool isShowing)? isShowingErrorMessagesUpdated,
-    TResult Function()? signInPressed,
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function(String newPassword)? passwordChanged,
+    TResult? Function()? initialized,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(bool isShowing)? isShowingPasswordToggled,
+    TResult? Function(bool isShowing)? isShowingErrorMessagesUpdated,
+    TResult? Function()? signInPressed,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function(String newPassword)? passwordChanged,
   }) {
     return passwordChanged?.call(newPassword);
   }
@@ -1269,15 +1225,16 @@ class _$_PasswordChanged implements _PasswordChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_SignInForm value)? initialized,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_SignInForm value)? initialized,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
-    TResult Function(_IsShowingPasswordToggled value)? isShowingPasswordToggled,
-    TResult Function(_IsShowingErrorMessagesUpdated value)?
+    TResult? Function(_IsShowingPasswordToggled value)?
+        isShowingPasswordToggled,
+    TResult? Function(_IsShowingErrorMessagesUpdated value)?
         isShowingErrorMessagesUpdated,
-    TResult Function(_SignInPressed value)? signInPressed,
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_PasswordChanged value)? passwordChanged,
+    TResult? Function(_SignInPressed value)? signInPressed,
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_PasswordChanged value)? passwordChanged,
   }) {
     return passwordChanged?.call(this);
   }
@@ -1304,42 +1261,13 @@ class _$_PasswordChanged implements _PasswordChanged {
 }
 
 abstract class _PasswordChanged implements SignInFormEvent {
-  const factory _PasswordChanged(String newPassword) = _$_PasswordChanged;
+  const factory _PasswordChanged(final String newPassword) = _$_PasswordChanged;
 
   String get newPassword;
   @JsonKey(ignore: true)
-  _$PasswordChangedCopyWith<_PasswordChanged> get copyWith =>
+  _$$_PasswordChangedCopyWith<_$_PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$SignInFormStateTearOff {
-  const _$SignInFormStateTearOff();
-
-  _SignInFormState call(
-      {required String inputEmail,
-      required bool isShowingClearEmailButton,
-      required String inputPassword,
-      required bool isShowingPassword,
-      required bool isShowingErrorMessages,
-      required String currentErrorMessageTag,
-      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
-      required bool isLoading}) {
-    return _SignInFormState(
-      inputEmail: inputEmail,
-      isShowingClearEmailButton: isShowingClearEmailButton,
-      inputPassword: inputPassword,
-      isShowingPassword: isShowingPassword,
-      isShowingErrorMessages: isShowingErrorMessages,
-      currentErrorMessageTag: currentErrorMessageTag,
-      signInFailureOrUnitOption: signInFailureOrUnitOption,
-      isLoading: isLoading,
-    );
-  }
-}
-
-/// @nodoc
-const $SignInFormState = _$SignInFormStateTearOff();
 
 /// @nodoc
 mixin _$SignInFormState {
@@ -1362,7 +1290,8 @@ mixin _$SignInFormState {
 abstract class $SignInFormStateCopyWith<$Res> {
   factory $SignInFormStateCopyWith(
           SignInFormState value, $Res Function(SignInFormState) then) =
-      _$SignInFormStateCopyWithImpl<$Res>;
+      _$SignInFormStateCopyWithImpl<$Res, SignInFormState>;
+  @useResult
   $Res call(
       {String inputEmail,
       bool isShowingClearEmailButton,
@@ -1375,69 +1304,72 @@ abstract class $SignInFormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignInFormStateCopyWithImpl<$Res>
+class _$SignInFormStateCopyWithImpl<$Res, $Val extends SignInFormState>
     implements $SignInFormStateCopyWith<$Res> {
   _$SignInFormStateCopyWithImpl(this._value, this._then);
 
-  final SignInFormState _value;
   // ignore: unused_field
-  final $Res Function(SignInFormState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? inputEmail = freezed,
-    Object? isShowingClearEmailButton = freezed,
-    Object? inputPassword = freezed,
-    Object? isShowingPassword = freezed,
-    Object? isShowingErrorMessages = freezed,
-    Object? currentErrorMessageTag = freezed,
-    Object? signInFailureOrUnitOption = freezed,
-    Object? isLoading = freezed,
+    Object? inputEmail = null,
+    Object? isShowingClearEmailButton = null,
+    Object? inputPassword = null,
+    Object? isShowingPassword = null,
+    Object? isShowingErrorMessages = null,
+    Object? currentErrorMessageTag = null,
+    Object? signInFailureOrUnitOption = null,
+    Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
-      inputEmail: inputEmail == freezed
+      inputEmail: null == inputEmail
           ? _value.inputEmail
           : inputEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      isShowingClearEmailButton: isShowingClearEmailButton == freezed
+      isShowingClearEmailButton: null == isShowingClearEmailButton
           ? _value.isShowingClearEmailButton
           : isShowingClearEmailButton // ignore: cast_nullable_to_non_nullable
               as bool,
-      inputPassword: inputPassword == freezed
+      inputPassword: null == inputPassword
           ? _value.inputPassword
           : inputPassword // ignore: cast_nullable_to_non_nullable
               as String,
-      isShowingPassword: isShowingPassword == freezed
+      isShowingPassword: null == isShowingPassword
           ? _value.isShowingPassword
           : isShowingPassword // ignore: cast_nullable_to_non_nullable
               as bool,
-      isShowingErrorMessages: isShowingErrorMessages == freezed
+      isShowingErrorMessages: null == isShowingErrorMessages
           ? _value.isShowingErrorMessages
           : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentErrorMessageTag: currentErrorMessageTag == freezed
+      currentErrorMessageTag: null == currentErrorMessageTag
           ? _value.currentErrorMessageTag
           : currentErrorMessageTag // ignore: cast_nullable_to_non_nullable
               as String,
-      signInFailureOrUnitOption: signInFailureOrUnitOption == freezed
+      signInFailureOrUnitOption: null == signInFailureOrUnitOption
           ? _value.signInFailureOrUnitOption
           : signInFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$SignInFormStateCopyWith<$Res>
+abstract class _$$_SignInFormStateCopyWith<$Res>
     implements $SignInFormStateCopyWith<$Res> {
-  factory _$SignInFormStateCopyWith(
-          _SignInFormState value, $Res Function(_SignInFormState) then) =
-      __$SignInFormStateCopyWithImpl<$Res>;
+  factory _$$_SignInFormStateCopyWith(
+          _$_SignInFormState value, $Res Function(_$_SignInFormState) then) =
+      __$$_SignInFormStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String inputEmail,
       bool isShowingClearEmailButton,
@@ -1450,57 +1382,55 @@ abstract class _$SignInFormStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignInFormStateCopyWithImpl<$Res>
-    extends _$SignInFormStateCopyWithImpl<$Res>
-    implements _$SignInFormStateCopyWith<$Res> {
-  __$SignInFormStateCopyWithImpl(
-      _SignInFormState _value, $Res Function(_SignInFormState) _then)
-      : super(_value, (v) => _then(v as _SignInFormState));
+class __$$_SignInFormStateCopyWithImpl<$Res>
+    extends _$SignInFormStateCopyWithImpl<$Res, _$_SignInFormState>
+    implements _$$_SignInFormStateCopyWith<$Res> {
+  __$$_SignInFormStateCopyWithImpl(
+      _$_SignInFormState _value, $Res Function(_$_SignInFormState) _then)
+      : super(_value, _then);
 
-  @override
-  _SignInFormState get _value => super._value as _SignInFormState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? inputEmail = freezed,
-    Object? isShowingClearEmailButton = freezed,
-    Object? inputPassword = freezed,
-    Object? isShowingPassword = freezed,
-    Object? isShowingErrorMessages = freezed,
-    Object? currentErrorMessageTag = freezed,
-    Object? signInFailureOrUnitOption = freezed,
-    Object? isLoading = freezed,
+    Object? inputEmail = null,
+    Object? isShowingClearEmailButton = null,
+    Object? inputPassword = null,
+    Object? isShowingPassword = null,
+    Object? isShowingErrorMessages = null,
+    Object? currentErrorMessageTag = null,
+    Object? signInFailureOrUnitOption = null,
+    Object? isLoading = null,
   }) {
-    return _then(_SignInFormState(
-      inputEmail: inputEmail == freezed
+    return _then(_$_SignInFormState(
+      inputEmail: null == inputEmail
           ? _value.inputEmail
           : inputEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      isShowingClearEmailButton: isShowingClearEmailButton == freezed
+      isShowingClearEmailButton: null == isShowingClearEmailButton
           ? _value.isShowingClearEmailButton
           : isShowingClearEmailButton // ignore: cast_nullable_to_non_nullable
               as bool,
-      inputPassword: inputPassword == freezed
+      inputPassword: null == inputPassword
           ? _value.inputPassword
           : inputPassword // ignore: cast_nullable_to_non_nullable
               as String,
-      isShowingPassword: isShowingPassword == freezed
+      isShowingPassword: null == isShowingPassword
           ? _value.isShowingPassword
           : isShowingPassword // ignore: cast_nullable_to_non_nullable
               as bool,
-      isShowingErrorMessages: isShowingErrorMessages == freezed
+      isShowingErrorMessages: null == isShowingErrorMessages
           ? _value.isShowingErrorMessages
           : isShowingErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentErrorMessageTag: currentErrorMessageTag == freezed
+      currentErrorMessageTag: null == currentErrorMessageTag
           ? _value.currentErrorMessageTag
           : currentErrorMessageTag // ignore: cast_nullable_to_non_nullable
               as String,
-      signInFailureOrUnitOption: signInFailureOrUnitOption == freezed
+      signInFailureOrUnitOption: null == signInFailureOrUnitOption
           ? _value.signInFailureOrUnitOption
           : signInFailureOrUnitOption // ignore: cast_nullable_to_non_nullable
               as Option<Either<AuthFailure, Unit>>,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1547,52 +1477,57 @@ class _$_SignInFormState implements _SignInFormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _SignInFormState &&
-            const DeepCollectionEquality()
-                .equals(other.inputEmail, inputEmail) &&
-            const DeepCollectionEquality().equals(
-                other.isShowingClearEmailButton, isShowingClearEmailButton) &&
-            const DeepCollectionEquality()
-                .equals(other.inputPassword, inputPassword) &&
-            const DeepCollectionEquality()
-                .equals(other.isShowingPassword, isShowingPassword) &&
-            const DeepCollectionEquality()
-                .equals(other.isShowingErrorMessages, isShowingErrorMessages) &&
-            const DeepCollectionEquality()
-                .equals(other.currentErrorMessageTag, currentErrorMessageTag) &&
-            const DeepCollectionEquality().equals(
-                other.signInFailureOrUnitOption, signInFailureOrUnitOption) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading));
+            other is _$_SignInFormState &&
+            (identical(other.inputEmail, inputEmail) ||
+                other.inputEmail == inputEmail) &&
+            (identical(other.isShowingClearEmailButton,
+                    isShowingClearEmailButton) ||
+                other.isShowingClearEmailButton == isShowingClearEmailButton) &&
+            (identical(other.inputPassword, inputPassword) ||
+                other.inputPassword == inputPassword) &&
+            (identical(other.isShowingPassword, isShowingPassword) ||
+                other.isShowingPassword == isShowingPassword) &&
+            (identical(other.isShowingErrorMessages, isShowingErrorMessages) ||
+                other.isShowingErrorMessages == isShowingErrorMessages) &&
+            (identical(other.currentErrorMessageTag, currentErrorMessageTag) ||
+                other.currentErrorMessageTag == currentErrorMessageTag) &&
+            (identical(other.signInFailureOrUnitOption,
+                    signInFailureOrUnitOption) ||
+                other.signInFailureOrUnitOption == signInFailureOrUnitOption) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(inputEmail),
-      const DeepCollectionEquality().hash(isShowingClearEmailButton),
-      const DeepCollectionEquality().hash(inputPassword),
-      const DeepCollectionEquality().hash(isShowingPassword),
-      const DeepCollectionEquality().hash(isShowingErrorMessages),
-      const DeepCollectionEquality().hash(currentErrorMessageTag),
-      const DeepCollectionEquality().hash(signInFailureOrUnitOption),
-      const DeepCollectionEquality().hash(isLoading));
+      inputEmail,
+      isShowingClearEmailButton,
+      inputPassword,
+      isShowingPassword,
+      isShowingErrorMessages,
+      currentErrorMessageTag,
+      signInFailureOrUnitOption,
+      isLoading);
 
   @JsonKey(ignore: true)
   @override
-  _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
-      __$SignInFormStateCopyWithImpl<_SignInFormState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>
+      __$$_SignInFormStateCopyWithImpl<_$_SignInFormState>(this, _$identity);
 }
 
 abstract class _SignInFormState implements SignInFormState {
   const factory _SignInFormState(
-      {required String inputEmail,
-      required bool isShowingClearEmailButton,
-      required String inputPassword,
-      required bool isShowingPassword,
-      required bool isShowingErrorMessages,
-      required String currentErrorMessageTag,
-      required Option<Either<AuthFailure, Unit>> signInFailureOrUnitOption,
-      required bool isLoading}) = _$_SignInFormState;
+      {required final String inputEmail,
+      required final bool isShowingClearEmailButton,
+      required final String inputPassword,
+      required final bool isShowingPassword,
+      required final bool isShowingErrorMessages,
+      required final String currentErrorMessageTag,
+      required final Option<Either<AuthFailure, Unit>>
+          signInFailureOrUnitOption,
+      required final bool isLoading}) = _$_SignInFormState;
 
   @override
   String get inputEmail;
@@ -1612,6 +1547,6 @@ abstract class _SignInFormState implements SignInFormState {
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$SignInFormStateCopyWith<_SignInFormState> get copyWith =>
+  _$$_SignInFormStateCopyWith<_$_SignInFormState> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -12,19 +12,7 @@ part of 'account_overview_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$AccountOverviewEventTearOff {
-  const _$AccountOverviewEventTearOff();
-
-  _LogoutPressed logoutPressed() {
-    return const _LogoutPressed();
-  }
-}
-
-/// @nodoc
-const $AccountOverviewEvent = _$AccountOverviewEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$AccountOverviewEvent {
@@ -35,7 +23,7 @@ mixin _$AccountOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logoutPressed,
+    TResult? Function()? logoutPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,7 +39,7 @@ mixin _$AccountOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LogoutPressed value)? logoutPressed,
+    TResult? Function(_LogoutPressed value)? logoutPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,36 +54,35 @@ mixin _$AccountOverviewEvent {
 abstract class $AccountOverviewEventCopyWith<$Res> {
   factory $AccountOverviewEventCopyWith(AccountOverviewEvent value,
           $Res Function(AccountOverviewEvent) then) =
-      _$AccountOverviewEventCopyWithImpl<$Res>;
+      _$AccountOverviewEventCopyWithImpl<$Res, AccountOverviewEvent>;
 }
 
 /// @nodoc
-class _$AccountOverviewEventCopyWithImpl<$Res>
+class _$AccountOverviewEventCopyWithImpl<$Res,
+        $Val extends AccountOverviewEvent>
     implements $AccountOverviewEventCopyWith<$Res> {
   _$AccountOverviewEventCopyWithImpl(this._value, this._then);
 
-  final AccountOverviewEvent _value;
   // ignore: unused_field
-  final $Res Function(AccountOverviewEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$LogoutPressedCopyWith<$Res> {
-  factory _$LogoutPressedCopyWith(
-          _LogoutPressed value, $Res Function(_LogoutPressed) then) =
-      __$LogoutPressedCopyWithImpl<$Res>;
+abstract class _$$_LogoutPressedCopyWith<$Res> {
+  factory _$$_LogoutPressedCopyWith(
+          _$_LogoutPressed value, $Res Function(_$_LogoutPressed) then) =
+      __$$_LogoutPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$LogoutPressedCopyWithImpl<$Res>
-    extends _$AccountOverviewEventCopyWithImpl<$Res>
-    implements _$LogoutPressedCopyWith<$Res> {
-  __$LogoutPressedCopyWithImpl(
-      _LogoutPressed _value, $Res Function(_LogoutPressed) _then)
-      : super(_value, (v) => _then(v as _LogoutPressed));
-
-  @override
-  _LogoutPressed get _value => super._value as _LogoutPressed;
+class __$$_LogoutPressedCopyWithImpl<$Res>
+    extends _$AccountOverviewEventCopyWithImpl<$Res, _$_LogoutPressed>
+    implements _$$_LogoutPressedCopyWith<$Res> {
+  __$$_LogoutPressedCopyWithImpl(
+      _$_LogoutPressed _value, $Res Function(_$_LogoutPressed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -111,7 +98,7 @@ class _$_LogoutPressed implements _LogoutPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _LogoutPressed);
+        (other.runtimeType == runtimeType && other is _$_LogoutPressed);
   }
 
   @override
@@ -128,7 +115,7 @@ class _$_LogoutPressed implements _LogoutPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logoutPressed,
+    TResult? Function()? logoutPressed,
   }) {
     return logoutPressed?.call();
   }
@@ -156,7 +143,7 @@ class _$_LogoutPressed implements _LogoutPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LogoutPressed value)? logoutPressed,
+    TResult? Function(_LogoutPressed value)? logoutPressed,
   }) {
     return logoutPressed?.call(this);
   }
@@ -179,54 +166,41 @@ abstract class _LogoutPressed implements AccountOverviewEvent {
 }
 
 /// @nodoc
-class _$AccountOverviewStateTearOff {
-  const _$AccountOverviewStateTearOff();
-
-  _AccountOverviewState call() {
-    return const _AccountOverviewState();
-  }
-}
-
-/// @nodoc
-const $AccountOverviewState = _$AccountOverviewStateTearOff();
-
-/// @nodoc
 mixin _$AccountOverviewState {}
 
 /// @nodoc
 abstract class $AccountOverviewStateCopyWith<$Res> {
   factory $AccountOverviewStateCopyWith(AccountOverviewState value,
           $Res Function(AccountOverviewState) then) =
-      _$AccountOverviewStateCopyWithImpl<$Res>;
+      _$AccountOverviewStateCopyWithImpl<$Res, AccountOverviewState>;
 }
 
 /// @nodoc
-class _$AccountOverviewStateCopyWithImpl<$Res>
+class _$AccountOverviewStateCopyWithImpl<$Res,
+        $Val extends AccountOverviewState>
     implements $AccountOverviewStateCopyWith<$Res> {
   _$AccountOverviewStateCopyWithImpl(this._value, this._then);
 
-  final AccountOverviewState _value;
   // ignore: unused_field
-  final $Res Function(AccountOverviewState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$AccountOverviewStateCopyWith<$Res> {
-  factory _$AccountOverviewStateCopyWith(_AccountOverviewState value,
-          $Res Function(_AccountOverviewState) then) =
-      __$AccountOverviewStateCopyWithImpl<$Res>;
+abstract class _$$_AccountOverviewStateCopyWith<$Res> {
+  factory _$$_AccountOverviewStateCopyWith(_$_AccountOverviewState value,
+          $Res Function(_$_AccountOverviewState) then) =
+      __$$_AccountOverviewStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$AccountOverviewStateCopyWithImpl<$Res>
-    extends _$AccountOverviewStateCopyWithImpl<$Res>
-    implements _$AccountOverviewStateCopyWith<$Res> {
-  __$AccountOverviewStateCopyWithImpl(
-      _AccountOverviewState _value, $Res Function(_AccountOverviewState) _then)
-      : super(_value, (v) => _then(v as _AccountOverviewState));
-
-  @override
-  _AccountOverviewState get _value => super._value as _AccountOverviewState;
+class __$$_AccountOverviewStateCopyWithImpl<$Res>
+    extends _$AccountOverviewStateCopyWithImpl<$Res, _$_AccountOverviewState>
+    implements _$$_AccountOverviewStateCopyWith<$Res> {
+  __$$_AccountOverviewStateCopyWithImpl(_$_AccountOverviewState _value,
+      $Res Function(_$_AccountOverviewState) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -242,7 +216,7 @@ class _$_AccountOverviewState implements _AccountOverviewState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _AccountOverviewState);
+        (other.runtimeType == runtimeType && other is _$_AccountOverviewState);
   }
 
   @override

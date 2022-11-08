@@ -12,32 +12,7 @@ part of 'reset_password_bloc.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$ResetPasswordEventTearOff {
-  const _$ResetPasswordEventTearOff();
-
-  _EmailChanged emailChanged(String newEmail) {
-    return _EmailChanged(
-      newEmail,
-    );
-  }
-
-  _ResetPasswordPressed resetPasswordPressed() {
-    return const _ResetPasswordPressed();
-  }
-
-  _IsShowingClearEmailInputToggled isShowingClearEmailInputToggled(
-      bool isShowing) {
-    return _IsShowingClearEmailInputToggled(
-      isShowing,
-    );
-  }
-}
-
-/// @nodoc
-const $ResetPasswordEvent = _$ResetPasswordEventTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$ResetPasswordEvent {
@@ -50,9 +25,9 @@ mixin _$ResetPasswordEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function()? resetPasswordPressed,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function()? resetPasswordPressed,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -73,9 +48,9 @@ mixin _$ResetPasswordEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_ResetPasswordPressed value)? resetPasswordPressed,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ResetPasswordPressed value)? resetPasswordPressed,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
   }) =>
       throw _privateConstructorUsedError;
@@ -94,44 +69,44 @@ mixin _$ResetPasswordEvent {
 abstract class $ResetPasswordEventCopyWith<$Res> {
   factory $ResetPasswordEventCopyWith(
           ResetPasswordEvent value, $Res Function(ResetPasswordEvent) then) =
-      _$ResetPasswordEventCopyWithImpl<$Res>;
+      _$ResetPasswordEventCopyWithImpl<$Res, ResetPasswordEvent>;
 }
 
 /// @nodoc
-class _$ResetPasswordEventCopyWithImpl<$Res>
+class _$ResetPasswordEventCopyWithImpl<$Res, $Val extends ResetPasswordEvent>
     implements $ResetPasswordEventCopyWith<$Res> {
   _$ResetPasswordEventCopyWithImpl(this._value, this._then);
 
-  final ResetPasswordEvent _value;
   // ignore: unused_field
-  final $Res Function(ResetPasswordEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class _$EmailChangedCopyWith<$Res> {
-  factory _$EmailChangedCopyWith(
-          _EmailChanged value, $Res Function(_EmailChanged) then) =
-      __$EmailChangedCopyWithImpl<$Res>;
+abstract class _$$_EmailChangedCopyWith<$Res> {
+  factory _$$_EmailChangedCopyWith(
+          _$_EmailChanged value, $Res Function(_$_EmailChanged) then) =
+      __$$_EmailChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newEmail});
 }
 
 /// @nodoc
-class __$EmailChangedCopyWithImpl<$Res>
-    extends _$ResetPasswordEventCopyWithImpl<$Res>
-    implements _$EmailChangedCopyWith<$Res> {
-  __$EmailChangedCopyWithImpl(
-      _EmailChanged _value, $Res Function(_EmailChanged) _then)
-      : super(_value, (v) => _then(v as _EmailChanged));
+class __$$_EmailChangedCopyWithImpl<$Res>
+    extends _$ResetPasswordEventCopyWithImpl<$Res, _$_EmailChanged>
+    implements _$$_EmailChangedCopyWith<$Res> {
+  __$$_EmailChangedCopyWithImpl(
+      _$_EmailChanged _value, $Res Function(_$_EmailChanged) _then)
+      : super(_value, _then);
 
-  @override
-  _EmailChanged get _value => super._value as _EmailChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newEmail = freezed,
+    Object? newEmail = null,
   }) {
-    return _then(_EmailChanged(
-      newEmail == freezed
+    return _then(_$_EmailChanged(
+      null == newEmail
           ? _value.newEmail
           : newEmail // ignore: cast_nullable_to_non_nullable
               as String,
@@ -156,18 +131,19 @@ class _$_EmailChanged implements _EmailChanged {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _EmailChanged &&
-            const DeepCollectionEquality().equals(other.newEmail, newEmail));
+            other is _$_EmailChanged &&
+            (identical(other.newEmail, newEmail) ||
+                other.newEmail == newEmail));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newEmail));
+  int get hashCode => Object.hash(runtimeType, newEmail);
 
   @JsonKey(ignore: true)
   @override
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
-      __$EmailChangedCopyWithImpl<_EmailChanged>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
+      __$$_EmailChangedCopyWithImpl<_$_EmailChanged>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -182,9 +158,9 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function()? resetPasswordPressed,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function()? resetPasswordPressed,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
   }) {
     return emailChanged?.call(newEmail);
   }
@@ -217,9 +193,9 @@ class _$_EmailChanged implements _EmailChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_ResetPasswordPressed value)? resetPasswordPressed,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ResetPasswordPressed value)? resetPasswordPressed,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
   }) {
     return emailChanged?.call(this);
@@ -242,31 +218,28 @@ class _$_EmailChanged implements _EmailChanged {
 }
 
 abstract class _EmailChanged implements ResetPasswordEvent {
-  const factory _EmailChanged(String newEmail) = _$_EmailChanged;
+  const factory _EmailChanged(final String newEmail) = _$_EmailChanged;
 
   String get newEmail;
   @JsonKey(ignore: true)
-  _$EmailChangedCopyWith<_EmailChanged> get copyWith =>
+  _$$_EmailChangedCopyWith<_$_EmailChanged> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class _$ResetPasswordPressedCopyWith<$Res> {
-  factory _$ResetPasswordPressedCopyWith(_ResetPasswordPressed value,
-          $Res Function(_ResetPasswordPressed) then) =
-      __$ResetPasswordPressedCopyWithImpl<$Res>;
+abstract class _$$_ResetPasswordPressedCopyWith<$Res> {
+  factory _$$_ResetPasswordPressedCopyWith(_$_ResetPasswordPressed value,
+          $Res Function(_$_ResetPasswordPressed) then) =
+      __$$_ResetPasswordPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$ResetPasswordPressedCopyWithImpl<$Res>
-    extends _$ResetPasswordEventCopyWithImpl<$Res>
-    implements _$ResetPasswordPressedCopyWith<$Res> {
-  __$ResetPasswordPressedCopyWithImpl(
-      _ResetPasswordPressed _value, $Res Function(_ResetPasswordPressed) _then)
-      : super(_value, (v) => _then(v as _ResetPasswordPressed));
-
-  @override
-  _ResetPasswordPressed get _value => super._value as _ResetPasswordPressed;
+class __$$_ResetPasswordPressedCopyWithImpl<$Res>
+    extends _$ResetPasswordEventCopyWithImpl<$Res, _$_ResetPasswordPressed>
+    implements _$$_ResetPasswordPressedCopyWith<$Res> {
+  __$$_ResetPasswordPressedCopyWithImpl(_$_ResetPasswordPressed _value,
+      $Res Function(_$_ResetPasswordPressed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -282,7 +255,7 @@ class _$_ResetPasswordPressed implements _ResetPasswordPressed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _ResetPasswordPressed);
+        (other.runtimeType == runtimeType && other is _$_ResetPasswordPressed);
   }
 
   @override
@@ -301,9 +274,9 @@ class _$_ResetPasswordPressed implements _ResetPasswordPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function()? resetPasswordPressed,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function()? resetPasswordPressed,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
   }) {
     return resetPasswordPressed?.call();
   }
@@ -336,9 +309,9 @@ class _$_ResetPasswordPressed implements _ResetPasswordPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_ResetPasswordPressed value)? resetPasswordPressed,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ResetPasswordPressed value)? resetPasswordPressed,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
   }) {
     return resetPasswordPressed?.call(this);
@@ -365,33 +338,32 @@ abstract class _ResetPasswordPressed implements ResetPasswordEvent {
 }
 
 /// @nodoc
-abstract class _$IsShowingClearEmailInputToggledCopyWith<$Res> {
-  factory _$IsShowingClearEmailInputToggledCopyWith(
-          _IsShowingClearEmailInputToggled value,
-          $Res Function(_IsShowingClearEmailInputToggled) then) =
-      __$IsShowingClearEmailInputToggledCopyWithImpl<$Res>;
+abstract class _$$_IsShowingClearEmailInputToggledCopyWith<$Res> {
+  factory _$$_IsShowingClearEmailInputToggledCopyWith(
+          _$_IsShowingClearEmailInputToggled value,
+          $Res Function(_$_IsShowingClearEmailInputToggled) then) =
+      __$$_IsShowingClearEmailInputToggledCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isShowing});
 }
 
 /// @nodoc
-class __$IsShowingClearEmailInputToggledCopyWithImpl<$Res>
-    extends _$ResetPasswordEventCopyWithImpl<$Res>
-    implements _$IsShowingClearEmailInputToggledCopyWith<$Res> {
-  __$IsShowingClearEmailInputToggledCopyWithImpl(
-      _IsShowingClearEmailInputToggled _value,
-      $Res Function(_IsShowingClearEmailInputToggled) _then)
-      : super(_value, (v) => _then(v as _IsShowingClearEmailInputToggled));
+class __$$_IsShowingClearEmailInputToggledCopyWithImpl<$Res>
+    extends _$ResetPasswordEventCopyWithImpl<$Res,
+        _$_IsShowingClearEmailInputToggled>
+    implements _$$_IsShowingClearEmailInputToggledCopyWith<$Res> {
+  __$$_IsShowingClearEmailInputToggledCopyWithImpl(
+      _$_IsShowingClearEmailInputToggled _value,
+      $Res Function(_$_IsShowingClearEmailInputToggled) _then)
+      : super(_value, _then);
 
-  @override
-  _IsShowingClearEmailInputToggled get _value =>
-      super._value as _IsShowingClearEmailInputToggled;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isShowing = freezed,
+    Object? isShowing = null,
   }) {
-    return _then(_IsShowingClearEmailInputToggled(
-      isShowing == freezed
+    return _then(_$_IsShowingClearEmailInputToggled(
+      null == isShowing
           ? _value.isShowing
           : isShowing // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -417,19 +389,21 @@ class _$_IsShowingClearEmailInputToggled
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _IsShowingClearEmailInputToggled &&
-            const DeepCollectionEquality().equals(other.isShowing, isShowing));
+            other is _$_IsShowingClearEmailInputToggled &&
+            (identical(other.isShowing, isShowing) ||
+                other.isShowing == isShowing));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isShowing));
+  int get hashCode => Object.hash(runtimeType, isShowing);
 
   @JsonKey(ignore: true)
   @override
-  _$IsShowingClearEmailInputToggledCopyWith<_IsShowingClearEmailInputToggled>
-      get copyWith => __$IsShowingClearEmailInputToggledCopyWithImpl<
-          _IsShowingClearEmailInputToggled>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_IsShowingClearEmailInputToggledCopyWith<
+          _$_IsShowingClearEmailInputToggled>
+      get copyWith => __$$_IsShowingClearEmailInputToggledCopyWithImpl<
+          _$_IsShowingClearEmailInputToggled>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -444,9 +418,9 @@ class _$_IsShowingClearEmailInputToggled
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String newEmail)? emailChanged,
-    TResult Function()? resetPasswordPressed,
-    TResult Function(bool isShowing)? isShowingClearEmailInputToggled,
+    TResult? Function(String newEmail)? emailChanged,
+    TResult? Function()? resetPasswordPressed,
+    TResult? Function(bool isShowing)? isShowingClearEmailInputToggled,
   }) {
     return isShowingClearEmailInputToggled?.call(isShowing);
   }
@@ -479,9 +453,9 @@ class _$_IsShowingClearEmailInputToggled
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_EmailChanged value)? emailChanged,
-    TResult Function(_ResetPasswordPressed value)? resetPasswordPressed,
-    TResult Function(_IsShowingClearEmailInputToggled value)?
+    TResult? Function(_EmailChanged value)? emailChanged,
+    TResult? Function(_ResetPasswordPressed value)? resetPasswordPressed,
+    TResult? Function(_IsShowingClearEmailInputToggled value)?
         isShowingClearEmailInputToggled,
   }) {
     return isShowingClearEmailInputToggled?.call(this);
@@ -504,37 +478,15 @@ class _$_IsShowingClearEmailInputToggled
 }
 
 abstract class _IsShowingClearEmailInputToggled implements ResetPasswordEvent {
-  const factory _IsShowingClearEmailInputToggled(bool isShowing) =
+  const factory _IsShowingClearEmailInputToggled(final bool isShowing) =
       _$_IsShowingClearEmailInputToggled;
 
   bool get isShowing;
   @JsonKey(ignore: true)
-  _$IsShowingClearEmailInputToggledCopyWith<_IsShowingClearEmailInputToggled>
+  _$$_IsShowingClearEmailInputToggledCopyWith<
+          _$_IsShowingClearEmailInputToggled>
       get copyWith => throw _privateConstructorUsedError;
 }
-
-/// @nodoc
-class _$ResetPasswordStateTearOff {
-  const _$ResetPasswordStateTearOff();
-
-  _ResetPasswordState call(
-      {required String inputEmail,
-      required bool isShowingClearEmailButton,
-      required bool isPasswordResetMailSuccessfullySent,
-      required bool didTryToResetPassword,
-      required bool isLoading}) {
-    return _ResetPasswordState(
-      inputEmail: inputEmail,
-      isShowingClearEmailButton: isShowingClearEmailButton,
-      isPasswordResetMailSuccessfullySent: isPasswordResetMailSuccessfullySent,
-      didTryToResetPassword: didTryToResetPassword,
-      isLoading: isLoading,
-    );
-  }
-}
-
-/// @nodoc
-const $ResetPasswordState = _$ResetPasswordStateTearOff();
 
 /// @nodoc
 mixin _$ResetPasswordState {
@@ -554,7 +506,8 @@ mixin _$ResetPasswordState {
 abstract class $ResetPasswordStateCopyWith<$Res> {
   factory $ResetPasswordStateCopyWith(
           ResetPasswordState value, $Res Function(ResetPasswordState) then) =
-      _$ResetPasswordStateCopyWithImpl<$Res>;
+      _$ResetPasswordStateCopyWithImpl<$Res, ResetPasswordState>;
+  @useResult
   $Res call(
       {String inputEmail,
       bool isShowingClearEmailButton,
@@ -564,55 +517,58 @@ abstract class $ResetPasswordStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ResetPasswordStateCopyWithImpl<$Res>
+class _$ResetPasswordStateCopyWithImpl<$Res, $Val extends ResetPasswordState>
     implements $ResetPasswordStateCopyWith<$Res> {
   _$ResetPasswordStateCopyWithImpl(this._value, this._then);
 
-  final ResetPasswordState _value;
   // ignore: unused_field
-  final $Res Function(ResetPasswordState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? inputEmail = freezed,
-    Object? isShowingClearEmailButton = freezed,
-    Object? isPasswordResetMailSuccessfullySent = freezed,
-    Object? didTryToResetPassword = freezed,
-    Object? isLoading = freezed,
+    Object? inputEmail = null,
+    Object? isShowingClearEmailButton = null,
+    Object? isPasswordResetMailSuccessfullySent = null,
+    Object? didTryToResetPassword = null,
+    Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
-      inputEmail: inputEmail == freezed
+      inputEmail: null == inputEmail
           ? _value.inputEmail
           : inputEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      isShowingClearEmailButton: isShowingClearEmailButton == freezed
+      isShowingClearEmailButton: null == isShowingClearEmailButton
           ? _value.isShowingClearEmailButton
           : isShowingClearEmailButton // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPasswordResetMailSuccessfullySent: isPasswordResetMailSuccessfullySent ==
-              freezed
+      isPasswordResetMailSuccessfullySent: null ==
+              isPasswordResetMailSuccessfullySent
           ? _value.isPasswordResetMailSuccessfullySent
           : isPasswordResetMailSuccessfullySent // ignore: cast_nullable_to_non_nullable
               as bool,
-      didTryToResetPassword: didTryToResetPassword == freezed
+      didTryToResetPassword: null == didTryToResetPassword
           ? _value.didTryToResetPassword
           : didTryToResetPassword // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
 /// @nodoc
-abstract class _$ResetPasswordStateCopyWith<$Res>
+abstract class _$$_ResetPasswordStateCopyWith<$Res>
     implements $ResetPasswordStateCopyWith<$Res> {
-  factory _$ResetPasswordStateCopyWith(
-          _ResetPasswordState value, $Res Function(_ResetPasswordState) then) =
-      __$ResetPasswordStateCopyWithImpl<$Res>;
+  factory _$$_ResetPasswordStateCopyWith(_$_ResetPasswordState value,
+          $Res Function(_$_ResetPasswordState) then) =
+      __$$_ResetPasswordStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String inputEmail,
       bool isShowingClearEmailButton,
@@ -622,43 +578,41 @@ abstract class _$ResetPasswordStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$ResetPasswordStateCopyWithImpl<$Res>
-    extends _$ResetPasswordStateCopyWithImpl<$Res>
-    implements _$ResetPasswordStateCopyWith<$Res> {
-  __$ResetPasswordStateCopyWithImpl(
-      _ResetPasswordState _value, $Res Function(_ResetPasswordState) _then)
-      : super(_value, (v) => _then(v as _ResetPasswordState));
+class __$$_ResetPasswordStateCopyWithImpl<$Res>
+    extends _$ResetPasswordStateCopyWithImpl<$Res, _$_ResetPasswordState>
+    implements _$$_ResetPasswordStateCopyWith<$Res> {
+  __$$_ResetPasswordStateCopyWithImpl(
+      _$_ResetPasswordState _value, $Res Function(_$_ResetPasswordState) _then)
+      : super(_value, _then);
 
-  @override
-  _ResetPasswordState get _value => super._value as _ResetPasswordState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? inputEmail = freezed,
-    Object? isShowingClearEmailButton = freezed,
-    Object? isPasswordResetMailSuccessfullySent = freezed,
-    Object? didTryToResetPassword = freezed,
-    Object? isLoading = freezed,
+    Object? inputEmail = null,
+    Object? isShowingClearEmailButton = null,
+    Object? isPasswordResetMailSuccessfullySent = null,
+    Object? didTryToResetPassword = null,
+    Object? isLoading = null,
   }) {
-    return _then(_ResetPasswordState(
-      inputEmail: inputEmail == freezed
+    return _then(_$_ResetPasswordState(
+      inputEmail: null == inputEmail
           ? _value.inputEmail
           : inputEmail // ignore: cast_nullable_to_non_nullable
               as String,
-      isShowingClearEmailButton: isShowingClearEmailButton == freezed
+      isShowingClearEmailButton: null == isShowingClearEmailButton
           ? _value.isShowingClearEmailButton
           : isShowingClearEmailButton // ignore: cast_nullable_to_non_nullable
               as bool,
-      isPasswordResetMailSuccessfullySent: isPasswordResetMailSuccessfullySent ==
-              freezed
+      isPasswordResetMailSuccessfullySent: null ==
+              isPasswordResetMailSuccessfullySent
           ? _value.isPasswordResetMailSuccessfullySent
           : isPasswordResetMailSuccessfullySent // ignore: cast_nullable_to_non_nullable
               as bool,
-      didTryToResetPassword: didTryToResetPassword == freezed
+      didTryToResetPassword: null == didTryToResetPassword
           ? _value.didTryToResetPassword
           : didTryToResetPassword // ignore: cast_nullable_to_non_nullable
               as bool,
-      isLoading: isLoading == freezed
+      isLoading: null == isLoading
           ? _value.isLoading
           : isLoading // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -696,41 +650,46 @@ class _$_ResetPasswordState implements _ResetPasswordState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _ResetPasswordState &&
-            const DeepCollectionEquality()
-                .equals(other.inputEmail, inputEmail) &&
-            const DeepCollectionEquality().equals(
-                other.isShowingClearEmailButton, isShowingClearEmailButton) &&
-            const DeepCollectionEquality().equals(
-                other.isPasswordResetMailSuccessfullySent,
-                isPasswordResetMailSuccessfullySent) &&
-            const DeepCollectionEquality()
-                .equals(other.didTryToResetPassword, didTryToResetPassword) &&
-            const DeepCollectionEquality().equals(other.isLoading, isLoading));
+            other is _$_ResetPasswordState &&
+            (identical(other.inputEmail, inputEmail) ||
+                other.inputEmail == inputEmail) &&
+            (identical(other.isShowingClearEmailButton,
+                    isShowingClearEmailButton) ||
+                other.isShowingClearEmailButton == isShowingClearEmailButton) &&
+            (identical(other.isPasswordResetMailSuccessfullySent,
+                    isPasswordResetMailSuccessfullySent) ||
+                other.isPasswordResetMailSuccessfullySent ==
+                    isPasswordResetMailSuccessfullySent) &&
+            (identical(other.didTryToResetPassword, didTryToResetPassword) ||
+                other.didTryToResetPassword == didTryToResetPassword) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(inputEmail),
-      const DeepCollectionEquality().hash(isShowingClearEmailButton),
-      const DeepCollectionEquality().hash(isPasswordResetMailSuccessfullySent),
-      const DeepCollectionEquality().hash(didTryToResetPassword),
-      const DeepCollectionEquality().hash(isLoading));
+      inputEmail,
+      isShowingClearEmailButton,
+      isPasswordResetMailSuccessfullySent,
+      didTryToResetPassword,
+      isLoading);
 
   @JsonKey(ignore: true)
   @override
-  _$ResetPasswordStateCopyWith<_ResetPasswordState> get copyWith =>
-      __$ResetPasswordStateCopyWithImpl<_ResetPasswordState>(this, _$identity);
+  @pragma('vm:prefer-inline')
+  _$$_ResetPasswordStateCopyWith<_$_ResetPasswordState> get copyWith =>
+      __$$_ResetPasswordStateCopyWithImpl<_$_ResetPasswordState>(
+          this, _$identity);
 }
 
 abstract class _ResetPasswordState implements ResetPasswordState {
   const factory _ResetPasswordState(
-      {required String inputEmail,
-      required bool isShowingClearEmailButton,
-      required bool isPasswordResetMailSuccessfullySent,
-      required bool didTryToResetPassword,
-      required bool isLoading}) = _$_ResetPasswordState;
+      {required final String inputEmail,
+      required final bool isShowingClearEmailButton,
+      required final bool isPasswordResetMailSuccessfullySent,
+      required final bool didTryToResetPassword,
+      required final bool isLoading}) = _$_ResetPasswordState;
 
   @override
   String get inputEmail;
@@ -744,6 +703,6 @@ abstract class _ResetPasswordState implements ResetPasswordState {
   bool get isLoading;
   @override
   @JsonKey(ignore: true)
-  _$ResetPasswordStateCopyWith<_ResetPasswordState> get copyWith =>
+  _$$_ResetPasswordStateCopyWith<_$_ResetPasswordState> get copyWith =>
       throw _privateConstructorUsedError;
 }

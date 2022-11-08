@@ -12,39 +12,7 @@ part of 'password_failure.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
-/// @nodoc
-class _$PasswordFailureTearOff {
-  const _$PasswordFailureTearOff();
-
-  TooShort tooShort() {
-    return const TooShort();
-  }
-
-  NoLowercaseCharacterUsed noLowercaseCharacterUsed() {
-    return const NoLowercaseCharacterUsed();
-  }
-
-  NoUppercaseCharacterUsed noUppercaseCharacterUsed() {
-    return const NoUppercaseCharacterUsed();
-  }
-
-  NoSpecialCharacterUsed noSpecialCharacterUsed() {
-    return const NoSpecialCharacterUsed();
-  }
-
-  NoNumberUsed noNumberUsed() {
-    return const NoNumberUsed();
-  }
-
-  InvalidNotComplexEnough invalidNotComplexEnough() {
-    return const InvalidNotComplexEnough();
-  }
-}
-
-/// @nodoc
-const $PasswordFailure = _$PasswordFailureTearOff();
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
 mixin _$PasswordFailure {
@@ -60,12 +28,12 @@ mixin _$PasswordFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tooShort,
-    TResult Function()? noLowercaseCharacterUsed,
-    TResult Function()? noUppercaseCharacterUsed,
-    TResult Function()? noSpecialCharacterUsed,
-    TResult Function()? noNumberUsed,
-    TResult Function()? invalidNotComplexEnough,
+    TResult? Function()? tooShort,
+    TResult? Function()? noLowercaseCharacterUsed,
+    TResult? Function()? noUppercaseCharacterUsed,
+    TResult? Function()? noSpecialCharacterUsed,
+    TResult? Function()? noNumberUsed,
+    TResult? Function()? invalidNotComplexEnough,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -95,12 +63,12 @@ mixin _$PasswordFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TooShort value)? tooShort,
-    TResult Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
-    TResult Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
-    TResult Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
-    TResult Function(NoNumberUsed value)? noNumberUsed,
-    TResult Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
+    TResult? Function(TooShort value)? tooShort,
+    TResult? Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
+    TResult? Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
+    TResult? Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
+    TResult? Function(NoNumberUsed value)? noNumberUsed,
+    TResult? Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -120,33 +88,33 @@ mixin _$PasswordFailure {
 abstract class $PasswordFailureCopyWith<$Res> {
   factory $PasswordFailureCopyWith(
           PasswordFailure value, $Res Function(PasswordFailure) then) =
-      _$PasswordFailureCopyWithImpl<$Res>;
+      _$PasswordFailureCopyWithImpl<$Res, PasswordFailure>;
 }
 
 /// @nodoc
-class _$PasswordFailureCopyWithImpl<$Res>
+class _$PasswordFailureCopyWithImpl<$Res, $Val extends PasswordFailure>
     implements $PasswordFailureCopyWith<$Res> {
   _$PasswordFailureCopyWithImpl(this._value, this._then);
 
-  final PasswordFailure _value;
   // ignore: unused_field
-  final $Res Function(PasswordFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
-abstract class $TooShortCopyWith<$Res> {
-  factory $TooShortCopyWith(TooShort value, $Res Function(TooShort) then) =
-      _$TooShortCopyWithImpl<$Res>;
+abstract class _$$TooShortCopyWith<$Res> {
+  factory _$$TooShortCopyWith(
+          _$TooShort value, $Res Function(_$TooShort) then) =
+      __$$TooShortCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$TooShortCopyWithImpl<$Res> extends _$PasswordFailureCopyWithImpl<$Res>
-    implements $TooShortCopyWith<$Res> {
-  _$TooShortCopyWithImpl(TooShort _value, $Res Function(TooShort) _then)
-      : super(_value, (v) => _then(v as TooShort));
-
-  @override
-  TooShort get _value => super._value as TooShort;
+class __$$TooShortCopyWithImpl<$Res>
+    extends _$PasswordFailureCopyWithImpl<$Res, _$TooShort>
+    implements _$$TooShortCopyWith<$Res> {
+  __$$TooShortCopyWithImpl(_$TooShort _value, $Res Function(_$TooShort) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -162,7 +130,7 @@ class _$TooShort implements TooShort {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is TooShort);
+        (other.runtimeType == runtimeType && other is _$TooShort);
   }
 
   @override
@@ -184,12 +152,12 @@ class _$TooShort implements TooShort {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tooShort,
-    TResult Function()? noLowercaseCharacterUsed,
-    TResult Function()? noUppercaseCharacterUsed,
-    TResult Function()? noSpecialCharacterUsed,
-    TResult Function()? noNumberUsed,
-    TResult Function()? invalidNotComplexEnough,
+    TResult? Function()? tooShort,
+    TResult? Function()? noLowercaseCharacterUsed,
+    TResult? Function()? noUppercaseCharacterUsed,
+    TResult? Function()? noSpecialCharacterUsed,
+    TResult? Function()? noNumberUsed,
+    TResult? Function()? invalidNotComplexEnough,
   }) {
     return tooShort?.call();
   }
@@ -231,12 +199,12 @@ class _$TooShort implements TooShort {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TooShort value)? tooShort,
-    TResult Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
-    TResult Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
-    TResult Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
-    TResult Function(NoNumberUsed value)? noNumberUsed,
-    TResult Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
+    TResult? Function(TooShort value)? tooShort,
+    TResult? Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
+    TResult? Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
+    TResult? Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
+    TResult? Function(NoNumberUsed value)? noNumberUsed,
+    TResult? Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
   }) {
     return tooShort?.call(this);
   }
@@ -264,23 +232,19 @@ abstract class TooShort implements PasswordFailure {
 }
 
 /// @nodoc
-abstract class $NoLowercaseCharacterUsedCopyWith<$Res> {
-  factory $NoLowercaseCharacterUsedCopyWith(NoLowercaseCharacterUsed value,
-          $Res Function(NoLowercaseCharacterUsed) then) =
-      _$NoLowercaseCharacterUsedCopyWithImpl<$Res>;
+abstract class _$$NoLowercaseCharacterUsedCopyWith<$Res> {
+  factory _$$NoLowercaseCharacterUsedCopyWith(_$NoLowercaseCharacterUsed value,
+          $Res Function(_$NoLowercaseCharacterUsed) then) =
+      __$$NoLowercaseCharacterUsedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoLowercaseCharacterUsedCopyWithImpl<$Res>
-    extends _$PasswordFailureCopyWithImpl<$Res>
-    implements $NoLowercaseCharacterUsedCopyWith<$Res> {
-  _$NoLowercaseCharacterUsedCopyWithImpl(NoLowercaseCharacterUsed _value,
-      $Res Function(NoLowercaseCharacterUsed) _then)
-      : super(_value, (v) => _then(v as NoLowercaseCharacterUsed));
-
-  @override
-  NoLowercaseCharacterUsed get _value =>
-      super._value as NoLowercaseCharacterUsed;
+class __$$NoLowercaseCharacterUsedCopyWithImpl<$Res>
+    extends _$PasswordFailureCopyWithImpl<$Res, _$NoLowercaseCharacterUsed>
+    implements _$$NoLowercaseCharacterUsedCopyWith<$Res> {
+  __$$NoLowercaseCharacterUsedCopyWithImpl(_$NoLowercaseCharacterUsed _value,
+      $Res Function(_$NoLowercaseCharacterUsed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -296,7 +260,8 @@ class _$NoLowercaseCharacterUsed implements NoLowercaseCharacterUsed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoLowercaseCharacterUsed);
+        (other.runtimeType == runtimeType &&
+            other is _$NoLowercaseCharacterUsed);
   }
 
   @override
@@ -318,12 +283,12 @@ class _$NoLowercaseCharacterUsed implements NoLowercaseCharacterUsed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tooShort,
-    TResult Function()? noLowercaseCharacterUsed,
-    TResult Function()? noUppercaseCharacterUsed,
-    TResult Function()? noSpecialCharacterUsed,
-    TResult Function()? noNumberUsed,
-    TResult Function()? invalidNotComplexEnough,
+    TResult? Function()? tooShort,
+    TResult? Function()? noLowercaseCharacterUsed,
+    TResult? Function()? noUppercaseCharacterUsed,
+    TResult? Function()? noSpecialCharacterUsed,
+    TResult? Function()? noNumberUsed,
+    TResult? Function()? invalidNotComplexEnough,
   }) {
     return noLowercaseCharacterUsed?.call();
   }
@@ -365,12 +330,12 @@ class _$NoLowercaseCharacterUsed implements NoLowercaseCharacterUsed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TooShort value)? tooShort,
-    TResult Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
-    TResult Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
-    TResult Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
-    TResult Function(NoNumberUsed value)? noNumberUsed,
-    TResult Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
+    TResult? Function(TooShort value)? tooShort,
+    TResult? Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
+    TResult? Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
+    TResult? Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
+    TResult? Function(NoNumberUsed value)? noNumberUsed,
+    TResult? Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
   }) {
     return noLowercaseCharacterUsed?.call(this);
   }
@@ -398,23 +363,19 @@ abstract class NoLowercaseCharacterUsed implements PasswordFailure {
 }
 
 /// @nodoc
-abstract class $NoUppercaseCharacterUsedCopyWith<$Res> {
-  factory $NoUppercaseCharacterUsedCopyWith(NoUppercaseCharacterUsed value,
-          $Res Function(NoUppercaseCharacterUsed) then) =
-      _$NoUppercaseCharacterUsedCopyWithImpl<$Res>;
+abstract class _$$NoUppercaseCharacterUsedCopyWith<$Res> {
+  factory _$$NoUppercaseCharacterUsedCopyWith(_$NoUppercaseCharacterUsed value,
+          $Res Function(_$NoUppercaseCharacterUsed) then) =
+      __$$NoUppercaseCharacterUsedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoUppercaseCharacterUsedCopyWithImpl<$Res>
-    extends _$PasswordFailureCopyWithImpl<$Res>
-    implements $NoUppercaseCharacterUsedCopyWith<$Res> {
-  _$NoUppercaseCharacterUsedCopyWithImpl(NoUppercaseCharacterUsed _value,
-      $Res Function(NoUppercaseCharacterUsed) _then)
-      : super(_value, (v) => _then(v as NoUppercaseCharacterUsed));
-
-  @override
-  NoUppercaseCharacterUsed get _value =>
-      super._value as NoUppercaseCharacterUsed;
+class __$$NoUppercaseCharacterUsedCopyWithImpl<$Res>
+    extends _$PasswordFailureCopyWithImpl<$Res, _$NoUppercaseCharacterUsed>
+    implements _$$NoUppercaseCharacterUsedCopyWith<$Res> {
+  __$$NoUppercaseCharacterUsedCopyWithImpl(_$NoUppercaseCharacterUsed _value,
+      $Res Function(_$NoUppercaseCharacterUsed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -430,7 +391,8 @@ class _$NoUppercaseCharacterUsed implements NoUppercaseCharacterUsed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoUppercaseCharacterUsed);
+        (other.runtimeType == runtimeType &&
+            other is _$NoUppercaseCharacterUsed);
   }
 
   @override
@@ -452,12 +414,12 @@ class _$NoUppercaseCharacterUsed implements NoUppercaseCharacterUsed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tooShort,
-    TResult Function()? noLowercaseCharacterUsed,
-    TResult Function()? noUppercaseCharacterUsed,
-    TResult Function()? noSpecialCharacterUsed,
-    TResult Function()? noNumberUsed,
-    TResult Function()? invalidNotComplexEnough,
+    TResult? Function()? tooShort,
+    TResult? Function()? noLowercaseCharacterUsed,
+    TResult? Function()? noUppercaseCharacterUsed,
+    TResult? Function()? noSpecialCharacterUsed,
+    TResult? Function()? noNumberUsed,
+    TResult? Function()? invalidNotComplexEnough,
   }) {
     return noUppercaseCharacterUsed?.call();
   }
@@ -499,12 +461,12 @@ class _$NoUppercaseCharacterUsed implements NoUppercaseCharacterUsed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TooShort value)? tooShort,
-    TResult Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
-    TResult Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
-    TResult Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
-    TResult Function(NoNumberUsed value)? noNumberUsed,
-    TResult Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
+    TResult? Function(TooShort value)? tooShort,
+    TResult? Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
+    TResult? Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
+    TResult? Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
+    TResult? Function(NoNumberUsed value)? noNumberUsed,
+    TResult? Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
   }) {
     return noUppercaseCharacterUsed?.call(this);
   }
@@ -532,22 +494,19 @@ abstract class NoUppercaseCharacterUsed implements PasswordFailure {
 }
 
 /// @nodoc
-abstract class $NoSpecialCharacterUsedCopyWith<$Res> {
-  factory $NoSpecialCharacterUsedCopyWith(NoSpecialCharacterUsed value,
-          $Res Function(NoSpecialCharacterUsed) then) =
-      _$NoSpecialCharacterUsedCopyWithImpl<$Res>;
+abstract class _$$NoSpecialCharacterUsedCopyWith<$Res> {
+  factory _$$NoSpecialCharacterUsedCopyWith(_$NoSpecialCharacterUsed value,
+          $Res Function(_$NoSpecialCharacterUsed) then) =
+      __$$NoSpecialCharacterUsedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoSpecialCharacterUsedCopyWithImpl<$Res>
-    extends _$PasswordFailureCopyWithImpl<$Res>
-    implements $NoSpecialCharacterUsedCopyWith<$Res> {
-  _$NoSpecialCharacterUsedCopyWithImpl(NoSpecialCharacterUsed _value,
-      $Res Function(NoSpecialCharacterUsed) _then)
-      : super(_value, (v) => _then(v as NoSpecialCharacterUsed));
-
-  @override
-  NoSpecialCharacterUsed get _value => super._value as NoSpecialCharacterUsed;
+class __$$NoSpecialCharacterUsedCopyWithImpl<$Res>
+    extends _$PasswordFailureCopyWithImpl<$Res, _$NoSpecialCharacterUsed>
+    implements _$$NoSpecialCharacterUsedCopyWith<$Res> {
+  __$$NoSpecialCharacterUsedCopyWithImpl(_$NoSpecialCharacterUsed _value,
+      $Res Function(_$NoSpecialCharacterUsed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -563,7 +522,7 @@ class _$NoSpecialCharacterUsed implements NoSpecialCharacterUsed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoSpecialCharacterUsed);
+        (other.runtimeType == runtimeType && other is _$NoSpecialCharacterUsed);
   }
 
   @override
@@ -585,12 +544,12 @@ class _$NoSpecialCharacterUsed implements NoSpecialCharacterUsed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tooShort,
-    TResult Function()? noLowercaseCharacterUsed,
-    TResult Function()? noUppercaseCharacterUsed,
-    TResult Function()? noSpecialCharacterUsed,
-    TResult Function()? noNumberUsed,
-    TResult Function()? invalidNotComplexEnough,
+    TResult? Function()? tooShort,
+    TResult? Function()? noLowercaseCharacterUsed,
+    TResult? Function()? noUppercaseCharacterUsed,
+    TResult? Function()? noSpecialCharacterUsed,
+    TResult? Function()? noNumberUsed,
+    TResult? Function()? invalidNotComplexEnough,
   }) {
     return noSpecialCharacterUsed?.call();
   }
@@ -632,12 +591,12 @@ class _$NoSpecialCharacterUsed implements NoSpecialCharacterUsed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TooShort value)? tooShort,
-    TResult Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
-    TResult Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
-    TResult Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
-    TResult Function(NoNumberUsed value)? noNumberUsed,
-    TResult Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
+    TResult? Function(TooShort value)? tooShort,
+    TResult? Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
+    TResult? Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
+    TResult? Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
+    TResult? Function(NoNumberUsed value)? noNumberUsed,
+    TResult? Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
   }) {
     return noSpecialCharacterUsed?.call(this);
   }
@@ -665,22 +624,19 @@ abstract class NoSpecialCharacterUsed implements PasswordFailure {
 }
 
 /// @nodoc
-abstract class $NoNumberUsedCopyWith<$Res> {
-  factory $NoNumberUsedCopyWith(
-          NoNumberUsed value, $Res Function(NoNumberUsed) then) =
-      _$NoNumberUsedCopyWithImpl<$Res>;
+abstract class _$$NoNumberUsedCopyWith<$Res> {
+  factory _$$NoNumberUsedCopyWith(
+          _$NoNumberUsed value, $Res Function(_$NoNumberUsed) then) =
+      __$$NoNumberUsedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$NoNumberUsedCopyWithImpl<$Res>
-    extends _$PasswordFailureCopyWithImpl<$Res>
-    implements $NoNumberUsedCopyWith<$Res> {
-  _$NoNumberUsedCopyWithImpl(
-      NoNumberUsed _value, $Res Function(NoNumberUsed) _then)
-      : super(_value, (v) => _then(v as NoNumberUsed));
-
-  @override
-  NoNumberUsed get _value => super._value as NoNumberUsed;
+class __$$NoNumberUsedCopyWithImpl<$Res>
+    extends _$PasswordFailureCopyWithImpl<$Res, _$NoNumberUsed>
+    implements _$$NoNumberUsedCopyWith<$Res> {
+  __$$NoNumberUsedCopyWithImpl(
+      _$NoNumberUsed _value, $Res Function(_$NoNumberUsed) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -696,7 +652,7 @@ class _$NoNumberUsed implements NoNumberUsed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is NoNumberUsed);
+        (other.runtimeType == runtimeType && other is _$NoNumberUsed);
   }
 
   @override
@@ -718,12 +674,12 @@ class _$NoNumberUsed implements NoNumberUsed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tooShort,
-    TResult Function()? noLowercaseCharacterUsed,
-    TResult Function()? noUppercaseCharacterUsed,
-    TResult Function()? noSpecialCharacterUsed,
-    TResult Function()? noNumberUsed,
-    TResult Function()? invalidNotComplexEnough,
+    TResult? Function()? tooShort,
+    TResult? Function()? noLowercaseCharacterUsed,
+    TResult? Function()? noUppercaseCharacterUsed,
+    TResult? Function()? noSpecialCharacterUsed,
+    TResult? Function()? noNumberUsed,
+    TResult? Function()? invalidNotComplexEnough,
   }) {
     return noNumberUsed?.call();
   }
@@ -765,12 +721,12 @@ class _$NoNumberUsed implements NoNumberUsed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TooShort value)? tooShort,
-    TResult Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
-    TResult Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
-    TResult Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
-    TResult Function(NoNumberUsed value)? noNumberUsed,
-    TResult Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
+    TResult? Function(TooShort value)? tooShort,
+    TResult? Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
+    TResult? Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
+    TResult? Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
+    TResult? Function(NoNumberUsed value)? noNumberUsed,
+    TResult? Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
   }) {
     return noNumberUsed?.call(this);
   }
@@ -798,22 +754,19 @@ abstract class NoNumberUsed implements PasswordFailure {
 }
 
 /// @nodoc
-abstract class $InvalidNotComplexEnoughCopyWith<$Res> {
-  factory $InvalidNotComplexEnoughCopyWith(InvalidNotComplexEnough value,
-          $Res Function(InvalidNotComplexEnough) then) =
-      _$InvalidNotComplexEnoughCopyWithImpl<$Res>;
+abstract class _$$InvalidNotComplexEnoughCopyWith<$Res> {
+  factory _$$InvalidNotComplexEnoughCopyWith(_$InvalidNotComplexEnough value,
+          $Res Function(_$InvalidNotComplexEnough) then) =
+      __$$InvalidNotComplexEnoughCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InvalidNotComplexEnoughCopyWithImpl<$Res>
-    extends _$PasswordFailureCopyWithImpl<$Res>
-    implements $InvalidNotComplexEnoughCopyWith<$Res> {
-  _$InvalidNotComplexEnoughCopyWithImpl(InvalidNotComplexEnough _value,
-      $Res Function(InvalidNotComplexEnough) _then)
-      : super(_value, (v) => _then(v as InvalidNotComplexEnough));
-
-  @override
-  InvalidNotComplexEnough get _value => super._value as InvalidNotComplexEnough;
+class __$$InvalidNotComplexEnoughCopyWithImpl<$Res>
+    extends _$PasswordFailureCopyWithImpl<$Res, _$InvalidNotComplexEnough>
+    implements _$$InvalidNotComplexEnoughCopyWith<$Res> {
+  __$$InvalidNotComplexEnoughCopyWithImpl(_$InvalidNotComplexEnough _value,
+      $Res Function(_$InvalidNotComplexEnough) _then)
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -829,7 +782,8 @@ class _$InvalidNotComplexEnough implements InvalidNotComplexEnough {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is InvalidNotComplexEnough);
+        (other.runtimeType == runtimeType &&
+            other is _$InvalidNotComplexEnough);
   }
 
   @override
@@ -851,12 +805,12 @@ class _$InvalidNotComplexEnough implements InvalidNotComplexEnough {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? tooShort,
-    TResult Function()? noLowercaseCharacterUsed,
-    TResult Function()? noUppercaseCharacterUsed,
-    TResult Function()? noSpecialCharacterUsed,
-    TResult Function()? noNumberUsed,
-    TResult Function()? invalidNotComplexEnough,
+    TResult? Function()? tooShort,
+    TResult? Function()? noLowercaseCharacterUsed,
+    TResult? Function()? noUppercaseCharacterUsed,
+    TResult? Function()? noSpecialCharacterUsed,
+    TResult? Function()? noNumberUsed,
+    TResult? Function()? invalidNotComplexEnough,
   }) {
     return invalidNotComplexEnough?.call();
   }
@@ -898,12 +852,12 @@ class _$InvalidNotComplexEnough implements InvalidNotComplexEnough {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(TooShort value)? tooShort,
-    TResult Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
-    TResult Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
-    TResult Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
-    TResult Function(NoNumberUsed value)? noNumberUsed,
-    TResult Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
+    TResult? Function(TooShort value)? tooShort,
+    TResult? Function(NoLowercaseCharacterUsed value)? noLowercaseCharacterUsed,
+    TResult? Function(NoUppercaseCharacterUsed value)? noUppercaseCharacterUsed,
+    TResult? Function(NoSpecialCharacterUsed value)? noSpecialCharacterUsed,
+    TResult? Function(NoNumberUsed value)? noNumberUsed,
+    TResult? Function(InvalidNotComplexEnough value)? invalidNotComplexEnough,
   }) {
     return invalidNotComplexEnough?.call(this);
   }

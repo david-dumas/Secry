@@ -6,10 +6,13 @@ part of 'i_users_api_service.dart';
 // RetrofitGenerator
 // **************************************************************************
 
-// ignore_for_file: unnecessary_brace_in_string_interps
+// ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers
 
 class _IUsersAPIService implements IUsersAPIService {
-  _IUsersAPIService(this._dio, {this.baseUrl}) {
+  _IUsersAPIService(
+    this._dio, {
+    this.baseUrl,
+  }) {
     baseUrl ??= 'https://secryapi.azurewebsites.net';
   }
 
@@ -19,20 +22,32 @@ class _IUsersAPIService implements IUsersAPIService {
 
   @override
   Future<HttpResponse<dynamic>> getUsersToSearchInNewGroup(
-      token, searchQuery, pageNumber, pageSize) async {
+    token,
+    searchQuery,
+    pageNumber,
+    pageSize,
+  ) async {
     const _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{
       r'SearchQuery': searchQuery,
       r'PageNumber': pageNumber,
-      r'PageSize': pageSize
+      r'PageSize': pageSize,
     };
     final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    final _result = await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(
-        Options(method: 'GET', headers: _headers, extra: _extra)
-            .compose(_dio.options, '/api/v2/auth',
-                queryParameters: queryParameters, data: _data)
+    final _result =
+        await _dio.fetch(_setStreamType<HttpResponse<dynamic>>(Options(
+      method: 'GET',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/api/v2/auth',
+              queryParameters: queryParameters,
+              data: _data,
+            )
             .copyWith(baseUrl: baseUrl ?? _dio.options.baseUrl)));
     final value = _result.data;
     final httpResponse = HttpResponse(value, _result);

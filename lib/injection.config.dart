@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+// ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:dio/dio.dart' as _i4;
 import 'package:firebase_auth/firebase_auth.dart' as _i5;
 import 'package:get_it/get_it.dart' as _i1;
@@ -45,9 +46,16 @@ import 'infrastructure/users/users_repository.dart'
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
-_i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
-  final gh = _i2.GetItHelper(get, environment, environmentFilter);
+_i1.GetIt $initGetIt(
+  _i1.GetIt get, {
+  String? environment,
+  _i2.EnvironmentFilter? environmentFilter,
+}) {
+  final gh = _i2.GetItHelper(
+    get,
+    environment,
+    environmentFilter,
+  );
   final registerModule = _$RegisterModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
   gh.factory<_i3.AllChatsOrSurveysInGroupPageBloc>(
@@ -86,9 +94,13 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i30.ResetPasswordBloc>(
       () => _i30.ResetPasswordBloc(get<_i22.IAuthenticationInterface>()));
   gh.factory<_i31.SignUpFormBloc>(() => _i31.SignUpFormBloc(
-      get<_i22.IAuthenticationInterface>(), get<_i7.IAuthFacade>()));
+        get<_i22.IAuthenticationInterface>(),
+        get<_i7.IAuthFacade>(),
+      ));
   gh.factory<_i32.AddGroupPageBloc>(() => _i32.AddGroupPageBloc(
-      get<_i28.IUsersRepository>(), get<_i9.IGroupsRepository>()));
+        get<_i28.IUsersRepository>(),
+        get<_i9.IGroupsRepository>(),
+      ));
   gh.factory<_i33.GlobalSearchBloc>(
       () => _i33.GlobalSearchBloc(get<_i28.IUsersRepository>()));
   return get;
