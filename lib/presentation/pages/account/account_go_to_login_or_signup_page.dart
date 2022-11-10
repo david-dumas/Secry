@@ -17,13 +17,11 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
       builder: (mainContext, mainState) {
         return BlocProvider(
           create: (context) => getIt<AccountGoToLoginOrSignupPageBloc>(),
-          child: BlocBuilder<AccountGoToLoginOrSignupPageBloc,
-              AccountGoToLoginOrSignupPageState>(
+          child: BlocBuilder<AccountGoToLoginOrSignupPageBloc, AccountGoToLoginOrSignupPageState>(
             builder: (context, state) {
               return Scaffold(
                 body: Padding(
-                  padding: EdgeInsets.only(
-                      bottom: 50.0, top: 50.0, left: 10.0, right: 10.0),
+                  padding: EdgeInsets.only(bottom: 50.0, top: 50.0, left: 10.0, right: 10.0),
                   child: Center(
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -35,30 +33,25 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                         ),
                         Text(tr('account_logged_out_overview_title'),
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontWeight: FontWeight.normal,
-                                fontSize: fontSizeMedium)),
+                            style: TextStyle(fontWeight: FontWeight.normal, fontSize: fontSizeMedium)),
                         Spacer(),
                         Column(
                           children: [
                             SocialMediaButton(
                               context,
-                              socialMediaIcon:
-                                  Image.asset('assets/icons/google_icon.png'),
+                              socialMediaIcon: Image.asset('assets/icons/google_icon.png'),
                               buttonColor: SocialMediaButton.googleButtonColor,
                               buttonText: tr('account_sign_up_with_google'),
                               textColor: Colors.black,
                               buttonPressed: () {
                                 context
                                     .read<AccountGoToLoginOrSignupPageBloc>()
-                                    .add(AccountGoToLoginOrSignupPageEvent
-                                        .continueWithGooglePressed());
+                                    .add(AccountGoToLoginOrSignupPageEvent.continueWithGooglePressed());
                               },
                             ),
                             SocialMediaButton(
                               context,
-                              socialMediaIcon:
-                                  Image.asset('assets/icons/apple_icon.png'),
+                              socialMediaIcon: Image.asset('assets/icons/apple_icon.png'),
                               buttonColor: SocialMediaButton.appleButtonColor,
                               buttonText: tr('action_sign_up_with_apple'),
                               textColor: Colors.white,
@@ -68,17 +61,14 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                             ),
                             SocialMediaButton(
                               context,
-                              socialMediaIcon:
-                                  Image.asset('assets/icons/facebook_icon.png'),
-                              buttonColor:
-                                  SocialMediaButton.facebookButtonColor,
+                              socialMediaIcon: Image.asset('assets/icons/facebook_icon.png'),
+                              buttonColor: SocialMediaButton.facebookButtonColor,
                               buttonText: tr('account_sign_up_with_facebook'),
                               textColor: Colors.white,
                               buttonPressed: () {
                                 context
                                     .read<AccountGoToLoginOrSignupPageBloc>()
-                                    .add(AccountGoToLoginOrSignupPageEvent
-                                        .continueWithFacebookPressed());
+                                    .add(AccountGoToLoginOrSignupPageEvent.continueWithFacebookPressed());
                               },
                             ),
                           ],
