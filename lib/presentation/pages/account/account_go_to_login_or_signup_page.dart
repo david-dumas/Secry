@@ -19,66 +19,75 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
           create: (context) => getIt<AccountGoToLoginOrSignupPageBloc>(),
           child: BlocBuilder<AccountGoToLoginOrSignupPageBloc, AccountGoToLoginOrSignupPageState>(
             builder: (context, state) {
-              return Scaffold(
-                body: Padding(
-                  padding: EdgeInsets.only(bottom: 50.0, top: 50.0, left: 10.0, right: 10.0),
-                  child: Center(
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: <Widget>[
-                        Image(
-                          width: MediaQuery.of(context).size.width * 0.3,
-                          image: AssetImage('assets/launcher/foreground.png'),
-                        ),
-                        Text(tr('account_logged_out_overview_title'),
-                            textAlign: TextAlign.center,
-                            style: TextStyle(fontWeight: FontWeight.normal, fontSize: fontSizeMedium)),
-                        Spacer(),
-                        Column(
-                          children: [
-                            SocialMediaButton(
-                              context,
-                              socialMediaIcon: Image.asset('assets/icons/google_icon.png'),
-                              buttonColor: SocialMediaButton.googleButtonColor,
-                              buttonText: tr('account_sign_up_with_google'),
-                              textColor: Colors.black,
-                              buttonPressed: () {
-                                context
-                                    .read<AccountGoToLoginOrSignupPageBloc>()
-                                    .add(AccountGoToLoginOrSignupPageEvent.continueWithGooglePressed());
-                              },
+              return Scaffold(body: LayoutBuilder(builder: (context, constraints) {
+                return SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints: BoxConstraints(
+                        minWidth: constraints.maxWidth,
+                        minHeight: constraints.maxHeight -
+                            (AppBar().preferredSize.height) -
+                            kToolbarHeight -
+                            verticalSafetyScrollOffsetHeight),
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: 50.0, top: 50.0, left: 20.0, right: 20.0),
+                      child: IntrinsicHeight(
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: <Widget>[
+                            Image(
+                              width: MediaQuery.of(context).size.width * 0.3,
+                              image: AssetImage('assets/launcher/foreground.png'),
                             ),
-                            SocialMediaButton(
-                              context,
-                              socialMediaIcon: Image.asset('assets/icons/apple_icon.png'),
-                              buttonColor: SocialMediaButton.appleButtonColor,
-                              buttonText: tr('action_sign_up_with_apple'),
-                              textColor: Colors.white,
-                              buttonPressed: () {
-                                // Todo add bloc event
-                              },
-                            ),
-                            SocialMediaButton(
-                              context,
-                              socialMediaIcon: Image.asset('assets/icons/facebook_icon.png'),
-                              buttonColor: SocialMediaButton.facebookButtonColor,
-                              buttonText: tr('account_sign_up_with_facebook'),
-                              textColor: Colors.white,
-                              buttonPressed: () {
-                                context
-                                    .read<AccountGoToLoginOrSignupPageBloc>()
-                                    .add(AccountGoToLoginOrSignupPageEvent.continueWithFacebookPressed());
-                              },
+                            Text(tr('account_logged_out_overview_title'),
+                                textAlign: TextAlign.center,
+                                style: TextStyle(fontWeight: FontWeight.normal, fontSize: fontSizeMedium)),
+                            Spacer(),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                SocialMediaButton(
+                                  context,
+                                  socialMediaIcon: Image.asset('assets/icons/google_icon.png'),
+                                  buttonColor: SocialMediaButton.googleButtonColor,
+                                  buttonText: tr('account_sign_up_with_google'),
+                                  textColor: Colors.black,
+                                  buttonPressed: () {
+                                    context
+                                        .read<AccountGoToLoginOrSignupPageBloc>()
+                                        .add(AccountGoToLoginOrSignupPageEvent.continueWithGooglePressed());
+                                  },
+                                ),
+                                SocialMediaButton(
+                                  context,
+                                  socialMediaIcon: Image.asset('assets/icons/apple_icon.png'),
+                                  buttonColor: SocialMediaButton.appleButtonColor,
+                                  buttonText: tr('action_sign_up_with_apple'),
+                                  textColor: Colors.white,
+                                  buttonPressed: () {
+                                    // Todo add bloc event
+                                  },
+                                ),
+                                SocialMediaButton(
+                                  context,
+                                  socialMediaIcon: Image.asset('assets/icons/facebook_icon.png'),
+                                  buttonColor: SocialMediaButton.facebookButtonColor,
+                                  buttonText: tr('account_sign_up_with_facebook'),
+                                  textColor: Colors.white,
+                                  buttonPressed: () {
+                                    context
+                                        .read<AccountGoToLoginOrSignupPageBloc>()
+                                        .add(AccountGoToLoginOrSignupPageEvent.continueWithFacebookPressed());
+                                  },
+                                ),
+                              ],
                             ),
                           ],
                         ),
-                        verticalSafetyScrollOffset
-                      ],
+                      ),
                     ),
                   ),
-                ),
-              );
+                );
+              }));
             },
           ),
         );
