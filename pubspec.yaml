@@ -80,6 +80,6 @@ flutter:
   assets:
     - assets/translations/
     - assets/launcher/
-    - assets/fonts/google_icon.png
-    - assets/fonts/facebook_icon.png
-    - assets/fonts/apple_icon.png
+    - assets/icons/google_icon.png
+    - assets/icons/facebook_icon.png
+    - assets/icons/apple_icon.png
