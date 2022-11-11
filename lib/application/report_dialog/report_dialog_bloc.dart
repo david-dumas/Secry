@@ -14,7 +14,7 @@ class ReportDialogBloc extends Bloc<ReportDialogEvent, ReportDialogState> {
 
   Future<void> _onEvent(ReportDialogEvent event, Emitter<ReportDialogState> emit) async {
     await event.map(
-        reportedTileExcecuted: (e) async {
+        selectedReportTileUpdated: (e) async {
           emit(state.copyWith(selectedReportTile: e.newValue));
         },
         initialized: (e) async {});

@@ -18,19 +18,19 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$ReportDialogEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int newValue) reportedTileExcecuted,
+    required TResult Function(int newValue) selectedReportTileUpdated,
     required TResult Function() initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int newValue)? reportedTileExcecuted,
+    TResult? Function(int newValue)? selectedReportTileUpdated,
     TResult? Function()? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int newValue)? reportedTileExcecuted,
+    TResult Function(int newValue)? selectedReportTileUpdated,
     TResult Function()? initialized,
     required TResult orElse(),
   }) =>
@@ -38,19 +38,19 @@ mixin _$ReportDialogEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ReportedTileExcecuted value)
-        reportedTileExcecuted,
+        selectedReportTileUpdated,
     required TResult Function(_Initialized value) initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult? Function(_ReportedTileExcecuted value)? selectedReportTileUpdated,
     TResult? Function(_Initialized value)? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult Function(_ReportedTileExcecuted value)? selectedReportTileUpdated,
     TResult Function(_Initialized value)? initialized,
     required TResult orElse(),
   }) =>
@@ -116,7 +116,7 @@ class _$_ReportedTileExcecuted implements _ReportedTileExcecuted {
 
   @override
   String toString() {
-    return 'ReportDialogEvent.reportedTileExcecuted(newValue: $newValue)';
+    return 'ReportDialogEvent.selectedReportTileUpdated(newValue: $newValue)';
   }
 
   @override
@@ -141,30 +141,30 @@ class _$_ReportedTileExcecuted implements _ReportedTileExcecuted {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int newValue) reportedTileExcecuted,
+    required TResult Function(int newValue) selectedReportTileUpdated,
     required TResult Function() initialized,
   }) {
-    return reportedTileExcecuted(newValue);
+    return selectedReportTileUpdated(newValue);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int newValue)? reportedTileExcecuted,
+    TResult? Function(int newValue)? selectedReportTileUpdated,
     TResult? Function()? initialized,
   }) {
-    return reportedTileExcecuted?.call(newValue);
+    return selectedReportTileUpdated?.call(newValue);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int newValue)? reportedTileExcecuted,
+    TResult Function(int newValue)? selectedReportTileUpdated,
     TResult Function()? initialized,
     required TResult orElse(),
   }) {
-    if (reportedTileExcecuted != null) {
-      return reportedTileExcecuted(newValue);
+    if (selectedReportTileUpdated != null) {
+      return selectedReportTileUpdated(newValue);
     }
     return orElse();
   }
@@ -173,30 +173,30 @@ class _$_ReportedTileExcecuted implements _ReportedTileExcecuted {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ReportedTileExcecuted value)
-        reportedTileExcecuted,
+        selectedReportTileUpdated,
     required TResult Function(_Initialized value) initialized,
   }) {
-    return reportedTileExcecuted(this);
+    return selectedReportTileUpdated(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult? Function(_ReportedTileExcecuted value)? selectedReportTileUpdated,
     TResult? Function(_Initialized value)? initialized,
   }) {
-    return reportedTileExcecuted?.call(this);
+    return selectedReportTileUpdated?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult Function(_ReportedTileExcecuted value)? selectedReportTileUpdated,
     TResult Function(_Initialized value)? initialized,
     required TResult orElse(),
   }) {
-    if (reportedTileExcecuted != null) {
-      return reportedTileExcecuted(this);
+    if (selectedReportTileUpdated != null) {
+      return selectedReportTileUpdated(this);
     }
     return orElse();
   }
@@ -250,7 +250,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(int newValue) reportedTileExcecuted,
+    required TResult Function(int newValue) selectedReportTileUpdated,
     required TResult Function() initialized,
   }) {
     return initialized();
@@ -259,7 +259,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function(int newValue)? reportedTileExcecuted,
+    TResult? Function(int newValue)? selectedReportTileUpdated,
     TResult? Function()? initialized,
   }) {
     return initialized?.call();
@@ -268,7 +268,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(int newValue)? reportedTileExcecuted,
+    TResult Function(int newValue)? selectedReportTileUpdated,
     TResult Function()? initialized,
     required TResult orElse(),
   }) {
@@ -282,7 +282,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ReportedTileExcecuted value)
-        reportedTileExcecuted,
+        selectedReportTileUpdated,
     required TResult Function(_Initialized value) initialized,
   }) {
     return initialized(this);
@@ -291,7 +291,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult? Function(_ReportedTileExcecuted value)? selectedReportTileUpdated,
     TResult? Function(_Initialized value)? initialized,
   }) {
     return initialized?.call(this);
@@ -300,7 +300,7 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult Function(_ReportedTileExcecuted value)? selectedReportTileUpdated,
     TResult Function(_Initialized value)? initialized,
     required TResult orElse(),
   }) {

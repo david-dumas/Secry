@@ -77,7 +77,7 @@ class _ReportAlertDialogState extends State<ReportAlertDialog> {
                           selected: index == state.selectedReportTile,
                           selectedTileColor: appIconColorBlue1,
                           onTap: () {
-                            context.read<ReportDialogBloc>().add(ReportDialogEvent.reportedTileExcecuted(index));
+                            context.read<ReportDialogBloc>().add(ReportDialogEvent.selectedReportTileUpdated(index));
                           },
                         );
                       },
