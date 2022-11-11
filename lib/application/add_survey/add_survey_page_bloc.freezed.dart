@@ -39,21 +39,21 @@ mixin _$AddSurveyPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) =>
@@ -104,22 +104,22 @@ mixin _$AddSurveyPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) =>
       throw _privateConstructorUsedError;
@@ -151,17 +151,18 @@ mixin _$AddSurveyPageEvent {
 abstract class $AddSurveyPageEventCopyWith<$Res> {
   factory $AddSurveyPageEventCopyWith(
           AddSurveyPageEvent value, $Res Function(AddSurveyPageEvent) then) =
-      _$AddSurveyPageEventCopyWithImpl<$Res>;
+      _$AddSurveyPageEventCopyWithImpl<$Res, AddSurveyPageEvent>;
 }
 
 /// @nodoc
-class _$AddSurveyPageEventCopyWithImpl<$Res>
+class _$AddSurveyPageEventCopyWithImpl<$Res, $Val extends AddSurveyPageEvent>
     implements $AddSurveyPageEventCopyWith<$Res> {
   _$AddSurveyPageEventCopyWithImpl(this._value, this._then);
 
-  final AddSurveyPageEvent _value;
   // ignore: unused_field
-  final $Res Function(AddSurveyPageEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -173,14 +174,11 @@ abstract class _$$_InitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
-
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -229,21 +227,21 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -306,22 +304,22 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return initialized?.call(this);
@@ -365,26 +363,25 @@ abstract class _$$_SurveyTitleUpdatedCopyWith<$Res> {
   factory _$$_SurveyTitleUpdatedCopyWith(_$_SurveyTitleUpdated value,
           $Res Function(_$_SurveyTitleUpdated) then) =
       __$$_SurveyTitleUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newTitle});
 }
 
 /// @nodoc
 class __$$_SurveyTitleUpdatedCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res, _$_SurveyTitleUpdated>
     implements _$$_SurveyTitleUpdatedCopyWith<$Res> {
   __$$_SurveyTitleUpdatedCopyWithImpl(
       _$_SurveyTitleUpdated _value, $Res Function(_$_SurveyTitleUpdated) _then)
-      : super(_value, (v) => _then(v as _$_SurveyTitleUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_SurveyTitleUpdated get _value => super._value as _$_SurveyTitleUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newTitle = freezed,
+    Object? newTitle = null,
   }) {
     return _then(_$_SurveyTitleUpdated(
-      newTitle == freezed
+      null == newTitle
           ? _value.newTitle
           : newTitle // ignore: cast_nullable_to_non_nullable
               as String,
@@ -410,15 +407,16 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SurveyTitleUpdated &&
-            const DeepCollectionEquality().equals(other.newTitle, newTitle));
+            (identical(other.newTitle, newTitle) ||
+                other.newTitle == newTitle));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newTitle));
+  int get hashCode => Object.hash(runtimeType, newTitle);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SurveyTitleUpdatedCopyWith<_$_SurveyTitleUpdated> get copyWith =>
       __$$_SurveyTitleUpdatedCopyWithImpl<_$_SurveyTitleUpdated>(
           this, _$identity);
@@ -450,21 +448,21 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -527,22 +525,22 @@ class _$_SurveyTitleUpdated implements _SurveyTitleUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return surveyTitleUpdated?.call(this);
@@ -592,27 +590,25 @@ abstract class _$$_CurrentStepIndexUpdatedCopyWith<$Res> {
   factory _$$_CurrentStepIndexUpdatedCopyWith(_$_CurrentStepIndexUpdated value,
           $Res Function(_$_CurrentStepIndexUpdated) then) =
       __$$_CurrentStepIndexUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int newIndex});
 }
 
 /// @nodoc
 class __$$_CurrentStepIndexUpdatedCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res, _$_CurrentStepIndexUpdated>
     implements _$$_CurrentStepIndexUpdatedCopyWith<$Res> {
   __$$_CurrentStepIndexUpdatedCopyWithImpl(_$_CurrentStepIndexUpdated _value,
       $Res Function(_$_CurrentStepIndexUpdated) _then)
-      : super(_value, (v) => _then(v as _$_CurrentStepIndexUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_CurrentStepIndexUpdated get _value =>
-      super._value as _$_CurrentStepIndexUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newIndex = freezed,
+    Object? newIndex = null,
   }) {
     return _then(_$_CurrentStepIndexUpdated(
-      newIndex == freezed
+      null == newIndex
           ? _value.newIndex
           : newIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -638,15 +634,16 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CurrentStepIndexUpdated &&
-            const DeepCollectionEquality().equals(other.newIndex, newIndex));
+            (identical(other.newIndex, newIndex) ||
+                other.newIndex == newIndex));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newIndex));
+  int get hashCode => Object.hash(runtimeType, newIndex);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CurrentStepIndexUpdatedCopyWith<_$_CurrentStepIndexUpdated>
       get copyWith =>
           __$$_CurrentStepIndexUpdatedCopyWithImpl<_$_CurrentStepIndexUpdated>(
@@ -679,21 +676,21 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -756,22 +753,22 @@ class _$_CurrentStepIndexUpdated implements _CurrentStepIndexUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return currentStepIndexUpdated?.call(this);
@@ -825,14 +822,11 @@ abstract class _$$_NewSurveyCreatedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NewSurveyCreatedCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res, _$_NewSurveyCreated>
     implements _$$_NewSurveyCreatedCopyWith<$Res> {
   __$$_NewSurveyCreatedCopyWithImpl(
       _$_NewSurveyCreated _value, $Res Function(_$_NewSurveyCreated) _then)
-      : super(_value, (v) => _then(v as _$_NewSurveyCreated));
-
-  @override
-  _$_NewSurveyCreated get _value => super._value as _$_NewSurveyCreated;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -881,21 +875,21 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -958,22 +952,22 @@ class _$_NewSurveyCreated implements _NewSurveyCreated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return newSurveyCreated?.call(this);
@@ -1017,26 +1011,25 @@ abstract class _$$_QuestionsUpdatedCopyWith<$Res> {
   factory _$$_QuestionsUpdatedCopyWith(
           _$_QuestionsUpdated value, $Res Function(_$_QuestionsUpdated) then) =
       __$$_QuestionsUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Question> newQuestions});
 }
 
 /// @nodoc
 class __$$_QuestionsUpdatedCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res, _$_QuestionsUpdated>
     implements _$$_QuestionsUpdatedCopyWith<$Res> {
   __$$_QuestionsUpdatedCopyWithImpl(
       _$_QuestionsUpdated _value, $Res Function(_$_QuestionsUpdated) _then)
-      : super(_value, (v) => _then(v as _$_QuestionsUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionsUpdated get _value => super._value as _$_QuestionsUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newQuestions = freezed,
+    Object? newQuestions = null,
   }) {
     return _then(_$_QuestionsUpdated(
-      newQuestions == freezed
+      null == newQuestions
           ? _value._newQuestions
           : newQuestions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
@@ -1077,6 +1070,7 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionsUpdatedCopyWith<_$_QuestionsUpdated> get copyWith =>
       __$$_QuestionsUpdatedCopyWithImpl<_$_QuestionsUpdated>(this, _$identity);
 
@@ -1107,21 +1101,21 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -1184,22 +1178,22 @@ class _$_QuestionsUpdated implements _QuestionsUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionsUpdated?.call(this);
@@ -1253,14 +1247,11 @@ abstract class _$$_QuestionAddedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_QuestionAddedCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res, _$_QuestionAdded>
     implements _$$_QuestionAddedCopyWith<$Res> {
   __$$_QuestionAddedCopyWithImpl(
       _$_QuestionAdded _value, $Res Function(_$_QuestionAdded) _then)
-      : super(_value, (v) => _then(v as _$_QuestionAdded));
-
-  @override
-  _$_QuestionAdded get _value => super._value as _$_QuestionAdded;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1309,21 +1300,21 @@ class _$_QuestionAdded implements _QuestionAdded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -1386,22 +1377,22 @@ class _$_QuestionAdded implements _QuestionAdded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionAdded?.call(this);
@@ -1445,26 +1436,25 @@ abstract class _$$_QuestionDeletedCopyWith<$Res> {
   factory _$$_QuestionDeletedCopyWith(
           _$_QuestionDeleted value, $Res Function(_$_QuestionDeleted) then) =
       __$$_QuestionDeletedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String questionId});
 }
 
 /// @nodoc
 class __$$_QuestionDeletedCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res, _$_QuestionDeleted>
     implements _$$_QuestionDeletedCopyWith<$Res> {
   __$$_QuestionDeletedCopyWithImpl(
       _$_QuestionDeleted _value, $Res Function(_$_QuestionDeleted) _then)
-      : super(_value, (v) => _then(v as _$_QuestionDeleted));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionDeleted get _value => super._value as _$_QuestionDeleted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionId = freezed,
+    Object? questionId = null,
   }) {
     return _then(_$_QuestionDeleted(
-      questionId == freezed
+      null == questionId
           ? _value.questionId
           : questionId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1490,16 +1480,16 @@ class _$_QuestionDeleted implements _QuestionDeleted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionDeleted &&
-            const DeepCollectionEquality()
-                .equals(other.questionId, questionId));
+            (identical(other.questionId, questionId) ||
+                other.questionId == questionId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(questionId));
+  int get hashCode => Object.hash(runtimeType, questionId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionDeletedCopyWith<_$_QuestionDeleted> get copyWith =>
       __$$_QuestionDeletedCopyWithImpl<_$_QuestionDeleted>(this, _$identity);
 
@@ -1530,21 +1520,21 @@ class _$_QuestionDeleted implements _QuestionDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -1607,22 +1597,22 @@ class _$_QuestionDeleted implements _QuestionDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionDeleted?.call(this);
@@ -1672,34 +1662,32 @@ abstract class _$$_QuestionTypeChangedForQuestionIndexCopyWith<$Res> {
           _$_QuestionTypeChangedForQuestionIndex value,
           $Res Function(_$_QuestionTypeChangedForQuestionIndex) then) =
       __$$_QuestionTypeChangedForQuestionIndexCopyWithImpl<$Res>;
+  @useResult
   $Res call({int questionIndex, QuestionType newQuestionType});
 }
 
 /// @nodoc
 class __$$_QuestionTypeChangedForQuestionIndexCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res,
+        _$_QuestionTypeChangedForQuestionIndex>
     implements _$$_QuestionTypeChangedForQuestionIndexCopyWith<$Res> {
   __$$_QuestionTypeChangedForQuestionIndexCopyWithImpl(
       _$_QuestionTypeChangedForQuestionIndex _value,
       $Res Function(_$_QuestionTypeChangedForQuestionIndex) _then)
-      : super(
-            _value, (v) => _then(v as _$_QuestionTypeChangedForQuestionIndex));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionTypeChangedForQuestionIndex get _value =>
-      super._value as _$_QuestionTypeChangedForQuestionIndex;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionIndex = freezed,
-    Object? newQuestionType = freezed,
+    Object? questionIndex = null,
+    Object? newQuestionType = null,
   }) {
     return _then(_$_QuestionTypeChangedForQuestionIndex(
-      questionIndex == freezed
+      null == questionIndex
           ? _value.questionIndex
           : questionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      newQuestionType == freezed
+      null == newQuestionType
           ? _value.newQuestionType
           : newQuestionType // ignore: cast_nullable_to_non_nullable
               as QuestionType,
@@ -1729,20 +1717,18 @@ class _$_QuestionTypeChangedForQuestionIndex
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionTypeChangedForQuestionIndex &&
-            const DeepCollectionEquality()
-                .equals(other.questionIndex, questionIndex) &&
-            const DeepCollectionEquality()
-                .equals(other.newQuestionType, newQuestionType));
+            (identical(other.questionIndex, questionIndex) ||
+                other.questionIndex == questionIndex) &&
+            (identical(other.newQuestionType, newQuestionType) ||
+                other.newQuestionType == newQuestionType));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(questionIndex),
-      const DeepCollectionEquality().hash(newQuestionType));
+  int get hashCode => Object.hash(runtimeType, questionIndex, newQuestionType);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionTypeChangedForQuestionIndexCopyWith<
           _$_QuestionTypeChangedForQuestionIndex>
       get copyWith => __$$_QuestionTypeChangedForQuestionIndexCopyWithImpl<
@@ -1775,21 +1761,21 @@ class _$_QuestionTypeChangedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -1854,22 +1840,22 @@ class _$_QuestionTypeChangedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionTypeChangedForQuestionIndex?.call(this);
@@ -1924,34 +1910,32 @@ abstract class _$$_QuestionTextUpdatedForQuestionIndexCopyWith<$Res> {
           _$_QuestionTextUpdatedForQuestionIndex value,
           $Res Function(_$_QuestionTextUpdatedForQuestionIndex) then) =
       __$$_QuestionTextUpdatedForQuestionIndexCopyWithImpl<$Res>;
+  @useResult
   $Res call({int questionIndex, String newText});
 }
 
 /// @nodoc
 class __$$_QuestionTextUpdatedForQuestionIndexCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res,
+        _$_QuestionTextUpdatedForQuestionIndex>
     implements _$$_QuestionTextUpdatedForQuestionIndexCopyWith<$Res> {
   __$$_QuestionTextUpdatedForQuestionIndexCopyWithImpl(
       _$_QuestionTextUpdatedForQuestionIndex _value,
       $Res Function(_$_QuestionTextUpdatedForQuestionIndex) _then)
-      : super(
-            _value, (v) => _then(v as _$_QuestionTextUpdatedForQuestionIndex));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionTextUpdatedForQuestionIndex get _value =>
-      super._value as _$_QuestionTextUpdatedForQuestionIndex;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionIndex = freezed,
-    Object? newText = freezed,
+    Object? questionIndex = null,
+    Object? newText = null,
   }) {
     return _then(_$_QuestionTextUpdatedForQuestionIndex(
-      questionIndex == freezed
+      null == questionIndex
           ? _value.questionIndex
           : questionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      newText == freezed
+      null == newText
           ? _value.newText
           : newText // ignore: cast_nullable_to_non_nullable
               as String,
@@ -1981,19 +1965,17 @@ class _$_QuestionTextUpdatedForQuestionIndex
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionTextUpdatedForQuestionIndex &&
-            const DeepCollectionEquality()
-                .equals(other.questionIndex, questionIndex) &&
-            const DeepCollectionEquality().equals(other.newText, newText));
+            (identical(other.questionIndex, questionIndex) ||
+                other.questionIndex == questionIndex) &&
+            (identical(other.newText, newText) || other.newText == newText));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(questionIndex),
-      const DeepCollectionEquality().hash(newText));
+  int get hashCode => Object.hash(runtimeType, questionIndex, newText);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionTextUpdatedForQuestionIndexCopyWith<
           _$_QuestionTextUpdatedForQuestionIndex>
       get copyWith => __$$_QuestionTextUpdatedForQuestionIndexCopyWithImpl<
@@ -2026,21 +2008,21 @@ class _$_QuestionTextUpdatedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -2103,22 +2085,22 @@ class _$_QuestionTextUpdatedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return questionTextUpdatedForQuestionIndex?.call(this);
@@ -2173,28 +2155,27 @@ abstract class _$$_OptionAddedForQuestionIndexCopyWith<$Res> {
           _$_OptionAddedForQuestionIndex value,
           $Res Function(_$_OptionAddedForQuestionIndex) then) =
       __$$_OptionAddedForQuestionIndexCopyWithImpl<$Res>;
+  @useResult
   $Res call({int questionIndex});
 }
 
 /// @nodoc
 class __$$_OptionAddedForQuestionIndexCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res,
+        _$_OptionAddedForQuestionIndex>
     implements _$$_OptionAddedForQuestionIndexCopyWith<$Res> {
   __$$_OptionAddedForQuestionIndexCopyWithImpl(
       _$_OptionAddedForQuestionIndex _value,
       $Res Function(_$_OptionAddedForQuestionIndex) _then)
-      : super(_value, (v) => _then(v as _$_OptionAddedForQuestionIndex));
+      : super(_value, _then);
 
-  @override
-  _$_OptionAddedForQuestionIndex get _value =>
-      super._value as _$_OptionAddedForQuestionIndex;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionIndex = freezed,
+    Object? questionIndex = null,
   }) {
     return _then(_$_OptionAddedForQuestionIndex(
-      questionIndex == freezed
+      null == questionIndex
           ? _value.questionIndex
           : questionIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -2220,16 +2201,16 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OptionAddedForQuestionIndex &&
-            const DeepCollectionEquality()
-                .equals(other.questionIndex, questionIndex));
+            (identical(other.questionIndex, questionIndex) ||
+                other.questionIndex == questionIndex));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(questionIndex));
+  int get hashCode => Object.hash(runtimeType, questionIndex);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OptionAddedForQuestionIndexCopyWith<_$_OptionAddedForQuestionIndex>
       get copyWith => __$$_OptionAddedForQuestionIndexCopyWithImpl<
           _$_OptionAddedForQuestionIndex>(this, _$identity);
@@ -2261,21 +2242,21 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -2338,22 +2319,22 @@ class _$_OptionAddedForQuestionIndex implements _OptionAddedForQuestionIndex {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return optionAddedForQuestionIndex?.call(this);
@@ -2404,33 +2385,32 @@ abstract class _$$_OptionDeletedForQuestionIndexCopyWith<$Res> {
           _$_OptionDeletedForQuestionIndex value,
           $Res Function(_$_OptionDeletedForQuestionIndex) then) =
       __$$_OptionDeletedForQuestionIndexCopyWithImpl<$Res>;
+  @useResult
   $Res call({int questionIndex, int optionIndex});
 }
 
 /// @nodoc
 class __$$_OptionDeletedForQuestionIndexCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res,
+        _$_OptionDeletedForQuestionIndex>
     implements _$$_OptionDeletedForQuestionIndexCopyWith<$Res> {
   __$$_OptionDeletedForQuestionIndexCopyWithImpl(
       _$_OptionDeletedForQuestionIndex _value,
       $Res Function(_$_OptionDeletedForQuestionIndex) _then)
-      : super(_value, (v) => _then(v as _$_OptionDeletedForQuestionIndex));
+      : super(_value, _then);
 
-  @override
-  _$_OptionDeletedForQuestionIndex get _value =>
-      super._value as _$_OptionDeletedForQuestionIndex;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionIndex = freezed,
-    Object? optionIndex = freezed,
+    Object? questionIndex = null,
+    Object? optionIndex = null,
   }) {
     return _then(_$_OptionDeletedForQuestionIndex(
-      questionIndex == freezed
+      null == questionIndex
           ? _value.questionIndex
           : questionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      optionIndex == freezed
+      null == optionIndex
           ? _value.optionIndex
           : optionIndex // ignore: cast_nullable_to_non_nullable
               as int,
@@ -2459,20 +2439,18 @@ class _$_OptionDeletedForQuestionIndex
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OptionDeletedForQuestionIndex &&
-            const DeepCollectionEquality()
-                .equals(other.questionIndex, questionIndex) &&
-            const DeepCollectionEquality()
-                .equals(other.optionIndex, optionIndex));
+            (identical(other.questionIndex, questionIndex) ||
+                other.questionIndex == questionIndex) &&
+            (identical(other.optionIndex, optionIndex) ||
+                other.optionIndex == optionIndex));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(questionIndex),
-      const DeepCollectionEquality().hash(optionIndex));
+  int get hashCode => Object.hash(runtimeType, questionIndex, optionIndex);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OptionDeletedForQuestionIndexCopyWith<_$_OptionDeletedForQuestionIndex>
       get copyWith => __$$_OptionDeletedForQuestionIndexCopyWithImpl<
           _$_OptionDeletedForQuestionIndex>(this, _$identity);
@@ -2504,21 +2482,21 @@ class _$_OptionDeletedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -2581,22 +2559,22 @@ class _$_OptionDeletedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return optionDeletedForQuestionIndex?.call(this);
@@ -2649,6 +2627,7 @@ abstract class _$$_OptionUpdatedForQuestionIndexCopyWith<$Res> {
           _$_OptionUpdatedForQuestionIndex value,
           $Res Function(_$_OptionUpdatedForQuestionIndex) then) =
       __$$_OptionUpdatedForQuestionIndexCopyWithImpl<$Res>;
+  @useResult
   $Res call(
       {int questionIndex,
       int optionIndex,
@@ -2658,38 +2637,36 @@ abstract class _$$_OptionUpdatedForQuestionIndexCopyWith<$Res> {
 
 /// @nodoc
 class __$$_OptionUpdatedForQuestionIndexCopyWithImpl<$Res>
-    extends _$AddSurveyPageEventCopyWithImpl<$Res>
+    extends _$AddSurveyPageEventCopyWithImpl<$Res,
+        _$_OptionUpdatedForQuestionIndex>
     implements _$$_OptionUpdatedForQuestionIndexCopyWith<$Res> {
   __$$_OptionUpdatedForQuestionIndexCopyWithImpl(
       _$_OptionUpdatedForQuestionIndex _value,
       $Res Function(_$_OptionUpdatedForQuestionIndex) _then)
-      : super(_value, (v) => _then(v as _$_OptionUpdatedForQuestionIndex));
+      : super(_value, _then);
 
-  @override
-  _$_OptionUpdatedForQuestionIndex get _value =>
-      super._value as _$_OptionUpdatedForQuestionIndex;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? questionIndex = freezed,
-    Object? optionIndex = freezed,
-    Object? oldOptionId = freezed,
-    Object? newOptionText = freezed,
+    Object? questionIndex = null,
+    Object? optionIndex = null,
+    Object? oldOptionId = null,
+    Object? newOptionText = null,
   }) {
     return _then(_$_OptionUpdatedForQuestionIndex(
-      questionIndex == freezed
+      null == questionIndex
           ? _value.questionIndex
           : questionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      optionIndex == freezed
+      null == optionIndex
           ? _value.optionIndex
           : optionIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      oldOptionId == freezed
+      null == oldOptionId
           ? _value.oldOptionId
           : oldOptionId // ignore: cast_nullable_to_non_nullable
               as String,
-      newOptionText == freezed
+      null == newOptionText
           ? _value.newOptionText
           : newOptionText // ignore: cast_nullable_to_non_nullable
               as String,
@@ -2723,26 +2700,23 @@ class _$_OptionUpdatedForQuestionIndex
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_OptionUpdatedForQuestionIndex &&
-            const DeepCollectionEquality()
-                .equals(other.questionIndex, questionIndex) &&
-            const DeepCollectionEquality()
-                .equals(other.optionIndex, optionIndex) &&
-            const DeepCollectionEquality()
-                .equals(other.oldOptionId, oldOptionId) &&
-            const DeepCollectionEquality()
-                .equals(other.newOptionText, newOptionText));
+            (identical(other.questionIndex, questionIndex) ||
+                other.questionIndex == questionIndex) &&
+            (identical(other.optionIndex, optionIndex) ||
+                other.optionIndex == optionIndex) &&
+            (identical(other.oldOptionId, oldOptionId) ||
+                other.oldOptionId == oldOptionId) &&
+            (identical(other.newOptionText, newOptionText) ||
+                other.newOptionText == newOptionText));
   }
 
   @override
   int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(questionIndex),
-      const DeepCollectionEquality().hash(optionIndex),
-      const DeepCollectionEquality().hash(oldOptionId),
-      const DeepCollectionEquality().hash(newOptionText));
+      runtimeType, questionIndex, optionIndex, oldOptionId, newOptionText);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OptionUpdatedForQuestionIndexCopyWith<_$_OptionUpdatedForQuestionIndex>
       get copyWith => __$$_OptionUpdatedForQuestionIndexCopyWithImpl<
           _$_OptionUpdatedForQuestionIndex>(this, _$identity);
@@ -2775,21 +2749,21 @@ class _$_OptionUpdatedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? surveyTitleUpdated,
-    TResult Function(int newIndex)? currentStepIndexUpdated,
-    TResult Function()? newSurveyCreated,
-    TResult Function(List<Question> newQuestions)? questionsUpdated,
-    TResult Function()? questionAdded,
-    TResult Function(String questionId)? questionDeleted,
-    TResult Function(int questionIndex, QuestionType newQuestionType)?
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? surveyTitleUpdated,
+    TResult? Function(int newIndex)? currentStepIndexUpdated,
+    TResult? Function()? newSurveyCreated,
+    TResult? Function(List<Question> newQuestions)? questionsUpdated,
+    TResult? Function()? questionAdded,
+    TResult? Function(String questionId)? questionDeleted,
+    TResult? Function(int questionIndex, QuestionType newQuestionType)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(int questionIndex, String newText)?
+    TResult? Function(int questionIndex, String newText)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(int questionIndex)? optionAddedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex)?
+    TResult? Function(int questionIndex)? optionAddedForQuestionIndex,
+    TResult? Function(int questionIndex, int optionIndex)?
         optionDeletedForQuestionIndex,
-    TResult Function(int questionIndex, int optionIndex, String oldOptionId,
+    TResult? Function(int questionIndex, int optionIndex, String oldOptionId,
             String newOptionText)?
         optionUpdatedForQuestionIndex,
   }) {
@@ -2854,22 +2828,22 @@ class _$_OptionUpdatedForQuestionIndex
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
-    TResult Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
-    TResult Function(_NewSurveyCreated value)? newSurveyCreated,
-    TResult Function(_QuestionsUpdated value)? questionsUpdated,
-    TResult Function(_QuestionAdded value)? questionAdded,
-    TResult Function(_QuestionDeleted value)? questionDeleted,
-    TResult Function(_QuestionTypeChangedForQuestionIndex value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SurveyTitleUpdated value)? surveyTitleUpdated,
+    TResult? Function(_CurrentStepIndexUpdated value)? currentStepIndexUpdated,
+    TResult? Function(_NewSurveyCreated value)? newSurveyCreated,
+    TResult? Function(_QuestionsUpdated value)? questionsUpdated,
+    TResult? Function(_QuestionAdded value)? questionAdded,
+    TResult? Function(_QuestionDeleted value)? questionDeleted,
+    TResult? Function(_QuestionTypeChangedForQuestionIndex value)?
         questionTypeChangedForQuestionIndex,
-    TResult Function(_QuestionTextUpdatedForQuestionIndex value)?
+    TResult? Function(_QuestionTextUpdatedForQuestionIndex value)?
         questionTextUpdatedForQuestionIndex,
-    TResult Function(_OptionAddedForQuestionIndex value)?
+    TResult? Function(_OptionAddedForQuestionIndex value)?
         optionAddedForQuestionIndex,
-    TResult Function(_OptionDeletedForQuestionIndex value)?
+    TResult? Function(_OptionDeletedForQuestionIndex value)?
         optionDeletedForQuestionIndex,
-    TResult Function(_OptionUpdatedForQuestionIndex value)?
+    TResult? Function(_OptionUpdatedForQuestionIndex value)?
         optionUpdatedForQuestionIndex,
   }) {
     return optionUpdatedForQuestionIndex?.call(this);
@@ -2938,7 +2912,8 @@ mixin _$AddSurveyPageState {
 abstract class $AddSurveyPageStateCopyWith<$Res> {
   factory $AddSurveyPageStateCopyWith(
           AddSurveyPageState value, $Res Function(AddSurveyPageState) then) =
-      _$AddSurveyPageStateCopyWithImpl<$Res>;
+      _$AddSurveyPageStateCopyWithImpl<$Res, AddSurveyPageState>;
+  @useResult
   $Res call(
       {String surveyTitle,
       int currentStepIndex,
@@ -2948,45 +2923,46 @@ abstract class $AddSurveyPageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AddSurveyPageStateCopyWithImpl<$Res>
+class _$AddSurveyPageStateCopyWithImpl<$Res, $Val extends AddSurveyPageState>
     implements $AddSurveyPageStateCopyWith<$Res> {
   _$AddSurveyPageStateCopyWithImpl(this._value, this._then);
 
-  final AddSurveyPageState _value;
   // ignore: unused_field
-  final $Res Function(AddSurveyPageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? surveyTitle = freezed,
-    Object? currentStepIndex = freezed,
-    Object? isSurveySuccessfullyCreated = freezed,
-    Object? isCreateNewSurveyRequestExecuted = freezed,
-    Object? questions = freezed,
+    Object? surveyTitle = null,
+    Object? currentStepIndex = null,
+    Object? isSurveySuccessfullyCreated = null,
+    Object? isCreateNewSurveyRequestExecuted = null,
+    Object? questions = null,
   }) {
     return _then(_value.copyWith(
-      surveyTitle: surveyTitle == freezed
+      surveyTitle: null == surveyTitle
           ? _value.surveyTitle
           : surveyTitle // ignore: cast_nullable_to_non_nullable
               as String,
-      currentStepIndex: currentStepIndex == freezed
+      currentStepIndex: null == currentStepIndex
           ? _value.currentStepIndex
           : currentStepIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      isSurveySuccessfullyCreated: isSurveySuccessfullyCreated == freezed
+      isSurveySuccessfullyCreated: null == isSurveySuccessfullyCreated
           ? _value.isSurveySuccessfullyCreated
           : isSurveySuccessfullyCreated // ignore: cast_nullable_to_non_nullable
               as bool,
-      isCreateNewSurveyRequestExecuted: isCreateNewSurveyRequestExecuted ==
-              freezed
+      isCreateNewSurveyRequestExecuted: null == isCreateNewSurveyRequestExecuted
           ? _value.isCreateNewSurveyRequestExecuted
           : isCreateNewSurveyRequestExecuted // ignore: cast_nullable_to_non_nullable
               as bool,
-      questions: questions == freezed
+      questions: null == questions
           ? _value.questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
-    ));
+    ) as $Val);
   }
 }
 
@@ -2997,6 +2973,7 @@ abstract class _$$_AddSurveyPageStateCopyWith<$Res>
           $Res Function(_$_AddSurveyPageState) then) =
       __$$_AddSurveyPageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String surveyTitle,
       int currentStepIndex,
@@ -3007,42 +2984,39 @@ abstract class _$$_AddSurveyPageStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_AddSurveyPageStateCopyWithImpl<$Res>
-    extends _$AddSurveyPageStateCopyWithImpl<$Res>
+    extends _$AddSurveyPageStateCopyWithImpl<$Res, _$_AddSurveyPageState>
     implements _$$_AddSurveyPageStateCopyWith<$Res> {
   __$$_AddSurveyPageStateCopyWithImpl(
       _$_AddSurveyPageState _value, $Res Function(_$_AddSurveyPageState) _then)
-      : super(_value, (v) => _then(v as _$_AddSurveyPageState));
+      : super(_value, _then);
 
-  @override
-  _$_AddSurveyPageState get _value => super._value as _$_AddSurveyPageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? surveyTitle = freezed,
-    Object? currentStepIndex = freezed,
-    Object? isSurveySuccessfullyCreated = freezed,
-    Object? isCreateNewSurveyRequestExecuted = freezed,
-    Object? questions = freezed,
+    Object? surveyTitle = null,
+    Object? currentStepIndex = null,
+    Object? isSurveySuccessfullyCreated = null,
+    Object? isCreateNewSurveyRequestExecuted = null,
+    Object? questions = null,
   }) {
     return _then(_$_AddSurveyPageState(
-      surveyTitle: surveyTitle == freezed
+      surveyTitle: null == surveyTitle
           ? _value.surveyTitle
           : surveyTitle // ignore: cast_nullable_to_non_nullable
               as String,
-      currentStepIndex: currentStepIndex == freezed
+      currentStepIndex: null == currentStepIndex
           ? _value.currentStepIndex
           : currentStepIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      isSurveySuccessfullyCreated: isSurveySuccessfullyCreated == freezed
+      isSurveySuccessfullyCreated: null == isSurveySuccessfullyCreated
           ? _value.isSurveySuccessfullyCreated
           : isSurveySuccessfullyCreated // ignore: cast_nullable_to_non_nullable
               as bool,
-      isCreateNewSurveyRequestExecuted: isCreateNewSurveyRequestExecuted ==
-              freezed
+      isCreateNewSurveyRequestExecuted: null == isCreateNewSurveyRequestExecuted
           ? _value.isCreateNewSurveyRequestExecuted
           : isCreateNewSurveyRequestExecuted // ignore: cast_nullable_to_non_nullable
               as bool,
-      questions: questions == freezed
+      questions: null == questions
           ? _value._questions
           : questions // ignore: cast_nullable_to_non_nullable
               as List<Question>,
@@ -3086,16 +3060,18 @@ class _$_AddSurveyPageState implements _AddSurveyPageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddSurveyPageState &&
-            const DeepCollectionEquality()
-                .equals(other.surveyTitle, surveyTitle) &&
-            const DeepCollectionEquality()
-                .equals(other.currentStepIndex, currentStepIndex) &&
-            const DeepCollectionEquality().equals(
-                other.isSurveySuccessfullyCreated,
-                isSurveySuccessfullyCreated) &&
-            const DeepCollectionEquality().equals(
-                other.isCreateNewSurveyRequestExecuted,
-                isCreateNewSurveyRequestExecuted) &&
+            (identical(other.surveyTitle, surveyTitle) ||
+                other.surveyTitle == surveyTitle) &&
+            (identical(other.currentStepIndex, currentStepIndex) ||
+                other.currentStepIndex == currentStepIndex) &&
+            (identical(other.isSurveySuccessfullyCreated,
+                    isSurveySuccessfullyCreated) ||
+                other.isSurveySuccessfullyCreated ==
+                    isSurveySuccessfullyCreated) &&
+            (identical(other.isCreateNewSurveyRequestExecuted,
+                    isCreateNewSurveyRequestExecuted) ||
+                other.isCreateNewSurveyRequestExecuted ==
+                    isCreateNewSurveyRequestExecuted) &&
             const DeepCollectionEquality()
                 .equals(other._questions, _questions));
   }
@@ -3103,14 +3079,15 @@ class _$_AddSurveyPageState implements _AddSurveyPageState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(surveyTitle),
-      const DeepCollectionEquality().hash(currentStepIndex),
-      const DeepCollectionEquality().hash(isSurveySuccessfullyCreated),
-      const DeepCollectionEquality().hash(isCreateNewSurveyRequestExecuted),
+      surveyTitle,
+      currentStepIndex,
+      isSurveySuccessfullyCreated,
+      isCreateNewSurveyRequestExecuted,
       const DeepCollectionEquality().hash(_questions));
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AddSurveyPageStateCopyWith<_$_AddSurveyPageState> get copyWith =>
       __$$_AddSurveyPageStateCopyWithImpl<_$_AddSurveyPageState>(
           this, _$identity);

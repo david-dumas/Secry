@@ -34,16 +34,16 @@ mixin _$GlobalSearchEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,19 +81,19 @@ mixin _$GlobalSearchEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -120,17 +120,18 @@ mixin _$GlobalSearchEvent {
 abstract class $GlobalSearchEventCopyWith<$Res> {
   factory $GlobalSearchEventCopyWith(
           GlobalSearchEvent value, $Res Function(GlobalSearchEvent) then) =
-      _$GlobalSearchEventCopyWithImpl<$Res>;
+      _$GlobalSearchEventCopyWithImpl<$Res, GlobalSearchEvent>;
 }
 
 /// @nodoc
-class _$GlobalSearchEventCopyWithImpl<$Res>
+class _$GlobalSearchEventCopyWithImpl<$Res, $Val extends GlobalSearchEvent>
     implements $GlobalSearchEventCopyWith<$Res> {
   _$GlobalSearchEventCopyWithImpl(this._value, this._then);
 
-  final GlobalSearchEvent _value;
   // ignore: unused_field
-  final $Res Function(GlobalSearchEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -142,14 +143,11 @@ abstract class _$$_InitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
-
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -193,16 +191,16 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return initialized?.call();
   }
@@ -252,19 +250,19 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -303,26 +301,25 @@ abstract class _$$_SearchValueUpdatedCopyWith<$Res> {
   factory _$$_SearchValueUpdatedCopyWith(_$_SearchValueUpdated value,
           $Res Function(_$_SearchValueUpdated) then) =
       __$$_SearchValueUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newValue});
 }
 
 /// @nodoc
 class __$$_SearchValueUpdatedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res, _$_SearchValueUpdated>
     implements _$$_SearchValueUpdatedCopyWith<$Res> {
   __$$_SearchValueUpdatedCopyWithImpl(
       _$_SearchValueUpdated _value, $Res Function(_$_SearchValueUpdated) _then)
-      : super(_value, (v) => _then(v as _$_SearchValueUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_SearchValueUpdated get _value => super._value as _$_SearchValueUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$_SearchValueUpdated(
-      newValue == freezed
+      null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -348,15 +345,16 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SearchValueUpdated &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SearchValueUpdatedCopyWith<_$_SearchValueUpdated> get copyWith =>
       __$$_SearchValueUpdatedCopyWithImpl<_$_SearchValueUpdated>(
           this, _$identity);
@@ -383,16 +381,16 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return searchValueUpdated?.call(newValue);
   }
@@ -442,19 +440,19 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return searchValueUpdated?.call(this);
   }
@@ -500,28 +498,26 @@ abstract class _$$_UsersForSearchQueryUpdatedCopyWith<$Res> {
           _$_UsersForSearchQueryUpdated value,
           $Res Function(_$_UsersForSearchQueryUpdated) then) =
       __$$_UsersForSearchQueryUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<GroupUser> newUsers});
 }
 
 /// @nodoc
 class __$$_UsersForSearchQueryUpdatedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res, _$_UsersForSearchQueryUpdated>
     implements _$$_UsersForSearchQueryUpdatedCopyWith<$Res> {
   __$$_UsersForSearchQueryUpdatedCopyWithImpl(
       _$_UsersForSearchQueryUpdated _value,
       $Res Function(_$_UsersForSearchQueryUpdated) _then)
-      : super(_value, (v) => _then(v as _$_UsersForSearchQueryUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_UsersForSearchQueryUpdated get _value =>
-      super._value as _$_UsersForSearchQueryUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newUsers = freezed,
+    Object? newUsers = null,
   }) {
     return _then(_$_UsersForSearchQueryUpdated(
-      newUsers == freezed
+      null == newUsers
           ? _value._newUsers
           : newUsers // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
@@ -561,6 +557,7 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_UsersForSearchQueryUpdatedCopyWith<_$_UsersForSearchQueryUpdated>
       get copyWith => __$$_UsersForSearchQueryUpdatedCopyWithImpl<
           _$_UsersForSearchQueryUpdated>(this, _$identity);
@@ -587,16 +584,16 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return usersForSearchQueryUpdated?.call(newUsers);
   }
@@ -646,19 +643,19 @@ class _$_UsersForSearchQueryUpdated implements _UsersForSearchQueryUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return usersForSearchQueryUpdated?.call(this);
   }
@@ -704,28 +701,27 @@ abstract class _$$_SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
           _$_SearchUsersPaginationInfoUpdated value,
           $Res Function(_$_SearchUsersPaginationInfoUpdated) then) =
       __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({PaginationInfo? paginationInfo});
 }
 
 /// @nodoc
 class __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res,
+        _$_SearchUsersPaginationInfoUpdated>
     implements _$$_SearchUsersPaginationInfoUpdatedCopyWith<$Res> {
   __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl(
       _$_SearchUsersPaginationInfoUpdated _value,
       $Res Function(_$_SearchUsersPaginationInfoUpdated) _then)
-      : super(_value, (v) => _then(v as _$_SearchUsersPaginationInfoUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_SearchUsersPaginationInfoUpdated get _value =>
-      super._value as _$_SearchUsersPaginationInfoUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? paginationInfo = freezed,
   }) {
     return _then(_$_SearchUsersPaginationInfoUpdated(
-      paginationInfo == freezed
+      freezed == paginationInfo
           ? _value.paginationInfo
           : paginationInfo // ignore: cast_nullable_to_non_nullable
               as PaginationInfo?,
@@ -752,16 +748,16 @@ class _$_SearchUsersPaginationInfoUpdated
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SearchUsersPaginationInfoUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.paginationInfo, paginationInfo));
+            (identical(other.paginationInfo, paginationInfo) ||
+                other.paginationInfo == paginationInfo));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(paginationInfo));
+  int get hashCode => Object.hash(runtimeType, paginationInfo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SearchUsersPaginationInfoUpdatedCopyWith<
           _$_SearchUsersPaginationInfoUpdated>
       get copyWith => __$$_SearchUsersPaginationInfoUpdatedCopyWithImpl<
@@ -789,16 +785,16 @@ class _$_SearchUsersPaginationInfoUpdated
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return searchUsersPaginationInfoUpdated?.call(paginationInfo);
   }
@@ -848,19 +844,19 @@ class _$_SearchUsersPaginationInfoUpdated
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return searchUsersPaginationInfoUpdated?.call(this);
   }
@@ -911,14 +907,11 @@ abstract class _$$_PageRefreshedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_PageRefreshedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res, _$_PageRefreshed>
     implements _$$_PageRefreshedCopyWith<$Res> {
   __$$_PageRefreshedCopyWithImpl(
       _$_PageRefreshed _value, $Res Function(_$_PageRefreshed) _then)
-      : super(_value, (v) => _then(v as _$_PageRefreshed));
-
-  @override
-  _$_PageRefreshed get _value => super._value as _$_PageRefreshed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -962,16 +955,16 @@ class _$_PageRefreshed implements _PageRefreshed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return pageRefreshed?.call();
   }
@@ -1021,19 +1014,19 @@ class _$_PageRefreshed implements _PageRefreshed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return pageRefreshed?.call(this);
   }
@@ -1076,15 +1069,11 @@ abstract class _$$_ScrolledToLoadMoreItemsCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ScrolledToLoadMoreItemsCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res, _$_ScrolledToLoadMoreItems>
     implements _$$_ScrolledToLoadMoreItemsCopyWith<$Res> {
   __$$_ScrolledToLoadMoreItemsCopyWithImpl(_$_ScrolledToLoadMoreItems _value,
       $Res Function(_$_ScrolledToLoadMoreItems) _then)
-      : super(_value, (v) => _then(v as _$_ScrolledToLoadMoreItems));
-
-  @override
-  _$_ScrolledToLoadMoreItems get _value =>
-      super._value as _$_ScrolledToLoadMoreItems;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1129,16 +1118,16 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return scrolledToLoadMoreItems?.call();
   }
@@ -1188,19 +1177,19 @@ class _$_ScrolledToLoadMoreItems implements _ScrolledToLoadMoreItems {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return scrolledToLoadMoreItems?.call(this);
   }
@@ -1240,28 +1229,27 @@ abstract class _$$_IsFetchingInitialDataUpdatedCopyWith<$Res> {
           _$_IsFetchingInitialDataUpdated value,
           $Res Function(_$_IsFetchingInitialDataUpdated) then) =
       __$$_IsFetchingInitialDataUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isFetching});
 }
 
 /// @nodoc
 class __$$_IsFetchingInitialDataUpdatedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res,
+        _$_IsFetchingInitialDataUpdated>
     implements _$$_IsFetchingInitialDataUpdatedCopyWith<$Res> {
   __$$_IsFetchingInitialDataUpdatedCopyWithImpl(
       _$_IsFetchingInitialDataUpdated _value,
       $Res Function(_$_IsFetchingInitialDataUpdated) _then)
-      : super(_value, (v) => _then(v as _$_IsFetchingInitialDataUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_IsFetchingInitialDataUpdated get _value =>
-      super._value as _$_IsFetchingInitialDataUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isFetching = freezed,
+    Object? isFetching = null,
   }) {
     return _then(_$_IsFetchingInitialDataUpdated(
-      isFetching == freezed
+      null == isFetching
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1287,16 +1275,16 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IsFetchingInitialDataUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.isFetching, isFetching));
+            (identical(other.isFetching, isFetching) ||
+                other.isFetching == isFetching));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetching));
+  int get hashCode => Object.hash(runtimeType, isFetching);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IsFetchingInitialDataUpdatedCopyWith<_$_IsFetchingInitialDataUpdated>
       get copyWith => __$$_IsFetchingInitialDataUpdatedCopyWithImpl<
           _$_IsFetchingInitialDataUpdated>(this, _$identity);
@@ -1323,16 +1311,16 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return isFetchingInitialDataUpdated?.call(isFetching);
   }
@@ -1382,19 +1370,19 @@ class _$_IsFetchingInitialDataUpdated implements _IsFetchingInitialDataUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return isFetchingInitialDataUpdated?.call(this);
   }
@@ -1440,29 +1428,27 @@ abstract class _$$_IsFetchingMoreDataForScrollDownUpdatedCopyWith<$Res> {
           _$_IsFetchingMoreDataForScrollDownUpdated value,
           $Res Function(_$_IsFetchingMoreDataForScrollDownUpdated) then) =
       __$$_IsFetchingMoreDataForScrollDownUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isFetching});
 }
 
 /// @nodoc
 class __$$_IsFetchingMoreDataForScrollDownUpdatedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res,
+        _$_IsFetchingMoreDataForScrollDownUpdated>
     implements _$$_IsFetchingMoreDataForScrollDownUpdatedCopyWith<$Res> {
   __$$_IsFetchingMoreDataForScrollDownUpdatedCopyWithImpl(
       _$_IsFetchingMoreDataForScrollDownUpdated _value,
       $Res Function(_$_IsFetchingMoreDataForScrollDownUpdated) _then)
-      : super(_value,
-            (v) => _then(v as _$_IsFetchingMoreDataForScrollDownUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_IsFetchingMoreDataForScrollDownUpdated get _value =>
-      super._value as _$_IsFetchingMoreDataForScrollDownUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isFetching = freezed,
+    Object? isFetching = null,
   }) {
     return _then(_$_IsFetchingMoreDataForScrollDownUpdated(
-      isFetching == freezed
+      null == isFetching
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1489,16 +1475,16 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IsFetchingMoreDataForScrollDownUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.isFetching, isFetching));
+            (identical(other.isFetching, isFetching) ||
+                other.isFetching == isFetching));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetching));
+  int get hashCode => Object.hash(runtimeType, isFetching);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IsFetchingMoreDataForScrollDownUpdatedCopyWith<
           _$_IsFetchingMoreDataForScrollDownUpdated>
       get copyWith => __$$_IsFetchingMoreDataForScrollDownUpdatedCopyWithImpl<
@@ -1526,16 +1512,16 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return isFetchingMoreDataForScrollDownUpdated?.call(isFetching);
   }
@@ -1585,19 +1571,19 @@ class _$_IsFetchingMoreDataForScrollDownUpdated
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return isFetchingMoreDataForScrollDownUpdated?.call(this);
   }
@@ -1644,26 +1630,25 @@ abstract class _$$_IsDataFetchedUpdatedCopyWith<$Res> {
   factory _$$_IsDataFetchedUpdatedCopyWith(_$_IsDataFetchedUpdated value,
           $Res Function(_$_IsDataFetchedUpdated) then) =
       __$$_IsDataFetchedUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isFetched});
 }
 
 /// @nodoc
 class __$$_IsDataFetchedUpdatedCopyWithImpl<$Res>
-    extends _$GlobalSearchEventCopyWithImpl<$Res>
+    extends _$GlobalSearchEventCopyWithImpl<$Res, _$_IsDataFetchedUpdated>
     implements _$$_IsDataFetchedUpdatedCopyWith<$Res> {
   __$$_IsDataFetchedUpdatedCopyWithImpl(_$_IsDataFetchedUpdated _value,
       $Res Function(_$_IsDataFetchedUpdated) _then)
-      : super(_value, (v) => _then(v as _$_IsDataFetchedUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_IsDataFetchedUpdated get _value => super._value as _$_IsDataFetchedUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isFetched = freezed,
+    Object? isFetched = null,
   }) {
     return _then(_$_IsDataFetchedUpdated(
-      isFetched == freezed
+      null == isFetched
           ? _value.isFetched
           : isFetched // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1689,15 +1674,16 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IsDataFetchedUpdated &&
-            const DeepCollectionEquality().equals(other.isFetched, isFetched));
+            (identical(other.isFetched, isFetched) ||
+                other.isFetched == isFetched));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetched));
+  int get hashCode => Object.hash(runtimeType, isFetched);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IsDataFetchedUpdatedCopyWith<_$_IsDataFetchedUpdated> get copyWith =>
       __$$_IsDataFetchedUpdatedCopyWithImpl<_$_IsDataFetchedUpdated>(
           this, _$identity);
@@ -1724,16 +1710,16 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
-    TResult Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
-    TResult Function(PaginationInfo? paginationInfo)?
+    TResult? Function()? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GroupUser> newUsers)? usersForSearchQueryUpdated,
+    TResult? Function(PaginationInfo? paginationInfo)?
         searchUsersPaginationInfoUpdated,
-    TResult Function()? pageRefreshed,
-    TResult Function()? scrolledToLoadMoreItems,
-    TResult Function(bool isFetching)? isFetchingInitialDataUpdated,
-    TResult Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function()? pageRefreshed,
+    TResult? Function()? scrolledToLoadMoreItems,
+    TResult? Function(bool isFetching)? isFetchingInitialDataUpdated,
+    TResult? Function(bool isFetching)? isFetchingMoreDataForScrollDownUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
   }) {
     return isDataFetchedUpdated?.call(isFetched);
   }
@@ -1783,19 +1769,19 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
-    TResult Function(_UsersForSearchQueryUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_UsersForSearchQueryUpdated value)?
         usersForSearchQueryUpdated,
-    TResult Function(_SearchUsersPaginationInfoUpdated value)?
+    TResult? Function(_SearchUsersPaginationInfoUpdated value)?
         searchUsersPaginationInfoUpdated,
-    TResult Function(_PageRefreshed value)? pageRefreshed,
-    TResult Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
-    TResult Function(_IsFetchingInitialDataUpdated value)?
+    TResult? Function(_PageRefreshed value)? pageRefreshed,
+    TResult? Function(_ScrolledToLoadMoreItems value)? scrolledToLoadMoreItems,
+    TResult? Function(_IsFetchingInitialDataUpdated value)?
         isFetchingInitialDataUpdated,
-    TResult Function(_IsFetchingMoreDataForScrollDownUpdated value)?
+    TResult? Function(_IsFetchingMoreDataForScrollDownUpdated value)?
         isFetchingMoreDataForScrollDownUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
   }) {
     return isDataFetchedUpdated?.call(this);
   }
@@ -1854,7 +1840,8 @@ mixin _$GlobalSearchState {
 abstract class $GlobalSearchStateCopyWith<$Res> {
   factory $GlobalSearchStateCopyWith(
           GlobalSearchState value, $Res Function(GlobalSearchState) then) =
-      _$GlobalSearchStateCopyWithImpl<$Res>;
+      _$GlobalSearchStateCopyWithImpl<$Res, GlobalSearchState>;
+  @useResult
   $Res call(
       {String searchValue,
       List<GroupUser> usersForSearchQuery,
@@ -1865,50 +1852,51 @@ abstract class $GlobalSearchStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GlobalSearchStateCopyWithImpl<$Res>
+class _$GlobalSearchStateCopyWithImpl<$Res, $Val extends GlobalSearchState>
     implements $GlobalSearchStateCopyWith<$Res> {
   _$GlobalSearchStateCopyWithImpl(this._value, this._then);
 
-  final GlobalSearchState _value;
   // ignore: unused_field
-  final $Res Function(GlobalSearchState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchValue = freezed,
-    Object? usersForSearchQuery = freezed,
-    Object? isDataFetched = freezed,
-    Object? isFetchingInitialData = freezed,
-    Object? isFetchingMoreDataForScrollDown = freezed,
+    Object? searchValue = null,
+    Object? usersForSearchQuery = null,
+    Object? isDataFetched = null,
+    Object? isFetchingInitialData = null,
+    Object? isFetchingMoreDataForScrollDown = null,
     Object? paginationInfo = freezed,
   }) {
     return _then(_value.copyWith(
-      searchValue: searchValue == freezed
+      searchValue: null == searchValue
           ? _value.searchValue
           : searchValue // ignore: cast_nullable_to_non_nullable
               as String,
-      usersForSearchQuery: usersForSearchQuery == freezed
+      usersForSearchQuery: null == usersForSearchQuery
           ? _value.usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
-      isDataFetched: isDataFetched == freezed
+      isDataFetched: null == isDataFetched
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFetchingInitialData: isFetchingInitialData == freezed
+      isFetchingInitialData: null == isFetchingInitialData
           ? _value.isFetchingInitialData
           : isFetchingInitialData // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFetchingMoreDataForScrollDown: isFetchingMoreDataForScrollDown ==
-              freezed
+      isFetchingMoreDataForScrollDown: null == isFetchingMoreDataForScrollDown
           ? _value.isFetchingMoreDataForScrollDown
           : isFetchingMoreDataForScrollDown // ignore: cast_nullable_to_non_nullable
               as bool,
-      paginationInfo: paginationInfo == freezed
+      paginationInfo: freezed == paginationInfo
           ? _value.paginationInfo
           : paginationInfo // ignore: cast_nullable_to_non_nullable
               as PaginationInfo?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1919,6 +1907,7 @@ abstract class _$$_GlobalSearchStateCopyWith<$Res>
           $Res Function(_$_GlobalSearchState) then) =
       __$$_GlobalSearchStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String searchValue,
       List<GroupUser> usersForSearchQuery,
@@ -1930,47 +1919,44 @@ abstract class _$$_GlobalSearchStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_GlobalSearchStateCopyWithImpl<$Res>
-    extends _$GlobalSearchStateCopyWithImpl<$Res>
+    extends _$GlobalSearchStateCopyWithImpl<$Res, _$_GlobalSearchState>
     implements _$$_GlobalSearchStateCopyWith<$Res> {
   __$$_GlobalSearchStateCopyWithImpl(
       _$_GlobalSearchState _value, $Res Function(_$_GlobalSearchState) _then)
-      : super(_value, (v) => _then(v as _$_GlobalSearchState));
+      : super(_value, _then);
 
-  @override
-  _$_GlobalSearchState get _value => super._value as _$_GlobalSearchState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? searchValue = freezed,
-    Object? usersForSearchQuery = freezed,
-    Object? isDataFetched = freezed,
-    Object? isFetchingInitialData = freezed,
-    Object? isFetchingMoreDataForScrollDown = freezed,
+    Object? searchValue = null,
+    Object? usersForSearchQuery = null,
+    Object? isDataFetched = null,
+    Object? isFetchingInitialData = null,
+    Object? isFetchingMoreDataForScrollDown = null,
     Object? paginationInfo = freezed,
   }) {
     return _then(_$_GlobalSearchState(
-      searchValue: searchValue == freezed
+      searchValue: null == searchValue
           ? _value.searchValue
           : searchValue // ignore: cast_nullable_to_non_nullable
               as String,
-      usersForSearchQuery: usersForSearchQuery == freezed
+      usersForSearchQuery: null == usersForSearchQuery
           ? _value._usersForSearchQuery
           : usersForSearchQuery // ignore: cast_nullable_to_non_nullable
               as List<GroupUser>,
-      isDataFetched: isDataFetched == freezed
+      isDataFetched: null == isDataFetched
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFetchingInitialData: isFetchingInitialData == freezed
+      isFetchingInitialData: null == isFetchingInitialData
           ? _value.isFetchingInitialData
           : isFetchingInitialData // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFetchingMoreDataForScrollDown: isFetchingMoreDataForScrollDown ==
-              freezed
+      isFetchingMoreDataForScrollDown: null == isFetchingMoreDataForScrollDown
           ? _value.isFetchingMoreDataForScrollDown
           : isFetchingMoreDataForScrollDown // ignore: cast_nullable_to_non_nullable
               as bool,
-      paginationInfo: paginationInfo == freezed
+      paginationInfo: freezed == paginationInfo
           ? _value.paginationInfo
           : paginationInfo // ignore: cast_nullable_to_non_nullable
               as PaginationInfo?,
@@ -2018,33 +2004,35 @@ class _$_GlobalSearchState implements _GlobalSearchState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GlobalSearchState &&
-            const DeepCollectionEquality()
-                .equals(other.searchValue, searchValue) &&
+            (identical(other.searchValue, searchValue) ||
+                other.searchValue == searchValue) &&
             const DeepCollectionEquality()
                 .equals(other._usersForSearchQuery, _usersForSearchQuery) &&
-            const DeepCollectionEquality()
-                .equals(other.isDataFetched, isDataFetched) &&
-            const DeepCollectionEquality()
-                .equals(other.isFetchingInitialData, isFetchingInitialData) &&
-            const DeepCollectionEquality().equals(
-                other.isFetchingMoreDataForScrollDown,
-                isFetchingMoreDataForScrollDown) &&
-            const DeepCollectionEquality()
-                .equals(other.paginationInfo, paginationInfo));
+            (identical(other.isDataFetched, isDataFetched) ||
+                other.isDataFetched == isDataFetched) &&
+            (identical(other.isFetchingInitialData, isFetchingInitialData) ||
+                other.isFetchingInitialData == isFetchingInitialData) &&
+            (identical(other.isFetchingMoreDataForScrollDown,
+                    isFetchingMoreDataForScrollDown) ||
+                other.isFetchingMoreDataForScrollDown ==
+                    isFetchingMoreDataForScrollDown) &&
+            (identical(other.paginationInfo, paginationInfo) ||
+                other.paginationInfo == paginationInfo));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(searchValue),
+      searchValue,
       const DeepCollectionEquality().hash(_usersForSearchQuery),
-      const DeepCollectionEquality().hash(isDataFetched),
-      const DeepCollectionEquality().hash(isFetchingInitialData),
-      const DeepCollectionEquality().hash(isFetchingMoreDataForScrollDown),
-      const DeepCollectionEquality().hash(paginationInfo));
+      isDataFetched,
+      isFetchingInitialData,
+      isFetchingMoreDataForScrollDown,
+      paginationInfo);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GlobalSearchStateCopyWith<_$_GlobalSearchState> get copyWith =>
       __$$_GlobalSearchStateCopyWithImpl<_$_GlobalSearchState>(
           this, _$identity);

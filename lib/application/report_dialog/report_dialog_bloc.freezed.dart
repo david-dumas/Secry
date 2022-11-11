@@ -24,8 +24,8 @@ mixin _$ReportDialogEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int newValue)? reportedTileExcecuted,
-    TResult Function()? initialized,
+    TResult? Function(int newValue)? reportedTileExcecuted,
+    TResult? Function()? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +44,8 @@ mixin _$ReportDialogEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
-    TResult Function(_Initialized value)? initialized,
+    TResult? Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult? Function(_Initialized value)? initialized,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -61,17 +61,18 @@ mixin _$ReportDialogEvent {
 abstract class $ReportDialogEventCopyWith<$Res> {
   factory $ReportDialogEventCopyWith(
           ReportDialogEvent value, $Res Function(ReportDialogEvent) then) =
-      _$ReportDialogEventCopyWithImpl<$Res>;
+      _$ReportDialogEventCopyWithImpl<$Res, ReportDialogEvent>;
 }
 
 /// @nodoc
-class _$ReportDialogEventCopyWithImpl<$Res>
+class _$ReportDialogEventCopyWithImpl<$Res, $Val extends ReportDialogEvent>
     implements $ReportDialogEventCopyWith<$Res> {
   _$ReportDialogEventCopyWithImpl(this._value, this._then);
 
-  final ReportDialogEvent _value;
   // ignore: unused_field
-  final $Res Function(ReportDialogEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -79,27 +80,25 @@ abstract class _$$_ReportedTileExcecutedCopyWith<$Res> {
   factory _$$_ReportedTileExcecutedCopyWith(_$_ReportedTileExcecuted value,
           $Res Function(_$_ReportedTileExcecuted) then) =
       __$$_ReportedTileExcecutedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int newValue});
 }
 
 /// @nodoc
 class __$$_ReportedTileExcecutedCopyWithImpl<$Res>
-    extends _$ReportDialogEventCopyWithImpl<$Res>
+    extends _$ReportDialogEventCopyWithImpl<$Res, _$_ReportedTileExcecuted>
     implements _$$_ReportedTileExcecutedCopyWith<$Res> {
   __$$_ReportedTileExcecutedCopyWithImpl(_$_ReportedTileExcecuted _value,
       $Res Function(_$_ReportedTileExcecuted) _then)
-      : super(_value, (v) => _then(v as _$_ReportedTileExcecuted));
+      : super(_value, _then);
 
-  @override
-  _$_ReportedTileExcecuted get _value =>
-      super._value as _$_ReportedTileExcecuted;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$_ReportedTileExcecuted(
-      newValue == freezed
+      null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as int,
@@ -125,15 +124,16 @@ class _$_ReportedTileExcecuted implements _ReportedTileExcecuted {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ReportedTileExcecuted &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ReportedTileExcecutedCopyWith<_$_ReportedTileExcecuted> get copyWith =>
       __$$_ReportedTileExcecutedCopyWithImpl<_$_ReportedTileExcecuted>(
           this, _$identity);
@@ -150,8 +150,8 @@ class _$_ReportedTileExcecuted implements _ReportedTileExcecuted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int newValue)? reportedTileExcecuted,
-    TResult Function()? initialized,
+    TResult? Function(int newValue)? reportedTileExcecuted,
+    TResult? Function()? initialized,
   }) {
     return reportedTileExcecuted?.call(newValue);
   }
@@ -182,8 +182,8 @@ class _$_ReportedTileExcecuted implements _ReportedTileExcecuted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
-    TResult Function(_Initialized value)? initialized,
+    TResult? Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult? Function(_Initialized value)? initialized,
   }) {
     return reportedTileExcecuted?.call(this);
   }
@@ -221,14 +221,11 @@ abstract class _$$_InitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$ReportDialogEventCopyWithImpl<$Res>
+    extends _$ReportDialogEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
-
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -262,8 +259,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(int newValue)? reportedTileExcecuted,
-    TResult Function()? initialized,
+    TResult? Function(int newValue)? reportedTileExcecuted,
+    TResult? Function()? initialized,
   }) {
     return initialized?.call();
   }
@@ -294,8 +291,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
-    TResult Function(_Initialized value)? initialized,
+    TResult? Function(_ReportedTileExcecuted value)? reportedTileExcecuted,
+    TResult? Function(_Initialized value)? initialized,
   }) {
     return initialized?.call(this);
   }
@@ -331,29 +328,32 @@ mixin _$ReportDialogState {
 abstract class $ReportDialogStateCopyWith<$Res> {
   factory $ReportDialogStateCopyWith(
           ReportDialogState value, $Res Function(ReportDialogState) then) =
-      _$ReportDialogStateCopyWithImpl<$Res>;
+      _$ReportDialogStateCopyWithImpl<$Res, ReportDialogState>;
+  @useResult
   $Res call({int selectedReportTile});
 }
 
 /// @nodoc
-class _$ReportDialogStateCopyWithImpl<$Res>
+class _$ReportDialogStateCopyWithImpl<$Res, $Val extends ReportDialogState>
     implements $ReportDialogStateCopyWith<$Res> {
   _$ReportDialogStateCopyWithImpl(this._value, this._then);
 
-  final ReportDialogState _value;
   // ignore: unused_field
-  final $Res Function(ReportDialogState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedReportTile = freezed,
+    Object? selectedReportTile = null,
   }) {
     return _then(_value.copyWith(
-      selectedReportTile: selectedReportTile == freezed
+      selectedReportTile: null == selectedReportTile
           ? _value.selectedReportTile
           : selectedReportTile // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -364,26 +364,25 @@ abstract class _$$_ReportDialogStateCopyWith<$Res>
           $Res Function(_$_ReportDialogState) then) =
       __$$_ReportDialogStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int selectedReportTile});
 }
 
 /// @nodoc
 class __$$_ReportDialogStateCopyWithImpl<$Res>
-    extends _$ReportDialogStateCopyWithImpl<$Res>
+    extends _$ReportDialogStateCopyWithImpl<$Res, _$_ReportDialogState>
     implements _$$_ReportDialogStateCopyWith<$Res> {
   __$$_ReportDialogStateCopyWithImpl(
       _$_ReportDialogState _value, $Res Function(_$_ReportDialogState) _then)
-      : super(_value, (v) => _then(v as _$_ReportDialogState));
+      : super(_value, _then);
 
-  @override
-  _$_ReportDialogState get _value => super._value as _$_ReportDialogState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedReportTile = freezed,
+    Object? selectedReportTile = null,
   }) {
     return _then(_$_ReportDialogState(
-      selectedReportTile: selectedReportTile == freezed
+      selectedReportTile: null == selectedReportTile
           ? _value.selectedReportTile
           : selectedReportTile // ignore: cast_nullable_to_non_nullable
               as int,
@@ -409,16 +408,16 @@ class _$_ReportDialogState implements _ReportDialogState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ReportDialogState &&
-            const DeepCollectionEquality()
-                .equals(other.selectedReportTile, selectedReportTile));
+            (identical(other.selectedReportTile, selectedReportTile) ||
+                other.selectedReportTile == selectedReportTile));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(selectedReportTile));
+  int get hashCode => Object.hash(runtimeType, selectedReportTile);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ReportDialogStateCopyWith<_$_ReportDialogState> get copyWith =>
       __$$_ReportDialogStateCopyWithImpl<_$_ReportDialogState>(
           this, _$identity);

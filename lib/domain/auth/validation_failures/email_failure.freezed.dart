@@ -24,8 +24,8 @@ mixin _$EmailFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noEmailEntered,
-    TResult Function()? emailInvalid,
+    TResult? Function()? noEmailEntered,
+    TResult? Function()? emailInvalid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$EmailFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoEmailEntered value)? noEmailEntered,
-    TResult Function(InvalidEmail value)? emailInvalid,
+    TResult? Function(NoEmailEntered value)? noEmailEntered,
+    TResult? Function(InvalidEmail value)? emailInvalid,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,16 +60,18 @@ mixin _$EmailFailure {
 abstract class $EmailFailureCopyWith<$Res> {
   factory $EmailFailureCopyWith(
           EmailFailure value, $Res Function(EmailFailure) then) =
-      _$EmailFailureCopyWithImpl<$Res>;
+      _$EmailFailureCopyWithImpl<$Res, EmailFailure>;
 }
 
 /// @nodoc
-class _$EmailFailureCopyWithImpl<$Res> implements $EmailFailureCopyWith<$Res> {
+class _$EmailFailureCopyWithImpl<$Res, $Val extends EmailFailure>
+    implements $EmailFailureCopyWith<$Res> {
   _$EmailFailureCopyWithImpl(this._value, this._then);
 
-  final EmailFailure _value;
   // ignore: unused_field
-  final $Res Function(EmailFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -81,14 +83,11 @@ abstract class _$$NoEmailEnteredCopyWith<$Res> {
 
 /// @nodoc
 class __$$NoEmailEnteredCopyWithImpl<$Res>
-    extends _$EmailFailureCopyWithImpl<$Res>
+    extends _$EmailFailureCopyWithImpl<$Res, _$NoEmailEntered>
     implements _$$NoEmailEnteredCopyWith<$Res> {
   __$$NoEmailEnteredCopyWithImpl(
       _$NoEmailEntered _value, $Res Function(_$NoEmailEntered) _then)
-      : super(_value, (v) => _then(v as _$NoEmailEntered));
-
-  @override
-  _$NoEmailEntered get _value => super._value as _$NoEmailEntered;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -122,8 +121,8 @@ class _$NoEmailEntered implements NoEmailEntered {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noEmailEntered,
-    TResult Function()? emailInvalid,
+    TResult? Function()? noEmailEntered,
+    TResult? Function()? emailInvalid,
   }) {
     return noEmailEntered?.call();
   }
@@ -153,8 +152,8 @@ class _$NoEmailEntered implements NoEmailEntered {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoEmailEntered value)? noEmailEntered,
-    TResult Function(InvalidEmail value)? emailInvalid,
+    TResult? Function(NoEmailEntered value)? noEmailEntered,
+    TResult? Function(InvalidEmail value)? emailInvalid,
   }) {
     return noEmailEntered?.call(this);
   }
@@ -186,14 +185,11 @@ abstract class _$$InvalidEmailCopyWith<$Res> {
 
 /// @nodoc
 class __$$InvalidEmailCopyWithImpl<$Res>
-    extends _$EmailFailureCopyWithImpl<$Res>
+    extends _$EmailFailureCopyWithImpl<$Res, _$InvalidEmail>
     implements _$$InvalidEmailCopyWith<$Res> {
   __$$InvalidEmailCopyWithImpl(
       _$InvalidEmail _value, $Res Function(_$InvalidEmail) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmail));
-
-  @override
-  _$InvalidEmail get _value => super._value as _$InvalidEmail;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -227,8 +223,8 @@ class _$InvalidEmail implements InvalidEmail {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noEmailEntered,
-    TResult Function()? emailInvalid,
+    TResult? Function()? noEmailEntered,
+    TResult? Function()? emailInvalid,
   }) {
     return emailInvalid?.call();
   }
@@ -258,8 +254,8 @@ class _$InvalidEmail implements InvalidEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoEmailEntered value)? noEmailEntered,
-    TResult Function(InvalidEmail value)? emailInvalid,
+    TResult? Function(NoEmailEntered value)? noEmailEntered,
+    TResult? Function(InvalidEmail value)? emailInvalid,
   }) {
     return emailInvalid?.call(this);
   }

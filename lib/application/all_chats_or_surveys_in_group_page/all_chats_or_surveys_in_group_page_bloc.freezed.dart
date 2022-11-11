@@ -25,8 +25,8 @@ mixin _$AllChatsOrSurveysInGroupPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<GeneralListCellInfoItem> cellInfoItems)? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GeneralListCellInfoItem> cellInfoItems)? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -44,8 +44,8 @@ mixin _$AllChatsOrSurveysInGroupPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -62,17 +62,20 @@ abstract class $AllChatsOrSurveysInGroupPageEventCopyWith<$Res> {
   factory $AllChatsOrSurveysInGroupPageEventCopyWith(
           AllChatsOrSurveysInGroupPageEvent value,
           $Res Function(AllChatsOrSurveysInGroupPageEvent) then) =
-      _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>;
+      _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res,
+          AllChatsOrSurveysInGroupPageEvent>;
 }
 
 /// @nodoc
-class _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>
+class _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res,
+        $Val extends AllChatsOrSurveysInGroupPageEvent>
     implements $AllChatsOrSurveysInGroupPageEventCopyWith<$Res> {
   _$AllChatsOrSurveysInGroupPageEventCopyWithImpl(this._value, this._then);
 
-  final AllChatsOrSurveysInGroupPageEvent _value;
   // ignore: unused_field
-  final $Res Function(AllChatsOrSurveysInGroupPageEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -80,26 +83,25 @@ abstract class _$$_InitializedCopyWith<$Res> {
   factory _$$_InitializedCopyWith(
           _$_Initialized value, $Res Function(_$_Initialized) then) =
       __$$_InitializedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<GeneralListCellInfoItem> cellInfoItems});
 }
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>
-    implements _$$_InitializedCopyWith<$Res> {
+    extends _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res,
+        _$_Initialized> implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
+      : super(_value, _then);
 
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cellInfoItems = freezed,
+    Object? cellInfoItems = null,
   }) {
     return _then(_$_Initialized(
-      cellInfoItems == freezed
+      null == cellInfoItems
           ? _value._cellInfoItems
           : cellInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GeneralListCellInfoItem>,
@@ -140,6 +142,7 @@ class _$_Initialized implements _Initialized {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       __$$_InitializedCopyWithImpl<_$_Initialized>(this, _$identity);
 
@@ -156,8 +159,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<GeneralListCellInfoItem> cellInfoItems)? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GeneralListCellInfoItem> cellInfoItems)? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
   }) {
     return initialized?.call(cellInfoItems);
   }
@@ -187,8 +190,8 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -222,26 +225,25 @@ abstract class _$$_SearchValueUpdatedCopyWith<$Res> {
   factory _$$_SearchValueUpdatedCopyWith(_$_SearchValueUpdated value,
           $Res Function(_$_SearchValueUpdated) then) =
       __$$_SearchValueUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newValue});
 }
 
 /// @nodoc
 class __$$_SearchValueUpdatedCopyWithImpl<$Res>
-    extends _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res>
-    implements _$$_SearchValueUpdatedCopyWith<$Res> {
+    extends _$AllChatsOrSurveysInGroupPageEventCopyWithImpl<$Res,
+        _$_SearchValueUpdated> implements _$$_SearchValueUpdatedCopyWith<$Res> {
   __$$_SearchValueUpdatedCopyWithImpl(
       _$_SearchValueUpdated _value, $Res Function(_$_SearchValueUpdated) _then)
-      : super(_value, (v) => _then(v as _$_SearchValueUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_SearchValueUpdated get _value => super._value as _$_SearchValueUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$_SearchValueUpdated(
-      newValue == freezed
+      null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -267,15 +269,16 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SearchValueUpdated &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SearchValueUpdatedCopyWith<_$_SearchValueUpdated> get copyWith =>
       __$$_SearchValueUpdatedCopyWithImpl<_$_SearchValueUpdated>(
           this, _$identity);
@@ -293,8 +296,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(List<GeneralListCellInfoItem> cellInfoItems)? initialized,
-    TResult Function(String newValue)? searchValueUpdated,
+    TResult? Function(List<GeneralListCellInfoItem> cellInfoItems)? initialized,
+    TResult? Function(String newValue)? searchValueUpdated,
   }) {
     return searchValueUpdated?.call(newValue);
   }
@@ -324,8 +327,8 @@ class _$_SearchValueUpdated implements _SearchValueUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SearchValueUpdated value)? searchValueUpdated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SearchValueUpdated value)? searchValueUpdated,
   }) {
     return searchValueUpdated?.call(this);
   }
@@ -371,34 +374,39 @@ abstract class $AllChatsOrSurveysInGroupPageStateCopyWith<$Res> {
   factory $AllChatsOrSurveysInGroupPageStateCopyWith(
           AllChatsOrSurveysInGroupPageState value,
           $Res Function(AllChatsOrSurveysInGroupPageState) then) =
-      _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>;
+      _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res,
+          AllChatsOrSurveysInGroupPageState>;
+  @useResult
   $Res call({List<GeneralListCellInfoItem> cellInfoItems, String searchValue});
 }
 
 /// @nodoc
-class _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>
+class _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res,
+        $Val extends AllChatsOrSurveysInGroupPageState>
     implements $AllChatsOrSurveysInGroupPageStateCopyWith<$Res> {
   _$AllChatsOrSurveysInGroupPageStateCopyWithImpl(this._value, this._then);
 
-  final AllChatsOrSurveysInGroupPageState _value;
   // ignore: unused_field
-  final $Res Function(AllChatsOrSurveysInGroupPageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cellInfoItems = freezed,
-    Object? searchValue = freezed,
+    Object? cellInfoItems = null,
+    Object? searchValue = null,
   }) {
     return _then(_value.copyWith(
-      cellInfoItems: cellInfoItems == freezed
+      cellInfoItems: null == cellInfoItems
           ? _value.cellInfoItems
           : cellInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GeneralListCellInfoItem>,
-      searchValue: searchValue == freezed
+      searchValue: null == searchValue
           ? _value.searchValue
           : searchValue // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -410,33 +418,32 @@ abstract class _$$_AllChatsOrSurveysInGroupPageStateCopyWith<$Res>
           $Res Function(_$_AllChatsOrSurveysInGroupPageState) then) =
       __$$_AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({List<GeneralListCellInfoItem> cellInfoItems, String searchValue});
 }
 
 /// @nodoc
 class __$$_AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>
-    extends _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res>
+    extends _$AllChatsOrSurveysInGroupPageStateCopyWithImpl<$Res,
+        _$_AllChatsOrSurveysInGroupPageState>
     implements _$$_AllChatsOrSurveysInGroupPageStateCopyWith<$Res> {
   __$$_AllChatsOrSurveysInGroupPageStateCopyWithImpl(
       _$_AllChatsOrSurveysInGroupPageState _value,
       $Res Function(_$_AllChatsOrSurveysInGroupPageState) _then)
-      : super(_value, (v) => _then(v as _$_AllChatsOrSurveysInGroupPageState));
+      : super(_value, _then);
 
-  @override
-  _$_AllChatsOrSurveysInGroupPageState get _value =>
-      super._value as _$_AllChatsOrSurveysInGroupPageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? cellInfoItems = freezed,
-    Object? searchValue = freezed,
+    Object? cellInfoItems = null,
+    Object? searchValue = null,
   }) {
     return _then(_$_AllChatsOrSurveysInGroupPageState(
-      cellInfoItems: cellInfoItems == freezed
+      cellInfoItems: null == cellInfoItems
           ? _value._cellInfoItems
           : cellInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GeneralListCellInfoItem>,
-      searchValue: searchValue == freezed
+      searchValue: null == searchValue
           ? _value.searchValue
           : searchValue // ignore: cast_nullable_to_non_nullable
               as String,
@@ -475,18 +482,17 @@ class _$_AllChatsOrSurveysInGroupPageState
             other is _$_AllChatsOrSurveysInGroupPageState &&
             const DeepCollectionEquality()
                 .equals(other._cellInfoItems, _cellInfoItems) &&
-            const DeepCollectionEquality()
-                .equals(other.searchValue, searchValue));
+            (identical(other.searchValue, searchValue) ||
+                other.searchValue == searchValue));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(_cellInfoItems),
-      const DeepCollectionEquality().hash(searchValue));
+  int get hashCode => Object.hash(runtimeType,
+      const DeepCollectionEquality().hash(_cellInfoItems), searchValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AllChatsOrSurveysInGroupPageStateCopyWith<
           _$_AllChatsOrSurveysInGroupPageState>
       get copyWith => __$$_AllChatsOrSurveysInGroupPageStateCopyWithImpl<

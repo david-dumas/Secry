@@ -25,9 +25,9 @@ mixin _$TabbarEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(int index)? selectedIndexChanged,
-    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
+    TResult? Function()? initialized,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function(bool isSignedIn)? isUserSignedInUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -48,9 +48,9 @@ mixin _$TabbarEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
-    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult? Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -67,16 +67,18 @@ mixin _$TabbarEvent {
 abstract class $TabbarEventCopyWith<$Res> {
   factory $TabbarEventCopyWith(
           TabbarEvent value, $Res Function(TabbarEvent) then) =
-      _$TabbarEventCopyWithImpl<$Res>;
+      _$TabbarEventCopyWithImpl<$Res, TabbarEvent>;
 }
 
 /// @nodoc
-class _$TabbarEventCopyWithImpl<$Res> implements $TabbarEventCopyWith<$Res> {
+class _$TabbarEventCopyWithImpl<$Res, $Val extends TabbarEvent>
+    implements $TabbarEventCopyWith<$Res> {
   _$TabbarEventCopyWithImpl(this._value, this._then);
 
-  final TabbarEvent _value;
   // ignore: unused_field
-  final $Res Function(TabbarEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -87,14 +89,12 @@ abstract class _$$_InitializedCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitializedCopyWithImpl<$Res> extends _$TabbarEventCopyWithImpl<$Res>
+class __$$_InitializedCopyWithImpl<$Res>
+    extends _$TabbarEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
-
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -129,9 +129,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(int index)? selectedIndexChanged,
-    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
+    TResult? Function()? initialized,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function(bool isSignedIn)? isUserSignedInUpdated,
   }) {
     return initialized?.call();
   }
@@ -164,9 +164,9 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
-    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult? Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
   }) {
     return initialized?.call(this);
   }
@@ -195,26 +195,25 @@ abstract class _$$_SelectedIndexChangedCopyWith<$Res> {
   factory _$$_SelectedIndexChangedCopyWith(_$_SelectedIndexChanged value,
           $Res Function(_$_SelectedIndexChanged) then) =
       __$$_SelectedIndexChangedCopyWithImpl<$Res>;
+  @useResult
   $Res call({int index});
 }
 
 /// @nodoc
 class __$$_SelectedIndexChangedCopyWithImpl<$Res>
-    extends _$TabbarEventCopyWithImpl<$Res>
+    extends _$TabbarEventCopyWithImpl<$Res, _$_SelectedIndexChanged>
     implements _$$_SelectedIndexChangedCopyWith<$Res> {
   __$$_SelectedIndexChangedCopyWithImpl(_$_SelectedIndexChanged _value,
       $Res Function(_$_SelectedIndexChanged) _then)
-      : super(_value, (v) => _then(v as _$_SelectedIndexChanged));
+      : super(_value, _then);
 
-  @override
-  _$_SelectedIndexChanged get _value => super._value as _$_SelectedIndexChanged;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? index = freezed,
+    Object? index = null,
   }) {
     return _then(_$_SelectedIndexChanged(
-      index == freezed
+      null == index
           ? _value.index
           : index // ignore: cast_nullable_to_non_nullable
               as int,
@@ -240,15 +239,15 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SelectedIndexChanged &&
-            const DeepCollectionEquality().equals(other.index, index));
+            (identical(other.index, index) || other.index == index));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+  int get hashCode => Object.hash(runtimeType, index);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SelectedIndexChangedCopyWith<_$_SelectedIndexChanged> get copyWith =>
       __$$_SelectedIndexChangedCopyWithImpl<_$_SelectedIndexChanged>(
           this, _$identity);
@@ -266,9 +265,9 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(int index)? selectedIndexChanged,
-    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
+    TResult? Function()? initialized,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function(bool isSignedIn)? isUserSignedInUpdated,
   }) {
     return selectedIndexChanged?.call(index);
   }
@@ -301,9 +300,9 @@ class _$_SelectedIndexChanged implements _SelectedIndexChanged {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
-    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult? Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
   }) {
     return selectedIndexChanged?.call(this);
   }
@@ -338,27 +337,25 @@ abstract class _$$_IsUserSignedInUpdatedCopyWith<$Res> {
   factory _$$_IsUserSignedInUpdatedCopyWith(_$_IsUserSignedInUpdated value,
           $Res Function(_$_IsUserSignedInUpdated) then) =
       __$$_IsUserSignedInUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isSignedIn});
 }
 
 /// @nodoc
 class __$$_IsUserSignedInUpdatedCopyWithImpl<$Res>
-    extends _$TabbarEventCopyWithImpl<$Res>
+    extends _$TabbarEventCopyWithImpl<$Res, _$_IsUserSignedInUpdated>
     implements _$$_IsUserSignedInUpdatedCopyWith<$Res> {
   __$$_IsUserSignedInUpdatedCopyWithImpl(_$_IsUserSignedInUpdated _value,
       $Res Function(_$_IsUserSignedInUpdated) _then)
-      : super(_value, (v) => _then(v as _$_IsUserSignedInUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_IsUserSignedInUpdated get _value =>
-      super._value as _$_IsUserSignedInUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isSignedIn = freezed,
+    Object? isSignedIn = null,
   }) {
     return _then(_$_IsUserSignedInUpdated(
-      isSignedIn == freezed
+      null == isSignedIn
           ? _value.isSignedIn
           : isSignedIn // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -384,16 +381,16 @@ class _$_IsUserSignedInUpdated implements _IsUserSignedInUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IsUserSignedInUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.isSignedIn, isSignedIn));
+            (identical(other.isSignedIn, isSignedIn) ||
+                other.isSignedIn == isSignedIn));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isSignedIn));
+  int get hashCode => Object.hash(runtimeType, isSignedIn);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IsUserSignedInUpdatedCopyWith<_$_IsUserSignedInUpdated> get copyWith =>
       __$$_IsUserSignedInUpdatedCopyWithImpl<_$_IsUserSignedInUpdated>(
           this, _$identity);
@@ -411,9 +408,9 @@ class _$_IsUserSignedInUpdated implements _IsUserSignedInUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(int index)? selectedIndexChanged,
-    TResult Function(bool isSignedIn)? isUserSignedInUpdated,
+    TResult? Function()? initialized,
+    TResult? Function(int index)? selectedIndexChanged,
+    TResult? Function(bool isSignedIn)? isUserSignedInUpdated,
   }) {
     return isUserSignedInUpdated?.call(isSignedIn);
   }
@@ -446,9 +443,9 @@ class _$_IsUserSignedInUpdated implements _IsUserSignedInUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SelectedIndexChanged value)? selectedIndexChanged,
-    TResult Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SelectedIndexChanged value)? selectedIndexChanged,
+    TResult? Function(_IsUserSignedInUpdated value)? isUserSignedInUpdated,
   }) {
     return isUserSignedInUpdated?.call(this);
   }
@@ -496,7 +493,8 @@ mixin _$TabbarState {
 abstract class $TabbarStateCopyWith<$Res> {
   factory $TabbarStateCopyWith(
           TabbarState value, $Res Function(TabbarState) then) =
-      _$TabbarStateCopyWithImpl<$Res>;
+      _$TabbarStateCopyWithImpl<$Res, TabbarState>;
+  @useResult
   $Res call(
       {int selectedIndex,
       List<String> titleTagsForSelectedIndex,
@@ -505,39 +503,41 @@ abstract class $TabbarStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$TabbarStateCopyWithImpl<$Res> implements $TabbarStateCopyWith<$Res> {
+class _$TabbarStateCopyWithImpl<$Res, $Val extends TabbarState>
+    implements $TabbarStateCopyWith<$Res> {
   _$TabbarStateCopyWithImpl(this._value, this._then);
 
-  final TabbarState _value;
   // ignore: unused_field
-  final $Res Function(TabbarState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedIndex = freezed,
-    Object? titleTagsForSelectedIndex = freezed,
-    Object? currentTitleTagForSelectedIndex = freezed,
-    Object? isUserSignedIn = freezed,
+    Object? selectedIndex = null,
+    Object? titleTagsForSelectedIndex = null,
+    Object? currentTitleTagForSelectedIndex = null,
+    Object? isUserSignedIn = null,
   }) {
     return _then(_value.copyWith(
-      selectedIndex: selectedIndex == freezed
+      selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      titleTagsForSelectedIndex: titleTagsForSelectedIndex == freezed
+      titleTagsForSelectedIndex: null == titleTagsForSelectedIndex
           ? _value.titleTagsForSelectedIndex
           : titleTagsForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      currentTitleTagForSelectedIndex: currentTitleTagForSelectedIndex ==
-              freezed
+      currentTitleTagForSelectedIndex: null == currentTitleTagForSelectedIndex
           ? _value.currentTitleTagForSelectedIndex
           : currentTitleTagForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as String,
-      isUserSignedIn: isUserSignedIn == freezed
+      isUserSignedIn: null == isUserSignedIn
           ? _value.isUserSignedIn
           : isUserSignedIn // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -548,6 +548,7 @@ abstract class _$$_TabbarStateCopyWith<$Res>
           _$_TabbarState value, $Res Function(_$_TabbarState) then) =
       __$$_TabbarStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {int selectedIndex,
       List<String> titleTagsForSelectedIndex,
@@ -556,37 +557,35 @@ abstract class _$$_TabbarStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_TabbarStateCopyWithImpl<$Res> extends _$TabbarStateCopyWithImpl<$Res>
+class __$$_TabbarStateCopyWithImpl<$Res>
+    extends _$TabbarStateCopyWithImpl<$Res, _$_TabbarState>
     implements _$$_TabbarStateCopyWith<$Res> {
   __$$_TabbarStateCopyWithImpl(
       _$_TabbarState _value, $Res Function(_$_TabbarState) _then)
-      : super(_value, (v) => _then(v as _$_TabbarState));
+      : super(_value, _then);
 
-  @override
-  _$_TabbarState get _value => super._value as _$_TabbarState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? selectedIndex = freezed,
-    Object? titleTagsForSelectedIndex = freezed,
-    Object? currentTitleTagForSelectedIndex = freezed,
-    Object? isUserSignedIn = freezed,
+    Object? selectedIndex = null,
+    Object? titleTagsForSelectedIndex = null,
+    Object? currentTitleTagForSelectedIndex = null,
+    Object? isUserSignedIn = null,
   }) {
     return _then(_$_TabbarState(
-      selectedIndex: selectedIndex == freezed
+      selectedIndex: null == selectedIndex
           ? _value.selectedIndex
           : selectedIndex // ignore: cast_nullable_to_non_nullable
               as int,
-      titleTagsForSelectedIndex: titleTagsForSelectedIndex == freezed
+      titleTagsForSelectedIndex: null == titleTagsForSelectedIndex
           ? _value._titleTagsForSelectedIndex
           : titleTagsForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as List<String>,
-      currentTitleTagForSelectedIndex: currentTitleTagForSelectedIndex ==
-              freezed
+      currentTitleTagForSelectedIndex: null == currentTitleTagForSelectedIndex
           ? _value.currentTitleTagForSelectedIndex
           : currentTitleTagForSelectedIndex // ignore: cast_nullable_to_non_nullable
               as String,
-      isUserSignedIn: isUserSignedIn == freezed
+      isUserSignedIn: null == isUserSignedIn
           ? _value.isUserSignedIn
           : isUserSignedIn // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -628,27 +627,29 @@ class _$_TabbarState implements _TabbarState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_TabbarState &&
-            const DeepCollectionEquality()
-                .equals(other.selectedIndex, selectedIndex) &&
+            (identical(other.selectedIndex, selectedIndex) ||
+                other.selectedIndex == selectedIndex) &&
             const DeepCollectionEquality().equals(
                 other._titleTagsForSelectedIndex, _titleTagsForSelectedIndex) &&
-            const DeepCollectionEquality().equals(
-                other.currentTitleTagForSelectedIndex,
-                currentTitleTagForSelectedIndex) &&
-            const DeepCollectionEquality()
-                .equals(other.isUserSignedIn, isUserSignedIn));
+            (identical(other.currentTitleTagForSelectedIndex,
+                    currentTitleTagForSelectedIndex) ||
+                other.currentTitleTagForSelectedIndex ==
+                    currentTitleTagForSelectedIndex) &&
+            (identical(other.isUserSignedIn, isUserSignedIn) ||
+                other.isUserSignedIn == isUserSignedIn));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(selectedIndex),
+      selectedIndex,
       const DeepCollectionEquality().hash(_titleTagsForSelectedIndex),
-      const DeepCollectionEquality().hash(currentTitleTagForSelectedIndex),
-      const DeepCollectionEquality().hash(isUserSignedIn));
+      currentTitleTagForSelectedIndex,
+      isUserSignedIn);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_TabbarStateCopyWith<_$_TabbarState> get copyWith =>
       __$$_TabbarStateCopyWithImpl<_$_TabbarState>(this, _$identity);
 }

@@ -1,5 +1,5 @@
 import 'package:secry/util/date_and_time/text_from_date.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   // Returns DateTime.now() as a string

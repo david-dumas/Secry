@@ -27,7 +27,7 @@ mixin _$SplashEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PageRouteInfo<dynamic> route, int delayInMilliseconds)?
+    TResult? Function(PageRouteInfo<dynamic> route, int delayInMilliseconds)?
         redirect,
   }) =>
       throw _privateConstructorUsedError;
@@ -45,7 +45,7 @@ mixin _$SplashEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Redirect value)? redirect,
+    TResult? Function(_Redirect value)? redirect,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,33 +64,37 @@ mixin _$SplashEvent {
 abstract class $SplashEventCopyWith<$Res> {
   factory $SplashEventCopyWith(
           SplashEvent value, $Res Function(SplashEvent) then) =
-      _$SplashEventCopyWithImpl<$Res>;
+      _$SplashEventCopyWithImpl<$Res, SplashEvent>;
+  @useResult
   $Res call({PageRouteInfo<dynamic> route, int delayInMilliseconds});
 }
 
 /// @nodoc
-class _$SplashEventCopyWithImpl<$Res> implements $SplashEventCopyWith<$Res> {
+class _$SplashEventCopyWithImpl<$Res, $Val extends SplashEvent>
+    implements $SplashEventCopyWith<$Res> {
   _$SplashEventCopyWithImpl(this._value, this._then);
 
-  final SplashEvent _value;
   // ignore: unused_field
-  final $Res Function(SplashEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? route = freezed,
-    Object? delayInMilliseconds = freezed,
+    Object? route = null,
+    Object? delayInMilliseconds = null,
   }) {
     return _then(_value.copyWith(
-      route: route == freezed
+      route: null == route
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
               as PageRouteInfo<dynamic>,
-      delayInMilliseconds: delayInMilliseconds == freezed
+      delayInMilliseconds: null == delayInMilliseconds
           ? _value.delayInMilliseconds
           : delayInMilliseconds // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -101,30 +105,30 @@ abstract class _$$_RedirectCopyWith<$Res>
           _$_Redirect value, $Res Function(_$_Redirect) then) =
       __$$_RedirectCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({PageRouteInfo<dynamic> route, int delayInMilliseconds});
 }
 
 /// @nodoc
-class __$$_RedirectCopyWithImpl<$Res> extends _$SplashEventCopyWithImpl<$Res>
+class __$$_RedirectCopyWithImpl<$Res>
+    extends _$SplashEventCopyWithImpl<$Res, _$_Redirect>
     implements _$$_RedirectCopyWith<$Res> {
   __$$_RedirectCopyWithImpl(
       _$_Redirect _value, $Res Function(_$_Redirect) _then)
-      : super(_value, (v) => _then(v as _$_Redirect));
+      : super(_value, _then);
 
-  @override
-  _$_Redirect get _value => super._value as _$_Redirect;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? route = freezed,
-    Object? delayInMilliseconds = freezed,
+    Object? route = null,
+    Object? delayInMilliseconds = null,
   }) {
     return _then(_$_Redirect(
-      route == freezed
+      null == route
           ? _value.route
           : route // ignore: cast_nullable_to_non_nullable
               as PageRouteInfo<dynamic>,
-      delayInMilliseconds == freezed
+      null == delayInMilliseconds
           ? _value.delayInMilliseconds
           : delayInMilliseconds // ignore: cast_nullable_to_non_nullable
               as int,
@@ -152,19 +156,17 @@ class _$_Redirect implements _Redirect {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Redirect &&
-            const DeepCollectionEquality().equals(other.route, route) &&
-            const DeepCollectionEquality()
-                .equals(other.delayInMilliseconds, delayInMilliseconds));
+            (identical(other.route, route) || other.route == route) &&
+            (identical(other.delayInMilliseconds, delayInMilliseconds) ||
+                other.delayInMilliseconds == delayInMilliseconds));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(route),
-      const DeepCollectionEquality().hash(delayInMilliseconds));
+  int get hashCode => Object.hash(runtimeType, route, delayInMilliseconds);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_RedirectCopyWith<_$_Redirect> get copyWith =>
       __$$_RedirectCopyWithImpl<_$_Redirect>(this, _$identity);
 
@@ -181,7 +183,7 @@ class _$_Redirect implements _Redirect {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(PageRouteInfo<dynamic> route, int delayInMilliseconds)?
+    TResult? Function(PageRouteInfo<dynamic> route, int delayInMilliseconds)?
         redirect,
   }) {
     return redirect?.call(route, delayInMilliseconds);
@@ -211,7 +213,7 @@ class _$_Redirect implements _Redirect {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Redirect value)? redirect,
+    TResult? Function(_Redirect value)? redirect,
   }) {
     return redirect?.call(this);
   }
@@ -258,33 +260,37 @@ mixin _$SplashState {
 abstract class $SplashStateCopyWith<$Res> {
   factory $SplashStateCopyWith(
           SplashState value, $Res Function(SplashState) then) =
-      _$SplashStateCopyWithImpl<$Res>;
+      _$SplashStateCopyWithImpl<$Res, SplashState>;
+  @useResult
   $Res call({Option<PageRouteInfo> routeOption, int? delayInMilliseconds});
 }
 
 /// @nodoc
-class _$SplashStateCopyWithImpl<$Res> implements $SplashStateCopyWith<$Res> {
+class _$SplashStateCopyWithImpl<$Res, $Val extends SplashState>
+    implements $SplashStateCopyWith<$Res> {
   _$SplashStateCopyWithImpl(this._value, this._then);
 
-  final SplashState _value;
   // ignore: unused_field
-  final $Res Function(SplashState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? routeOption = freezed,
+    Object? routeOption = null,
     Object? delayInMilliseconds = freezed,
   }) {
     return _then(_value.copyWith(
-      routeOption: routeOption == freezed
+      routeOption: null == routeOption
           ? _value.routeOption
           : routeOption // ignore: cast_nullable_to_non_nullable
               as Option<PageRouteInfo>,
-      delayInMilliseconds: delayInMilliseconds == freezed
+      delayInMilliseconds: freezed == delayInMilliseconds
           ? _value.delayInMilliseconds
           : delayInMilliseconds // ignore: cast_nullable_to_non_nullable
               as int?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -295,30 +301,30 @@ abstract class _$$_SplashStateCopyWith<$Res>
           _$_SplashState value, $Res Function(_$_SplashState) then) =
       __$$_SplashStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({Option<PageRouteInfo> routeOption, int? delayInMilliseconds});
 }
 
 /// @nodoc
-class __$$_SplashStateCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
+class __$$_SplashStateCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res, _$_SplashState>
     implements _$$_SplashStateCopyWith<$Res> {
   __$$_SplashStateCopyWithImpl(
       _$_SplashState _value, $Res Function(_$_SplashState) _then)
-      : super(_value, (v) => _then(v as _$_SplashState));
+      : super(_value, _then);
 
-  @override
-  _$_SplashState get _value => super._value as _$_SplashState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? routeOption = freezed,
+    Object? routeOption = null,
     Object? delayInMilliseconds = freezed,
   }) {
     return _then(_$_SplashState(
-      routeOption: routeOption == freezed
+      routeOption: null == routeOption
           ? _value.routeOption
           : routeOption // ignore: cast_nullable_to_non_nullable
               as Option<PageRouteInfo>,
-      delayInMilliseconds: delayInMilliseconds == freezed
+      delayInMilliseconds: freezed == delayInMilliseconds
           ? _value.delayInMilliseconds
           : delayInMilliseconds // ignore: cast_nullable_to_non_nullable
               as int?,
@@ -346,20 +352,19 @@ class _$_SplashState implements _SplashState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SplashState &&
-            const DeepCollectionEquality()
-                .equals(other.routeOption, routeOption) &&
-            const DeepCollectionEquality()
-                .equals(other.delayInMilliseconds, delayInMilliseconds));
+            (identical(other.routeOption, routeOption) ||
+                other.routeOption == routeOption) &&
+            (identical(other.delayInMilliseconds, delayInMilliseconds) ||
+                other.delayInMilliseconds == delayInMilliseconds));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(routeOption),
-      const DeepCollectionEquality().hash(delayInMilliseconds));
+  int get hashCode =>
+      Object.hash(runtimeType, routeOption, delayInMilliseconds);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SplashStateCopyWith<_$_SplashState> get copyWith =>
       __$$_SplashStateCopyWithImpl<_$_SplashState>(this, _$identity);
 }

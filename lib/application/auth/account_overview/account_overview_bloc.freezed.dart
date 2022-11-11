@@ -23,7 +23,7 @@ mixin _$AccountOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logoutPressed,
+    TResult? Function()? logoutPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -39,7 +39,7 @@ mixin _$AccountOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LogoutPressed value)? logoutPressed,
+    TResult? Function(_LogoutPressed value)? logoutPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,17 +54,19 @@ mixin _$AccountOverviewEvent {
 abstract class $AccountOverviewEventCopyWith<$Res> {
   factory $AccountOverviewEventCopyWith(AccountOverviewEvent value,
           $Res Function(AccountOverviewEvent) then) =
-      _$AccountOverviewEventCopyWithImpl<$Res>;
+      _$AccountOverviewEventCopyWithImpl<$Res, AccountOverviewEvent>;
 }
 
 /// @nodoc
-class _$AccountOverviewEventCopyWithImpl<$Res>
+class _$AccountOverviewEventCopyWithImpl<$Res,
+        $Val extends AccountOverviewEvent>
     implements $AccountOverviewEventCopyWith<$Res> {
   _$AccountOverviewEventCopyWithImpl(this._value, this._then);
 
-  final AccountOverviewEvent _value;
   // ignore: unused_field
-  final $Res Function(AccountOverviewEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -76,14 +78,11 @@ abstract class _$$_LogoutPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_LogoutPressedCopyWithImpl<$Res>
-    extends _$AccountOverviewEventCopyWithImpl<$Res>
+    extends _$AccountOverviewEventCopyWithImpl<$Res, _$_LogoutPressed>
     implements _$$_LogoutPressedCopyWith<$Res> {
   __$$_LogoutPressedCopyWithImpl(
       _$_LogoutPressed _value, $Res Function(_$_LogoutPressed) _then)
-      : super(_value, (v) => _then(v as _$_LogoutPressed));
-
-  @override
-  _$_LogoutPressed get _value => super._value as _$_LogoutPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -116,7 +115,7 @@ class _$_LogoutPressed implements _LogoutPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? logoutPressed,
+    TResult? Function()? logoutPressed,
   }) {
     return logoutPressed?.call();
   }
@@ -144,7 +143,7 @@ class _$_LogoutPressed implements _LogoutPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_LogoutPressed value)? logoutPressed,
+    TResult? Function(_LogoutPressed value)? logoutPressed,
   }) {
     return logoutPressed?.call(this);
   }
@@ -173,17 +172,19 @@ mixin _$AccountOverviewState {}
 abstract class $AccountOverviewStateCopyWith<$Res> {
   factory $AccountOverviewStateCopyWith(AccountOverviewState value,
           $Res Function(AccountOverviewState) then) =
-      _$AccountOverviewStateCopyWithImpl<$Res>;
+      _$AccountOverviewStateCopyWithImpl<$Res, AccountOverviewState>;
 }
 
 /// @nodoc
-class _$AccountOverviewStateCopyWithImpl<$Res>
+class _$AccountOverviewStateCopyWithImpl<$Res,
+        $Val extends AccountOverviewState>
     implements $AccountOverviewStateCopyWith<$Res> {
   _$AccountOverviewStateCopyWithImpl(this._value, this._then);
 
-  final AccountOverviewState _value;
   // ignore: unused_field
-  final $Res Function(AccountOverviewState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -195,14 +196,11 @@ abstract class _$$_AccountOverviewStateCopyWith<$Res> {
 
 /// @nodoc
 class __$$_AccountOverviewStateCopyWithImpl<$Res>
-    extends _$AccountOverviewStateCopyWithImpl<$Res>
+    extends _$AccountOverviewStateCopyWithImpl<$Res, _$_AccountOverviewState>
     implements _$$_AccountOverviewStateCopyWith<$Res> {
   __$$_AccountOverviewStateCopyWithImpl(_$_AccountOverviewState _value,
       $Res Function(_$_AccountOverviewState) _then)
-      : super(_value, (v) => _then(v as _$_AccountOverviewState));
-
-  @override
-  _$_AccountOverviewState get _value => super._value as _$_AccountOverviewState;
+      : super(_value, _then);
 }
 
 /// @nodoc

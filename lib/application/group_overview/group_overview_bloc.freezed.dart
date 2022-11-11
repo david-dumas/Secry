@@ -33,16 +33,16 @@ mixin _$GroupOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -77,15 +77,15 @@ mixin _$GroupOverviewEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -108,17 +108,18 @@ mixin _$GroupOverviewEvent {
 abstract class $GroupOverviewEventCopyWith<$Res> {
   factory $GroupOverviewEventCopyWith(
           GroupOverviewEvent value, $Res Function(GroupOverviewEvent) then) =
-      _$GroupOverviewEventCopyWithImpl<$Res>;
+      _$GroupOverviewEventCopyWithImpl<$Res, GroupOverviewEvent>;
 }
 
 /// @nodoc
-class _$GroupOverviewEventCopyWithImpl<$Res>
+class _$GroupOverviewEventCopyWithImpl<$Res, $Val extends GroupOverviewEvent>
     implements $GroupOverviewEventCopyWith<$Res> {
   _$GroupOverviewEventCopyWithImpl(this._value, this._then);
 
-  final GroupOverviewEvent _value;
   // ignore: unused_field
-  final $Res Function(GroupOverviewEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -126,26 +127,25 @@ abstract class _$$_InitializedCopyWith<$Res> {
   factory _$$_InitializedCopyWith(
           _$_Initialized value, $Res Function(_$_Initialized) then) =
       __$$_InitializedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String groupId});
 }
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
+      : super(_value, _then);
 
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? groupId = freezed,
+    Object? groupId = null,
   }) {
     return _then(_$_Initialized(
-      groupId == freezed
+      null == groupId
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -171,15 +171,15 @@ class _$_Initialized implements _Initialized {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Initialized &&
-            const DeepCollectionEquality().equals(other.groupId, groupId));
+            (identical(other.groupId, groupId) || other.groupId == groupId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(groupId));
+  int get hashCode => Object.hash(runtimeType, groupId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InitializedCopyWith<_$_Initialized> get copyWith =>
       __$$_InitializedCopyWithImpl<_$_Initialized>(this, _$identity);
 
@@ -204,16 +204,16 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return initialized?.call(groupId);
   }
@@ -260,15 +260,15 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return initialized?.call(this);
   }
@@ -308,26 +308,25 @@ abstract class _$$_ChatInfoItemsUpdatedCopyWith<$Res> {
   factory _$$_ChatInfoItemsUpdatedCopyWith(_$_ChatInfoItemsUpdated value,
           $Res Function(_$_ChatInfoItemsUpdated) then) =
       __$$_ChatInfoItemsUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<GroupOverviewRowInfo> chatInfoItems});
 }
 
 /// @nodoc
 class __$$_ChatInfoItemsUpdatedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_ChatInfoItemsUpdated>
     implements _$$_ChatInfoItemsUpdatedCopyWith<$Res> {
   __$$_ChatInfoItemsUpdatedCopyWithImpl(_$_ChatInfoItemsUpdated _value,
       $Res Function(_$_ChatInfoItemsUpdated) _then)
-      : super(_value, (v) => _then(v as _$_ChatInfoItemsUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_ChatInfoItemsUpdated get _value => super._value as _$_ChatInfoItemsUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chatInfoItems = freezed,
+    Object? chatInfoItems = null,
   }) {
     return _then(_$_ChatInfoItemsUpdated(
-      chatInfoItems == freezed
+      null == chatInfoItems
           ? _value._chatInfoItems
           : chatInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
@@ -368,6 +367,7 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_ChatInfoItemsUpdatedCopyWith<_$_ChatInfoItemsUpdated> get copyWith =>
       __$$_ChatInfoItemsUpdatedCopyWithImpl<_$_ChatInfoItemsUpdated>(
           this, _$identity);
@@ -393,16 +393,16 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return chatInfoItemsUpdated?.call(chatInfoItems);
   }
@@ -449,15 +449,15 @@ class _$_ChatInfoItemsUpdated implements _ChatInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return chatInfoItemsUpdated?.call(this);
   }
@@ -498,27 +498,25 @@ abstract class _$$_SurveyInfoItemsUpdatedCopyWith<$Res> {
   factory _$$_SurveyInfoItemsUpdatedCopyWith(_$_SurveyInfoItemsUpdated value,
           $Res Function(_$_SurveyInfoItemsUpdated) then) =
       __$$_SurveyInfoItemsUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<GroupOverviewRowInfo> surveyInfoItems});
 }
 
 /// @nodoc
 class __$$_SurveyInfoItemsUpdatedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_SurveyInfoItemsUpdated>
     implements _$$_SurveyInfoItemsUpdatedCopyWith<$Res> {
   __$$_SurveyInfoItemsUpdatedCopyWithImpl(_$_SurveyInfoItemsUpdated _value,
       $Res Function(_$_SurveyInfoItemsUpdated) _then)
-      : super(_value, (v) => _then(v as _$_SurveyInfoItemsUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_SurveyInfoItemsUpdated get _value =>
-      super._value as _$_SurveyInfoItemsUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? surveyInfoItems = freezed,
+    Object? surveyInfoItems = null,
   }) {
     return _then(_$_SurveyInfoItemsUpdated(
-      surveyInfoItems == freezed
+      null == surveyInfoItems
           ? _value._surveyInfoItems
           : surveyInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
@@ -560,6 +558,7 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SurveyInfoItemsUpdatedCopyWith<_$_SurveyInfoItemsUpdated> get copyWith =>
       __$$_SurveyInfoItemsUpdatedCopyWithImpl<_$_SurveyInfoItemsUpdated>(
           this, _$identity);
@@ -585,16 +584,16 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return surveyInfoItemsUpdated?.call(surveyInfoItems);
   }
@@ -641,15 +640,15 @@ class _$_SurveyInfoItemsUpdated implements _SurveyInfoItemsUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return surveyInfoItemsUpdated?.call(this);
   }
@@ -691,27 +690,25 @@ abstract class _$$_GroupOverviewRefreshedCopyWith<$Res> {
   factory _$$_GroupOverviewRefreshedCopyWith(_$_GroupOverviewRefreshed value,
           $Res Function(_$_GroupOverviewRefreshed) then) =
       __$$_GroupOverviewRefreshedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String groupId});
 }
 
 /// @nodoc
 class __$$_GroupOverviewRefreshedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_GroupOverviewRefreshed>
     implements _$$_GroupOverviewRefreshedCopyWith<$Res> {
   __$$_GroupOverviewRefreshedCopyWithImpl(_$_GroupOverviewRefreshed _value,
       $Res Function(_$_GroupOverviewRefreshed) _then)
-      : super(_value, (v) => _then(v as _$_GroupOverviewRefreshed));
+      : super(_value, _then);
 
-  @override
-  _$_GroupOverviewRefreshed get _value =>
-      super._value as _$_GroupOverviewRefreshed;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? groupId = freezed,
+    Object? groupId = null,
   }) {
     return _then(_$_GroupOverviewRefreshed(
-      groupId == freezed
+      null == groupId
           ? _value.groupId
           : groupId // ignore: cast_nullable_to_non_nullable
               as String,
@@ -737,15 +734,15 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroupOverviewRefreshed &&
-            const DeepCollectionEquality().equals(other.groupId, groupId));
+            (identical(other.groupId, groupId) || other.groupId == groupId));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(groupId));
+  int get hashCode => Object.hash(runtimeType, groupId);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GroupOverviewRefreshedCopyWith<_$_GroupOverviewRefreshed> get copyWith =>
       __$$_GroupOverviewRefreshedCopyWithImpl<_$_GroupOverviewRefreshed>(
           this, _$identity);
@@ -771,16 +768,16 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return groupOverviewRefreshed?.call(groupId);
   }
@@ -827,15 +824,15 @@ class _$_GroupOverviewRefreshed implements _GroupOverviewRefreshed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return groupOverviewRefreshed?.call(this);
   }
@@ -876,26 +873,25 @@ abstract class _$$_IsFetchingUpdatedCopyWith<$Res> {
   factory _$$_IsFetchingUpdatedCopyWith(_$_IsFetchingUpdated value,
           $Res Function(_$_IsFetchingUpdated) then) =
       __$$_IsFetchingUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isFetching});
 }
 
 /// @nodoc
 class __$$_IsFetchingUpdatedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_IsFetchingUpdated>
     implements _$$_IsFetchingUpdatedCopyWith<$Res> {
   __$$_IsFetchingUpdatedCopyWithImpl(
       _$_IsFetchingUpdated _value, $Res Function(_$_IsFetchingUpdated) _then)
-      : super(_value, (v) => _then(v as _$_IsFetchingUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_IsFetchingUpdated get _value => super._value as _$_IsFetchingUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isFetching = freezed,
+    Object? isFetching = null,
   }) {
     return _then(_$_IsFetchingUpdated(
-      isFetching == freezed
+      null == isFetching
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -921,16 +917,16 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IsFetchingUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.isFetching, isFetching));
+            (identical(other.isFetching, isFetching) ||
+                other.isFetching == isFetching));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetching));
+  int get hashCode => Object.hash(runtimeType, isFetching);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IsFetchingUpdatedCopyWith<_$_IsFetchingUpdated> get copyWith =>
       __$$_IsFetchingUpdatedCopyWithImpl<_$_IsFetchingUpdated>(
           this, _$identity);
@@ -956,16 +952,16 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return isFetchingUpdated?.call(isFetching);
   }
@@ -1012,15 +1008,15 @@ class _$_IsFetchingUpdated implements _IsFetchingUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return isFetchingUpdated?.call(this);
   }
@@ -1061,26 +1057,25 @@ abstract class _$$_IsDataFetchedUpdatedCopyWith<$Res> {
   factory _$$_IsDataFetchedUpdatedCopyWith(_$_IsDataFetchedUpdated value,
           $Res Function(_$_IsDataFetchedUpdated) then) =
       __$$_IsDataFetchedUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({bool isFetched});
 }
 
 /// @nodoc
 class __$$_IsDataFetchedUpdatedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_IsDataFetchedUpdated>
     implements _$$_IsDataFetchedUpdatedCopyWith<$Res> {
   __$$_IsDataFetchedUpdatedCopyWithImpl(_$_IsDataFetchedUpdated _value,
       $Res Function(_$_IsDataFetchedUpdated) _then)
-      : super(_value, (v) => _then(v as _$_IsDataFetchedUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_IsDataFetchedUpdated get _value => super._value as _$_IsDataFetchedUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? isFetched = freezed,
+    Object? isFetched = null,
   }) {
     return _then(_$_IsDataFetchedUpdated(
-      isFetched == freezed
+      null == isFetched
           ? _value.isFetched
           : isFetched // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -1106,15 +1101,16 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_IsDataFetchedUpdated &&
-            const DeepCollectionEquality().equals(other.isFetched, isFetched));
+            (identical(other.isFetched, isFetched) ||
+                other.isFetched == isFetched));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(isFetched));
+  int get hashCode => Object.hash(runtimeType, isFetched);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_IsDataFetchedUpdatedCopyWith<_$_IsDataFetchedUpdated> get copyWith =>
       __$$_IsDataFetchedUpdatedCopyWithImpl<_$_IsDataFetchedUpdated>(
           this, _$identity);
@@ -1140,16 +1136,16 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return isDataFetchedUpdated?.call(isFetched);
   }
@@ -1196,15 +1192,15 @@ class _$_IsDataFetchedUpdated implements _IsDataFetchedUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return isDataFetchedUpdated?.call(this);
   }
@@ -1246,28 +1242,26 @@ abstract class _$$_CurrentFeatureTypeUpdatedCopyWith<$Res> {
           _$_CurrentFeatureTypeUpdated value,
           $Res Function(_$_CurrentFeatureTypeUpdated) then) =
       __$$_CurrentFeatureTypeUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({FeatureType newFeatureType});
 }
 
 /// @nodoc
 class __$$_CurrentFeatureTypeUpdatedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_CurrentFeatureTypeUpdated>
     implements _$$_CurrentFeatureTypeUpdatedCopyWith<$Res> {
   __$$_CurrentFeatureTypeUpdatedCopyWithImpl(
       _$_CurrentFeatureTypeUpdated _value,
       $Res Function(_$_CurrentFeatureTypeUpdated) _then)
-      : super(_value, (v) => _then(v as _$_CurrentFeatureTypeUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_CurrentFeatureTypeUpdated get _value =>
-      super._value as _$_CurrentFeatureTypeUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newFeatureType = freezed,
+    Object? newFeatureType = null,
   }) {
     return _then(_$_CurrentFeatureTypeUpdated(
-      newFeatureType == freezed
+      null == newFeatureType
           ? _value.newFeatureType
           : newFeatureType // ignore: cast_nullable_to_non_nullable
               as FeatureType,
@@ -1293,16 +1287,16 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_CurrentFeatureTypeUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.newFeatureType, newFeatureType));
+            (identical(other.newFeatureType, newFeatureType) ||
+                other.newFeatureType == newFeatureType));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(newFeatureType));
+  int get hashCode => Object.hash(runtimeType, newFeatureType);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_CurrentFeatureTypeUpdatedCopyWith<_$_CurrentFeatureTypeUpdated>
       get copyWith => __$$_CurrentFeatureTypeUpdatedCopyWithImpl<
           _$_CurrentFeatureTypeUpdated>(this, _$identity);
@@ -1328,16 +1322,16 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return currentFeatureTypeUpdated?.call(newFeatureType);
   }
@@ -1384,15 +1378,15 @@ class _$_CurrentFeatureTypeUpdated implements _CurrentFeatureTypeUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return currentFeatureTypeUpdated?.call(this);
   }
@@ -1437,14 +1431,11 @@ abstract class _$$_GroupRefreshedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_GroupRefreshedCopyWithImpl<$Res>
-    extends _$GroupOverviewEventCopyWithImpl<$Res>
+    extends _$GroupOverviewEventCopyWithImpl<$Res, _$_GroupRefreshed>
     implements _$$_GroupRefreshedCopyWith<$Res> {
   __$$_GroupRefreshedCopyWithImpl(
       _$_GroupRefreshed _value, $Res Function(_$_GroupRefreshed) _then)
-      : super(_value, (v) => _then(v as _$_GroupRefreshed));
-
-  @override
-  _$_GroupRefreshed get _value => super._value as _$_GroupRefreshed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1487,16 +1478,16 @@ class _$_GroupRefreshed implements _GroupRefreshed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(String groupId)? initialized,
-    TResult Function(List<GroupOverviewRowInfo> chatInfoItems)?
+    TResult? Function(String groupId)? initialized,
+    TResult? Function(List<GroupOverviewRowInfo> chatInfoItems)?
         chatInfoItemsUpdated,
-    TResult Function(List<GroupOverviewRowInfo> surveyInfoItems)?
+    TResult? Function(List<GroupOverviewRowInfo> surveyInfoItems)?
         surveyInfoItemsUpdated,
-    TResult Function(String groupId)? groupOverviewRefreshed,
-    TResult Function(bool isFetching)? isFetchingUpdated,
-    TResult Function(bool isFetched)? isDataFetchedUpdated,
-    TResult Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
-    TResult Function()? groupRefreshed,
+    TResult? Function(String groupId)? groupOverviewRefreshed,
+    TResult? Function(bool isFetching)? isFetchingUpdated,
+    TResult? Function(bool isFetched)? isDataFetchedUpdated,
+    TResult? Function(FeatureType newFeatureType)? currentFeatureTypeUpdated,
+    TResult? Function()? groupRefreshed,
   }) {
     return groupRefreshed?.call();
   }
@@ -1543,15 +1534,15 @@ class _$_GroupRefreshed implements _GroupRefreshed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
-    TResult Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
-    TResult Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
-    TResult Function(_IsFetchingUpdated value)? isFetchingUpdated,
-    TResult Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
-    TResult Function(_CurrentFeatureTypeUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_ChatInfoItemsUpdated value)? chatInfoItemsUpdated,
+    TResult? Function(_SurveyInfoItemsUpdated value)? surveyInfoItemsUpdated,
+    TResult? Function(_GroupOverviewRefreshed value)? groupOverviewRefreshed,
+    TResult? Function(_IsFetchingUpdated value)? isFetchingUpdated,
+    TResult? Function(_IsDataFetchedUpdated value)? isDataFetchedUpdated,
+    TResult? Function(_CurrentFeatureTypeUpdated value)?
         currentFeatureTypeUpdated,
-    TResult Function(_GroupRefreshed value)? groupRefreshed,
+    TResult? Function(_GroupRefreshed value)? groupRefreshed,
   }) {
     return groupRefreshed?.call(this);
   }
@@ -1600,7 +1591,8 @@ mixin _$GroupOverviewState {
 abstract class $GroupOverviewStateCopyWith<$Res> {
   factory $GroupOverviewStateCopyWith(
           GroupOverviewState value, $Res Function(GroupOverviewState) then) =
-      _$GroupOverviewStateCopyWithImpl<$Res>;
+      _$GroupOverviewStateCopyWithImpl<$Res, GroupOverviewState>;
+  @useResult
   $Res call(
       {List<GroupOverviewRowInfo> chatInfoItems,
       List<GroupOverviewRowInfo> surveyInfoItems,
@@ -1610,44 +1602,46 @@ abstract class $GroupOverviewStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$GroupOverviewStateCopyWithImpl<$Res>
+class _$GroupOverviewStateCopyWithImpl<$Res, $Val extends GroupOverviewState>
     implements $GroupOverviewStateCopyWith<$Res> {
   _$GroupOverviewStateCopyWithImpl(this._value, this._then);
 
-  final GroupOverviewState _value;
   // ignore: unused_field
-  final $Res Function(GroupOverviewState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chatInfoItems = freezed,
-    Object? surveyInfoItems = freezed,
-    Object? isDataFetched = freezed,
-    Object? isFetching = freezed,
-    Object? currentFeatureType = freezed,
+    Object? chatInfoItems = null,
+    Object? surveyInfoItems = null,
+    Object? isDataFetched = null,
+    Object? isFetching = null,
+    Object? currentFeatureType = null,
   }) {
     return _then(_value.copyWith(
-      chatInfoItems: chatInfoItems == freezed
+      chatInfoItems: null == chatInfoItems
           ? _value.chatInfoItems
           : chatInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
-      surveyInfoItems: surveyInfoItems == freezed
+      surveyInfoItems: null == surveyInfoItems
           ? _value.surveyInfoItems
           : surveyInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
-      isDataFetched: isDataFetched == freezed
+      isDataFetched: null == isDataFetched
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFetching: isFetching == freezed
+      isFetching: null == isFetching
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentFeatureType: currentFeatureType == freezed
+      currentFeatureType: null == currentFeatureType
           ? _value.currentFeatureType
           : currentFeatureType // ignore: cast_nullable_to_non_nullable
               as FeatureType,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1658,6 +1652,7 @@ abstract class _$$_GroupOverviewStateCopyWith<$Res>
           $Res Function(_$_GroupOverviewState) then) =
       __$$_GroupOverviewStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {List<GroupOverviewRowInfo> chatInfoItems,
       List<GroupOverviewRowInfo> surveyInfoItems,
@@ -1668,41 +1663,39 @@ abstract class _$$_GroupOverviewStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_GroupOverviewStateCopyWithImpl<$Res>
-    extends _$GroupOverviewStateCopyWithImpl<$Res>
+    extends _$GroupOverviewStateCopyWithImpl<$Res, _$_GroupOverviewState>
     implements _$$_GroupOverviewStateCopyWith<$Res> {
   __$$_GroupOverviewStateCopyWithImpl(
       _$_GroupOverviewState _value, $Res Function(_$_GroupOverviewState) _then)
-      : super(_value, (v) => _then(v as _$_GroupOverviewState));
+      : super(_value, _then);
 
-  @override
-  _$_GroupOverviewState get _value => super._value as _$_GroupOverviewState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chatInfoItems = freezed,
-    Object? surveyInfoItems = freezed,
-    Object? isDataFetched = freezed,
-    Object? isFetching = freezed,
-    Object? currentFeatureType = freezed,
+    Object? chatInfoItems = null,
+    Object? surveyInfoItems = null,
+    Object? isDataFetched = null,
+    Object? isFetching = null,
+    Object? currentFeatureType = null,
   }) {
     return _then(_$_GroupOverviewState(
-      chatInfoItems: chatInfoItems == freezed
+      chatInfoItems: null == chatInfoItems
           ? _value._chatInfoItems
           : chatInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
-      surveyInfoItems: surveyInfoItems == freezed
+      surveyInfoItems: null == surveyInfoItems
           ? _value._surveyInfoItems
           : surveyInfoItems // ignore: cast_nullable_to_non_nullable
               as List<GroupOverviewRowInfo>,
-      isDataFetched: isDataFetched == freezed
+      isDataFetched: null == isDataFetched
           ? _value.isDataFetched
           : isDataFetched // ignore: cast_nullable_to_non_nullable
               as bool,
-      isFetching: isFetching == freezed
+      isFetching: null == isFetching
           ? _value.isFetching
           : isFetching // ignore: cast_nullable_to_non_nullable
               as bool,
-      currentFeatureType: currentFeatureType == freezed
+      currentFeatureType: null == currentFeatureType
           ? _value.currentFeatureType
           : currentFeatureType // ignore: cast_nullable_to_non_nullable
               as FeatureType,
@@ -1757,12 +1750,12 @@ class _$_GroupOverviewState implements _GroupOverviewState {
                 .equals(other._chatInfoItems, _chatInfoItems) &&
             const DeepCollectionEquality()
                 .equals(other._surveyInfoItems, _surveyInfoItems) &&
-            const DeepCollectionEquality()
-                .equals(other.isDataFetched, isDataFetched) &&
-            const DeepCollectionEquality()
-                .equals(other.isFetching, isFetching) &&
-            const DeepCollectionEquality()
-                .equals(other.currentFeatureType, currentFeatureType));
+            (identical(other.isDataFetched, isDataFetched) ||
+                other.isDataFetched == isDataFetched) &&
+            (identical(other.isFetching, isFetching) ||
+                other.isFetching == isFetching) &&
+            (identical(other.currentFeatureType, currentFeatureType) ||
+                other.currentFeatureType == currentFeatureType));
   }
 
   @override
@@ -1770,12 +1763,13 @@ class _$_GroupOverviewState implements _GroupOverviewState {
       runtimeType,
       const DeepCollectionEquality().hash(_chatInfoItems),
       const DeepCollectionEquality().hash(_surveyInfoItems),
-      const DeepCollectionEquality().hash(isDataFetched),
-      const DeepCollectionEquality().hash(isFetching),
-      const DeepCollectionEquality().hash(currentFeatureType));
+      isDataFetched,
+      isFetching,
+      currentFeatureType);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GroupOverviewStateCopyWith<_$_GroupOverviewState> get copyWith =>
       __$$_GroupOverviewStateCopyWithImpl<_$_GroupOverviewState>(
           this, _$identity);

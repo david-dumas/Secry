@@ -27,11 +27,11 @@ mixin _$AddChatPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function()? newChatCreated,
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? chatTitleUpdated,
+    TResult? Function(Image newImage)? chatImageUpdated,
+    TResult? Function()? chatImageDeleted,
+    TResult? Function()? newChatCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,11 +55,11 @@ mixin _$AddChatPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_GroupTitleUpdated value)? chatTitleUpdated,
+    TResult? Function(_GroupImageUpdated value)? chatImageUpdated,
+    TResult? Function(_GroupImageDeleted value)? chatImageDeleted,
+    TResult? Function(_NewGroupCreated value)? newChatCreated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,17 +78,18 @@ mixin _$AddChatPageEvent {
 abstract class $AddChatPageEventCopyWith<$Res> {
   factory $AddChatPageEventCopyWith(
           AddChatPageEvent value, $Res Function(AddChatPageEvent) then) =
-      _$AddChatPageEventCopyWithImpl<$Res>;
+      _$AddChatPageEventCopyWithImpl<$Res, AddChatPageEvent>;
 }
 
 /// @nodoc
-class _$AddChatPageEventCopyWithImpl<$Res>
+class _$AddChatPageEventCopyWithImpl<$Res, $Val extends AddChatPageEvent>
     implements $AddChatPageEventCopyWith<$Res> {
   _$AddChatPageEventCopyWithImpl(this._value, this._then);
 
-  final AddChatPageEvent _value;
   // ignore: unused_field
-  final $Res Function(AddChatPageEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -100,14 +101,11 @@ abstract class _$$_InitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$AddChatPageEventCopyWithImpl<$Res>
+    extends _$AddChatPageEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
-
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -144,11 +142,11 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function()? newChatCreated,
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? chatTitleUpdated,
+    TResult? Function(Image newImage)? chatImageUpdated,
+    TResult? Function()? chatImageDeleted,
+    TResult? Function()? newChatCreated,
   }) {
     return initialized?.call();
   }
@@ -184,11 +182,11 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_GroupTitleUpdated value)? chatTitleUpdated,
+    TResult? Function(_GroupImageUpdated value)? chatImageUpdated,
+    TResult? Function(_GroupImageDeleted value)? chatImageDeleted,
+    TResult? Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return initialized?.call(this);
   }
@@ -219,26 +217,25 @@ abstract class _$$_GroupTitleUpdatedCopyWith<$Res> {
   factory _$$_GroupTitleUpdatedCopyWith(_$_GroupTitleUpdated value,
           $Res Function(_$_GroupTitleUpdated) then) =
       __$$_GroupTitleUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String newTitle});
 }
 
 /// @nodoc
 class __$$_GroupTitleUpdatedCopyWithImpl<$Res>
-    extends _$AddChatPageEventCopyWithImpl<$Res>
+    extends _$AddChatPageEventCopyWithImpl<$Res, _$_GroupTitleUpdated>
     implements _$$_GroupTitleUpdatedCopyWith<$Res> {
   __$$_GroupTitleUpdatedCopyWithImpl(
       _$_GroupTitleUpdated _value, $Res Function(_$_GroupTitleUpdated) _then)
-      : super(_value, (v) => _then(v as _$_GroupTitleUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_GroupTitleUpdated get _value => super._value as _$_GroupTitleUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newTitle = freezed,
+    Object? newTitle = null,
   }) {
     return _then(_$_GroupTitleUpdated(
-      newTitle == freezed
+      null == newTitle
           ? _value.newTitle
           : newTitle // ignore: cast_nullable_to_non_nullable
               as String,
@@ -264,15 +261,16 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroupTitleUpdated &&
-            const DeepCollectionEquality().equals(other.newTitle, newTitle));
+            (identical(other.newTitle, newTitle) ||
+                other.newTitle == newTitle));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newTitle));
+  int get hashCode => Object.hash(runtimeType, newTitle);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GroupTitleUpdatedCopyWith<_$_GroupTitleUpdated> get copyWith =>
       __$$_GroupTitleUpdatedCopyWithImpl<_$_GroupTitleUpdated>(
           this, _$identity);
@@ -292,11 +290,11 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function()? newChatCreated,
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? chatTitleUpdated,
+    TResult? Function(Image newImage)? chatImageUpdated,
+    TResult? Function()? chatImageDeleted,
+    TResult? Function()? newChatCreated,
   }) {
     return chatTitleUpdated?.call(newTitle);
   }
@@ -332,11 +330,11 @@ class _$_GroupTitleUpdated implements _GroupTitleUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_GroupTitleUpdated value)? chatTitleUpdated,
+    TResult? Function(_GroupImageUpdated value)? chatImageUpdated,
+    TResult? Function(_GroupImageDeleted value)? chatImageDeleted,
+    TResult? Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return chatTitleUpdated?.call(this);
   }
@@ -373,26 +371,25 @@ abstract class _$$_GroupImageUpdatedCopyWith<$Res> {
   factory _$$_GroupImageUpdatedCopyWith(_$_GroupImageUpdated value,
           $Res Function(_$_GroupImageUpdated) then) =
       __$$_GroupImageUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({Image newImage});
 }
 
 /// @nodoc
 class __$$_GroupImageUpdatedCopyWithImpl<$Res>
-    extends _$AddChatPageEventCopyWithImpl<$Res>
+    extends _$AddChatPageEventCopyWithImpl<$Res, _$_GroupImageUpdated>
     implements _$$_GroupImageUpdatedCopyWith<$Res> {
   __$$_GroupImageUpdatedCopyWithImpl(
       _$_GroupImageUpdated _value, $Res Function(_$_GroupImageUpdated) _then)
-      : super(_value, (v) => _then(v as _$_GroupImageUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_GroupImageUpdated get _value => super._value as _$_GroupImageUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newImage = freezed,
+    Object? newImage = null,
   }) {
     return _then(_$_GroupImageUpdated(
-      newImage == freezed
+      null == newImage
           ? _value.newImage
           : newImage // ignore: cast_nullable_to_non_nullable
               as Image,
@@ -418,15 +415,16 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_GroupImageUpdated &&
-            const DeepCollectionEquality().equals(other.newImage, newImage));
+            (identical(other.newImage, newImage) ||
+                other.newImage == newImage));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newImage));
+  int get hashCode => Object.hash(runtimeType, newImage);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_GroupImageUpdatedCopyWith<_$_GroupImageUpdated> get copyWith =>
       __$$_GroupImageUpdatedCopyWithImpl<_$_GroupImageUpdated>(
           this, _$identity);
@@ -446,11 +444,11 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function()? newChatCreated,
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? chatTitleUpdated,
+    TResult? Function(Image newImage)? chatImageUpdated,
+    TResult? Function()? chatImageDeleted,
+    TResult? Function()? newChatCreated,
   }) {
     return chatImageUpdated?.call(newImage);
   }
@@ -486,11 +484,11 @@ class _$_GroupImageUpdated implements _GroupImageUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_GroupTitleUpdated value)? chatTitleUpdated,
+    TResult? Function(_GroupImageUpdated value)? chatImageUpdated,
+    TResult? Function(_GroupImageDeleted value)? chatImageDeleted,
+    TResult? Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return chatImageUpdated?.call(this);
   }
@@ -530,14 +528,11 @@ abstract class _$$_GroupImageDeletedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_GroupImageDeletedCopyWithImpl<$Res>
-    extends _$AddChatPageEventCopyWithImpl<$Res>
+    extends _$AddChatPageEventCopyWithImpl<$Res, _$_GroupImageDeleted>
     implements _$$_GroupImageDeletedCopyWith<$Res> {
   __$$_GroupImageDeletedCopyWithImpl(
       _$_GroupImageDeleted _value, $Res Function(_$_GroupImageDeleted) _then)
-      : super(_value, (v) => _then(v as _$_GroupImageDeleted));
-
-  @override
-  _$_GroupImageDeleted get _value => super._value as _$_GroupImageDeleted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -574,11 +569,11 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function()? newChatCreated,
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? chatTitleUpdated,
+    TResult? Function(Image newImage)? chatImageUpdated,
+    TResult? Function()? chatImageDeleted,
+    TResult? Function()? newChatCreated,
   }) {
     return chatImageDeleted?.call();
   }
@@ -614,11 +609,11 @@ class _$_GroupImageDeleted implements _GroupImageDeleted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_GroupTitleUpdated value)? chatTitleUpdated,
+    TResult? Function(_GroupImageUpdated value)? chatImageUpdated,
+    TResult? Function(_GroupImageDeleted value)? chatImageDeleted,
+    TResult? Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return chatImageDeleted?.call(this);
   }
@@ -653,14 +648,11 @@ abstract class _$$_NewGroupCreatedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_NewGroupCreatedCopyWithImpl<$Res>
-    extends _$AddChatPageEventCopyWithImpl<$Res>
+    extends _$AddChatPageEventCopyWithImpl<$Res, _$_NewGroupCreated>
     implements _$$_NewGroupCreatedCopyWith<$Res> {
   __$$_NewGroupCreatedCopyWithImpl(
       _$_NewGroupCreated _value, $Res Function(_$_NewGroupCreated) _then)
-      : super(_value, (v) => _then(v as _$_NewGroupCreated));
-
-  @override
-  _$_NewGroupCreated get _value => super._value as _$_NewGroupCreated;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -697,11 +689,11 @@ class _$_NewGroupCreated implements _NewGroupCreated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(String newTitle)? chatTitleUpdated,
-    TResult Function(Image newImage)? chatImageUpdated,
-    TResult Function()? chatImageDeleted,
-    TResult Function()? newChatCreated,
+    TResult? Function()? initialized,
+    TResult? Function(String newTitle)? chatTitleUpdated,
+    TResult? Function(Image newImage)? chatImageUpdated,
+    TResult? Function()? chatImageDeleted,
+    TResult? Function()? newChatCreated,
   }) {
     return newChatCreated?.call();
   }
@@ -737,11 +729,11 @@ class _$_NewGroupCreated implements _NewGroupCreated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_GroupTitleUpdated value)? chatTitleUpdated,
-    TResult Function(_GroupImageUpdated value)? chatImageUpdated,
-    TResult Function(_GroupImageDeleted value)? chatImageDeleted,
-    TResult Function(_NewGroupCreated value)? newChatCreated,
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_GroupTitleUpdated value)? chatTitleUpdated,
+    TResult? Function(_GroupImageUpdated value)? chatImageUpdated,
+    TResult? Function(_GroupImageDeleted value)? chatImageDeleted,
+    TResult? Function(_NewGroupCreated value)? newChatCreated,
   }) {
     return newChatCreated?.call(this);
   }
@@ -783,7 +775,8 @@ mixin _$AddChatPageState {
 abstract class $AddChatPageStateCopyWith<$Res> {
   factory $AddChatPageStateCopyWith(
           AddChatPageState value, $Res Function(AddChatPageState) then) =
-      _$AddChatPageStateCopyWithImpl<$Res>;
+      _$AddChatPageStateCopyWithImpl<$Res, AddChatPageState>;
+  @useResult
   $Res call(
       {String chatTitle,
       Image? chatImage,
@@ -792,39 +785,41 @@ abstract class $AddChatPageStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$AddChatPageStateCopyWithImpl<$Res>
+class _$AddChatPageStateCopyWithImpl<$Res, $Val extends AddChatPageState>
     implements $AddChatPageStateCopyWith<$Res> {
   _$AddChatPageStateCopyWithImpl(this._value, this._then);
 
-  final AddChatPageState _value;
   // ignore: unused_field
-  final $Res Function(AddChatPageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chatTitle = freezed,
+    Object? chatTitle = null,
     Object? chatImage = freezed,
-    Object? isCreateNewChatRequestExecuted = freezed,
-    Object? isChatSuccessfullyCreated = freezed,
+    Object? isCreateNewChatRequestExecuted = null,
+    Object? isChatSuccessfullyCreated = null,
   }) {
     return _then(_value.copyWith(
-      chatTitle: chatTitle == freezed
+      chatTitle: null == chatTitle
           ? _value.chatTitle
           : chatTitle // ignore: cast_nullable_to_non_nullable
               as String,
-      chatImage: chatImage == freezed
+      chatImage: freezed == chatImage
           ? _value.chatImage
           : chatImage // ignore: cast_nullable_to_non_nullable
               as Image?,
-      isCreateNewChatRequestExecuted: isCreateNewChatRequestExecuted == freezed
+      isCreateNewChatRequestExecuted: null == isCreateNewChatRequestExecuted
           ? _value.isCreateNewChatRequestExecuted
           : isCreateNewChatRequestExecuted // ignore: cast_nullable_to_non_nullable
               as bool,
-      isChatSuccessfullyCreated: isChatSuccessfullyCreated == freezed
+      isChatSuccessfullyCreated: null == isChatSuccessfullyCreated
           ? _value.isChatSuccessfullyCreated
           : isChatSuccessfullyCreated // ignore: cast_nullable_to_non_nullable
               as bool,
-    ));
+    ) as $Val);
   }
 }
 
@@ -835,6 +830,7 @@ abstract class _$$_AddChatPageStateCopyWith<$Res>
           _$_AddChatPageState value, $Res Function(_$_AddChatPageState) then) =
       __$$_AddChatPageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {String chatTitle,
       Image? chatImage,
@@ -844,36 +840,34 @@ abstract class _$$_AddChatPageStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_AddChatPageStateCopyWithImpl<$Res>
-    extends _$AddChatPageStateCopyWithImpl<$Res>
+    extends _$AddChatPageStateCopyWithImpl<$Res, _$_AddChatPageState>
     implements _$$_AddChatPageStateCopyWith<$Res> {
   __$$_AddChatPageStateCopyWithImpl(
       _$_AddChatPageState _value, $Res Function(_$_AddChatPageState) _then)
-      : super(_value, (v) => _then(v as _$_AddChatPageState));
+      : super(_value, _then);
 
-  @override
-  _$_AddChatPageState get _value => super._value as _$_AddChatPageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? chatTitle = freezed,
+    Object? chatTitle = null,
     Object? chatImage = freezed,
-    Object? isCreateNewChatRequestExecuted = freezed,
-    Object? isChatSuccessfullyCreated = freezed,
+    Object? isCreateNewChatRequestExecuted = null,
+    Object? isChatSuccessfullyCreated = null,
   }) {
     return _then(_$_AddChatPageState(
-      chatTitle: chatTitle == freezed
+      chatTitle: null == chatTitle
           ? _value.chatTitle
           : chatTitle // ignore: cast_nullable_to_non_nullable
               as String,
-      chatImage: chatImage == freezed
+      chatImage: freezed == chatImage
           ? _value.chatImage
           : chatImage // ignore: cast_nullable_to_non_nullable
               as Image?,
-      isCreateNewChatRequestExecuted: isCreateNewChatRequestExecuted == freezed
+      isCreateNewChatRequestExecuted: null == isCreateNewChatRequestExecuted
           ? _value.isCreateNewChatRequestExecuted
           : isCreateNewChatRequestExecuted // ignore: cast_nullable_to_non_nullable
               as bool,
-      isChatSuccessfullyCreated: isChatSuccessfullyCreated == freezed
+      isChatSuccessfullyCreated: null == isChatSuccessfullyCreated
           ? _value.isChatSuccessfullyCreated
           : isChatSuccessfullyCreated // ignore: cast_nullable_to_non_nullable
               as bool,
@@ -909,25 +903,26 @@ class _$_AddChatPageState implements _AddChatPageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AddChatPageState &&
-            const DeepCollectionEquality().equals(other.chatTitle, chatTitle) &&
-            const DeepCollectionEquality().equals(other.chatImage, chatImage) &&
-            const DeepCollectionEquality().equals(
-                other.isCreateNewChatRequestExecuted,
-                isCreateNewChatRequestExecuted) &&
-            const DeepCollectionEquality().equals(
-                other.isChatSuccessfullyCreated, isChatSuccessfullyCreated));
+            (identical(other.chatTitle, chatTitle) ||
+                other.chatTitle == chatTitle) &&
+            (identical(other.chatImage, chatImage) ||
+                other.chatImage == chatImage) &&
+            (identical(other.isCreateNewChatRequestExecuted,
+                    isCreateNewChatRequestExecuted) ||
+                other.isCreateNewChatRequestExecuted ==
+                    isCreateNewChatRequestExecuted) &&
+            (identical(other.isChatSuccessfullyCreated,
+                    isChatSuccessfullyCreated) ||
+                other.isChatSuccessfullyCreated == isChatSuccessfullyCreated));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(chatTitle),
-      const DeepCollectionEquality().hash(chatImage),
-      const DeepCollectionEquality().hash(isCreateNewChatRequestExecuted),
-      const DeepCollectionEquality().hash(isChatSuccessfullyCreated));
+  int get hashCode => Object.hash(runtimeType, chatTitle, chatImage,
+      isCreateNewChatRequestExecuted, isChatSuccessfullyCreated);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AddChatPageStateCopyWith<_$_AddChatPageState> get copyWith =>
       __$$_AddChatPageStateCopyWithImpl<_$_AddChatPageState>(this, _$identity);
 }

@@ -30,14 +30,14 @@ mixin _$FilterSurveyEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(SortByType newValue)? sortByValueUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function()? initialized,
+    TResult? Function(SortByType newValue)? sortByValueUpdated,
+    TResult? Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
-    TResult Function()? resetExecuted,
+    TResult? Function(QuestionTypeEnum newValue)? questionTypeUpdated,
+    TResult? Function()? resetExecuted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -66,13 +66,13 @@ mixin _$FilterSurveyEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SortByValueUpdated value)? sortByValueUpdated,
-    TResult Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
-    TResult Function(_InitialNumberOfVotesUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SortByValueUpdated value)? sortByValueUpdated,
+    TResult? Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
+    TResult? Function(_InitialNumberOfVotesUpdated value)?
         initialNumberOfVotesUpdated,
-    TResult Function(_QuestionTypeUpdated value)? questionTypeUpdated,
-    TResult Function(_ResetExecuted value)? resetExecuted,
+    TResult? Function(_QuestionTypeUpdated value)? questionTypeUpdated,
+    TResult? Function(_ResetExecuted value)? resetExecuted,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -93,17 +93,18 @@ mixin _$FilterSurveyEvent {
 abstract class $FilterSurveyEventCopyWith<$Res> {
   factory $FilterSurveyEventCopyWith(
           FilterSurveyEvent value, $Res Function(FilterSurveyEvent) then) =
-      _$FilterSurveyEventCopyWithImpl<$Res>;
+      _$FilterSurveyEventCopyWithImpl<$Res, FilterSurveyEvent>;
 }
 
 /// @nodoc
-class _$FilterSurveyEventCopyWithImpl<$Res>
+class _$FilterSurveyEventCopyWithImpl<$Res, $Val extends FilterSurveyEvent>
     implements $FilterSurveyEventCopyWith<$Res> {
   _$FilterSurveyEventCopyWithImpl(this._value, this._then);
 
-  final FilterSurveyEvent _value;
   // ignore: unused_field
-  final $Res Function(FilterSurveyEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -115,14 +116,11 @@ abstract class _$$_InitializedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_InitializedCopyWithImpl<$Res>
-    extends _$FilterSurveyEventCopyWithImpl<$Res>
+    extends _$FilterSurveyEventCopyWithImpl<$Res, _$_Initialized>
     implements _$$_InitializedCopyWith<$Res> {
   __$$_InitializedCopyWithImpl(
       _$_Initialized _value, $Res Function(_$_Initialized) _then)
-      : super(_value, (v) => _then(v as _$_Initialized));
-
-  @override
-  _$_Initialized get _value => super._value as _$_Initialized;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -162,14 +160,14 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(SortByType newValue)? sortByValueUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function()? initialized,
+    TResult? Function(SortByType newValue)? sortByValueUpdated,
+    TResult? Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
-    TResult Function()? resetExecuted,
+    TResult? Function(QuestionTypeEnum newValue)? questionTypeUpdated,
+    TResult? Function()? resetExecuted,
   }) {
     return initialized?.call();
   }
@@ -210,13 +208,13 @@ class _$_Initialized implements _Initialized {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SortByValueUpdated value)? sortByValueUpdated,
-    TResult Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
-    TResult Function(_InitialNumberOfVotesUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SortByValueUpdated value)? sortByValueUpdated,
+    TResult? Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
+    TResult? Function(_InitialNumberOfVotesUpdated value)?
         initialNumberOfVotesUpdated,
-    TResult Function(_QuestionTypeUpdated value)? questionTypeUpdated,
-    TResult Function(_ResetExecuted value)? resetExecuted,
+    TResult? Function(_QuestionTypeUpdated value)? questionTypeUpdated,
+    TResult? Function(_ResetExecuted value)? resetExecuted,
   }) {
     return initialized?.call(this);
   }
@@ -249,26 +247,25 @@ abstract class _$$_SortByValueUpdatedCopyWith<$Res> {
   factory _$$_SortByValueUpdatedCopyWith(_$_SortByValueUpdated value,
           $Res Function(_$_SortByValueUpdated) then) =
       __$$_SortByValueUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({SortByType newValue});
 }
 
 /// @nodoc
 class __$$_SortByValueUpdatedCopyWithImpl<$Res>
-    extends _$FilterSurveyEventCopyWithImpl<$Res>
+    extends _$FilterSurveyEventCopyWithImpl<$Res, _$_SortByValueUpdated>
     implements _$$_SortByValueUpdatedCopyWith<$Res> {
   __$$_SortByValueUpdatedCopyWithImpl(
       _$_SortByValueUpdated _value, $Res Function(_$_SortByValueUpdated) _then)
-      : super(_value, (v) => _then(v as _$_SortByValueUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_SortByValueUpdated get _value => super._value as _$_SortByValueUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$_SortByValueUpdated(
-      newValue == freezed
+      null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as SortByType,
@@ -294,15 +291,16 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SortByValueUpdated &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SortByValueUpdatedCopyWith<_$_SortByValueUpdated> get copyWith =>
       __$$_SortByValueUpdatedCopyWithImpl<_$_SortByValueUpdated>(
           this, _$identity);
@@ -325,14 +323,14 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(SortByType newValue)? sortByValueUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function()? initialized,
+    TResult? Function(SortByType newValue)? sortByValueUpdated,
+    TResult? Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
-    TResult Function()? resetExecuted,
+    TResult? Function(QuestionTypeEnum newValue)? questionTypeUpdated,
+    TResult? Function()? resetExecuted,
   }) {
     return sortByValueUpdated?.call(newValue);
   }
@@ -373,13 +371,13 @@ class _$_SortByValueUpdated implements _SortByValueUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SortByValueUpdated value)? sortByValueUpdated,
-    TResult Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
-    TResult Function(_InitialNumberOfVotesUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SortByValueUpdated value)? sortByValueUpdated,
+    TResult? Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
+    TResult? Function(_InitialNumberOfVotesUpdated value)?
         initialNumberOfVotesUpdated,
-    TResult Function(_QuestionTypeUpdated value)? questionTypeUpdated,
-    TResult Function(_ResetExecuted value)? resetExecuted,
+    TResult? Function(_QuestionTypeUpdated value)? questionTypeUpdated,
+    TResult? Function(_ResetExecuted value)? resetExecuted,
   }) {
     return sortByValueUpdated?.call(this);
   }
@@ -418,31 +416,30 @@ abstract class _$$_NumberOfVotesUpdatedCopyWith<$Res> {
   factory _$$_NumberOfVotesUpdatedCopyWith(_$_NumberOfVotesUpdated value,
           $Res Function(_$_NumberOfVotesUpdated) then) =
       __$$_NumberOfVotesUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({double lowerBound, double upperBound});
 }
 
 /// @nodoc
 class __$$_NumberOfVotesUpdatedCopyWithImpl<$Res>
-    extends _$FilterSurveyEventCopyWithImpl<$Res>
+    extends _$FilterSurveyEventCopyWithImpl<$Res, _$_NumberOfVotesUpdated>
     implements _$$_NumberOfVotesUpdatedCopyWith<$Res> {
   __$$_NumberOfVotesUpdatedCopyWithImpl(_$_NumberOfVotesUpdated _value,
       $Res Function(_$_NumberOfVotesUpdated) _then)
-      : super(_value, (v) => _then(v as _$_NumberOfVotesUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_NumberOfVotesUpdated get _value => super._value as _$_NumberOfVotesUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lowerBound = freezed,
-    Object? upperBound = freezed,
+    Object? lowerBound = null,
+    Object? upperBound = null,
   }) {
     return _then(_$_NumberOfVotesUpdated(
-      lowerBound == freezed
+      null == lowerBound
           ? _value.lowerBound
           : lowerBound // ignore: cast_nullable_to_non_nullable
               as double,
-      upperBound == freezed
+      null == upperBound
           ? _value.upperBound
           : upperBound // ignore: cast_nullable_to_non_nullable
               as double,
@@ -470,20 +467,18 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NumberOfVotesUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.lowerBound, lowerBound) &&
-            const DeepCollectionEquality()
-                .equals(other.upperBound, upperBound));
+            (identical(other.lowerBound, lowerBound) ||
+                other.lowerBound == lowerBound) &&
+            (identical(other.upperBound, upperBound) ||
+                other.upperBound == upperBound));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(lowerBound),
-      const DeepCollectionEquality().hash(upperBound));
+  int get hashCode => Object.hash(runtimeType, lowerBound, upperBound);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NumberOfVotesUpdatedCopyWith<_$_NumberOfVotesUpdated> get copyWith =>
       __$$_NumberOfVotesUpdatedCopyWithImpl<_$_NumberOfVotesUpdated>(
           this, _$identity);
@@ -506,14 +501,14 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(SortByType newValue)? sortByValueUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function()? initialized,
+    TResult? Function(SortByType newValue)? sortByValueUpdated,
+    TResult? Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
-    TResult Function()? resetExecuted,
+    TResult? Function(QuestionTypeEnum newValue)? questionTypeUpdated,
+    TResult? Function()? resetExecuted,
   }) {
     return numberOfVotesUpdated?.call(lowerBound, upperBound);
   }
@@ -554,13 +549,13 @@ class _$_NumberOfVotesUpdated implements _NumberOfVotesUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SortByValueUpdated value)? sortByValueUpdated,
-    TResult Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
-    TResult Function(_InitialNumberOfVotesUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SortByValueUpdated value)? sortByValueUpdated,
+    TResult? Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
+    TResult? Function(_InitialNumberOfVotesUpdated value)?
         initialNumberOfVotesUpdated,
-    TResult Function(_QuestionTypeUpdated value)? questionTypeUpdated,
-    TResult Function(_ResetExecuted value)? resetExecuted,
+    TResult? Function(_QuestionTypeUpdated value)? questionTypeUpdated,
+    TResult? Function(_ResetExecuted value)? resetExecuted,
   }) {
     return numberOfVotesUpdated?.call(this);
   }
@@ -602,33 +597,32 @@ abstract class _$$_InitialNumberOfVotesUpdatedCopyWith<$Res> {
           _$_InitialNumberOfVotesUpdated value,
           $Res Function(_$_InitialNumberOfVotesUpdated) then) =
       __$$_InitialNumberOfVotesUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({double lowerBound, double upperBound});
 }
 
 /// @nodoc
 class __$$_InitialNumberOfVotesUpdatedCopyWithImpl<$Res>
-    extends _$FilterSurveyEventCopyWithImpl<$Res>
+    extends _$FilterSurveyEventCopyWithImpl<$Res,
+        _$_InitialNumberOfVotesUpdated>
     implements _$$_InitialNumberOfVotesUpdatedCopyWith<$Res> {
   __$$_InitialNumberOfVotesUpdatedCopyWithImpl(
       _$_InitialNumberOfVotesUpdated _value,
       $Res Function(_$_InitialNumberOfVotesUpdated) _then)
-      : super(_value, (v) => _then(v as _$_InitialNumberOfVotesUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_InitialNumberOfVotesUpdated get _value =>
-      super._value as _$_InitialNumberOfVotesUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? lowerBound = freezed,
-    Object? upperBound = freezed,
+    Object? lowerBound = null,
+    Object? upperBound = null,
   }) {
     return _then(_$_InitialNumberOfVotesUpdated(
-      lowerBound == freezed
+      null == lowerBound
           ? _value.lowerBound
           : lowerBound // ignore: cast_nullable_to_non_nullable
               as double,
-      upperBound == freezed
+      null == upperBound
           ? _value.upperBound
           : upperBound // ignore: cast_nullable_to_non_nullable
               as double,
@@ -656,20 +650,18 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_InitialNumberOfVotesUpdated &&
-            const DeepCollectionEquality()
-                .equals(other.lowerBound, lowerBound) &&
-            const DeepCollectionEquality()
-                .equals(other.upperBound, upperBound));
+            (identical(other.lowerBound, lowerBound) ||
+                other.lowerBound == lowerBound) &&
+            (identical(other.upperBound, upperBound) ||
+                other.upperBound == upperBound));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(lowerBound),
-      const DeepCollectionEquality().hash(upperBound));
+  int get hashCode => Object.hash(runtimeType, lowerBound, upperBound);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_InitialNumberOfVotesUpdatedCopyWith<_$_InitialNumberOfVotesUpdated>
       get copyWith => __$$_InitialNumberOfVotesUpdatedCopyWithImpl<
           _$_InitialNumberOfVotesUpdated>(this, _$identity);
@@ -692,14 +684,14 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(SortByType newValue)? sortByValueUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function()? initialized,
+    TResult? Function(SortByType newValue)? sortByValueUpdated,
+    TResult? Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
-    TResult Function()? resetExecuted,
+    TResult? Function(QuestionTypeEnum newValue)? questionTypeUpdated,
+    TResult? Function()? resetExecuted,
   }) {
     return initialNumberOfVotesUpdated?.call(lowerBound, upperBound);
   }
@@ -740,13 +732,13 @@ class _$_InitialNumberOfVotesUpdated implements _InitialNumberOfVotesUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SortByValueUpdated value)? sortByValueUpdated,
-    TResult Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
-    TResult Function(_InitialNumberOfVotesUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SortByValueUpdated value)? sortByValueUpdated,
+    TResult? Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
+    TResult? Function(_InitialNumberOfVotesUpdated value)?
         initialNumberOfVotesUpdated,
-    TResult Function(_QuestionTypeUpdated value)? questionTypeUpdated,
-    TResult Function(_ResetExecuted value)? resetExecuted,
+    TResult? Function(_QuestionTypeUpdated value)? questionTypeUpdated,
+    TResult? Function(_ResetExecuted value)? resetExecuted,
   }) {
     return initialNumberOfVotesUpdated?.call(this);
   }
@@ -787,26 +779,25 @@ abstract class _$$_QuestionTypeUpdatedCopyWith<$Res> {
   factory _$$_QuestionTypeUpdatedCopyWith(_$_QuestionTypeUpdated value,
           $Res Function(_$_QuestionTypeUpdated) then) =
       __$$_QuestionTypeUpdatedCopyWithImpl<$Res>;
+  @useResult
   $Res call({QuestionTypeEnum newValue});
 }
 
 /// @nodoc
 class __$$_QuestionTypeUpdatedCopyWithImpl<$Res>
-    extends _$FilterSurveyEventCopyWithImpl<$Res>
+    extends _$FilterSurveyEventCopyWithImpl<$Res, _$_QuestionTypeUpdated>
     implements _$$_QuestionTypeUpdatedCopyWith<$Res> {
   __$$_QuestionTypeUpdatedCopyWithImpl(_$_QuestionTypeUpdated _value,
       $Res Function(_$_QuestionTypeUpdated) _then)
-      : super(_value, (v) => _then(v as _$_QuestionTypeUpdated));
+      : super(_value, _then);
 
-  @override
-  _$_QuestionTypeUpdated get _value => super._value as _$_QuestionTypeUpdated;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? newValue = freezed,
+    Object? newValue = null,
   }) {
     return _then(_$_QuestionTypeUpdated(
-      newValue == freezed
+      null == newValue
           ? _value.newValue
           : newValue // ignore: cast_nullable_to_non_nullable
               as QuestionTypeEnum,
@@ -832,15 +823,16 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_QuestionTypeUpdated &&
-            const DeepCollectionEquality().equals(other.newValue, newValue));
+            (identical(other.newValue, newValue) ||
+                other.newValue == newValue));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(newValue));
+  int get hashCode => Object.hash(runtimeType, newValue);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_QuestionTypeUpdatedCopyWith<_$_QuestionTypeUpdated> get copyWith =>
       __$$_QuestionTypeUpdatedCopyWithImpl<_$_QuestionTypeUpdated>(
           this, _$identity);
@@ -863,14 +855,14 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(SortByType newValue)? sortByValueUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function()? initialized,
+    TResult? Function(SortByType newValue)? sortByValueUpdated,
+    TResult? Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
-    TResult Function()? resetExecuted,
+    TResult? Function(QuestionTypeEnum newValue)? questionTypeUpdated,
+    TResult? Function()? resetExecuted,
   }) {
     return questionTypeUpdated?.call(newValue);
   }
@@ -911,13 +903,13 @@ class _$_QuestionTypeUpdated implements _QuestionTypeUpdated {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SortByValueUpdated value)? sortByValueUpdated,
-    TResult Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
-    TResult Function(_InitialNumberOfVotesUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SortByValueUpdated value)? sortByValueUpdated,
+    TResult? Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
+    TResult? Function(_InitialNumberOfVotesUpdated value)?
         initialNumberOfVotesUpdated,
-    TResult Function(_QuestionTypeUpdated value)? questionTypeUpdated,
-    TResult Function(_ResetExecuted value)? resetExecuted,
+    TResult? Function(_QuestionTypeUpdated value)? questionTypeUpdated,
+    TResult? Function(_ResetExecuted value)? resetExecuted,
   }) {
     return questionTypeUpdated?.call(this);
   }
@@ -960,14 +952,11 @@ abstract class _$$_ResetExecutedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ResetExecutedCopyWithImpl<$Res>
-    extends _$FilterSurveyEventCopyWithImpl<$Res>
+    extends _$FilterSurveyEventCopyWithImpl<$Res, _$_ResetExecuted>
     implements _$$_ResetExecutedCopyWith<$Res> {
   __$$_ResetExecutedCopyWithImpl(
       _$_ResetExecuted _value, $Res Function(_$_ResetExecuted) _then)
-      : super(_value, (v) => _then(v as _$_ResetExecuted));
-
-  @override
-  _$_ResetExecuted get _value => super._value as _$_ResetExecuted;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -1007,14 +996,14 @@ class _$_ResetExecuted implements _ResetExecuted {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initialized,
-    TResult Function(SortByType newValue)? sortByValueUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function()? initialized,
+    TResult? Function(SortByType newValue)? sortByValueUpdated,
+    TResult? Function(double lowerBound, double upperBound)?
         numberOfVotesUpdated,
-    TResult Function(double lowerBound, double upperBound)?
+    TResult? Function(double lowerBound, double upperBound)?
         initialNumberOfVotesUpdated,
-    TResult Function(QuestionTypeEnum newValue)? questionTypeUpdated,
-    TResult Function()? resetExecuted,
+    TResult? Function(QuestionTypeEnum newValue)? questionTypeUpdated,
+    TResult? Function()? resetExecuted,
   }) {
     return resetExecuted?.call();
   }
@@ -1055,13 +1044,13 @@ class _$_ResetExecuted implements _ResetExecuted {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initialized value)? initialized,
-    TResult Function(_SortByValueUpdated value)? sortByValueUpdated,
-    TResult Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
-    TResult Function(_InitialNumberOfVotesUpdated value)?
+    TResult? Function(_Initialized value)? initialized,
+    TResult? Function(_SortByValueUpdated value)? sortByValueUpdated,
+    TResult? Function(_NumberOfVotesUpdated value)? numberOfVotesUpdated,
+    TResult? Function(_InitialNumberOfVotesUpdated value)?
         initialNumberOfVotesUpdated,
-    TResult Function(_QuestionTypeUpdated value)? questionTypeUpdated,
-    TResult Function(_ResetExecuted value)? resetExecuted,
+    TResult? Function(_QuestionTypeUpdated value)? questionTypeUpdated,
+    TResult? Function(_ResetExecuted value)? resetExecuted,
   }) {
     return resetExecuted?.call(this);
   }
@@ -1109,7 +1098,8 @@ mixin _$FilterSurveyState {
 abstract class $FilterSurveyStateCopyWith<$Res> {
   factory $FilterSurveyStateCopyWith(
           FilterSurveyState value, $Res Function(FilterSurveyState) then) =
-      _$FilterSurveyStateCopyWithImpl<$Res>;
+      _$FilterSurveyStateCopyWithImpl<$Res, FilterSurveyState>;
+  @useResult
   $Res call(
       {SortByType sortByValue,
       double numberOfVotesLowerBound,
@@ -1120,49 +1110,51 @@ abstract class $FilterSurveyStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$FilterSurveyStateCopyWithImpl<$Res>
+class _$FilterSurveyStateCopyWithImpl<$Res, $Val extends FilterSurveyState>
     implements $FilterSurveyStateCopyWith<$Res> {
   _$FilterSurveyStateCopyWithImpl(this._value, this._then);
 
-  final FilterSurveyState _value;
   // ignore: unused_field
-  final $Res Function(FilterSurveyState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sortByValue = freezed,
-    Object? numberOfVotesLowerBound = freezed,
-    Object? numberOfVotesUpperBound = freezed,
-    Object? questionType = freezed,
-    Object? initialNumberOfVotesLowerBound = freezed,
-    Object? initialNumberOfVotesUpperBound = freezed,
+    Object? sortByValue = null,
+    Object? numberOfVotesLowerBound = null,
+    Object? numberOfVotesUpperBound = null,
+    Object? questionType = null,
+    Object? initialNumberOfVotesLowerBound = null,
+    Object? initialNumberOfVotesUpperBound = null,
   }) {
     return _then(_value.copyWith(
-      sortByValue: sortByValue == freezed
+      sortByValue: null == sortByValue
           ? _value.sortByValue
           : sortByValue // ignore: cast_nullable_to_non_nullable
               as SortByType,
-      numberOfVotesLowerBound: numberOfVotesLowerBound == freezed
+      numberOfVotesLowerBound: null == numberOfVotesLowerBound
           ? _value.numberOfVotesLowerBound
           : numberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
               as double,
-      numberOfVotesUpperBound: numberOfVotesUpperBound == freezed
+      numberOfVotesUpperBound: null == numberOfVotesUpperBound
           ? _value.numberOfVotesUpperBound
           : numberOfVotesUpperBound // ignore: cast_nullable_to_non_nullable
               as double,
-      questionType: questionType == freezed
+      questionType: null == questionType
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
               as QuestionTypeEnum,
-      initialNumberOfVotesLowerBound: initialNumberOfVotesLowerBound == freezed
+      initialNumberOfVotesLowerBound: null == initialNumberOfVotesLowerBound
           ? _value.initialNumberOfVotesLowerBound
           : initialNumberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
               as double,
-      initialNumberOfVotesUpperBound: initialNumberOfVotesUpperBound == freezed
+      initialNumberOfVotesUpperBound: null == initialNumberOfVotesUpperBound
           ? _value.initialNumberOfVotesUpperBound
           : initialNumberOfVotesUpperBound // ignore: cast_nullable_to_non_nullable
               as double,
-    ));
+    ) as $Val);
   }
 }
 
@@ -1173,6 +1165,7 @@ abstract class _$$_FilterSurveyStateCopyWith<$Res>
           $Res Function(_$_FilterSurveyState) then) =
       __$$_FilterSurveyStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call(
       {SortByType sortByValue,
       double numberOfVotesLowerBound,
@@ -1184,46 +1177,44 @@ abstract class _$$_FilterSurveyStateCopyWith<$Res>
 
 /// @nodoc
 class __$$_FilterSurveyStateCopyWithImpl<$Res>
-    extends _$FilterSurveyStateCopyWithImpl<$Res>
+    extends _$FilterSurveyStateCopyWithImpl<$Res, _$_FilterSurveyState>
     implements _$$_FilterSurveyStateCopyWith<$Res> {
   __$$_FilterSurveyStateCopyWithImpl(
       _$_FilterSurveyState _value, $Res Function(_$_FilterSurveyState) _then)
-      : super(_value, (v) => _then(v as _$_FilterSurveyState));
+      : super(_value, _then);
 
-  @override
-  _$_FilterSurveyState get _value => super._value as _$_FilterSurveyState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? sortByValue = freezed,
-    Object? numberOfVotesLowerBound = freezed,
-    Object? numberOfVotesUpperBound = freezed,
-    Object? questionType = freezed,
-    Object? initialNumberOfVotesLowerBound = freezed,
-    Object? initialNumberOfVotesUpperBound = freezed,
+    Object? sortByValue = null,
+    Object? numberOfVotesLowerBound = null,
+    Object? numberOfVotesUpperBound = null,
+    Object? questionType = null,
+    Object? initialNumberOfVotesLowerBound = null,
+    Object? initialNumberOfVotesUpperBound = null,
   }) {
     return _then(_$_FilterSurveyState(
-      sortByValue: sortByValue == freezed
+      sortByValue: null == sortByValue
           ? _value.sortByValue
           : sortByValue // ignore: cast_nullable_to_non_nullable
               as SortByType,
-      numberOfVotesLowerBound: numberOfVotesLowerBound == freezed
+      numberOfVotesLowerBound: null == numberOfVotesLowerBound
           ? _value.numberOfVotesLowerBound
           : numberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
               as double,
-      numberOfVotesUpperBound: numberOfVotesUpperBound == freezed
+      numberOfVotesUpperBound: null == numberOfVotesUpperBound
           ? _value.numberOfVotesUpperBound
           : numberOfVotesUpperBound // ignore: cast_nullable_to_non_nullable
               as double,
-      questionType: questionType == freezed
+      questionType: null == questionType
           ? _value.questionType
           : questionType // ignore: cast_nullable_to_non_nullable
               as QuestionTypeEnum,
-      initialNumberOfVotesLowerBound: initialNumberOfVotesLowerBound == freezed
+      initialNumberOfVotesLowerBound: null == initialNumberOfVotesLowerBound
           ? _value.initialNumberOfVotesLowerBound
           : initialNumberOfVotesLowerBound // ignore: cast_nullable_to_non_nullable
               as double,
-      initialNumberOfVotesUpperBound: initialNumberOfVotesUpperBound == freezed
+      initialNumberOfVotesUpperBound: null == initialNumberOfVotesUpperBound
           ? _value.initialNumberOfVotesUpperBound
           : initialNumberOfVotesUpperBound // ignore: cast_nullable_to_non_nullable
               as double,
@@ -1265,34 +1256,39 @@ class _$_FilterSurveyState implements _FilterSurveyState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_FilterSurveyState &&
-            const DeepCollectionEquality()
-                .equals(other.sortByValue, sortByValue) &&
-            const DeepCollectionEquality().equals(
-                other.numberOfVotesLowerBound, numberOfVotesLowerBound) &&
-            const DeepCollectionEquality().equals(
-                other.numberOfVotesUpperBound, numberOfVotesUpperBound) &&
-            const DeepCollectionEquality()
-                .equals(other.questionType, questionType) &&
-            const DeepCollectionEquality().equals(
-                other.initialNumberOfVotesLowerBound,
-                initialNumberOfVotesLowerBound) &&
-            const DeepCollectionEquality().equals(
-                other.initialNumberOfVotesUpperBound,
-                initialNumberOfVotesUpperBound));
+            (identical(other.sortByValue, sortByValue) ||
+                other.sortByValue == sortByValue) &&
+            (identical(
+                    other.numberOfVotesLowerBound, numberOfVotesLowerBound) ||
+                other.numberOfVotesLowerBound == numberOfVotesLowerBound) &&
+            (identical(
+                    other.numberOfVotesUpperBound, numberOfVotesUpperBound) ||
+                other.numberOfVotesUpperBound == numberOfVotesUpperBound) &&
+            (identical(other.questionType, questionType) ||
+                other.questionType == questionType) &&
+            (identical(other.initialNumberOfVotesLowerBound,
+                    initialNumberOfVotesLowerBound) ||
+                other.initialNumberOfVotesLowerBound ==
+                    initialNumberOfVotesLowerBound) &&
+            (identical(other.initialNumberOfVotesUpperBound,
+                    initialNumberOfVotesUpperBound) ||
+                other.initialNumberOfVotesUpperBound ==
+                    initialNumberOfVotesUpperBound));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(sortByValue),
-      const DeepCollectionEquality().hash(numberOfVotesLowerBound),
-      const DeepCollectionEquality().hash(numberOfVotesUpperBound),
-      const DeepCollectionEquality().hash(questionType),
-      const DeepCollectionEquality().hash(initialNumberOfVotesLowerBound),
-      const DeepCollectionEquality().hash(initialNumberOfVotesUpperBound));
+      sortByValue,
+      numberOfVotesLowerBound,
+      numberOfVotesUpperBound,
+      questionType,
+      initialNumberOfVotesLowerBound,
+      initialNumberOfVotesUpperBound);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_FilterSurveyStateCopyWith<_$_FilterSurveyState> get copyWith =>
       __$$_FilterSurveyStateCopyWithImpl<_$_FilterSurveyState>(
           this, _$identity);

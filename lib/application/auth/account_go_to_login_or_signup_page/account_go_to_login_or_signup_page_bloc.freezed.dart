@@ -25,9 +25,9 @@ mixin _$AccountGoToLoginOrSignupPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
+    TResult? Function()? continueWithGooglePressed,
+    TResult? Function()? continueWithFacebookPressed,
+    TResult? Function()? continueWithTwitterPressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -50,11 +50,11 @@ mixin _$AccountGoToLoginOrSignupPageEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
+    TResult? Function(_ContinueWithGooglePressed value)?
         continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
+    TResult? Function(_ContinueWithFacebookPressed value)?
         continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
+    TResult? Function(_ContinueWithTwitterPressed value)?
         continueWithTwitterPressed,
   }) =>
       throw _privateConstructorUsedError;
@@ -76,17 +76,20 @@ abstract class $AccountGoToLoginOrSignupPageEventCopyWith<$Res> {
   factory $AccountGoToLoginOrSignupPageEventCopyWith(
           AccountGoToLoginOrSignupPageEvent value,
           $Res Function(AccountGoToLoginOrSignupPageEvent) then) =
-      _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>;
+      _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
+          AccountGoToLoginOrSignupPageEvent>;
 }
 
 /// @nodoc
-class _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
+class _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
+        $Val extends AccountGoToLoginOrSignupPageEvent>
     implements $AccountGoToLoginOrSignupPageEventCopyWith<$Res> {
   _$AccountGoToLoginOrSignupPageEventCopyWithImpl(this._value, this._then);
 
-  final AccountGoToLoginOrSignupPageEvent _value;
   // ignore: unused_field
-  final $Res Function(AccountGoToLoginOrSignupPageEvent) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -99,16 +102,13 @@ abstract class _$$_ContinueWithGooglePressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ContinueWithGooglePressedCopyWithImpl<$Res>
-    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
+    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
+        _$_ContinueWithGooglePressed>
     implements _$$_ContinueWithGooglePressedCopyWith<$Res> {
   __$$_ContinueWithGooglePressedCopyWithImpl(
       _$_ContinueWithGooglePressed _value,
       $Res Function(_$_ContinueWithGooglePressed) _then)
-      : super(_value, (v) => _then(v as _$_ContinueWithGooglePressed));
-
-  @override
-  _$_ContinueWithGooglePressed get _value =>
-      super._value as _$_ContinueWithGooglePressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -144,9 +144,9 @@ class _$_ContinueWithGooglePressed implements _ContinueWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
+    TResult? Function()? continueWithGooglePressed,
+    TResult? Function()? continueWithFacebookPressed,
+    TResult? Function()? continueWithTwitterPressed,
   }) {
     return continueWithGooglePressed?.call();
   }
@@ -181,11 +181,11 @@ class _$_ContinueWithGooglePressed implements _ContinueWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
+    TResult? Function(_ContinueWithGooglePressed value)?
         continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
+    TResult? Function(_ContinueWithFacebookPressed value)?
         continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
+    TResult? Function(_ContinueWithTwitterPressed value)?
         continueWithTwitterPressed,
   }) {
     return continueWithGooglePressed?.call(this);
@@ -224,16 +224,13 @@ abstract class _$$_ContinueWithFacebookPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ContinueWithFacebookPressedCopyWithImpl<$Res>
-    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
+    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
+        _$_ContinueWithFacebookPressed>
     implements _$$_ContinueWithFacebookPressedCopyWith<$Res> {
   __$$_ContinueWithFacebookPressedCopyWithImpl(
       _$_ContinueWithFacebookPressed _value,
       $Res Function(_$_ContinueWithFacebookPressed) _then)
-      : super(_value, (v) => _then(v as _$_ContinueWithFacebookPressed));
-
-  @override
-  _$_ContinueWithFacebookPressed get _value =>
-      super._value as _$_ContinueWithFacebookPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -269,9 +266,9 @@ class _$_ContinueWithFacebookPressed implements _ContinueWithFacebookPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
+    TResult? Function()? continueWithGooglePressed,
+    TResult? Function()? continueWithFacebookPressed,
+    TResult? Function()? continueWithTwitterPressed,
   }) {
     return continueWithFacebookPressed?.call();
   }
@@ -306,11 +303,11 @@ class _$_ContinueWithFacebookPressed implements _ContinueWithFacebookPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
+    TResult? Function(_ContinueWithGooglePressed value)?
         continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
+    TResult? Function(_ContinueWithFacebookPressed value)?
         continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
+    TResult? Function(_ContinueWithTwitterPressed value)?
         continueWithTwitterPressed,
   }) {
     return continueWithFacebookPressed?.call(this);
@@ -349,16 +346,13 @@ abstract class _$$_ContinueWithTwitterPressedCopyWith<$Res> {
 
 /// @nodoc
 class __$$_ContinueWithTwitterPressedCopyWithImpl<$Res>
-    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res>
+    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
+        _$_ContinueWithTwitterPressed>
     implements _$$_ContinueWithTwitterPressedCopyWith<$Res> {
   __$$_ContinueWithTwitterPressedCopyWithImpl(
       _$_ContinueWithTwitterPressed _value,
       $Res Function(_$_ContinueWithTwitterPressed) _then)
-      : super(_value, (v) => _then(v as _$_ContinueWithTwitterPressed));
-
-  @override
-  _$_ContinueWithTwitterPressed get _value =>
-      super._value as _$_ContinueWithTwitterPressed;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -394,9 +388,9 @@ class _$_ContinueWithTwitterPressed implements _ContinueWithTwitterPressed {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
+    TResult? Function()? continueWithGooglePressed,
+    TResult? Function()? continueWithFacebookPressed,
+    TResult? Function()? continueWithTwitterPressed,
   }) {
     return continueWithTwitterPressed?.call();
   }
@@ -431,11 +425,11 @@ class _$_ContinueWithTwitterPressed implements _ContinueWithTwitterPressed {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
+    TResult? Function(_ContinueWithGooglePressed value)?
         continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
+    TResult? Function(_ContinueWithFacebookPressed value)?
         continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
+    TResult? Function(_ContinueWithTwitterPressed value)?
         continueWithTwitterPressed,
   }) {
     return continueWithTwitterPressed?.call(this);
@@ -479,29 +473,34 @@ abstract class $AccountGoToLoginOrSignupPageStateCopyWith<$Res> {
   factory $AccountGoToLoginOrSignupPageStateCopyWith(
           AccountGoToLoginOrSignupPageState value,
           $Res Function(AccountGoToLoginOrSignupPageState) then) =
-      _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>;
+      _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res,
+          AccountGoToLoginOrSignupPageState>;
+  @useResult
   $Res call({UserCredential? currentUserCredential});
 }
 
 /// @nodoc
-class _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
+class _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res,
+        $Val extends AccountGoToLoginOrSignupPageState>
     implements $AccountGoToLoginOrSignupPageStateCopyWith<$Res> {
   _$AccountGoToLoginOrSignupPageStateCopyWithImpl(this._value, this._then);
 
-  final AccountGoToLoginOrSignupPageState _value;
   // ignore: unused_field
-  final $Res Function(AccountGoToLoginOrSignupPageState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? currentUserCredential = freezed,
   }) {
     return _then(_value.copyWith(
-      currentUserCredential: currentUserCredential == freezed
+      currentUserCredential: freezed == currentUserCredential
           ? _value.currentUserCredential
           : currentUserCredential // ignore: cast_nullable_to_non_nullable
               as UserCredential?,
-    ));
+    ) as $Val);
   }
 }
 
@@ -513,28 +512,27 @@ abstract class _$$_AccountGoToLoginOrSignupPageStateCopyWith<$Res>
           $Res Function(_$_AccountGoToLoginOrSignupPageState) then) =
       __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({UserCredential? currentUserCredential});
 }
 
 /// @nodoc
 class __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
-    extends _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
+    extends _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res,
+        _$_AccountGoToLoginOrSignupPageState>
     implements _$$_AccountGoToLoginOrSignupPageStateCopyWith<$Res> {
   __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl(
       _$_AccountGoToLoginOrSignupPageState _value,
       $Res Function(_$_AccountGoToLoginOrSignupPageState) _then)
-      : super(_value, (v) => _then(v as _$_AccountGoToLoginOrSignupPageState));
+      : super(_value, _then);
 
-  @override
-  _$_AccountGoToLoginOrSignupPageState get _value =>
-      super._value as _$_AccountGoToLoginOrSignupPageState;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
     Object? currentUserCredential = freezed,
   }) {
     return _then(_$_AccountGoToLoginOrSignupPageState(
-      currentUserCredential: currentUserCredential == freezed
+      currentUserCredential: freezed == currentUserCredential
           ? _value.currentUserCredential
           : currentUserCredential // ignore: cast_nullable_to_non_nullable
               as UserCredential?,
@@ -562,16 +560,16 @@ class _$_AccountGoToLoginOrSignupPageState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AccountGoToLoginOrSignupPageState &&
-            const DeepCollectionEquality()
-                .equals(other.currentUserCredential, currentUserCredential));
+            (identical(other.currentUserCredential, currentUserCredential) ||
+                other.currentUserCredential == currentUserCredential));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(currentUserCredential));
+  int get hashCode => Object.hash(runtimeType, currentUserCredential);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_AccountGoToLoginOrSignupPageStateCopyWith<
           _$_AccountGoToLoginOrSignupPageState>
       get copyWith => __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<

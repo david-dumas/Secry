@@ -27,11 +27,11 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAlreadyExists,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidPassword,
-    TResult Function()? userNotFound,
-    TResult Function()? generalError,
+    TResult? Function()? emailAlreadyExists,
+    TResult? Function()? invalidEmail,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? userNotFound,
+    TResult? Function()? generalError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -55,11 +55,11 @@ mixin _$AuthFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailAlreadyExists value)? emailAlreadyExists,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(GeneralError value)? generalError,
+    TResult? Function(EmailAlreadyExists value)? emailAlreadyExists,
+    TResult? Function(InvalidEmail value)? invalidEmail,
+    TResult? Function(InvalidPassword value)? invalidPassword,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(GeneralError value)? generalError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -78,16 +78,18 @@ mixin _$AuthFailure {
 abstract class $AuthFailureCopyWith<$Res> {
   factory $AuthFailureCopyWith(
           AuthFailure value, $Res Function(AuthFailure) then) =
-      _$AuthFailureCopyWithImpl<$Res>;
+      _$AuthFailureCopyWithImpl<$Res, AuthFailure>;
 }
 
 /// @nodoc
-class _$AuthFailureCopyWithImpl<$Res> implements $AuthFailureCopyWith<$Res> {
+class _$AuthFailureCopyWithImpl<$Res, $Val extends AuthFailure>
+    implements $AuthFailureCopyWith<$Res> {
   _$AuthFailureCopyWithImpl(this._value, this._then);
 
-  final AuthFailure _value;
   // ignore: unused_field
-  final $Res Function(AuthFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -99,14 +101,11 @@ abstract class _$$EmailAlreadyExistsCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmailAlreadyExistsCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$EmailAlreadyExists>
     implements _$$EmailAlreadyExistsCopyWith<$Res> {
   __$$EmailAlreadyExistsCopyWithImpl(
       _$EmailAlreadyExists _value, $Res Function(_$EmailAlreadyExists) _then)
-      : super(_value, (v) => _then(v as _$EmailAlreadyExists));
-
-  @override
-  _$EmailAlreadyExists get _value => super._value as _$EmailAlreadyExists;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -143,11 +142,11 @@ class _$EmailAlreadyExists implements EmailAlreadyExists {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAlreadyExists,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidPassword,
-    TResult Function()? userNotFound,
-    TResult Function()? generalError,
+    TResult? Function()? emailAlreadyExists,
+    TResult? Function()? invalidEmail,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? userNotFound,
+    TResult? Function()? generalError,
   }) {
     return emailAlreadyExists?.call();
   }
@@ -183,11 +182,11 @@ class _$EmailAlreadyExists implements EmailAlreadyExists {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailAlreadyExists value)? emailAlreadyExists,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(GeneralError value)? generalError,
+    TResult? Function(EmailAlreadyExists value)? emailAlreadyExists,
+    TResult? Function(InvalidEmail value)? invalidEmail,
+    TResult? Function(InvalidPassword value)? invalidPassword,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(GeneralError value)? generalError,
   }) {
     return emailAlreadyExists?.call(this);
   }
@@ -221,14 +220,12 @@ abstract class _$$InvalidEmailCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$InvalidEmailCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$InvalidEmailCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$InvalidEmail>
     implements _$$InvalidEmailCopyWith<$Res> {
   __$$InvalidEmailCopyWithImpl(
       _$InvalidEmail _value, $Res Function(_$InvalidEmail) _then)
-      : super(_value, (v) => _then(v as _$InvalidEmail));
-
-  @override
-  _$InvalidEmail get _value => super._value as _$InvalidEmail;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -265,11 +262,11 @@ class _$InvalidEmail implements InvalidEmail {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAlreadyExists,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidPassword,
-    TResult Function()? userNotFound,
-    TResult Function()? generalError,
+    TResult? Function()? emailAlreadyExists,
+    TResult? Function()? invalidEmail,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? userNotFound,
+    TResult? Function()? generalError,
   }) {
     return invalidEmail?.call();
   }
@@ -305,11 +302,11 @@ class _$InvalidEmail implements InvalidEmail {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailAlreadyExists value)? emailAlreadyExists,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(GeneralError value)? generalError,
+    TResult? Function(EmailAlreadyExists value)? emailAlreadyExists,
+    TResult? Function(InvalidEmail value)? invalidEmail,
+    TResult? Function(InvalidPassword value)? invalidPassword,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(GeneralError value)? generalError,
   }) {
     return invalidEmail?.call(this);
   }
@@ -344,14 +341,11 @@ abstract class _$$InvalidPasswordCopyWith<$Res> {
 
 /// @nodoc
 class __$$InvalidPasswordCopyWithImpl<$Res>
-    extends _$AuthFailureCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$InvalidPassword>
     implements _$$InvalidPasswordCopyWith<$Res> {
   __$$InvalidPasswordCopyWithImpl(
       _$InvalidPassword _value, $Res Function(_$InvalidPassword) _then)
-      : super(_value, (v) => _then(v as _$InvalidPassword));
-
-  @override
-  _$InvalidPassword get _value => super._value as _$InvalidPassword;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -388,11 +382,11 @@ class _$InvalidPassword implements InvalidPassword {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAlreadyExists,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidPassword,
-    TResult Function()? userNotFound,
-    TResult Function()? generalError,
+    TResult? Function()? emailAlreadyExists,
+    TResult? Function()? invalidEmail,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? userNotFound,
+    TResult? Function()? generalError,
   }) {
     return invalidPassword?.call();
   }
@@ -428,11 +422,11 @@ class _$InvalidPassword implements InvalidPassword {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailAlreadyExists value)? emailAlreadyExists,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(GeneralError value)? generalError,
+    TResult? Function(EmailAlreadyExists value)? emailAlreadyExists,
+    TResult? Function(InvalidEmail value)? invalidEmail,
+    TResult? Function(InvalidPassword value)? invalidPassword,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(GeneralError value)? generalError,
   }) {
     return invalidPassword?.call(this);
   }
@@ -466,14 +460,12 @@ abstract class _$$UserNotFoundCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$UserNotFoundCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$UserNotFoundCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$UserNotFound>
     implements _$$UserNotFoundCopyWith<$Res> {
   __$$UserNotFoundCopyWithImpl(
       _$UserNotFound _value, $Res Function(_$UserNotFound) _then)
-      : super(_value, (v) => _then(v as _$UserNotFound));
-
-  @override
-  _$UserNotFound get _value => super._value as _$UserNotFound;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -510,11 +502,11 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAlreadyExists,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidPassword,
-    TResult Function()? userNotFound,
-    TResult Function()? generalError,
+    TResult? Function()? emailAlreadyExists,
+    TResult? Function()? invalidEmail,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? userNotFound,
+    TResult? Function()? generalError,
   }) {
     return userNotFound?.call();
   }
@@ -550,11 +542,11 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailAlreadyExists value)? emailAlreadyExists,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(GeneralError value)? generalError,
+    TResult? Function(EmailAlreadyExists value)? emailAlreadyExists,
+    TResult? Function(InvalidEmail value)? invalidEmail,
+    TResult? Function(InvalidPassword value)? invalidPassword,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(GeneralError value)? generalError,
   }) {
     return userNotFound?.call(this);
   }
@@ -588,14 +580,12 @@ abstract class _$$GeneralErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$GeneralErrorCopyWithImpl<$Res> extends _$AuthFailureCopyWithImpl<$Res>
+class __$$GeneralErrorCopyWithImpl<$Res>
+    extends _$AuthFailureCopyWithImpl<$Res, _$GeneralError>
     implements _$$GeneralErrorCopyWith<$Res> {
   __$$GeneralErrorCopyWithImpl(
       _$GeneralError _value, $Res Function(_$GeneralError) _then)
-      : super(_value, (v) => _then(v as _$GeneralError));
-
-  @override
-  _$GeneralError get _value => super._value as _$GeneralError;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -632,11 +622,11 @@ class _$GeneralError implements GeneralError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? emailAlreadyExists,
-    TResult Function()? invalidEmail,
-    TResult Function()? invalidPassword,
-    TResult Function()? userNotFound,
-    TResult Function()? generalError,
+    TResult? Function()? emailAlreadyExists,
+    TResult? Function()? invalidEmail,
+    TResult? Function()? invalidPassword,
+    TResult? Function()? userNotFound,
+    TResult? Function()? generalError,
   }) {
     return generalError?.call();
   }
@@ -672,11 +662,11 @@ class _$GeneralError implements GeneralError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(EmailAlreadyExists value)? emailAlreadyExists,
-    TResult Function(InvalidEmail value)? invalidEmail,
-    TResult Function(InvalidPassword value)? invalidPassword,
-    TResult Function(UserNotFound value)? userNotFound,
-    TResult Function(GeneralError value)? generalError,
+    TResult? Function(EmailAlreadyExists value)? emailAlreadyExists,
+    TResult? Function(InvalidEmail value)? invalidEmail,
+    TResult? Function(InvalidPassword value)? invalidPassword,
+    TResult? Function(UserNotFound value)? userNotFound,
+    TResult? Function(GeneralError value)? generalError,
   }) {
     return generalError?.call(this);
   }

@@ -40,118 +40,195 @@ class AppRouter extends _i17.RootStackRouter {
   final Map<String, _i17.PageFactory> pagesMap = {
     SplashPageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i1.SplashPage());
+        routeData: routeData,
+        child: const _i1.SplashPage(),
+      );
     },
     TabbarPageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i2.TabbarPage());
+        routeData: routeData,
+        child: const _i2.TabbarPage(),
+      );
     },
     HomePageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i3.HomePage());
+        routeData: routeData,
+        child: const _i3.HomePage(),
+      );
     },
     GlobalSearchPageRoute.name: (routeData) {
       final args = routeData.argsAs<GlobalSearchPageRouteArgs>(
           orElse: () => const GlobalSearchPageRouteArgs());
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i4.GlobalSearchPage(key: args.key));
+        routeData: routeData,
+        child: _i4.GlobalSearchPage(key: args.key),
+      );
     },
     SavedChatsAndSurveysPageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i5.SavedChatsAndSurveysPage());
+        routeData: routeData,
+        child: const _i5.SavedChatsAndSurveysPage(),
+      );
     },
     AccountGoToLoginOrSignUpPageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: const _i6.AccountGoToLoginOrSignUpPage());
+        routeData: routeData,
+        child: const _i6.AccountGoToLoginOrSignUpPage(),
+      );
     },
     AccountOverviewPageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i7.AccountOverviewPage());
+        routeData: routeData,
+        child: const _i7.AccountOverviewPage(),
+      );
     },
     LoginPageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i8.LoginPage());
+        routeData: routeData,
+        child: const _i8.LoginPage(),
+      );
     },
     SignupPageRoute.name: (routeData) {
       final args = routeData.argsAs<SignupPageRouteArgs>(
           orElse: () => const SignupPageRouteArgs());
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i9.SignupPage(key: args.key));
+        routeData: routeData,
+        child: _i9.SignupPage(key: args.key),
+      );
     },
     ResetPasswordPageRoute.name: (routeData) {
       final args = routeData.argsAs<ResetPasswordPageRouteArgs>(
           orElse: () => const ResetPasswordPageRouteArgs());
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: _i10.ResetPasswordPage(key: args.key));
+        routeData: routeData,
+        child: _i10.ResetPasswordPage(key: args.key),
+      );
     },
     GroupOverviewPageRoute.name: (routeData) {
       final args = routeData.argsAs<GroupOverviewPageRouteArgs>();
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: _i11.GroupOverviewPage(
-              key: args.key, title: args.title, groupId: args.groupId));
+        routeData: routeData,
+        child: _i11.GroupOverviewPage(
+          key: args.key,
+          title: args.title,
+          groupId: args.groupId,
+        ),
+      );
     },
     ChatPageRoute.name: (routeData) {
       final args = routeData.argsAs<ChatPageRouteArgs>();
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData,
-          child: _i12.ChatPage(
-              key: args.key, title: args.title, chatId: args.chatId));
+        routeData: routeData,
+        child: _i12.ChatPage(
+          key: args.key,
+          title: args.title,
+          chatId: args.chatId,
+        ),
+      );
     },
     AddGroupPageAndroidRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i13.AddGroupPageAndroid());
+        routeData: routeData,
+        child: const _i13.AddGroupPageAndroid(),
+      );
     },
     AddSurveyPageAndroidRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i14.AddSurveyPageAndroid());
+        routeData: routeData,
+        child: const _i14.AddSurveyPageAndroid(),
+      );
     },
     AddChatPageAndroidRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i15.AddChatPageAndroid());
+        routeData: routeData,
+        child: const _i15.AddChatPageAndroid(),
+      );
     },
     FilterSurveysPageRoute.name: (routeData) {
       return _i17.MaterialPageX<dynamic>(
-          routeData: routeData, child: const _i16.FilterSurveysPage());
-    }
+        routeData: routeData,
+        child: const _i16.FilterSurveysPage(),
+      );
+    },
   };
 
   @override
   List<_i17.RouteConfig> get routes => [
-        _i17.RouteConfig(SplashPageRoute.name, path: '/'),
-        _i17.RouteConfig(TabbarPageRoute.name, path: '/tabbar-page'),
-        _i17.RouteConfig(HomePageRoute.name, path: '/home-page'),
-        _i17.RouteConfig(GlobalSearchPageRoute.name,
-            path: '/global-search-page'),
-        _i17.RouteConfig(SavedChatsAndSurveysPageRoute.name,
-            path: '/saved-chats-and-surveys-page'),
-        _i17.RouteConfig(AccountGoToLoginOrSignUpPageRoute.name,
-            path: '/account-go-to-login-or-sign-up-page'),
-        _i17.RouteConfig(AccountOverviewPageRoute.name,
-            path: '/account-overview-page'),
-        _i17.RouteConfig(LoginPageRoute.name, path: '/login-page'),
-        _i17.RouteConfig(SignupPageRoute.name, path: '/signup-page'),
-        _i17.RouteConfig(ResetPasswordPageRoute.name,
-            path: '/reset-password-page'),
-        _i17.RouteConfig(GroupOverviewPageRoute.name,
-            path: '/group-overview-page'),
-        _i17.RouteConfig(ChatPageRoute.name, path: '/chat-page'),
-        _i17.RouteConfig(AddGroupPageAndroidRoute.name,
-            path: '/add-group-page-android'),
-        _i17.RouteConfig(AddSurveyPageAndroidRoute.name,
-            path: '/add-survey-page-android'),
-        _i17.RouteConfig(AddChatPageAndroidRoute.name,
-            path: '/add-chat-page-android'),
-        _i17.RouteConfig(FilterSurveysPageRoute.name,
-            path: '/filter-surveys-page')
+        _i17.RouteConfig(
+          SplashPageRoute.name,
+          path: '/',
+        ),
+        _i17.RouteConfig(
+          TabbarPageRoute.name,
+          path: '/tabbar-page',
+        ),
+        _i17.RouteConfig(
+          HomePageRoute.name,
+          path: '/home-page',
+        ),
+        _i17.RouteConfig(
+          GlobalSearchPageRoute.name,
+          path: '/global-search-page',
+        ),
+        _i17.RouteConfig(
+          SavedChatsAndSurveysPageRoute.name,
+          path: '/saved-chats-and-surveys-page',
+        ),
+        _i17.RouteConfig(
+          AccountGoToLoginOrSignUpPageRoute.name,
+          path: '/account-go-to-login-or-sign-up-page',
+        ),
+        _i17.RouteConfig(
+          AccountOverviewPageRoute.name,
+          path: '/account-overview-page',
+        ),
+        _i17.RouteConfig(
+          LoginPageRoute.name,
+          path: '/login-page',
+        ),
+        _i17.RouteConfig(
+          SignupPageRoute.name,
+          path: '/signup-page',
+        ),
+        _i17.RouteConfig(
+          ResetPasswordPageRoute.name,
+          path: '/reset-password-page',
+        ),
+        _i17.RouteConfig(
+          GroupOverviewPageRoute.name,
+          path: '/group-overview-page',
+        ),
+        _i17.RouteConfig(
+          ChatPageRoute.name,
+          path: '/chat-page',
+        ),
+        _i17.RouteConfig(
+          AddGroupPageAndroidRoute.name,
+          path: '/add-group-page-android',
+        ),
+        _i17.RouteConfig(
+          AddSurveyPageAndroidRoute.name,
+          path: '/add-survey-page-android',
+        ),
+        _i17.RouteConfig(
+          AddChatPageAndroidRoute.name,
+          path: '/add-chat-page-android',
+        ),
+        _i17.RouteConfig(
+          FilterSurveysPageRoute.name,
+          path: '/filter-surveys-page',
+        ),
       ];
 }
 
 /// generated route for
 /// [_i1.SplashPage]
 class SplashPageRoute extends _i17.PageRouteInfo<void> {
-  const SplashPageRoute() : super(SplashPageRoute.name, path: '/');
+  const SplashPageRoute()
+      : super(
+          SplashPageRoute.name,
+          path: '/',
+        );
 
   static const String name = 'SplashPageRoute';
 }
@@ -159,7 +236,11 @@ class SplashPageRoute extends _i17.PageRouteInfo<void> {
 /// generated route for
 /// [_i2.TabbarPage]
 class TabbarPageRoute extends _i17.PageRouteInfo<void> {
-  const TabbarPageRoute() : super(TabbarPageRoute.name, path: '/tabbar-page');
+  const TabbarPageRoute()
+      : super(
+          TabbarPageRoute.name,
+          path: '/tabbar-page',
+        );
 
   static const String name = 'TabbarPageRoute';
 }
@@ -167,7 +248,11 @@ class TabbarPageRoute extends _i17.PageRouteInfo<void> {
 /// generated route for
 /// [_i3.HomePage]
 class HomePageRoute extends _i17.PageRouteInfo<void> {
-  const HomePageRoute() : super(HomePageRoute.name, path: '/home-page');
+  const HomePageRoute()
+      : super(
+          HomePageRoute.name,
+          path: '/home-page',
+        );
 
   static const String name = 'HomePageRoute';
 }
@@ -177,9 +262,11 @@ class HomePageRoute extends _i17.PageRouteInfo<void> {
 class GlobalSearchPageRoute
     extends _i17.PageRouteInfo<GlobalSearchPageRouteArgs> {
   GlobalSearchPageRoute({_i18.Key? key})
-      : super(GlobalSearchPageRoute.name,
-            path: '/global-search-page',
-            args: GlobalSearchPageRouteArgs(key: key));
+      : super(
+          GlobalSearchPageRoute.name,
+          path: '/global-search-page',
+          args: GlobalSearchPageRouteArgs(key: key),
+        );
 
   static const String name = 'GlobalSearchPageRoute';
 }
@@ -199,8 +286,10 @@ class GlobalSearchPageRouteArgs {
 /// [_i5.SavedChatsAndSurveysPage]
 class SavedChatsAndSurveysPageRoute extends _i17.PageRouteInfo<void> {
   const SavedChatsAndSurveysPageRoute()
-      : super(SavedChatsAndSurveysPageRoute.name,
-            path: '/saved-chats-and-surveys-page');
+      : super(
+          SavedChatsAndSurveysPageRoute.name,
+          path: '/saved-chats-and-surveys-page',
+        );
 
   static const String name = 'SavedChatsAndSurveysPageRoute';
 }
@@ -209,8 +298,10 @@ class SavedChatsAndSurveysPageRoute extends _i17.PageRouteInfo<void> {
 /// [_i6.AccountGoToLoginOrSignUpPage]
 class AccountGoToLoginOrSignUpPageRoute extends _i17.PageRouteInfo<void> {
   const AccountGoToLoginOrSignUpPageRoute()
-      : super(AccountGoToLoginOrSignUpPageRoute.name,
-            path: '/account-go-to-login-or-sign-up-page');
+      : super(
+          AccountGoToLoginOrSignUpPageRoute.name,
+          path: '/account-go-to-login-or-sign-up-page',
+        );
 
   static const String name = 'AccountGoToLoginOrSignUpPageRoute';
 }
@@ -219,7 +310,10 @@ class AccountGoToLoginOrSignUpPageRoute extends _i17.PageRouteInfo<void> {
 /// [_i7.AccountOverviewPage]
 class AccountOverviewPageRoute extends _i17.PageRouteInfo<void> {
   const AccountOverviewPageRoute()
-      : super(AccountOverviewPageRoute.name, path: '/account-overview-page');
+      : super(
+          AccountOverviewPageRoute.name,
+          path: '/account-overview-page',
+        );
 
   static const String name = 'AccountOverviewPageRoute';
 }
@@ -227,7 +321,11 @@ class AccountOverviewPageRoute extends _i17.PageRouteInfo<void> {
 /// generated route for
 /// [_i8.LoginPage]
 class LoginPageRoute extends _i17.PageRouteInfo<void> {
-  const LoginPageRoute() : super(LoginPageRoute.name, path: '/login-page');
+  const LoginPageRoute()
+      : super(
+          LoginPageRoute.name,
+          path: '/login-page',
+        );
 
   static const String name = 'LoginPageRoute';
 }
@@ -236,8 +334,11 @@ class LoginPageRoute extends _i17.PageRouteInfo<void> {
 /// [_i9.SignupPage]
 class SignupPageRoute extends _i17.PageRouteInfo<SignupPageRouteArgs> {
   SignupPageRoute({_i18.Key? key})
-      : super(SignupPageRoute.name,
-            path: '/signup-page', args: SignupPageRouteArgs(key: key));
+      : super(
+          SignupPageRoute.name,
+          path: '/signup-page',
+          args: SignupPageRouteArgs(key: key),
+        );
 
   static const String name = 'SignupPageRoute';
 }
@@ -258,9 +359,11 @@ class SignupPageRouteArgs {
 class ResetPasswordPageRoute
     extends _i17.PageRouteInfo<ResetPasswordPageRouteArgs> {
   ResetPasswordPageRoute({_i18.Key? key})
-      : super(ResetPasswordPageRoute.name,
-            path: '/reset-password-page',
-            args: ResetPasswordPageRouteArgs(key: key));
+      : super(
+          ResetPasswordPageRoute.name,
+          path: '/reset-password-page',
+          args: ResetPasswordPageRouteArgs(key: key),
+        );
 
   static const String name = 'ResetPasswordPageRoute';
 }
@@ -280,19 +383,29 @@ class ResetPasswordPageRouteArgs {
 /// [_i11.GroupOverviewPage]
 class GroupOverviewPageRoute
     extends _i17.PageRouteInfo<GroupOverviewPageRouteArgs> {
-  GroupOverviewPageRoute(
-      {_i18.Key? key, required String title, required String groupId})
-      : super(GroupOverviewPageRoute.name,
-            path: '/group-overview-page',
-            args: GroupOverviewPageRouteArgs(
-                key: key, title: title, groupId: groupId));
+  GroupOverviewPageRoute({
+    _i18.Key? key,
+    required String title,
+    required String groupId,
+  }) : super(
+          GroupOverviewPageRoute.name,
+          path: '/group-overview-page',
+          args: GroupOverviewPageRouteArgs(
+            key: key,
+            title: title,
+            groupId: groupId,
+          ),
+        );
 
   static const String name = 'GroupOverviewPageRoute';
 }
 
 class GroupOverviewPageRouteArgs {
-  const GroupOverviewPageRouteArgs(
-      {this.key, required this.title, required this.groupId});
+  const GroupOverviewPageRouteArgs({
+    this.key,
+    required this.title,
+    required this.groupId,
+  });
 
   final _i18.Key? key;
 
@@ -309,17 +422,29 @@ class GroupOverviewPageRouteArgs {
 /// generated route for
 /// [_i12.ChatPage]
 class ChatPageRoute extends _i17.PageRouteInfo<ChatPageRouteArgs> {
-  ChatPageRoute({_i18.Key? key, required String title, required String chatId})
-      : super(ChatPageRoute.name,
-            path: '/chat-page',
-            args: ChatPageRouteArgs(key: key, title: title, chatId: chatId));
+  ChatPageRoute({
+    _i18.Key? key,
+    required String title,
+    required String chatId,
+  }) : super(
+          ChatPageRoute.name,
+          path: '/chat-page',
+          args: ChatPageRouteArgs(
+            key: key,
+            title: title,
+            chatId: chatId,
+          ),
+        );
 
   static const String name = 'ChatPageRoute';
 }
 
 class ChatPageRouteArgs {
-  const ChatPageRouteArgs(
-      {this.key, required this.title, required this.chatId});
+  const ChatPageRouteArgs({
+    this.key,
+    required this.title,
+    required this.chatId,
+  });
 
   final _i18.Key? key;
 
@@ -337,7 +462,10 @@ class ChatPageRouteArgs {
 /// [_i13.AddGroupPageAndroid]
 class AddGroupPageAndroidRoute extends _i17.PageRouteInfo<void> {
   const AddGroupPageAndroidRoute()
-      : super(AddGroupPageAndroidRoute.name, path: '/add-group-page-android');
+      : super(
+          AddGroupPageAndroidRoute.name,
+          path: '/add-group-page-android',
+        );
 
   static const String name = 'AddGroupPageAndroidRoute';
 }
@@ -346,7 +474,10 @@ class AddGroupPageAndroidRoute extends _i17.PageRouteInfo<void> {
 /// [_i14.AddSurveyPageAndroid]
 class AddSurveyPageAndroidRoute extends _i17.PageRouteInfo<void> {
   const AddSurveyPageAndroidRoute()
-      : super(AddSurveyPageAndroidRoute.name, path: '/add-survey-page-android');
+      : super(
+          AddSurveyPageAndroidRoute.name,
+          path: '/add-survey-page-android',
+        );
 
   static const String name = 'AddSurveyPageAndroidRoute';
 }
@@ -355,7 +486,10 @@ class AddSurveyPageAndroidRoute extends _i17.PageRouteInfo<void> {
 /// [_i15.AddChatPageAndroid]
 class AddChatPageAndroidRoute extends _i17.PageRouteInfo<void> {
   const AddChatPageAndroidRoute()
-      : super(AddChatPageAndroidRoute.name, path: '/add-chat-page-android');
+      : super(
+          AddChatPageAndroidRoute.name,
+          path: '/add-chat-page-android',
+        );
 
   static const String name = 'AddChatPageAndroidRoute';
 }
@@ -364,7 +498,10 @@ class AddChatPageAndroidRoute extends _i17.PageRouteInfo<void> {
 /// [_i16.FilterSurveysPage]
 class FilterSurveysPageRoute extends _i17.PageRouteInfo<void> {
   const FilterSurveysPageRoute()
-      : super(FilterSurveysPageRoute.name, path: '/filter-surveys-page');
+      : super(
+          FilterSurveysPageRoute.name,
+          path: '/filter-surveys-page',
+        );
 
   static const String name = 'FilterSurveysPageRoute';
 }

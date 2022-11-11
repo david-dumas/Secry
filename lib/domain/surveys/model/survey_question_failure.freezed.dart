@@ -25,9 +25,9 @@ mixin _$SurveyQuestionFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noTitle,
-    TResult Function()? noMinimumAmountOfOptionsGiven,
-    TResult Function()? invalidOptionsOrWithoutText,
+    TResult? Function()? noTitle,
+    TResult? Function()? noMinimumAmountOfOptionsGiven,
+    TResult? Function()? invalidOptionsOrWithoutText,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -49,10 +49,10 @@ mixin _$SurveyQuestionFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoTitle value)? noTitle,
-    TResult Function(NoMinimumAmountOfOptionsGiven value)?
+    TResult? Function(NoTitle value)? noTitle,
+    TResult? Function(NoMinimumAmountOfOptionsGiven value)?
         noMinimumAmountOfOptionsGiven,
-    TResult Function(InvalidOptionsOrWithoutText value)?
+    TResult? Function(InvalidOptionsOrWithoutText value)?
         invalidOptionsOrWithoutText,
   }) =>
       throw _privateConstructorUsedError;
@@ -72,17 +72,19 @@ mixin _$SurveyQuestionFailure {
 abstract class $SurveyQuestionFailureCopyWith<$Res> {
   factory $SurveyQuestionFailureCopyWith(SurveyQuestionFailure value,
           $Res Function(SurveyQuestionFailure) then) =
-      _$SurveyQuestionFailureCopyWithImpl<$Res>;
+      _$SurveyQuestionFailureCopyWithImpl<$Res, SurveyQuestionFailure>;
 }
 
 /// @nodoc
-class _$SurveyQuestionFailureCopyWithImpl<$Res>
+class _$SurveyQuestionFailureCopyWithImpl<$Res,
+        $Val extends SurveyQuestionFailure>
     implements $SurveyQuestionFailureCopyWith<$Res> {
   _$SurveyQuestionFailureCopyWithImpl(this._value, this._then);
 
-  final SurveyQuestionFailure _value;
   // ignore: unused_field
-  final $Res Function(SurveyQuestionFailure) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -93,13 +95,10 @@ abstract class _$$NoTitleCopyWith<$Res> {
 
 /// @nodoc
 class __$$NoTitleCopyWithImpl<$Res>
-    extends _$SurveyQuestionFailureCopyWithImpl<$Res>
+    extends _$SurveyQuestionFailureCopyWithImpl<$Res, _$NoTitle>
     implements _$$NoTitleCopyWith<$Res> {
   __$$NoTitleCopyWithImpl(_$NoTitle _value, $Res Function(_$NoTitle) _then)
-      : super(_value, (v) => _then(v as _$NoTitle));
-
-  @override
-  _$NoTitle get _value => super._value as _$NoTitle;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,9 +133,9 @@ class _$NoTitle implements NoTitle {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noTitle,
-    TResult Function()? noMinimumAmountOfOptionsGiven,
-    TResult Function()? invalidOptionsOrWithoutText,
+    TResult? Function()? noTitle,
+    TResult? Function()? noMinimumAmountOfOptionsGiven,
+    TResult? Function()? invalidOptionsOrWithoutText,
   }) {
     return noTitle?.call();
   }
@@ -170,10 +169,10 @@ class _$NoTitle implements NoTitle {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoTitle value)? noTitle,
-    TResult Function(NoMinimumAmountOfOptionsGiven value)?
+    TResult? Function(NoTitle value)? noTitle,
+    TResult? Function(NoMinimumAmountOfOptionsGiven value)?
         noMinimumAmountOfOptionsGiven,
-    TResult Function(InvalidOptionsOrWithoutText value)?
+    TResult? Function(InvalidOptionsOrWithoutText value)?
         invalidOptionsOrWithoutText,
   }) {
     return noTitle?.call(this);
@@ -210,16 +209,13 @@ abstract class _$$NoMinimumAmountOfOptionsGivenCopyWith<$Res> {
 
 /// @nodoc
 class __$$NoMinimumAmountOfOptionsGivenCopyWithImpl<$Res>
-    extends _$SurveyQuestionFailureCopyWithImpl<$Res>
+    extends _$SurveyQuestionFailureCopyWithImpl<$Res,
+        _$NoMinimumAmountOfOptionsGiven>
     implements _$$NoMinimumAmountOfOptionsGivenCopyWith<$Res> {
   __$$NoMinimumAmountOfOptionsGivenCopyWithImpl(
       _$NoMinimumAmountOfOptionsGiven _value,
       $Res Function(_$NoMinimumAmountOfOptionsGiven) _then)
-      : super(_value, (v) => _then(v as _$NoMinimumAmountOfOptionsGiven));
-
-  @override
-  _$NoMinimumAmountOfOptionsGiven get _value =>
-      super._value as _$NoMinimumAmountOfOptionsGiven;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -255,9 +251,9 @@ class _$NoMinimumAmountOfOptionsGiven implements NoMinimumAmountOfOptionsGiven {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noTitle,
-    TResult Function()? noMinimumAmountOfOptionsGiven,
-    TResult Function()? invalidOptionsOrWithoutText,
+    TResult? Function()? noTitle,
+    TResult? Function()? noMinimumAmountOfOptionsGiven,
+    TResult? Function()? invalidOptionsOrWithoutText,
   }) {
     return noMinimumAmountOfOptionsGiven?.call();
   }
@@ -291,10 +287,10 @@ class _$NoMinimumAmountOfOptionsGiven implements NoMinimumAmountOfOptionsGiven {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoTitle value)? noTitle,
-    TResult Function(NoMinimumAmountOfOptionsGiven value)?
+    TResult? Function(NoTitle value)? noTitle,
+    TResult? Function(NoMinimumAmountOfOptionsGiven value)?
         noMinimumAmountOfOptionsGiven,
-    TResult Function(InvalidOptionsOrWithoutText value)?
+    TResult? Function(InvalidOptionsOrWithoutText value)?
         invalidOptionsOrWithoutText,
   }) {
     return noMinimumAmountOfOptionsGiven?.call(this);
@@ -332,16 +328,13 @@ abstract class _$$InvalidOptionsOrWithoutTextCopyWith<$Res> {
 
 /// @nodoc
 class __$$InvalidOptionsOrWithoutTextCopyWithImpl<$Res>
-    extends _$SurveyQuestionFailureCopyWithImpl<$Res>
+    extends _$SurveyQuestionFailureCopyWithImpl<$Res,
+        _$InvalidOptionsOrWithoutText>
     implements _$$InvalidOptionsOrWithoutTextCopyWith<$Res> {
   __$$InvalidOptionsOrWithoutTextCopyWithImpl(
       _$InvalidOptionsOrWithoutText _value,
       $Res Function(_$InvalidOptionsOrWithoutText) _then)
-      : super(_value, (v) => _then(v as _$InvalidOptionsOrWithoutText));
-
-  @override
-  _$InvalidOptionsOrWithoutText get _value =>
-      super._value as _$InvalidOptionsOrWithoutText;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -377,9 +370,9 @@ class _$InvalidOptionsOrWithoutText implements InvalidOptionsOrWithoutText {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? noTitle,
-    TResult Function()? noMinimumAmountOfOptionsGiven,
-    TResult Function()? invalidOptionsOrWithoutText,
+    TResult? Function()? noTitle,
+    TResult? Function()? noMinimumAmountOfOptionsGiven,
+    TResult? Function()? invalidOptionsOrWithoutText,
   }) {
     return invalidOptionsOrWithoutText?.call();
   }
@@ -413,10 +406,10 @@ class _$InvalidOptionsOrWithoutText implements InvalidOptionsOrWithoutText {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(NoTitle value)? noTitle,
-    TResult Function(NoMinimumAmountOfOptionsGiven value)?
+    TResult? Function(NoTitle value)? noTitle,
+    TResult? Function(NoMinimumAmountOfOptionsGiven value)?
         noMinimumAmountOfOptionsGiven,
-    TResult Function(InvalidOptionsOrWithoutText value)?
+    TResult? Function(InvalidOptionsOrWithoutText value)?
         invalidOptionsOrWithoutText,
   }) {
     return invalidOptionsOrWithoutText?.call(this);

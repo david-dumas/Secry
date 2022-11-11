@@ -1,5 +1,5 @@
 import 'package:secry/util/date_and_time/date_compare.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   // Return true if Date given to DateTime object is at the same day as the other date given to another DateTime object

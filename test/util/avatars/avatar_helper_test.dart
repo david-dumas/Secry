@@ -1,6 +1,6 @@
 import 'package:secry/domain/general/group_overview_row_info.dart';
 import 'package:secry/util/avatars/avatar_helper.dart';
-import 'package:test/test.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   List<GroupOverviewRowInfo> infoRows = [

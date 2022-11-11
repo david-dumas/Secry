@@ -18,18 +18,22 @@ stages:
 
     pool:
       vmImage: 'macOS-latest'
-
     steps:  
+
     - task: FlutterInstall@0
       inputs:
         channel: 'stable'
         version: 'latest'
-      
+
+    - task: FlutterTest@0
+      inputs:
+        projectDirectory: 
+
     - task: FlutterBuild@0
       inputs:
         target: apk
         projectDirectory: 
-        
+
     - task: AndroidSigning@3
       displayName: 'Signing and aligning APK file(s) **/*.apk'
       inputs:
