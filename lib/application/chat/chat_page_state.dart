@@ -1,6 +1,9 @@
 part of 'chat_page_bloc.dart';
 
-@immutable
-abstract class ChatPageState {}
+@freezed
+class ChatPageState with _$ChatPageState {
+  const factory ChatPageState(
+      {required String title}) = _ChatPageState;
 
-class ChatPageInitial extends ChatPageState {}
+  factory ChatPageState.initial() => ChatPageState(title: "testTitel");
+}

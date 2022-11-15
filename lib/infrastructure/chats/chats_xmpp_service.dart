@@ -33,8 +33,7 @@ class ChatsXmppService implements DataChangeEvents {
     await flutterXmpp.start(_onError);
     await flutterXmpp.login();
 
-    flutterXmpp.joinMucGroup("nieuwetest");
-    await flutterXmpp.requestMamMessages("floris@aurabit.nl", "0", "1667330736140", "20000000");
+    await flutterXmpp.joinMucGroup("boy@conference.aurabit.nl");
   }
 
   void _onError(Object error) {
