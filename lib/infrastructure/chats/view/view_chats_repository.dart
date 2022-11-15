@@ -1,6 +1,7 @@
 import 'dart:developer';
 
-import 'package:secry/presentation/pages/home/chat_page.dart';
+import 'package:injectable/injectable.dart';
+import 'package:secry/domain/chats/view/i_view_chats_repository.dart';
 import 'package:xmpp_plugin/error_response_event.dart';
 import 'package:xmpp_plugin/models/chat_state_model.dart';
 import 'package:xmpp_plugin/models/connection_event.dart';
@@ -9,13 +10,12 @@ import 'package:xmpp_plugin/models/present_mode.dart';
 import 'package:xmpp_plugin/success_response_event.dart';
 import 'package:xmpp_plugin/xmpp_plugin.dart';
 
-class ChatsXmppService implements DataChangeEvents {
-  static late XmppConnection flutterXmpp;
-  List<MessageChat> events = [];
-  List<PresentModel> presentMo = [];
-  String connectionStatus = "Disconnected";
+@Singleton(as: IViewChatsRepository)
+class ViewChatsRepository extends IViewChatsRepository implements DataChangeEvents {
+  static late XmppConnection xmpp;
 
-  Future<void> connect() async {
+  @override
+  Future<void> initializeXmppConnection() async {
     final auth = {
       "user_jid":
       "justian@aurabit.nl/Android",
@@ -29,15 +29,13 @@ class ChatsXmppService implements DataChangeEvents {
     };
 
     XmppConnection.addListener(this);
-    flutterXmpp = XmppConnection(auth);
-    await flutterXmpp.start(_onError);
-    await flutterXmpp.login();
-
-    await flutterXmpp.joinMucGroup("boy@conference.aurabit.nl");
+    xmpp = XmppConnection(auth);
+    await xmpp.start(_onError);
+    await xmpp.login();
   }
 
   void _onError(Object error) {
-    // TODO handle error
+    print(error);
   }
 
   @override
@@ -53,25 +51,21 @@ class ChatsXmppService implements DataChangeEvents {
 
   @override
   void onChatMessage(MessageChat messageChat) {
-    events.add(messageChat);
     print('999999onChatMessage: ${messageChat.body}');
   }
 
   @override
   void onGroupMessage(MessageChat messageChat) {
-    events.add(messageChat);
     print('999999onGroupMessage: ${messageChat.body}');
   }
 
   @override
   void onNormalMessage(MessageChat messageChat) {
-    events.add(messageChat);
     print('onNormalMessage: ${messageChat.body}');
   }
 
   @override
   void onPresenceChange(PresentModel presentModel) {
-    presentMo.add(presentModel);
     log('onPresenceChange ~~>>${presentModel.toJson()}');
   }
 

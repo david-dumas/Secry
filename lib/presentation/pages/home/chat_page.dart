@@ -2,14 +2,11 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/chat/chat_page_bloc.dart';
-import 'package:secry/infrastructure/chats/chats_api_service.dart';
-import 'package:secry/infrastructure/chats/chats_xmpp_service.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/presentation/pages/home/chat_message_type.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 
 import 'package:secry/constants.dart';
-import 'package:secry/util/avatars/avatar_helper.dart';
 
 class ChatPage extends StatelessWidget {
   final String title;
@@ -19,8 +16,6 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final chatsXmppService = ChatsXmppService();
-
     return BlocProvider(
       create: (context) => getIt<ChatPageBloc>()..add(ChatPageEvent.initialized()),
       child: BlocBuilder<ChatPageBloc, ChatPageState>(
@@ -86,11 +81,6 @@ class ChatPage extends StatelessWidget {
                           message: 'First message',
                           chatMessageType: ChatMessageType.receiver,
                           hasSentMultipleImagesInARow: true),
-                      TextButton(
-                          onPressed: () {
-                            chatsXmppService.connect();
-                          },
-                          child: Text('text'))
                     ],
                   ),
                 ),
