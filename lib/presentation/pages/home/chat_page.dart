@@ -16,6 +16,8 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ScrollController _sc = ScrollController();
+
     return BlocProvider(
       create: (context) => getIt<ChatPageBloc>()..add(ChatPageEvent.initialized()),
       child: BlocBuilder<ChatPageBloc, ChatPageState>(
@@ -57,32 +59,17 @@ class ChatPage extends StatelessWidget {
               body: SingleChildScrollView(
                 child: Padding(
                   padding: pagePaddingAllSides,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      ChatMessage(
-                          message: 'message blooooooossfsdafasfaskfalslkfasdkfaslfassdfasfasdfdsfadsfadsfskl',
-                          chatMessageType: ChatMessageType.sender),
-                      ChatMessage(
-                          message: 'message blooooooossfsdafasfaskfalslkfasdkfaslfassdfasfasdfdsfadsfadsfskl',
-                          chatMessageType: ChatMessageType.receiver),
-                      ChatMessage(
-                          message: 'First message',
-                          chatMessageType: ChatMessageType.receiver,
-                          hasSentMultipleImagesInARow: true),
-                      ChatMessage(
-                          message: 'message blooooooossfsdafassdfdsfadsfadsfskl',
-                          chatMessageType: ChatMessageType.sender),
-                      ChatMessage(
-                          message: 'message blooooooossfsdafasfaskfalslkfasdkfaslfassdfasfasdfdsfadsfadsfskl',
-                          chatMessageType: ChatMessageType.receiver),
-                      ChatMessage(
-                          message: 'First message',
-                          chatMessageType: ChatMessageType.receiver,
-                          hasSentMultipleImagesInARow: true),
-                    ],
-                  ),
+                  child: ListView.builder(
+                      shrinkWrap: true,
+                      physics: NeverScrollableScrollPhysics(),
+                      itemCount: state.messages.length,
+                      itemBuilder: (context, index) {
+                        return ChatMessage(
+                            message: state.messages[index].body!,
+                            chatMessageType: state.messages[index].senderJid != "boy@conference.aurabit.nl/floris"
+                                ? ChatMessageType.sender
+                                : ChatMessageType.receiver);
+                      }),
                 ),
               ));
         },
@@ -94,10 +81,10 @@ class ChatPage extends StatelessWidget {
 class ChatMessage extends StatelessWidget {
   final String message;
   final ChatMessageType chatMessageType;
-  final bool hasSentMultipleImagesInARow;
+  final bool hasSentMultipleChatsInARow;
 
   const ChatMessage(
-      {Key? key, required this.message, required this.chatMessageType, this.hasSentMultipleImagesInARow = false})
+      {Key? key, required this.message, required this.chatMessageType, this.hasSentMultipleChatsInARow = false})
       : super(key: key);
 
   @override
@@ -106,8 +93,8 @@ class ChatMessage extends StatelessWidget {
 
     return Container(
       padding: chatMessageType == ChatMessageType.sender
-          ? (EdgeInsets.fromLTRB(media.width * 0.30, hasSentMultipleImagesInARow ? (10.0) : (20.0), 0.0, 20.0))
-          : (EdgeInsets.fromLTRB(0.0, hasSentMultipleImagesInARow ? (5.0) : (0.0), media.width * 0.30, 0.0)),
+          ? (EdgeInsets.fromLTRB(media.width * 0.30, hasSentMultipleChatsInARow ? (10.0) : (10.0), 0.0, 10.0))
+          : (EdgeInsets.fromLTRB(0.0, hasSentMultipleChatsInARow ? (10.0) : (10.0), media.width * 0.30, 10.0)),
       child: Container(
           child: Text(message,
               style: TextStyle(color: chatMessageType == ChatMessageType.sender ? (globalWhite) : (globalBlack))),
