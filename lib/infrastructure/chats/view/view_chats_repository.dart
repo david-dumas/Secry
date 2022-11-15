@@ -42,6 +42,11 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
     return this.chatStreamController;
   }
 
+  @override
+  Future<void> sendGroupChatMessage({ required String message }) async {
+    await xmpp.sendGroupMessageWithType("boy@conference.aurabit.nl", message, "id", new DateTime.now().millisecondsSinceEpoch);
+  }
+
   void _onError(Object error) {
     print(error);
   }
@@ -64,7 +69,7 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
 
   @override
   void onGroupMessage(MessageChat messageChat) {
-    if(messageChat.body != "") {
+    if(messageChat.body != "" && messageChat.time.toString() == "0") {
       chatStreamController.sink.add(messageChat);
     }
   }

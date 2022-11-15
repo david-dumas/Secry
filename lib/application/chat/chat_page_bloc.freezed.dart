@@ -20,18 +20,21 @@ mixin _$ChatPageEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(MessageChat messageChat) newMessageReceived,
+    required TResult Function(String message) sendGroupChatMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -39,18 +42,21 @@ mixin _$ChatPageEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NewMessageReceived value) newMessageReceived,
+    required TResult Function(_sendGroupChatMessage value) sendGroupChatMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,6 +122,7 @@ class _$_Initialized implements _Initialized {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(MessageChat messageChat) newMessageReceived,
+    required TResult Function(String message) sendGroupChatMessage,
   }) {
     return initialized();
   }
@@ -125,6 +132,7 @@ class _$_Initialized implements _Initialized {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
   }) {
     return initialized?.call();
   }
@@ -134,6 +142,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -147,6 +156,7 @@ class _$_Initialized implements _Initialized {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NewMessageReceived value) newMessageReceived,
+    required TResult Function(_sendGroupChatMessage value) sendGroupChatMessage,
   }) {
     return initialized(this);
   }
@@ -156,6 +166,7 @@ class _$_Initialized implements _Initialized {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
   }) {
     return initialized?.call(this);
   }
@@ -165,6 +176,7 @@ class _$_Initialized implements _Initialized {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -247,6 +259,7 @@ class _$_NewMessageReceived implements _NewMessageReceived {
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
     required TResult Function(MessageChat messageChat) newMessageReceived,
+    required TResult Function(String message) sendGroupChatMessage,
   }) {
     return newMessageReceived(messageChat);
   }
@@ -256,6 +269,7 @@ class _$_NewMessageReceived implements _NewMessageReceived {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
   }) {
     return newMessageReceived?.call(messageChat);
   }
@@ -265,6 +279,7 @@ class _$_NewMessageReceived implements _NewMessageReceived {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
     TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
     required TResult orElse(),
   }) {
     if (newMessageReceived != null) {
@@ -278,6 +293,7 @@ class _$_NewMessageReceived implements _NewMessageReceived {
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
     required TResult Function(_NewMessageReceived value) newMessageReceived,
+    required TResult Function(_sendGroupChatMessage value) sendGroupChatMessage,
   }) {
     return newMessageReceived(this);
   }
@@ -287,6 +303,7 @@ class _$_NewMessageReceived implements _NewMessageReceived {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
   }) {
     return newMessageReceived?.call(this);
   }
@@ -296,6 +313,7 @@ class _$_NewMessageReceived implements _NewMessageReceived {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
     TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
     required TResult orElse(),
   }) {
     if (newMessageReceived != null) {
@@ -312,6 +330,148 @@ abstract class _NewMessageReceived implements ChatPageEvent {
   MessageChat get messageChat;
   @JsonKey(ignore: true)
   _$$_NewMessageReceivedCopyWith<_$_NewMessageReceived> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$_sendGroupChatMessageCopyWith<$Res> {
+  factory _$$_sendGroupChatMessageCopyWith(_$_sendGroupChatMessage value,
+          $Res Function(_$_sendGroupChatMessage) then) =
+      __$$_sendGroupChatMessageCopyWithImpl<$Res>;
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$_sendGroupChatMessageCopyWithImpl<$Res>
+    extends _$ChatPageEventCopyWithImpl<$Res>
+    implements _$$_sendGroupChatMessageCopyWith<$Res> {
+  __$$_sendGroupChatMessageCopyWithImpl(_$_sendGroupChatMessage _value,
+      $Res Function(_$_sendGroupChatMessage) _then)
+      : super(_value, (v) => _then(v as _$_sendGroupChatMessage));
+
+  @override
+  _$_sendGroupChatMessage get _value => super._value as _$_sendGroupChatMessage;
+
+  @override
+  $Res call({
+    Object? message = freezed,
+  }) {
+    return _then(_$_sendGroupChatMessage(
+      message == freezed
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_sendGroupChatMessage implements _sendGroupChatMessage {
+  const _$_sendGroupChatMessage(this.message);
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'ChatPageEvent.sendGroupChatMessage(message: $message)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_sendGroupChatMessage &&
+            const DeepCollectionEquality().equals(other.message, message));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(message));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_sendGroupChatMessageCopyWith<_$_sendGroupChatMessage> get copyWith =>
+      __$$_sendGroupChatMessageCopyWithImpl<_$_sendGroupChatMessage>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(MessageChat messageChat) newMessageReceived,
+    required TResult Function(String message) sendGroupChatMessage,
+  }) {
+    return sendGroupChatMessage(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
+  }) {
+    return sendGroupChatMessage?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
+    TResult Function(String message)? sendGroupChatMessage,
+    required TResult orElse(),
+  }) {
+    if (sendGroupChatMessage != null) {
+      return sendGroupChatMessage(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NewMessageReceived value) newMessageReceived,
+    required TResult Function(_sendGroupChatMessage value) sendGroupChatMessage,
+  }) {
+    return sendGroupChatMessage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
+  }) {
+    return sendGroupChatMessage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
+    TResult Function(_sendGroupChatMessage value)? sendGroupChatMessage,
+    required TResult orElse(),
+  }) {
+    if (sendGroupChatMessage != null) {
+      return sendGroupChatMessage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _sendGroupChatMessage implements ChatPageEvent {
+  const factory _sendGroupChatMessage(final String message) =
+      _$_sendGroupChatMessage;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$_sendGroupChatMessageCopyWith<_$_sendGroupChatMessage> get copyWith =>
       throw _privateConstructorUsedError;
 }
 

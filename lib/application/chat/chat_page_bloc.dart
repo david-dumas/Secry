@@ -26,6 +26,9 @@ class ChatPageBloc extends Bloc<ChatPageEvent, ChatPageState> {
           final list = state.messages.toList();
           list.add(e.messageChat);
           emit(state.copyWith(messages: list));
+        },
+        sendGroupChatMessage: (e) async {
+          this._iViewChatsRepository.sendGroupChatMessage(message: e.message);
         }
       );
     });

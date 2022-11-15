@@ -39,6 +39,9 @@ class ChatPage extends StatelessWidget {
                         children: [
                           Expanded(
                             child: TextField(
+                              onSubmitted: (value) {
+                                context.read<ChatPageBloc>().add(ChatPageEvent.sendGroupChatMessage(value));
+                              },
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
                                 filled: true,
