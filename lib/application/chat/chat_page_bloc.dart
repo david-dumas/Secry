@@ -13,7 +13,9 @@ part 'chat_page_bloc.freezed.dart';
 class ChatPageBloc extends Bloc<ChatPageEvent, ChatPageState> {
   ChatPageBloc() : super(ChatPageState.initial()) {
     on<ChatPageEvent>((event, emit) async {
-      // TODO: implement event handler
+      await event.map(
+        initialized: (e) async {},
+      );
     });
   }
 }
