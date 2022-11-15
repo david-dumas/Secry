@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:injectable/injectable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:meta/meta.dart';
+import 'package:xmpp_plugin/models/message_model.dart';
 
 import '../../domain/chats/view/i_view_chats_repository.dart';
 
@@ -21,11 +22,23 @@ class ChatPageBloc extends Bloc<ChatPageEvent, ChatPageState> {
         initialized: (e) async {
           initializeChatServerConnection();
         },
+        newMessageReceived: (e) async {
+          final list = state.messages.toList();
+          list.add(e.messageChat);
+          emit(state.copyWith(messages: list));
+        }
       );
     });
   }
 
   Future<void> initializeChatServerConnection() async {
     await this._iViewChatsRepository.initializeXmppConnection();
+    final subscription = await this._iViewChatsRepository.getStreamController();
+
+    subscription.stream.listen((MessageChat messageChat) {
+      if(!isClosed) {
+        add(ChatPageEvent.newMessageReceived(messageChat));
+      }
+    });
   }
 }

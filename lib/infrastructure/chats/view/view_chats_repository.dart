@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:developer';
 
 import 'package:injectable/injectable.dart';
@@ -12,6 +13,7 @@ import 'package:xmpp_plugin/xmpp_plugin.dart';
 
 @Singleton(as: IViewChatsRepository)
 class ViewChatsRepository extends IViewChatsRepository implements DataChangeEvents {
+  final chatStreamController = StreamController<MessageChat>();
   static late XmppConnection xmpp;
 
   @override
@@ -32,6 +34,12 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
     xmpp = XmppConnection(auth);
     await xmpp.start(_onError);
     await xmpp.login();
+    xmpp.joinMucGroup("boy@conference.aurabit.nl");
+  }
+
+  @override
+  Future<StreamController<MessageChat>> getStreamController() async {
+    return this.chatStreamController;
   }
 
   void _onError(Object error) {
@@ -56,7 +64,9 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
 
   @override
   void onGroupMessage(MessageChat messageChat) {
-    print('999999onGroupMessage: ${messageChat.body}');
+    if(messageChat.body != "") {
+      chatStreamController.sink.add(messageChat);
+    }
   }
 
   @override

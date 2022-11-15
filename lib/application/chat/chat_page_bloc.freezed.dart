@@ -19,32 +19,38 @@ mixin _$ChatPageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(MessageChat messageChat) newMessageReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NewMessageReceived value) newMessageReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -109,6 +115,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initialized,
+    required TResult Function(MessageChat messageChat) newMessageReceived,
   }) {
     return initialized();
   }
@@ -117,6 +124,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
   }) {
     return initialized?.call();
   }
@@ -125,6 +133,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -137,6 +146,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NewMessageReceived value) newMessageReceived,
   }) {
     return initialized(this);
   }
@@ -145,6 +155,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
   }) {
     return initialized?.call(this);
   }
@@ -153,6 +164,7 @@ class _$_Initialized implements _Initialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
     required TResult orElse(),
   }) {
     if (initialized != null) {
@@ -167,8 +179,146 @@ abstract class _Initialized implements ChatPageEvent {
 }
 
 /// @nodoc
+abstract class _$$_NewMessageReceivedCopyWith<$Res> {
+  factory _$$_NewMessageReceivedCopyWith(_$_NewMessageReceived value,
+          $Res Function(_$_NewMessageReceived) then) =
+      __$$_NewMessageReceivedCopyWithImpl<$Res>;
+  $Res call({MessageChat messageChat});
+}
+
+/// @nodoc
+class __$$_NewMessageReceivedCopyWithImpl<$Res>
+    extends _$ChatPageEventCopyWithImpl<$Res>
+    implements _$$_NewMessageReceivedCopyWith<$Res> {
+  __$$_NewMessageReceivedCopyWithImpl(
+      _$_NewMessageReceived _value, $Res Function(_$_NewMessageReceived) _then)
+      : super(_value, (v) => _then(v as _$_NewMessageReceived));
+
+  @override
+  _$_NewMessageReceived get _value => super._value as _$_NewMessageReceived;
+
+  @override
+  $Res call({
+    Object? messageChat = freezed,
+  }) {
+    return _then(_$_NewMessageReceived(
+      messageChat == freezed
+          ? _value.messageChat
+          : messageChat // ignore: cast_nullable_to_non_nullable
+              as MessageChat,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$_NewMessageReceived implements _NewMessageReceived {
+  const _$_NewMessageReceived(this.messageChat);
+
+  @override
+  final MessageChat messageChat;
+
+  @override
+  String toString() {
+    return 'ChatPageEvent.newMessageReceived(messageChat: $messageChat)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_NewMessageReceived &&
+            const DeepCollectionEquality()
+                .equals(other.messageChat, messageChat));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(messageChat));
+
+  @JsonKey(ignore: true)
+  @override
+  _$$_NewMessageReceivedCopyWith<_$_NewMessageReceived> get copyWith =>
+      __$$_NewMessageReceivedCopyWithImpl<_$_NewMessageReceived>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initialized,
+    required TResult Function(MessageChat messageChat) newMessageReceived,
+  }) {
+    return newMessageReceived(messageChat);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
+  }) {
+    return newMessageReceived?.call(messageChat);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initialized,
+    TResult Function(MessageChat messageChat)? newMessageReceived,
+    required TResult orElse(),
+  }) {
+    if (newMessageReceived != null) {
+      return newMessageReceived(messageChat);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initialized value) initialized,
+    required TResult Function(_NewMessageReceived value) newMessageReceived,
+  }) {
+    return newMessageReceived(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
+  }) {
+    return newMessageReceived?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initialized value)? initialized,
+    TResult Function(_NewMessageReceived value)? newMessageReceived,
+    required TResult orElse(),
+  }) {
+    if (newMessageReceived != null) {
+      return newMessageReceived(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _NewMessageReceived implements ChatPageEvent {
+  const factory _NewMessageReceived(final MessageChat messageChat) =
+      _$_NewMessageReceived;
+
+  MessageChat get messageChat;
+  @JsonKey(ignore: true)
+  _$$_NewMessageReceivedCopyWith<_$_NewMessageReceived> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 mixin _$ChatPageState {
   String get title => throw _privateConstructorUsedError;
+  List<MessageChat> get messages => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $ChatPageStateCopyWith<ChatPageState> get copyWith =>
@@ -180,7 +330,7 @@ abstract class $ChatPageStateCopyWith<$Res> {
   factory $ChatPageStateCopyWith(
           ChatPageState value, $Res Function(ChatPageState) then) =
       _$ChatPageStateCopyWithImpl<$Res>;
-  $Res call({String title});
+  $Res call({String title, List<MessageChat> messages});
 }
 
 /// @nodoc
@@ -195,12 +345,17 @@ class _$ChatPageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? messages = freezed,
   }) {
     return _then(_value.copyWith(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      messages: messages == freezed
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<MessageChat>,
     ));
   }
 }
@@ -212,7 +367,7 @@ abstract class _$$_ChatPageStateCopyWith<$Res>
           _$_ChatPageState value, $Res Function(_$_ChatPageState) then) =
       __$$_ChatPageStateCopyWithImpl<$Res>;
   @override
-  $Res call({String title});
+  $Res call({String title, List<MessageChat> messages});
 }
 
 /// @nodoc
@@ -229,12 +384,17 @@ class __$$_ChatPageStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? title = freezed,
+    Object? messages = freezed,
   }) {
     return _then(_$_ChatPageState(
       title: title == freezed
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
+      messages: messages == freezed
+          ? _value.messages
+          : messages // ignore: cast_nullable_to_non_nullable
+              as List<MessageChat>,
     ));
   }
 }
@@ -242,14 +402,16 @@ class __$$_ChatPageStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_ChatPageState implements _ChatPageState {
-  const _$_ChatPageState({required this.title});
+  const _$_ChatPageState({required this.title, required this.messages});
 
   @override
   final String title;
+  @override
+  final List<MessageChat> messages;
 
   @override
   String toString() {
-    return 'ChatPageState(title: $title)';
+    return 'ChatPageState(title: $title, messages: $messages)';
   }
 
   @override
@@ -257,12 +419,15 @@ class _$_ChatPageState implements _ChatPageState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_ChatPageState &&
-            const DeepCollectionEquality().equals(other.title, title));
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.messages, messages));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(title));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(messages));
 
   @JsonKey(ignore: true)
   @override
@@ -271,11 +436,14 @@ class _$_ChatPageState implements _ChatPageState {
 }
 
 abstract class _ChatPageState implements ChatPageState {
-  const factory _ChatPageState({required final String title}) =
-      _$_ChatPageState;
+  const factory _ChatPageState(
+      {required final String title,
+      required final List<MessageChat> messages}) = _$_ChatPageState;
 
   @override
   String get title;
+  @override
+  List<MessageChat> get messages;
   @override
   @JsonKey(ignore: true)
   _$$_ChatPageStateCopyWith<_$_ChatPageState> get copyWith =>

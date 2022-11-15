@@ -1,9 +1,10 @@
 part of 'chat_page_bloc.dart';
 
-@freezed
+@Freezed(makeCollectionsUnmodifiable: false)
 class ChatPageState with _$ChatPageState {
   const factory ChatPageState(
-      {required String title}) = _ChatPageState;
+      {required String title,
+      required List<MessageChat> messages}) = _ChatPageState;
 
-  factory ChatPageState.initial() => ChatPageState(title: "testTitel");
+  factory ChatPageState.initial() => ChatPageState(title: "testTitel", messages: []);
 }
