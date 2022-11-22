@@ -80,6 +80,12 @@ class GroupSection extends StatelessWidget {
                         AutoRouter.of(context).push(ChatPageRoute(title: 'Studentenhuis IBB 420', chatId: "1"));
                       },
                       child: Text('Studentenhuis IBB 420')
+                  ),
+                  TextButton(
+                      onPressed: () {
+                        AutoRouter.of(context).push(ChatPageRoute(title: 'Studentenhuis Vis', chatId: "2"));
+                      },
+                      child: Text('Studentenhuis Vis')
                   )
                 ],
             )),

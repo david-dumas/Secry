@@ -36,7 +36,7 @@ class ChatPage extends StatelessWidget {
         builder: (context, state) {
           return Scaffold(
               appBar: GeneralAppbar(
-                title: state.title,
+                title: title,
                 isSubpage: true,
                 backgroundColor: globalWhite,
                 isShowingBottomBorder: true,

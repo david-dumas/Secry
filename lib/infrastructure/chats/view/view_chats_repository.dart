@@ -13,7 +13,7 @@ import 'package:xmpp_plugin/xmpp_plugin.dart';
 
 @Singleton(as: IViewChatsRepository)
 class ViewChatsRepository extends IViewChatsRepository implements DataChangeEvents {
-  final chatStreamController = StreamController<MessageChat>();
+  final chatStreamController = StreamController<MessageChat>.broadcast();
   static late XmppConnection xmpp;
 
   @override
