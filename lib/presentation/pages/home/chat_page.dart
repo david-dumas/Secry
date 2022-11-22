@@ -17,6 +17,18 @@ class ChatPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ScrollController _sc = ScrollController();
+    final TextEditingController _tx = TextEditingController();
+    
+    void _scrollToBottom() {
+      if (_sc.hasClients) {
+        final position = _sc.position.maxScrollExtent;
+        _sc.animateTo(
+          position,
+          duration: Duration(seconds: 1),
+          curve: Curves.linear
+        );
+      }
+    }
 
     return BlocProvider(
       create: (context) => getIt<ChatPageBloc>()..add(ChatPageEvent.initialized()),
@@ -39,8 +51,11 @@ class ChatPage extends StatelessWidget {
                         children: [
                           Expanded(
                             child: TextField(
+                              controller: _tx,
                               onSubmitted: (value) {
                                 context.read<ChatPageBloc>().add(ChatPageEvent.sendGroupChatMessage(value));
+                                _tx.clear();
+                                _scrollToBottom();
                               },
                               decoration: InputDecoration(
                                 contentPadding: EdgeInsets.symmetric(vertical: 4, horizontal: 12),
@@ -59,12 +74,11 @@ class ChatPage extends StatelessWidget {
                               icon: Icon(Icons.camera_alt, color: kMediumGrayV2, size: 24.0))
                         ],
                       ))),
-              body: SingleChildScrollView(
-                child: Padding(
+              body: Padding(
                   padding: pagePaddingAllSides,
                   child: ListView.builder(
+                      controller: _sc,
                       shrinkWrap: true,
-                      physics: NeverScrollableScrollPhysics(),
                       itemCount: state.messages.length,
                       itemBuilder: (context, index) {
                         return ChatMessage(
@@ -74,7 +88,7 @@ class ChatPage extends StatelessWidget {
                                 : ChatMessageType.receiver);
                       }),
                 ),
-              ));
+            );
         },
       ),
     );

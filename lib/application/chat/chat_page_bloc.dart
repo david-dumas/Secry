@@ -15,6 +15,7 @@ part 'chat_page_bloc.freezed.dart';
 @injectable
 class ChatPageBloc extends Bloc<ChatPageEvent, ChatPageState> {
   final IViewChatsRepository _iViewChatsRepository;
+  late final subscription;
 
   ChatPageBloc(this._iViewChatsRepository) : super(ChatPageState.initial()) {
     on<ChatPageEvent>((event, emit) async {
@@ -34,11 +35,17 @@ class ChatPageBloc extends Bloc<ChatPageEvent, ChatPageState> {
     });
   }
 
+  @override
+  Future<void> close() async {
+    //cancel streams
+    super.close();
+  }
+
   Future<void> initializeChatServerConnection() async {
     await this._iViewChatsRepository.initializeXmppConnection();
-    final subscription = await this._iViewChatsRepository.getStreamController();
+    this.subscription = await this._iViewChatsRepository.getStreamController();
 
-    subscription.stream.listen((MessageChat messageChat) {
+    this.subscription.stream.listen((MessageChat messageChat) {
       if(!isClosed) {
         add(ChatPageEvent.newMessageReceived(messageChat));
       }
