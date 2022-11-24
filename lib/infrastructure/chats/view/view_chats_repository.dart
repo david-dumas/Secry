@@ -3,6 +3,7 @@ import 'dart:developer';
 
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/chats/view/i_view_chats_repository.dart';
+import 'package:secry/infrastructure/database/database_provider.dart';
 import 'package:xmpp_plugin/error_response_event.dart';
 import 'package:xmpp_plugin/models/chat_state_model.dart';
 import 'package:xmpp_plugin/models/connection_event.dart';
@@ -35,6 +36,9 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
     await xmpp.start(_onError);
     await xmpp.login();
     xmpp.joinMucGroup("boy@conference.aurabit.nl");
+
+    var db = DatabaseProvider();
+    print(await db.database);
   }
 
   @override
