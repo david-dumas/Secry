@@ -3,7 +3,7 @@ import 'dart:developer';
 
 import 'package:injectable/injectable.dart';
 import 'package:secry/domain/chats/view/i_view_chats_repository.dart';
-import 'package:secry/infrastructure/database/database_provider.dart';
+import 'package:secry/data/database_provider.dart';
 import 'package:xmpp_plugin/error_response_event.dart';
 import 'package:xmpp_plugin/models/chat_state_model.dart';
 import 'package:xmpp_plugin/models/connection_event.dart';
@@ -14,6 +14,7 @@ import 'package:xmpp_plugin/xmpp_plugin.dart';
 
 @Singleton(as: IViewChatsRepository)
 class ViewChatsRepository extends IViewChatsRepository implements DataChangeEvents {
+  static final DatabaseProvider databaseProvider = DatabaseProvider();
   final chatStreamController = StreamController<MessageChat>.broadcast();
   static late XmppConnection xmpp;
 
@@ -37,8 +38,7 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
     await xmpp.login();
     xmpp.joinMucGroup("boy@conference.aurabit.nl");
 
-    var db = DatabaseProvider();
-    print(await db.database);
+    print(await databaseProvider.database);
   }
 
   @override
