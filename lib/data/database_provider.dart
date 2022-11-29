@@ -35,7 +35,7 @@ class DatabaseProvider {
         onUpgrade: (Database db, int oldVersion, int newVersion) async {
           var batch = db.batch();
           if (oldVersion == 1) {
-            // TODO: Implement new migrations (when needed)
+            CreateTableMessageV1(batch).createTable();
           }
           await batch.commit();
         }

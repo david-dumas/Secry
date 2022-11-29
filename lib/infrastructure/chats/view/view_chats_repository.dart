@@ -2,8 +2,10 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:injectable/injectable.dart';
+import 'package:secry/domain/chats/chat_message.dart';
 import 'package:secry/domain/chats/view/i_view_chats_repository.dart';
 import 'package:secry/data/database_provider.dart';
+import 'package:sqflite/sqflite.dart';
 import 'package:xmpp_plugin/error_response_event.dart';
 import 'package:xmpp_plugin/models/chat_state_model.dart';
 import 'package:xmpp_plugin/models/connection_event.dart';
@@ -72,8 +74,16 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
   }
 
   @override
-  void onGroupMessage(MessageChat messageChat) {
+  void onGroupMessage(MessageChat messageChat) async {
+    print('new-message');
+    final database = await DatabaseProvider().database;
+
     if(messageChat.body != "" && messageChat.time.toString() == "0") {
+      if (database != null) {
+        final message = ChatMessage(groupId: 1, sender: messageChat.from!, time: messageChat.time!, messageId: messageChat.id!, body: messageChat.body!);
+        int id = await database.insert("Message", message.toMap());
+        print('inserted $id');
+      }
       chatStreamController.sink.add(messageChat);
     }
   }
