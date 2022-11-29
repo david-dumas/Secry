@@ -1,5 +1,5 @@
 class ChatMessage {
-  final int groupId;
+  final String groupId;
   final String sender;
   final String time;
   final String messageId;

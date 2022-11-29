@@ -53,6 +53,14 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
     await xmpp.sendGroupMessageWithType("boy@conference.aurabit.nl", message, "id", new DateTime.now().millisecondsSinceEpoch);
   }
 
+  @override
+  Future<List<ChatMessage>> getAllChatMessages() async {
+    final database = await databaseProvider.database;
+    var response = await database?.query("Message");
+    List<ChatMessage> list = response!.map((message) => ChatMessage.fromMap(message)).toList();
+    return list;
+  }
+
   void _onError(Object error) {
     print(error);
   }
@@ -75,12 +83,12 @@ class ViewChatsRepository extends IViewChatsRepository implements DataChangeEven
 
   @override
   void onGroupMessage(MessageChat messageChat) async {
-    print('new-message');
     final database = await DatabaseProvider().database;
 
     if(messageChat.body != "" && messageChat.time.toString() == "0") {
       if (database != null) {
-        final message = ChatMessage(groupId: 1, sender: messageChat.from!, time: messageChat.time!, messageId: messageChat.id!, body: messageChat.body!);
+        var splittedString = messageChat.from?.split('/')[0];
+        final message = ChatMessage(groupId: splittedString!, sender: messageChat.from!, time: messageChat.time!, messageId: messageChat.id!, body: messageChat.body!);
         int id = await database.insert("Message", message.toMap());
         print('inserted $id');
       }
