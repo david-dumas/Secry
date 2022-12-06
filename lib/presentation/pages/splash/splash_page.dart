@@ -2,9 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:secry/application/auth/account_go_to_login_or_signup_page/account_go_to_login_or_signup_page_bloc.dart';
 import 'package:secry/application/splash/splash_bloc.dart';
 import 'package:secry/injection.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/presentation/pages/account/account_go_to_login_or_signup_page.dart';
 import 'package:secry/presentation/routes/router.gr.dart';
 
 class SplashPage extends StatefulWidget {
@@ -22,7 +24,8 @@ class _SplashPageState extends State<SplashPage> {
   }
 
   navigateToTabbarAfterDelay() {
-    Future.delayed(Duration(milliseconds: 1500)).then((value) => AutoRouter.of(context).replace(TabbarPageRoute()));
+    Future.delayed(Duration(milliseconds: 1500))
+        .then((value) => AutoRouter.of(context).replace(AccountGoToLoginOrSignUpPageRoute()));
   }
 
   @override

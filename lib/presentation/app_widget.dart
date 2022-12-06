@@ -46,7 +46,9 @@ class _AppWidgetState extends State<AppWidget> {
                   routerDelegate: _appRouter.delegate(),
                   routeInformationParser: _appRouter.defaultRouteParser(),
                   debugShowCheckedModeBanner: false,
-                  theme: ThemeData(scaffoldBackgroundColor: globalWhite),
+                  theme: ThemeData(),
+                  darkTheme: ThemeData.dark(),
+                  themeMode: ThemeMode.system,
                 );
               }),
             );

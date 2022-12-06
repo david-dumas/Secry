@@ -48,12 +48,7 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
           body: PersistentTabView(
             context,
             controller: _persistentTabController,
-            screens: [
-              HomePage(),
-              GlobalSearchPage(),
-              SavedChatsAndSurveysPage(),
-              state.isUserSignedIn ? AccountOverviewPage() : AccountGoToLoginOrSignUpPage(key: accountPageKey)
-            ],
+            screens: [HomePage(), GlobalSearchPage(), SavedChatsAndSurveysPage(), AccountOverviewPage()],
             items: [
               getBottomNavbarItem(icon: Icon(Icons.home_outlined)),
               getBottomNavbarItem(icon: Icon(Icons.search)),

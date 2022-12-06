@@ -9,7 +9,7 @@ void main() {
   ];
 
   test('Should return true when _generateAvatarSvgs executes succesfully without throwing', () async {
-    final result = await AvatarHelper()?.addSvgToGroupRowsInfo(infoRows);
+    final result = await AvatarHelper().addSvgToGroupRowsInfo(infoRows);
     expect(result, true);
   });
 }

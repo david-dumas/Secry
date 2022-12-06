@@ -3,6 +3,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:secry/application/auth/sign_in_form/sign_in_form_bloc.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/infrastructure/auth/authentication_repository.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/presentation/pages/account/widgets/social_media_buttons.dart';
@@ -67,7 +68,7 @@ class _LoginPageState extends State<LoginPage> {
                                 buttonColor: SocialMediaButton.googleButtonColor,
                                 buttonText: tr('action_login_with_google'),
                                 textColor: Colors.black, buttonPressed: () {
-                              context.read<SignInFormBloc>().add(SignInFormEvent.continueWithGooglePressed());
+                              signIn();
                             }),
                             SocialMediaButton(
                               context,
