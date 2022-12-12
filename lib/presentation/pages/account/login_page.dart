@@ -67,9 +67,8 @@ class _LoginPageState extends State<LoginPage> {
                                 socialMediaIcon: Image.asset('assets/fonts/google_icon.png'),
                                 buttonColor: SocialMediaButton.googleButtonColor,
                                 buttonText: tr('action_login_with_google'),
-                                textColor: Colors.black, buttonPressed: () {
-                              signIn();
-                            }),
+                                textColor: Colors.black,
+                                buttonPressed: () {}),
                             SocialMediaButton(
                               context,
                               socialMediaIcon: Image.asset('assets/fonts/apple_icon.png'),

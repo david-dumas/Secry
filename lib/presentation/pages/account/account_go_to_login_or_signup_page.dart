@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,6 +8,7 @@ import 'package:secry/infrastructure/auth/authentication_repository.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import '../../../application/auth/account_go_to_login_or_signup_page/account_go_to_login_or_signup_page_bloc.dart';
 import '../../../injection.dart';
+import '../../routes/router.gr.dart';
 import 'widgets/social_media_buttons.dart';
 
 class AccountGoToLoginOrSignUpPage extends StatelessWidget {
@@ -51,7 +53,10 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                               buttonText: tr('account_sign_up_with_google'),
                               textColor: Colors.black,
                               buttonPressed: () {
-                                signIn();
+                                context
+                                    .read<AccountGoToLoginOrSignupPageBloc>()
+                                    .add(AccountGoToLoginOrSignupPageEvent.signInWithGooglePressed());
+                                AutoRouter.of(context).replace(AccountOverviewPageRoute());
                               },
                             ),
                             SocialMediaButton(

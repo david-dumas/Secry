@@ -20,4 +20,7 @@ class GoogleSignInApi {
   static final _googleSignIn = GoogleSignIn();
 
   static Future<GoogleSignInAccount?> login() => _googleSignIn.signIn();
+
+  //logout function
+  static Future logout() => _googleSignIn.disconnect();
 }

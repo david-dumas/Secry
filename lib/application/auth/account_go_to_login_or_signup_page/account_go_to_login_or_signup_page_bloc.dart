@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/rendering.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:secry/infrastructure/auth/authentication_repository.dart';
 
 import '../../../domain/auth/i_auth_facade.dart';
 
@@ -16,13 +19,21 @@ class AccountGoToLoginOrSignupPageBloc
     extends Bloc<AccountGoToLoginOrSignupPageEvent, AccountGoToLoginOrSignupPageState> {
   final IAuthFacade _authFacade;
 
-  AccountGoToLoginOrSignupPageBloc(this._authFacade) : super(AccountGoToLoginOrSignupPageState.initial()) {
+  //google user object, returned by google api
+  final GoogleSignInAccount currentUser;
+
+  AccountGoToLoginOrSignupPageBloc(this._authFacade, this.currentUser)
+      : super(AccountGoToLoginOrSignupPageState.initial()) {
     on<AccountGoToLoginOrSignupPageEvent>(_onEvent);
   }
 
   Future<void> _onEvent(
       AccountGoToLoginOrSignupPageEvent event, Emitter<AccountGoToLoginOrSignupPageState> emit) async {
     await event.map(
+      signInWithGooglePressed: (e) async {
+        final currentUser = await signInWithGoogle();
+        emit(state.copyWith(currentUser: currentUser));
+      },
       continueWithGooglePressed: (e) async {
         final currentUserCredential = await _authFacade.signInWithGoogle();
         emit(state.copyWith(currentUserCredential: currentUserCredential));

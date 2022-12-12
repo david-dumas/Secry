@@ -1,15 +1,22 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
 import 'package:secry/constants.dart';
+import 'package:secry/infrastructure/auth/authentication_api_service.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:secry/application/auth/account_overview/account_overview_bloc.dart';
 
 import 'package:secry/injection.dart';
 
+import '../../routes/router.gr.dart';
+
 class AccountOverviewPage extends StatelessWidget {
-  const AccountOverviewPage({Key? key}) : super(key: key);
+  const AccountOverviewPage({Key? key}) : super(key: key); //required this.user
+
+  //final GoogleSignInAccount user;
 
   @override
   Widget build(BuildContext context) {
@@ -52,8 +59,10 @@ class AccountOverviewPage extends StatelessWidget {
                                     ),
                                   ),
                                 ),
-                                onPressed: () {
-                                  context.read<AccountOverviewBloc>().add(AccountOverviewEvent.logoutPressed());
+                                onPressed: () async {
+                                  await GoogleSignInApi.logout();
+                                  AutoRouter.of(context).replace(AccountGoToLoginOrSignUpPageRoute());
+                                  //context.read<AccountOverviewBloc>().add(AccountOverviewEvent.logoutPressed());
                                 },
                                 child: Text(
                                   tr('account_title_sign_out'),

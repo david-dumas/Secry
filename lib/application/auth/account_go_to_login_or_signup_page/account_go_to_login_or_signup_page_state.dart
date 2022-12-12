@@ -7,3 +7,11 @@ class AccountGoToLoginOrSignupPageState with _$AccountGoToLoginOrSignupPageState
 
   factory AccountGoToLoginOrSignupPageState.initial() => AccountGoToLoginOrSignupPageState(currentUserCredential: null);
 }
+
+//add user signed in state
+@freezed
+class UserSignedInState with _$UserSignedInState {
+  const factory UserSignedInState({required currentUser}) = _UserSignedInState;
+
+  factory UserSignedInState.initial() => UserSignedInState(currentUser: null);
+}

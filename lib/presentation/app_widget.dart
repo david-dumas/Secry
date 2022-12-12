@@ -8,7 +8,6 @@ import 'package:theme_provider/theme_provider.dart';
 
 import 'package:secry/injection.dart';
 import 'package:secry/theme.dart';
-import 'package:secry/constants.dart';
 
 class AppWidget extends StatefulWidget {
   const AppWidget({Key? key}) : super(key: key);

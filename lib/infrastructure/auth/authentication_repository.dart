@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:secry/domain/auth/i_authentication_interface.dart';
 import 'package:secry/domain/auth/user.dart';
 import 'package:secry/domain/auth/auth_failure.dart';
+import 'package:secry/presentation/routes/router.gr.dart';
 import 'package:secry/util/network_and_requests/response_util.dart';
 import 'authentication_api_service.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -62,13 +63,7 @@ class AuthenticationRepository extends IAuthenticationInterface {
   }
 }
 
-Future signIn() async {
-  final user = await GoogleSignInApi.login();
-
-  // if (user == null) {
-  //   ScaffoldMessenger.of(context)
-  //     .showSnackBar(SnackBar(content: Text('Login failed')))
-  // } else {
-  //   Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => LoggedInPage(user: user)))
-  // }
+//does this api call need to be in signup_page_event.dart?
+Future signInWithGoogle() async {
+  await GoogleSignInApi.login();
 }
