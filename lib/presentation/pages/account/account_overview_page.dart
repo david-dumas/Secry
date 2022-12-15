@@ -62,7 +62,7 @@ class AccountOverviewPage extends StatelessWidget {
                                 onPressed: () async {
                                   await GoogleSignInApi.logout();
                                   AutoRouter.of(context).replace(AccountGoToLoginOrSignUpPageRoute());
-                                  //context.read<AccountOverviewBloc>().add(AccountOverviewEvent.logoutPressed());
+                                  // context.read<AccountOverviewBloc>().add(AccountOverviewEvent.logoutPressed());
                                 },
                                 child: Text(
                                   tr('account_title_sign_out'),

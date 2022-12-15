@@ -63,7 +63,6 @@ class AuthenticationRepository extends IAuthenticationInterface {
   }
 }
 
-//does this api call need to be in signup_page_event.dart?
 Future signInWithGoogle() async {
   await GoogleSignInApi.login();
 }

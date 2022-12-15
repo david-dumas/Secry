@@ -56,7 +56,7 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                                 context
                                     .read<AccountGoToLoginOrSignupPageBloc>()
                                     .add(AccountGoToLoginOrSignupPageEvent.signInWithGooglePressed());
-                                AutoRouter.of(context).replace(AccountOverviewPageRoute());
+                                AutoRouter.of(context).replace(TabbarPageRoute());
                               },
                             ),
                             SocialMediaButton(
@@ -75,11 +75,7 @@ class AccountGoToLoginOrSignUpPage extends StatelessWidget {
                               buttonColor: SocialMediaButton.facebookButtonColor,
                               buttonText: tr('account_sign_up_with_facebook'),
                               textColor: Colors.white,
-                              buttonPressed: () {
-                                context
-                                    .read<AccountGoToLoginOrSignupPageBloc>()
-                                    .add(AccountGoToLoginOrSignupPageEvent.continueWithFacebookPressed());
-                              },
+                              buttonPressed: () {},
                             ),
                           ],
                         ),

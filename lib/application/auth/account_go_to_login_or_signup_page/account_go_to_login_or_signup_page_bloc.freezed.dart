@@ -18,54 +18,34 @@ final _privateConstructorUsedError = UnsupportedError(
 mixin _$AccountGoToLoginOrSignupPageEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() continueWithGooglePressed,
-    required TResult Function() continueWithFacebookPressed,
-    required TResult Function() continueWithTwitterPressed,
+    required TResult Function() signInWithGooglePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? continueWithGooglePressed,
-    TResult? Function()? continueWithFacebookPressed,
-    TResult? Function()? continueWithTwitterPressed,
+    TResult? Function()? signInWithGooglePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
+    TResult Function()? signInWithGooglePressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ContinueWithGooglePressed value)
-        continueWithGooglePressed,
-    required TResult Function(_ContinueWithFacebookPressed value)
-        continueWithFacebookPressed,
-    required TResult Function(_ContinueWithTwitterPressed value)
-        continueWithTwitterPressed,
+    required TResult Function(_SignInWithGooglePressed value)
+        signInWithGooglePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult? Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult? Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
+    TResult? Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -93,39 +73,37 @@ class _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
 }
 
 /// @nodoc
-abstract class _$$_ContinueWithGooglePressedCopyWith<$Res> {
-  factory _$$_ContinueWithGooglePressedCopyWith(
-          _$_ContinueWithGooglePressed value,
-          $Res Function(_$_ContinueWithGooglePressed) then) =
-      __$$_ContinueWithGooglePressedCopyWithImpl<$Res>;
+abstract class _$$_SignInWithGooglePressedCopyWith<$Res> {
+  factory _$$_SignInWithGooglePressedCopyWith(_$_SignInWithGooglePressed value,
+          $Res Function(_$_SignInWithGooglePressed) then) =
+      __$$_SignInWithGooglePressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$_ContinueWithGooglePressedCopyWithImpl<$Res>
+class __$$_SignInWithGooglePressedCopyWithImpl<$Res>
     extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
-        _$_ContinueWithGooglePressed>
-    implements _$$_ContinueWithGooglePressedCopyWith<$Res> {
-  __$$_ContinueWithGooglePressedCopyWithImpl(
-      _$_ContinueWithGooglePressed _value,
-      $Res Function(_$_ContinueWithGooglePressed) _then)
+        _$_SignInWithGooglePressed>
+    implements _$$_SignInWithGooglePressedCopyWith<$Res> {
+  __$$_SignInWithGooglePressedCopyWithImpl(_$_SignInWithGooglePressed _value,
+      $Res Function(_$_SignInWithGooglePressed) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$_ContinueWithGooglePressed implements _ContinueWithGooglePressed {
-  const _$_ContinueWithGooglePressed();
+class _$_SignInWithGooglePressed implements _SignInWithGooglePressed {
+  const _$_SignInWithGooglePressed();
 
   @override
   String toString() {
-    return 'AccountGoToLoginOrSignupPageEvent.continueWithGooglePressed()';
+    return 'AccountGoToLoginOrSignupPageEvent.signInWithGooglePressed()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_ContinueWithGooglePressed);
+            other is _$_SignInWithGooglePressed);
   }
 
   @override
@@ -134,33 +112,27 @@ class _$_ContinueWithGooglePressed implements _ContinueWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() continueWithGooglePressed,
-    required TResult Function() continueWithFacebookPressed,
-    required TResult Function() continueWithTwitterPressed,
+    required TResult Function() signInWithGooglePressed,
   }) {
-    return continueWithGooglePressed();
+    return signInWithGooglePressed();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? continueWithGooglePressed,
-    TResult? Function()? continueWithFacebookPressed,
-    TResult? Function()? continueWithTwitterPressed,
+    TResult? Function()? signInWithGooglePressed,
   }) {
-    return continueWithGooglePressed?.call();
+    return signInWithGooglePressed?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
+    TResult Function()? signInWithGooglePressed,
     required TResult orElse(),
   }) {
-    if (continueWithGooglePressed != null) {
-      return continueWithGooglePressed();
+    if (signInWithGooglePressed != null) {
+      return signInWithGooglePressed();
     }
     return orElse();
   }
@@ -168,300 +140,41 @@ class _$_ContinueWithGooglePressed implements _ContinueWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_ContinueWithGooglePressed value)
-        continueWithGooglePressed,
-    required TResult Function(_ContinueWithFacebookPressed value)
-        continueWithFacebookPressed,
-    required TResult Function(_ContinueWithTwitterPressed value)
-        continueWithTwitterPressed,
+    required TResult Function(_SignInWithGooglePressed value)
+        signInWithGooglePressed,
   }) {
-    return continueWithGooglePressed(this);
+    return signInWithGooglePressed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult? Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult? Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
+    TResult? Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
   }) {
-    return continueWithGooglePressed?.call(this);
+    return signInWithGooglePressed?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
+    TResult Function(_SignInWithGooglePressed value)? signInWithGooglePressed,
     required TResult orElse(),
   }) {
-    if (continueWithGooglePressed != null) {
-      return continueWithGooglePressed(this);
+    if (signInWithGooglePressed != null) {
+      return signInWithGooglePressed(this);
     }
     return orElse();
   }
 }
 
-abstract class _ContinueWithGooglePressed
+abstract class _SignInWithGooglePressed
     implements AccountGoToLoginOrSignupPageEvent {
-  const factory _ContinueWithGooglePressed() = _$_ContinueWithGooglePressed;
-}
-
-/// @nodoc
-abstract class _$$_ContinueWithFacebookPressedCopyWith<$Res> {
-  factory _$$_ContinueWithFacebookPressedCopyWith(
-          _$_ContinueWithFacebookPressed value,
-          $Res Function(_$_ContinueWithFacebookPressed) then) =
-      __$$_ContinueWithFacebookPressedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_ContinueWithFacebookPressedCopyWithImpl<$Res>
-    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
-        _$_ContinueWithFacebookPressed>
-    implements _$$_ContinueWithFacebookPressedCopyWith<$Res> {
-  __$$_ContinueWithFacebookPressedCopyWithImpl(
-      _$_ContinueWithFacebookPressed _value,
-      $Res Function(_$_ContinueWithFacebookPressed) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_ContinueWithFacebookPressed implements _ContinueWithFacebookPressed {
-  const _$_ContinueWithFacebookPressed();
-
-  @override
-  String toString() {
-    return 'AccountGoToLoginOrSignupPageEvent.continueWithFacebookPressed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ContinueWithFacebookPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() continueWithGooglePressed,
-    required TResult Function() continueWithFacebookPressed,
-    required TResult Function() continueWithTwitterPressed,
-  }) {
-    return continueWithFacebookPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? continueWithGooglePressed,
-    TResult? Function()? continueWithFacebookPressed,
-    TResult? Function()? continueWithTwitterPressed,
-  }) {
-    return continueWithFacebookPressed?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
-    required TResult orElse(),
-  }) {
-    if (continueWithFacebookPressed != null) {
-      return continueWithFacebookPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ContinueWithGooglePressed value)
-        continueWithGooglePressed,
-    required TResult Function(_ContinueWithFacebookPressed value)
-        continueWithFacebookPressed,
-    required TResult Function(_ContinueWithTwitterPressed value)
-        continueWithTwitterPressed,
-  }) {
-    return continueWithFacebookPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult? Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult? Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
-  }) {
-    return continueWithFacebookPressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
-    required TResult orElse(),
-  }) {
-    if (continueWithFacebookPressed != null) {
-      return continueWithFacebookPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ContinueWithFacebookPressed
-    implements AccountGoToLoginOrSignupPageEvent {
-  const factory _ContinueWithFacebookPressed() = _$_ContinueWithFacebookPressed;
-}
-
-/// @nodoc
-abstract class _$$_ContinueWithTwitterPressedCopyWith<$Res> {
-  factory _$$_ContinueWithTwitterPressedCopyWith(
-          _$_ContinueWithTwitterPressed value,
-          $Res Function(_$_ContinueWithTwitterPressed) then) =
-      __$$_ContinueWithTwitterPressedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$$_ContinueWithTwitterPressedCopyWithImpl<$Res>
-    extends _$AccountGoToLoginOrSignupPageEventCopyWithImpl<$Res,
-        _$_ContinueWithTwitterPressed>
-    implements _$$_ContinueWithTwitterPressedCopyWith<$Res> {
-  __$$_ContinueWithTwitterPressedCopyWithImpl(
-      _$_ContinueWithTwitterPressed _value,
-      $Res Function(_$_ContinueWithTwitterPressed) _then)
-      : super(_value, _then);
-}
-
-/// @nodoc
-
-class _$_ContinueWithTwitterPressed implements _ContinueWithTwitterPressed {
-  const _$_ContinueWithTwitterPressed();
-
-  @override
-  String toString() {
-    return 'AccountGoToLoginOrSignupPageEvent.continueWithTwitterPressed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_ContinueWithTwitterPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() continueWithGooglePressed,
-    required TResult Function() continueWithFacebookPressed,
-    required TResult Function() continueWithTwitterPressed,
-  }) {
-    return continueWithTwitterPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? continueWithGooglePressed,
-    TResult? Function()? continueWithFacebookPressed,
-    TResult? Function()? continueWithTwitterPressed,
-  }) {
-    return continueWithTwitterPressed?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? continueWithGooglePressed,
-    TResult Function()? continueWithFacebookPressed,
-    TResult Function()? continueWithTwitterPressed,
-    required TResult orElse(),
-  }) {
-    if (continueWithTwitterPressed != null) {
-      return continueWithTwitterPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_ContinueWithGooglePressed value)
-        continueWithGooglePressed,
-    required TResult Function(_ContinueWithFacebookPressed value)
-        continueWithFacebookPressed,
-    required TResult Function(_ContinueWithTwitterPressed value)
-        continueWithTwitterPressed,
-  }) {
-    return continueWithTwitterPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult? Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult? Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
-  }) {
-    return continueWithTwitterPressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_ContinueWithGooglePressed value)?
-        continueWithGooglePressed,
-    TResult Function(_ContinueWithFacebookPressed value)?
-        continueWithFacebookPressed,
-    TResult Function(_ContinueWithTwitterPressed value)?
-        continueWithTwitterPressed,
-    required TResult orElse(),
-  }) {
-    if (continueWithTwitterPressed != null) {
-      return continueWithTwitterPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ContinueWithTwitterPressed
-    implements AccountGoToLoginOrSignupPageEvent {
-  const factory _ContinueWithTwitterPressed() = _$_ContinueWithTwitterPressed;
+  const factory _SignInWithGooglePressed() = _$_SignInWithGooglePressed;
 }
 
 /// @nodoc
 mixin _$AccountGoToLoginOrSignupPageState {
-  UserCredential? get currentUserCredential =>
-      throw _privateConstructorUsedError;
+  GoogleSignInAccount? get currentUser => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $AccountGoToLoginOrSignupPageStateCopyWith<AccountGoToLoginOrSignupPageState>
@@ -476,7 +189,7 @@ abstract class $AccountGoToLoginOrSignupPageStateCopyWith<$Res> {
       _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res,
           AccountGoToLoginOrSignupPageState>;
   @useResult
-  $Res call({UserCredential? currentUserCredential});
+  $Res call({GoogleSignInAccount? currentUser});
 }
 
 /// @nodoc
@@ -493,13 +206,13 @@ class _$AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res,
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentUserCredential = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_value.copyWith(
-      currentUserCredential: freezed == currentUserCredential
-          ? _value.currentUserCredential
-          : currentUserCredential // ignore: cast_nullable_to_non_nullable
-              as UserCredential?,
+      currentUser: freezed == currentUser
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as GoogleSignInAccount?,
     ) as $Val);
   }
 }
@@ -513,7 +226,7 @@ abstract class _$$_AccountGoToLoginOrSignupPageStateCopyWith<$Res>
       __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({UserCredential? currentUserCredential});
+  $Res call({GoogleSignInAccount? currentUser});
 }
 
 /// @nodoc
@@ -529,13 +242,13 @@ class __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? currentUserCredential = freezed,
+    Object? currentUser = freezed,
   }) {
     return _then(_$_AccountGoToLoginOrSignupPageState(
-      currentUserCredential: freezed == currentUserCredential
-          ? _value.currentUserCredential
-          : currentUserCredential // ignore: cast_nullable_to_non_nullable
-              as UserCredential?,
+      currentUser: freezed == currentUser
+          ? _value.currentUser
+          : currentUser // ignore: cast_nullable_to_non_nullable
+              as GoogleSignInAccount?,
     ));
   }
 }
@@ -544,15 +257,14 @@ class __$$_AccountGoToLoginOrSignupPageStateCopyWithImpl<$Res>
 
 class _$_AccountGoToLoginOrSignupPageState
     implements _AccountGoToLoginOrSignupPageState {
-  const _$_AccountGoToLoginOrSignupPageState(
-      {required this.currentUserCredential});
+  const _$_AccountGoToLoginOrSignupPageState({required this.currentUser});
 
   @override
-  final UserCredential? currentUserCredential;
+  final GoogleSignInAccount? currentUser;
 
   @override
   String toString() {
-    return 'AccountGoToLoginOrSignupPageState(currentUserCredential: $currentUserCredential)';
+    return 'AccountGoToLoginOrSignupPageState(currentUser: $currentUser)';
   }
 
   @override
@@ -560,12 +272,12 @@ class _$_AccountGoToLoginOrSignupPageState
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_AccountGoToLoginOrSignupPageState &&
-            (identical(other.currentUserCredential, currentUserCredential) ||
-                other.currentUserCredential == currentUserCredential));
+            (identical(other.currentUser, currentUser) ||
+                other.currentUser == currentUser));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, currentUserCredential);
+  int get hashCode => Object.hash(runtimeType, currentUser);
 
   @JsonKey(ignore: true)
   @override
@@ -579,11 +291,11 @@ class _$_AccountGoToLoginOrSignupPageState
 abstract class _AccountGoToLoginOrSignupPageState
     implements AccountGoToLoginOrSignupPageState {
   const factory _AccountGoToLoginOrSignupPageState(
-          {required final UserCredential? currentUserCredential}) =
+          {required final GoogleSignInAccount? currentUser}) =
       _$_AccountGoToLoginOrSignupPageState;
 
   @override
-  UserCredential? get currentUserCredential;
+  GoogleSignInAccount? get currentUser;
   @override
   @JsonKey(ignore: true)
   _$$_AccountGoToLoginOrSignupPageStateCopyWith<

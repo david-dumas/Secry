@@ -10,6 +10,7 @@ import 'package:secry/presentation/pages/account/account_go_to_login_or_signup_p
 
 import 'package:secry/injection.dart';
 import 'package:secry/constants.dart';
+import 'package:theme_provider/theme_provider.dart';
 
 class TabbarPage extends StatefulWidget {
   const TabbarPage({Key? key}) : super(key: key);
@@ -56,6 +57,7 @@ class _TabbarPageState extends State<TabbarPage> with SingleTickerProviderStateM
               getBottomNavbarItem(icon: Icon(Icons.account_circle_outlined)),
             ],
             confineInSafeArea: true,
+            //backgroundColor: ThemeProvider.themeOf(context).data.backgroundColor,
             backgroundColor: globalWhite,
             handleAndroidBackButtonPress: true,
             onItemSelected: (newIndex) {
