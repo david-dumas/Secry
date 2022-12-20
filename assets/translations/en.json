@@ -191,5 +191,9 @@
   "report_misleading_or_harmful_information": "Misleading or harmful information",
   "why_do_you_want_to_report": "Why do you want to report this?",
   "report_title" : "Report",
-  "submit_button" : "Submit"
+  "submit_button" : "Submit",
+  "invite_text": "You're invited to",
+  "invite_title": "Invite",
+  "invite_cancel": "Cancel invite",
+  "invite_accept": "Accept invite"
 }

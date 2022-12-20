@@ -68,6 +68,7 @@ const Widget verticalSpaceMassive = SizedBox(height: 120.0);
 // Padding
 const pagePaddingZeroTop = EdgeInsets.only(left: 20, right: 20, bottom: 32);
 const pagePaddingAllSides = EdgeInsets.only(top: 20, right: 20, bottom: 32, left: 20);
+const pagePaddingLeftAndRight = EdgeInsets.only(left: 20, right: 20);
 
 // Button radius
 const kButtonRadiusXxs = 8.0;

@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:secry/application/homepage/homepage_bloc.dart';
 import 'package:secry/application/tabbar/tabbar_bloc.dart';
+import 'package:secry/presentation/pages/general/widgets/report_alert_dialog.dart';
 import 'package:secry/presentation/widgets/bars/general_appbar.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:secry/presentation/pages/add_group/add_group_page.dart';
@@ -54,15 +55,22 @@ class _HomePageState extends State<HomePage> {
                           }
                         }),
                       child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SearchBarForHomePage(
-                              searchValue: state.searchValue,
-                              searchValueChanged: (newValue) {
-                                context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
-                              }
-                          ),
                           Padding(
-                            padding: pagePaddingAllSides,
+                            padding: pagePaddingLeftAndRight,
+                            child: SearchBarForHomePage(
+                                searchValue: state.searchValue,
+                                searchValueChanged: (newValue) {
+                                  context.read<HomepageBloc>().add(HomepageEvent.searchValueUpdated(newValue));
+                                }
+                            ),
+                          ),
+                          SizedBox(height: 20),
+                          InviteBar(title: "Yellow Marsmellows"),
+                          Padding(
+                            padding: pagePaddingLeftAndRight,
                             child: GroupSection(
                               title: tr('home_my_groups'),
                               totalAmountOfGroups: state.paginationInfo?.totalCount ?? 0,
@@ -133,37 +141,148 @@ class _SearchBarForHomePageState extends State<SearchBarForHomePage> {
     return Container(
         child: Form(
           key: _formKey,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: searchBarTextEditingController,
-              autofocus: widget.searchValue == '',
-              autocorrect: false,
-              decoration: InputDecoration(
-                fillColor: searchBarBackgroundColor,
-                contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-                filled: true,
-                hintText: '${tr('action_search')}...',
-                suffixIcon: IconButton(
-                  color: kDarkGray,
-                  onPressed: () {
-                    searchBarTextEditingController.text = '';
-                    widget.searchValueChanged('');
-                  },
-                  icon: Icon(
-                    Icons.clear_rounded,
-                  ),
-                ),
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8),
-                    borderSide: BorderSide(width: 0, style: BorderStyle.none)
+          child: TextField(
+            controller: searchBarTextEditingController,
+            autofocus: widget.searchValue == '',
+            autocorrect: false,
+            decoration: InputDecoration(
+              fillColor: searchBarBackgroundColor,
+              contentPadding: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
+              filled: true,
+              hintText: '${tr('action_search')}...',
+              suffixIcon: IconButton(
+                color: kDarkGray,
+                onPressed: () {
+                  searchBarTextEditingController.text = '';
+                  widget.searchValueChanged('');
+                },
+                icon: Icon(
+                  Icons.clear_rounded,
                 ),
               ),
-              onChanged: (newValue) {
-                this.widget.searchValueChanged(newValue);
-              },
+              border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(8),
+                  borderSide: BorderSide(width: 0, style: BorderStyle.none)
+              ),
             ),
-      ),
+            onChanged: (newValue) {
+              this.widget.searchValueChanged(newValue);
+            },
+          ),
     ));
+  }
+}
+
+class InviteBar extends StatelessWidget {
+  final String title;
+
+  const InviteBar({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: pagePaddingLeftAndRight,
+        child: Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+              border: Border.all(width: 0.25),
+              borderRadius: BorderRadius.circular(kButtonRadiusXxs)
+          ),
+          child: Padding(
+              padding: EdgeInsets.all(12.0),
+              child: Flex(
+                direction: Axis.horizontal,
+                children: [
+                  Row(
+                    children: [
+                      Text(tr('invite_text')),
+                      Padding(
+                        padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
+                        child: Text(title,
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold
+                            )),
+                      )
+                    ],
+                  ),
+                  Spacer(),
+                  IconButton(
+                      onPressed: () {
+                        showDialog(context: context, builder: (BuildContext context) {
+                          return InviteDialog(title: 'Yellow Marsmellows');
+                        });
+                      },
+                      icon: Icon(Icons.visibility))
+                ],
+              )
+          ),
+        )
+    );
+  }
+}
+
+class InviteDialog extends StatelessWidget {
+  final String title;
+
+  const InviteDialog({Key? key, required this.title}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      title: Center(
+        child: Text(
+            tr('invite_title'),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: fontSizeXxl)
+        )
+      ),
+      content: Container(
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                Text(tr('invite_text')),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(3, 0, 0, 0),
+                  child: Text(title,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold
+                      )),
+                )
+              ],
+            ),
+            SizedBox(height: 20),
+            Flex(
+              direction: Axis.vertical,
+              children: [
+                TextButton(
+                    style: TextButton.styleFrom(foregroundColor: globalBlack, backgroundColor: kLightGray, padding: EdgeInsets.zero, minimumSize: const Size.fromHeight(48)),
+                    onPressed: () {
+                      //TODO submit
+                    },
+                    child: Text(
+                      tr("invite_cancel"),
+                      style: TextStyle(fontSize: fontSizeMedium),
+                    )
+                ),
+                SizedBox(height: 16),
+                TextButton(
+                    style: TextButton.styleFrom(foregroundColor: globalWhite, backgroundColor: kPrimaryColor, padding: EdgeInsets.zero, minimumSize: const Size.fromHeight(48)),
+                    onPressed: () {
+                      //TODO submit
+                    },
+                    child: Text(
+                      tr("invite_accept"),
+                      style: TextStyle(fontSize: fontSizeMedium),
+                    )
+                )
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

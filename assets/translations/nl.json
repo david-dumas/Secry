@@ -191,5 +191,9 @@
   "report_misleading_or_harmful_information": "Misleidende of schadelijke informatie",
   "why_do_you_want_to_report" : "Waarom wilt u dit rapporteren?",
   "report_title" : "Rapporteer",
-  "submit_button" : "Indienen"
+  "submit_button" : "Indienen",
+  "invite_text": "U bent geinvite voor",
+  "invite_title": "Uitnodiging",
+  "invite_cancel": "Weiger uitnodiging",
+  "invite_accept": "Accepteer uitnodiging"
 }
